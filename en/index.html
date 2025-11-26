@@ -12,8 +12,11 @@
   <link rel="alternate" hreflang="en" href="https://vivamediacreative.com/en/">
   <link rel="alternate" hreflang="x-default" href="https://vivamediacreative.com/en/">
 
-  <link rel="stylesheet" href="/en/style.css">
-  <link rel="icon" href="/en/assets/logo.jpeg">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/logo.jpeg">
 
   <!-- Google Tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SR129X7VN0"></script>
@@ -29,7 +32,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <div class="brand">
-      <a href="/en/"><img src="/en/assets/logo.jpeg" alt="Viva Media Creative" class="logo" loading="lazy"></a>
+      <a href="index.html"><img src="assets/logo.jpeg" alt="Viva Media Creative" class="logo" loading="lazy"></a>
       <div class="brand-text">
         <h1>Viva Media Creative</h1>
         <p class="tag">Leading company in visual content production and marketing</p>
@@ -39,23 +42,23 @@
     <div class="hamburger" id="hamburger">☰</div>
 
     <nav class="main-nav" id="main-nav" aria-label="Main Menu">
-      <a href="/en/">Home</a>
+      <a href="index.html">Home</a>
       <a href="#services">Services</a>
       <a href="#about">About Us</a>
       <a href="#support">Creator Support</a>
-      <a href="/en/news_en/">News</a>
+      <a href="news_en/">News</a>
       <a href="#contact">Contact</a>
       <a href="#apply" class="active">Careers</a>
     </nav>
 
     <div class="lang">
-      🌐 <a href="/ar.html">العربية</a> | <a href="/en/" aria-current="page">English</a>
+      🌐 <a href="../ar.html">العربية</a> | <a href="index.html" aria-current="page">English</a>
     </div>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="hero" style="background-image: url('/en/assets/hero.jpg')">
+<section class="hero" style="background-image: url('assets/hero.jpg')">
   <div class="container hero-content">
     <h2>Creating Content That Makes an Impact</h2>
     <p class="lead">
@@ -75,25 +78,25 @@
 
   <div class="services-grid">
     <article class="card">
-      <img src="/en/assets/service-ads.jpg" alt="Ad Video Production" loading="lazy">
+      <img src="assets/service-ads.jpg" alt="Ad Video Production" loading="lazy">
       <h3>Ad Video Production</h3>
       <p>Creating engaging advertising campaigns designed to increase conversions and interactions across social platforms.</p>
     </article>
 
     <article class="card">
-      <img src="/en/assets/service-marketing.jpg" alt="Marketing" loading="lazy">
+      <img src="assets/service-marketing.jpg" alt="Marketing" loading="lazy">
       <h3>Video Marketing Management</h3>
       <p>Comprehensive strategies for content distribution to achieve maximum audience growth.</p>
     </article>
 
     <article class="card">
-      <img src="/en/assets/service-doc.jpg" alt="Documentary Production" loading="lazy">
+      <img src="assets/service-doc.jpg" alt="Documentary Production" loading="lazy">
       <h3>Documentary Production</h3>
       <p>Telling real-life stories professionally and creating impactful viewing experiences.</p>
     </article>
 
     <article class="card">
-      <img src="/en/assets/team.jpg" alt="Celebrity Management" loading="lazy">
+      <img src="assets/team.jpg" alt="Celebrity Management" loading="lazy">
       <h3>Celebrity Account Management</h3>
       <p>We highlight your stars with professional content strategies to build a strong digital identity.</p>
     </article>
@@ -143,7 +146,7 @@
 <section id="documentary" class="container section light">
   <h2 class="section-title">Documentary Production</h2>
   <div class="doc">
-    <img src="/en/assets/doc.jpg" alt="Documentary Production" class="doc-img" loading="lazy">
+    <img src="assets/doc.jpg" alt="Documentary Production" class="doc-img" loading="lazy">
     <div class="doc-text">
       <p>
         In a diverse world, real stories remain the most impactful. We treat each story as a treasure to be preserved and shared. Using cameras as a tool to understand history and humanity, we create strong and meaningful narratives.
@@ -159,7 +162,7 @@
   <p>If you wish to join our team, submit your CV directly here:</p>
 
   <form action="https://formsubmit.co/vivamediacreations@gmail.com" method="POST" enctype="multipart/form-data" class="job-form">
-    <input type="hidden" name="_next" value="https://vivamediacreative.com/en/thank-you.html">
+    <input type="hidden" name="_next" value="https://vivamediacreative.com/thank-you.html">
     <label for="name">Full Name:</label>
     <input type="text" id="name" name="name" required>
 
@@ -199,12 +202,12 @@
       <a href="mailto:vivamediacreations@gmail.com">vivamediacreations@gmail.com</a>
     </p>
     <div class="lang-switcher" style="margin-top:10px; font-size:14px;">
-      🌐 <a href="/ar.html">العربية</a> | <a href="/en/" aria-current="page">English</a>
+      🌐 <a href="../ar.html">العربية</a> | <a href="index.html" aria-current="page">English</a>
     </div>
   </div>
 </footer>
 
-<!-- ✅ Hamburger Menu Script -->
+<!-- Hamburger Menu Script -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const hamburger = document.getElementById('hamburger');
@@ -215,7 +218,6 @@ document.addEventListener('DOMContentLoaded', function() {
       nav.classList.toggle('active');
     });
 
-    // Close menu when any link is clicked
     const links = nav.querySelectorAll('a');
     links.forEach(link => {
       link.addEventListener('click', () => {
