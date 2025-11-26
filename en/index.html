@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
@@ -8,14 +8,11 @@
 
   <!-- SEO: canonical and hreflang -->
   <link rel="canonical" href="https://vivamediacreative.com/en/">
-  <link rel="alternate" hreflang="ar" href="https://vivamediacreative.com/ar.html">
+  <link rel="alternate" hreflang="ar" href="https://vivamediacreative.com/ar/">
   <link rel="alternate" hreflang="en" href="https://vivamediacreative.com/en/">
   <link rel="alternate" hreflang="x-default" href="https://vivamediacreative.com/en/">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Favicon -->
   <link rel="icon" href="assets/logo.jpeg">
 
   <!-- Google Tag -->
@@ -46,13 +43,13 @@
       <a href="#services">Services</a>
       <a href="#about">About Us</a>
       <a href="#support">Creator Support</a>
-      <a href="news_en/">News</a>
+      <a href="../news_en/">News</a>
       <a href="#contact">Contact</a>
       <a href="#apply" class="active">Careers</a>
     </nav>
 
     <div class="lang">
-      🌐 <a href="../ar.html">العربية</a> | <a href="index.html" aria-current="page">English</a>
+      🌐 <a href="../ar/">العربية</a> | <a href="index.html" aria-current="page">English</a>
     </div>
   </div>
 </header>
@@ -162,7 +159,7 @@
   <p>If you wish to join our team, submit your CV directly here:</p>
 
   <form action="https://formsubmit.co/vivamediacreations@gmail.com" method="POST" enctype="multipart/form-data" class="job-form">
-    <input type="hidden" name="_next" value="https://vivamediacreative.com/thank-you.html">
+    <input type="hidden" name="_next" value="thank-you-en.html">
     <label for="name">Full Name:</label>
     <input type="text" id="name" name="name" required>
 
@@ -202,7 +199,7 @@
       <a href="mailto:vivamediacreations@gmail.com">vivamediacreations@gmail.com</a>
     </p>
     <div class="lang-switcher" style="margin-top:10px; font-size:14px;">
-      🌐 <a href="../ar.html">العربية</a> | <a href="index.html" aria-current="page">English</a>
+      🌐 <a href="../ar/">العربية</a> | <a href="index.html" aria-current="page">English</a>
     </div>
   </div>
 </footer>
@@ -218,6 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
       nav.classList.toggle('active');
     });
 
+    // Close menu when any link is clicked
     const links = nav.querySelectorAll('a');
     links.forEach(link => {
       link.addEventListener('click', () => {
