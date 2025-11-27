@@ -571,28 +571,54 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+
+    /* Modal الخدمات */
+    const modal = document.getElementById('service-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalText = document.getElementById('modal-text');
+    const modalClose = document.getElementById('modal-close');
+
+    document.querySelectorAll('.service-card .btn-details').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const card = e.target.closest('.service-card');
+        const title = card.dataset.title || card.querySelector('h4').textContent;
+        const fullContainer = card.querySelector('.card-full');
+        const fullHTML = fullContainer ? fullContainer.innerHTML : 'التفاصيل غير متاحة حالياً.';
+        modalTitle.textContent = title;
+        modalText.innerHTML = fullHTML;
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden','false');
+      });
+    });
+
+    modalClose.addEventListener('click', () => {
+      modal.classList.remove('active'); modal.setAttribute('aria-hidden','true');
+      modalTitle.textContent = ''; modalText.innerHTML = '';
+    });
+
+    modal.addEventListener('click', (e) => { if (e.target === modal) { modal.classList.remove('active'); modal.setAttribute('aria-hidden','true'); modalTitle.textContent = ''; modalText.innerHTML = ''; }});
+
+    /* Section WhatsApp buttons */
+    document.querySelectorAll('.section-whatsapp').forEach(a => {
+      const number = a.dataset.number || '4915565678291';
+      const msg = a.dataset.msg || 'مرحباً، أود الاستفسار عن خدماتكم';
+      const encoded = encodeURIComponent(msg);
+      a.href = `https://wa.me/${number}?text=${encoded}`;
+      a.setAttribute('target','_blank');
+      a.setAttribute('rel','noopener noreferrer');
+    });
+
+    /* Accessibility: close modal with Escape */
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active'); modal.setAttribute('aria-hidden','true');
+        modalTitle.textContent = ''; modalText.innerHTML = '';
+      }
+    });
+  
+  
 </script>
-
-document.addEventListener('DOMContentLoaded', function() {
-  const card = document.querySelector('.card.new-card');
-  const modal = document.getElementById('modal-remote');
-  const closeBtn = modal.querySelector('.modal-close');
-
-  card.addEventListener('click', () => {
-    modal.classList.add('active');
-  });
-
-  closeBtn.addEventListener('click', () => {
-    modal.classList.remove('active');
-  });
-
-  // إغلاق المودال عند الضغط خارج المحتوى
-  modal.addEventListener('click', (e) => {
-    if(e.target === modal){
-      modal.classList.remove('active');
-    }
-  });
-});
 
 
   
