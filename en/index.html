@@ -573,26 +573,27 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-  <!-- Service Card Details Script -->
-  <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // الحصول على كل أزرار "View Details"
-  const detailButtons = document.querySelectorAll('.btn-details');
+  const card = document.querySelector('.card.new-card');
+  const modal = document.getElementById('modal-remote');
+  const closeBtn = modal.querySelector('.modal-close');
 
-  detailButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const card = button.closest('.service-card'); // البطاقة الحالية
-      const fullContent = card.querySelector('.card-full'); // محتوى التفاصيل
+  card.addEventListener('click', () => {
+    modal.classList.add('active');
+  });
 
-      // إذا كان مفتوح بالفعل، أغلقه، وإذا مغلق افتحه
-      fullContent.classList.toggle('show');
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
 
-      // تغيير نص الزر
-      button.textContent = fullContent.classList.contains('show') ? 'Hide Details' : 'View Details';
-    });
+  // إغلاق المودال عند الضغط خارج المحتوى
+  modal.addEventListener('click', (e) => {
+    if(e.target === modal){
+      modal.classList.remove('active');
+    }
   });
 });
-</script>
+
 
   
 </body>
