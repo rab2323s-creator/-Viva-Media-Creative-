@@ -573,61 +573,75 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-    /* Modal الخدمات */
-    const modal = document.getElementById('service-modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalText = document.getElementById('modal-text');
-    const modalClose = document.getElementById('modal-close');
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
 
-    document.querySelectorAll('.service-card .btn-details').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const card = e.target.closest('.service-card');
-        const title = card.dataset.title || card.querySelector('h4').textContent;
-        const fullContainer = card.querySelector('.card-full');
-        const fullHTML = fullContainer ? fullContainer.innerHTML : 'التفاصيل غير متاحة حالياً.';
-        modalTitle.textContent = title;
-        modalText.innerHTML = fullHTML;
-        modal.classList.add('active');
-        modal.setAttribute('aria-hidden','false');
-      });
-    });
+  // if modal is missing, create it automatically
+  function ensureModal() {
+    let modal = document.getElementById('service-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'service-modal';
+      modal.className = 'modal';
+      modal.setAttribute('aria-hidden', 'true');
+      modal.innerHTML = `
+        <div class="modal-content">
+          <button id="modal-close" class="modal-close" aria-label="Close">&times;</button>
+          <h3 id="modal-title"></h3>
+          <div id="modal-text"></div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+    }
+    return modal;
+  }
 
-    modalClose.addEventListener('click', () => {
-      modal.classList.remove('active'); modal.setAttribute('aria-hidden','true');
-      modalTitle.textContent = ''; modalText.innerHTML = '';
-    });
+  const modal = ensureModal();
+  const modalTitle = document.getElementById('modal-title');
+  const modalText = document.getElementById('modal-text');
+  const modalClose = document.getElementById('modal-close');
 
-    modal.addEventListener('click', (e) => { if (e.target === modal) { modal.classList.remove('active'); modal.setAttribute('aria-hidden','true'); modalTitle.textContent = ''; modalText.innerHTML = ''; }});
+  function openModal(title, html) {
+    modalTitle.textContent = title;
+    modalText.innerHTML = html;
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // prevent background scroll
+  }
 
-    /* Section WhatsApp buttons */
-    document.querySelectorAll('.section-whatsapp').forEach(a => {
-      const number = a.dataset.number || '4915565678291';
-      const msg = a.dataset.msg || 'مرحباً، أود الاستفسار عن خدماتكم';
-      const encoded = encodeURIComponent(msg);
-      a.href = `https://wa.me/${number}?text=${encoded}`;
-      a.setAttribute('target','_blank');
-      a.setAttribute('rel','noopener noreferrer');
-    });
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    modalTitle.textContent = '';
+    modalText.innerHTML = '';
+    document.body.style.overflow = '';
+  }
 
-    /* Accessibility: close modal with Escape */
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        modal.classList.remove('active'); modal.setAttribute('aria-hidden','true');
-        modalTitle.textContent = ''; modalText.innerHTML = '';
-      }
-    });
-  
-  
+  // Event delegation: handle clicks on any .btn-details buttons
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn-details');
+    if (!btn) return;
+    const card = btn.closest('.service-card');
+    if (!card) {
+      console.warn('btn-details clicked but no .service-card ancestor found.');
+      return;
+    }
+    const title = card.dataset.title || (card.querySelector('h4') && card.querySelector('h4').textContent) || 'Details';
+    const fullContainer = card.querySelector('.card-full');
+    const fullHTML = fullContainer ? fullContainer.innerHTML : 'التفاصيل غير متاحة حالياً.';
+    openModal(title, fullHTML);
+  });
+
+  // Close handlers
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
+
+  // debug info in console
+  console.log('Service modal initialized. btn-details count =', document.querySelectorAll('.btn-details').length);
+});
 </script>
 
-<!-- Modal -->
-<div id="service-modal" class="modal" aria-hidden="true">
-  <div class="modal-content">
-    <button id="modal-close" class="modal-close">&times;</button>
-    <h3 id="modal-title"></h3>
-    <div id="modal-text"></div>
-  </div>
-</div>
 
   
 </body>
