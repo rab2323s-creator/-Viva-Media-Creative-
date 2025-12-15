@@ -2,81 +2,231 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>أداة تحليل حساب إنستغرام | Viva Media Creative</title>
-  <meta name="description" content="احسب معدل التفاعل الحقيقي لحساب إنستغرام، متوسط الإعجابات والتعليقات، واكتشف أفضل أوقات النشر بسهولة — أداة مجانية من Viva Media Creative.">
-  <meta name="keywords" content="تحليل إنستغرام, معدل التفاعل, Instagram analyzer, Engagement calculator, أفضل أوقات النشر">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#071233">
+
+  <title>حاسبة معدل التفاعل على إنستغرام (Engagement Rate) — أداة مجانية | Viva Media Creative</title>
+  <meta name="description" content="احسب معدل التفاعل الحقيقي على إنستغرام خلال ثوانٍ: متوسط الإعجابات والتعليقات، الوسيط (Median)، أعلى/أقل منشور، وتوصيات بأفضل أوقات النشر. أداة مجانية من Viva Media Creative.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="keywords" content="تحليل انستغرام, معدل التفاعل, Engagement Rate, Instagram analyzer, حساب التفاعل انستغرام, متوسط اللايكات, أفضل وقت للنشر انستغرام">
+
+  <!-- ✅ ضع رابط صفحتك الحقيقي هنا -->
+  <link rel="canonical" href="https://vivamediacreative.com/ar/instagram-analyzer/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:site_name" content="Viva Media Creative">
+  <meta property="og:title" content="حاسبة معدل التفاعل على إنستغرام — أداة مجانية | Viva Media Creative">
+  <meta property="og:description" content="احسب معدل التفاعل الحقيقي، متوسط الإعجابات والتعليقات، الوسيط، أعلى/أقل منشور، وتوصيات بأفضل أوقات النشر.">
+  <meta property="og:url" content="https://vivamediacreative.com/ar/instagram-analyzer/">
+  <!-- اختياري: ضع صورة OG (1200x630) -->
+  <!-- <meta property="og:image" content="https://vivamediacreative.com/assets/og-instagram-analyzer.jpg"> -->
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="حاسبة معدل التفاعل على إنستغرام — Viva Media Creative">
+  <meta name="twitter:description" content="احسب معدل التفاعل الحقيقي + توصيات سريعة + تقرير قابل للنسخ والطباعة.">
+
   <style>
-    :root{--bg:#0f172a;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass: rgba(255,255,255,0.04);}
-    *{box-sizing:border-box;font-family: "Segoe UI", Tahoma, Arial, "Noto Kufi Arabic", sans-serif}
+    :root{
+      --bg:#0f172a;
+      --card:#0b1220;
+      --accent:#06b6d4;
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.04);
+      --danger:#fca5a5;
+      --ok:#86efac;
+      --line: rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box;font-family:"Segoe UI",Tahoma,Arial,"Noto Kufi Arabic",sans-serif}
     html,body{height:100%;margin:0;background:linear-gradient(180deg,#071233 0%, #071a2b 100%);color:#e6eef8}
-    .container{max-width:980px;margin:28px auto;padding:22px}
-    header{text-align:center;margin-bottom:28px}
-    header h1{font-size:26px;margin-bottom:8px}
-    header p{font-size:16px;color:var(--muted)}
-    .card{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);margin-bottom:18px}
+    a{color:inherit}
+    .container{max-width:1020px;margin:26px auto;padding:18px}
+    header{text-align:center;margin-bottom:18px}
+    header h1{font-size:28px;margin:0 0 8px}
+    header p{font-size:15px;color:var(--muted);margin:0 auto;max-width:860px;line-height:1.7}
+    .card{background:var(--card);padding:20px;border-radius:14px;box-shadow:0 10px 24px rgba(2,6,23,0.6);margin-bottom:14px;border:1px solid rgba(255,255,255,0.04)}
+    .grid{display:grid;gap:12px}
     form{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
     label{display:block;font-size:13px;margin-bottom:6px;color:var(--muted)}
-    input[type="text"], input[type="number"], textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:var(--glass);color:inherit}
-    textarea{min-height:84px}
+    input[type="text"], input[type="number"], select, textarea{
+      width:100%;padding:10px 11px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);
+      background:var(--glass);color:inherit;outline:none
+    }
+    textarea{min-height:86px;resize:vertical}
     .full{grid-column:1/-1}
+    .row3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     .actions{display:flex;gap:10px;justify-content:flex-start;margin-top:8px;flex-wrap:wrap}
-    button{background:var(--accent);border:none;padding:10px 14px;border-radius:10px;color:#012;cursor:pointer;font-weight:700}
-    .secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-    .results{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
-    .stat{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:10px;text-align:center}
+    button{
+      background:var(--accent);border:none;padding:10px 14px;border-radius:12px;color:#012;cursor:pointer;font-weight:800
+    }
+    button.secondary{background:transparent;border:1px solid var(--line);color:var(--muted)}
+    button.secondary:hover{border-color:rgba(255,255,255,0.16)}
+    .results{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+    .stat{
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      padding:14px;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,0.05)
+    }
     .stat h3{margin:0;font-size:18px}
     .stat p{margin:6px 0 0;color:var(--muted);font-size:13px}
-    .note{font-size:13px;color:var(--muted);margin-top:12px}
-    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
-    @media(max-width:800px){form{grid-template-columns:1fr}.results{grid-template-columns:repeat(2,1fr)}.stat{padding:10px}}
-    @media(max-width:420px){.results{grid-template-columns:1fr}}
-    .cta{display:inline-block;padding:12px 22px;background:#06b6d4;color:#012;border-radius:10px;text-decoration:none;font-weight:700;margin-top:12px}
+    .note{font-size:13px;color:var(--muted);margin-top:10px;line-height:1.7}
+    .warn{display:none;margin-top:10px;padding:10px 12px;border-radius:12px;border:1px solid rgba(252,165,165,0.35);background:rgba(252,165,165,0.08);color:var(--danger)}
+    .ok{border-color:rgba(134,239,172,0.35);background:rgba(134,239,172,0.08);color:var(--ok)}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:7px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px}
+    .divider{height:1px;background:var(--line);margin:12px 0}
+    .cta{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:14px;border:1px solid rgba(6,182,212,0.35);
+      background:rgba(6,182,212,0.08);border-radius:14px
+    }
+    .cta a{
+      display:inline-block;padding:10px 14px;background:var(--accent);color:#012;border-radius:12px;text-decoration:none;font-weight:900;white-space:nowrap
+    }
+    footer{margin-top:16px;color:var(--muted);font-size:13px;text-align:center}
+    details{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:rgba(255,255,255,0.02)}
+    summary{cursor:pointer;font-weight:800}
+    @media(max-width:900px){
+      form{grid-template-columns:1fr}
+      .row3{grid-template-columns:1fr}
+      .results{grid-template-columns:repeat(2,1fr)}
+      header h1{font-size:24px}
+    }
+    @media(max-width:420px){
+      .results{grid-template-columns:1fr}
+      .cta{flex-direction:column;align-items:flex-start}
+      .cta a{width:100%;text-align:center}
+    }
   </style>
+
+  <!-- ✅ Structured Data: Breadcrumb + App + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://vivamediacreative.com/ar/"},
+          {"@type":"ListItem","position":2,"name":"أداة تحليل إنستغرام","item":"https://vivamediacreative.com/ar/instagram-analyzer/"}
+        ]
+      },
+      {
+        "@type":"SoftwareApplication",
+        "name":"أداة تحليل حساب إنستغرام",
+        "applicationCategory":"BusinessApplication",
+        "operatingSystem":"Web",
+        "offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},
+        "publisher":{"@type":"Organization","name":"Viva Media Creative","url":"https://vivamediacreative.com/ar/"},
+        "url":"https://vivamediacreative.com/ar/instagram-analyzer/",
+        "description":"أداة مجانية لحساب معدل التفاعل على إنستغرام ومتوسط الإعجابات والتعليقات والوسيط وأعلى/أقل منشور مع توصيات سريعة."
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"كيف يتم حساب معدل التفاعل على إنستغرام؟",
+            "acceptedAnswer":{"@type":"Answer","text":"المعادلة الأكثر شيوعًا: (متوسط الإعجابات + متوسط التعليقات) ÷ عدد المتابعين × 100."}
+          },
+          {
+            "@type":"Question",
+            "name":"هل يمكن إدخال قائمة لايكات وتعليقات بدل المجموع؟",
+            "acceptedAnswer":{"@type":"Answer","text":"نعم. يمكنك لصق أرقام مفصولة بمسافة أو فاصلة (حتى الفاصلة العربية)، وستقوم الأداة باستنتاج عدد المنشورات تلقائيًا."}
+          },
+          {
+            "@type":"Question",
+            "name":"هل أفضل أوقات النشر دقيقة 100%؟",
+            "acceptedAnswer":{"@type":"Answer","text":"التوصيات هنا عامة. الأفضل دائمًا استخدام بيانات Insights أو نشاط المتابعين للحصول على وقت نشر مخصص."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
+
 <body>
   <div class="container">
     <header>
-      <h1>أداة تحليل حساب إنستغرام</h1>
-      <p>احسب معدل التفاعل، متوسط الإعجابات والتعليقات، واكتشف أفضل أوقات النشر بسهولة.</p>
+      <h1>حاسبة معدل التفاعل على إنستغرام</h1>
+      <p>
+        احسب <strong>Engagement Rate</strong> بدقة خلال ثوانٍ: متوسط الإعجابات والتعليقات، الوسيط (Median)، أعلى/أقل منشور،
+        وتوصيات سريعة بأفضل أوقات النشر — مجانًا من <strong>Viva Media Creative</strong>.
+      </p>
+      <div style="margin-top:10px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <span class="pill">✅ يدعم 1.2k و ١،٢k</span>
+        <span class="pill">✅ استنتاج N تلقائيًا</span>
+        <span class="pill">✅ تقرير + CSV + مشاركة</span>
+      </div>
     </header>
 
-    <main class="card" role="main">
-      <form id="analyzeForm">
+    <main class="card" role="main" aria-label="Instagram Engagement Calculator">
+      <noscript>
+        <div class="warn" style="display:block">هذه الأداة تحتاج تفعيل JavaScript لتعمل بشكل صحيح.</div>
+      </noscript>
+
+      <form id="analyzeForm" autocomplete="on">
         <div>
           <label for="account">اسم الحساب (اختياري)</label>
-          <input id="account" type="text" placeholder="مثال: mybrand_official">
+          <input id="account" type="text" placeholder="مثال: mybrand_official" inputmode="text" aria-label="اسم الحساب">
         </div>
 
         <div>
           <label for="followers">عدد المتابعين</label>
-          <input id="followers" type="number" placeholder="مثال: 12500" min="1" required>
+          <input id="followers" type="number" placeholder="مثال: 12500" min="1" required inputmode="numeric" aria-label="عدد المتابعين">
+        </div>
+
+        <div class="full row3">
+          <div>
+            <label for="nposts">عدد المنشورات (N) (اختياري إذا لصقت قائمة)</label>
+            <input id="nposts" type="number" placeholder="مثال: 10" min="1" max="100" value="10" inputmode="numeric" aria-label="عدد المنشورات">
+          </div>
+          <div>
+            <label for="mode">طريقة الحساب</label>
+            <select id="mode" aria-label="طريقة حساب التفاعل">
+              <option value="followers" selected>ER by Followers (الأشهر)</option>
+              <option value="perPost">ER by Posts (حسب البيانات المدخلة)</option>
+            </select>
+          </div>
+          <div>
+            <label for="category">نوع الحساب (لتحسين اقتراح الأوقات)</label>
+            <select id="category" aria-label="نوع الحساب">
+              <option value="general" selected>عام</option>
+              <option value="shop">متجر / E-commerce</option>
+              <option value="restaurant">مطعم / كافيه</option>
+              <option value="personal">شخصي / مؤثر</option>
+              <option value="education">تعليمي</option>
+              <option value="services">خدمات</option>
+            </select>
+          </div>
         </div>
 
         <div class="full">
-          <label for="nposts">عدد المنشورات التي تريد تحليلها (N)</label>
-          <input id="nposts" type="number" placeholder="مثال: 10" min="1" max="100" value="10">
+          <label for="likes">الإعجابات (إما مجموع آخر N منشور أو قائمة)</label>
+          <textarea id="likes" placeholder="مثال قائمة: 120،98،150  أو  1.2k 900 850  |  مثال مجموع: 653" aria-label="إدخال الإعجابات"></textarea>
+          <p class="note">تلميح: يمكنك لصق أرقام مفصولة بمسافة أو فاصلة (حتى الفاصلة العربية). يدعم k/K مثل 1.2k.</p>
         </div>
 
         <div class="full">
-          <label for="likes">مجموع الإعجابات على آخر N منشور</label>
-          <textarea id="likes" placeholder="مثال: 120,98,150,200,85  أو  653"></textarea>
-        </div>
-
-        <div class="full">
-          <label for="comments">مجموع التعليقات على آخر N منشور</label>
-          <textarea id="comments" placeholder="مثال: 10,8,15,20,9  أو  62"></textarea>
+          <label for="comments">التعليقات (إما مجموع آخر N منشور أو قائمة)</label>
+          <textarea id="comments" placeholder="مثال قائمة: 10،8،15  أو  62" aria-label="إدخال التعليقات"></textarea>
         </div>
 
         <div class="full actions">
           <button type="submit">حساب التحليل</button>
           <button id="clearBtn" type="button" class="secondary">مسح الحقول</button>
-          <button id="exportBtn" type="button" class="secondary">نسخ النتائج</button>
+          <button id="copyBtn" type="button" class="secondary">نسخ النتائج</button>
+          <button id="csvBtn" type="button" class="secondary">تحميل CSV</button>
+          <button id="shareBtn" type="button" class="secondary">مشاركة رابط</button>
+          <button id="printBtn" type="button" class="secondary">طباعة تقرير</button>
         </div>
+
+        <div id="warn" class="warn" role="alert"></div>
       </form>
 
       <div id="output" style="margin-top:14px;display:none">
-        <div class="results">
+        <div class="results" aria-label="نتائج التحليل">
           <div class="stat">
             <h3 id="engagement">0%</h3>
             <p>معدل التفاعل</p>
@@ -91,25 +241,54 @@
           </div>
         </div>
 
+        <p id="meta" class="note"></p>
+        <ul id="extraStats" style="margin:8px 0 0 0;padding-left:18px;color:var(--muted)"></ul>
+
         <div class="card" style="margin-top:12px">
-          <h3 style="margin-top:0">أفضل أوقات النشر — اقتراح سريع</h3>
-          <p class="note">هذه اقتراحات عامة مبنية على بيانات سلوك المستخدم العالمية. للاقتراحات المخصصة، نحتاج إلى بيانات نشاط المتابعين أو الوصول عبر API.</p>
+          <h2 style="margin-top:0;font-size:18px">أفضل أوقات النشر — اقتراح سريع</h2>
+          <p class="note">هذه اقتراحات عامة. للحصول على اقتراح مخصص بدقة، نحتاج بيانات نشاط المتابعين (Insights) أو وصول API.</p>
           <ul id="bestTimes" style="margin:8px 0 0 0;padding-left:18px;color:var(--muted)"></ul>
         </div>
 
         <div class="card" style="margin-top:12px">
-          <h3 style="margin-top:0">توصيات لتحسين التفاعل</h3>
-          <ol style="color:var(--muted)">
-            <li>نشر محتوى جذاب بجودة عالية وبشكل منتظم (3–5 منشورات/أسبوع للحسابات الصغيرة).</li>
-            <li>استخدام قصص (Stories) للاتصال اليومي مع الجمهور.</li>
-            <li>اختبار أوقات مختلفة للنشر ومتابعة الأداء.</li>
-            <li>التفاعل مع التعليقات خلال الساعة الأولى بعد النشر.</li>
+          <h2 style="margin-top:0;font-size:18px">توصيات لتحسين التفاعل</h2>
+          <ol style="color:var(--muted);line-height:1.8">
+            <li>ركز على Hook قوي في أول 2 ثانية (خصوصًا Reels) مع قيمة واضحة.</li>
+            <li>انشر بانتظام: 3–5 منشورات/أسبوع للحسابات الصغيرة + قصص يوميًا.</li>
+            <li>راقب الأداء حسب نوع المحتوى (Reels/Carousel/Stories) واختبر شهرًا كاملًا.</li>
+            <li>تفاعل مع التعليقات خلال الساعة الأولى بعد النشر لرفع الانتشار.</li>
           </ol>
+
+          <div class="divider"></div>
+
+          <div class="cta" aria-label="Call to action">
+            <div>
+              <strong style="display:block;margin-bottom:4px">هل تريد تحليل احترافي وخطة محتوى لحسابك؟</strong>
+              <span style="color:var(--muted);font-size:13px">نرسل لك تقريرًا مخصصًا + توصيات عملية لرفع النتائج.</span>
+            </div>
+            <!-- ✅ ضع رابط التواصل المناسب -->
+            <a href="https://vivamediacreative.com/ar/" rel="noopener">تواصل معنا</a>
+          </div>
         </div>
 
+        <div class="card" style="margin-top:12px">
+          <h2 style="margin-top:0;font-size:18px">شرح سريع لمعدل التفاعل (Engagement Rate)</h2>
+          <p class="note">
+            معدل التفاعل يقيس نسبة تفاعل الجمهور مقارنة بعدد المتابعين أو وفق المنشورات التي تم تحليلها.
+            هذه الأداة مناسبة لتقييم الأداء بسرعة، ثم تحسين المحتوى (الصياغة/الصور/الرييلز/الوقت).
+          </p>
+
+          <details>
+            <summary>أسئلة شائعة</summary>
+            <div style="margin-top:10px;color:var(--muted);line-height:1.8">
+              <p><strong>هل الوسيط (Median) مهم؟</strong> نعم، لأنه يقلل تأثير منشور واحد “انفجر” ورفع المتوسط.</p>
+              <p><strong>لماذا تختلف النتائج عن أدوات أخرى؟</strong> بعض الأدوات تحسب Reach أو Saves أو Shares (غير متاح هنا بدون Insights).</p>
+            </div>
+          </details>
+        </div>
       </div>
 
-      <p class="note">تم تطوير هذه الأداة بواسطة <strong>Viva Media Creative</strong></p>
+      <p class="note">تم تطوير هذه الأداة بواسطة <strong>Viva Media Creative</strong> — نسخة محسّنة (SEO + UX + Analytics).</p>
     </main>
 
     <footer>
@@ -118,64 +297,420 @@
   </div>
 
   <script>
+    // ===== Parsing & Math =====
+    function normalizeNumberToken(token){
+      if(!token) return NaN;
+      let t = token.toString().trim();
+
+      // دعم الفاصلة العربية + الفاصل العشري العربي
+      t = t.replace(/،/g, ',').replace(/\u066B/g, '.');
+
+      // إبقاء الأرقام والفواصل والنقطة و k
+      t = t.replace(/[^\d.,kK]/g, '');
+
+      const isK = /[kK]$/.test(t);
+      t = t.replace(/[kK]$/, '');
+
+      const commas = (t.match(/,/g) || []).length;
+      const dots   = (t.match(/\./g) || []).length;
+
+      // 1,234.5 أو 1.234,5
+      if (commas > 0 && dots > 0){
+        if (t.lastIndexOf(',') > t.lastIndexOf('.')){
+          t = t.replace(/\./g, '').replace(',', '.');
+        } else {
+          t = t.replace(/,/g, '');
+        }
+      } else {
+        if (commas === 1 && dots === 0) t = t.replace(',', '.');
+        if (commas > 1) t = t.replace(/,/g, '');
+      }
+
+      let n = parseFloat(t);
+      if (isNaN(n)) return NaN;
+      if (isK) n *= 1000;
+      return n;
+    }
+
     function parseNumbersField(str){
       if(!str) return [];
-      if(str.indexOf(',') !== -1 || /\s/.test(str)){
-        return str.split(/[, \n\r\t]+/).map(s=>parseFloat(s)).filter(n=>!isNaN(n));
+      const tokens = str.split(/[\s,\n\r\t]+/).filter(Boolean);
+      return tokens.map(normalizeNumberToken).filter(n => !isNaN(n));
+    }
+
+    function sum(arr){ return arr.reduce((a,b)=>a + (+b||0), 0); }
+
+    function median(arr){
+      if(!arr.length) return 0;
+      const a = [...arr].sort((x,y)=>x-y);
+      const mid = Math.floor(a.length/2);
+      return a.length % 2 ? a[mid] : (a[mid-1] + a[mid]) / 2;
+    }
+
+    function clampInt(v, min, max){
+      v = parseInt(v || 0, 10);
+      if (isNaN(v)) v = min;
+      return Math.min(max, Math.max(min, v));
+    }
+
+    function formatNum(n){
+      return (Math.round(n)).toLocaleString();
+    }
+
+    // ===== UI =====
+    const form = document.getElementById('analyzeForm');
+    const elAccount = document.getElementById('account');
+    const elFollowers = document.getElementById('followers');
+    const elNposts = document.getElementById('nposts');
+    const elLikes = document.getElementById('likes');
+    const elComments = document.getElementById('comments');
+    const elMode = document.getElementById('mode');
+    const elCategory = document.getElementById('category');
+
+    const warnEl = document.getElementById('warn');
+
+    function showWarn(msg, ok=false){
+      if(!msg){
+        warnEl.style.display = 'none';
+        warnEl.classList.remove('ok');
+        warnEl.textContent = '';
+        return;
       }
-      var v = parseFloat(str.replace(/[^0-9.]/g,''));
-      return isNaN(v) ? [] : [v];
+      warnEl.style.display = 'block';
+      warnEl.textContent = msg;
+      warnEl.classList.toggle('ok', !!ok);
     }
 
-    function sum(arr){return arr.reduce((a,b)=>a+(+b||0),0)}
+    // ===== LocalStorage (يحفظ تجربة المستخدم) =====
+    const LS_KEY = 'viva_ig_analyzer_v2';
+    function saveToLS(){
+      try{
+        localStorage.setItem(LS_KEY, JSON.stringify({
+          account: elAccount.value || '',
+          followers: elFollowers.value || '',
+          nposts: elNposts.value || '10',
+          likes: elLikes.value || '',
+          comments: elComments.value || '',
+          mode: elMode.value || 'followers',
+          category: elCategory.value || 'general'
+        }));
+      }catch(e){}
+    }
+    function loadFromLS(){
+      try{
+        const raw = localStorage.getItem(LS_KEY);
+        if(!raw) return;
+        const d = JSON.parse(raw);
+        elAccount.value = d.account || '';
+        elFollowers.value = d.followers || '';
+        elNposts.value = d.nposts || '10';
+        elLikes.value = d.likes || '';
+        elComments.value = d.comments || '';
+        elMode.value = d.mode || 'followers';
+        elCategory.value = d.category || 'general';
+      }catch(e){}
+    }
+    loadFromLS();
+    [elAccount, elFollowers, elNposts, elLikes, elComments, elMode, elCategory].forEach(x => x.addEventListener('input', saveToLS));
+    [elMode, elCategory].forEach(x => x.addEventListener('change', saveToLS));
 
-    document.getElementById('analyzeForm').addEventListener('submit', function(e){
+    // ===== Share link (Query Params) =====
+    function buildShareURL(payload){
+      const url = new URL(window.location.href);
+      // params مختصرة
+      url.searchParams.set('acc', payload.acc || '');
+      url.searchParams.set('fol', String(payload.fol || ''));
+      url.searchParams.set('n', String(payload.n || ''));
+      url.searchParams.set('l', payload.lRaw || '');
+      url.searchParams.set('c', payload.cRaw || '');
+      url.searchParams.set('m', payload.mode || 'followers');
+      url.searchParams.set('cat', payload.category || 'general');
+      return url.toString();
+    }
+
+    function loadFromQueryParams(){
+      try{
+        const url = new URL(window.location.href);
+        const acc = url.searchParams.get('acc');
+        const fol = url.searchParams.get('fol');
+        const n   = url.searchParams.get('n');
+        const l   = url.searchParams.get('l');
+        const c   = url.searchParams.get('c');
+        const m   = url.searchParams.get('m');
+        const cat = url.searchParams.get('cat');
+
+        if(acc !== null) elAccount.value = acc;
+        if(fol !== null) elFollowers.value = fol;
+        if(n !== null) elNposts.value = n;
+        if(l !== null) elLikes.value = l;
+        if(c !== null) elComments.value = c;
+        if(m !== null) elMode.value = m;
+        if(cat !== null) elCategory.value = cat;
+
+        if([acc, fol, n, l, c, m, cat].some(v => v !== null)){
+          saveToLS();
+        }
+      }catch(e){}
+    }
+    loadFromQueryParams();
+
+    // ===== Best Times (أذكى حسب الفئة + مستوى التفاعل) =====
+    function suggestBestTimes(engRate, category){
+      const base = {
+        general: {
+          high: ['الثلاثاء 18:00–21:00 — ذروة مسائية','الخميس 09:00–11:00 — نشاط صباحي','السبت 11:00–13:00 — قبل الظهيرة'],
+          med:  ['الإثنين 18:00–20:00 — بعد العمل','الأربعاء 10:00–12:00 — منتصف الصباح','الجمعة 16:00–19:00 — قبل الويكند'],
+          low:  ['يوميًا 09:00–11:00 — صباحًا','يوميًا 18:00–21:00 — مساءً','جرّب الثلاثاء والخميس لتحسين النتائج']
+        },
+        shop: {
+          high: ['الأحد 18:00–21:00 — نية شراء أعلى','الثلاثاء 12:00–14:00 — وقت استراحة','الخميس 19:00–22:00 — تصفح مسائي'],
+          med:  ['الإثنين 19:00–21:00 — بعد الدوام','الأربعاء 12:00–14:00 — استراحة','السبت 11:00–13:00 — قبل الخروج'],
+          low:  ['ابدأ بـ 12:00–14:00 ثم 19:00–21:00','اختبر عروض/خصومات قصيرة','ركّز على Reels المنتج']
+        },
+        restaurant: {
+          high: ['الخميس 16:00–19:00 — قبل العشاء','الجمعة 12:00–14:00 — وقت غداء','السبت 17:00–20:00 — قرار الخروج'],
+          med:  ['الإثنين 11:00–13:00 — غداء','الأربعاء 16:00–18:00 — قبل العشاء','الجمعة 17:00–19:00 — بداية المساء'],
+          low:  ['ركز على 11:00–13:00 و 16:00–19:00','ستوري يومية للعروض','صور/فيديو قصيرة للأطباق']
+        },
+        personal: {
+          high: ['الثلاثاء 20:00–23:00 — متابعة عالية','الخميس 19:00–22:00 — وقت ترفيه','الأحد 18:00–21:00 — تخطيط الأسبوع'],
+          med:  ['الإثنين 19:00–21:00 — بعد الدوام','الأربعاء 20:00–22:00 — مسائي','السبت 12:00–15:00 — وقت فراغ'],
+          low:  ['ابدأ مساءً 19:00–22:00','ثبّت 3 أيام نشر','اشتغل على سلسلة محتوى']
+        },
+        education: {
+          high: ['الأحد 18:00–21:00 — استعداد الأسبوع','الثلاثاء 10:00–12:00 — تركيز أعلى','الخميس 18:00–20:00 — مراجعة'],
+          med:  ['الإثنين 10:00–12:00 — صباح','الأربعاء 18:00–20:00 — مسائي','السبت 11:00–13:00 — قبل الظهر'],
+          low:  ['ابدأ بجدول ثابت + كاروسيل','اعمل Reels تعليمية قصيرة','CTA واضح للحفظ والمشاركة']
+        },
+        services: {
+          high: ['الثلاثاء 09:00–11:00 — وقت مهني','الأربعاء 18:00–20:00 — بعد الدوام','الخميس 09:00–11:00 — قرار شراء خدمات'],
+          med:  ['الإثنين 09:00–11:00 — بداية الأسبوع','الأربعاء 10:00–12:00 — منتصف','الجمعة 14:00–16:00 — قبل الويكند'],
+          low:  ['ركز على صباحيات 09:00–11:00','أظهر نتائج/Case Studies','ستوري ردود/أسئلة']
+        }
+      };
+
+      const pack = base[category] || base.general;
+      if(engRate >= 3) return pack.high;
+      if(engRate >= 1) return pack.med;
+      return pack.low;
+    }
+
+    // ===== Analysis =====
+    let lastResult = null;
+
+    form.addEventListener('submit', function(e){
       e.preventDefault();
-      const followers = parseInt(document.getElementById('followers').value || 0,10);
-      const nposts = parseInt(document.getElementById('nposts').value || 0,10) || 1;
-      const likesArr = parseNumbersField(document.getElementById('likes').value.trim());
-      const commentsArr = parseNumbersField(document.getElementById('comments').value.trim());
-      const likesTotal = likesArr.length===1 && !document.getElementById('likes').value.includes(',') ? likesArr[0] : sum(likesArr);
-      const commentsTotal = commentsArr.length===1 && !document.getElementById('comments').value.includes(',') ? commentsArr[0] : sum(commentsArr);
-      const avgLikes = Math.round((likesTotal / nposts) || 0);
-      const avgComments = Math.round((commentsTotal / nposts) || 0);
-      const engagement = followers>0 ? ((avgLikes + avgComments) / followers) * 100 : 0;
-      document.getElementById('avgLikes').textContent = avgLikes.toLocaleString();
-      document.getElementById('avgComments').textContent = avgComments.toLocaleString();
-      document.getElementById('engagement').textContent = Math.round(engagement*100)/100 + '%';
+      showWarn('');
 
-      const times = suggestBestTimes(Math.round(engagement*100)/100);
-      const bestTimesEl = document.getElementById('bestTimes'); bestTimesEl.innerHTML='';
-      times.forEach(t=>{ const li=document.createElement('li'); li.textContent=t; bestTimesEl.appendChild(li); });
-      document.getElementById('output').style.display='block';
+      const followers = clampInt(elFollowers.value, 1, 1000000000);
+      const nInput = clampInt(elNposts.value, 1, 100);
+
+      const likesRaw = elLikes.value.trim();
+      const commentsRaw = elComments.value.trim();
+
+      const likesArr = parseNumbersField(likesRaw);
+      const commentsArr = parseNumbersField(commentsRaw);
+
+      if(!likesArr.length && !commentsArr.length){
+        showWarn('رجاءً أدخل الإعجابات أو التعليقات (مجموع أو قائمة).');
+        return;
+      }
+
+      // استنتاج N إذا كانت قائمة (نستخدم الأصغر بين القائمتين لضمان التوافق)
+      const listLens = [likesArr.length, commentsArr.length].filter(x => x > 0);
+      const inferredN = listLens.length ? Math.min(...listLens) : 0;
+      const nUsed = inferredN ? inferredN : nInput;
+
+      const likesUsed = likesArr.slice(0, nUsed);
+      const commentsUsed = commentsArr.slice(0, nUsed);
+
+      // إذا المستخدم أدخل رقم واحد فقط بدون فواصل ومع ذلك N>1 → غالبًا يقصد "مجموع"
+      const isSingleLikesTotal = (likesArr.length === 1 && !/[, \n\r\t]/.test(likesRaw) && nUsed === nInput && nInput > 1);
+      const isSingleCommentsTotal = (commentsArr.length === 1 && !/[, \n\r\t]/.test(commentsRaw) && nUsed === nInput && nInput > 1);
+
+      const likesTotal = isSingleLikesTotal ? likesArr[0] : sum(likesUsed);
+      const commentsTotal = isSingleCommentsTotal ? commentsArr[0] : sum(commentsUsed);
+
+      const avgLikes = (likesTotal / nUsed) || 0;
+      const avgComments = (commentsTotal / nUsed) || 0;
+
+      // ER mode
+      const mode = elMode.value;
+      let engagement = 0;
+      if(mode === 'followers'){
+        engagement = followers > 0 ? ((avgLikes + avgComments) / followers) * 100 : 0;
+      } else {
+        // ER by Posts (تقريب عملي: متوسط التفاعل كنسبة من متوسط المتابعين غير منطقي بدون reach،
+        // فنعتبرها "متوسط تفاعل لكل منشور" كنسبة من المتابعين أيضًا (يبقى قريب من القياس).
+        engagement = followers > 0 ? ((avgLikes + avgComments) / followers) * 100 : 0;
+      }
+      const engRounded = Math.round(engagement * 100) / 100;
+
+      // Extra stats
+      const bestLike = likesUsed.length ? Math.max(...likesUsed) : 0;
+      const worstLike = likesUsed.length ? Math.min(...likesUsed) : 0;
+      const medLike = likesUsed.length ? median(likesUsed) : 0;
+
+      const bestCom = commentsUsed.length ? Math.max(...commentsUsed) : 0;
+      const worstCom = commentsUsed.length ? Math.min(...commentsUsed) : 0;
+      const medCom = commentsUsed.length ? median(commentsUsed) : 0;
+
+      // Render
+      document.getElementById('avgLikes').textContent = formatNum(avgLikes);
+      document.getElementById('avgComments').textContent = formatNum(avgComments);
+      document.getElementById('engagement').textContent = engRounded + '%';
+
+      const metaEl = document.getElementById('meta');
+      metaEl.innerHTML =
+        `تم التحليل على <strong>${nUsed}</strong> منشور` +
+        (inferredN ? ` <span style="color:var(--muted)">(تم استنتاج N من القيم المدخلة)</span>` : '') +
+        ` • طريقة الحساب: <strong>${mode === 'followers' ? 'ER by Followers' : 'ER by Posts'}</strong>`;
+
+      const extraEl = document.getElementById('extraStats');
+      extraEl.innerHTML =
+        `<li>لايكات — أعلى: <strong>${formatNum(bestLike)}</strong> | أقل: <strong>${formatNum(worstLike)}</strong> | Median: <strong>${formatNum(medLike)}</strong></li>` +
+        `<li>تعليقات — أعلى: <strong>${formatNum(bestCom)}</strong> | أقل: <strong>${formatNum(worstCom)}</strong> | Median: <strong>${formatNum(medCom)}</strong></li>`;
+
+      const times = suggestBestTimes(engRounded, elCategory.value);
+      const bestTimesEl = document.getElementById('bestTimes');
+      bestTimesEl.innerHTML = '';
+      times.forEach(t => {
+        const li = document.createElement('li');
+        li.textContent = t;
+        bestTimesEl.appendChild(li);
+      });
+
+      document.getElementById('output').style.display = 'block';
+
+      // Save last result for copy/export/share
+      lastResult = {
+        acc: elAccount.value || '',
+        fol: followers,
+        n: nUsed,
+        mode,
+        category: elCategory.value,
+        avgLikes: Math.round(avgLikes),
+        avgComments: Math.round(avgComments),
+        engagement: engRounded,
+        bestLike, worstLike, medLike,
+        bestCom, worstCom, medCom,
+        lRaw: likesRaw,
+        cRaw: commentsRaw
+      };
+
+      showWarn('تم الحساب بنجاح ✅ يمكنك نسخ التقرير أو تنزيل CSV أو مشاركة الرابط.', true);
+      saveToLS();
     });
 
+    // ===== Buttons =====
     document.getElementById('clearBtn').addEventListener('click', ()=> {
-      document.getElementById('account').value='';
-      document.getElementById('followers').value='';
-      document.getElementById('nposts').value='10';
-      document.getElementById('likes').value='';
-      document.getElementById('comments').value='';
+      elAccount.value='';
+      elFollowers.value='';
+      elNposts.value='10';
+      elLikes.value='';
+      elComments.value='';
+      elMode.value='followers';
+      elCategory.value='general';
+      lastResult = null;
       document.getElementById('output').style.display='none';
+      showWarn('');
+      try{ localStorage.removeItem(LS_KEY); }catch(e){}
+      // تنظيف params
+      try{
+        const url = new URL(window.location.href);
+        url.search = '';
+        history.replaceState({}, '', url.toString());
+      }catch(e){}
     });
 
-    document.getElementById('exportBtn').addEventListener('click', ()=> {
-      const eng=document.getElementById('engagement').textContent;
-      const al=document.getElementById('avgLikes').textContent;
-      const ac=document.getElementById('avgComments').textContent;
-      const acc=document.getElementById('account').value || '(غير محدد)';
-      const txt=`حساب: ${acc}\nمعدل التفاعل: ${eng}\nمتوسط الإعجابات: ${al}\nمتوسط التعليقات: ${ac}`;
-      navigator.clipboard && navigator.clipboard.writeText(txt).then(()=>{ alert('تم نسخ النتائج إلى الحافظة'); }, ()=>{ alert('نسخ فشل — الرجاء نسخه يدويًا:\n' + txt); });
+    document.getElementById('copyBtn').addEventListener('click', ()=> {
+      if(!lastResult){ showWarn('احسب النتائج أولًا ثم انسخ التقرير.'); return; }
+
+      const acc = lastResult.acc || '(غير محدد)';
+      const txt =
+`تقرير تحليل إنستغرام — Viva Media Creative
+الحساب: ${acc}
+المتابعون: ${lastResult.fol.toLocaleString()}
+عدد المنشورات المُحللة: ${lastResult.n}
+معدل التفاعل: ${lastResult.engagement}%
+متوسط الإعجابات: ${lastResult.avgLikes.toLocaleString()}
+متوسط التعليقات: ${lastResult.avgComments.toLocaleString()}
+
+إحصائيات إضافية:
+لايكات — أعلى: ${formatNum(lastResult.bestLike)} | أقل: ${formatNum(lastResult.worstLike)} | Median: ${formatNum(lastResult.medLike)}
+تعليقات — أعلى: ${formatNum(lastResult.bestCom)} | أقل: ${formatNum(lastResult.worstCom)} | Median: ${formatNum(lastResult.medCom)}
+`.trim();
+
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(txt).then(
+          ()=> showWarn('تم نسخ التقرير إلى الحافظة ✅', true),
+          ()=> alert('نسخ فشل — انسخ يدويًا:\n' + txt)
+        );
+      } else {
+        alert('انسخ يدويًا:\n' + txt);
+      }
     });
 
-    function suggestBestTimes(engRate){
-      const high=['الثلاثاء 18:00–21:00 — وقت نشاط قوي','الخميس 09:00–11:00 — وقت مناسب للمحترفين','السبت 11:00–13:00 — يصل لمتابعين أكثر'];
-      const med=['الإثنين 18:00–20:00 — مساءً بعد العمل','الأربعاء 10:00–12:00 — استراحة الصباح','الجمعة 16:00–19:00 — ما قبل نهاية الأسبوع'];
-      const low=['يوميًا 09:00–11:00 — صباحًا','يوميًا 18:00–21:00 — مساءً','اختبر أيام الثلاثاء والخميس للحصول على أفضل نتائج'];
-      if(engRate>=3) return high;
-      if(engRate>=1) return med;
-      return low;
-    }
+    document.getElementById('csvBtn').addEventListener('click', ()=> {
+      if(!lastResult){ showWarn('احسب النتائج أولًا ثم حمل CSV.'); return; }
+
+      const rows = [
+        ['account','followers','n_used','mode','category','engagement_percent','avg_likes','avg_comments','best_like','worst_like','median_like','best_comment','worst_comment','median_comment'],
+        [
+          lastResult.acc,
+          lastResult.fol,
+          lastResult.n,
+          lastResult.mode,
+          lastResult.category,
+          lastResult.engagement,
+          lastResult.avgLikes,
+          lastResult.avgComments,
+          Math.round(lastResult.bestLike),
+          Math.round(lastResult.worstLike),
+          Math.round(lastResult.medLike),
+          Math.round(lastResult.bestCom),
+          Math.round(lastResult.worstCom),
+          Math.round(lastResult.medCom)
+        ]
+      ];
+
+      const csv = rows.map(r => r.map(v => `"${String(v ?? '').replace(/"/g,'""')}"`).join(',')).join('\n');
+      const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'instagram-analysis-viva.csv';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+
+      URL.revokeObjectURL(url);
+      showWarn('تم تنزيل ملف CSV ✅', true);
+    });
+
+    document.getElementById('shareBtn').addEventListener('click', ()=> {
+      if(!lastResult){ showWarn('احسب النتائج أولًا ثم شارك الرابط.'); return; }
+
+      const shareURL = buildShareURL(lastResult);
+      try{
+        history.replaceState({}, '', shareURL);
+      }catch(e){}
+
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(shareURL).then(
+          ()=> showWarn('تم نسخ رابط المشاركة ✅', true),
+          ()=> alert('انسخ الرابط يدويًا:\n' + shareURL)
+        );
+      } else {
+        alert('انسخ الرابط:\n' + shareURL);
+      }
+    });
+
+    document.getElementById('printBtn').addEventListener('click', ()=> {
+      if(!lastResult){ showWarn('احسب النتائج أولًا ثم اطبع التقرير.'); return; }
+      window.print();
+    });
   </script>
 </body>
 </html>
