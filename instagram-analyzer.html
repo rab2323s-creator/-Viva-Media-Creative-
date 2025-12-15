@@ -1,0 +1,219 @@
+ <!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>أداة تحليل حساب إنستغرام — Instagram Analyzer</title>
+  <meta name="description" content="أداة بسيطة لحساب معدل التفاعل، متوسط الإعجابات، التعليقات، واقتراح أفضل أوقات النشر — تعمل كصفحة ثابتة جاهزة للنشر على GitHub Pages.">
+  <meta name="keywords" content="تحليل إنستغرام, معدل التفاعل, Instagram analyzer, Engagement calculator, أداة سيو">
+  <style>
+    :root{ --bg:#0f172a; --card:#0b1220; --accent:#06b6d4; --muted:#94a3b8; --glass: rgba(255,255,255,0.04); }
+    *{box-sizing:border-box;font-family: "Segoe UI", Tahoma, Arial, "Noto Kufi Arabic", sans-serif}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071233 0%, #071a2b 100%);color:#e6eef8}
+    .container{max-width:980px;margin:28px auto;padding:22px}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:6px 0 18px;color:var(--muted)}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);}
+    form{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    label{display:block;font-size:13px;margin-bottom:6px;color:var(--muted)}
+    input[type="text"], input[type="number"], textarea, select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:var(--glass);color:inherit}
+    textarea{min-height:84px}
+    .full{grid-column:1/-1}
+    .actions{display:flex;gap:10px;justify-content:flex-start;margin-top:8px}
+    button{background:var(--accent);border:none;padding:10px 14px;border-radius:10px;color:#012;cursor:pointer;font-weight:700}
+    .secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .results{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+    .stat{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:10px;text-align:center}
+    .stat h3{margin:0;font-size:18px}
+    .stat p{margin:6px 0 0;color:var(--muted);font-size:13px}
+    .note{font-size:13px;color:var(--muted);margin-top:12px}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    @media(max-width:800px){form{grid-template-columns:1fr}.results{grid-template-columns:repeat(2,1fr)}.stat{padding:10px}}
+    @media(max-width:420px){.results{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">IG</div>
+      <div>
+        <h1>أداة تحليل حساب إنستغرام</h1>
+        <p class="lead">أدخل بيانات المنشورات الأخيرة أو الصق الأرقام — الأداة تحسب معدل التفاعل، متوسط الإعجابات، التعليقات، وتقترح أوقات نشر.</p>
+      </div>
+    </header>
+
+    <main class="card" role="main">
+      <form id="analyzeForm">
+        <div>
+          <label for="account">اسم الحساب (اختياري)</label>
+          <input id="account" type="text" placeholder="مثال: mybrand_official">
+        </div>
+
+        <div>
+          <label for="followers">عدد المتابعين</label>
+          <input id="followers" type="number" placeholder="مثال: 12500" min="1" required>
+        </div>
+
+        <div class="full">
+          <label for="nposts">عدد المنشورات التي تريد تحليلها (N)</label>
+          <input id="nposts" type="number" placeholder="مثال: 10" min="1" max="100" value="10">
+        </div>
+
+        <div class="full">
+          <label for="likes">مجموع الإعجابات على آخر N منشور (أدخل أرقامًا مفصولة بفواصل أو مجموعًا واحدًا)</label>
+          <textarea id="likes" placeholder="مثال: 120,98,150,200,85  أو  653"></textarea>
+        </div>
+
+        <div class="full">
+          <label for="comments">مجموع التعليقات على آخر N منشور (أدخل أرقامًا مفصولة بفواصل أو مجموعًا واحدًا)</label>
+          <textarea id="comments" placeholder="مثال: 10,8,15,20,9  أو  62"></textarea>
+        </div>
+
+        <div class="full actions">
+          <button type="submit">حساب التحليل</button>
+          <button id="clearBtn" type="button" class="secondary">مسح الحقول</button>
+          <button id="exportBtn" type="button" class="secondary">نسخ النتائج</button>
+        </div>
+      </form>
+
+      <div id="output" style="margin-top:14px;display:none">
+        <div class="results">
+          <div class="stat">
+            <h3 id="engagement">0%</h3>
+            <p>معدل التفاعل</p>
+          </div>
+          <div class="stat">
+            <h3 id="avgLikes">0</h3>
+            <p>متوسط الإعجابات لكل منشور</p>
+          </div>
+          <div class="stat">
+            <h3 id="avgComments">0</h3>
+            <p>متوسط التعليقات لكل منشور</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3 style="margin-top:0">أفضل أوقات النشر — اقتراح سريع</h3>
+          <p class="note">هذه اقتراحات عامة مبنية على بيانات سلوك المستخدم العالمية. للاقتراحات المخصصة، نحتاج إلى بيانات نشاط المتابعين أو الوصول عبر API.</p>
+          <ul id="bestTimes" style="margin:8px 0 0 0;padding-left:18px;color:var(--muted)"></ul>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3 style="margin-top:0">توصيات لتحسين التفاعل</h3>
+          <ol style="color:var(--muted)">
+            <li>نشر محتوى جذاب بجودة عالية وبشكل منتظم (3–5 منشورات/أسبوع للحسابات الصغيرة).</li>
+            <li>استخدام قصص (Stories) للاتصال اليومي مع الجمهور.</li>
+            <li>اختبار أوقات مختلفة للنشر ومتابعة الأداء.</li>
+            <li>التفاعل مع التعليقات خلال الساعة الأولى بعد النشر.</li>
+          </ol>
+        </div>
+
+      </div>
+
+      <p class="note">ملاحظة: للحصول على تحليلات دقيقة لحسابات الطرف الثالث عبر API ستحتاج لحساب تجاري إلى استخدام Instagram Graph API أو أدوات تحليل مسموح بها.</p>
+    </main>
+
+    <footer>
+      مصممة للنشر على GitHub Pages — صفحة ثابتة (Static) — جاهزة للنسخ واللصق في ملف <code>index.html</code>.
+    </footer>
+  </div>
+
+  <script>
+    // مساعدة في تفسير الحقول: إما أرقام مفصولة بفواصل أو مجموع واحد
+   function parseNumbersField(str){
+  if(!str) return [];
+
+  if(str.indexOf(',') !== -1 || /\s/.test(str)){
+    return str
+      .split(/[, \n\r\t]+/)
+      .map(function(s){ return parseFloat(s); })
+      .filter(function(n){ return !isNaN(n); });
+  }
+
+  var v = parseFloat(str.replace(/[^0-9.]/g,''));
+  return isNaN(v) ? [] : [v];
+}
+
+
+    function sum(arr){return arr.reduce((a,b)=>a+(+b||0),0)}
+
+    document.getElementById('analyzeForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const followers = parseInt(document.getElementById('followers').value || 0,10);
+      const nposts = parseInt(document.getElementById('nposts').value || 0,10) || 1;
+      const likesRaw = document.getElementById('likes').value.trim();
+      const commentsRaw = document.getElementById('comments').value.trim();
+
+      const likesArr = parseNumbersField(likesRaw);
+      const commentsArr = parseNumbersField(commentsRaw);
+
+      // If user inserted lists, compute totals; else take single numbers as totals
+      const likesTotal = likesArr.length===1 && likesRaw.indexOf(',')===-1 && likesRaw.indexOf(' ')===-1 ? likesArr[0] : sum(likesArr);
+      const commentsTotal = commentsArr.length===1 && commentsRaw.indexOf(',')===-1 && commentsRaw.indexOf(' ')===-1 ? commentsArr[0] : sum(commentsArr);
+
+      const avgLikes = Math.round((likesTotal / nposts) || 0);
+      const avgComments = Math.round((commentsTotal / nposts) || 0);
+
+      // engagement rate = (avgLikes + avgComments) / followers * 100
+      const engagement = followers>0 ? ((avgLikes + avgComments) / followers) * 100 : 0;
+      const engagementRounded = (Math.round(engagement * 100) / 100);
+
+      document.getElementById('avgLikes').textContent = avgLikes.toLocaleString();
+      document.getElementById('avgComments').textContent = avgComments.toLocaleString();
+      document.getElementById('engagement').textContent = engagementRounded + '%';
+
+      // Suggest best times (heuristic)
+      const times = suggestBestTimes(engagementRounded);
+      const bestTimesEl = document.getElementById('bestTimes');
+      bestTimesEl.innerHTML = '';
+      times.forEach(t=>{
+        const li = document.createElement('li'); li.textContent = t; bestTimesEl.appendChild(li);
+      });
+
+      document.getElementById('output').style.display = 'block';
+    });
+
+    document.getElementById('clearBtn').addEventListener('click', function(){
+      document.getElementById('account').value='';
+      document.getElementById('followers').value='';
+      document.getElementById('nposts').value='10';
+      document.getElementById('likes').value='';
+      document.getElementById('comments').value='';
+      document.getElementById('output').style.display='none';
+    });
+
+    document.getElementById('exportBtn').addEventListener('click', function(){
+      const eng = document.getElementById('engagement').textContent;
+      const al = document.getElementById('avgLikes').textContent;
+      const ac = document.getElementById('avgComments').textContent;
+      const acc = document.getElementById('account').value || '(غير محدد)';
+      const txt = `حساب: ${acc}\nمعدل التفاعل: ${eng}\nمتوسط الإعجابات: ${al}\nمتوسط التعليقات: ${ac}`;
+      navigator.clipboard && navigator.clipboard.writeText(txt).then(()=>{
+        alert('تم نسخ النتائج إلى الحافظة');
+      }, ()=>{ alert('نسخ فشل — الرجاء نسخه يدويًا:\n' + txt); });
+    });
+
+    function suggestBestTimes(engRate){
+      // بسيط: إذا التفاعل أعلى من 3% → جمهور متفاعل → جرب أوقات الذروة
+      // إذا أقل → انصح بالتجربة والنشر في الصباح والمساء
+      const high = ['الثلاثاء 18:00–21:00 (مساءً) — وقت نشاط قوي', 'الخميس 09:00–11:00 (صباحًا) — وقت مناسب للمحترفين', 'السبت 11:00–13:00 (نهاية الأسبوع) — يصل لمتابعين أكثر'];
+      const med = ['الإثنين 18:00–20:00 — مساءً بعد العمل', 'الأربعاء 10:00–12:00 — استراحة الصباح', 'الجمعة 16:00–19:00 — ما قبل نهاية الأسبوع'];
+      const low = ['يوميًا 09:00–11:00 — صباحًا', 'يوميًا 18:00–21:00 — مساءً', 'اختبر أيام الثلاثاء والخميس للحصول على أفضل نتائج'];
+      if(engRate>=3) return high;
+      if(engRate>=1) return med;
+      return low;
+    }
+
+    // Small helper to prefill example (optional)
+    (function prefillExample(){
+      // empty by default - uncomment to provide demo values
+      //document.getElementById('followers').value = 12500;
+      //document.getElementById('nposts').value = 10;
+      //document.getElementById('likes').value = '120,98,150,200,85,95,110,130,180,75';
+      //document.getElementById('comments').value = '12,8,15,20,9,7,11,10,18,5';
+    })();
+  </script>
+</body>
+</html>
