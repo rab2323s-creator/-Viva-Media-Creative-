@@ -165,6 +165,16 @@
       <noscript>
         <div class="warn" style="display:block">هذه الأداة تحتاج تفعيل JavaScript لتعمل بشكل صحيح.</div>
       </noscript>
+       <section class="note" style="margin-bottom:14px;line-height:1.9">
+  <p style="margin:0 0 8px">
+    <strong>حاسبة معدل التفاعل على إنستغرام</strong> تساعدك على حساب
+    <em>Engagement Rate</em> بدقة اعتمادًا على آخر منشوراتك، ومعرفة متوسط الإعجابات والتعليقات لاتخاذ قرارات أفضل للمحتوى.
+  </p>
+  <p style="margin:0">
+    جرّب أيضًا: <a href="/ar/tools/">صفحة الأدوات المجانية</a>
+    للحصول على أدوات إضافية مثل أفضل وقت للنشر وتحسين الأداء.
+  </p>
+</section>
 
       <form id="analyzeForm" autocomplete="on">
         <div>
@@ -226,67 +236,84 @@
       </form>
 
       <div id="output" style="margin-top:14px;display:none">
-        <div class="results" aria-label="نتائج التحليل">
-          <div class="stat">
-            <h3 id="engagement">0%</h3>
-            <p>معدل التفاعل</p>
-          </div>
-          <div class="stat">
-            <h3 id="avgLikes">0</h3>
-            <p>متوسط الإعجابات لكل منشور</p>
-          </div>
-          <div class="stat">
-            <h3 id="avgComments">0</h3>
-            <p>متوسط التعليقات لكل منشور</p>
-          </div>
-        </div>
 
-        <p id="meta" class="note"></p>
-        <ul id="extraStats" style="margin:8px 0 0 0;padding-left:18px;color:var(--muted)"></ul>
+  <div class="results" aria-label="نتائج التحليل">
+    <div class="stat">
+      <h3 id="engagement">0%</h3>
+      <p>معدل التفاعل</p>
+    </div>
+    <div class="stat">
+      <h3 id="avgLikes">0</h3>
+      <p>متوسط الإعجابات لكل منشور</p>
+    </div>
+    <div class="stat">
+      <h3 id="avgComments">0</h3>
+      <p>متوسط التعليقات لكل منشور</p>
+    </div>
+  </div>
 
-        <div class="card" style="margin-top:12px">
-          <h2 style="margin-top:0;font-size:18px">أفضل أوقات النشر — اقتراح سريع</h2>
-          <p class="note">هذه اقتراحات عامة. للحصول على اقتراح مخصص بدقة، نحتاج بيانات نشاط المتابعين (Insights) أو وصول API.</p>
-          <ul id="bestTimes" style="margin:8px 0 0 0;padding-left:18px;color:var(--muted)"></ul>
-        </div>
+  <p id="meta" class="note"></p>
+  <ul id="extraStats" style="margin:8px 0 0 0;padding-left:18px;color:var(--muted)"></ul>
 
-        <div class="card" style="margin-top:12px">
-          <h2 style="margin-top:0;font-size:18px">توصيات لتحسين التفاعل</h2>
-          <ol style="color:var(--muted);line-height:1.8">
-            <li>ركز على Hook قوي في أول 2 ثانية (خصوصًا Reels) مع قيمة واضحة.</li>
-            <li>انشر بانتظام: 3–5 منشورات/أسبوع للحسابات الصغيرة + قصص يوميًا.</li>
-            <li>راقب الأداء حسب نوع المحتوى (Reels/Carousel/Stories) واختبر شهرًا كاملًا.</li>
-            <li>تفاعل مع التعليقات خلال الساعة الأولى بعد النشر لرفع الانتشار.</li>
-          </ol>
+  <div class="card" style="margin-top:12px">
+    <h2 style="margin-top:0;font-size:18px">أفضل أوقات النشر — اقتراح سريع</h2>
+    <p class="note">
+      هذه اقتراحات عامة. للحصول على اقتراح مخصص بدقة، نحتاج بيانات نشاط المتابعين (Insights) أو وصول API.
+    </p>
+    <ul id="bestTimes" style="margin:8px 0 0 0;padding-left:18px;color:var(--muted)"></ul>
+  </div>
 
-          <div class="divider"></div>
+  <div class="card" style="margin-top:12px">
+    <h2 style="margin-top:0;font-size:18px">توصيات لتحسين التفاعل</h2>
+    <ol style="color:var(--muted);line-height:1.8">
+      <li>ركز على Hook قوي في أول ثانيتين خصوصًا في Reels.</li>
+      <li>انشر بانتظام: 3–5 منشورات أسبوعيًا + قصص يومية.</li>
+      <li>اختبر أنواع المحتوى المختلفة لمدة شهر كامل.</li>
+      <li>تفاعل مع التعليقات خلال الساعة الأولى بعد النشر.</li>
+    </ol>
 
-          <div class="cta" aria-label="Call to action">
-            <div>
-              <strong style="display:block;margin-bottom:4px">هل تريد تحليل احترافي وخطة محتوى لحسابك؟</strong>
-              <span style="color:var(--muted);font-size:13px">نرسل لك تقريرًا مخصصًا + توصيات عملية لرفع النتائج.</span>
-            </div>
-            <!-- ✅ ضع رابط التواصل المناسب -->
-            <a href="https://vivamediacreative.com/ar/" rel="noopener">تواصل معنا</a>
-          </div>
-        </div>
+    <div class="divider"></div>
 
-        <div class="card" style="margin-top:12px">
-          <h2 style="margin-top:0;font-size:18px">شرح سريع لمعدل التفاعل (Engagement Rate)</h2>
-          <p class="note">
-            معدل التفاعل يقيس نسبة تفاعل الجمهور مقارنة بعدد المتابعين أو وفق المنشورات التي تم تحليلها.
-            هذه الأداة مناسبة لتقييم الأداء بسرعة، ثم تحسين المحتوى (الصياغة/الصور/الرييلز/الوقت).
-          </p>
-
-          <details>
-            <summary>أسئلة شائعة</summary>
-            <div style="margin-top:10px;color:var(--muted);line-height:1.8">
-              <p><strong>هل الوسيط (Median) مهم؟</strong> نعم، لأنه يقلل تأثير منشور واحد “انفجر” ورفع المتوسط.</p>
-              <p><strong>لماذا تختلف النتائج عن أدوات أخرى؟</strong> بعض الأدوات تحسب Reach أو Saves أو Shares (غير متاح هنا بدون Insights).</p>
-            </div>
-          </details>
-        </div>
+    <div class="cta" aria-label="Call to action">
+      <div>
+        <strong style="display:block;margin-bottom:4px">
+          هل تريد تحليل احترافي وخطة محتوى لحسابك؟
+        </strong>
+        <span style="color:var(--muted);font-size:13px">
+          تقرير مخصص + توصيات عملية لرفع التفاعل.
+        </span>
       </div>
+      <a href="https://vivamediacreative.com/ar/" rel="noopener">تواصل معنا</a>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:12px">
+    <h2 style="margin-top:0;font-size:18px">شرح سريع لمعدل التفاعل (Engagement Rate)</h2>
+    <p class="note">
+      معدل التفاعل يقيس نسبة تفاعل الجمهور مقارنة بعدد المتابعين.
+      هذه الأداة مناسبة لتقييم الأداء بسرعة ثم تحسين المحتوى والتوقيت.
+    </p>
+
+    <details>
+      <summary>أسئلة شائعة</summary>
+      <div style="margin-top:10px;color:var(--muted);line-height:1.8">
+        <p><strong>هل الوسيط (Median) مهم؟</strong> نعم، لأنه يقلل تأثير منشور واحد مرتفع جدًا.</p>
+        <p><strong>لماذا تختلف النتائج عن أدوات أخرى؟</strong> بعض الأدوات تحسب Reach أو Saves.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- 🔗 أدوات أخرى -->
+  <div class="card" style="margin-top:12px">
+    <h3 style="margin-top:0">أدوات أخرى قد تهمك</h3>
+    <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted);line-height:1.9">
+      <li><a href="/ar/tools/">كل الأدوات المجانية من Viva Media Creative</a></li>
+      <li><a href="/ar/best-time-to-post-instagram/">أفضل وقت للنشر على إنستغرام</a></li>
+      <li><a href="/news/instagram-engagement-rate-calculator/">دليل: كيف تحسب معدل التفاعل على إنستغرام؟</a></li>
+    </ul>
+  </div>
+
+</div>
 
       <p class="note">تم تطوير هذه الأداة بواسطة <strong>Viva Media Creative</strong> — نسخة محسّنة (SEO + UX + Analytics).</p>
     </main>
