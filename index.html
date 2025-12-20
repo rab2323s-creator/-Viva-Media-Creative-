@@ -29,53 +29,55 @@
 
   <main>
     <!-- HERO -->
-    <section class="hero">
-      <div class="hero-bg" aria-hidden="true">
-        <div class="aurora a1"></div>
-        <div class="aurora a2"></div>
-        <div class="aurora a3"></div>
+   <link rel="stylesheet" href="/assets/globe-hero.css" />
+
+<section class="hero-globe" dir="rtl">
+  <div class="hero-globe__bg" aria-hidden="true"></div>
+
+  <div class="hero-globe__inner">
+    <div class="hero-globe__copy">
+      <p class="hero-kicker">وكالة تسويق عالمية • تصميم • إنتاج • أداء</p>
+
+      <h1 class="hero-title">
+        نصنع محتوى<br />
+        <span class="hero-title__accent">يدور حول العالم</span>
+      </h1>
+
+      <p class="hero-sub">
+        من الفكرة إلى الانتشار—نمزج الإبداع السينمائي مع الاستراتيجية لنصنع حضورًا يبدو “فاخرًا” ويحقق نتائج.
+      </p>
+
+      <div class="hero-actions">
+        <a class="hero-btn hero-btn--primary" href="/contact.html">ابدأ مشروعك</a>
+        <a class="hero-btn hero-btn--ghost" href="#work">شاهد أعمالنا</a>
       </div>
 
-      <div class="hero-inner">
-        <p class="kicker reveal">Luxury Creative Agency • Design • Film • Performance</p>
-
-        <h1 class="headline reveal">
-          Crafting <span class="shine">high-end</span> brand experiences
-          that feel <span class="stroke">expensive</span> and convert.
-        </h1>
-
-        <p class="subhead reveal">
-          We blend cinematic storytelling, premium design systems, and performance strategy—built for brands that refuse “average”.
-        </p>
-
-        <div class="cta-row reveal">
-          <a class="btn primary magnetic" href="/contact.html">
-            Book a Call
-            <span class="btn-glow" aria-hidden="true"></span>
-          </a>
-          <a class="btn ghost magnetic" href="#work">View Featured Work</a>
+      <div class="hero-proof">
+        <div class="proof">
+          <span class="proof-num">4M+</span>
+          <span class="proof-label">وصول جماهيري</span>
         </div>
-
-        <div class="hero-metrics reveal">
-          <div class="metric">
-            <span class="metric-num">4M+</span>
-            <span class="metric-label">Audience Reach</span>
-          </div>
-          <div class="metric">
-            <span class="metric-num">10+ yrs</span>
-            <span class="metric-label">Marketing Expertise</span>
-          </div>
-          <div class="metric">
-            <span class="metric-num">Global</span>
-            <span class="metric-label">Germany • MENA</span>
-          </div>
+        <div class="proof">
+          <span class="proof-num">10+ سنوات</span>
+          <span class="proof-label">خبرة تسويق</span>
+        </div>
+        <div class="proof">
+          <span class="proof-num">Global</span>
+          <span class="proof-label">Germany • MENA</span>
         </div>
       </div>
+    </div>
 
-      <div class="scroll-indicator" aria-hidden="true">
-        <span></span>
+    <div class="hero-globe__scene">
+      <canvas id="globeCanvas" aria-label="3D rotating globe"></canvas>
+      <div class="hero-globe__hint" aria-hidden="true">
+        <span></span> يتحرّك مع المؤشر
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+<script type="module" src="/assets/globe-hero.js"></script>
 
     <!-- FEATURED WORK -->
     <section id="work" class="section">
