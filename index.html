@@ -1,85 +1,190 @@
- <!DOCTYPE html>
-<html lang="x-default">
+ <!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viva Media Creative — International Marketing Agency</title>
-  <meta name="description" content="Viva Media Creative is a global marketing and content production agency offering creative solutions in English and Arabic.">
-
-  <!-- hreflang tags -->
-  <link rel="alternate" hreflang="ar" href="https://vivamediacreative.com/ar/">
-  <link rel="alternate" hreflang="en" href="https://vivamediacreative.com/en/">
-  <link rel="alternate" hreflang="x-default" href="https://vivamediacreative.com/">
-
-  <!-- canonical -->
-  <link rel="canonical" href="https://vivamediacreative.com/">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Viva Media Creative — International Marketing Agency">
-  <meta property="og:description" content="Creative digital marketing and content production in English and Arabic.">
-  <meta property="og:image" content="https://vivamediacreative.com/assets/logo.jpeg">
-  <meta property="og:url" content="https://vivamediacreative.com/">
-  <meta property="og:type" content="website">
-
-  <!-- Favicon -->
-  <link rel="icon" href="assets/logo.jpeg">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SR129X7VN0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SR129X7VN0');
-  </script>
-
-  <!-- Redirect based on browser language -->
-  <noscript>
-    <meta http-equiv="refresh" content="0;url=/en/">
-  </noscript>
-
-  <script>
-    const lang = navigator.language || navigator.userLanguage;
-
-    if (lang.startsWith('ar')) {
-      window.location.href = '/ar/';
-    } else {
-      window.location.href = '/en/';
-    }
-  </script>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 20vh;
-      color: #333;
-      background-color: #fafafa;
-    }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0.5em;
-    }
-    p {
-      margin: 0.5em 0;
-    }
-    a {
-      color: #0073e6;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Viva Media Creative — Luxury Creative Agency</title>
+  <meta name="description" content="A premium creative agency crafting high-end brand experiences through design, film and performance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/home.css" />
 </head>
 <body>
-  <h1>Viva Media Creative</h1>
-  <p>Redirecting you to the correct language version based on your browser settings...</p>
-  <p>If you are not redirected automatically, please choose your language:</p>
-  <p>
-    <a href="/en/">English</a> |
-    <a href="/ar/">العربية</a>
-  </p>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="/">
+      <span class="dot"></span>
+      <span>Viva Media Creative</span>
+    </a>
+
+    <nav class="links">
+      <a href="/en/">EN</a>
+      <a href="/ar/">AR</a>
+      <a href="/news/">Insights</a>
+      <a class="pill" href="/contact.html">Let’s Talk</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="aurora a1"></div>
+        <div class="aurora a2"></div>
+        <div class="aurora a3"></div>
+      </div>
+
+      <div class="hero-inner">
+        <p class="kicker reveal">Luxury Creative Agency • Design • Film • Performance</p>
+
+        <h1 class="headline reveal">
+          Crafting <span class="shine">high-end</span> brand experiences
+          that feel <span class="stroke">expensive</span> and convert.
+        </h1>
+
+        <p class="subhead reveal">
+          We blend cinematic storytelling, premium design systems, and performance strategy—built for brands that refuse “average”.
+        </p>
+
+        <div class="cta-row reveal">
+          <a class="btn primary magnetic" href="/contact.html">
+            Book a Call
+            <span class="btn-glow" aria-hidden="true"></span>
+          </a>
+          <a class="btn ghost magnetic" href="#work">View Featured Work</a>
+        </div>
+
+        <div class="hero-metrics reveal">
+          <div class="metric">
+            <span class="metric-num">4M+</span>
+            <span class="metric-label">Audience Reach</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num">10+ yrs</span>
+            <span class="metric-label">Marketing Expertise</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num">Global</span>
+            <span class="metric-label">Germany • MENA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <span></span>
+      </div>
+    </section>
+
+    <!-- FEATURED WORK -->
+    <section id="work" class="section">
+      <div class="section-head">
+        <h2 class="title reveal">Featured Work</h2>
+        <p class="desc reveal">Premium showcases with elegant motion—hover to feel the craft.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card tilt reveal" data-tilt>
+          <div class="card-media">
+            <div class="badge">Brand System</div>
+          </div>
+          <div class="card-body">
+            <h3>Luxury Rebrand</h3>
+            <p>Minimal identity, strong typography, premium palette and grid logic.</p>
+            <div class="tags">
+              <span>Design</span><span>UI</span><span>Brand</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card tilt reveal" data-tilt>
+          <div class="card-media media2">
+            <div class="badge">Cinematic</div>
+          </div>
+          <div class="card-body">
+            <h3>Product Film</h3>
+            <p>High-end visuals, tight pacing, sound design—built for scroll-stopping.</p>
+            <div class="tags">
+              <span>Film</span><span>Editing</span><span>Ads</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card tilt reveal" data-tilt>
+          <div class="card-media media3">
+            <div class="badge">Performance</div>
+          </div>
+          <div class="card-body">
+            <h3>Conversion Landing</h3>
+            <p>Fast, sharp, and persuasive—optimized for leads and booked calls.</p>
+            <div class="tags">
+              <span>UX</span><span>CRO</span><span>SEO</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SERVICES (stacked luxury cards) -->
+    <section class="section">
+      <div class="section-head">
+        <h2 class="title reveal">Services</h2>
+        <p class="desc reveal">Boutique execution with enterprise-level polish.</p>
+      </div>
+
+      <div class="stack">
+        <div class="stack-card reveal">
+          <h3>Brand & Identity</h3>
+          <p>Positioning, visual identity, design systems, social templates.</p>
+          <a href="/en/" class="link">Explore</a>
+        </div>
+        <div class="stack-card reveal">
+          <h3>Film & Content</h3>
+          <p>Cinematic ads, reels, narratives, production direction.</p>
+          <a href="/news/" class="link">See insights</a>
+        </div>
+        <div class="stack-card reveal">
+          <h3>Performance & Growth</h3>
+          <p>Conversion pages, tracking, creative strategy, media execution.</p>
+          <a href="/contact.html" class="link">Get a proposal</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="marquee">
+      <div class="marquee-track" aria-hidden="true">
+        <span>DESIGN SYSTEMS</span><span>•</span>
+        <span>CINEMATIC FILM</span><span>•</span>
+        <span>PERFORMANCE CREATIVE</span><span>•</span>
+        <span>PREMIUM UX</span><span>•</span>
+        <span>DESIGN SYSTEMS</span><span>•</span>
+        <span>CINEMATIC FILM</span><span>•</span>
+        <span>PERFORMANCE CREATIVE</span><span>•</span>
+        <span>PREMIUM UX</span><span>•</span>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final">
+      <div class="final-inner reveal">
+        <h2>Ready to look premium?</h2>
+        <p>Tell us what you’re building. We’ll propose a high-end direction and a conversion-first structure.</p>
+        <a class="btn primary magnetic" href="/contact.html">Start a Project</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="y"></span> Viva Media Creative</p>
+    <div class="footer-links">
+      <a href="/privacy.html">Privacy</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="assets/home.js" type="module"></script>
 </body>
 </html>
+
