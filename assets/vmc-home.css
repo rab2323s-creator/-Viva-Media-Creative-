@@ -1,769 +1,345 @@
-:root{
-  --bg:#06070a;
-  --fg:#eef1f6;
-  --muted: rgba(238,241,246,.72);
-  --line: rgba(255,255,255,.12);
-  --glass: rgba(255,255,255,.06);
+ // =========================
+// VMC HOME JS (FULL) — Reveal + Magnetic + i18n + Services Slider C
+// Replace /assets/vmc-home.js بالكامل بهذا الملف
+// =========================
 
-  --gold1: #f5d07a;
-  --gold2: #b88a2a;
+// year
+const y = document.getElementById("y");
+if (y) y.textContent = String(new Date().getFullYear());
 
-  --r: 26px;
-  --shadow: 0 40px 120px rgba(0,0,0,.65);
-}
+// reveal on scroll
+const io = new IntersectionObserver(
+  (entries) => {
+    for (const e of entries) if (e.isIntersecting) e.target.classList.add("is-in");
+  },
+  { threshold: 0.12 }
+);
+document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  background: var(--bg);
-  color: var(--fg);
-  font-family: "Noto Kufi Arabic", Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  overflow-x:hidden;
-}
+// magnetic
+document.querySelectorAll(".magnetic").forEach((el) => {
+  const strength = 10;
+  el.addEventListener("pointermove", (ev) => {
+    const r = el.getBoundingClientRect();
+    const dx = ev.clientX - (r.left + r.width / 2);
+    const dy = ev.clientY - (r.top + r.height / 2);
+    el.style.transform = `translate(${dx / strength}px, ${dy / strength}px)`;
+  });
+  el.addEventListener("pointerleave", () => {
+    el.style.transform = `translate(0px, 0px)`;
+  });
+});
 
-.noise{
-  position:fixed; inset:0; pointer-events:none; opacity:.08;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
-  mix-blend-mode: overlay;
-}
+// =========================
+// i18n (AR/EN) — no URL changes
+// =========================
+const dict = {
+  ar: {
+    nav_services: "الخدمات",
+    nav_tenets: "مبادئنا",
+    nav_trusted: "عملاؤنا",
+    nav_contact: "تواصل",
 
-a{color:inherit; text-decoration:none}
+    hero_kicker: "وكالة عالمية لإنتاج المحتوى • إدارة المؤثرين • التسويق بالأداء",
+    hero_title_1: "نحوّل حضورك",
+    hero_title_2: "إلى تأثير يبيع ويكبر",
+    hero_sub:
+      "من “فكرة” إلى “فيديو” إلى “حملة” — إنتاج سينمائي، إدارة صنّاع محتوى ومشاهير، وتسويق رقمي يعتمد على نتائج قابلة للقياس.",
+    hero_cta_primary: "ابدأ مشروعك",
+    hero_cta_secondary: "استكشف الخدمات",
 
-.nav{
-  position:fixed; top:0; left:0; right:0;
-  z-index:50;
-  display:flex; justify-content:space-between; align-items:center;
-  padding: 16px 22px;
-  background: linear-gradient(to bottom, rgba(6,7,10,.88), rgba(6,7,10,0));
-  backdrop-filter: blur(10px);
-}
+    meta_1: "وصول جماهيري",
+    meta_2: "سنوات خبرة",
+    meta_3: "نطاق عمل",
 
-.brand{display:flex; align-items:center; gap:12px}
-.brand__mark{
-  font-family: "Space Grotesk", Manrope, sans-serif;
-  letter-spacing:.12em;
-  font-weight:800;
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.03);
-}
-.brand__name{opacity:.85}
+    pill_1: "🎬 إنتاج إعلانات وفيديوهات",
+    pill_2: "👑 إدارة مشاهير وصنّاع محتوى",
+    pill_3: "🤝 حملات مؤثرين بعقود واضحة",
+    pill_4: "🌐 مواقع + SEO + تحويل",
 
-.nav__links{display:flex; gap:16px; align-items:center; color: rgba(238,241,246,.74)}
-.nav__links a:hover{color: rgba(238,241,246,.92)}
+    services_cap: "Services",
+    services_title: "خدماتنا",
+    services_desc: "خدمات مصممة لعلامات وتجّار ومؤثرين — تنفيذ فخم + استراتيجية + توزيع + قياس.",
+    services_hint: "اسحب ← → أو استخدم عجلة الماوس",
 
-.pill{
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.03);
-}
+    contact_us: "تواصل معنا",
 
-.lang{
-  display:inline-flex; align-items:center; gap:10px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.03);
-  color: rgba(238,241,246,.86);
-  cursor:pointer;
-}
-.lang__dot{
-  width: 8px; height: 8px; border-radius: 999px;
-  background: linear-gradient(180deg, var(--gold1), var(--gold2));
-  box-shadow: 0 0 0 6px rgba(245,208,122,.10);
-}
+    s1_title: "إنتاج فيديوهات وإعلانات",
+    s1_desc: "كتابة سكريبت، تصوير/Remote Production، مونتاج فاخر، Shorts/Reels، وإعلانات جاهزة للنشر — بإيقاع يناسب المنصات.",
+    s1_b1: "• فيديو دعائي",
+    s1_b2: "• مونتاج سينمائي",
+    s1_b3: "• سكريبت + هوك",
 
-.hero{
-  min-height: 100vh;
-  padding: 120px 22px 70px;
-  position:relative;
-  overflow:hidden;
-  background:
-    radial-gradient(1200px 600px at 15% 10%, rgba(184,138,42,.14), transparent 60%),
-    radial-gradient(900px 520px at 85% 25%, rgba(145, 90, 255, .14), transparent 60%),
-    radial-gradient(900px 520px at 70% 80%, rgba(0, 255, 200, .08), transparent 60%),
-    var(--bg);
-}
+    s2_title: "إدارة مشاهير وصنّاع محتوى",
+    s2_desc: "خطة محتوى، جدولة، تطوير الهوية الرقمية، إدارة التعاونات، وتفاوض احترافي مع العلامات — لتكبر حساباتك بشكل مستمر.",
+    s2_b1: "• خطة + تقويم محتوى",
+    s2_b2: "• تطوير الهوية",
+    s2_b3: "• إدارة شراكات",
 
-.hero__bg{ position:absolute; inset:0; pointer-events:none; }
-.halo{
-  position:absolute;
-  width: 900px; height: 900px;
-  filter: blur(70px);
-  opacity:.42;
-  animation: floaty 14s ease-in-out infinite;
-}
-.h1{left:-280px; top:-260px; background: radial-gradient(circle at 40% 35%, rgba(245,208,122,.55), transparent 60%);}
-.h2{right:-320px; top:-180px; background: radial-gradient(circle at 40% 35%, rgba(145,90,255,.55), transparent 60%); animation-duration: 16s;}
-.h3{left:28%; bottom:-560px; background: radial-gradient(circle at 40% 35%, rgba(0,255,200,.35), transparent 60%); animation-duration: 18s;}
-@keyframes floaty{ 0%,100%{transform:translate3d(0,0,0) scale(1)} 50%{transform:translate3d(40px,-30px,0) scale(1.03)} }
+    s3_title: "حملات مؤثرين للشركات",
+    s3_desc: "نربط العلامات بالمؤثرين الأنسب، ندير التنفيذ بالكامل، ونقدّم تقارير نتائج واضحة — بعقود شفافة تحفظ حقوق الجميع.",
+    s3_b1: "• اختيار مؤثرين مناسبين",
+    s3_b2: "• إدارة حملة كاملة",
+    s3_b3: "• تقارير وقياس",
 
-.gridlines{
-  position:absolute; inset:0; opacity:.18;
-  background:
-    linear-gradient(rgba(255,255,255,.10) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
-  background-size: 120px 120px;
-  mask-image: radial-gradient(closest-side at 50% 20%, rgba(0,0,0,1), rgba(0,0,0,.15), transparent 70%);
-}
+    s4_title: "مواقع، SEO، وتحويل",
+    s4_desc: "تصميم وبناء مواقع، تحسين محركات البحث، صفحات هبوط، تتبع وتحسين Conversion — لتحويل الزيارات إلى عملاء.",
+    s4_b1: "• Website & Landing",
+    s4_b2: "• SEO",
+    s4_b3: "• CRO & Tracking",
 
-.hero__inner{
-  position:relative;
-  max-width: 1180px;
-  margin: 0 auto;
-}
+    tenets_title: "مبادئنا",
+    tenets_desc: "الفخامة ليست “زينة”… الفخامة = وضوح + تناسق + قرار إبداعي قوي.",
+    t1: "وضوح الرسالة",
+    t1d: "نحوّل الفكرة إلى رسالة بسيطة… ثم نصنع لها تنفيذًا يعلق بالذاكرة.",
+    t2: "إيقاع المنصات",
+    t2d: "نعرف كيف تُصنع لقطات “توقف السكروول” وتستمر بالمشاهدة.",
+    t3: "تنفيذ Premium",
+    t3d: "تفاصيل صغيرة تصنع فرقًا كبيرًا: حركة، مسافات، صوت، إضاءة.",
+    t4: "شفافية التعاون",
+    t4d: "شراكات بعقود واضحة تحفظ الحقوق وتضمن جودة التنفيذ.",
+    t5: "توزيع ذكي",
+    t5d: "ليس إنتاجًا فقط—بل نشر وتوزيع وقياس حتى تصل للنتيجة.",
+    t6: "نمو قابل للقياس",
+    t6d: "نقيس، نحلل، ثم نكرر ما ينجح — بدون تخمين.",
 
-.kicker{
-  margin:0 0 14px;
-  letter-spacing:.08em;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: rgba(238,241,246,.62);
-}
+    trusted_title: "يثق بنا",
+    trusted_note: "حاليًا نستخدم شعارات “Placeholder” — وعندما تجهز قائمة العملاء، نستبدلها فورًا.",
 
-.h1{
-  margin:0 0 14px;
-  font-size: clamp(40px, 5.4vw, 84px);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-}
+    final_title: "جاهز لتبدو “Premium”؟",
+    final_desc: "أرسل هدفك ونوع المشروع—وسنقترح اتجاهًا واضحًا مع خطة تنفيذ وقياس.",
+    final_cta: "اطلب عرض سعر",
+  },
 
-.gold{
-  background: linear-gradient(90deg, var(--gold1), rgba(255,255,255,.85), var(--gold2));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
+  en: {
+    nav_services: "Services",
+    nav_tenets: "Tenets",
+    nav_trusted: "Trusted",
+    nav_contact: "Contact",
 
-.sub{
-  margin:0 0 24px;
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.85;
-  max-width: 64ch;
-}
+    hero_kicker: "Global agency for content • influencers • performance marketing",
+    hero_title_1: "We turn presence",
+    hero_title_2: "into growth that sells",
+    hero_sub:
+      "From idea → video → campaign: cinematic production, creator/celebrity management, and measurable digital marketing.",
+    hero_cta_primary: "Start a Project",
+    hero_cta_secondary: "Explore Services",
 
-.hero__cta{display:flex; gap:12px; flex-wrap:wrap; margin-bottom: 18px;}
+    meta_1: "Audience Reach",
+    meta_2: "Years Experience",
+    meta_3: "Operating Range",
 
-.btn{
-  position:relative;
-  display:inline-flex; align-items:center; justify-content:center;
-  padding: 14px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.03);
-  color: rgba(238,241,246,.92);
-  font-weight: 800;
-  letter-spacing:.01em;
-  backdrop-filter: blur(10px);
-  transition: transform .18s ease, border-color .18s ease, background .18s ease;
-  will-change: transform;
-}
-.btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,.20)}
-.btn.primary{
-  border-color: rgba(245,208,122,.24);
-  background: linear-gradient(180deg, rgba(245,208,122,.18), rgba(255,255,255,.04));
-  box-shadow: var(--shadow);
-}
-.btn.ghost{ background: rgba(255,255,255,.02); }
+    pill_1: "🎬 Ads & Video Production",
+    pill_2: "👑 Creator & Celebrity Management",
+    pill_3: "🤝 Influencer campaigns w/ clear contracts",
+    pill_4: "🌐 Websites + SEO + CRO",
 
-.hero__meta{display:flex; gap:12px; flex-wrap:wrap; margin-top: 10px;}
-.meta{
-  min-width: 170px;
-  padding: 14px 16px;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.02);
-  backdrop-filter: blur(12px);
-}
-.meta__num{display:block; font-weight:900}
-.meta__label{display:block; margin-top:2px; font-size:12px; color: rgba(238,241,246,.62)}
+    services_cap: "Services",
+    services_title: "What we do",
+    services_desc: "Built for brands, founders, and creators — premium execution + strategy + distribution + measurement.",
+    services_hint: "Drag ← → or use mouse wheel",
 
-.scroll{
-  position:absolute; left:50%; bottom: 24px;
-  width: 28px; height: 44px;
-  border:1px solid rgba(255,255,255,.18);
-  border-radius: 999px;
-  transform: translateX(-50%);
-  display:grid; place-items:center;
-  background: rgba(255,255,255,.02);
-}
-.scroll span{
-  width:4px;height:8px;border-radius:999px;background: rgba(245,208,122,.72);
-  animation: scroll 1.4s ease-in-out infinite;
-}
-@keyframes scroll{0%{transform:translateY(-6px);opacity:.35}50%{transform:translateY(6px);opacity:1}100%{transform:translateY(-6px);opacity:.35}}
+    contact_us: "Contact us",
 
-.section{
-  padding: 110px 22px;
-  max-width: 1180px;
-  margin: 0 auto;
-}
-.section__head{margin-bottom: 28px;}
-.title{
-  margin:0 0 10px;
-  font-size: 28px;
-  display:flex; gap:10px; flex-wrap:wrap; align-items:baseline;
-}
-.cap{
-  font-family: "Space Grotesk", Manrope, sans-serif;
-  letter-spacing:.18em;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: rgba(245,208,122,.85);
-}
-.desc{margin:0; color: rgba(238,241,246,.62); line-height:1.8}
+    s1_title: "Video & Ad Production",
+    s1_desc: "Script, remote production, premium editing, shorts/reels, and campaign-ready ads — paced for platforms.",
+    s1_b1: "• Promo videos",
+    s1_b2: "• Cinematic edit",
+    s1_b3: "• Hooks + scripts",
 
-.service-list{display:flex; flex-direction:column; gap:16px;}
-.service{
-  display:grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: 16px;
-  align-items:stretch;
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: var(--r);
-  background: rgba(255,255,255,.02);
-  box-shadow: 0 22px 80px rgba(0,0,0,.45);
-  overflow:hidden;
-}
-.service__copy{padding: 22px;}
-.service__tag{
-  font-family: "Space Grotesk", Manrope, sans-serif;
-  letter-spacing:.16em;
-  font-size: 12px;
-  color: rgba(238,241,246,.62);
-  margin-bottom: 10px;
-}
-.service h3{margin:0 0 10px; font-size: 22px;}
-.service p{margin:0 0 14px; color: rgba(238,241,246,.68); line-height:1.8}
-.link{
-  display:inline-flex;
-  border-bottom: 1px solid rgba(245,208,122,.55);
-  padding-bottom: 3px;
-  color: rgba(245,208,122,.92);
+    s2_title: "Creator & Celebrity Management",
+    s2_desc: "Content roadmap, scheduling, digital identity, collaborations, and brand negotiation — consistent growth.",
+    s2_b1: "• Plan + calendar",
+    s2_b2: "• Identity system",
+    s2_b3: "• Partnerships",
+
+    s3_title: "Influencer Campaigns for Brands",
+    s3_desc: "Match brands with the right creators, manage execution end-to-end, and report results — transparent contracts.",
+    s3_b1: "• Creator selection",
+    s3_b2: "• Full campaign ops",
+    s3_b3: "• Reporting",
+
+    s4_title: "Websites, SEO & Conversion",
+    s4_desc: "Web builds, SEO, landing pages, tracking and CRO — turning visits into customers.",
+    s4_b1: "• Website & Landing",
+    s4_b2: "• SEO",
+    s4_b3: "• CRO & Tracking",
+
+    tenets_title: "Our Tenets",
+    tenets_desc: "Luxury isn’t decoration. Luxury = clarity + consistency + decisive craft.",
+    t1: "Clarity",
+    t1d: "Turn ideas into simple messages — then make them memorable.",
+    t2: "Platform rhythm",
+    t2d: "We build scroll-stopping moments that retain attention.",
+    t3: "Premium craft",
+    t3d: "Micro-details: motion, spacing, sound, lighting.",
+    t4: "Transparency",
+    t4d: "Clear contracts that protect rights and quality.",
+    t5: "Smart distribution",
+    t5d: "Not only production — distribution and measurement too.",
+    t6: "Measurable growth",
+    t6d: "Measure, learn, repeat — no guessing.",
+
+    trusted_title: "Trusted by",
+    trusted_note: "We’re using placeholder logos for now—swap them once your client list is ready.",
+
+    final_title: "Ready to look premium?",
+    final_desc: "Share your goal and project type—we’ll propose a clear direction with execution + measurement.",
+    final_cta: "Request a Quote",
+  },
+};
+
+let lang = "ar";
+const langBtn = document.getElementById("langBtn");
+const langLabel = document.getElementById("langLabel");
+
+function applyLang(next) {
+  lang = next;
+  document.documentElement.lang = lang === "ar" ? "ar" : "en";
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  if (langLabel) langLabel.textContent = lang === "ar" ? "EN" : "AR";
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    const v = dict[lang]?.[key];
+    if (typeof v === "string") el.textContent = v;
+  });
 }
 
-.service__visual{
-  position:relative;
-  min-height: 240px;
-  background: rgba(255,255,255,.02);
-}
-.service__visual::before{
-  content:"";
-  position:absolute; inset:-1px;
-  background:
-    radial-gradient(500px 320px at 30% 30%, rgba(245,208,122,.22), transparent 60%),
-    radial-gradient(520px 320px at 85% 30%, rgba(145,90,255,.22), transparent 60%),
-    radial-gradient(520px 320px at 65% 85%, rgba(0,255,200,.14), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-  filter: saturate(1.05);
-}
-.service__visual::after{
-  content:"";
-  position:absolute; inset:0;
-  background: linear-gradient(to left, rgba(6,7,10,.0), rgba(6,7,10,.35));
-}
-.v2::before{filter:saturate(1.2) hue-rotate(8deg)}
-.v3::before{filter:saturate(1.1) hue-rotate(-10deg)}
-.v4::before{filter:saturate(1.15) hue-rotate(22deg)}
+applyLang("ar");
 
-.tenets{
-  display:grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-.tenet{
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 22px;
-  background: rgba(255,255,255,.02);
-  padding: 18px;
-  display:flex; gap:14px;
-}
-.tenet .n{
-  font-family: "Space Grotesk", Manrope, sans-serif;
-  color: rgba(245,208,122,.9);
-  letter-spacing:.12em;
-}
-.tenet h4{margin:0 0 6px}
-.tenet p{margin:0; color: rgba(238,241,246,.62); line-height:1.8}
+langBtn?.addEventListener("click", () => {
+  applyLang(lang === "ar" ? "en" : "ar");
+});
 
-.trusted{
-  padding: 90px 22px;
-  border-top:1px solid rgba(255,255,255,.10);
-  border-bottom:1px solid rgba(255,255,255,.10);
-  background: radial-gradient(1000px 520px at 50% 30%, rgba(245,208,122,.10), transparent 60%);
-}
-.trusted__inner{max-width:1180px; margin:0 auto;}
-.marquee{overflow:hidden; border:1px solid rgba(255,255,255,.10); border-radius: 999px; background: rgba(255,255,255,.02); }
-.track{
-  display:flex; gap:18px; white-space:nowrap;
-  padding: 14px 18px;
-  animation: marquee 18s linear infinite;
-  color: rgba(238,241,246,.72);
-  letter-spacing:.22em;
-  text-transform: uppercase;
-  font-family: "Space Grotesk", Manrope, sans-serif;
-  font-size: 12px;
-}
-.logo{color: rgba(245,208,122,.92)}
-@keyframes marquee{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+// =========================
+// Services Slider C controller
+// =========================
+(function servicesSlider() {
+  const viewport = document.getElementById("servicesViewport");
+  if (!viewport) return;
 
-.small{color: rgba(238,241,246,.58); margin: 12px 0 0; }
+  const bar = document.getElementById("servicesBar");
+  const dots = Array.from(document.querySelectorAll(".dot2"));
+  const prevBtn = document.getElementById("prevSlide");
+  const nextBtn = document.getElementById("nextSlide");
 
-.final{
-  padding: 110px 22px;
-  max-width: 1180px;
-  margin: 0 auto;
-}
-.final__card{
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 30px;
-  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-  box-shadow: var(--shadow);
-  padding: 28px;
-}
-.final__card h2{margin:0 0 10px}
-.final__card p{margin:0 0 18px; color: rgba(238,241,246,.62); line-height:1.8}
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-.footer{
-  padding: 26px 22px;
-  display:flex; justify-content:space-between; gap:16px;
-  color: rgba(238,241,246,.60);
-  border-top: 1px solid rgba(255,255,255,.10);
-}
-.footer__links{display:flex; gap:16px}
+  const slides = Array.from(viewport.querySelectorAll(".slide"));
+  const count = slides.length || 1;
 
-.reveal{opacity:0; transform: translateY(14px); transition: opacity .75s ease, transform .75s ease;}
-.reveal.is-in{opacity:1; transform: translateY(0);}
+  const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
 
-@media (max-width: 980px){
-  .service{grid-template-columns:1fr;}
-  .tenets{grid-template-columns:1fr;}
-}
-
-@media (prefers-reduced-motion: reduce){
-  .halo,.track,.scroll span{animation:none !important;}
-  .reveal{transition:none}
-}
-/* ===== Sticky Services Scenes ===== */
-.services-sticky .section__head{ margin-bottom: 22px; }
-
-.stage{
-  position:relative;
-  border-radius: var(--r);
-}
-
-.stage__frame{
-  position: sticky;
-  top: 92px; /* تحت الناف */
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 30px;
-  background: rgba(255,255,255,.02);
-  box-shadow: 0 30px 120px rgba(0,0,0,.55);
-  overflow:hidden;
-  min-height: 560px;
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.stage__visual{
-  position:relative;
-  border-inline-end: 1px solid rgba(255,255,255,.10);
-  min-height: 560px;
-  overflow:hidden;
-}
-
-.visual{
-  position:absolute; inset:0;
-  opacity:0;
-  transform: scale(1.02);
-  transition: opacity .6s ease, transform .9s ease;
-}
-.visual.is-active{
-  opacity:1;
-  transform: scale(1);
-}
-
-.visual--1{
-  background:
-    radial-gradient(720px 420px at 30% 30%, rgba(245,208,122,.26), transparent 60%),
-    radial-gradient(720px 420px at 85% 25%, rgba(145,90,255,.22), transparent 60%),
-    radial-gradient(720px 420px at 60% 88%, rgba(0,255,200,.14), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-}
-.visual--2{
-  background:
-    radial-gradient(720px 420px at 28% 30%, rgba(0,255,200,.20), transparent 60%),
-    radial-gradient(720px 420px at 85% 20%, rgba(245,208,122,.18), transparent 60%),
-    radial-gradient(720px 420px at 55% 85%, rgba(255,255,255,.10), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-}
-.visual--3{
-  background:
-    radial-gradient(720px 420px at 35% 30%, rgba(145,90,255,.24), transparent 60%),
-    radial-gradient(720px 420px at 85% 25%, rgba(245,208,122,.18), transparent 60%),
-    radial-gradient(720px 420px at 60% 85%, rgba(255,90,120,.14), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-}
-.visual--4{
-  background:
-    radial-gradient(720px 420px at 30% 30%, rgba(245,208,122,.22), transparent 60%),
-    radial-gradient(720px 420px at 85% 25%, rgba(255,255,255,.12), transparent 60%),
-    radial-gradient(720px 420px at 60% 85%, rgba(0,255,200,.16), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-}
-
-/* Luxury moving shine */
-.visual__shine{
-  position:absolute; inset:-40%;
-  background: radial-gradient(600px 380px at 30% 30%, rgba(255,255,255,.10), transparent 60%);
-  transform: translateX(-20%) rotate(8deg);
-  animation: shine 10s ease-in-out infinite;
-  mix-blend-mode: screen;
-  pointer-events:none;
-  opacity:.65;
-}
-@keyframes shine{
-  0%,100%{ transform: translateX(-20%) rotate(8deg); }
-  50%{ transform: translateX(18%) rotate(8deg); }
-}
-
-.stage__copy{
-  position:relative;
-  padding: 26px;
-  min-height: 560px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.scene{
-  position:absolute;
-  inset: 26px;
-  opacity:0;
-  transform: translateY(12px);
-  transition: opacity .45s ease, transform .65s ease;
-  pointer-events:none;
-}
-.scene.is-active{
-  opacity:1;
-  transform: translateY(0);
-  pointer-events:auto;
-}
-
-.scene__tag{
-  font-family: "Space Grotesk", Manrope, sans-serif;
-  letter-spacing:.18em;
-  font-size: 12px;
-  color: rgba(238,241,246,.62);
-  margin-bottom: 12px;
-}
-
-.scene h3{ margin:0 0 12px; font-size: 26px; }
-.scene p{ margin:0 0 16px; color: rgba(238,241,246,.68); line-height: 1.9; max-width: 60ch; }
-
-.dots{
-  position:absolute;
-  inset-inline-end: 18px;
-  bottom: 18px;
-  display:flex;
-  gap: 8px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(6,7,10,.35);
-  backdrop-filter: blur(10px);
-}
-.dot{
-  width: 7px; height: 7px; border-radius: 999px;
-  background: rgba(238,241,246,.28);
-}
-.dot.is-active{
-  background: rgba(245,208,122,.92);
-  box-shadow: 0 0 0 6px rgba(245,208,122,.12);
-}
-
-/* Creates scroll length: 4 scenes */
-.stage__spacer{
-  height: 280vh;
-}
-
-/* Mobile: disable sticky scenes (clean) */
-@media (max-width: 980px){
-  .stage__frame{
-    position: relative;
-    top: auto;
-    grid-template-columns: 1fr;
+  function getIndex() {
+    const w = viewport.clientWidth || 1;
+    return clamp(Math.round(viewport.scrollLeft / w), 0, count - 1);
   }
-  .stage__visual{ min-height: 280px; border-inline-end: none; border-bottom: 1px solid rgba(255,255,255,.10); }
-  .stage__copy{ min-height: 340px; }
-  .scene{ position:relative; inset:auto; opacity:1; transform:none; pointer-events:auto; margin-bottom: 18px; }
-  .dots{ display:none; }
-  .stage__spacer{ height: 0; }
-}
 
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .visual, .scene{ transition:none !important; }
-  .visual__shine{ animation:none !important; }
-}
+  function setDots(idx) {
+    dots.forEach((d, i) => d.classList.toggle("is-active", i === idx));
+  }
 
-/* Hero pills */
-.hero__pills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top: 14px;
-}
-.pillx{
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.02);
-  color: rgba(238,241,246,.70);
-  font-size: 12px;
-  backdrop-filter: blur(10px);
-}
-.pillx:hover{
-  border-color: rgba(245,208,122,.24);
-  color: rgba(245,208,122,.92);
-}
+  function setBar(idx, rawProgress = null) {
+    if (!bar) return;
+    // idx-based fallback
+    let p = (idx + 1) / count;
 
-/* scene bullets */
-.scene__bullets{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin: 12px 0 16px;
-  color: rgba(238,241,246,.62);
-  font-size: 12px;
-}
-.scene__bullets span{
-  padding: 8px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.02);
-}
+    // if we have raw progress 0..1 based on scroll, use it
+    if (typeof rawProgress === "number") {
+      // rawProgress 0..1 across full scroll range
+      p = clamp(rawProgress, 0, 1);
+      // show "how far" + include one slide width feel
+      // but keep it simple: 0..1
+    }
 
-/* =========================
-   Services C: Horizontal Slider + Snap + Progress
-========================= */
-.services-slider .section__head{ margin-bottom: 22px; }
+    bar.style.width = `${p * 100}%`;
+  }
 
-.sliderShell{
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 30px;
-  background: rgba(255,255,255,.02);
-  box-shadow: 0 30px 120px rgba(0,0,0,.55);
-  overflow:hidden;
-}
+  function updateUI() {
+    const idx = getIndex();
+    setDots(idx);
 
-.sliderTop{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  padding: 14px 16px;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-}
+    // progress across full scroll range
+    const max = viewport.scrollWidth - viewport.clientWidth;
+    const raw = max > 0 ? viewport.scrollLeft / max : 0;
+    setBar(idx, raw);
+  }
 
-.sliderHint{
-  color: rgba(238,241,246,.62);
-  font-size: 12px;
-  letter-spacing:.02em;
-}
+  function goTo(idx) {
+    const w = viewport.clientWidth || 1;
+    const x = idx * w;
+    viewport.scrollTo({ left: x, behavior: prefersReduced ? "auto" : "smooth" });
+  }
 
-.sliderProgress{
-  flex: 0 0 220px;
-  height: 6px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.10);
-  overflow:hidden;
-  position:relative;
-}
-.sliderProgress__bar{
-  position:absolute; inset:0;
-  width: 0%;
-  background: linear-gradient(90deg, var(--gold1), rgba(255,255,255,.85), var(--gold2));
-  border-radius: 999px;
-  transition: width .18s ease;
-}
+  // wheel => horizontal
+  viewport.addEventListener(
+    "wheel",
+    (e) => {
+      // allow vertical page scrolling when slider is at edges and user scrolls that direction
+      // but in general: translate wheel to horizontal
+      e.preventDefault();
+      viewport.scrollLeft += e.deltaY + e.deltaX;
+      updateUI();
+    },
+    { passive: false }
+  );
 
-.sliderViewport{
-  display:flex;
-  overflow-x:auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior:smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  outline:none;
-}
-.sliderViewport::-webkit-scrollbar{ display:none; }
+  // drag to scroll (mouse + touch)
+  let isDown = false;
+  let startX = 0;
+  let startLeft = 0;
 
-/* each slide takes full width */
-.slide{
-  flex: 0 0 100%;
-  scroll-snap-align: start;
-  position:relative;
-  min-height: 520px;
-  padding: 26px;
-  display:flex;
-  align-items:stretch;
-  overflow:hidden;
-}
+  viewport.addEventListener("pointerdown", (e) => {
+    isDown = true;
+    viewport.classList.add("is-dragging");
+    viewport.setPointerCapture(e.pointerId);
+    startX = e.clientX;
+    startLeft = viewport.scrollLeft;
+  });
 
-.slide__bg{
-  position:absolute; inset:-2px;
-  opacity:1;
-  pointer-events:none;
-  filter: saturate(1.05);
-}
-.bg--1{
-  background:
-    radial-gradient(780px 420px at 30% 25%, rgba(245,208,122,.22), transparent 60%),
-    radial-gradient(720px 420px at 85% 22%, rgba(145,90,255,.18), transparent 60%),
-    radial-gradient(720px 420px at 60% 90%, rgba(0,255,200,.12), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-}
-.bg--2{
-  background:
-    radial-gradient(780px 420px at 30% 25%, rgba(0,255,200,.18), transparent 60%),
-    radial-gradient(720px 420px at 85% 22%, rgba(245,208,122,.18), transparent 60%),
-    radial-gradient(720px 420px at 60% 90%, rgba(255,255,255,.10), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-}
-.bg--3{
-  background:
-    radial-gradient(780px 420px at 30% 25%, rgba(145,90,255,.20), transparent 60%),
-    radial-gradient(720px 420px at 85% 22%, rgba(245,208,122,.16), transparent 60%),
-    radial-gradient(720px 420px at 60% 90%, rgba(255,90,120,.10), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-}
-.bg--4{
-  background:
-    radial-gradient(780px 420px at 30% 25%, rgba(245,208,122,.18), transparent 60%),
-    radial-gradient(720px 420px at 85% 22%, rgba(255,255,255,.12), transparent 60%),
-    radial-gradient(720px 420px at 60% 90%, rgba(0,255,200,.12), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-}
+  viewport.addEventListener("pointermove", (e) => {
+    if (!isDown) return;
+    const dx = e.clientX - startX;
+    viewport.scrollLeft = startLeft - dx;
+    updateUI();
+  });
 
-/* shine sweep */
-.slide::after{
-  content:"";
-  position:absolute;
-  inset:-40%;
-  background: radial-gradient(600px 380px at 30% 30%, rgba(255,255,255,.10), transparent 60%);
-  transform: translateX(-20%) rotate(8deg);
-  animation: vmcShine 10s ease-in-out infinite;
-  mix-blend-mode: screen;
-  pointer-events:none;
-  opacity:.55;
-}
-@keyframes vmcShine{
-  0%,100%{ transform: translateX(-20%) rotate(8deg); }
-  50%{ transform: translateX(18%) rotate(8deg); }
-}
+  function endDrag(e) {
+    if (!isDown) return;
+    isDown = false;
+    viewport.classList.remove("is-dragging");
+    try { viewport.releasePointerCapture(e.pointerId); } catch {}
+    // snap to nearest slide
+    goTo(getIndex());
+  }
 
-.slide__inner{
-  position:relative;
-  z-index:2;
-  border: 1px solid rgba(255,255,255,.10);
-  border-radius: 26px;
-  background: rgba(6,7,10,.35);
-  backdrop-filter: blur(10px);
-  padding: 20px;
-  box-shadow: 0 22px 80px rgba(0,0,0,.35);
-  max-width: 760px;
-}
+  viewport.addEventListener("pointerup", endDrag);
+  viewport.addEventListener("pointercancel", endDrag);
+  viewport.addEventListener("pointerleave", () => {
+    // if mouse leaves while dragging
+    if (!isDown) return;
+    isDown = false;
+    viewport.classList.remove("is-dragging");
+    goTo(getIndex());
+  });
 
-.slide__num{
-  font-family: "Space Grotesk", Manrope, sans-serif;
-  letter-spacing:.16em;
-  font-weight:800;
-  color: rgba(245,208,122,.92);
-  opacity:.9;
-}
-.slide__tag{
-  margin-top: 10px;
-  font-family: "Space Grotesk", Manrope, sans-serif;
-  letter-spacing:.18em;
-  font-size: 12px;
-  color: rgba(238,241,246,.62);
-}
-.slide__title{ margin: 12px 0 10px; font-size: 28px; }
-.slide__desc{ margin:0 0 14px; color: rgba(238,241,246,.72); line-height:1.95; max-width: 65ch; }
+  // buttons
+  prevBtn?.addEventListener("click", () => goTo(getIndex() - 1));
+  nextBtn?.addEventListener("click", () => goTo(getIndex() + 1));
 
-.slide__chips{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-bottom: 16px;
-}
-.chip{
-  padding: 9px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.02);
-  color: rgba(238,241,246,.62);
-  font-size: 12px;
-}
-.chip:hover{
-  border-color: rgba(245,208,122,.24);
-  color: rgba(245,208,122,.92);
-}
+  // keyboard support
+  viewport.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") goTo(getIndex() - 1);
+    if (e.key === "ArrowRight") goTo(getIndex() + 1);
+  });
 
-/* bottom controls */
-.sliderBottom{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  padding: 12px 16px;
-  border-top: 1px solid rgba(255,255,255,.08);
-  background: rgba(255,255,255,.01);
-}
-.dotsRow{ display:flex; gap:8px; align-items:center; }
-.dot2{
-  width: 7px; height: 7px; border-radius: 999px;
-  background: rgba(238,241,246,.25);
-}
-.dot2.is-active{
-  background: rgba(245,208,122,.92);
-  box-shadow: 0 0 0 6px rgba(245,208,122,.12);
-}
-.arrows{ display:flex; gap:8px; }
-.arrow{
-  width:42px; height:42px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.03);
-  color: rgba(238,241,246,.92);
-  cursor:pointer;
-}
-.arrow:hover{
-  border-color: rgba(245,208,122,.24);
-  color: rgba(245,208,122,.92);
-}
+  // on scroll/resize
+  viewport.addEventListener("scroll", () => updateUI(), { passive: true });
+  window.addEventListener("resize", () => updateUI());
 
-/* Better touch/drag feel */
-.sliderViewport.is-dragging{
-  cursor: grabbing;
-  scroll-behavior:auto;
-}
-
-/* Mobile: reduce height a bit */
-@media (max-width: 980px){
-  .sliderProgress{ flex-basis: 160px; }
-  .slide{ min-height: 480px; padding: 18px; }
-  .slide__inner{ max-width: 100%; }
-}
-@media (prefers-reduced-motion: reduce){
-  .slide::after{ animation:none !important; }
-  .sliderViewport{ scroll-behavior:auto; }
-}
-
+  // init
+  updateUI();
+  setTimeout(updateUI, 60);
+})();
 
