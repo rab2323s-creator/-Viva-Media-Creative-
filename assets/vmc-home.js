@@ -140,3 +140,55 @@ applyLang("ar");
 langBtn?.addEventListener("click", () => {
   applyLang(lang === "ar" ? "en" : "ar");
 });
+// ===== Sticky Services Scenes controller =====
+(function stickyServices() {
+  const stage = document.getElementById("servicesStage");
+  if (!stage) return;
+
+  const scenes = Array.from(stage.querySelectorAll(".scene"));
+  const visuals = Array.from(stage.querySelectorAll(".visual"));
+  const dots = Array.from(stage.querySelectorAll(".dot"));
+
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function setActive(idx) {
+    scenes.forEach((s, i) => s.classList.toggle("is-active", i === idx));
+    visuals.forEach((v, i) => v.classList.toggle("is-active", i === idx));
+    dots.forEach((d, i) => d.classList.toggle("is-active", i === idx));
+  }
+
+  // On mobile we show all scenes (CSS already does), so skip JS
+  function isMobile() {
+    return window.matchMedia("(max-width: 980px)").matches;
+  }
+
+  function onScroll() {
+    if (prefersReduced || isMobile()) return;
+
+    const r = stage.getBoundingClientRect();
+    const h = window.innerHeight;
+
+    // progress 0..1 through the sticky scroll area
+    // spacer is 280vh; when stage top hits viewport, start; when bottom passes, end
+    const start = 0.12 * h;
+    const end = h - 0.12 * h;
+
+    // clamp progress using the stage's scrollable length
+    const total = stage.offsetHeight - h;
+    const passed = Math.min(Math.max(-r.top + start, 0), total);
+    const p = total > 0 ? (passed / total) : 0;
+
+    // 4 scenes
+    const idx = Math.min(3, Math.max(0, Math.floor(p * 4)));
+    setActive(idx);
+  }
+
+  // init
+  setActive(0);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  onScroll();
+})();
+
+
+
