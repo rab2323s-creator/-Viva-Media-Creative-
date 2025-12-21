@@ -1,192 +1,256 @@
  <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Viva Media Creative — Luxury Creative Agency</title>
-  <meta name="description" content="A premium creative agency crafting high-end brand experiences through design, film and performance." />
+  <title>Viva Media Creative — Luxury Creative & Marketing Agency</title>
+  <meta name="description" content="Luxury creative & marketing agency — design, film, and performance. Arabic + English." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/home.css" />
-</head>
-<body>
-  <div class="grain" aria-hidden="true"></div>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Noto+Kufi+Arabic:wght@400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="/assets/vmc-home.css" />
+</head>
+
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- NAV -->
   <header class="nav">
     <a class="brand" href="/">
-      <span class="dot"></span>
-      <span>Viva Media Creative</span>
+      <span class="brand__mark">VMC</span>
+      <span class="brand__name">Viva Media Creative</span>
     </a>
 
-    <nav class="links">
-      <a href="/en/">EN</a>
-      <a href="/ar/">AR</a>
-      <a href="/news/">Insights</a>
-      <a class="pill" href="/contact.html">Let’s Talk</a>
+    <nav class="nav__links">
+      <a href="#services" data-i18n="nav_services">الخدمات</a>
+      <a href="#tenets" data-i18n="nav_tenets">مبادئنا</a>
+      <a href="#trusted" data-i18n="nav_trusted">عملاؤنا</a>
+      <a class="pill" href="/contact.html" data-i18n="nav_contact">تواصل</a>
+
+      <button class="lang" id="langBtn" aria-label="Toggle language">
+        <span class="lang__dot"></span>
+        <span id="langLabel">EN</span>
+      </button>
     </nav>
   </header>
 
+  <!-- HERO -->
   <main>
-    <!-- HERO -->
-   <link rel="stylesheet" href="/assets/globe-hero.css" />
-
-<section class="hero-globe" dir="rtl">
-  <div class="hero-globe__bg" aria-hidden="true"></div>
-
-  <div class="hero-globe__inner">
-    <div class="hero-globe__copy">
-      <p class="hero-kicker">وكالة تسويق عالمية • تصميم • إنتاج • أداء</p>
-
-      <h1 class="hero-title">
-        نصنع محتوى<br />
-        <span class="hero-title__accent">يدور حول العالم</span>
-      </h1>
-
-      <p class="hero-sub">
-        من الفكرة إلى الانتشار—نمزج الإبداع السينمائي مع الاستراتيجية لنصنع حضورًا يبدو “فاخرًا” ويحقق نتائج.
-      </p>
-
-      <div class="hero-actions">
-        <a class="hero-btn hero-btn--primary" href="/contact.html">ابدأ مشروعك</a>
-        <a class="hero-btn hero-btn--ghost" href="#work">شاهد أعمالنا</a>
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="halo h1"></div>
+        <div class="halo h2"></div>
+        <div class="halo h3"></div>
+        <div class="gridlines"></div>
       </div>
 
-      <div class="hero-proof">
-        <div class="proof">
-          <span class="proof-num">4M+</span>
-          <span class="proof-label">وصول جماهيري</span>
+      <div class="hero__inner">
+        <p class="kicker reveal" data-i18n="hero_kicker">
+          وكالة فخمة للتسويق والإنتاج الإبداعي • تصميم • فيلم • أداء
+        </p>
+
+        <h1 class="h1 reveal">
+          <span data-i18n="hero_title_1">نصنع حضورًا</span><br/>
+          <span class="gold" data-i18n="hero_title_2">يشبه العلامات العالمية</span>
+        </h1>
+
+        <p class="sub reveal" data-i18n="hero_sub">
+          ندمج التصميم الراقي مع السرد السينمائي واستراتيجية الأداء—لنجعل علامتك تبدو “باهظة الثمن” وتحقق نتائج ملموسة.
+        </p>
+
+        <div class="hero__cta reveal">
+          <a class="btn primary magnetic" href="/contact.html" data-i18n="hero_cta_primary">ابدأ مشروعك</a>
+          <a class="btn ghost magnetic" href="#services" data-i18n="hero_cta_secondary">استكشف الخدمات</a>
         </div>
-        <div class="proof">
-          <span class="proof-num">10+ سنوات</span>
-          <span class="proof-label">خبرة تسويق</span>
-        </div>
-        <div class="proof">
-          <span class="proof-num">Global</span>
-          <span class="proof-label">Germany • MENA</span>
-        </div>
-      </div>
-    </div>
 
-    <div class="hero-globe__scene">
-      <canvas id="globeCanvas" aria-label="3D rotating globe"></canvas>
-      <div class="hero-globe__hint" aria-hidden="true">
-        <span></span> يتحرّك مع المؤشر
-      </div>
-    </div>
-  </div>
-</section>
-
-<script type="module" src="/assets/globe-hero.js"></script>
-
-    <!-- FEATURED WORK -->
-    <section id="work" class="section">
-      <div class="section-head">
-        <h2 class="title reveal">Featured Work</h2>
-        <p class="desc reveal">Premium showcases with elegant motion—hover to feel the craft.</p>
-      </div>
-
-      <div class="grid">
-        <article class="card tilt reveal" data-tilt>
-          <div class="card-media">
-            <div class="badge">Brand System</div>
+        <div class="hero__meta reveal">
+          <div class="meta">
+            <span class="meta__num">4M+</span>
+            <span class="meta__label" data-i18n="meta_1">وصول جماهيري</span>
           </div>
-          <div class="card-body">
-            <h3>Luxury Rebrand</h3>
-            <p>Minimal identity, strong typography, premium palette and grid logic.</p>
-            <div class="tags">
-              <span>Design</span><span>UI</span><span>Brand</span>
-            </div>
+          <div class="meta">
+            <span class="meta__num">10+</span>
+            <span class="meta__label" data-i18n="meta_2">سنوات خبرة</span>
           </div>
+          <div class="meta">
+            <span class="meta__num">Germany • MENA</span>
+            <span class="meta__label" data-i18n="meta_3">نطاق عمل</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- SERVICES (Zamakan-like repeated sections, but VMC luxury) -->
+    <section id="services" class="section">
+      <div class="section__head">
+        <h2 class="title reveal">
+          <span class="cap" data-i18n="services_cap">Services</span>
+          <span data-i18n="services_title">خدماتنا</span>
+        </h2>
+        <p class="desc reveal" data-i18n="services_desc">
+          باقات تنفيذ “بوتيك” بجودة عالمية—بدون حشو. كل قسم مصمم ليبدو مثل صفحة وكالة دولية.
+        </p>
+      </div>
+
+      <div class="service-list">
+        <!-- item 1 -->
+        <article class="service reveal">
+          <div class="service__copy">
+            <div class="service__tag">01 • STRATEGY</div>
+            <h3 data-i18n="s1_title">استراتيجية وتسويق</h3>
+            <p data-i18n="s1_desc">تحديد التموضع، الرسالة، جمهورك، وخطة المحتوى—قبل أي تصوير أو تصميم.</p>
+            <a class="link" href="/contact.html" data-i18n="contact_us">تواصل معنا</a>
+          </div>
+          <div class="service__visual v1" aria-hidden="true"></div>
         </article>
 
-        <article class="card tilt reveal" data-tilt>
-          <div class="card-media media2">
-            <div class="badge">Cinematic</div>
+        <!-- item 2 -->
+        <article class="service reveal">
+          <div class="service__copy">
+            <div class="service__tag">02 • BRAND</div>
+            <h3 data-i18n="s2_title">هوية وتصميم فاخر</h3>
+            <p data-i18n="s2_desc">Design system، قوالب سوشيال، هوية مرئية—تبدو راقية ومتسقة على كل منصة.</p>
+            <a class="link" href="/contact.html" data-i18n="contact_us">تواصل معنا</a>
           </div>
-          <div class="card-body">
-            <h3>Product Film</h3>
-            <p>High-end visuals, tight pacing, sound design—built for scroll-stopping.</p>
-            <div class="tags">
-              <span>Film</span><span>Editing</span><span>Ads</span>
-            </div>
-          </div>
+          <div class="service__visual v2" aria-hidden="true"></div>
         </article>
 
-        <article class="card tilt reveal" data-tilt>
-          <div class="card-media media3">
-            <div class="badge">Performance</div>
+        <!-- item 3 -->
+        <article class="service reveal">
+          <div class="service__copy">
+            <div class="service__tag">03 • FILM</div>
+            <h3 data-i18n="s3_title">إنتاج سينمائي ومحتوى</h3>
+            <p data-i18n="s3_desc">إعلانات، Reels، قصص—مشاهد “نظيفة” بتفاصيل تصوير ومونتاج محسوبة.</p>
+            <a class="link" href="/contact.html" data-i18n="contact_us">تواصل معنا</a>
           </div>
-          <div class="card-body">
-            <h3>Conversion Landing</h3>
-            <p>Fast, sharp, and persuasive—optimized for leads and booked calls.</p>
-            <div class="tags">
-              <span>UX</span><span>CRO</span><span>SEO</span>
-            </div>
+          <div class="service__visual v3" aria-hidden="true"></div>
+        </article>
+
+        <!-- item 4 -->
+        <article class="service reveal">
+          <div class="service__copy">
+            <div class="service__tag">04 • PERFORMANCE</div>
+            <h3 data-i18n="s4_title">أداء وتحويل</h3>
+            <p data-i18n="s4_desc">Landing pages، تتبع، تحسين Conversion—نقيس ونكرر حتى تتحول المشاهدات لعملاء.</p>
+            <a class="link" href="/contact.html" data-i18n="contact_us">تواصل معنا</a>
           </div>
+          <div class="service__visual v4" aria-hidden="true"></div>
         </article>
       </div>
     </section>
 
-    <!-- SERVICES (stacked luxury cards) -->
-    <section class="section">
-      <div class="section-head">
-        <h2 class="title reveal">Services</h2>
-        <p class="desc reveal">Boutique execution with enterprise-level polish.</p>
+    <!-- TENETS -->
+    <section id="tenets" class="section">
+      <div class="section__head">
+        <h2 class="title reveal">
+          <span class="cap">Tenets</span>
+          <span data-i18n="tenets_title">مبادئنا</span>
+        </h2>
+        <p class="desc reveal" data-i18n="tenets_desc">
+          الفخامة ليست “زينة”… الفخامة = وضوح + تناسق + قرار إبداعي قوي.
+        </p>
       </div>
 
-      <div class="stack">
-        <div class="stack-card reveal">
-          <h3>Brand & Identity</h3>
-          <p>Positioning, visual identity, design systems, social templates.</p>
-          <a href="/en/" class="link">Explore</a>
+      <div class="tenets">
+        <div class="tenet reveal">
+          <span class="n">01</span>
+          <div>
+            <h4 data-i18n="t1">وضوح الرسالة</h4>
+            <p data-i18n="t1d">نكتب ما يُفهم بسرعة—ثم نصممه بطريقة تُحس.</p>
+          </div>
         </div>
-        <div class="stack-card reveal">
-          <h3>Film & Content</h3>
-          <p>Cinematic ads, reels, narratives, production direction.</p>
-          <a href="/news/" class="link">See insights</a>
+        <div class="tenet reveal">
+          <span class="n">02</span>
+          <div>
+            <h4 data-i18n="t2">جودة التنفيذ</h4>
+            <p data-i18n="t2d">تفاصيل صغيرة تصنع فرقًا كبيرًا: حركة، مسافات، إيقاع.</p>
+          </div>
         </div>
-        <div class="stack-card reveal">
-          <h3>Performance & Growth</h3>
-          <p>Conversion pages, tracking, creative strategy, media execution.</p>
-          <a href="/contact.html" class="link">Get a proposal</a>
+        <div class="tenet reveal">
+          <span class="n">03</span>
+          <div>
+            <h4 data-i18n="t3">اتساق الهوية</h4>
+            <p data-i18n="t3d">نظام تصميم يحمي صورتك عبر كل منصة.</p>
+          </div>
+        </div>
+        <div class="tenet reveal">
+          <span class="n">04</span>
+          <div>
+            <h4 data-i18n="t4">إبداع يقاس</h4>
+            <p data-i18n="t4d">نحب الجمال… لكن نحب النتائج أكثر.</p>
+          </div>
+        </div>
+        <div class="tenet reveal">
+          <span class="n">05</span>
+          <div>
+            <h4 data-i18n="t5">سرعة بدون فوضى</h4>
+            <p data-i18n="t5d">نُنجز بسرعة مع نظام واضح ومسار تسليم نظيف.</p>
+          </div>
+        </div>
+        <div class="tenet reveal">
+          <span class="n">06</span>
+          <div>
+            <h4 data-i18n="t6">طابع عالمي</h4>
+            <p data-i18n="t6d">لغة بصرية تناسب برلين… كما تناسب دبي.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- MARQUEE -->
-    <section class="marquee">
-      <div class="marquee-track" aria-hidden="true">
-        <span>DESIGN SYSTEMS</span><span>•</span>
-        <span>CINEMATIC FILM</span><span>•</span>
-        <span>PERFORMANCE CREATIVE</span><span>•</span>
-        <span>PREMIUM UX</span><span>•</span>
-        <span>DESIGN SYSTEMS</span><span>•</span>
-        <span>CINEMATIC FILM</span><span>•</span>
-        <span>PERFORMANCE CREATIVE</span><span>•</span>
-        <span>PREMIUM UX</span><span>•</span>
+    <!-- TRUSTED BY -->
+    <section id="trusted" class="trusted">
+      <div class="trusted__inner">
+        <h2 class="title reveal">
+          <span class="cap">Trusted</span>
+          <span data-i18n="trusted_title">يثق بنا</span>
+        </h2>
+
+        <div class="marquee reveal" aria-hidden="true">
+          <div class="track">
+            <span class="logo">VMC</span><span>•</span>
+            <span class="logo">BRAND</span><span>•</span>
+            <span class="logo">STUDIO</span><span>•</span>
+            <span class="logo">MEDIA</span><span>•</span>
+            <span class="logo">GLOBAL</span><span>•</span>
+            <span class="logo">PARTNER</span><span>•</span>
+            <span class="logo">VMC</span><span>•</span>
+            <span class="logo">BRAND</span><span>•</span>
+            <span class="logo">STUDIO</span><span>•</span>
+            <span class="logo">MEDIA</span><span>•</span>
+            <span class="logo">GLOBAL</span><span>•</span>
+            <span class="logo">PARTNER</span><span>•</span>
+          </div>
+        </div>
+
+        <p class="small reveal" data-i18n="trusted_note">
+          حاليًا نستخدم شعارات “Placeholder” — وعندما تجهز قائمة العملاء، نستبدلها فورًا.
+        </p>
       </div>
     </section>
 
     <!-- FINAL CTA -->
     <section class="final">
-      <div class="final-inner reveal">
-        <h2>Ready to look premium?</h2>
-        <p>Tell us what you’re building. We’ll propose a high-end direction and a conversion-first structure.</p>
-        <a class="btn primary magnetic" href="/contact.html">Start a Project</a>
+      <div class="final__card reveal">
+        <h2 data-i18n="final_title">جاهز لتبدو “Premium”؟</h2>
+        <p data-i18n="final_desc">أرسل هدفك ونوع المشروع—وسنقترح اتجاهًا فخمًا مع خطة تحويل واضحة.</p>
+        <a class="btn primary magnetic" href="/contact.html" data-i18n="final_cta">اطلب عرض سعر</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <p>© <span id="y"></span> Viva Media Creative</p>
-    <div class="footer-links">
+    <div class="footer__links">
       <a href="/privacy.html">Privacy</a>
       <a href="/contact.html">Contact</a>
     </div>
   </footer>
 
-  <script src="assets/home.js" type="module"></script>
+  <script type="module" src="/assets/vmc-home.js"></script>
 </body>
 </html>
 
