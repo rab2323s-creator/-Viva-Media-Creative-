@@ -85,63 +85,74 @@
     </section>
 
     <!-- SERVICES (Zamakan-like repeated sections, but VMC luxury) -->
-    <section id="services" class="section">
-      <div class="section__head">
-        <h2 class="title reveal">
-          <span class="cap" data-i18n="services_cap">Services</span>
-          <span data-i18n="services_title">خدماتنا</span>
-        </h2>
-        <p class="desc reveal" data-i18n="services_desc">
-          باقات تنفيذ “بوتيك” بجودة عالمية—بدون حشو. كل قسم مصمم ليبدو مثل صفحة وكالة دولية.
-        </p>
+    <section id="services" class="section services-sticky">
+  <div class="section__head">
+    <h2 class="title reveal">
+      <span class="cap" data-i18n="services_cap">Services</span>
+      <span data-i18n="services_title">خدماتنا</span>
+    </h2>
+    <p class="desc reveal" data-i18n="services_desc">
+      باقات تنفيذ “بوتيك” بجودة عالمية—بدون حشو. كل قسم مصمم ليبدو مثل صفحة وكالة دولية.
+    </p>
+  </div>
+
+  <!-- Sticky Stage -->
+  <div class="stage" id="servicesStage" aria-label="Sticky services scenes">
+    <div class="stage__frame">
+      <!-- Visual -->
+      <div class="stage__visual" id="stageVisual" aria-hidden="true">
+        <div class="visual visual--1 is-active"></div>
+        <div class="visual visual--2"></div>
+        <div class="visual visual--3"></div>
+        <div class="visual visual--4"></div>
+        <div class="visual__shine"></div>
       </div>
 
-      <div class="service-list">
-        <!-- item 1 -->
-        <article class="service reveal">
-          <div class="service__copy">
-            <div class="service__tag">01 • STRATEGY</div>
-            <h3 data-i18n="s1_title">استراتيجية وتسويق</h3>
-            <p data-i18n="s1_desc">تحديد التموضع، الرسالة، جمهورك، وخطة المحتوى—قبل أي تصوير أو تصميم.</p>
-            <a class="link" href="/contact.html" data-i18n="contact_us">تواصل معنا</a>
-          </div>
-          <div class="service__visual v1" aria-hidden="true"></div>
-        </article>
+      <!-- Copy -->
+      <div class="stage__copy">
+        <div class="scene is-active" data-scene="1">
+          <div class="scene__tag">01 • STRATEGY</div>
+          <h3 data-i18n="s1_title">استراتيجية وتسويق</h3>
+          <p data-i18n="s1_desc">تحديد التموضع، الرسالة، جمهورك، وخطة المحتوى—قبل أي تصوير أو تصميم.</p>
+          <a class="link" href="/contact.html" data-i18n="contact_us">تواصل معنا</a>
+        </div>
 
-        <!-- item 2 -->
-        <article class="service reveal">
-          <div class="service__copy">
-            <div class="service__tag">02 • BRAND</div>
-            <h3 data-i18n="s2_title">هوية وتصميم فاخر</h3>
-            <p data-i18n="s2_desc">Design system، قوالب سوشيال، هوية مرئية—تبدو راقية ومتسقة على كل منصة.</p>
-            <a class="link" href="/contact.html" data-i18n="contact_us">تواصل معنا</a>
-          </div>
-          <div class="service__visual v2" aria-hidden="true"></div>
-        </article>
+        <div class="scene" data-scene="2">
+          <div class="scene__tag">02 • BRAND</div>
+          <h3 data-i18n="s2_title">هوية وتصميم فاخر</h3>
+          <p data-i18n="s2_desc">Design system، قوالب سوشيال، هوية مرئية—تبدو راقية ومتسقة على كل منصة.</p>
+          <a class="link" href="/contact.html" data-i18n="contact_us">تواصل معنا</a>
+        </div>
 
-        <!-- item 3 -->
-        <article class="service reveal">
-          <div class="service__copy">
-            <div class="service__tag">03 • FILM</div>
-            <h3 data-i18n="s3_title">إنتاج سينمائي ومحتوى</h3>
-            <p data-i18n="s3_desc">إعلانات، Reels، قصص—مشاهد “نظيفة” بتفاصيل تصوير ومونتاج محسوبة.</p>
-            <a class="link" href="/contact.html" data-i18n="contact_us">تواصل معنا</a>
-          </div>
-          <div class="service__visual v3" aria-hidden="true"></div>
-        </article>
+        <div class="scene" data-scene="3">
+          <div class="scene__tag">03 • FILM</div>
+          <h3 data-i18n="s3_title">إنتاج سينمائي ومحتوى</h3>
+          <p data-i18n="s3_desc">إعلانات، Reels، قصص—مشاهد “نظيفة” بتفاصيل تصوير ومونتاج محسوبة.</p>
+          <a class="link" href="/contact.html" data-i18n="contact_us">تواصل معنا</a>
+        </div>
 
-        <!-- item 4 -->
-        <article class="service reveal">
-          <div class="service__copy">
-            <div class="service__tag">04 • PERFORMANCE</div>
-            <h3 data-i18n="s4_title">أداء وتحويل</h3>
-            <p data-i18n="s4_desc">Landing pages، تتبع، تحسين Conversion—نقيس ونكرر حتى تتحول المشاهدات لعملاء.</p>
-            <a class="link" href="/contact.html" data-i18n="contact_us">تواصل معنا</a>
-          </div>
-          <div class="service__visual v4" aria-hidden="true"></div>
-        </article>
+        <div class="scene" data-scene="4">
+          <div class="scene__tag">04 • PERFORMANCE</div>
+          <h3 data-i18n="s4_title">أداء وتحويل</h3>
+          <p data-i18n="s4_desc">Landing pages، تتبع، تحسين Conversion—نقيس ونكرر حتى تتحول المشاهدات لعملاء.</p>
+          <a class="link" href="/contact.html" data-i18n="contact_us">تواصل معنا</a>
+        </div>
+
+        <!-- Progress indicator -->
+        <div class="dots" aria-hidden="true">
+          <span class="dot is-active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
       </div>
-    </section>
+    </div>
+
+    <!-- Scroll "length" (creates space for 4 scenes) -->
+    <div class="stage__spacer" aria-hidden="true"></div>
+  </div>
+</section>
+
 
     <!-- TENETS -->
     <section id="tenets" class="section">
