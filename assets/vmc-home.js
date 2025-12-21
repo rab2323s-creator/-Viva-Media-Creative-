@@ -1,10 +1,5 @@
  /* =========================
-   VMC HOME (Final JS)
-   - Year
-   - Scroll reveal
-   - Magnetic buttons
-   - AR/EN toggle (no URL change)
-   - Sticky Services Scenes (stable)
+   VMC HOME (Slider Services C)
 ========================= */
 
 // year
@@ -34,7 +29,9 @@ document.querySelectorAll(".magnetic").forEach((el) => {
   });
 });
 
-// i18n (AR/EN) without changing URLs
+/* =========================
+   i18n (AR/EN) — no URL change
+========================= */
 const dict = {
   ar: {
     nav_services: "الخدمات",
@@ -53,18 +50,12 @@ const dict = {
     meta_2: "سنوات خبرة",
     meta_3: "نطاق عمل",
 
-    // hero pills
-    pill_1: "🎬 إنتاج إعلانات وفيديوهات",
-    pill_2: "👑 إدارة مشاهير وصنّاع محتوى",
-    pill_3: "🤝 حملات مؤثرين بعقود واضحة",
-    pill_4: "🌐 مواقع + SEO + تحويل",
-
     services_cap: "Services",
     services_title: "خدماتنا",
     services_desc: "خدمات مصممة لعلامات وتجّار ومؤثرين — تنفيذ فخم + استراتيجية + توزيع + قياس.",
+    services_hint: "اسحب ← → أو استخدم عجلة الماوس",
     contact_us: "تواصل معنا",
 
-    // Sticky scenes
     s1_title: "إنتاج فيديوهات وإعلانات",
     s1_desc:
       "كتابة سكريبت، تصوير/Remote Production، مونتاج فاخر، Shorts/Reels، وإعلانات جاهزة للنشر — بإيقاع يناسب المنصات.",
@@ -133,24 +124,18 @@ const dict = {
     meta_2: "Years Experience",
     meta_3: "Operating Range",
 
-    // hero pills
-    pill_1: "🎬 Ads & video production",
-    pill_2: "👑 Creators & celebs management",
-    pill_3: "🤝 Influencer campaigns (contracted)",
-    pill_4: "🌐 Websites + SEO + conversion",
-
     services_cap: "Services",
     services_title: "What we do",
     services_desc: "Built for brands, founders & creators — premium execution + strategy + distribution + measurement.",
+    services_hint: "Drag ← → or use mouse wheel",
     contact_us: "Contact us",
 
-    // Sticky scenes
     s1_title: "Video & Ad Production",
     s1_desc:
       "Scripts, filming/remote production, premium editing, shorts/reels, and ad-ready deliverables—built for platform rhythm.",
     s1_b1: "• Promotional videos",
     s1_b2: "• Cinematic editing",
-    s1_b3: "• Script + hooks",
+    s1_b3: "• Scripts + hooks",
 
     s2_title: "Creators & Celebs Management",
     s2_desc:
@@ -159,7 +144,7 @@ const dict = {
     s2_b2: "• Identity building",
     s2_b3: "• Partnership management",
 
-    s3_title: "Influencer Campaigns for Brands",
+    s3_title: "Influencer Campaigns",
     s3_desc:
       "We match you with the right influencers, manage execution end-to-end, and deliver clear reporting—with transparent contracts.",
     s3_b1: "• Influencer selection",
@@ -203,10 +188,8 @@ const langLabel = document.getElementById("langLabel");
 
 function applyLang(next) {
   lang = next;
-
   document.documentElement.lang = lang === "ar" ? "ar" : "en";
   document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-
   if (langLabel) langLabel.textContent = lang === "ar" ? "EN" : "AR";
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
@@ -214,6 +197,9 @@ function applyLang(next) {
     const v = dict[lang]?.[key];
     if (typeof v === "string") el.textContent = v;
   });
+
+  // update slider progress visuals after language flip (no layout shift surprises)
+  requestAnimationFrame(() => updateServicesUI());
 }
 
 applyLang("ar");
@@ -223,48 +209,127 @@ langBtn?.addEventListener("click", () => {
 });
 
 /* =========================
-   Sticky Services Scenes (stable)
+   Services Slider C controller
 ========================= */
-(function stickyServices() {
-  const stage = document.getElementById("servicesStage");
-  if (!stage) return;
+const viewport = document.getElementById("servicesViewport");
+const bar = document.getElementById("servicesBar");
+const dots = Array.from(document.querySelectorAll(".dot2"));
+const prevBtn = document.getElementById("prevSlide");
+const nextBtn = document.getElementById("nextSlide");
 
-  const scenes = Array.from(stage.querySelectorAll(".scene"));
-  const visuals = Array.from(stage.querySelectorAll(".visual"));
-  const dots = Array.from(stage.querySelectorAll(".dot"));
-  const spacer = stage.querySelector(".stage__spacer");
+function clamp(n, a, b) { return Math.min(b, Math.max(a, n)); }
 
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function getSlideWidth() {
+  if (!viewport) return 0;
+  return viewport.clientWidth; // each slide = 100% width
+}
 
-  function isMobile() {
-    return window.matchMedia("(max-width: 980px)").matches;
+function getIndexFromScroll() {
+  if (!viewport) return 0;
+  const w = getSlideWidth();
+  if (!w) return 0;
+  return clamp(Math.round(viewport.scrollLeft / w), 0, 3);
+}
+
+function scrollToIndex(idx) {
+  if (!viewport) return;
+  const w = getSlideWidth();
+  viewport.scrollTo({ left: idx * w, behavior: "smooth" });
+}
+
+function updateServicesUI() {
+  if (!viewport) return;
+  const idx = getIndexFromScroll();
+
+  // dots
+  dots.forEach((d, i) => d.classList.toggle("is-active", i === idx));
+
+  // progress bar
+  if (bar) {
+    const pct = ((idx + 1) / 4) * 100;
+    bar.style.width = `${pct}%`;
+  }
+}
+
+if (viewport) {
+  // initial
+  updateServicesUI();
+
+  // scroll updates
+  let raf = 0;
+  viewport.addEventListener("scroll", () => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(updateServicesUI);
+  }, { passive: true });
+
+  // wheel -> horizontal (lux)
+  viewport.addEventListener("wheel", (e) => {
+    // allow trackpads to scroll naturally; only intercept vertical intent
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      viewport.scrollLeft += e.deltaY;
+    }
+  }, { passive: false });
+
+  // keyboard
+  viewport.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      e.preventDefault();
+      const dir = (e.key === "ArrowRight") ? 1 : -1;
+      const idx = getIndexFromScroll();
+      scrollToIndex(clamp(idx + dir, 0, 3));
+    }
+  });
+
+  // drag to scroll
+  let isDown = false;
+  let startX = 0;
+  let startLeft = 0;
+
+  viewport.addEventListener("pointerdown", (e) => {
+    isDown = true;
+    viewport.classList.add("is-dragging");
+    startX = e.clientX;
+    startLeft = viewport.scrollLeft;
+    viewport.setPointerCapture?.(e.pointerId);
+  });
+
+  viewport.addEventListener("pointermove", (e) => {
+    if (!isDown) return;
+    const dx = e.clientX - startX;
+    viewport.scrollLeft = startLeft - dx;
+  });
+
+  function endDrag() {
+    if (!isDown) return;
+    isDown = false;
+    viewport.classList.remove("is-dragging");
+
+    // snap to nearest slide
+    const idx = getIndexFromScroll();
+    scrollToIndex(idx);
   }
 
-  function setActive(idx) {
-    scenes.forEach((s, i) => s.classList.toggle("is-active", i === idx));
-    visuals.forEach((v, i) => v.classList.toggle("is-active", i === idx));
-    dots.forEach((d, i) => d.classList.toggle("is-active", i === idx));
-  }
+  viewport.addEventListener("pointerup", endDrag);
+  viewport.addEventListener("pointercancel", endDrag);
+  viewport.addEventListener("pointerleave", endDrag);
+}
 
-  function onScroll() {
-    if (prefersReduced || isMobile() || !spacer) return;
+// arrows
+prevBtn?.addEventListener("click", () => {
+  const idx = getIndexFromScroll();
+  scrollToIndex(clamp(idx - 1, 0, 3));
+});
+nextBtn?.addEventListener("click", () => {
+  const idx = getIndexFromScroll();
+  scrollToIndex(clamp(idx + 1, 0, 3));
+});
 
-    const vh = window.innerHeight;
-    const rect = spacer.getBoundingClientRect();
-
-    // progress 0..1 based on spacer entering/leaving viewport
-    const total = spacer.offsetHeight + vh;
-    const passed = vh - rect.top;
-    const p = Math.min(1, Math.max(0, passed / total));
-
-    // 4 scenes
-    const idx = Math.min(3, Math.max(0, Math.floor(p * 4)));
-    setActive(idx);
-  }
-
-  setActive(0);
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll);
-  onScroll();
-})();
+// on resize keep correct snap
+window.addEventListener("resize", () => {
+  if (!viewport) return;
+  const idx = getIndexFromScroll();
+  viewport.scrollLeft = idx * getSlideWidth();
+  updateServicesUI();
+});
 
