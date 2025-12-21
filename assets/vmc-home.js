@@ -1,4 +1,4 @@
-/* =========================
+ /* =========================
    VMC HOME (Final JS)
    - Year
    - Scroll reveal
@@ -42,52 +42,77 @@ const dict = {
     nav_trusted: "عملاؤنا",
     nav_contact: "تواصل",
 
-    hero_kicker: "وكالة فخمة للتسويق والإنتاج الإبداعي • تصميم • فيلم • أداء",
-    hero_title_1: "نصنع حضورًا",
-    hero_title_2: "يشبه العلامات العالمية",
+    hero_kicker: "وكالة عالمية لإنتاج المحتوى • إدارة المؤثرين • التسويق بالأداء",
+    hero_title_1: "نحوّل حضورك",
+    hero_title_2: "إلى تأثير يبيع ويكبر",
     hero_sub:
-      "ندمج التصميم الراقي مع السرد السينمائي واستراتيجية الأداء—لنجعل علامتك تبدو “باهظة الثمن” وتحقق نتائج ملموسة.",
+      "من “فكرة” إلى “فيديو” إلى “حملة” — إنتاج سينمائي، إدارة صنّاع محتوى ومشاهير، وتسويق رقمي يعتمد على نتائج قابلة للقياس.",
     hero_cta_primary: "ابدأ مشروعك",
     hero_cta_secondary: "استكشف الخدمات",
     meta_1: "وصول جماهيري",
     meta_2: "سنوات خبرة",
     meta_3: "نطاق عمل",
 
+    // hero pills
+    pill_1: "🎬 إنتاج إعلانات وفيديوهات",
+    pill_2: "👑 إدارة مشاهير وصنّاع محتوى",
+    pill_3: "🤝 حملات مؤثرين بعقود واضحة",
+    pill_4: "🌐 مواقع + SEO + تحويل",
+
     services_cap: "Services",
     services_title: "خدماتنا",
-    services_desc:
-      "باقات تنفيذ “بوتيك” بجودة عالمية—بدون حشو. كل قسم مصمم ليبدو مثل صفحة وكالة دولية.",
+    services_desc: "خدمات مصممة لعلامات وتجّار ومؤثرين — تنفيذ فخم + استراتيجية + توزيع + قياس.",
     contact_us: "تواصل معنا",
 
-    s1_title: "استراتيجية وتسويق",
-    s1_desc: "تحديد التموضع، الرسالة، جمهورك، وخطة المحتوى—قبل أي تصوير أو تصميم.",
-    s2_title: "هوية وتصميم فاخر",
-    s2_desc: "Design system، قوالب سوشيال، هوية مرئية—تبدو راقية ومتسقة على كل منصة.",
-    s3_title: "إنتاج سينمائي ومحتوى",
-    s3_desc: "إعلانات، Reels، قصص—مشاهد “نظيفة” بتفاصيل تصوير ومونتاج محسوبة.",
-    s4_title: "أداء وتحويل",
-    s4_desc: "Landing pages، تتبع، تحسين Conversion—نقيس ونكرر حتى تتحول المشاهدات لعملاء.",
+    // Sticky scenes
+    s1_title: "إنتاج فيديوهات وإعلانات",
+    s1_desc:
+      "كتابة سكريبت، تصوير/Remote Production، مونتاج فاخر، Shorts/Reels، وإعلانات جاهزة للنشر — بإيقاع يناسب المنصات.",
+    s1_b1: "• فيديو دعائي",
+    s1_b2: "• مونتاج سينمائي",
+    s1_b3: "• سكريبت + هوك",
+
+    s2_title: "إدارة مشاهير وصنّاع محتوى",
+    s2_desc:
+      "خطة محتوى، جدولة، تطوير الهوية الرقمية، إدارة التعاونات، وتفاوض احترافي مع العلامات — لتكبر حساباتك بشكل مستمر.",
+    s2_b1: "• خطة + تقويم محتوى",
+    s2_b2: "• تطوير الهوية",
+    s2_b3: "• إدارة شراكات",
+
+    s3_title: "حملات مؤثرين للشركات",
+    s3_desc:
+      "نربط العلامات بالمؤثرين الأنسب، ندير التنفيذ بالكامل، ونقدّم تقارير نتائج واضحة — بعقود شفافة تحفظ حقوق الجميع.",
+    s3_b1: "• اختيار مؤثرين مناسبين",
+    s3_b2: "• إدارة حملة كاملة",
+    s3_b3: "• تقارير وقياس",
+
+    s4_title: "مواقع، SEO، وتحويل",
+    s4_desc:
+      "تصميم وبناء مواقع، تحسين محركات البحث، صفحات هبوط، تتبع وتحسين Conversion — لتحويل الزيارات إلى عملاء.",
+    s4_b1: "• Website & Landing",
+    s4_b2: "• SEO",
+    s4_b3: "• CRO & Tracking",
 
     tenets_title: "مبادئنا",
     tenets_desc: "الفخامة ليست “زينة”… الفخامة = وضوح + تناسق + قرار إبداعي قوي.",
     t1: "وضوح الرسالة",
-    t1d: "نكتب ما يُفهم بسرعة—ثم نصممه بطريقة تُحس.",
-    t2: "جودة التنفيذ",
-    t2d: "تفاصيل صغيرة تصنع فرقًا كبيرًا: حركة، مسافات، إيقاع.",
-    t3: "اتساق الهوية",
-    t3d: "نظام تصميم يحمي صورتك عبر كل منصة.",
-    t4: "إبداع يقاس",
-    t4d: "نحب الجمال… لكن نحب النتائج أكثر.",
-    t5: "سرعة بدون فوضى",
-    t5d: "نُنجز بسرعة مع نظام واضح ومسار تسليم نظيف.",
-    t6: "طابع عالمي",
-    t6d: "لغة بصرية تناسب برلين… كما تناسب دبي.",
+    t1d: "نحوّل الفكرة إلى رسالة بسيطة… ثم نصنع لها تنفيذًا يعلق بالذاكرة.",
+    t2: "إيقاع المنصات",
+    t2d: "نعرف كيف تُصنع لقطات “توقف السكروول” وتستمر بالمشاهدة.",
+    t3: "تنفيذ Premium",
+    t3d: "تفاصيل صغيرة تصنع فرقًا كبيرًا: حركة، مسافات، صوت، إضاءة.",
+    t4: "شفافية التعاون",
+    t4d: "شراكات بعقود واضحة تحفظ الحقوق وتضمن جودة التنفيذ.",
+    t5: "توزيع ذكي",
+    t5d: "ليس إنتاجًا فقط—بل نشر وتوزيع وقياس حتى تصل للنتيجة.",
+    t6: "نمو قابل للقياس",
+    t6d: "نقيس، نحلل، ثم نكرر ما ينجح — بدون تخمين.",
 
     trusted_title: "يثق بنا",
     trusted_note: "حاليًا نستخدم شعارات “Placeholder” — وعندما تجهز قائمة العملاء، نستبدلها فورًا.",
 
     final_title: "جاهز لتبدو “Premium”؟",
-    final_desc: "أرسل هدفك ونوع المشروع—وسنقترح اتجاهًا فخمًا مع خطة تحويل واضحة.",
+    final_desc: "أرسل هدفك ونوع المشروع—وسنقترح اتجاهًا واضحًا مع خطة تنفيذ وقياس.",
     final_cta: "اطلب عرض سعر",
   },
 
@@ -97,53 +122,77 @@ const dict = {
     nav_trusted: "Trusted",
     nav_contact: "Contact",
 
-    hero_kicker: "Luxury Creative & Marketing Agency • Design • Film • Performance",
-    hero_title_1: "We craft presence",
-    hero_title_2: "that feels globally premium",
+    hero_kicker: "Global content production • Influencer management • Performance marketing",
+    hero_title_1: "We turn your presence",
+    hero_title_2: "into impact that sells & scales",
     hero_sub:
-      "We blend luxury design, cinematic storytelling, and performance strategy—built to look expensive and convert.",
+      "From idea → video → campaign: cinematic production, creator/celebrity management, and measurable digital growth.",
     hero_cta_primary: "Start a Project",
     hero_cta_secondary: "Explore Services",
     meta_1: "Audience Reach",
     meta_2: "Years Experience",
     meta_3: "Operating Range",
 
+    // hero pills
+    pill_1: "🎬 Ads & video production",
+    pill_2: "👑 Creators & celebs management",
+    pill_3: "🤝 Influencer campaigns (contracted)",
+    pill_4: "🌐 Websites + SEO + conversion",
+
     services_cap: "Services",
     services_title: "What we do",
-    services_desc:
-      "Boutique execution with global polish—no fluff. Each section is built to feel like a top-tier agency.",
+    services_desc: "Built for brands, founders & creators — premium execution + strategy + distribution + measurement.",
     contact_us: "Contact us",
 
-    s1_title: "Strategy & Marketing",
-    s1_desc: "Positioning, messaging, audience, and a content roadmap—before production begins.",
-    s2_title: "Luxury Branding & Design",
-    s2_desc: "Design systems, social templates, visual identity—premium consistency across platforms.",
-    s3_title: "Cinematic Production",
-    s3_desc: "Ads, reels, storytelling—clean frames with intentional editing and pacing.",
-    s4_title: "Performance & Conversion",
-    s4_desc: "Landing pages, tracking, CRO—measured creative that turns views into clients.",
+    // Sticky scenes
+    s1_title: "Video & Ad Production",
+    s1_desc:
+      "Scripts, filming/remote production, premium editing, shorts/reels, and ad-ready deliverables—built for platform rhythm.",
+    s1_b1: "• Promotional videos",
+    s1_b2: "• Cinematic editing",
+    s1_b3: "• Script + hooks",
+
+    s2_title: "Creators & Celebs Management",
+    s2_desc:
+      "Content planning, scheduling, brand identity, collaborations, and professional brand negotiations—for steady account growth.",
+    s2_b1: "• Content calendar",
+    s2_b2: "• Identity building",
+    s2_b3: "• Partnership management",
+
+    s3_title: "Influencer Campaigns for Brands",
+    s3_desc:
+      "We match you with the right influencers, manage execution end-to-end, and deliver clear reporting—with transparent contracts.",
+    s3_b1: "• Influencer selection",
+    s3_b2: "• Full campaign management",
+    s3_b3: "• Reporting & measurement",
+
+    s4_title: "Web, SEO & Conversion",
+    s4_desc:
+      "Websites, SEO, landing pages, tracking, and CRO—turn traffic into qualified leads and sales.",
+    s4_b1: "• Website & landing",
+    s4_b2: "• SEO",
+    s4_b3: "• CRO & tracking",
 
     tenets_title: "Our Tenets",
     tenets_desc: "Luxury isn’t decoration. Luxury = clarity + consistency + decisive craft.",
     t1: "Clarity",
-    t1d: "Say it fast. Make it felt.",
-    t2: "Craft",
-    t2d: "Micro-details: motion, spacing, rhythm.",
-    t3: "Consistency",
-    t3d: "A system that protects your brand everywhere.",
-    t4: "Measurable creativity",
-    t4d: "Beauty—then results.",
-    t5: "Fast, not messy",
-    t5d: "Speed with a clean delivery process.",
-    t6: "Global taste",
-    t6d: "A visual language that works worldwide.",
+    t1d: "We simplify the message—then craft it to be remembered.",
+    t2: "Platform rhythm",
+    t2d: "Scroll-stopping hooks, pacing, and retention by design.",
+    t3: "Premium craft",
+    t3d: "Micro-details: motion, spacing, sound, lighting.",
+    t4: "Transparent partnerships",
+    t4d: "Clear contracts that protect rights and quality.",
+    t5: "Smart distribution",
+    t5d: "Not just production—distribution + measurement to reach outcomes.",
+    t6: "Measurable growth",
+    t6d: "We measure, analyze, and repeat what works—no guessing.",
 
     trusted_title: "Trusted by",
     trusted_note: "We’re using placeholder logos for now—swap them once your client list is ready.",
 
     final_title: "Ready to look premium?",
-    final_desc:
-      "Share your goal and project type—we’ll propose a luxury direction with a conversion-first structure.",
+    final_desc: "Share your goal and project type—we’ll propose a clear direction with execution + measurement.",
     final_cta: "Request a Quote",
   },
 };
@@ -218,3 +267,4 @@ langBtn?.addEventListener("click", () => {
   window.addEventListener("resize", onScroll);
   onScroll();
 })();
+
