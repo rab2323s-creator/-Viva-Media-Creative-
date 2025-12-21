@@ -511,3 +511,41 @@ a{color:inherit; text-decoration:none}
   .visual__shine{ animation:none !important; }
 }
 
+/* Hero pills */
+.hero__pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top: 14px;
+}
+.pillx{
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.02);
+  color: rgba(238,241,246,.70);
+  font-size: 12px;
+  backdrop-filter: blur(10px);
+}
+.pillx:hover{
+  border-color: rgba(245,208,122,.24);
+  color: rgba(245,208,122,.92);
+}
+
+/* scene bullets */
+.scene__bullets{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin: 12px 0 16px;
+  color: rgba(238,241,246,.62);
+  font-size: 12px;
+}
+.scene__bullets span{
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.02);
+}
+
+
