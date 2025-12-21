@@ -92,16 +92,129 @@
       <div class="scroll" aria-hidden="true"><span></span></div>
     </section>
 
-    <!-- SERVICES (Sticky Scenes) -->
-    ✅ خدمات C — “Horizontal Slider (Snap) + Progress” (مذهل بصريًا)
+    <!-- SERVICES (Horizontal Slider + Snap + Progress) -->
+    <section id="services" class="section services-slider">
+      <div class="section__head">
+        <h2 class="title reveal">
+          <span class="cap" data-i18n="services_cap">Services</span>
+          <span data-i18n="services_title">خدماتنا</span>
+        </h2>
+        <p class="desc reveal" data-i18n="services_desc">
+          خدمات مصممة لعلامات وتجّار ومؤثرين — تنفيذ فخم + استراتيجية + توزيع + قياس.
+        </p>
+      </div>
 
-سلايدر أفقي بالماوس/اللمس، كل سلايد خدمة
+      <!-- Slider -->
+      <div class="sliderShell reveal" aria-label="Services horizontal slider">
+        <div class="sliderTop">
+          <div class="sliderHint" data-i18n="services_hint">اسحب ← → أو استخدم عجلة الماوس</div>
 
-Progress bar + رقم خدمة + تأثيرات ذهبية
+          <div class="sliderProgress" aria-hidden="true">
+            <span class="sliderProgress__bar" id="servicesBar"></span>
+          </div>
+        </div>
 
-يعطي إحساس وكالة عالمية جدًا
+        <div class="sliderViewport" id="servicesViewport" tabindex="0" aria-label="Services slides">
+          <!-- Slide 1 -->
+          <article class="slide" data-slide="1">
+            <div class="slide__bg bg--1" aria-hidden="true"></div>
+            <div class="slide__inner">
+              <div class="slide__num">01</div>
+              <div class="slide__tag">FILM PRODUCTION</div>
+              <h3 class="slide__title" data-i18n="s1_title">إنتاج فيديوهات وإعلانات</h3>
+              <p class="slide__desc" data-i18n="s1_desc">
+                كتابة سكريبت، تصوير/Remote Production، مونتاج فاخر، Shorts/Reels، وإعلانات جاهزة للنشر — بإيقاع يناسب المنصات.
+              </p>
 
-متى هو الأفضل؟ إذا بدك WOW بصري سريع مثل مواقع الوكالات.
+              <div class="slide__chips">
+                <span class="chip" data-i18n="s1_b1">• فيديو دعائي</span>
+                <span class="chip" data-i18n="s1_b2">• مونتاج سينمائي</span>
+                <span class="chip" data-i18n="s1_b3">• سكريبت + هوك</span>
+              </div>
+
+              <a class="btn ghost magnetic" href="/contact.html" data-i18n="contact_us">تواصل معنا</a>
+            </div>
+          </article>
+
+          <!-- Slide 2 -->
+          <article class="slide" data-slide="2">
+            <div class="slide__bg bg--2" aria-hidden="true"></div>
+            <div class="slide__inner">
+              <div class="slide__num">02</div>
+              <div class="slide__tag">CREATOR & CELEB</div>
+              <h3 class="slide__title" data-i18n="s2_title">إدارة مشاهير وصنّاع محتوى</h3>
+              <p class="slide__desc" data-i18n="s2_desc">
+                خطة محتوى، جدولة، تطوير الهوية الرقمية، إدارة التعاونات، وتفاوض احترافي مع العلامات — لتكبر حساباتك بشكل مستمر.
+              </p>
+
+              <div class="slide__chips">
+                <span class="chip" data-i18n="s2_b1">• خطة + تقويم محتوى</span>
+                <span class="chip" data-i18n="s2_b2">• تطوير الهوية</span>
+                <span class="chip" data-i18n="s2_b3">• إدارة شراكات</span>
+              </div>
+
+              <a class="btn ghost magnetic" href="/contact.html" data-i18n="contact_us">تواصل معنا</a>
+            </div>
+          </article>
+
+          <!-- Slide 3 -->
+          <article class="slide" data-slide="3">
+            <div class="slide__bg bg--3" aria-hidden="true"></div>
+            <div class="slide__inner">
+              <div class="slide__num">03</div>
+              <div class="slide__tag">INFLUENCER CAMPAIGNS</div>
+              <h3 class="slide__title" data-i18n="s3_title">حملات مؤثرين للشركات</h3>
+              <p class="slide__desc" data-i18n="s3_desc">
+                نربط العلامات بالمؤثرين الأنسب، ندير التنفيذ بالكامل، ونقدّم تقارير نتائج واضحة — بعقود شفافة تحفظ حقوق الجميع.
+              </p>
+
+              <div class="slide__chips">
+                <span class="chip" data-i18n="s3_b1">• اختيار مؤثرين مناسبين</span>
+                <span class="chip" data-i18n="s3_b2">• إدارة حملة كاملة</span>
+                <span class="chip" data-i18n="s3_b3">• تقارير وقياس</span>
+              </div>
+
+              <a class="btn ghost magnetic" href="/contact.html" data-i18n="contact_us">تواصل معنا</a>
+            </div>
+          </article>
+
+          <!-- Slide 4 -->
+          <article class="slide" data-slide="4">
+            <div class="slide__bg bg--4" aria-hidden="true"></div>
+            <div class="slide__inner">
+              <div class="slide__num">04</div>
+              <div class="slide__tag">DIGITAL GROWTH</div>
+              <h3 class="slide__title" data-i18n="s4_title">مواقع، SEO، وتحويل</h3>
+              <p class="slide__desc" data-i18n="s4_desc">
+                تصميم وبناء مواقع، تحسين محركات البحث، صفحات هبوط، تتبع وتحسين Conversion — لتحويل الزيارات إلى عملاء.
+              </p>
+
+              <div class="slide__chips">
+                <span class="chip" data-i18n="s4_b1">• Website & Landing</span>
+                <span class="chip" data-i18n="s4_b2">• SEO</span>
+                <span class="chip" data-i18n="s4_b3">• CRO & Tracking</span>
+              </div>
+
+              <a class="btn ghost magnetic" href="/contact.html" data-i18n="contact_us">تواصل معنا</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="sliderBottom" aria-hidden="true">
+          <div class="dotsRow">
+            <span class="dot2 is-active"></span>
+            <span class="dot2"></span>
+            <span class="dot2"></span>
+            <span class="dot2"></span>
+          </div>
+
+          <div class="arrows">
+            <button class="arrow" id="prevSlide" aria-label="Previous">←</button>
+            <button class="arrow" id="nextSlide" aria-label="Next">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- TENETS -->
     <section id="tenets" class="section">
