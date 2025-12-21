@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تواصل معنا - Viva Media Creative</title>
+<link rel="icon" href="assets/logo.jpeg">
+<style>
+  /* ===== Reset ===== */
+  * {margin:0;padding:0;box-sizing:border-box;}
+  body {font-family:'Arial', sans-serif;background:#f5f5f5;color:#333;line-height:1.6;}
+  a {text-decoration:none;}
+  img {max-width:100%;display:block;}
+
+  /* ===== Header ===== */
+  header {background:#111;color:#fff;padding:1rem;text-align:center;position:relative;}
+  header img {height:50px;vertical-align:middle;}
+  header h1 {display:inline-block;margin:0 0 0 1rem;font-size:1.5rem;}
+
+  /* ===== Hero Section ===== */
+  .hero {position:relative;background:url('assets/contact-hero.jpg') center/cover no-repeat;height:400px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .hero::after {content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);}
+  .hero-content {position:relative;color:#fff;text-align:center;padding:0 1rem;animation:fadeIn 1.5s ease forwards;opacity:0;}
+  .hero-content h2 {font-size:2.5rem;margin-bottom:1rem;}
+  .hero-content p {font-size:1.2rem;margin-bottom:2rem;}
+
+  /* ===== Main ===== */
+  main {max-width:1000px;margin:-100px auto 2rem;padding:2rem;background:#fff;border-radius:12px;box-shadow:0 6px 25px rgba(0,0,0,0.15);}
+  form {display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem;opacity:0;transform:translateY(30px);animation:fadeUp 1s forwards 0.5s;}
+  input, textarea {padding:1rem;border:1px solid #ccc;border-radius:8px;font-size:1rem;width:100%;transition:0.3s;outline:none;}
+  input:focus, textarea:focus {border-color:#f4b400;box-shadow:0 0 8px rgba(244,180,0,0.4);}
+  textarea {resize:vertical;min-height:160px;}
+  button {background:#f4b400;color:#fff;border:none;padding:1rem;font-size:1.1rem;border-radius:8px;cursor:pointer;transition:0.3s;}
+  button:hover {background:#e09c00;transform:scale(1.05);}
+
+  /* ===== Contact Methods ===== */
+  .contact-methods {display:flex;justify-content:center;gap:1rem;margin-top:2rem;flex-wrap:wrap;opacity:0;animation:fadeUp 1s forwards 1s;}
+  .contact-methods a {color:#fff;padding:0.8rem 1.8rem;border-radius:8px;display:flex;align-items:center;gap:0.5rem;font-weight:bold;transition:0.3s;}
+  .contact-methods a.whatsapp {background:#25D366;}
+  .contact-methods a.email {background:#4285f4;}
+  .contact-methods a.facebook {background:#3b5998;}
+  .contact-methods a:hover {opacity:0.9;transform:scale(1.05);}
+
+  /* ===== Map ===== */
+  .map-container {margin-top:3rem;border-radius:12px;overflow:hidden;box-shadow:0 6px 25px rgba(0,0,0,0.1);opacity:0;transform:translateY(30px);animation:fadeUp 1s forwards 1.5s;}
+  iframe {width:100%;height:450px;border:0;}
+
+  /* ===== Footer ===== */
+  footer {text-align:center;margin-top:2rem;padding:1rem;color:#888;font-size:0.9rem;}
+
+  /* ===== Animations ===== */
+  @keyframes fadeIn {to {opacity:1;}}
+  @keyframes fadeUp {to {opacity:1;transform:translateY(0);}}
+
+  /* ===== Responsive ===== */
+  @media(max-width:768px){
+    .hero-content h2 {font-size:2rem;}
+    .hero-content p {font-size:1rem;}
+    main {margin:-70px 1rem 2rem;padding:1.5rem;}
+    iframe {height:350px;}
+  }
+  @media(max-width:480px){
+    .hero-content h2 {font-size:1.5rem;}
+    .hero-content p {font-size:0.9rem;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header>
+  <img src="assets/logo.jpeg" alt="Viva Media Creative Logo">
+  <h1>Viva Media Creative</h1>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <h2>تواصل معنا اليوم!</h2>
+    <p>ابدأ رحلتك نحو التميز والإبداع الرقمي مع فريق Viva Media Creative.</p>
+  </div>
+</section>
+
+<!-- ===== Main Contact Form ===== -->
+<main>
+  <form action="https://formsubmit.co/vivamediacreations@gmail.com" method="POST">
+    <input type="hidden" name="_next" value="https://vivamediacreative.com/thank-you.html">
+    <input type="text" name="name" placeholder="الاسم الكامل" required>
+    <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+    <input type="text" name="subject" placeholder="الموضوع" required>
+    <textarea name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+    <button type="submit">أرسل رسالتك</button>
+  </form>
+
+  <div class="contact-methods">
+    <a class="whatsapp" href="https://wa.me/4915565678291?text=مرحباً، أود الاستفسار عن خدمات Viva Media Creative" target="_blank">واتساب</a>
+    <a class="email" href="mailto:info@vivamediacreative.com">البريد الإلكتروني</a>
+    <a class="facebook" href="https://www.facebook.com/vivamediacreative" target="_blank">فيسبوك</a>
+  </div>
+
+  <!-- ===== Google Maps ===== -->
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2428.7706991268624!2d13.4508165!3d52.5013902!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fcc74462302a6b%3A0x9954b3eef5b55235!2sViva%20Media%20Creative!5e0!3m2!1sde!2sde!4v1762564205407!5m2!1sde!2sde" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer>
+  © 2025 Viva Media Creative جميع الحقوق محفوظة
+</footer>
+
+</body>
+</html>
