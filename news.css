@@ -1,0 +1,56 @@
+/* تنسيق صفحة الأخبار فقط */
+
+.news {
+  background: #fafafa;
+}
+
+/* شبكة المقالات */
+.news .services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* كارت المقال */
+.news .card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.news .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.12);
+}
+
+/* صورة المقال */
+.news .card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* العنوان */
+.news .card h3 {
+  font-size: 1.15rem;
+  margin: 16px;
+}
+
+.news .card h3 a {
+  color: #111;
+  text-decoration: none;
+}
+
+.news .card h3 a:hover {
+  color: #0077ff;
+}
+
+/* الوصف */
+.news .card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0 16px 18px;
+  line-height: 1.7;
+}
