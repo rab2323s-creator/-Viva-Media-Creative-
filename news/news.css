@@ -242,3 +242,119 @@
   .news .services-grid .card:first-child img { height: 240px; }
 }
 
+/* =========================
+   FIX HEADER (News Page)
+   ========================= */
+
+.news .site-header{
+  background: rgba(10,14,25,0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.news .site-header .header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  flex-wrap: wrap;
+}
+
+/* يمنع “تمدد” اللوجو اللي عامل المشكلة */
+.news .site-header .logo{
+  width: 56px !important;
+  height: 56px !important;
+  max-width: 56px !important;
+  max-height: 56px !important;
+  object-fit: cover !important;
+  border-radius: 14px;
+  display: block;
+}
+
+/* منطقة البراند (لوجو + اسم) */
+.news .site-header .brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 260px;
+}
+
+.news .site-header .brand a{
+  display: inline-flex;
+  align-items: center;
+}
+
+/* نص البراند */
+.news .site-header .brand-text{
+  text-align: right;
+}
+
+.news .site-header .brand-text h1{
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.news .site-header .brand-text .tag{
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: rgba(233,238,252,0.75);
+}
+
+/* منيو الهيدر */
+.news .site-header .main-nav{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.news .site-header .main-nav a{
+  color: rgba(233,238,252,0.9);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.news .site-header .main-nav a:hover{
+  background: rgba(255,255,255,0.08);
+}
+
+.news .site-header .main-nav a.active{
+  background: rgba(0,119,255,0.18);
+  color: #9ad0ff;
+}
+
+/* اللغة */
+.news .site-header .lang{
+  color: rgba(233,238,252,0.8);
+  white-space: nowrap;
+}
+
+.news .site-header .lang a{
+  color: #9ad0ff;
+  text-decoration: none;
+}
+
+.news .site-header .lang a:hover{
+  text-decoration: underline;
+}
+
+/* موبايل */
+@media (max-width: 768px){
+  .news .site-header .header-inner{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .news .site-header .brand{
+    justify-content: center;
+  }
+  .news .site-header .main-nav{
+    justify-content: center;
+  }
+  .news .site-header .lang{
+    text-align: center;
+  }
+}
+
