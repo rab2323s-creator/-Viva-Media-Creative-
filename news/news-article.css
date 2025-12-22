@@ -1,0 +1,132 @@
+/* =========================
+   Article Page (Luxury)
+   يعمل فقط عندما body فيه class="article"
+   ========================= */
+
+.article{
+  background: #0b0f19;
+  color: #e9eefc;
+}
+
+/* تحسين مساحة المقال */
+.article .section{
+  padding-top: 26px;
+  padding-bottom: 60px;
+}
+
+/* صندوق المقال */
+.article .blog-article{
+  max-width: 860px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 60px rgba(0,0,0,0.45);
+}
+
+/* داخل الصندوق */
+.article .blog-article > *:not(.article-img){
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+/* عنوان المقال */
+.article .blog-article h1{
+  padding-top: 22px;
+  margin: 0;
+  font-size: clamp(1.6rem, 2.3vw, 2.2rem);
+  line-height: 1.35;
+  font-weight: 900;
+}
+
+/* التاريخ */
+.article .article-date{
+  margin: 10px 0 0;
+  color: rgba(233,238,252,0.70);
+  font-size: 0.95rem;
+  padding-bottom: 14px;
+}
+
+/* صورة الهيدر للمقال */
+.article .article-img{
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.15) contrast(1.05);
+}
+
+/* عناوين الأقسام */
+.article .blog-article h2{
+  margin: 26px 0 10px;
+  font-size: 1.25rem;
+  font-weight: 850;
+  line-height: 1.5;
+}
+
+.article .blog-article h3{
+  margin: 20px 0 8px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: rgba(233,238,252,0.95);
+}
+
+/* الفقرات */
+.article .blog-article p{
+  margin: 0 0 14px;
+  line-height: 2;
+  color: rgba(233,238,252,0.82);
+  font-size: 1.02rem;
+}
+
+/* قوائم */
+.article .blog-article ul{
+  margin: 10px 0 0;
+  padding: 0 22px 18px;
+  list-style: none;
+}
+
+.article .blog-article ul li{
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: rgba(233,238,252,0.85);
+}
+
+.article .blog-article ul li:last-child{
+  border-bottom: none;
+}
+
+/* رابط العودة */
+.article .back-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 22px 24px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #9ad0ff;
+  background: rgba(0,119,255,0.14);
+  border: 1px solid rgba(0,119,255,0.22);
+}
+
+.article .back-link:hover{
+  background: rgba(0,119,255,0.22);
+}
+
+/* موبايل */
+@media (max-width: 640px){
+  .article .blog-article{
+    border-radius: 14px;
+  }
+
+  .article .article-img{
+    height: 240px;
+  }
+
+  .article .blog-article > *:not(.article-img){
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
