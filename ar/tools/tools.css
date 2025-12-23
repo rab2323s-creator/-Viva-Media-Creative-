@@ -72,3 +72,95 @@ body.tools .note {
   line-height: 1.8;
   color: #444;
 }
+
+/* =========================
+   FIX HEADER – TOOLS PAGE
+   ========================= */
+
+/* الهيدر */
+.tools .site-header{
+  background: rgba(10,14,25,0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ترتيب المحتوى داخل الهيدر */
+.tools .header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  flex-wrap: wrap;
+}
+
+/* ✅ حل مشكلة اللوجو الكبير */
+.tools .logo{
+  width: 52px !important;
+  height: 52px !important;
+  max-width: 52px !important;
+  max-height: 52px !important;
+  object-fit: contain !important;
+  border-radius: 12px;
+  display: block;
+}
+
+/* البراند */
+.tools .brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 240px;
+}
+
+.tools .brand a{
+  display: inline-flex;
+  align-items: center;
+}
+
+/* اسم الشركة */
+.tools .brand-text h1{
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+/* المنيو */
+.tools .main-nav{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tools .main-nav a{
+  color: rgba(233,238,252,0.9);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.tools .main-nav a:hover{
+  background: rgba(255,255,255,0.08);
+}
+
+.tools .main-nav a.active{
+  background: rgba(0,119,255,0.18);
+  color: #9ad0ff;
+}
+
+/* موبايل */
+@media (max-width: 768px){
+  .tools .header-inner{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tools .brand{
+    justify-content: center;
+  }
+
+  .tools .main-nav{
+    justify-content: center;
+  }
+}
+
