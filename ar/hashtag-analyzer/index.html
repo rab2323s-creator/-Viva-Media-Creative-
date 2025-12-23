@@ -40,6 +40,7 @@
   }
   </script>
 </head>
+<script src="/ar/hashtag-analyzer/hashtag.js"></script>
 
 <body class="tools">
 
@@ -64,26 +65,42 @@
 <main class="container section">
 
   <article class="tool-box">
-    <h1>أداة تحليل الهاشتاغات الذكية لإنستغرام</h1>
-    <p class="intro">
-      اقترح هاشتاغات مرتبطة بالمحتوى مع توزيع ذكي حسب حجم الحساب
-      لرفع الوصول وقابلية الاكتشاف بدون سبام.
-    </p>
+  <h1>أداة تحليل الهاشتاغات الذكية لإنستغرام</h1>
 
-    <label>عن ماذا المحتوى؟</label>
-    <input id="topicInput" placeholder="مثال: تسويق رقمي، تصوير، سفر" />
+  <p class="intro">
+    اقترح هاشتاغات مرتبطة بالمحتوى مع توزيع ذكي حسب حجم الحساب والهدف،
+    لرفع الوصول وقابلية الاكتشاف بدون سبام أو تكرار.
+  </p>
 
-    <label>حجم الحساب</label>
-    <select id="accountSize">
-      <option value="small">صغير (أقل من 10K)</option>
-      <option value="medium">متوسط (10K – 100K)</option>
-      <option value="large">كبير (أكثر من 100K)</option>
-    </select>
+  <label for="topicInput">عن ماذا المحتوى؟</label>
+  <textarea
+    id="topicInput"
+    rows="3"
+    placeholder="مثال: ريل تعليمي عن تصوير منتجات للمشاريع الصغيرة"></textarea>
 
-    <button class="btn primary" onclick="generateHashtags()">حلّل الهاشتاغات</button>
+  <label for="accountSize">حجم الحساب</label>
+  <select id="accountSize">
+    <option value="small">صغير (أقل من 10K)</option>
+    <option value="medium">متوسط (10K – 100K)</option>
+    <option value="large">كبير (أكثر من 100K)</option>
+  </select>
 
-    <div id="results"></div>
-  </article>
+  <label for="goal">الهدف من النشر</label>
+  <select id="goal">
+    <option value="reach">وصول (Reach)</option>
+    <option value="engagement">تفاعل (Engagement)</option>
+    <option value="sales">مبيعات / عملاء</option>
+    <option value="brand">وعي بالعلامة</option>
+  </select>
+
+  <div class="row">
+    <button class="btn primary" id="runBtn" type="button">حلّل الهاشتاغات</button>
+    <button class="btn ghost" id="resetBtn" type="button">تفريغ</button>
+  </div>
+
+  <div id="results" class="results"></div>
+</article>
+
 
 </main>
 
