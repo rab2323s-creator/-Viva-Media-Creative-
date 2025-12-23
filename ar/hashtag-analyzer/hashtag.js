@@ -1,4 +1,4 @@
- (() => {
+(() => {
   // عناصر الصفحة
   const topicEl = document.getElementById("topicInput");
   const sizeEl = document.getElementById("accountSize");
@@ -8,135 +8,195 @@
   const resetBtn = document.getElementById("resetBtn");
 
   if (!topicEl || !sizeEl || !goalEl || !resultsEl || !runBtn) {
-    // إذا IDs غير موجودة، لا نكسر الصفحة
     console.warn("Hashtag tool: missing elements. Check IDs in HTML.");
     return;
   }
 
-  // قاموس موسّع (عربي/إنجليزي) — قابل للتوسيع بسهولة
-  const DB = [
-    {
-      keys: ["تسويق", "marketing", "digital", "سوشال", "social", "محتوى", "content"],
-      tags: [
-        "#تسويق", "#تسويق_رقمي", "#تسويق_الكتروني", "#ادارة_حسابات",
-        "#marketing", "#digitalmarketing", "#socialmediamarketing", "#contentmarketing",
-        "#branding", "#seo", "#growth", "#strategy"
-      ]
-    },
-    {
-      keys: ["تصوير", "فيديو", "مونتاج", "camera", "photography", "video", "edit"],
-      tags: [
-        "#تصوير", "#تصوير_احترافي", "#تصوير_منتجات", "#صناعة_محتوى",
-        "#photography", "#videography", "#productphotography", "#contentcreator",
-        "#filmmaking", "#videoediting", "#reels", "#cinematic"
-      ]
-    },
-    {
-      keys: ["سفر", "travel", "رحلات", "explore", "tour"],
-      tags: [
-        "#سفر", "#رحلات", "#سياحة", "#مغامرة",
-        "#travel", "#travellife", "#explore", "#adventure", "#wanderlust"
-      ]
-    },
-    {
-      keys: ["انستغرام", "instagram", "ريلز", "reels"],
-      tags: ["#انستغرام", "#ريلز", "#reelsinstagram", "#instagramreels", "#creator", "#creators"]
-    },
-    {
-      keys: ["مشروع", "بيزنس", "متجر", "business", "store", "ecommerce", "منتج"],
-      tags: ["#مشروع_صغير", "#بيزنس", "#متجر_الكتروني", "#رواد_اعمال", "#ecommerce", "#smallbusiness", "#entrepreneur"]
-    }
-  ];
+  /* =========================
+     1) إعدادات + تنظيف النص
+     ========================= */
 
-  // هاشتاغات عامة جدًا (تقلل الدقة) نفلترها أو نستخدمها قليلًا
-  const TOO_GENERIC = new Set([
-    "#love", "#instagood", "#photooftheday", "#fashion", "#happy", "#beautiful",
-    "#follow", "#like4like", "#fyp", "#viral"
+  // كلمات عربية شائعة لا تصلح كهاشتاغات
+  const STOP_WORDS_AR = new Set([
+    "هل","ماذا","ام","أم","هذا","هذه","ذلك","تلك","هكذا","كذا",
+    "انا","أنت","انتي","انت","هو","هي","هم","هن","نحن","احنا",
+    "على","في","من","الى","إلى","عن","مع","بين","داخل","خارج",
+    "اذا","إذا","لو","لكن","بل","ثم","و","او","أو","يعني",
+    "ليش","لماذا","ليه","ايه","إيه","اي","أي","أين","متى","كيف",
+    "لا","نعم","مش","مو","ليس","بس","جدا","جداً","مرة","مره",
+    "كل","أيضا","ايضاً","كمان","كمانة","تمام","طيب","حلو","حلوة",
+    "لما","عشان","علشان","زي","مثل","بسبب","بدون","حول","عند",
+    "اللي","الذي","التي","الذين","الي","إلي","عليه","عليها",
+    "ما","شو","ايش","إيش","مين","وين","ليه"
   ]);
 
-  // توليد سلاج بسيط (للأمان فقط)
-  function uniq(arr) {
-    return [...new Set(arr)];
-  }
+  const TOO_GENERIC = new Set([
+    "#love","#instagood","#photooftheday","#follow","#like4like","#fyp","#viral",
+    "#trending","#explorepage"
+  ]);
 
   function normalizeText(s) {
     return (s || "")
       .toString()
       .toLowerCase()
+      // إزالة التشكيل العربي
+      .replace(/[\u064B-\u0652]/g, "")
+      // توحيد بعض الحروف
+      .replace(/[إأآ]/g, "ا")
+      .replace(/ة/g, "ه")
+      .replace(/ى/g, "ي")
+      // إزالة الرموز
       .replace(/[^\u0600-\u06FFa-z0-9\s]/g, " ")
       .replace(/\s+/g, " ")
       .trim();
   }
 
-  // استخراج كلمات مفتاحية من النص
-  function extractKeywords(text) {
+  function uniq(arr) {
+    return [...new Set(arr)];
+  }
+
+  function tokenize(text) {
     const t = normalizeText(text);
     if (!t) return [];
-    const parts = t.split(" ");
-    // فلترة كلمات قصيرة جدًا
-    return uniq(parts.filter(w => w.length >= 3)).slice(0, 18);
+    return t.split(" ").filter(Boolean);
   }
 
-  // بناء قائمة tags من DB بناءً على match مرن
-  function buildTagPool(text) {
-    const t = normalizeText(text);
-    const kws = extractKeywords(text);
+  function extractKeywords(text) {
+    const tokens = tokenize(text);
 
-    let pool = [];
-    for (const item of DB) {
-      const hit = item.keys.some(k => t.includes(k.toLowerCase()));
-      if (hit) pool = pool.concat(item.tags);
+    // فلترة قوية
+    const filtered = tokens
+      .filter(w => w.length >= 3)
+      .filter(w => !STOP_WORDS_AR.has(w))
+      // فلترة كلمات إنجليزية عامة جدًا
+      .filter(w => !["the","and","for","with","this","that","you","your","are","was","were","have","has","from","into"].includes(w));
+
+    // إزالة تكرار
+    return uniq(filtered).slice(0, 20);
+  }
+
+  /* =========================
+     2) قاعدة معرفة: نية المحتوى + مجموعات هاشتاغ
+     ========================= */
+
+  // “مفاهيم/نية” → كلمات مفتاحية → هاشتاغات (Reach/Targeted/Niche)
+  const INTENTS = [
+    {
+      id: "relationships",
+      label: "علاقات ومشاعر",
+      keys: ["حب","علاقات","مشاعر","غيره","اشتياق","فراق","زواج","خطوبه","ارتباط","قلب","خيانة","اعجاب","تجاهل","كره","حيره","قلق"],
+      hashtags: {
+        reach: ["#حب","#علاقات","#مشاعر","#فضفضه","#حياه"],
+        targeted: ["#مشاعر_مختلطه","#حديث_القلب","#تفكير_عميق","#اسئله_الحب","#نصائح_علاقات"],
+        niche: ["#وعي_عاطفي","#ذكاء_عاطفي","#حدود_عاطفيه","#علاقات_صحيه","#تقدير_الذات"]
+      }
+    },
+    {
+      id: "education",
+      label: "تعليمي / معرفة",
+      keys: ["شرح","تعليم","درس","نصائح","كيف","خطوات","دليل","تعلم","تعلمت","معلومه","معلومات","مراجعه","تحليل","استراتيجیه","استراتيجيه"],
+      hashtags: {
+        reach: ["#تعليم","#تطوير_الذات","#معلومات","#معرفه","#تعلم"],
+        targeted: ["#نصائح","#خطوات","#دليل","#كيف","#تعلم_سريع"],
+        niche: ["#تعلم_يومي","#تطوير_مهارات","#تعلم_اونلاين","#افكار_مفيده","#محتوي_تعليمي"]
+      }
+    },
+    {
+      id: "marketing",
+      label: "تسويق ومحتوى",
+      keys: ["تسويق","محتوى","سوشال","انستغرام","تيك","تيك_توك","يوتيوب","اعلان","حمله","براند","علامه","seo","reach","engagement","reels","creator"],
+      hashtags: {
+        reach: ["#تسويق","#تسويق_رقمي","#سوشال_ميديا","#صناعة_محتوى","#انستغرام"],
+        targeted: ["#اداره_حسابات","#استراتيجيه_محتوى","#نمو_الحساب","#زيادة_التفاعل","#تسويق_الكتروني"],
+        niche: ["#خوارزميات_انستغرام","#ريلز_احترافيه","#تحليل_اداء","#سيو","#brandstrategy"]
+      }
+    },
+    {
+      id: "photo_video",
+      label: "تصوير وإنتاج",
+      keys: ["تصوير","كاميرا","اضاءه","مونتاج","فيديو","سينما","لقطه","عدسه","صوت","مايك","تصميم","تحرير","editing","camera","photography","videography"],
+      hashtags: {
+        reach: ["#تصوير","#فيديو","#مونتاج","#صناعة_محتوى","#تصوير_احترافي"],
+        targeted: ["#تصوير_منتجات","#تصوير_موبايل","#اضاءه","#تحرير_فيديو","#videoediting"],
+        niche: ["#سينمائي","#لوان_سينمائيه","#تصوير_تجاري","#تصوير_استوديو","#contentstudio"]
+      }
+    },
+    {
+      id: "business",
+      label: "بيزنس ومشاريع",
+      keys: ["مشروع","بيزنس","متجر","خدمه","عميل","مبيعات","سعر","طلب","شراء","ماركت","متجر_الكتروني","ecommerce","business","store","shop"],
+      hashtags: {
+        reach: ["#مشروع_صغير","#بيزنس","#رواد_اعمال","#تجاره","#ecommerce"],
+        targeted: ["#متجر_الكتروني","#اداره_مشروع","#استراتيجيات_بيع","#تسويق_للمنتجات","#smallbusiness"],
+        niche: ["#قمع_مبيعات","#تحويل_عملاء","#تسعير","#landingpage","#growthmarketing"]
+      }
+    },
+    {
+      id: "travel",
+      label: "سفر وتجارب",
+      keys: ["سفر","رحله","رحلات","سياحه","مغامره","اوروبا","المانيا","تركيا","travel","trip","explore","adventure"],
+      hashtags: {
+        reach: ["#سفر","#رحلات","#سياحه","#travel","#explore"],
+        targeted: ["#مغامره","#رحلاتي","#وجهات","#travelblogger","#travellife"],
+        niche: ["#رحلات_اقتصاديه","#اوروبا","#المانيا","#travelguide","#اماكن_جميله"]
+      }
+    }
+  ];
+
+  // هاشتاغات “عامّة ذكية” تُستخدم إذا لم نستطع تحديد نية واضحة
+  const FALLBACK = {
+    reach: ["#محتوى","#ريلز","#انستغرام","#ابداع","#افكار"],
+    targeted: ["#صانع_محتوى","#تطوير","#نصائح","#محتوى_عربي","#افكار_جديده"],
+    niche: ["#استراتيجيه","#تحسين_الاداء","#نمو","#جوده_المحتوى","#تعلم"]
+  };
+
+  function detectIntents(text, keywords) {
+    const t = normalizeText(text);
+    const hits = [];
+
+    for (const intent of INTENTS) {
+      let score = 0;
+      for (const k of intent.keys) {
+        const kk = normalizeText(k);
+        if (t.includes(kk)) score += 2;
+        if (keywords.includes(kk)) score += 3;
+      }
+      if (score > 0) hits.push({ intent, score });
     }
 
-    // لو ما في matches، نولّد هاشتاغات من كلمات المستخدم (عربي/إنجليزي)
-    // مثال: "تصوير منتجات" => #تصوير_منتجات (بشكل تقريبي)
-    const generated = kws.map(w => {
-      // لو كلمة عربية، نحاول نضيف # + الكلمة
-      if (/[\u0600-\u06FF]/.test(w)) return "#" + w;
-      return "#" + w.replace(/\s+/g, "");
-    });
-
-    pool = pool.concat(generated);
-
-    // تنظيف + إزالة العام جدًا
-    pool = uniq(pool)
-      .map(x => x.trim())
-      .filter(x => x.startsWith("#") && x.length >= 3)
-      .filter(x => !TOO_GENERIC.has(x.toLowerCase()));
-
-    return pool;
+    hits.sort((a, b) => b.score - a.score);
+    return hits.slice(0, 2); // نأخذ أفضل نيتين
   }
 
-  // توزيع حسب حجم الحساب + الهدف
+  /* =========================
+     3) منطق التوزيع حسب حجم الحساب + الهدف
+     ========================= */
+
   function splitCounts(size, goal) {
-    // high = منافسة عالية، mid = متوسطة، niche = متخصصة
-    // الهدف يؤثر: للوصول نزيد mid/high قليلًا، للتفاعل نزيد niche، للمبيعات نزيد niche + business
-    let high, mid, niche;
+    // إجمالي مناسب (28) لتفادي السبام
+    let reach, targeted, niche;
 
-    if (size === "small") { high = 3; mid = 8; niche = 14; }
-    else if (size === "large") { high = 8; mid = 10; niche = 10; }
-    else { high = 5; mid = 10; niche = 12; }
+    if (size === "small") { reach = 6; targeted = 10; niche = 12; }
+    else if (size === "large") { reach = 10; targeted = 10; niche = 8; }
+    else { reach = 8; targeted = 10; niche = 10; }
 
-    if (goal === "reach") { high += 1; mid += 2; niche -= 3; }
-    if (goal === "engagement") { niche += 2; mid -= 1; }
-    if (goal === "sales") { niche += 2; high -= 1; }
-    if (goal === "brand") { mid += 1; niche -= 1; }
+    if (goal === "reach") { reach += 2; niche -= 2; }
+    if (goal === "engagement") { niche += 2; reach -= 1; }
+    if (goal === "sales") { targeted += 2; niche += 1; reach -= 3; }
+    if (goal === "brand") { targeted += 1; reach += 1; niche -= 2; }
 
-    // لا نخلي الأرقام سلبية
-    high = Math.max(2, high);
-    mid = Math.max(5, mid);
+    reach = Math.max(4, reach);
+    targeted = Math.max(8, targeted);
     niche = Math.max(8, niche);
 
-    // سقف إجمالي 28 (عشان يطلع نظيف)
-    const total = high + mid + niche;
+    const total = reach + targeted + niche;
     if (total > 28) {
       const extra = total - 28;
       niche = Math.max(8, niche - extra);
     }
-    return { high, mid, niche };
+    return { reach, targeted, niche };
   }
 
-  // خلط بسيط
   function shuffle(arr) {
     const a = arr.slice();
     for (let i = a.length - 1; i > 0; i--) {
@@ -146,93 +206,177 @@
     return a;
   }
 
-  // إعداد 3 مجموعات تدوير لتفادي التكرار
-  function rotationSets(tags, counts) {
-    // نقسم tag pool إلى 3 مجموعات مختلفة قدر الإمكان
-    const shuffled = shuffle(tags);
-    const chunk = Math.ceil(shuffled.length / 3);
-    const sets = [
-      shuffled.slice(0, chunk),
-      shuffled.slice(chunk, chunk * 2),
-      shuffled.slice(chunk * 2)
-    ].map(set => uniq(set));
+  function toHashtagFromKeyword(w) {
+    // لا نحول كلمات قصيرة أو توقف
+    if (!w || w.length < 3) return null;
+    if (STOP_WORDS_AR.has(w)) return null;
 
-    // لكل مجموعة نختار high/mid/niche من نفس المجموعة أو من الاحتياط
-    const all = uniq(tags);
+    // كلمات عربية
+    if (/[\u0600-\u06FF]/.test(w)) {
+      return "#" + w;
+    }
+    // إنجليزية
+    return "#" + w.replace(/\s+/g, "");
+  }
 
-    return sets.map((set, idx) => {
-      const local = set.length ? set : all;
+  /* =========================
+     4) بناء النتائج: 3 مجموعات تدوير + مخرجات “ذكية”
+     ========================= */
 
-      // لا يوجد عندنا حقيقة منافسة، فنحاكيها: كلمات قصيرة/عامة = high غالبًا
-      const sorted = local.slice().sort((a, b) => a.length - b.length);
+  function buildPools(text) {
+    const keywords = extractKeywords(text);
+    const topIntents = detectIntents(text, keywords);
 
-      const high = sorted.slice(0, counts.high);
-      const rest = sorted.slice(counts.high);
+    // اجمع هاشتاغات من النية/النيات
+    let reach = [];
+    let targeted = [];
+    let niche = [];
+    let detectedLabels = [];
 
-      const mid = rest.slice(0, counts.mid);
-      const niche = rest.slice(counts.mid, counts.mid + counts.niche);
+    if (topIntents.length) {
+      for (const h of topIntents) {
+        detectedLabels.push(h.intent.label);
+        reach = reach.concat(h.intent.hashtags.reach);
+        targeted = targeted.concat(h.intent.hashtags.targeted);
+        niche = niche.concat(h.intent.hashtags.niche);
+      }
+    } else {
+      reach = reach.concat(FALLBACK.reach);
+      targeted = targeted.concat(FALLBACK.targeted);
+      niche = niche.concat(FALLBACK.niche);
+      detectedLabels.push("عام / متعدد");
+    }
 
-      // إذا نقصت، نكمل من all
-      const need = (counts.high + counts.mid + counts.niche) - (high.length + mid.length + niche.length);
-      const fill = need > 0 ? all.filter(t => !high.includes(t) && !mid.includes(t) && !niche.includes(t)).slice(0, need) : [];
+    // أضف هاشتاغات من كلمات المستخدم (لكن بعد فلترة قوية)
+    const kwTags = keywords.map(toHashtagFromKeyword).filter(Boolean);
+
+    // توزيع كلمات المستخدم على targeted/niche أكثر (أدق)
+    targeted = targeted.concat(kwTags.slice(0, 6));
+    niche = niche.concat(kwTags.slice(6, 14));
+
+    // تنظيف
+    reach = uniq(reach).filter(t => !TOO_GENERIC.has(t.toLowerCase()));
+    targeted = uniq(targeted).filter(t => !TOO_GENERIC.has(t.toLowerCase()));
+    niche = uniq(niche).filter(t => !TOO_GENERIC.has(t.toLowerCase()));
+
+    return {
+      detectedLabels,
+      reach,
+      targeted,
+      niche
+    };
+  }
+
+  function makeRotationSets(pools, counts) {
+    const r = shuffle(pools.reach);
+    const t = shuffle(pools.targeted);
+    const n = shuffle(pools.niche);
+
+    // نعمل 3 مجموعات: نقطع بشكل مختلف
+    const sets = [0, 1, 2].map(i => {
+      const reach = r.slice(i * counts.reach, i * counts.reach + counts.reach);
+      const targeted = t.slice(i * counts.targeted, i * counts.targeted + counts.targeted);
+      const niche = n.slice(i * counts.niche, i * counts.niche + counts.niche);
+
+      // إذا ما كفا، نكمل من البداية
+      const fill = (arr, need, source) => {
+        const out = arr.slice();
+        if (out.length >= need) return out;
+        const missing = need - out.length;
+        return out.concat(source.slice(0, missing));
+      };
+
+      const rr = fill(reach, counts.reach, r);
+      const tt = fill(targeted, counts.targeted, t);
+      const nn = fill(niche, counts.niche, n);
+
+      const all = uniq([...rr, ...tt, ...nn]).slice(0, 28);
 
       return {
-        name: `مجموعة ${idx + 1}`,
-        high,
-        mid,
-        niche,
-        all: uniq([...high, ...mid, ...niche, ...fill]).slice(0, 28)
+        name: `مجموعة ${i + 1} (تدوير)`,
+        reach: rr,
+        targeted: tt,
+        niche: nn,
+        all
       };
     });
+
+    return sets;
   }
 
   function copyText(text) {
     if (!text) return;
     navigator.clipboard?.writeText(text).then(() => {
-      // إشعار بسيط
       const old = runBtn.textContent;
       runBtn.textContent = "✅ تم النسخ";
       setTimeout(() => (runBtn.textContent = old), 900);
-    }).catch(() => {
-      alert("لم أستطع النسخ تلقائيًا. انسخ يدويًا.");
-    });
+    }).catch(() => alert("لم أستطع النسخ تلقائيًا. انسخ يدويًا."));
   }
 
-  function render(sets) {
-    const blocks = sets.map(set => {
+  function renderSmartHeader(detectedLabels, counts, goal) {
+    const goalText = {
+      reach: "وصول (Reach)",
+      engagement: "تفاعل (Engagement)",
+      sales: "مبيعات/عملاء (Sales)",
+      brand: "وعي بالعلامة (Brand)"
+    }[goal] || goal;
+
+    return `
+      <div class="block">
+        <h3>تحليل ذكي للمحتوى</h3>
+        <p style="margin:8px 0; line-height:1.9; opacity:.92">
+          تم تصنيف محتواك كالتالي: <strong>${detectedLabels.join(" + ")}</strong><br/>
+          توزيع مقترح حسب الهدف <strong>${goalText}</strong>:
+          <strong>${counts.reach}</strong> وصول + <strong>${counts.targeted}</strong> مستهدف + <strong>${counts.niche}</strong> متخصص
+        </p>
+        <p style="margin:0; opacity:.75">
+          نصيحة: بدّل بين المجموعات (1 → 2 → 3) لتقليل التكرار وزيادة قابلية الاكتشاف.
+        </p>
+      </div>
+    `;
+  }
+
+  function renderSets(sets) {
+    return sets.map(set => {
       const allLine = set.all.join(" ");
-      const caption = allLine; // ممكن تخليه أقل لو تحب
-      const comment = allLine; // نفس الشيء
 
       return `
         <div class="block">
           <h3>${set.name}</h3>
-          <div class="tags"><strong>جاهز للنسخ:</strong><br/>${allLine}</div>
-          <div class="copybar">
-            <button class="btn small primary" data-copy="${encodeURIComponent(caption)}" type="button">نسخ كابشن</button>
-            <button class="btn small ghost" data-copy="${encodeURIComponent(comment)}" type="button">نسخ للتعليق الأول</button>
+
+          <div class="tags">
+            <strong>جاهز للنسخ:</strong><br/>
+            ${allLine}
           </div>
+
+          <div class="copybar">
+            <button class="btn small primary" type="button" data-copy="${encodeURIComponent(allLine)}">نسخ المجموعة</button>
+          </div>
+
           <details style="margin-top:10px;">
             <summary>تفاصيل التوزيع</summary>
             <div style="margin-top:8px; line-height:2;">
-              <div><strong>قوية:</strong> ${set.high.join(" ")}</div>
-              <div><strong>متوسطة:</strong> ${set.mid.join(" ")}</div>
-              <div><strong>متخصصة:</strong> ${set.niche.join(" ")}</div>
+              <div><strong>وصول:</strong> ${set.reach.join(" ")}</div>
+              <div><strong>مستهدف:</strong> ${set.targeted.join(" ")}</div>
+              <div><strong>متخصص:</strong> ${set.niche.join(" ")}</div>
             </div>
           </details>
         </div>
       `;
     }).join("");
+  }
 
-    resultsEl.innerHTML = blocks;
-
-    // ربط أزرار النسخ
-    resultsEl.querySelectorAll("[data-copy]").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const t = decodeURIComponent(btn.getAttribute("data-copy") || "");
-        copyText(t);
-      });
-    });
+  function renderLeadMagnet() {
+    return `
+      <div class="block" style="border-color: rgba(0,119,255,0.25);">
+        <strong>تريد نسخة أدق لحسابك؟</strong>
+        <p style="margin:8px 0; opacity:.9; line-height:1.9">
+          أعطِنا رابط حساب إنستغرام + نوع المحتوى، ونرجع لك:
+          <strong>خطة تدوير أسبوعية</strong> + <strong>هاشتاغات مخصصة</strong> + <strong>تحسين بروفايل</strong>.
+        </p>
+        <a class="btn primary" href="/contact/">اطلب تحليل مخصص</a>
+      </div>
+    `;
   }
 
   function run() {
@@ -245,19 +389,31 @@
     const size = sizeEl.value;
     const goal = goalEl.value;
 
-    const pool = buildTagPool(text);
+    const counts = splitCounts(size, goal);
+    const pools = buildPools(text);
 
-    // دعم خاص للمبيعات: أضف business tags خفيفة
+    // دعم إضافي للمبيعات
     if (goal === "sales") {
-      pool.push("#متجر_الكتروني", "#شراء", "#طلب", "#ecommerce", "#shopnow", "#smallbusiness");
+      pools.targeted = uniq(pools.targeted.concat(["#متجر_الكتروني","#اطلب_الآن","#عروض","#شراء","#shopnow","#ecommerce"]));
+      pools.niche = uniq(pools.niche.concat(["#تحويل_عملاء","#قمع_مبيعات","#landingpage"]));
     }
 
-    const counts = splitCounts(size, goal);
-    const sets = rotationSets(pool, counts);
+    const sets = makeRotationSets(pools, counts);
 
-    render(sets);
+    resultsEl.innerHTML =
+      renderSmartHeader(pools.detectedLabels, counts, goal) +
+      renderSets(sets) +
+      renderLeadMagnet();
 
-    // (اختياري) تتبع استخدام بسيط عبر localStorage
+    // ربط أزرار النسخ
+    resultsEl.querySelectorAll("[data-copy]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const t = decodeURIComponent(btn.getAttribute("data-copy") || "");
+        copyText(t);
+      });
+    });
+
+    // تتبع استخدام بسيط (بدون سيرفر)
     try {
       const k = "viva_tool_hashtag_analyzer_runs";
       const n = parseInt(localStorage.getItem(k) || "0", 10) + 1;
@@ -274,4 +430,3 @@
   runBtn.addEventListener("click", run);
   resetBtn?.addEventListener("click", reset);
 })();
-
