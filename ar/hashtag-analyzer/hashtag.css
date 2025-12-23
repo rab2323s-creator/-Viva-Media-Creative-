@@ -58,3 +58,73 @@
   flex-wrap:wrap;
   margin-top:10px;
 }
+/* =========================
+   DARK MODE FIX – Hashtag Tool
+   ========================= */
+
+body.tools{
+  background: #0b0f1a;
+  color: #e9eefc;
+}
+
+/* صندوق الأداة */
+.tools .tool-box{
+  background: #11162a;
+  color: #e9eefc;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* العناوين */
+.tools .tool-box h1,
+.tools .tool-box h2,
+.tools .tool-box h3,
+.tools .tool-box label{
+  color: #ffffff;
+}
+
+/* النص الوصفي */
+.tools .tool-box .intro,
+.tools .tool-box small{
+  color: rgba(233,238,252,0.75);
+}
+
+/* الحقول */
+.tools .tool-box textarea,
+.tools .tool-box select{
+  background: #0b1022;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.tools .tool-box textarea::placeholder{
+  color: rgba(233,238,252,0.45);
+}
+
+/* النتائج */
+.tools .results .block{
+  background: #0f1530;
+  color: #e9eefc;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* الهاشتاغات */
+.tools .results .tags{
+  color: #cfe3ff;
+}
+
+/* تفاصيل */
+.tools .results details{
+  color: rgba(233,238,252,0.8);
+}
+
+/* الأزرار */
+.tools .btn.primary{
+  background: linear-gradient(135deg, #0077ff, #00c6ff);
+  color: #fff;
+}
+
+.tools .btn.ghost{
+  background: transparent;
+  color: #9ad0ff;
+  border: 1px solid rgba(154,208,255,0.35);
+}
