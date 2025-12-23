@@ -267,42 +267,94 @@
     };
   }
 
-  function makeRotationSets(pools, counts) {
-    const r = shuffle(pools.reach);
-    const t = shuffle(pools.targeted);
-    const n = shuffle(pools.niche);
+ function makeRotationSets(pools, counts) {
+  // نعمل مخازن منفصلة ونزيل التكرار
+  let reachPool = uniq(pools.reach);
+  let targetedPool = uniq(pools.targeted);
+  let nichePool = uniq(pools.niche);
 
-    // نعمل 3 مجموعات: نقطع بشكل مختلف
-    const sets = [0, 1, 2].map(i => {
-      const reach = r.slice(i * counts.reach, i * counts.reach + counts.reach);
-      const targeted = t.slice(i * counts.targeted, i * counts.targeted + counts.targeted);
-      const niche = n.slice(i * counts.niche, i * counts.niche + counts.niche);
+  // لو المخزون قليل جدًا، نولّد Variants بسيطة لزيادة التنوع
+  // مثال: #تصوير_منتجات -> #تصوير_المنتجات / #تصويرمنتجات
+  const variantize = (arr) => {
+    const out = [];
+    for (const tag of arr) {
+      out.push(tag);
+      if (tag.includes("_")) out.push(tag.replace(/_/g, ""));
+      out.push(tag.replace(/#/g, "#").replace(/_/g, "_")); // ثابتة (لمنع أخطاء)
+      if (tag.includes("_")) out.push(tag.replace(/_/g, "_ال"));
+      // (اختياري) نسخة بدون ال التعريف إن وُجدت
+      out.push(tag.replace("#ال", "#"));
+    }
+    return uniq(out).filter(t => t.startsWith("#") && t.length >= 3);
+  };
 
-      // إذا ما كفا، نكمل من البداية
-      const fill = (arr, need, source) => {
-        const out = arr.slice();
-        if (out.length >= need) return out;
-        const missing = need - out.length;
-        return out.concat(source.slice(0, missing));
-      };
+  reachPool = variantize(reachPool);
+  targetedPool = variantize(targetedPool);
+  nichePool = variantize(nichePool);
 
-      const rr = fill(reach, counts.reach, r);
-      const tt = fill(targeted, counts.targeted, t);
-      const nn = fill(niche, counts.niche, n);
+  // خلط مختلف لكل مجموعة باستخدام seed بسيط
+  const seededShuffle = (arr, seed) => {
+    const a = arr.slice();
+    let s = seed;
+    for (let i = a.length - 1; i > 0; i--) {
+      // pseudo random
+      s = (s * 9301 + 49297) % 233280;
+      const r = s / 233280;
+      const j = Math.floor(r * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
 
-      const all = uniq([...rr, ...tt, ...nn]).slice(0, 28);
+  // اختيار بدون تكرار قدر الإمكان بين المجموعات
+  const takeUnique = (pool, usedSet, n) => {
+    const picked = [];
+    for (const tag of pool) {
+      if (picked.length >= n) break;
+      if (!usedSet.has(tag)) {
+        usedSet.add(tag);
+        picked.push(tag);
+      }
+    }
+    // إذا لم يكفِ، نكمل حتى لو تكرر (لكن بأقل قدر)
+    if (picked.length < n) {
+      for (const tag of pool) {
+        if (picked.length >= n) break;
+        if (!picked.includes(tag)) picked.push(tag);
+      }
+    }
+    return picked;
+  };
 
-      return {
-        name: `مجموعة ${i + 1} (تدوير)`,
-        reach: rr,
-        targeted: tt,
-        niche: nn,
-        all
-      };
+  const sets = [];
+  // نستخدم used لكل فئة لضمان اختلاف المجموعات
+  const usedReach = new Set();
+  const usedTargeted = new Set();
+  const usedNiche = new Set();
+
+  for (let i = 0; i < 3; i++) {
+    const r = seededShuffle(reachPool, 11 + i * 7);
+    const t = seededShuffle(targetedPool, 23 + i * 9);
+    const n = seededShuffle(nichePool, 37 + i * 13);
+
+    const reach = takeUnique(r, usedReach, counts.reach);
+    const targeted = takeUnique(t, usedTargeted, counts.targeted);
+    const niche = takeUnique(n, usedNiche, counts.niche);
+
+    const all = uniq([...reach, ...targeted, ...niche]).slice(0, 28);
+
+    sets.push({
+      name: `مجموعة ${i + 1} (تدوير)`,
+      reach,
+      targeted,
+      niche,
+      all
     });
-
-    return sets;
   }
+
+  return sets;
+}
+
 
   function copyText(text) {
     if (!text) return;
