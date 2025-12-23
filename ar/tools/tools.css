@@ -1,142 +1,74 @@
-/* Tools page only */
-body.tools {
-  background: #fafafa;
-}
-
-/* نفس شبكة الأخبار */
-body.tools .services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-}
-
-/* بطاقة فخمة */
-body.tools .card {
-  background: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.07);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-/* Hover */
-body.tools .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 42px rgba(0,0,0,0.12);
-}
-
-/* الصورة */
-body.tools .card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-}
-
-/* العنوان */
-body.tools .card h3 {
-  margin: 16px 16px 8px;
-  font-size: 1.1rem;
-  line-height: 1.4;
-}
-
-body.tools .card h3 a {
-  color: #111;
-  text-decoration: none;
-}
-
-body.tools .card h3 a:hover {
-  color: #0077ff;
-}
-
-/* الوصف */
-body.tools .card p {
-  margin: 0 16px 16px;
-  color: #555;
-  font-size: .95rem;
-  line-height: 1.7;
-}
-
-/* تحسين النص داخل المقال */
-body.tools .blog-article {
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-/* note */
-body.tools .note {
-  background: #fff;
-  border-radius: 14px;
-  padding: 14px 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  line-height: 1.8;
-  color: #444;
-}
-
-/* =========================
-   FIX HEADER – TOOLS PAGE
+ /* =========================
+   TOOLS PLATFORM (RTL) - Viva
    ========================= */
 
-/* الهيدر */
+body.tools {
+  background: #0b0f1a;
+  color: rgba(235,240,255,0.92);
+}
+
+/* Helpers */
+.sr-only{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+/* Header fixes (logo + layout) */
 .tools .site-header{
   background: rgba(10,14,25,0.75);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* ترتيب المحتوى داخل الهيدر */
 .tools .header-inner{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 12px 0;
-  flex-wrap: wrap;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:12px 0;
+  flex-wrap:wrap;
 }
 
-/* ✅ حل مشكلة اللوجو الكبير */
-.tools .logo{
-  width: 52px !important;
-  height: 52px !important;
-  max-width: 52px !important;
-  max-height: 52px !important;
-  object-fit: contain !important;
-  border-radius: 12px;
-  display: block;
-}
-
-/* البراند */
 .tools .brand{
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-width: 240px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:240px;
 }
 
-.tools .brand a{
-  display: inline-flex;
-  align-items: center;
+.tools .logo{
+  width:52px !important;
+  height:52px !important;
+  max-width:52px !important;
+  max-height:52px !important;
+  object-fit:contain !important;
+  border-radius:12px;
+  display:block;
 }
 
-/* اسم الشركة */
 .tools .brand-text h1{
-  margin: 0;
-  font-size: 1.05rem;
-  line-height: 1.2;
+  margin:0;
+  font-size:1.05rem;
+  line-height:1.2;
 }
 
-/* المنيو */
+.tools .brand-text .tag{
+  margin:3px 0 0;
+  opacity:.75;
+  font-size:.9rem;
+}
+
 .tools .main-nav{
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
 .tools .main-nav a{
   color: rgba(233,238,252,0.9);
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 10px;
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:10px;
 }
 
 .tools .main-nav a:hover{
@@ -148,19 +80,393 @@ body.tools .note {
   color: #9ad0ff;
 }
 
-/* موبايل */
+/* Section spacing */
+.tools .section{
+  padding-top: 22px;
+}
+
+/* HERO */
+.tools-hero{
+  display:grid;
+  grid-template-columns: 1.35fr .65fr;
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.tools-hero__content{
+  padding: 22px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+}
+
+.tools-hero__content h1{
+  margin:0 0 10px;
+  font-size: 1.45rem;
+  line-height: 1.45;
+}
+
+.tools-hero__content p{
+  margin:0;
+  opacity: .88;
+  line-height: 1.9;
+}
+
+.tools-hero__badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top: 14px;
+}
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  font-size: .92rem;
+  opacity: .95;
+}
+
+.tools-hero__cta{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top: 16px;
+}
+
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration:none;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.06);
+  color: rgba(235,240,255,0.92);
+  cursor: pointer;
+}
+
+.btn.primary{
+  background: rgba(0,119,255,0.22);
+  border-color: rgba(0,119,255,0.35);
+}
+
+.btn.ghost{
+  background: rgba(255,255,255,0.04);
+}
+
+.btn.small{
+  padding: 9px 12px;
+  border-radius: 10px;
+  font-size: .95rem;
+}
+
+/* Right mini card */
+.tools-hero__card{
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+}
+
+.stat{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+.stat__num{ font-size: 1.3rem; font-weight: 700; }
+.stat__label{ opacity:.8; }
+
+.note-box{
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(0,119,255,0.12);
+  border: 1px solid rgba(0,119,255,0.22);
+  line-height: 1.8;
+}
+
+/* CONTROLS */
+.tools-controls{
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.search-wrap{
+  position:relative;
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+#toolsSearch{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(10,14,25,0.35);
+  color: rgba(235,240,255,0.92);
+  outline: none;
+}
+
+#toolsSearch::placeholder{
+  color: rgba(235,240,255,0.55);
+}
+
+.search-hint{
+  white-space: nowrap;
+  opacity: .8;
+  font-size: .95rem;
+}
+
+.filters{
+  margin-top: 12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.chips{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.chip{
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.05);
+  color: rgba(235,240,255,0.92);
+  cursor:pointer;
+}
+
+.chip.is-active{
+  background: rgba(0,119,255,0.20);
+  border-color: rgba(0,119,255,0.35);
+}
+
+.sort{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  opacity:.95;
+}
+
+#sortSelect{
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(10,14,25,0.35);
+  color: rgba(235,240,255,0.92);
+  outline:none;
+}
+
+/* GRID */
+.tools-grid{
+  margin-top: 16px;
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 16px;
+}
+
+.tool-card{
+  border-radius: 18px;
+  overflow:hidden;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.30);
+  transform: translateZ(0);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.tool-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 26px 80px rgba(0,0,0,0.40);
+}
+
+.tool-card__media{
+  display:block;
+  height: 180px;
+  background: rgba(255,255,255,0.04);
+}
+
+.tool-card__media img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+}
+
+.tool-card__body{
+  padding: 14px 14px 16px;
+}
+
+.tool-card__meta{
+  display:flex;
+  gap: 8px;
+  flex-wrap:wrap;
+  margin-bottom: 10px;
+}
+
+.badge{
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: .85rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.badge.dark{
+  background: rgba(10,14,25,0.40);
+}
+
+.badge.soft{
+  background: rgba(0,119,255,0.12);
+  border-color: rgba(0,119,255,0.20);
+}
+
+.tool-card__title{
+  margin: 0 0 8px;
+  font-size: 1.06rem;
+  line-height: 1.45;
+}
+
+.tool-card__title a{
+  color: rgba(235,240,255,0.95);
+  text-decoration: none;
+}
+
+.tool-card__title a:hover{
+  text-decoration: underline;
+}
+
+.tool-card__desc{
+  margin: 0;
+  opacity: .86;
+  line-height: 1.85;
+}
+
+.tool-card__actions{
+  margin-top: 12px;
+  display:flex;
+  gap: 10px;
+  flex-wrap:wrap;
+}
+
+/* Coming soon */
+.tool-card.is-soon{
+  opacity: .88;
+}
+
+.tool-card__media.soon{
+  height: 180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: radial-gradient(circle at 30% 30%, rgba(0,119,255,0.20), rgba(255,255,255,0.04));
+}
+
+.soon-badge{
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(10,14,25,0.35);
+}
+
+/* FAQ */
+.tools-faq{
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.tools-faq h2{
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+}
+
+.tools-faq details{
+  border-top: 1px solid rgba(255,255,255,0.10);
+  padding: 10px 0;
+}
+
+.tools-faq details:first-of-type{
+  border-top: none;
+}
+
+.tools-faq summary{
+  cursor: pointer;
+  font-weight: 600;
+  opacity: .95;
+}
+
+.tools-faq p{
+  margin: 10px 0 0;
+  opacity: .86;
+  line-height: 1.85;
+}
+
+/* CTA */
+.tools-cta{
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+.tools-cta__box{
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(0,119,255,0.12);
+  border: 1px solid rgba(0,119,255,0.22);
+}
+
+.tools-cta__box h2{
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+}
+
+.tools-cta__box p{
+  margin: 0 0 12px;
+  opacity: .9;
+  line-height: 1.85;
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .tools-hero{
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px){
   .tools .header-inner{
     flex-direction: column;
     align-items: stretch;
   }
-
-  .tools .brand{
-    justify-content: center;
-  }
-
-  .tools .main-nav{
-    justify-content: center;
-  }
+  .tools .brand{ justify-content:center; }
+  .tools .main-nav{ justify-content:center; flex-wrap:wrap; }
 }
 
