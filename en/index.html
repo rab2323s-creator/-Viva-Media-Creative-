@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
@@ -12,6 +12,9 @@
   <link rel="alternate" hreflang="x-default" href="https://vivamediacreative.com/en/" />
 
   <link rel="stylesheet" href="/style.css">
+  <!-- ✅ NEW: luxury style (same as Arabic look) -->
+  <link rel="stylesheet" href="/luxury.css">
+
   <link rel="icon" href="/assets/logo.jpeg">
 
   <!-- Google Tag -->
@@ -39,7 +42,7 @@
 
     <nav class="main-nav" id="main-nav" aria-label="Main Menu">
       <a href="/en/">Home</a>
-      <a href="#services-en">Services</a>
+      <a href="#services">Services</a>
       <a href="#about">About Us</a>
       <a href="#support">Creator Support</a>
       <a href="/news_en/">News</a>
@@ -54,7 +57,8 @@
 </header>
 
 <!-- HERO -->
-<section class="hero" style="background-image: url('/assets/hero.webp')">
+<!-- ✅ FIX: removed inline background-image so luxury.css controls it -->
+<section class="hero">
   <div class="container hero-content">
     <h2>Creating Content That Makes an Impact</h2>
     <p class="lead">
@@ -68,7 +72,8 @@
 </section>
 
 <!-- ======= Our Services Section ======= -->
-<section id="services-en" class="container section">
+<!-- ✅ FIX: id changed to "services" to match Arabic CSS -->
+<section id="services" class="container section">
   <h2 class="section-title">Our Services</h2>
   <p class="section-desc">✨ At Viva Media Creative, we offer a full spectrum of creative solutions, including media production, digital marketing, and branding strategies, designed to amplify your online presence and deliver measurable results.</p>
 
@@ -85,7 +90,7 @@
 
         <!-- Card 1 -->
         <article class="service-card" data-title="Remote Video Production">
-          <div class="card-media" role="img" aria-label="Remote Video Production" style="background-image:url('../assets/remote-video.jpg')"></div>
+          <div class="card-media" role="img" aria-label="Remote Video Production" style="background-image:url('/assets/remote-video.jpg')"></div>
           <div class="card-body">
             <h4>🎥 Remote Video Production</h4>
             <p class="card-short">Professional videos produced entirely remotely — you shoot, we edit and publish.</p>
@@ -100,7 +105,7 @@
 
         <!-- Card 2 -->
         <article class="service-card" data-title="Commercial & Promo Videos">
-          <div class="card-media" role="img" aria-label="Commercial Video" style="background-image:url('../assets/commercial-video.jpg')"></div>
+          <div class="card-media" role="img" aria-label="Commercial Video" style="background-image:url('/assets/commercial-video.jpg')"></div>
           <div class="card-body">
             <h4>📣 Commercial & Promo Videos</h4>
             <p class="card-short">Transform ideas into impactful promotional content that drives engagement.</p>
@@ -115,7 +120,7 @@
 
         <!-- Card 3 -->
         <article class="service-card" data-title="Copywriting & Video Scripts">
-          <div class="card-media" role="img" aria-label="Copywriting" style="background-image:url('../assets/copywriting.jpg')"></div>
+          <div class="card-media" role="img" aria-label="Copywriting" style="background-image:url('/assets/copywriting.jpg')"></div>
           <div class="card-body">
             <h4>🧠 Copywriting & Video Scripts</h4>
             <p class="card-short">Creative scripts and copy tailored to engage your audience effectively.</p>
@@ -140,7 +145,7 @@
       <div class="block-cards">
         <!-- Card 4 -->
         <article class="service-card" data-title="Influencer Account Management">
-          <div class="card-media" role="img" aria-label="Influencer Management" style="background-image:url('../assets/influencer-management.jpg')"></div>
+          <div class="card-media" role="img" aria-label="Influencer Management" style="background-image:url('/assets/influencer-management.jpg')"></div>
           <div class="card-body">
             <h4>👑 Influencer Account Management</h4>
             <p class="card-short">Professional management for influencers and creators to grow their digital presence.</p>
@@ -155,7 +160,7 @@
 
         <!-- Card 5 -->
         <article class="service-card" data-title="Influencer Marketing">
-          <div class="card-media" role="img" aria-label="Influencer Marketing" style="background-image:url('../assets/influencer-marketing.jpg')"></div>
+          <div class="card-media" role="img" aria-label="Influencer Marketing" style="background-image:url('/assets/influencer-marketing.jpg')"></div>
           <div class="card-body">
             <h4>🤝 Influencer Marketing</h4>
             <p class="card-short">Connecting brands with the right influencers to maximize results.</p>
@@ -170,7 +175,7 @@
 
         <!-- Card 6 -->
         <article class="service-card" data-title="E-Commerce & Website Marketing">
-          <div class="card-media" role="img" aria-label="E-commerce Marketing" style="background-image:url('../assets/ecommerce-marketing.jpg')"></div>
+          <div class="card-media" role="img" aria-label="E-commerce Marketing" style="background-image:url('/assets/ecommerce-marketing.jpg')"></div>
           <div class="card-body">
             <h4>💼 E-Commerce & Website Marketing</h4>
             <p class="card-short">Increase online sales with optimized marketing and SEO strategies.</p>
@@ -194,7 +199,7 @@
       <div class="block-cards">
         <!-- Card 7 -->
         <article class="service-card" data-title="Digital Branding">
-          <div class="card-media" role="img" aria-label="Digital Branding" style="background-image:url('../assets/digital-branding.jpg')"></div>
+          <div class="card-media" role="img" aria-label="Digital Branding" style="background-image:url('/assets/digital-branding.jpg')"></div>
           <div class="card-body">
             <h4>🌈 Digital Branding</h4>
             <p class="card-short">Crafting distinctive digital identities for online impact.</p>
@@ -209,7 +214,7 @@
 
         <!-- Card 8 -->
         <article class="service-card" data-title="Creator Support & Development">
-          <div class="card-media" role="img" aria-label="Creator Support" style="background-image:url('../assets/creators-support.jpg')"></div>
+          <div class="card-media" role="img" aria-label="Creator Support" style="background-image:url('/assets/creators-support.jpg')"></div>
           <div class="card-body">
             <h4>🤝 Creator Support & Development</h4>
             <p class="card-short">Programs empowering creators to grow and collaborate successfully.</p>
@@ -224,7 +229,7 @@
 
         <!-- Card 9 -->
         <article class="service-card" data-title="Web Design & Development">
-          <div class="card-media" role="img" aria-label="Web Design" style="background-image:url('../assets/web-design.jpg')"></div>
+          <div class="card-media" role="img" aria-label="Web Design" style="background-image:url('/assets/web-design.jpg')"></div>
           <div class="card-body">
             <h4>🌐 Web Design & Development</h4>
             <p class="card-short">Responsive websites designed to convert visitors into customers.</p>
@@ -250,66 +255,6 @@
     <div id="modal-text"></div>
   </div>
 </div>
-
-<!-- About, Support, Contact, Careers sections ... same كما في كودك السابق -->
-
-<!-- Scripts -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-
-  // Hamburger menu
-  const hamburger = document.getElementById('hamburger');
-  const nav = document.getElementById('main-nav');
-  if (hamburger && nav) {
-    hamburger.addEventListener('click', () => nav.classList.toggle('active'));
-    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => nav.classList.remove('active')));
-  }
-
-  // Modal functionality
-  const modal = document.getElementById('service-modal');
-  const modalTitle = document.getElementById('modal-title');
-  const modalText = document.getElementById('modal-text');
-  const modalClose = document.getElementById('modal-close');
-
-  document.querySelectorAll('.service-card .btn-details').forEach(btn => {
-    btn.addEventListener('click', e => {
-      const card = e.target.closest('.service-card');
-      const title = card.dataset.title || card.querySelector('h4').textContent;
-      const fullContent = card.querySelector('.card-full') ? card.querySelector('.card-full').innerHTML : 'Details not available.';
-      modalTitle.textContent = title;
-      modalText.innerHTML = fullContent;
-      modal.classList.add('active');
-      modal.setAttribute('aria-hidden', 'false');
-    });
-  });
-
-  modalClose.addEventListener('click', () => {
-    modal.classList.remove('active');
-    modal.setAttribute('aria-hidden', 'true');
-    modalTitle.textContent = '';
-    modalText.innerHTML = '';
-  });
-
-  modal.addEventListener('click', e => {
-    if (e.target === modal) {
-      modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-      modalTitle.textContent = '';
-      modalText.innerHTML = '';
-    }
-  });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-      modalTitle.textContent = '';
-      modalText.innerHTML = '';
-    }
-  });
-
-});
-</script>
 
 <!-- About -->
 <section id="about" class="container section light">
@@ -406,7 +351,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="container footer-inner">
     <p>© 2025 Viva Media Creative. All rights reserved.</p>
     <p class="small">
-      Digital design & production — Contact: 
+      Digital design & production — Contact:
       <a href="mailto:vivamediacreations@gmail.com">vivamediacreations@gmail.com</a>
     </p>
     <div class="lang-switcher" style="margin-top:10px; font-size:14px;">
@@ -414,6 +359,64 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 </footer>
+
+<!-- Scripts -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('main-nav');
+  if (hamburger && nav) {
+    hamburger.addEventListener('click', () => nav.classList.toggle('active'));
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => nav.classList.remove('active')));
+  }
+
+  // Modal functionality
+  const modal = document.getElementById('service-modal');
+  const modalTitle = document.getElementById('modal-title');
+  const modalText = document.getElementById('modal-text');
+  const modalClose = document.getElementById('modal-close');
+
+  document.querySelectorAll('.service-card .btn-details').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const card = e.target.closest('.service-card');
+      const title = card.dataset.title || card.querySelector('h4').textContent;
+      const fullContent = card.querySelector('.card-full') ? card.querySelector('.card-full').innerHTML : 'Details not available.';
+      modalTitle.textContent = title;
+      modalText.innerHTML = fullContent;
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+    });
+  });
+
+  modalClose.addEventListener('click', () => {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    modalTitle.textContent = '';
+    modalText.innerHTML = '';
+  });
+
+  modal.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      modalTitle.textContent = '';
+      modalText.innerHTML = '';
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      modalTitle.textContent = '';
+      modalText.innerHTML = '';
+    }
+  });
+
+});
+</script>
 
 </body>
 </html>
