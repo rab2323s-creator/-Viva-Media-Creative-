@@ -47,7 +47,9 @@
       </div>
 
       <div class="hero__inner">
-        <p class="kicker reveal" data-i18n="hero_kicker">
+        
+        <div class="hero__copy">
+<p class="kicker reveal" data-i18n="hero_kicker">
           وكالة متخصصة في صناعة الترند • إدارة المشاهير • تحويل الشهرة إلى دخل
         </p>
 
@@ -90,28 +92,30 @@
           <span class="pillx" data-i18n="pill_3">💰 تحويل المشاهدات إلى دخل</span>
           <span class="pillx" data-i18n="pill_4">🌐 مواقع + SEO + تحويل</span>
         </div>
+        </div>
 
-        <!-- HERO ART (Animated Orbit Logo) -->
-        <div class="hero-art reveal" aria-hidden="true">
-          <div class="orbit">
-            <svg viewBox="0 0 300 300" role="img" aria-label="VMC animated mark">
+        <!-- HERO ART (Globe + Orbit Text) -->
+        <div class="hero__artWrap reveal" aria-hidden="true">
+          <div class="globe" role="img" aria-label="VMC animated globe">
+            <div class="globe__sphere">
+              <div class="globe__core">
+                <img src="/assets/logo.jpeg" alt="VMC" />
+              </div>
+            </div>
+
+            <svg class="globe__ring" viewBox="0 0 300 300" aria-hidden="true">
               <defs>
-                <path
-                  id="vmcCirclePath"
-                  d="M 150,150 m -110,0 a 110,110 0 1,1 220,0 a 110,110 0 1,1 -220,0"
-                />
+                <path id="vmcRingPath"
+                  d="M 150,150 m -122,0 a 122,122 0 1,1 244,0 a 122,122 0 1,1 -244,0" />
               </defs>
-
               <text>
-                <textPath href="#vmcCirclePath" data-i18n="orbit_text">
-                  VIVA MEDIA CREATIVE • TREND • INFLUENCE • GROWTH • MONETIZATION •
+                <textPath href="#vmcRingPath" startOffset="10%" data-i18n="globe_text">
+                  VIVA MEDIA CREATIVE • TRENDS • INFLUENCE • GROWTH • SALES •
                 </textPath>
               </text>
             </svg>
 
-            <div class="logo-core">
-              <img src="/assets/logo.jpeg" alt="VMC" loading="eager" decoding="async" />
-            </div>
+            <div class="globe__spark" aria-hidden="true"></div>
           </div>
         </div>
 
