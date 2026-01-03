@@ -145,7 +145,7 @@ a{color:inherit;text-decoration:none}
   50%{transform:translate3d(-28px,18px,0) scale(1.02)}
 }
 
-/* Signature gold line (subtle but “wow”) */
+/* Signature gold line */
 .goldLine{
   position:absolute;
   left: -20%;
@@ -162,15 +162,42 @@ a{color:inherit;text-decoration:none}
   50%{transform: rotate(-4deg) translateX(40px)}
 }
 
+/* ✅ HERO GRID (base) */
 .hero__grid{
   display:grid;
-  grid-template-columns: 1.05fr .95fr;
   gap: 18px;
   align-items:center;
   position:relative;
   z-index:2;
 }
 
+/* ✅ FINAL HERO LAYOUT: force RTL/LTR columns */
+.hero__grid{
+  grid-template-columns: 520px minmax(0, 1fr);
+  gap: 26px;
+}
+
+html[dir="rtl"] .hero__reel{
+  grid-column: 1;
+  justify-self: start;
+}
+html[dir="rtl"] .hero__copy{
+  grid-column: 2;
+  justify-self: end;
+  text-align: right;
+}
+
+html[dir="ltr"] .hero__copy{
+  grid-column: 1;
+  justify-self: start;
+  text-align: left;
+}
+html[dir="ltr"] .hero__reel{
+  grid-column: 2;
+  justify-self: end;
+}
+
+/* typography */
 .kicker{
   margin:0 0 18px;
   letter-spacing:.18em;
@@ -181,9 +208,10 @@ a{color:inherit;text-decoration:none}
 }
 .hero__title{
   margin:0 0 16px;
-  font-size: clamp(44px, 5.6vw, 90px);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
+  font-size: clamp(42px, 4.6vw, 76px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 18ch;
 }
 .gold{
   background: linear-gradient(90deg, var(--gold1), rgba(255,255,255,.86), var(--gold2));
@@ -196,7 +224,8 @@ a{color:inherit;text-decoration:none}
   color: var(--muted);
   font-size: 16px;
   line-height: 1.9;
-  max-width: 68ch;
+  max-width: 52ch;
+  opacity: .92;
 }
 .hero__cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom: 22px;}
 
@@ -243,13 +272,15 @@ a{color:inherit;text-decoration:none}
 /* REEL */
 .hero__reel{
   position:relative;
-  min-height: 520px;
+  min-height: 560px;
   border-radius: 30px;
   border:1px solid rgba(255,255,255,.12);
   background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
   box-shadow: 0 30px 120px rgba(0,0,0,.55);
   overflow:hidden;
   padding: 18px;
+  transform: translateY(-6px);
+  z-index:3;
 }
 .hero__reel::before{
   content:"";
@@ -268,8 +299,8 @@ a{color:inherit;text-decoration:none}
   font-family:"Space Grotesk", Manrope, sans-serif;
   letter-spacing:.18em;
   font-weight:800;
-  font-size: 56px;
-  opacity:.12;
+  font-size: 72px;
+  opacity:.16;
   color: rgba(245,208,122,.85);
   pointer-events:none;
 }
@@ -300,8 +331,8 @@ a{color:inherit;text-decoration:none}
   content:"";
   position:absolute; inset:-40%;
   background: radial-gradient(600px 380px at 30% 30%, rgba(255,255,255,.12), transparent 60%);
-  transform: translateX(-26%) rotate(8deg);
-  opacity:.55;
+  transform: translateX(var(--shift, -20%)) rotate(10deg);
+  opacity:.72;
   mix-blend-mode: screen;
   pointer-events:none;
   transition: transform .35s ease;
@@ -516,8 +547,13 @@ a{color:inherit;text-decoration:none}
   :root{--shadow: 0 26px 70px rgba(0,0,0,.55); --blur: 8px;}
   .noise{opacity:.05;mix-blend-mode: normal;}
   .orb{filter: blur(60px);opacity:.28;}
-  .hero__grid{grid-template-columns: 1fr; }
-  .hero__reel{min-height: 420px;}
+
+  /* stack hero on mobile */
+  .hero__grid{grid-template-columns: 1fr;}
+  .hero__copy, .hero__reel{grid-column:auto;justify-self:stretch;}
+  .hero__title{max-width:none;}
+  .hero__reel{min-height: 420px; transform:none;}
+
   .system{grid-template-columns: 1fr;}
   .system__rail{position:relative;top:auto;}
   .grid{grid-template-columns: 1fr;}
@@ -533,66 +569,5 @@ a{color:inherit;text-decoration:none}
 /* backdrop fallback */
 @supports not ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
   .nav,.btn,.stat,.system__rail,.reelCard,.final__card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
-}
-
-/* === VMC Luxury Hero FIX (override) === */
-
-/* 1) اجعل الشبكة واضحة: نص + Reel واضح */
-.hero__grid{
-  grid-template-columns: minmax(0, 1fr) 520px !important;
-  gap: 26px !important;
-  align-items: center !important;
-}
-
-/* RTL: خلي النص يمين والرييل يسار بشكل مضبوط */
-html[dir="rtl"] .hero__copy{ justify-self: end; text-align: right; }
-html[dir="rtl"] .hero__reel{ justify-self: start; }
-
-/* 2) سيطرة أقل للنص = فخامة أكثر */
-.hero__title{
-  font-size: clamp(42px, 4.6vw, 76px) !important;
-  line-height: 1.04 !important;
-  letter-spacing: -0.02em !important;
-  max-width: 16ch;           /* يمنع العنوان من ابتلاع الصفحة */
-}
-
-/* 3) اجعل السطر الصغير أوضح */
-.hero__sub{
-  max-width: 52ch !important;
-  font-size: 16px !important;
-  opacity: .92;
-}
-
-/* 4) الرييل لازم يبان قوي ويشد العين */
-.hero__reel{
-  min-height: 560px !important;
-  transform: translateY(-6px);
-}
-
-/* 5) اجعل الـMonogram عنصر “فاخر” */
-.monogram{
-  font-size: 72px !important;
-  opacity: .16 !important;
-  filter: blur(.2px);
-}
-
-/* 6) لمعة الرييل: أقوى + تتبع الماوس */
-.reelCard::after{
-  opacity: .72 !important;
-  transform: translateX(var(--shift, -20%)) rotate(10deg) !important;
-}
-
-/* 7) خط الذهب: أخف لكن “أغلى” */
-.goldLine{
-  opacity: .35 !important;
-  height: 2px !important;
-  filter: blur(.2px);
-}
-
-/* 8) على الشاشات الصغيرة: الرييل تحت النص */
-@media (max-width: 980px){
-  .hero__grid{ grid-template-columns: 1fr !important; }
-  .hero__title{ max-width: none; }
-  .hero__reel{ min-height: 420px !important; }
 }
 
