@@ -148,175 +148,6 @@ a{color:inherit; text-decoration:none}
   margin: 0 auto;
 }
 
-/* =============== Hero Globe (Brand Orb) =============== */
-.hero__grid{
-  display:grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: clamp(18px, 4vw, 54px);
-  align-items:center;
-}
-
-.hero__copy{ min-width:0; }
-
-.hero__art{
-  min-width:0;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding-top: 10px;
-}
-
-/* Container */
-.globe{
-  position:relative;
-  width: clamp(340px, 36vw, 560px);
-  aspect-ratio: 1 / 1;
-  display:grid;
-  place-items:center;
-  transform: translateZ(0);
-  margin-inline: clamp(6px, 2vw, 22px);
-}
-
-/* Sphere */
-.globe__sphere{
-  position:relative;
-  width: 86%;
-  height: 86%;
-  border-radius: 50%;
-  overflow:hidden;
-  background:
-    radial-gradient(closest-side at 30% 30%, rgba(255,255,255,.18), transparent 60%),
-    radial-gradient(closest-side at 70% 70%, rgba(245,208,122,.14), transparent 62%),
-    radial-gradient(closest-side at 70% 20%, rgba(145,90,255,.14), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-  box-shadow:
-    0 0 0 1px rgba(245,208,122,.18),
-    0 35px 140px rgba(0,0,0,.75);
-}
-
-/* Moving texture (subtle “earth-like” bands) */
-.globe__texture{
-  position:absolute; inset:-28%;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      rgba(255,255,255,.06) 0 10px,
-      rgba(0,0,0,0) 10px 24px
-    );
-  opacity:.55;
-  filter: blur(.2px);
-  animation: vmcTexture 12s linear infinite;
-  will-change: transform;
-  transform: translateZ(0);
-}
-
-@keyframes vmcTexture{
-  from{ transform: translateX(0) rotate(18deg) translateZ(0); }
-  to{ transform: translateX(-32%) rotate(18deg) translateZ(0); }
-}
-
-/* Shine + depth */
-.globe__shine{
-  position:absolute; inset:-40%;
-  background: radial-gradient(closest-side at 35% 35%, rgba(255,255,255,.12), transparent 60%);
-  transform: translateX(-18%) rotate(10deg);
-  animation: vmcShine 10s ease-in-out infinite;
-  opacity:.7;
-  mix-blend-mode: screen;
-  pointer-events:none;
-  will-change: transform;
-}
-@keyframes vmcShine{
-  0%,100%{ transform: translateX(-18%) rotate(10deg); }
-  50%{ transform: translateX(18%) rotate(10deg); }
-}
-
-.globe__rim{
-  position:absolute; inset:0;
-  border-radius:50%;
-  box-shadow:
-    inset 0 0 0 1px rgba(245,208,122,.22),
-    inset 0 0 30px rgba(0,0,0,.55);
-  pointer-events:none;
-}
-
-/* Center logo */
-.globe__logo{
-  position:absolute; inset:0;
-  display:grid;
-  place-items:center;
-}
-.globe__logo img{
-  width: clamp(128px, 12vw, 170px);
-  height: clamp(128px, 12vw, 170px);
-  border-radius: 50%;
-  background:#000;
-  box-shadow:
-    0 0 0 1px rgba(245,208,122,.28),
-    0 0 0 12px rgba(245,208,122,.06),
-    0 40px 120px rgba(0,0,0,.75);
-  animation: vmcFloatLogo 6.5s ease-in-out infinite;
-  will-change: transform;
-  transform: translateZ(0);
-}
-
-@keyframes vmcFloatLogo{
-  0%,100%{ transform: translateY(0) translateZ(0); }
-  50%{ transform: translateY(-8px) translateZ(0); }
-}
-
-/* Ring text (mostly visible on the top half) */
-.globe__ring{
-  position:absolute;
-  inset:-10%;
-  display:grid;
-  place-items:center;
-  opacity:.95;
-  pointer-events:none;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0 52%, rgba(0,0,0,.22) 68%, transparent 84%);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0 52%, rgba(0,0,0,.22) 68%, transparent 84%);
-}
-.globe__ring svg{
-  width: 100%;
-  height: 100%;
-  animation: vmcRing 34s linear infinite;
-  will-change: transform;
-  transform: translateZ(0);
-}
-@keyframes vmcRing{
-  from{ transform: rotate(0deg) translateZ(0); }
-  to{ transform: rotate(360deg) translateZ(0); }
-}
-
-.globe__ring text{
-  fill: rgba(245,208,122,.88);
-  font-size: 11px;
-  letter-spacing: .34em;
-  text-transform: uppercase;
-  font-family: "Space Grotesk", Manrope, sans-serif;
-  opacity:.9;
-}
-
-/* RTL tweaks: reverse rotation only (avoid SVG bidi bugs) */
-:dir(rtl) .globe__ring svg{ animation-direction: reverse; }
-:dir(rtl) .globe__ring text{ letter-spacing: .10em; }
-
-/* Responsive */
-@media (max-width: 980px){
-  .hero__grid{ grid-template-columns: 1fr; }
-  .hero__art{ justify-content:center !important; }
-  .globe{ width: min(520px, 90vw); margin-inline: 0; }
-}
-
-/* Reduce Motion */
-@media (prefers-reduced-motion: reduce){
-  .globe__ring svg,
-  .globe__texture,
-  .globe__shine,
-  .globe__logo img{ animation: none !important; }
-}
-
-
 .kicker{
   margin:0 0 14px;
   letter-spacing:.08em;
@@ -1004,5 +835,153 @@ a{color:inherit; text-decoration:none}
     -webkit-backdrop-filter: none !important;
     background: rgba(6,7,10,.72) !important;
   }
+}
+
+
+/* =============== HERO V6: Creative Engine Scene (Image Above, Copy Below) =============== */
+.heroLayout{
+  display:flex;
+  flex-direction:column;
+  gap: 26px;
+  align-items: stretch;
+  padding-top: 6px;
+}
+
+/* Scene */
+.heroScene{
+  position:relative;
+  width: min(980px, 100%);
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 32px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.02);
+  box-shadow: 0 30px 120px rgba(0,0,0,.55);
+  overflow:hidden;
+}
+
+.heroScene::before{
+  content:"";
+  position:absolute; inset:-2px;
+  background:
+    radial-gradient(700px 420px at 30% 30%, rgba(245,208,122,.18), transparent 60%),
+    radial-gradient(740px 420px at 75% 25%, rgba(145,90,255,.16), transparent 60%),
+    radial-gradient(740px 420px at 60% 85%, rgba(0,255,200,.10), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  filter: saturate(1.08);
+}
+
+.heroScene::after{
+  content:"";
+  position:absolute; inset:0;
+  background: radial-gradient(900px 520px at 55% 55%, rgba(6,7,10,.0), rgba(6,7,10,.72));
+  pointer-events:none;
+}
+
+.engine{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  opacity: .95;
+  transform: translateZ(0);
+}
+
+/* ring + orb animations */
+.ring{
+  transform-origin: 400px 260px;
+  animation: ringSpin 26s linear infinite;
+  opacity: .85;
+}
+.ringText{
+  fill: rgba(245,208,122,.78);
+  font-size: 14px;
+  letter-spacing: .38em;
+  text-transform: uppercase;
+  font-family: "Space Grotesk", Manrope, sans-serif;
+}
+@keyframes ringSpin{ from{ transform: rotate(0deg);} to{ transform: rotate(360deg);} }
+
+.orb{
+  transform-origin: 400px 260px;
+  animation: orbFloat 7.5s ease-in-out infinite;
+}
+@keyframes orbFloat{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-8px); }
+}
+
+/* subtle scanning feel (bands) */
+.bands{
+  transform-origin: 400px 260px;
+  animation: bandsDrift 10s ease-in-out infinite;
+}
+@keyframes bandsDrift{
+  0%,100%{ transform: rotate(-10deg) translateX(-16px); opacity:.38; }
+  50%{ transform: rotate(8deg) translateX(18px); opacity:.62; }
+}
+
+/* Labels */
+.heroScene__label{
+  position:absolute;
+  z-index:3;
+  font-family: "Space Grotesk", Manrope, sans-serif;
+  letter-spacing:.22em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: rgba(238,241,246,.62);
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(6,7,10,.28);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+}
+.heroScene__label.l1{ left: 18px; bottom: 18px; }
+.heroScene__label.l2{ right: 18px; top: 18px; }
+
+/* Logo overlay (crisp) */
+.heroScene__logo{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  z-index:4;
+  pointer-events:none;
+}
+.heroScene__logo img{
+  width: clamp(92px, 9vw, 126px);
+  height: clamp(92px, 9vw, 126px);
+  border-radius: 50%;
+  background:#000;
+  box-shadow:
+    0 0 0 1px rgba(245,208,122,.26),
+    0 0 0 10px rgba(245,208,122,.06),
+    0 40px 120px rgba(0,0,0,.75);
+  opacity: .98;
+}
+
+/* Copy panel under scene */
+.heroCopy{
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Pro title */
+.heroTitle2{
+  margin: 0 0 14px;
+  max-width: 22ch;
+  text-wrap: balance;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-size: clamp(38px, 5.4vw, 84px);
+}
+.heroTitle2 .gold{ display:inline; }
+
+.sub{ max-width: 72ch; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .ring,.orb,.bands{ animation: none !important; }
 }
 
