@@ -1,4 +1,4 @@
-    <!doctype html>
+  <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
@@ -47,6 +47,7 @@
       </div>
 
       <div class="hero__inner">
+
       <div class="hero__grid">
         <div class="hero__copy">
         <p class="kicker reveal" data-i18n="hero_kicker">
@@ -95,29 +96,35 @@
       
         </div>
 
-        <!-- HERO ART (Globe + Orbit Text) -->
-        <div class="hero-art reveal" aria-hidden="true">
+        <!-- HERO ART (Brand Orb / Full Globe) -->
+        <div class="hero__art reveal" aria-hidden="true">
           <div class="globe">
-            <div class="globe__sphere" aria-hidden="true">
-              <span class="globe__shine" aria-hidden="true"></span>
-              <img class="globe__logo" src="/assets/logo.jpeg" alt="" loading="lazy" />
+            <div class="globe__ring" aria-hidden="true">
+              <svg viewBox="0 0 300 300">
+                <defs>
+                  <path id="globeRingPath"
+                    d="M 150,150 m -120,0 a 120,120 0 1,1 240,0 a 120,120 0 1,1 -240,0" />
+                </defs>
+                <text>
+                  <textPath href="#globeRingPath" data-i18n="globe_text">
+                    VIVA MEDIA CREATIVE • TREND • INFLUENCE • GROWTH • MONETIZATION •
+                  </textPath>
+                </text>
+              </svg>
             </div>
 
-            <svg class="globe__ring" viewBox="0 0 300 300" aria-hidden="true">
-              <defs>
-                <path id="globePath"
-                  d="M 150,150 m -118,0 a 118,118 0 1,1 236,0 a 118,118 0 1,1 -236,0" />
-              </defs>
-              <text>
-                <textPath href="#globePath" data-i18n="globe_text">
-                  VIVA MEDIA CREATIVE • TURN FAME INTO SALES • TRENDS • INFLUENCE • GROWTH •
-                </textPath>
-              </text>
-            </svg>
+            <div class="globe__sphere" aria-hidden="true">
+              <div class="globe__texture"></div>
+              <div class="globe__shine"></div>
+              <div class="globe__logo">
+                <img src="/assets/logo.jpeg" alt="VMC" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
-</div>
+
+    </div>
 
       <div class="scroll" aria-hidden="true"><span></span></div>
     </section>
