@@ -48,13 +48,101 @@
 
       <div class="hero__inner">
         
-        <div class="hero__grid">
-          <div class="hero__copy">
+      <div class="heroLayout">
+        <!-- HERO SCENE (Creative Engine) -->
+        <div class="heroScene reveal" aria-hidden="true">
+          <div class="heroScene__label l1">CREATIVE MODE: ACTIVE</div>
+          <div class="heroScene__label l2">TREND ENGINE RUNNING</div>
+
+          <svg class="engine" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+            <defs>
+              <radialGradient id="orbGlow" cx="35%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="rgba(245,208,122,.55)"/>
+                <stop offset="40%" stop-color="rgba(145,90,255,.25)"/>
+                <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+              </radialGradient>
+
+              <radialGradient id="orbBody" cx="35%" cy="30%" r="75%">
+                <stop offset="0%" stop-color="rgba(255,255,255,.18)"/>
+                <stop offset="25%" stop-color="rgba(245,208,122,.18)"/>
+                <stop offset="55%" stop-color="rgba(145,90,255,.12)"/>
+                <stop offset="100%" stop-color="rgba(6,7,10,.0)"/>
+              </radialGradient>
+
+              <linearGradient id="scan" x1="0" x2="1">
+                <stop offset="0%" stop-color="rgba(245,208,122,.0)"/>
+                <stop offset="45%" stop-color="rgba(245,208,122,.18)"/>
+                <stop offset="55%" stop-color="rgba(145,90,255,.12)"/>
+                <stop offset="100%" stop-color="rgba(0,255,200,.0)"/>
+              </linearGradient>
+
+              <path id="ringPath" d="M 400 260 m -180 0 a 180 180 0 1 1 360 0 a 180 180 0 1 1 -360 0"/>
+            </defs>
+
+            <!-- soft field -->
+            <rect x="0" y="0" width="800" height="520" fill="url(#orbGlow)" opacity=".55"/>
+
+            <!-- orbit ring -->
+            <g class="ring">
+              <circle cx="400" cy="260" r="198" fill="none" stroke="rgba(245,208,122,.22)" stroke-width="1"/>
+              <text class="ringText">
+                <textPath href="#ringPath" startOffset="50%" text-anchor="middle">
+                  VIVA MEDIA CREATIVE • TREND • INFLUENCE • GROWTH • SALES •
+                </textPath>
+              </text>
+            </g>
+
+            <!-- orb -->
+            <g class="orb">
+              <circle cx="400" cy="260" r="150" fill="rgba(0,0,0,.25)" />
+              <circle cx="400" cy="260" r="150" fill="url(#orbBody)"/>
+
+              <!-- rotating bands -->
+              <g class="bands" opacity=".55">
+                <rect x="250" y="150" width="300" height="220" fill="url(#scan)" opacity=".55" clip-path="url(#clipOrb)"/>
+              </g>
+
+              <!-- logo core -->
+              <g class="core">
+                <circle cx="400" cy="260" r="88" fill="rgba(0,0,0,.45)" stroke="rgba(245,208,122,.30)" stroke-width="1"/>
+              </g>
+            </g>
+
+            <!-- mask + clip -->
+            <clipPath id="clipOrb">
+              <circle cx="400" cy="260" r="150"/>
+            </clipPath>
+
+            <!-- subtle grid inside orb -->
+            <g class="orbGrid" clip-path="url(#clipOrb)" opacity=".22">
+              <path d="M250 200 H550" stroke="rgba(255,255,255,.20)" stroke-width="1"/>
+              <path d="M250 240 H550" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+              <path d="M250 280 H550" stroke="rgba(255,255,255,.16)" stroke-width="1"/>
+              <path d="M250 320 H550" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+              <path d="M320 110 V410" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+              <path d="M400 110 V410" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+              <path d="M480 110 V410" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+            </g>
+
+            <!-- outer highlight -->
+            <circle cx="400" cy="260" r="150" fill="none" stroke="rgba(245,208,122,.20)" stroke-width="1"/>
+            <circle cx="400" cy="260" r="152" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="6" opacity=".55"/>
+
+            <!-- logo image (HTML overlay, keeps crisp) -->
+          </svg>
+
+          <div class="heroScene__logo">
+            <img src="/assets/logo.jpeg" alt="VMC" />
+          </div>
+        </div>
+
+        <!-- HERO COPY -->
+        <div class="heroCopy">
 <p class="kicker reveal" data-i18n="hero_kicker">
           وكالة متخصصة في صناعة الترند • إدارة المشاهير • تحويل الشهرة إلى دخل
         </p>
 
-        <h1 class="h1 reveal">
+        <h1 class="heroTitle2 reveal">
           <span data-i18n="hero_title_1">نحوّل شهرتك الرقمية</span><br/>
           <span class="gold" data-i18n="hero_title_2">إلى تأثير يصنع ترند… ويبيع باستمرار</span>
         </h1>
@@ -93,39 +181,10 @@
           <span class="pillx" data-i18n="pill_3">💰 تحويل المشاهدات إلى دخل</span>
           <span class="pillx" data-i18n="pill_4">🌐 مواقع + SEO + تحويل</span>
         </div>
-          </div>
-
-          <!-- HERO ART (Brand Orb) -->
-          <div class="hero__art" aria-hidden="true">
-            <div class="globe">
-              <div class="globe__ring">
-                <svg viewBox="0 0 300 300" role="presentation">
-                  <defs>
-                    <path id="globePath" d="M 150,150 m -120,0 a 120,120 0 1,1 240,0 a 120,120 0 1,1 -240,0" />
-                  </defs>
-                  <text>
-                    <textPath href="#globePath" startOffset="50%" text-anchor="middle">
-                     VIVA MEDIA CREATIVE • TREND • INFLUENCE • GROWTH • SALES •
-                  </textPath>
-
-                  </text>
-                </svg>
-              </div>
-
-              <div class="globe__sphere">
-                <div class="globe__texture"></div>
-                <div class="globe__shine"></div>
-                <div class="globe__rim"></div>
-
-                <div class="globe__logo">
-                  <img src="/assets/logo.jpeg" alt="VMC" />
-                </div>
-              </div>
-            </div>
-          </div>
+      
         </div>
-
       </div>
+</div>
 
       <div class="scroll" aria-hidden="true"><span></span></div>
     </section>
