@@ -1,238 +1,220 @@
- /* =========================
-   VMC HOME — Luxury V3 (Final)
+  /* =========================
+   VMC HOME (Slider Services C)
 ========================= */
 
 // year
 const y = document.getElementById("y");
 if (y) y.textContent = String(new Date().getFullYear());
 
-/* =========================
-   Reveal on scroll (unobserve)
-========================= */
-(function setupReveal() {
-  const els = document.querySelectorAll(".reveal");
-  if (!els.length) return;
-
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) {
-            e.target.classList.add("is-in");
-            io.unobserve(e.target);
-          }
+// reveal on scroll (lighter: unobserve after first reveal)
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-in");
+          io.unobserve(e.target); // ✅ stop observing after first reveal
         }
-      },
-      { threshold: 0.12 }
-    );
+      }
+    },
+    { threshold: 0.12 }
+  );
 
-    els.forEach((el) => io.observe(el));
-  } else {
-    els.forEach((el) => el.classList.add("is-in"));
-  }
-})();
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+} else {
+  // fallback: reveal everything if IO not supported
+  document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-in"));
+}
 
-/* =========================
-   Magnetic buttons (rAF)
-========================= */
-(function setupMagnetic() {
-  const items = document.querySelectorAll(".magnetic");
-  if (!items.length) return;
+// magnetic (optimized with requestAnimationFrame)
+document.querySelectorAll(".magnetic").forEach((el) => {
+  const strength = 10;
+  let raf = 0;
+  let lastX = 0;
+  let lastY = 0;
 
-  items.forEach((el) => {
-    const strength = 10;
-    let raf = 0;
-    let lastX = 0;
-    let lastY = 0;
+  el.addEventListener("pointermove", (ev) => {
+    const r = el.getBoundingClientRect();
+    lastX = ev.clientX - (r.left + r.width / 2);
+    lastY = ev.clientY - (r.top + r.height / 2);
 
-    el.addEventListener("pointermove", (ev) => {
-      const r = el.getBoundingClientRect();
-      lastX = ev.clientX - (r.left + r.width / 2);
-      lastY = ev.clientY - (r.top + r.height / 2);
-
-      if (raf) return;
-      raf = requestAnimationFrame(() => {
-        raf = 0;
-        el.style.transform = `translate(${lastX / strength}px, ${lastY / strength}px)`;
-      });
-    });
-
-    el.addEventListener("pointerleave", () => {
-      if (raf) cancelAnimationFrame(raf);
+    if (raf) return;
+    raf = requestAnimationFrame(() => {
       raf = 0;
-      el.style.transform = `translate(0px, 0px)`;
+      el.style.transform = `translate(${lastX / strength}px, ${lastY / strength}px)`;
     });
   });
-})();
+
+  el.addEventListener("pointerleave", () => {
+    if (raf) cancelAnimationFrame(raf);
+    raf = 0;
+    el.style.transform = `translate(0px, 0px)`;
+  });
+});
 
 /* =========================
-   i18n (AR/EN)
+   i18n (AR/EN) — no URL change
 ========================= */
 const dict = {
   ar: {
-    nav_system: "النظام",
-    nav_capabilities: "قدراتنا",
-    nav_work: "أعمالنا",
+    nav_services: "الخدمات",
+    nav_tenets: "مبادئنا",
+    nav_trusted: "عملاؤنا",
     nav_contact: "تواصل",
 
-    hero_kicker: "برلين × الشرق الأوسط • ترند • مشاهير • دخل",
-    hero_title_1: "نحوّل شهرتك",
-    hero_title_2: "إلى طلب… ثم دخل… ثم نفوذ",
-    hero_sub: "ليست ضربة حظ. نظام واضح: Trend Engineering → Distribution → Monetization → Scale.",
-    hero_cta_primary: "اطلب جلسة استراتيجية",
-    hero_cta_secondary: "شاهد النظام",
-
-    meta_1: "جمهور نؤثر عليه",
+    hero_kicker: "وكالة متخصصة في صناعة الترند • إدارة المشاهير • تحويل الشهرة إلى دخل",
+    hero_title_1: "نحوّل شهرتك الرقمية",
+    hero_title_2: "إلى تأثير يصنع ترند… ويبيع باستمرار",
+    hero_sub:
+      "نعمل مع مشاهير، صُنّاع محتوى، وصفحات كبرى لنقلك من “الانتشار” إلى “القيمة”. استراتيجية + تنفيذ + توزيع + قياس — ليصبح محتواك مصدر رعايات ومبيعات ونفوذ حقيقي.",
+    hero_cta_primary: "ابدأ طريق الترند",
+    hero_cta_secondary: "شاهد كيف نعمل",
+    meta_1: "متابعون نؤثر عليهم",
     meta_2: "سنوات صناعة ترند",
     meta_3: "شبكة تأثير",
 
-    reel_1: "زاوية ترند قابلة للتكرار",
-    reel_2: "تموضع يصنع “طلب”",
-    reel_3: "فَنل + عروض + قياس",
-    reel_hint: "حرّك الماوس / اسحب… وشاهد “اللمعة”",
+    services_cap: "Services",
+    services_title: "خدماتنا",
+    services_desc:
+      "نحن لا نبدأ بالكاميرا… نبدأ بالترند، ثم النمو، ثم البيع — وبعدها يأتي الإنتاج كأداة تنفيذ تخدم النتائج.",
+    services_hint: "اسحب ← → أو استخدم عجلة الماوس",
+    contact_us: "تواصل معنا",
 
-    system_title: "نظام VMC",
-    system_desc: "4 خطوات فقط… لكنها تُغيّر اللعبة.",
-    sys_1: "Fame → Attention",
-    sys_2: "Attention → Demand",
-    sys_3: "Demand → Revenue",
-    sys_4: "Revenue → Power",
+    // Slide 1
+    s1_title: "صناعة الترند والنمو السريع",
+    s1_desc:
+      "نحلّل حسابك، جمهورك، ومنصّتك—ثم نبني استراتيجية تجعل اسمك حاضرًا، متداولًا، ومطلوبًا باستمرار. هوك + زوايا + توقيت + توزيع… لنمو واضح وليس عشوائي.",
+    s1_b1: "• أفكار ترند أسبوعية",
+    s1_b2: "• تحليل خوارزميات",
+    s1_b3: "• خطة نمو قابلة للقياس",
 
-    sys_k1: "الخطوة 01",
-    sys_t1: "نصنع انتباهًا “مُستحقًا”.",
-    sys_p1: "صياغة ظهورك لتصبح “ملحوظًا” و“مُتداولًا” بدون ابتذال.",
-    sys_b11: "Hook Engineering",
-    sys_b12: "Trend Angles",
-    sys_b13: "Distribution",
+    // Slide 2
+    s2_title: "إدارة المشاهير والبراند الشخصي",
+    s2_desc:
+      "ندير حسابك كعلامة تجارية: تقويم محتوى، هوية رقمية، ظهور ذكي، وتعاونات مدفوعة بعقود واضحة— لتكبر بثبات بدون حرق صورتك أو فقدان مصداقيتك.",
+    s2_b1: "• تقويم محتوى شهري",
+    s2_b2: "• بناء هوية قوية",
+    s2_b3: "• إدارة رعايات وشراكات",
 
-    sys_k2: "الخطوة 02",
-    sys_t2: "نحوّل الانتباه إلى “طلب”.",
-    sys_p2: "تموضع براند شخصي + هوية + تقويم… يجعل السوق يريدك.",
-    sys_b21: "Brand Positioning",
-    sys_b22: "Content Architecture",
-    sys_b23: "Deal Readiness",
+    // Slide 3
+    s3_title: "تحويل الشهرة إلى دخل ومبيعات",
+    s3_desc:
+      "نربط الانتشار بالربح: رعايات، عروض، حملات، وFunnel واضح—مع تتبّع وقياس لتحسين النتائج. لا “أرقام فارغة”… بل دخل يتصاعد وطلبات تزيد.",
+    s3_b1: "• عروض ورعايات مدروسة",
+    s3_b2: "• Funnel وتسويق بالأداء",
+    s3_b3: "• تقارير وقياس نتائج",
 
-    sys_k3: "الخطوة 03",
-    sys_t3: "نربط الطلب بالدخل.",
-    sys_p3: "عروض ورعايات وفَنلات أداء—مع قياس وتحسين مستمر.",
-    sys_b31: "Monetization",
-    sys_b32: "Funnels",
-    sys_b33: "Performance",
+    // Slide 4
+    s4_title: "إنتاج فيديوهات وإعلانات (Premium)",
+    s4_desc:
+      "هنا يأتي التنفيذ الذي يخدم الاستراتيجية: كتابة سكريبت، تصوير/Remote Production، مونتاج فاخر، Shorts/Reels، وإعلانات جاهزة للنشر—بإيقاع يجعل الجمهور يكمل، يتفاعل، ويشارك.",
+    s4_b1: "• سكريبت + هوك قوي",
+    s4_b2: "• مونتاج يخدم المشاهدة",
+    s4_b3: "• فيديوهات ترند وريلز",
 
-    sys_k4: "الخطوة 04",
-    sys_t4: "استمرارية = نفوذ.",
-    sys_p4: "نظام تكرار النتائج بدون إنهاك أو تشويه صورة.",
-    sys_b41: "Sustainability",
-    sys_b42: "Network",
-    sys_b43: "Scale",
+    tenets_title: "مبادئنا",
+    tenets_desc: "الشهرة وحدها لا تكفي… نحن نصنع قرارًا ذكيًا خلف كل ظهور: ترند + استمرارية + دخل.",
+    t1: "وضوح الرسالة",
+    t1d: "نحوّل الفكرة إلى رسالة سريعة وواضحة… ثم نبني لها تنفيذًا يعلق بالذاكرة ويُشارك.",
+    t2: "صناعة الترند بذكاء",
+    t2d: "نعرف متى نصنع ضجّة… ومتى نبني استمرارية تجعل الجمهور يعود لك يوميًا.",
+    t3: "تنفيذ Premium يخدم الهدف",
+    t3d: "جودة الصورة والصوت والإيقاع ليست للزينة—بل لرفع المشاهدة والتفاعل والتحويل.",
+    t4: "شفافية التعاون",
+    t4d: "اتفاقات واضحة تحفظ الحقوق وتضمن الجودة—بدون مفاجآت أو وعود فضفاضة.",
+    t5: "توزيع أقوى من الإنتاج",
+    t5d: "لا ننتج فقط—نخطط للنشر والتكرار والتوسيع… حتى تصل لنتيجة محسوسة.",
+    t6: "نمو ودخل قابلان للقياس",
+    t6d: "نقيس ونحلل ثم نكرر ما ينجح—لتزيد الأرقام المهمة: الوصول، الطلبات، والدخل.",
 
-    cap_title: "قدراتنا",
-    cap_desc: "أربع قدرات… تُنتج نتيجة.",
-    c1_t: "Trend Engineering",
-    c1_p: "زاوية + هوك + توقيت… بشكل متكرر.",
-    c2_t: "Celebrity Control",
-    c2_p: "إدارة ظهور + صورة + صفقات.",
-    c3_t: "Monetization",
-    c3_p: "عروض وفَنلات أداء وقياس.",
-    c4_t: "Premium Production",
-    c4_p: "تنفيذ فاخر يخدم Retention + Conversion.",
+    trusted_title: "يثق بنا",
+    trusted_note: "حاليًا نستخدم شعارات “Placeholder” — وعندما تجهز قائمة العملاء، نستبدلها فورًا.",
 
-    work_title: "أعمال مختارة",
-    work_desc: "ضع هنا لاحقًا 3 Case Studies.",
-    w1_t: "من انتشار إلى طلب",
-    w1_p: "نظام تكرار… بدل “ضربة”.",
-    w2_t: "شراكات فاخرة",
-    w2_p: "تموضع + هوية + عقود.",
-    w3_t: "Revenue System",
-    w3_p: "Funnels + قياس + تحسين.",
-
-    final_title: "جاهز نبدأ؟",
-    final_desc: "أرسل حسابك وهدفك—وسنرسل لك مسارًا واضحًا خلال 48 ساعة.",
-    final_cta: "اطلب جلسة استراتيجية",
-    final_cta2: "ارجع للأعلى",
+    final_title: "جاهز تتحول من مشهور… إلى علامة تبيع؟",
+    final_desc:
+      "أرسل حسابك وهدفك—وسنقترح مسارًا واضحًا لصناعة ترند، نمو مستمر، ثم دخل ومبيعات قابلة للقياس.",
+    final_cta: "اطلب استشارة الآن",
   },
 
   en: {
-    nav_system: "System",
-    nav_capabilities: "Capabilities",
-    nav_work: "Work",
+    nav_services: "Services",
+    nav_tenets: "Principles",
+    nav_trusted: "Clients",
     nav_contact: "Contact",
 
-    hero_kicker: "Berlin × MENA • Trends • Celebrities • Revenue",
-    hero_title_1: "We turn fame",
-    hero_title_2: "into demand… then revenue… then power",
-    hero_sub: "Not luck. A clear system: Trend Engineering → Distribution → Monetization → Scale.",
-    hero_cta_primary: "Request a strategy session",
-    hero_cta_secondary: "See the system",
-
-    meta_1: "Audience influenced",
+    hero_kicker: "Trend-making agency • Celebrity management • Monetization & growth",
+    hero_title_1: "We turn digital fame",
+    hero_title_2: "into trends that sell — repeatedly",
+    hero_sub:
+      "We work with celebrities, creators, and large pages to move you from reach to real value. Strategy, execution, distribution, and measurement — built to generate deals, revenue, and influence.",
+    hero_cta_primary: "Start Your Growth",
+    hero_cta_secondary: "See How We Work",
+    meta_1: "Engaged followers",
     meta_2: "Years of trend-making",
     meta_3: "Influence network",
 
-    reel_1: "Repeatable trend angles",
-    reel_2: "Positioning that creates demand",
-    reel_3: "Funnels + offers + measurement",
-    reel_hint: "Move your cursor / drag… watch the shine",
+    services_cap: "Services",
+    services_title: "What We Do",
+    services_desc:
+      "We don’t start with the camera. We start with trends, then growth, then monetization — production comes last to serve results.",
+    services_hint: "Drag ← → or scroll",
+    contact_us: "Contact us",
 
-    system_title: "The VMC System",
-    system_desc: "Four steps. One outcome: power.",
-    sys_1: "Fame → Attention",
-    sys_2: "Attention → Demand",
-    sys_3: "Demand → Revenue",
-    sys_4: "Revenue → Power",
+    // Slide 1
+    s1_title: "Trend Creation & Rapid Growth",
+    s1_desc:
+      "We analyze your account, audience, and platform — then build a system that keeps your name visible, talked about, and in demand. Hooks, angles, timing, and distribution for real growth.",
+    s1_b1: "• Weekly trend ideas",
+    s1_b2: "• Algorithm analysis",
+    s1_b3: "• Measurable growth plan",
 
-    sys_k1: "Step 01",
-    sys_t1: "We earn attention.",
-    sys_p1: "Make you notable and shareable — without cheap tactics.",
-    sys_b11: "Hook Engineering",
-    sys_b12: "Trend Angles",
-    sys_b13: "Distribution",
+    // Slide 2
+    s2_title: "Celebrity & Personal Brand Management",
+    s2_desc:
+      "We manage your presence as a brand: content calendars, digital identity, smart positioning, and paid collaborations — scaling without damaging credibility.",
+    s2_b1: "• Monthly content planning",
+    s2_b2: "• Strong brand identity",
+    s2_b3: "• Deals & sponsorship management",
 
-    sys_k2: "Step 02",
-    sys_t2: "We turn attention into demand.",
-    sys_p2: "Positioning + identity + calendar — the market starts wanting you.",
-    sys_b21: "Brand Positioning",
-    sys_b22: "Content Architecture",
-    sys_b23: "Deal Readiness",
+    // Slide 3
+    s3_title: "Turning Fame into Revenue",
+    s3_desc:
+      "We connect reach to income: sponsorships, offers, campaigns, and performance funnels — tracked, optimized, and scaled. No vanity metrics. Real revenue.",
+    s3_b1: "• Strategic sponsorships",
+    s3_b2: "• Funnels & performance marketing",
+    s3_b3: "• Revenue tracking & reports",
 
-    sys_k3: "Step 03",
-    sys_t3: "We connect demand to revenue.",
-    sys_p3: "Offers, funnels, performance — measured and optimized.",
-    sys_b31: "Monetization",
-    sys_b32: "Funnels",
-    sys_b33: "Performance",
+    // Slide 4
+    s4_title: "Premium Video & Ad Production",
+    s4_desc:
+      "Execution that serves strategy: scripting, filming or remote production, premium editing, shorts and reels — designed to retain attention, drive engagement, and convert.",
+    s4_b1: "• Scripts & strong hooks",
+    s4_b2: "• Retention-focused editing",
+    s4_b3: "• Trend-driven videos",
 
-    sys_k4: "Step 04",
-    sys_t4: "Consistency becomes power.",
-    sys_p4: "Repeat outcomes without burning the brand.",
-    sys_b41: "Sustainability",
-    sys_b42: "Network",
-    sys_b43: "Scale",
+    tenets_title: "Our Principles",
+    tenets_desc:
+      "Fame alone is not enough. Every appearance is backed by a smart decision: trend, consistency, and revenue.",
+    t1: "Clear positioning",
+    t1d: "We turn ideas into sharp, shareable messages.",
+    t2: "Smart trend creation",
+    t2d: "Knowing when to create noise — and when to build consistency.",
+    t3: "Premium execution with purpose",
+    t3d: "Visual quality serves retention, engagement, and conversion.",
+    t4: "Transparent partnerships",
+    t4d: "Clear agreements that protect value and reputation.",
+    t5: "Distribution over production",
+    t5d: "Publishing, scaling, and repetition until results are felt.",
+    t6: "Measurable growth & income",
+    t6d: "We track what matters: reach, demand, and revenue.",
 
-    cap_title: "Capabilities",
-    cap_desc: "Four capabilities. One outcome.",
-    c1_t: "Trend Engineering",
-    c1_p: "Angle + hook + timing — repeatably.",
-    c2_t: "Celebrity Control",
-    c2_p: "Presence + image + deals — precisely.",
-    c3_t: "Monetization",
-    c3_p: "Offers, funnels, measurement.",
-    c4_t: "Premium Production",
-    c4_p: "Luxury execution for retention + conversion.",
+    trusted_title: "Trusted By",
+    trusted_note: "Logos are placeholders for now — we’ll replace them once client approvals are ready.",
 
-    work_title: "Selected Work",
-    work_desc: "Replace with 3 case studies later.",
-    w1_t: "From reach to demand",
-    w1_p: "Repeatable systems — not lucky hits.",
-    w2_t: "Luxury partnerships",
-    w2_p: "Positioning + identity + contracts.",
-    w3_t: "Revenue System",
-    w3_p: "Funnels + measurement + optimization.",
-
-    final_title: "Ready to start?",
-    final_desc: "Send your account and goal — we’ll reply with a clear path within 48 hours.",
-    final_cta: "Request a strategy session",
-    final_cta2: "Back to top",
+    final_title: "Ready to turn fame into a selling brand?",
+    final_desc:
+      "Send us your account and goal — we’ll map a clear path to trends, consistent growth, and monetization.",
+    final_cta: "Request a Strategy Call",
   },
 };
 
@@ -247,17 +229,20 @@ function safeGetLang() {
     return null;
   }
 }
+
 function safeSetLang(v) {
   try {
     localStorage.setItem("vmc_lang", v);
-  } catch {}
+  } catch {
+    // ignore (private mode / blocked storage)
+  }
 }
 
 function applyLang(next) {
   lang = next === "en" ? "en" : "ar";
   safeSetLang(lang);
 
-  document.documentElement.lang = lang;
+  document.documentElement.lang = lang === "ar" ? "ar" : "en";
   document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   if (langLabel) langLabel.textContent = lang === "ar" ? "EN" : "AR";
 
@@ -266,146 +251,151 @@ function applyLang(next) {
     const v = dict[lang]?.[key];
     if (typeof v === "string") el.textContent = v;
   });
+
+  // update slider progress visuals after language flip
+  requestAnimationFrame(() => updateServicesUI());
 }
+
+// init language (persisted)
 applyLang(safeGetLang() || "ar");
-langBtn?.addEventListener("click", () => applyLang(lang === "ar" ? "en" : "ar"));
 
-/* =========================
-   Count-up (premium feel)
-========================= */
-function formatCount(n, mode) {
-  if (mode === "short") {
-    if (n >= 1000000) return `${Math.round(n / 1000000)}M+`;
-    if (n >= 1000) return `${Math.round(n / 1000)}K+`;
-    return String(n);
-  }
-  if (mode === "plus") return `${n}+`;
-  return String(n);
-}
-
-(function setupCountUp() {
-  const nums = document.querySelectorAll("[data-count]");
-  if (!nums.length) return;
-
-  const run = (el) => {
-    const to = Number(el.getAttribute("data-count") || "0");
-    const mode = el.getAttribute("data-format") || "";
-    const dur = 900;
-    const start = performance.now();
-    const from = 0;
-
-    const tick = (t) => {
-      const p = Math.min(1, (t - start) / dur);
-      const eased = 1 - Math.pow(1 - p, 3);
-      const val = Math.round(from + (to - from) * eased);
-      el.textContent = formatCount(val, mode);
-      if (p < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  };
-
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) {
-            run(e.target);
-            io.unobserve(e.target);
-          }
-        }
-      },
-      { threshold: 0.35 }
-    );
-    nums.forEach((n) => io.observe(n));
-  } else {
-    nums.forEach(run);
-  }
-})();
-
-/* =========================
-   System controller
-========================= */
-const railSteps = Array.from(document.querySelectorAll(".step"));
-const panels = Array.from(document.querySelectorAll(".panel"));
-const marks = Array.from(document.querySelectorAll(".mark"));
-
-function setActive(i) {
-  railSteps.forEach((b, idx) => b.classList.toggle("is-active", idx === i));
-  panels.forEach((p, idx) => p.classList.toggle("is-active", idx === i));
-}
-
-railSteps.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const i = Number(btn.getAttribute("data-step") || "0");
-    setActive(i);
-    document.querySelector("#system")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
+langBtn?.addEventListener("click", () => {
+  applyLang(lang === "ar" ? "en" : "ar");
 });
 
-if ("IntersectionObserver" in window && marks.length) {
-  const io = new IntersectionObserver(
-    (entries) => {
-      const visible = entries
-        .filter((e) => e.isIntersecting)
-        .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0))[0];
-      if (!visible) return;
+/* =========================
+   Services Slider C controller
+========================= */
+const viewport = document.getElementById("servicesViewport");
+const bar = document.getElementById("servicesBar");
+const dots = Array.from(document.querySelectorAll(".dot2"));
+const prevBtn = document.getElementById("prevSlide");
+const nextBtn = document.getElementById("nextSlide");
 
-      const i = Number(visible.target.getAttribute("data-mark") || "0");
-      setActive(i);
-    },
-    { threshold: [0.15, 0.35, 0.55] }
-  );
-  marks.forEach((m) => io.observe(m));
+function clamp(n, a, b) {
+  return Math.min(b, Math.max(a, n));
 }
 
-/* =========================
-   Reel Parallax + Shine (signature)
-========================= */
-(function setupReel() {
-  const reel = document.getElementById("reel");
-  if (!reel) return;
+function getSlideWidth() {
+  if (!viewport) return 0;
+  return viewport.clientWidth; // each slide = 100% width
+}
 
-  const cards = Array.from(reel.querySelectorAll(".reelCard"));
-  if (!cards.length) return;
+function getIndexFromScroll() {
+  if (!viewport) return 0;
+  const w = getSlideWidth();
+  if (!w) return 0;
+  return clamp(Math.round(viewport.scrollLeft / w), 0, 3);
+}
 
+function scrollToIndex(idx) {
+  if (!viewport) return;
+  const w = getSlideWidth();
+  viewport.scrollTo({ left: idx * w, behavior: "smooth" });
+}
+
+function updateServicesUI() {
+  if (!viewport) return;
+  const idx = getIndexFromScroll();
+
+  // dots
+  dots.forEach((d, i) => d.classList.toggle("is-active", i === idx));
+
+  // progress bar
+  if (bar) {
+    const pct = ((idx + 1) / 4) * 100;
+    bar.style.width = `${pct}%`;
+  }
+}
+
+if (viewport) {
+  // initial
+  updateServicesUI();
+
+  // scroll updates
   let raf = 0;
-  let px = 0.5,
-    py = 0.5;
+  viewport.addEventListener(
+    "scroll",
+    () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(updateServicesUI);
+    },
+    { passive: true }
+  );
 
-  const apply = () => {
-    raf = 0;
+  // wheel -> horizontal
+  viewport.addEventListener(
+    "wheel",
+    (e) => {
+      // allow trackpads to scroll naturally; only intercept vertical intent
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        viewport.scrollLeft += e.deltaY;
+      }
+    },
+    { passive: false }
+  );
 
-    const rx = (py - 0.5) * 10; // -5..5
-    const ry = (px - 0.5) * -12; // -6..6
-
-    cards.forEach((c, i) => {
-      const depth = (i + 1) * 6;
-      c.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(${depth}px)`;
-      c.style.setProperty("--shift", `${px * 50 - 25}%`);
-    });
-  };
-
-  const onMove = (ev) => {
-    const r = reel.getBoundingClientRect();
-    px = (ev.clientX - r.left) / r.width;
-    py = (ev.clientY - r.top) / r.height;
-    px = Math.max(0, Math.min(1, px));
-    py = Math.max(0, Math.min(1, py));
-
-    if (raf) return;
-    raf = requestAnimationFrame(apply);
-  };
-
-  reel.addEventListener("pointermove", onMove, { passive: true });
-
-  reel.addEventListener("pointerleave", () => {
-    if (raf) cancelAnimationFrame(raf);
-    raf = 0;
-
-    cards.forEach((c) => {
-      c.style.transform = "";
-      c.style.removeProperty("--shift");
-    });
+  // keyboard
+  viewport.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      e.preventDefault();
+      const dir = e.key === "ArrowRight" ? 1 : -1;
+      const idx = getIndexFromScroll();
+      scrollToIndex(clamp(idx + dir, 0, 3));
+    }
   });
-})();
+
+  // drag to scroll
+  let isDown = false;
+  let startX = 0;
+  let startLeft = 0;
+
+  viewport.addEventListener("pointerdown", (e) => {
+    isDown = true;
+    viewport.classList.add("is-dragging");
+    startX = e.clientX;
+    startLeft = viewport.scrollLeft;
+    viewport.setPointerCapture?.(e.pointerId);
+  });
+
+  viewport.addEventListener("pointermove", (e) => {
+    if (!isDown) return;
+    const dx = e.clientX - startX;
+    viewport.scrollLeft = startLeft - dx;
+  });
+
+  function endDrag() {
+    if (!isDown) return;
+    isDown = false;
+    viewport.classList.remove("is-dragging");
+
+    // snap to nearest slide
+    const idx = getIndexFromScroll();
+    scrollToIndex(idx);
+  }
+
+  viewport.addEventListener("pointerup", endDrag);
+  viewport.addEventListener("pointercancel", endDrag);
+  viewport.addEventListener("pointerleave", endDrag);
+}
+
+// arrows
+prevBtn?.addEventListener("click", () => {
+  const idx = getIndexFromScroll();
+  scrollToIndex(clamp(idx - 1, 0, 3));
+});
+nextBtn?.addEventListener("click", () => {
+  const idx = getIndexFromScroll();
+  scrollToIndex(clamp(idx + 1, 0, 3));
+});
+
+// on resize keep correct snap
+window.addEventListener("resize", () => {
+  if (!viewport) return;
+  const idx = getIndexFromScroll();
+  viewport.scrollLeft = idx * getSlideWidth();
+  updateServicesUI();
+});
+
 
