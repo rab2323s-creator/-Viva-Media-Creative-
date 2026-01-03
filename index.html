@@ -1,10 +1,10 @@
- <!doctype html>
+  <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Viva Media Creative — نصنع الترند ونحوّل الشهرة إلى قوة</title>
-  <meta name="description" content="Viva Media Creative — وكالة فخمة لصناعة الترند وإدارة المشاهير وتحويل الشهرة الرقمية إلى طلب ودخل قابل للقياس." />
+  <title>Viva Media Creative — صناعة الترند وإدارة المشاهير</title>
+  <meta name="description" content="Viva Media Creative — صناعة الترند، إدارة المشاهير وصُنّاع المحتوى، وتحويل الشهرة الرقمية إلى دخل ومبيعات قابلة للقياس." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="icon" href="/assets/logo.jpeg">
@@ -38,48 +38,93 @@
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero" id="top">
+    <!-- HERO (Cinematic Split + Signature) -->
+    <section class="hero hero--cinematic" id="top">
       <div class="hero__bg" aria-hidden="true">
         <div class="orb orb--a"></div>
         <div class="orb orb--b"></div>
         <div class="gridlines"></div>
+        <div class="goldLine"></div>
       </div>
 
-      <div class="wrap hero__inner">
-        <p class="kicker reveal" data-i18n="hero_kicker">برلين × الشرق الأوسط • ترند • مشاهير • دخل</p>
+      <div class="wrap hero__grid">
+        <!-- Left: Copy -->
+        <div class="hero__copy">
+          <p class="kicker reveal" data-i18n="hero_kicker">برلين × الشرق الأوسط • ترند • مشاهير • دخل</p>
 
-        <h1 class="hero__title reveal">
-          <span data-i18n="hero_title_1">نحن لا نصنع محتوى.</span><br />
-          <span class="gold" data-i18n="hero_title_2">نحن نُغيّر قواعد اللعب.</span>
-        </h1>
+          <h1 class="hero__title reveal">
+            <span data-i18n="hero_title_1">نحوّل شهرتك</span><br />
+            <span class="gold" data-i18n="hero_title_2">إلى طلب… ثم دخل… ثم نفوذ</span>
+          </h1>
 
-        <p class="hero__sub reveal" data-i18n="hero_sub">
-          VMC تُحوّل الشهرة إلى “طلب” ثم إلى “دخل” — بنظام واضح: استراتيجية، تنفيذ، توزيع، وقياس.
-        </p>
+          <p class="hero__sub reveal" data-i18n="hero_sub">
+            ليست ضربة حظ. نظام واضح: Trend Engineering → Distribution → Monetization → Scale.
+          </p>
 
-        <div class="hero__cta reveal">
-          <a class="btn primary magnetic" href="/contact/" data-i18n="hero_cta_primary">ابدأ التحوّل</a>
-          <a class="btn ghost magnetic" href="#system" data-i18n="hero_cta_secondary">شاهد النظام</a>
+          <div class="hero__cta reveal">
+            <a class="btn primary magnetic" href="/contact/" data-i18n="hero_cta_primary">اطلب جلسة استراتيجية</a>
+            <a class="btn ghost magnetic" href="#system" data-i18n="hero_cta_secondary">شاهد النظام</a>
+          </div>
+
+          <div class="hero__stats reveal" aria-label="Key stats">
+            <div class="stat">
+              <span class="stat__num" data-count="4000000" data-format="short">4M+</span>
+              <span class="stat__label" data-i18n="meta_1">جمهور نؤثر عليه</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num" data-count="10" data-format="plus">10+</span>
+              <span class="stat__label" data-i18n="meta_2">سنوات صناعة ترند</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">Germany • MENA</span>
+              <span class="stat__label" data-i18n="meta_3">شبكة تأثير</span>
+            </div>
+          </div>
+
+          <div class="hero__marquee reveal" aria-hidden="true">
+            <div class="marqTrack">
+              <span>Trend Engineering</span><span class="dotSep">•</span>
+              <span>Celebrity Control</span><span class="dotSep">•</span>
+              <span>Monetization</span><span class="dotSep">•</span>
+              <span>Premium Production</span><span class="dotSep">•</span>
+
+              <span>Trend Engineering</span><span class="dotSep">•</span>
+              <span>Celebrity Control</span><span class="dotSep">•</span>
+              <span>Monetization</span><span class="dotSep">•</span>
+              <span>Premium Production</span><span class="dotSep">•</span>
+            </div>
+          </div>
         </div>
 
-        <div class="proof reveal" aria-label="Proof">
-          <div class="proof__item">
-            <span class="proof__k">4M+</span>
-            <span class="proof__l" data-i18n="meta_1">جمهور نؤثر عليه</span>
-          </div>
-          <div class="proof__item">
-            <span class="proof__k">10+</span>
-            <span class="proof__l" data-i18n="meta_2">سنوات صناعة ترند</span>
-          </div>
-          <div class="proof__item">
-            <span class="proof__k">Germany • MENA</span>
-            <span class="proof__l" data-i18n="meta_3">شبكة تأثير</span>
-          </div>
-        </div>
+        <!-- Right: Signature Reel Stack -->
+        <div class="hero__reel reveal" aria-label="VMC signature reel">
+          <div class="monogram" aria-hidden="true">VMC</div>
 
-        <div class="scroll" aria-hidden="true"><span></span></div>
+          <div class="reel" id="reel">
+            <div class="reelCard r1">
+              <div class="reelCard__tag">01 • TREND</div>
+              <div class="reelCard__title" data-i18n="reel_1">زاوية ترند قابلة للتكرار</div>
+              <div class="reelCard__meta">Hook • Timing • Angle</div>
+            </div>
+
+            <div class="reelCard r2">
+              <div class="reelCard__tag">02 • DEMAND</div>
+              <div class="reelCard__title" data-i18n="reel_2">تموضع يصنع “طلب”</div>
+              <div class="reelCard__meta">Brand • Identity • Deals</div>
+            </div>
+
+            <div class="reelCard r3">
+              <div class="reelCard__tag">03 • REVENUE</div>
+              <div class="reelCard__title" data-i18n="reel_3">فَنل + عروض + قياس</div>
+              <div class="reelCard__meta">Funnel • Performance • Reports</div>
+            </div>
+          </div>
+
+          <div class="reelHint" data-i18n="reel_hint">حرّك الماوس / اسحب… وشاهد “اللمعة”</div>
+        </div>
       </div>
+
+      <div class="scroll" aria-hidden="true"><span></span></div>
     </section>
 
     <!-- SIGNATURE: THE VMC SYSTEM -->
@@ -91,7 +136,7 @@
             <span data-i18n="system_title">نظام VMC</span>
           </h2>
           <p class="desc reveal" data-i18n="system_desc">
-            الشهرة “ضجيج”. نحن نحولها إلى طلب… ثم إلى دخل… ثم إلى نفوذ قابل للاستمرار.
+            4 خطوات فقط… لكنها تُغيّر اللعبة.
           </p>
         </header>
 
@@ -118,9 +163,9 @@
           <div class="system__stage reveal">
             <div class="panel is-active" data-panel="0">
               <div class="panel__k" data-i18n="sys_k1">الخطوة 01</div>
-              <h3 class="panel__t" data-i18n="sys_t1">الشهرة ليست هدفًا… بل بوابة.</h3>
+              <h3 class="panel__t" data-i18n="sys_t1">نصنع انتباهًا “مُستحقًا”.</h3>
               <p class="panel__p" data-i18n="sys_p1">
-                نعيد صياغة ظهورك ليكون “لافتًا” و“متداولًا” دون فقدان هيبتك. هوك، زوايا، توقيت، توزيع.
+                صياغة ظهورك لتصبح “ملحوظًا” و“مُتداولًا” بدون ابتذال.
               </p>
               <div class="chips">
                 <span class="chip" data-i18n="sys_b11">Hook Engineering</span>
@@ -131,9 +176,9 @@
 
             <div class="panel" data-panel="1">
               <div class="panel__k" data-i18n="sys_k2">الخطوة 02</div>
-              <h3 class="panel__t" data-i18n="sys_t2">الانتباه وحده لا يكفي… نخلق “طلب”.</h3>
+              <h3 class="panel__t" data-i18n="sys_t2">نحوّل الانتباه إلى “طلب”.</h3>
               <p class="panel__p" data-i18n="sys_p2">
-                نضبط تموضعك كبراند شخصي — بحيث يصبح وجودك “مرغوبًا” للمتابعين وللشركات معًا.
+                تموضع براند شخصي + هوية + تقويم… يجعل السوق يريدك.
               </p>
               <div class="chips">
                 <span class="chip" data-i18n="sys_b21">Brand Positioning</span>
@@ -144,9 +189,9 @@
 
             <div class="panel" data-panel="2">
               <div class="panel__k" data-i18n="sys_k3">الخطوة 03</div>
-              <h3 class="panel__t" data-i18n="sys_t3">نربط الطلب بالدخل — بشكل محسوب.</h3>
+              <h3 class="panel__t" data-i18n="sys_t3">نربط الطلب بالدخل.</h3>
               <p class="panel__p" data-i18n="sys_p3">
-                عروض، رعايات، Funnels، حملات أداء… مع قياس مستمر لرفع ما يهم فعلاً: الدخل والطلبات.
+                عروض ورعايات وفَنلات أداء—مع قياس وتحسين مستمر.
               </p>
               <div class="chips">
                 <span class="chip" data-i18n="sys_b31">Monetization</span>
@@ -157,9 +202,9 @@
 
             <div class="panel" data-panel="3">
               <div class="panel__k" data-i18n="sys_k4">الخطوة 04</div>
-              <h3 class="panel__t" data-i18n="sys_t4">هذا ليس “ترند”… هذا نفوذ.</h3>
+              <h3 class="panel__t" data-i18n="sys_t4">استمرارية = نفوذ.</h3>
               <p class="panel__p" data-i18n="sys_p4">
-                نبني استمرارية: نظام محتوى، علاقات، وتوزيع… يجعل النتائج تتكرر بدون استنزاف صورتك.
+                نظام تكرار النتائج بدون إنهاك أو تشويه صورة.
               </p>
               <div class="chips">
                 <span class="chip" data-i18n="sys_b41">Sustainability</span>
@@ -168,7 +213,6 @@
               </div>
             </div>
 
-            <!-- scroll markers -->
             <div class="markers" aria-hidden="true">
               <div class="mark" data-mark="0"></div>
               <div class="mark" data-mark="1"></div>
@@ -186,46 +230,37 @@
         <header class="section__head">
           <h2 class="title reveal">
             <span class="cap">CAPABILITIES</span>
-            <span data-i18n="cap_title">ما نتحكم به</span>
+            <span data-i18n="cap_title">قدراتنا</span>
           </h2>
-          <p class="desc reveal" data-i18n="cap_desc">
-            أقل كلام… تأثير أكبر. هذه هي الأعمدة التي تبني النمو والدخل بدون فوضى.
-          </p>
+          <p class="desc reveal" data-i18n="cap_desc">أربع قدرات… تُنتج نتيجة.</p>
         </header>
 
         <div class="grid">
           <article class="card reveal">
             <div class="card__k">01</div>
             <h3 class="card__t" data-i18n="c1_t">Trend Engineering</h3>
-            <p class="card__p" data-i18n="c1_p">نصنع “زاوية” قابلة للتكرار — لا ضربة حظ.</p>
+            <p class="card__p" data-i18n="c1_p">زاوية + هوك + توقيت… بشكل متكرر.</p>
           </article>
-
           <article class="card reveal">
             <div class="card__k">02</div>
             <h3 class="card__t" data-i18n="c2_t">Celebrity Control</h3>
-            <p class="card__p" data-i18n="c2_p">إدارة ظهورك، صورتك، وشراكاتك… بدقة.</p>
+            <p class="card__p" data-i18n="c2_p">إدارة ظهور + صورة + صفقات.</p>
           </article>
-
           <article class="card reveal">
             <div class="card__k">03</div>
-            <h3 class="card__t" data-i18n="c3_t">Monetization Architecture</h3>
-            <p class="card__p" data-i18n="c3_p">من الانتباه إلى عروض ودخل بتتبّع وقياس.</p>
+            <h3 class="card__t" data-i18n="c3_t">Monetization</h3>
+            <p class="card__p" data-i18n="c3_p">عروض وفَنلات أداء وقياس.</p>
           </article>
-
           <article class="card reveal">
             <div class="card__k">04</div>
             <h3 class="card__t" data-i18n="c4_t">Premium Production</h3>
-            <p class="card__p" data-i18n="c4_p">تنفيذ فاخر يخدم الهدف: Retention + Conversion.</p>
+            <p class="card__p" data-i18n="c4_p">تنفيذ فاخر يخدم Retention + Conversion.</p>
           </article>
-        </div>
-
-        <div class="miniCta reveal">
-          <a class="btn ghost magnetic" href="/contact/" data-i18n="cap_cta">اطلب خطة مبدئية</a>
         </div>
       </div>
     </section>
 
-    <!-- WORK (Teaser) -->
+    <!-- WORK -->
     <section id="work" class="section section--work">
       <div class="wrap">
         <header class="section__head">
@@ -233,37 +268,24 @@
             <span class="cap">SELECTED</span>
             <span data-i18n="work_title">أعمال مختارة</span>
           </h2>
-          <p class="desc reveal" data-i18n="work_desc">
-            ضع هنا لاحقًا 3 حالات (Case Studies). الآن نعرض قالبًا فخمًا جاهزًا للاستبدال.
-          </p>
+          <p class="desc reveal" data-i18n="work_desc">ضع هنا لاحقًا 3 Case Studies.</p>
         </header>
 
         <div class="work">
-          <a class="workCard reveal" href="/contact/" aria-label="Case study placeholder">
-            <div class="workCard__top">
-              <span class="badge">CASE 01</span>
-              <span class="muted" data-i18n="w1_m">Growth • TikTok</span>
-            </div>
+          <a class="workCard reveal" href="/contact/">
+            <div class="workCard__top"><span class="badge">CASE 01</span><span class="muted">Growth</span></div>
             <h3 class="workCard__t" data-i18n="w1_t">من انتشار إلى طلب</h3>
-            <p class="workCard__p" data-i18n="w1_p">نظام هوك + توزيع + تكرار… يرفع الطلب بدل أرقام فارغة.</p>
+            <p class="workCard__p" data-i18n="w1_p">نظام تكرار… بدل “ضربة”.</p>
           </a>
-
-          <a class="workCard reveal" href="/contact/" aria-label="Case study placeholder">
-            <div class="workCard__top">
-              <span class="badge">CASE 02</span>
-              <span class="muted" data-i18n="w2_m">Brand • Instagram</span>
-            </div>
-            <h3 class="workCard__t" data-i18n="w2_t">إدارة شراكات فاخرة</h3>
-            <p class="workCard__p" data-i18n="w2_p">تموضع + هوية + صفقات… بدون كسر المصداقية.</p>
+          <a class="workCard reveal" href="/contact/">
+            <div class="workCard__top"><span class="badge">CASE 02</span><span class="muted">Deals</span></div>
+            <h3 class="workCard__t" data-i18n="w2_t">شراكات فاخرة</h3>
+            <p class="workCard__p" data-i18n="w2_p">تموضع + هوية + عقود.</p>
           </a>
-
-          <a class="workCard reveal" href="/contact/" aria-label="Case study placeholder">
-            <div class="workCard__top">
-              <span class="badge">CASE 03</span>
-              <span class="muted" data-i18n="w3_m">Monetization • YouTube</span>
-            </div>
+          <a class="workCard reveal" href="/contact/">
+            <div class="workCard__top"><span class="badge">CASE 03</span><span class="muted">Revenue</span></div>
             <h3 class="workCard__t" data-i18n="w3_t">Revenue System</h3>
-            <p class="workCard__p" data-i18n="w3_p">Funnels + عروض + قياس… لتكرار الدخل بشكل أنيق.</p>
+            <p class="workCard__p" data-i18n="w3_p">Funnels + قياس + تحسين.</p>
           </a>
         </div>
       </div>
@@ -273,8 +295,8 @@
     <section class="final">
       <div class="wrap">
         <div class="final__card reveal">
-          <h2 data-i18n="final_title">جاهز تتحول من مشهور… إلى قوة تبيع؟</h2>
-          <p data-i18n="final_desc">أرسل حسابك وهدفك—وسنقترح مسارًا واضحًا: ترند → طلب → دخل → نفوذ.</p>
+          <h2 data-i18n="final_title">جاهز نبدأ؟</h2>
+          <p data-i18n="final_desc">أرسل حسابك وهدفك—وسنرسل لك مسارًا واضحًا خلال 48 ساعة.</p>
           <div class="final__actions">
             <a class="btn primary magnetic" href="/contact/" data-i18n="final_cta">اطلب جلسة استراتيجية</a>
             <a class="btn ghost magnetic" href="#top" data-i18n="final_cta2">ارجع للأعلى</a>
