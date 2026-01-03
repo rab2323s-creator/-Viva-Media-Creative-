@@ -1,220 +1,237 @@
  /* =========================
-   VMC HOME (Slider Services C)
+   VMC HOME — Luxury V2
 ========================= */
 
 // year
 const y = document.getElementById("y");
 if (y) y.textContent = String(new Date().getFullYear());
 
-// reveal on scroll (lighter: unobserve after first reveal)
-if ("IntersectionObserver" in window) {
-  const io = new IntersectionObserver(
-    (entries) => {
-      for (const e of entries) {
-        if (e.isIntersecting) {
-          e.target.classList.add("is-in");
-          io.unobserve(e.target); // ✅ stop observing after first reveal
+/* =========================
+   reveal on scroll (unobserve)
+========================= */
+function setupReveal() {
+  const els = document.querySelectorAll(".reveal");
+  if (!els.length) return;
+
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-in");
+            io.unobserve(e.target);
+          }
         }
-      }
-    },
-    { threshold: 0.12 }
-  );
-
-  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-} else {
-  // fallback: reveal everything if IO not supported
-  document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-in"));
+      },
+      { threshold: 0.12 }
+    );
+    els.forEach((el) => io.observe(el));
+  } else {
+    els.forEach((el) => el.classList.add("is-in"));
+  }
 }
-
-// magnetic (optimized with requestAnimationFrame)
-document.querySelectorAll(".magnetic").forEach((el) => {
-  const strength = 10;
-  let raf = 0;
-  let lastX = 0;
-  let lastY = 0;
-
-  el.addEventListener("pointermove", (ev) => {
-    const r = el.getBoundingClientRect();
-    lastX = ev.clientX - (r.left + r.width / 2);
-    lastY = ev.clientY - (r.top + r.height / 2);
-
-    if (raf) return;
-    raf = requestAnimationFrame(() => {
-      raf = 0;
-      el.style.transform = `translate(${lastX / strength}px, ${lastY / strength}px)`;
-    });
-  });
-
-  el.addEventListener("pointerleave", () => {
-    if (raf) cancelAnimationFrame(raf);
-    raf = 0;
-    el.style.transform = `translate(0px, 0px)`;
-  });
-});
+setupReveal();
 
 /* =========================
-   i18n (AR/EN) — no URL change
+   magnetic (rAF)
+========================= */
+function setupMagnetic() {
+  const items = document.querySelectorAll(".magnetic");
+  if (!items.length) return;
+
+  items.forEach((el) => {
+    const strength = 10;
+    let raf = 0;
+    let lastX = 0;
+    let lastY = 0;
+
+    el.addEventListener("pointermove", (ev) => {
+      const r = el.getBoundingClientRect();
+      lastX = ev.clientX - (r.left + r.width / 2);
+      lastY = ev.clientY - (r.top + r.height / 2);
+      if (raf) return;
+
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        el.style.transform = `translate(${lastX / strength}px, ${lastY / strength}px)`;
+      });
+    });
+
+    el.addEventListener("pointerleave", () => {
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0;
+      el.style.transform = `translate(0px, 0px)`;
+    });
+  });
+}
+setupMagnetic();
+
+/* =========================
+   i18n (AR/EN)
 ========================= */
 const dict = {
   ar: {
-    nav_services: "الخدمات",
-    nav_tenets: "مبادئنا",
-    nav_trusted: "عملاؤنا",
+    nav_system: "النظام",
+    nav_capabilities: "قدراتنا",
+    nav_work: "أعمالنا",
     nav_contact: "تواصل",
 
-    hero_kicker: "وكالة متخصصة في صناعة الترند • إدارة المشاهير • تحويل الشهرة إلى دخل",
-    hero_title_1: "نحوّل شهرتك الرقمية",
-    hero_title_2: "إلى تأثير يصنع ترند… ويبيع باستمرار",
+    hero_kicker: "برلين × الشرق الأوسط • ترند • مشاهير • دخل",
+    hero_title_1: "نحن لا نصنع محتوى.",
+    hero_title_2: "نحن نُغيّر قواعد اللعب.",
     hero_sub:
-      "نعمل مع مشاهير، صُنّاع محتوى، وصفحات كبرى لنقلك من “الانتشار” إلى “القيمة”. استراتيجية + تنفيذ + توزيع + قياس — ليصبح محتواك مصدر رعايات ومبيعات ونفوذ حقيقي.",
-    hero_cta_primary: "ابدأ طريق الترند",
-    hero_cta_secondary: "شاهد كيف نعمل",
-    meta_1: "متابعون نؤثر عليهم",
+      "VMC تُحوّل الشهرة إلى “طلب” ثم إلى “دخل” — بنظام واضح: استراتيجية، تنفيذ، توزيع، وقياس.",
+    hero_cta_primary: "ابدأ التحوّل",
+    hero_cta_secondary: "شاهد النظام",
+    meta_1: "جمهور نؤثر عليه",
     meta_2: "سنوات صناعة ترند",
     meta_3: "شبكة تأثير",
 
-    services_cap: "Services",
-    services_title: "خدماتنا",
-    services_desc:
-      "نحن لا نبدأ بالكاميرا… نبدأ بالترند، ثم النمو، ثم البيع — وبعدها يأتي الإنتاج كأداة تنفيذ تخدم النتائج.",
-    services_hint: "اسحب ← → أو استخدم عجلة الماوس",
-    contact_us: "تواصل معنا",
+    system_title: "نظام VMC",
+    system_desc: "الشهرة “ضجيج”. نحن نحولها إلى طلب… ثم إلى دخل… ثم إلى نفوذ قابل للاستمرار.",
+    sys_1: "Fame → Attention",
+    sys_2: "Attention → Demand",
+    sys_3: "Demand → Revenue",
+    sys_4: "Revenue → Power",
 
-    // Slide 1
-    s1_title: "صناعة الترند والنمو السريع",
-    s1_desc:
-      "نحلّل حسابك، جمهورك، ومنصّتك—ثم نبني استراتيجية تجعل اسمك حاضرًا، متداولًا، ومطلوبًا باستمرار. هوك + زوايا + توقيت + توزيع… لنمو واضح وليس عشوائي.",
-    s1_b1: "• أفكار ترند أسبوعية",
-    s1_b2: "• تحليل خوارزميات",
-    s1_b3: "• خطة نمو قابلة للقياس",
+    sys_k1: "الخطوة 01",
+    sys_t1: "الشهرة ليست هدفًا… بل بوابة.",
+    sys_p1: "نعيد صياغة ظهورك ليكون “لافتًا” و“متداولًا” دون فقدان هيبتك. هوك، زوايا، توقيت، توزيع.",
+    sys_b11: "Hook Engineering",
+    sys_b12: "Trend Angles",
+    sys_b13: "Distribution",
 
-    // Slide 2
-    s2_title: "إدارة المشاهير والبراند الشخصي",
-    s2_desc:
-      "ندير حسابك كعلامة تجارية: تقويم محتوى، هوية رقمية، ظهور ذكي، وتعاونات مدفوعة بعقود واضحة— لتكبر بثبات بدون حرق صورتك أو فقدان مصداقيتك.",
-    s2_b1: "• تقويم محتوى شهري",
-    s2_b2: "• بناء هوية قوية",
-    s2_b3: "• إدارة رعايات وشراكات",
+    sys_k2: "الخطوة 02",
+    sys_t2: "الانتباه وحده لا يكفي… نخلق “طلب”.",
+    sys_p2: "نضبط تموضعك كبراند شخصي — بحيث يصبح وجودك “مرغوبًا” للمتابعين وللشركات معًا.",
+    sys_b21: "Brand Positioning",
+    sys_b22: "Content Architecture",
+    sys_b23: "Deal Readiness",
 
-    // Slide 3
-    s3_title: "تحويل الشهرة إلى دخل ومبيعات",
-    s3_desc:
-      "نربط الانتشار بالربح: رعايات، عروض، حملات، وFunnel واضح—مع تتبّع وقياس لتحسين النتائج. لا “أرقام فارغة”… بل دخل يتصاعد وطلبات تزيد.",
-    s3_b1: "• عروض ورعايات مدروسة",
-    s3_b2: "• Funnel وتسويق بالأداء",
-    s3_b3: "• تقارير وقياس نتائج",
+    sys_k3: "الخطوة 03",
+    sys_t3: "نربط الطلب بالدخل — بشكل محسوب.",
+    sys_p3: "عروض، رعايات، Funnels، حملات أداء… مع قياس مستمر لرفع ما يهم فعلاً: الدخل والطلبات.",
+    sys_b31: "Monetization",
+    sys_b32: "Funnels",
+    sys_b33: "Performance",
 
-    // Slide 4
-    s4_title: "إنتاج فيديوهات وإعلانات (Premium)",
-    s4_desc:
-      "هنا يأتي التنفيذ الذي يخدم الاستراتيجية: كتابة سكريبت، تصوير/Remote Production، مونتاج فاخر، Shorts/Reels، وإعلانات جاهزة للنشر—بإيقاع يجعل الجمهور يكمل، يتفاعل، ويشارك.",
-    s4_b1: "• سكريبت + هوك قوي",
-    s4_b2: "• مونتاج يخدم المشاهدة",
-    s4_b3: "• فيديوهات ترند وريلز",
+    sys_k4: "الخطوة 04",
+    sys_t4: "هذا ليس “ترند”… هذا نفوذ.",
+    sys_p4: "نبني استمرارية: نظام محتوى، علاقات، وتوزيع… يجعل النتائج تتكرر بدون استنزاف صورتك.",
+    sys_b41: "Sustainability",
+    sys_b42: "Network",
+    sys_b43: "Scale",
 
-    tenets_title: "مبادئنا",
-    tenets_desc: "الشهرة وحدها لا تكفي… نحن نصنع قرارًا ذكيًا خلف كل ظهور: ترند + استمرارية + دخل.",
-    t1: "وضوح الرسالة",
-    t1d: "نحوّل الفكرة إلى رسالة سريعة وواضحة… ثم نبني لها تنفيذًا يعلق بالذاكرة ويُشارك.",
-    t2: "صناعة الترند بذكاء",
-    t2d: "نعرف متى نصنع ضجّة… ومتى نبني استمرارية تجعل الجمهور يعود لك يوميًا.",
-    t3: "تنفيذ Premium يخدم الهدف",
-    t3d: "جودة الصورة والصوت والإيقاع ليست للزينة—بل لرفع المشاهدة والتفاعل والتحويل.",
-    t4: "شفافية التعاون",
-    t4d: "اتفاقات واضحة تحفظ الحقوق وتضمن الجودة—بدون مفاجآت أو وعود فضفاضة.",
-    t5: "توزيع أقوى من الإنتاج",
-    t5d: "لا ننتج فقط—نخطط للنشر والتكرار والتوسيع… حتى تصل لنتيجة محسوسة.",
-    t6: "نمو ودخل قابلان للقياس",
-    t6d: "نقيس ونحلل ثم نكرر ما ينجح—لتزيد الأرقام المهمة: الوصول، الطلبات، والدخل.",
+    cap_title: "ما نتحكم به",
+    cap_desc: "أقل كلام… تأثير أكبر. هذه هي الأعمدة التي تبني النمو والدخل بدون فوضى.",
+    c1_t: "Trend Engineering",
+    c1_p: "نصنع “زاوية” قابلة للتكرار — لا ضربة حظ.",
+    c2_t: "Celebrity Control",
+    c2_p: "إدارة ظهورك، صورتك، وشراكاتك… بدقة.",
+    c3_t: "Monetization Architecture",
+    c3_p: "من الانتباه إلى عروض ودخل بتتبّع وقياس.",
+    c4_t: "Premium Production",
+    c4_p: "تنفيذ فاخر يخدم الهدف: Retention + Conversion.",
+    cap_cta: "اطلب خطة مبدئية",
 
-    trusted_title: "يثق بنا",
-    trusted_note: "حاليًا نستخدم شعارات “Placeholder” — وعندما تجهز قائمة العملاء، نستبدلها فورًا.",
+    work_title: "أعمال مختارة",
+    work_desc: "ضع هنا لاحقًا 3 حالات (Case Studies). الآن نعرض قالبًا فخمًا جاهزًا للاستبدال.",
+    w1_m: "Growth • TikTok",
+    w1_t: "من انتشار إلى طلب",
+    w1_p: "نظام هوك + توزيع + تكرار… يرفع الطلب بدل أرقام فارغة.",
+    w2_m: "Brand • Instagram",
+    w2_t: "إدارة شراكات فاخرة",
+    w2_p: "تموضع + هوية + صفقات… بدون كسر المصداقية.",
+    w3_m: "Monetization • YouTube",
+    w3_t: "Revenue System",
+    w3_p: "Funnels + عروض + قياس… لتكرار الدخل بشكل أنيق.",
 
-    final_title: "جاهز تتحول من مشهور… إلى علامة تبيع؟",
-    final_desc:
-      "أرسل حسابك وهدفك—وسنقترح مسارًا واضحًا لصناعة ترند، نمو مستمر، ثم دخل ومبيعات قابلة للقياس.",
-    final_cta: "اطلب استشارة الآن",
+    final_title: "جاهز تتحول من مشهور… إلى قوة تبيع؟",
+    final_desc: "أرسل حسابك وهدفك—وسنقترح مسارًا واضحًا: ترند → طلب → دخل → نفوذ.",
+    final_cta: "اطلب جلسة استراتيجية",
+    final_cta2: "ارجع للأعلى",
   },
 
   en: {
-    nav_services: "Services",
-    nav_tenets: "Principles",
-    nav_trusted: "Clients",
+    nav_system: "System",
+    nav_capabilities: "Capabilities",
+    nav_work: "Work",
     nav_contact: "Contact",
 
-    hero_kicker: "Trend-making agency • Celebrity management • Monetization & growth",
-    hero_title_1: "We turn digital fame",
-    hero_title_2: "into trends that sell — repeatedly",
+    hero_kicker: "Berlin × MENA • Trends • Celebrities • Revenue",
+    hero_title_1: "We don’t create content.",
+    hero_title_2: "We change the rules.",
     hero_sub:
-      "We work with celebrities, creators, and large pages to move you from reach to real value. Strategy, execution, distribution, and measurement — built to generate deals, revenue, and influence.",
-    hero_cta_primary: "Start Your Growth",
-    hero_cta_secondary: "See How We Work",
-    meta_1: "Engaged followers",
+      "VMC turns fame into demand — then into revenue — through a clear system: strategy, execution, distribution, and measurement.",
+    hero_cta_primary: "Start the shift",
+    hero_cta_secondary: "See the system",
+    meta_1: "Audience influenced",
     meta_2: "Years of trend-making",
     meta_3: "Influence network",
 
-    services_cap: "Services",
-    services_title: "What We Do",
-    services_desc:
-      "We don’t start with the camera. We start with trends, then growth, then monetization — production comes last to serve results.",
-    services_hint: "Drag ← → or scroll",
-    contact_us: "Contact us",
+    system_title: "The VMC System",
+    system_desc: "Fame is noise. We turn it into demand, then revenue, then sustainable power.",
+    sys_1: "Fame → Attention",
+    sys_2: "Attention → Demand",
+    sys_3: "Demand → Revenue",
+    sys_4: "Revenue → Power",
 
-    // Slide 1
-    s1_title: "Trend Creation & Rapid Growth",
-    s1_desc:
-      "We analyze your account, audience, and platform — then build a system that keeps your name visible, talked about, and in demand. Hooks, angles, timing, and distribution for real growth.",
-    s1_b1: "• Weekly trend ideas",
-    s1_b2: "• Algorithm analysis",
-    s1_b3: "• Measurable growth plan",
+    sys_k1: "Step 01",
+    sys_t1: "Fame isn’t the goal. It’s the doorway.",
+    sys_p1: "We reframe your presence to become notable and shareable without hurting credibility. Hooks, angles, timing, distribution.",
+    sys_b11: "Hook Engineering",
+    sys_b12: "Trend Angles",
+    sys_b13: "Distribution",
 
-    // Slide 2
-    s2_title: "Celebrity & Personal Brand Management",
-    s2_desc:
-      "We manage your presence as a brand: content calendars, digital identity, smart positioning, and paid collaborations — scaling without damaging credibility.",
-    s2_b1: "• Monthly content planning",
-    s2_b2: "• Strong brand identity",
-    s2_b3: "• Deals & sponsorship management",
+    sys_k2: "Step 02",
+    sys_t2: "Attention isn’t enough. We create demand.",
+    sys_p2: "We position your personal brand so you become desirable to audiences and brands — at the same time.",
+    sys_b21: "Brand Positioning",
+    sys_b22: "Content Architecture",
+    sys_b23: "Deal Readiness",
 
-    // Slide 3
-    s3_title: "Turning Fame into Revenue",
-    s3_desc:
-      "We connect reach to income: sponsorships, offers, campaigns, and performance funnels — tracked, optimized, and scaled. No vanity metrics. Real revenue.",
-    s3_b1: "• Strategic sponsorships",
-    s3_b2: "• Funnels & performance marketing",
-    s3_b3: "• Revenue tracking & reports",
+    sys_k3: "Step 03",
+    sys_t3: "We connect demand to revenue — precisely.",
+    sys_p3: "Offers, sponsorships, funnels, performance campaigns — measured and optimized for what matters: revenue and inquiries.",
+    sys_b31: "Monetization",
+    sys_b32: "Funnels",
+    sys_b33: "Performance",
 
-    // Slide 4
-    s4_title: "Premium Video & Ad Production",
-    s4_desc:
-      "Execution that serves strategy: scripting, filming or remote production, premium editing, shorts and reels — designed to retain attention, drive engagement, and convert.",
-    s4_b1: "• Scripts & strong hooks",
-    s4_b2: "• Retention-focused editing",
-    s4_b3: "• Trend-driven videos",
+    sys_k4: "Step 04",
+    sys_t4: "Not a trend. Power.",
+    sys_p4: "We build repeatable outcomes: content systems, relationships, and distribution — without burning the brand.",
+    sys_b41: "Sustainability",
+    sys_b42: "Network",
+    sys_b43: "Scale",
 
-    tenets_title: "Our Principles",
-    tenets_desc:
-      "Fame alone is not enough. Every appearance is backed by a smart decision: trend, consistency, and revenue.",
-    t1: "Clear positioning",
-    t1d: "We turn ideas into sharp, shareable messages.",
-    t2: "Smart trend creation",
-    t2d: "Knowing when to create noise — and when to build consistency.",
-    t3: "Premium execution with purpose",
-    t3d: "Visual quality serves retention, engagement, and conversion.",
-    t4: "Transparent partnerships",
-    t4d: "Clear agreements that protect value and reputation.",
-    t5: "Distribution over production",
-    t5d: "Publishing, scaling, and repetition until results are felt.",
-    t6: "Measurable growth & income",
-    t6d: "We track what matters: reach, demand, and revenue.",
+    cap_title: "What We Control",
+    cap_desc: "Less talk, more impact. These pillars build growth and revenue without chaos.",
+    c1_t: "Trend Engineering",
+    c1_p: "We design repeatable angles — not lucky hits.",
+    c2_t: "Celebrity Control",
+    c2_p: "We manage presence, image, and partnerships — with precision.",
+    c3_t: "Monetization Architecture",
+    c3_p: "From attention to offers and revenue, tracked and measured.",
+    c4_t: "Premium Production",
+    c4_p: "Luxury execution built for retention and conversion.",
+    cap_cta: "Request a starter plan",
 
-    trusted_title: "Trusted By",
-    trusted_note: "Logos are placeholders for now — we’ll replace them once client approvals are ready.",
+    work_title: "Selected Work",
+    work_desc: "Replace these with 3 case studies later. For now, a luxury-ready placeholder layout.",
+    w1_m: "Growth • TikTok",
+    w1_t: "From reach to demand",
+    w1_p: "Hooks + distribution + repetition that increases demand — not vanity metrics.",
+    w2_m: "Brand • Instagram",
+    w2_t: "Luxury partnerships",
+    w2_p: "Positioning + identity + deals — without breaking trust.",
+    w3_m: "Monetization • YouTube",
+    w3_t: "Revenue System",
+    w3_p: "Funnels + offers + measurement for repeatable revenue.",
 
-    final_title: "Ready to turn fame into a selling brand?",
-    final_desc:
-      "Send us your account and goal — we’ll map a clear path to trends, consistent growth, and monetization.",
-    final_cta: "Request a Strategy Call",
+    final_title: "Ready to turn fame into selling power?",
+    final_desc: "Send your account and goal — we’ll map a clear path: trend → demand → revenue → power.",
+    final_cta: "Request a strategy session",
+    final_cta2: "Back to top",
   },
 };
 
@@ -223,26 +240,17 @@ const langBtn = document.getElementById("langBtn");
 const langLabel = document.getElementById("langLabel");
 
 function safeGetLang() {
-  try {
-    return localStorage.getItem("vmc_lang");
-  } catch {
-    return null;
-  }
+  try { return localStorage.getItem("vmc_lang"); } catch { return null; }
 }
-
 function safeSetLang(v) {
-  try {
-    localStorage.setItem("vmc_lang", v);
-  } catch {
-    // ignore (private mode / blocked storage)
-  }
+  try { localStorage.setItem("vmc_lang", v); } catch {}
 }
 
 function applyLang(next) {
   lang = next === "en" ? "en" : "ar";
   safeSetLang(lang);
 
-  document.documentElement.lang = lang === "ar" ? "ar" : "en";
+  document.documentElement.lang = lang;
   document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   if (langLabel) langLabel.textContent = lang === "ar" ? "EN" : "AR";
 
@@ -251,150 +259,46 @@ function applyLang(next) {
     const v = dict[lang]?.[key];
     if (typeof v === "string") el.textContent = v;
   });
-
-  // update slider progress visuals after language flip
-  requestAnimationFrame(() => updateServicesUI());
 }
-
-// init language (persisted)
 applyLang(safeGetLang() || "ar");
-
-langBtn?.addEventListener("click", () => {
-  applyLang(lang === "ar" ? "en" : "ar");
-});
+langBtn?.addEventListener("click", () => applyLang(lang === "ar" ? "en" : "ar"));
 
 /* =========================
-   Services Slider C controller
+   System controller (steps + panels)
 ========================= */
-const viewport = document.getElementById("servicesViewport");
-const bar = document.getElementById("servicesBar");
-const dots = Array.from(document.querySelectorAll(".dot2"));
-const prevBtn = document.getElementById("prevSlide");
-const nextBtn = document.getElementById("nextSlide");
+const railSteps = Array.from(document.querySelectorAll(".step"));
+const panels = Array.from(document.querySelectorAll(".panel"));
+const marks = Array.from(document.querySelectorAll(".mark"));
 
-function clamp(n, a, b) {
-  return Math.min(b, Math.max(a, n));
+function setActive(i) {
+  railSteps.forEach((b, idx) => b.classList.toggle("is-active", idx === i));
+  panels.forEach((p, idx) => p.classList.toggle("is-active", idx === i));
 }
 
-function getSlideWidth() {
-  if (!viewport) return 0;
-  return viewport.clientWidth; // each slide = 100% width
-}
+railSteps.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const i = Number(btn.getAttribute("data-step") || "0");
+    setActive(i);
+    // gentle scroll into stage (keeps premium feel)
+    document.querySelector("#system")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
 
-function getIndexFromScroll() {
-  if (!viewport) return 0;
-  const w = getSlideWidth();
-  if (!w) return 0;
-  return clamp(Math.round(viewport.scrollLeft / w), 0, 3);
-}
+// Scroll-based activation (via IntersectionObserver on hidden marks)
+if ("IntersectionObserver" in window && marks.length) {
+  const io = new IntersectionObserver(
+    (entries) => {
+      // pick the most visible mark
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0))[0];
+      if (!visible) return;
 
-function scrollToIndex(idx) {
-  if (!viewport) return;
-  const w = getSlideWidth();
-  viewport.scrollTo({ left: idx * w, behavior: "smooth" });
-}
-
-function updateServicesUI() {
-  if (!viewport) return;
-  const idx = getIndexFromScroll();
-
-  // dots
-  dots.forEach((d, i) => d.classList.toggle("is-active", i === idx));
-
-  // progress bar
-  if (bar) {
-    const pct = ((idx + 1) / 4) * 100;
-    bar.style.width = `${pct}%`;
-  }
-}
-
-if (viewport) {
-  // initial
-  updateServicesUI();
-
-  // scroll updates
-  let raf = 0;
-  viewport.addEventListener(
-    "scroll",
-    () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(updateServicesUI);
+      const i = Number(visible.target.getAttribute("data-mark") || "0");
+      setActive(i);
     },
-    { passive: true }
+    { threshold: [0.15, 0.35, 0.55] }
   );
-
-  // wheel -> horizontal
-  viewport.addEventListener(
-    "wheel",
-    (e) => {
-      // allow trackpads to scroll naturally; only intercept vertical intent
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault();
-        viewport.scrollLeft += e.deltaY;
-      }
-    },
-    { passive: false }
-  );
-
-  // keyboard
-  viewport.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
-      e.preventDefault();
-      const dir = e.key === "ArrowRight" ? 1 : -1;
-      const idx = getIndexFromScroll();
-      scrollToIndex(clamp(idx + dir, 0, 3));
-    }
-  });
-
-  // drag to scroll
-  let isDown = false;
-  let startX = 0;
-  let startLeft = 0;
-
-  viewport.addEventListener("pointerdown", (e) => {
-    isDown = true;
-    viewport.classList.add("is-dragging");
-    startX = e.clientX;
-    startLeft = viewport.scrollLeft;
-    viewport.setPointerCapture?.(e.pointerId);
-  });
-
-  viewport.addEventListener("pointermove", (e) => {
-    if (!isDown) return;
-    const dx = e.clientX - startX;
-    viewport.scrollLeft = startLeft - dx;
-  });
-
-  function endDrag() {
-    if (!isDown) return;
-    isDown = false;
-    viewport.classList.remove("is-dragging");
-
-    // snap to nearest slide
-    const idx = getIndexFromScroll();
-    scrollToIndex(idx);
-  }
-
-  viewport.addEventListener("pointerup", endDrag);
-  viewport.addEventListener("pointercancel", endDrag);
-  viewport.addEventListener("pointerleave", endDrag);
+  marks.forEach((m) => io.observe(m));
 }
-
-// arrows
-prevBtn?.addEventListener("click", () => {
-  const idx = getIndexFromScroll();
-  scrollToIndex(clamp(idx - 1, 0, 3));
-});
-nextBtn?.addEventListener("click", () => {
-  const idx = getIndexFromScroll();
-  scrollToIndex(clamp(idx + 1, 0, 3));
-});
-
-// on resize keep correct snap
-window.addEventListener("resize", () => {
-  if (!viewport) return;
-  const idx = getIndexFromScroll();
-  viewport.scrollLeft = idx * getSlideWidth();
-  updateServicesUI();
-});
 
