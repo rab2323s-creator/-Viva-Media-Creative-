@@ -66,8 +66,8 @@ const dict = {
     hero_title_1: "نحوّل شهرتك الرقمية",
     hero_title_2: "إلى تأثير يصنع ترند… ويبيع باستمرار",
     hero_sub:
-    globe_text: "VIVA MEDIA CREATIVE • ترند • تأثير • نمو • مبيعات •",
       "نعمل مع مشاهير، صُنّاع محتوى، وصفحات كبرى لنقلك من “الانتشار” إلى “القيمة”. استراتيجية + تنفيذ + توزيع + قياس — ليصبح محتواك مصدر رعايات ومبيعات ونفوذ حقيقي.",
+    globe_text: "VIVA MEDIA CREATIVE • ترند • تأثير • نمو • مبيعات •",
     hero_cta_primary: "ابدأ طريق الترند",
     hero_cta_secondary: "شاهد كيف نعمل",
     meta_1: "متابعون نؤثر عليهم",
@@ -147,8 +147,8 @@ const dict = {
     hero_title_1: "We turn digital fame",
     hero_title_2: "into trends that sell — repeatedly",
     hero_sub:
-    globe_text: "VIVA MEDIA CREATIVE • TRENDS • INFLUENCE • GROWTH • SALES •",
       "We work with celebrities, creators, and large pages to move you from reach to real value. Strategy, execution, distribution, and measurement — built to generate deals, revenue, and influence.",
+    globe_text: "VIVA MEDIA CREATIVE • TRENDS • INFLUENCE • GROWTH • SALES •",
     hero_cta_primary: "Start Your Growth",
     hero_cta_secondary: "See How We Work",
     meta_1: "Engaged followers",
