@@ -1,441 +1,280 @@
  <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تواصل معنا - Viva Media Creative</title>
-  <meta name="description" content="تواصل مع فريق Viva Media Creative لبدء رحلتك نحو التميز والإبداع الرقمي." />
-  <link rel="icon" href="assets/logo.jpeg" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Viva Media Creative</title>
+  <meta name="description" content="تواصل مع Viva Media Creative — ابدأ طريق الترند، النمو، ثم الدخل." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Noto+Kufi+Arabic:wght@400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/vmc-home.css" />
 
   <style>
-    :root{
-      --bg: #0b0c10;
-      --card: rgba(255,255,255,.92);
-      --text: #101828;
-      --muted: #667085;
-      --line: rgba(16,24,40,.12);
-      --brand: #f4b400;
-      --brand2:#ffcc3d;
-      --shadow: 0 16px 50px rgba(0,0,0,.18);
-      --radius: 16px;
-      --radius2: 22px;
-    }
-
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{
-      font-family: Arial, "Segoe UI", Tahoma, sans-serif;
-      background: #f6f7fb;
-      color: var(--text);
-      line-height: 1.7;
-    }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:1100px;margin:0 auto;padding:0 16px}
-
-    /* Header */
-    header{
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(10px);
-      background: rgba(17,17,17,.78);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 14px;
-      padding: 14px 0;
-      color:#fff;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width: 0;
-    }
-    .brand img{
-      width:44px;height:44px;border-radius:12px;
-      object-fit:cover;
-      border: 1px solid rgba(255,255,255,.2);
-    }
-    .brand .title{
-      display:flex;flex-direction:column;
-      line-height:1.2;
-      min-width:0;
-    }
-    .brand .title strong{
-      font-size: 1.05rem;
-      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-    }
-    .brand .title span{
-      font-size: .82rem;
-      opacity:.75;
-    }
-    .nav .cta{
-      display:flex;gap:10px;flex-wrap:wrap;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.18);
-      color:#fff;
-      transition: .2s ease;
-      font-weight: 700;
-      font-size: .9rem;
-    }
-    .pill:hover{transform: translateY(-1px); background: rgba(255,255,255,.14)}
-    .pill svg{width:18px;height:18px;opacity:.95}
-
-    /* Hero */
-    .hero{
-      position:relative;
-      min-height: 360px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-      background:
-        radial-gradient(900px 400px at 20% 30%, rgba(244,180,0,.35), transparent 60%),
-        radial-gradient(700px 320px at 80% 20%, rgba(255,204,61,.25), transparent 60%),
-        linear-gradient(180deg, #0b0c10 0%, #131621 70%, #111 100%);
-    }
-    .hero::after{
-      content:"";
-      position:absolute;inset:0;
-      background: url("assets/contact-hero.jpg") center/cover no-repeat;
-      opacity:.20;
-      filter: saturate(1.1) contrast(1.05);
-      pointer-events:none;
-    }
-    .hero .content{
-      position:relative;
-      padding: 34px 0 70px;
-      text-align:center;
-      color:#fff;
-      animation: up .9s ease both;
-    }
-    .hero h1{
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      margin-bottom: 10px;
-      letter-spacing: .2px;
-    }
-    .hero p{
-      max-width: 720px;
-      margin: 0 auto;
-      color: rgba(255,255,255,.86);
-      font-size: clamp(.98rem, 1.6vw, 1.12rem);
-    }
-
-    /* Main card */
-    .panel-wrap{
-      margin-top: -72px;
-      padding-bottom: 40px;
-    }
-    .panel{
-      background: var(--card);
-      border-radius: var(--radius2);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(0,0,0,.06);
-      overflow:hidden;
-    }
-    .grid{
+    /* Contact-only additions that MATCH your luxury system */
+    .contactWrap{ padding-top: 40px; padding-bottom: 90px; }
+    .contactGrid{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 0;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+      align-items:start;
     }
+    .glassCard{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 30px;
+      background: rgba(255,255,255,.02);
+      box-shadow: 0 30px 120px rgba(0,0,0,.55);
+      overflow:hidden;
+    }
+    .cardHead{
+      padding: 18px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+    }
+    .cardHead h2{ margin:0 0 6px; font-size: 20px; }
+    .cardHead p{ margin:0; color: rgba(238,241,246,.62); line-height:1.8; }
 
-    /* Left: form */
-    .form-area{
-      padding: 26px 26px 22px;
-    }
-    .section-title{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      margin-bottom: 18px;
-    }
-    .section-title h2{font-size: 1.25rem}
-    .section-title p{color: var(--muted); font-size:.95rem}
-
-    form{
+    .formBody{ padding: 18px; }
+    .formGrid{
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
     }
-    .field{display:flex;flex-direction:column;gap:7px}
-    .field label{font-size:.9rem;color:#344054;font-weight:700}
-    .field input, .field textarea{
+    .field{ display:flex; flex-direction:column; gap:8px; }
+    .field label{ font-size: 12px; color: rgba(238,241,246,.72); font-weight: 800; letter-spacing:.02em; }
+    .field input, .field textarea, .field select{
       width:100%;
       padding: 12px 12px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      outline: none;
-      background: #fff;
-      font-size: 1rem;
-      transition: .2s ease;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(6,7,10,.35);
+      color: rgba(238,241,246,.92);
+      outline:none;
+      backdrop-filter: blur(10px);
+      transition: border-color .18s ease, transform .18s ease;
+      font-family: inherit;
     }
-    .field input:focus, .field textarea:focus{
-      border-color: rgba(244,180,0,.8);
-      box-shadow: 0 0 0 4px rgba(244,180,0,.18);
+    .field input::placeholder, .field textarea::placeholder{ color: rgba(238,241,246,.45); }
+    .field input:focus, .field textarea:focus, .field select:focus{
+      border-color: rgba(245,208,122,.32);
+      box-shadow: 0 0 0 6px rgba(245,208,122,.10);
     }
-    .span-2{grid-column: 1 / -1}
-    textarea{min-height: 140px; resize: vertical}
+    .span2{ grid-column: 1 / -1; }
+    textarea{ min-height: 150px; resize: vertical; }
 
     .actions{
       grid-column: 1 / -1;
       display:flex;
+      gap:12px;
       align-items:center;
       justify-content:space-between;
-      gap: 10px;
+      flex-wrap:wrap;
       margin-top: 6px;
-      flex-wrap: wrap;
     }
-    .btn{
-      border: none;
-      cursor: pointer;
-      padding: 12px 14px;
-      border-radius: 14px;
-      font-weight: 800;
-      font-size: 1rem;
-      transition: .2s ease;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-    }
-    .btn-primary{
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      color:#111;
-      box-shadow: 0 10px 24px rgba(244,180,0,.25);
-    }
-    .btn-primary:hover{transform: translateY(-1px)}
     .hint{
-      color: var(--muted);
-      font-size: .9rem;
+      color: rgba(238,241,246,.55);
+      font-size: 12px;
+      line-height: 1.7;
+      max-width: 60ch;
     }
-
     .status{
       grid-column: 1 / -1;
       display:none;
       padding: 12px 12px;
-      border-radius: 14px;
-      font-weight: 700;
-      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.02);
+      color: rgba(238,241,246,.80);
     }
-    .status.ok{display:block;background: rgba(16,185,129,.10); border-color: rgba(16,185,129,.25); color:#0f5132}
-    .status.err{display:block;background: rgba(239,68,68,.10); border-color: rgba(239,68,68,.25); color:#7a1d1d}
+    .status.ok{ display:block; border-color: rgba(16,185,129,.30); background: rgba(16,185,129,.10); }
+    .status.err{ display:block; border-color: rgba(239,68,68,.28); background: rgba(239,68,68,.10); }
 
-    /* Right: contact + map */
-    .side{
-      background: linear-gradient(180deg, rgba(17,17,17,.04), rgba(17,17,17,.02));
-      border-right: 1px solid rgba(0,0,0,.06);
-      padding: 26px;
-      display:flex;
-      flex-direction:column;
-      gap: 14px;
+    .sideBody{ padding: 18px; display:flex; flex-direction:column; gap: 12px; }
+    .miniCard{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      background: rgba(255,255,255,.02);
+      padding: 16px;
     }
-    .card{
-      background:#fff;
-      border: 1px solid rgba(0,0,0,.06);
-      border-radius: var(--radius);
-      padding: 14px;
-      box-shadow: 0 10px 28px rgba(0,0,0,.06);
-    }
-    .methods{
-      display:flex;
-      flex-direction:column;
-      gap: 10px;
-      margin-top: 10px;
-    }
+    .miniCard h3{ margin:0 0 8px; font-size: 16px; }
+    .miniCard p{ margin:0; color: rgba(238,241,246,.62); line-height:1.8; font-size: 13px; }
+
+    .methods{ display:flex; flex-direction:column; gap:10px; margin-top: 12px; }
     .method{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 10px;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
       padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      transition: .2s ease;
-      background:#fff;
-      font-weight: 800;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(6,7,10,.35);
+      transition: transform .18s ease, border-color .18s ease;
     }
-    .method:hover{transform: translateY(-1px)}
-    .method .left{
-      display:flex;align-items:center;gap:10px;min-width:0;
-    }
+    .method:hover{ transform: translateY(-1px); border-color: rgba(245,208,122,.22); }
+    .method .left{ display:flex; gap:10px; align-items:center; min-width:0; }
     .badge{
-      width:38px;height:38px;border-radius: 12px;
-      display:grid;place-items:center;
-      color:#fff;flex:0 0 auto;
+      width:40px; height:40px; border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(245,208,122,.14);
+      border: 1px solid rgba(245,208,122,.22);
+      flex: 0 0 auto;
     }
-    .wa{background:#25D366}
-    .em{background:#4285f4}
-    .fb{background:#3b5998}
-    .method small{display:block;color: var(--muted); font-weight: 700}
-    .method b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .method b{ display:block; font-size: 13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .method small{ display:block; font-size: 12px; color: rgba(238,241,246,.58); margin-top: 2px; }
 
     .map{
+      border-radius: 22px;
       overflow:hidden;
-      border-radius: var(--radius);
-      border: 1px solid rgba(0,0,0,.06);
-      box-shadow: 0 10px 28px rgba(0,0,0,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.02);
     }
-    .map iframe{width:100%;height: 300px;border:0;display:block}
+    .map iframe{ width:100%; height: 280px; border:0; display:block; filter: saturate(1.05) contrast(1.05); }
 
-    footer{
-      text-align:center;
-      padding: 18px 0 30px;
-      color:#667085;
-      font-size:.92rem;
-    }
-
-    @keyframes up{from{opacity:0; transform: translateY(18px)} to{opacity:1; transform: translateY(0)}}
-
-    /* Responsive */
-    @media (max-width: 920px){
-      .grid{grid-template-columns: 1fr}
-      .side{border-right:none;border-top:1px solid rgba(0,0,0,.06)}
-      .map iframe{height: 320px}
+    @media (max-width: 980px){
+      .contactGrid{ grid-template-columns: 1fr; }
     }
     @media (max-width: 520px){
-      form{grid-template-columns: 1fr}
-      .actions{justify-content:flex-start}
-      .hero{min-height: 320px}
-      .panel-wrap{margin-top:-60px}
-      .form-area,.side{padding: 18px}
-      .nav .cta{display:none}
+      .formGrid{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <div class="nav">
-        <a class="brand" href="/" aria-label="Viva Media Creative">
-          <img src="assets/logo.jpeg" alt="Viva Media Creative Logo" />
-          <div class="title">
-            <strong>Viva Media Creative</strong>
-            <span>نساعدك تصنع حضور رقمي قوي</span>
-          </div>
-        </a>
+  <div class="noise" aria-hidden="true"></div>
 
-        <div class="cta">
-          <a class="pill" href="mailto:info@vivamediacreative.com" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 7.5l8 5 8-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-              <path d="M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2Z" stroke="currentColor" stroke-width="2" />
-            </svg>
-            راسلنا
-          </a>
-          <a class="pill" href="https://wa.me/4915565678291?text=مرحباً، أود الاستفسار عن خدمات Viva Media Creative" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M20 11.5A8.5 8.5 0 1 1 7.7 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M8 20l.7-2.7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M9.2 8.9c.2-.5.5-.5.7-.5h.6c.2 0 .4 0 .5.3.2.4.6 1.5.6 1.7 0 .2 0 .3-.2.5l-.4.5c-.1.1-.2.3 0 .6.2.3.9 1.5 2.2 2.4 1.6 1.1 2 .9 2.3.7l.7-.8c.2-.2.3-.2.5-.1.2.1 1.6.8 1.8.9.2.1.4.2.4.4 0 .2-.2 1.2-.9 1.7-.7.5-1.5.6-2 .5-.5-.1-2.3-.6-4.4-2.1-1.8-1.3-3-3.1-3.3-3.7-.3-.6-1.1-2.3-1.1-3.5 0-1.2.6-1.8.8-2Z"
-                fill="currentColor" opacity=".75"/>
-            </svg>
-            واتساب
-          </a>
-        </div>
-      </div>
-    </div>
+  <!-- NAV (same as home) -->
+  <header class="nav">
+    <a class="brand" href="/" aria-label="Viva Media Creative">
+      <span class="brand__mark">VMC</span>
+      <span class="brand__name">Viva Media Creative</span>
+    </a>
+
+    <nav class="nav__links">
+      <a href="/#services" data-i18n="nav_services">الخدمات</a>
+      <a href="/#tenets" data-i18n="nav_tenets">مبادئنا</a>
+      <a href="/#trusted" data-i18n="nav_trusted">عملاؤنا</a>
+      <a class="pill" href="/contact/" data-i18n="nav_contact">تواصل</a>
+
+      <button class="lang" id="langBtn" aria-label="Toggle language">
+        <span class="lang__dot"></span>
+        <span id="langLabel">EN</span>
+      </button>
+    </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <div class="content">
-        <h1>تواصل معنا اليوم</h1>
-        <p>احكِ لنا عن مشروعك، وسنساعدك بخطة واضحة وخطوات عملية لتحقيق نتائج قوية على السوشال ميديا.</p>
+  <main>
+    <!-- HERO -->
+    <section class="hero" style="min-height:auto; padding-bottom: 34px;">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="halo h1"></div>
+        <div class="halo h2"></div>
+        <div class="halo h3"></div>
+        <div class="gridlines"></div>
       </div>
-    </div>
-  </section>
 
-  <!-- Main -->
-  <section class="panel-wrap">
-    <div class="container">
-      <div class="panel">
-        <div class="grid">
+      <div class="hero__inner">
+        <p class="kicker reveal" data-i18n="hero_kicker">Contact • Premium partnership • Fast response</p>
 
-          <!-- Form -->
-          <div class="form-area">
-            <div class="section-title">
-              <h2>أرسل رسالة</h2>
-              <p>سنرد عليك خلال وقت قصير. اكتب تفاصيل طلبك قدر الإمكان.</p>
-            </div>
+        <h1 class="h1 reveal">
+          <span data-i18n="hero_title_1">خلّنا نبدأ من هدفك</span><br/>
+          <span class="gold" data-i18n="hero_title_2">ونحوّله لترند… ثم نمو… ثم دخل</span>
+        </h1>
 
-            <!-- FormSubmit -->
+        <p class="sub reveal" data-i18n="hero_sub">
+          اكتب حسابك وهدفك ونوع الخدمة التي تريدها. سنرد عليك برسالة واضحة وخطة أولية — بدون كلام عام.
+        </p>
+
+        <div class="hero__pills reveal" aria-label="Key notes">
+          <span class="pillx" data-i18n="pill_1">⚡ رد سريع</span>
+          <span class="pillx" data-i18n="pill_2">🔒 سرية تامة</span>
+          <span class="pillx" data-i18n="pill_3">🎯 خطة مبيعات/ترند</span>
+          <span class="pillx" data-i18n="pill_4">📈 قياس وتحسين</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="section contactWrap" style="padding-top: 30px;">
+      <div class="contactGrid">
+        <!-- Form card -->
+        <div class="glassCard reveal">
+          <div class="cardHead">
+            <h2 data-i18n="form_title">أرسل طلبك</h2>
+            <p data-i18n="form_desc">اكتب تفاصيل مختصرة — وسنقترح عليك المسار الأنسب خلال وقت قصير.</p>
+          </div>
+
+          <div class="formBody">
             <form id="contactForm" action="https://formsubmit.co/vivamediacreations@gmail.com" method="POST" novalidate>
-              <!-- إعدادات -->
-              <input type="hidden" name="_subject" value="رسالة جديدة من صفحة التواصل - Viva Media Creative">
+              <input type="hidden" name="_subject" value="New inquiry — Viva Media Creative">
               <input type="hidden" name="_captcha" value="true">
               <input type="hidden" name="_template" value="table">
               <input type="hidden" name="_next" value="https://vivamediacreative.com/thank-you.html">
 
-              <div class="field">
-                <label for="name">الاسم الكامل</label>
-                <input id="name" name="name" type="text" placeholder="مثال: أحمد محمد" required minlength="2">
-              </div>
+              <div class="formGrid">
+                <div class="field">
+                  <label for="name" data-i18n="f_name">الاسم</label>
+                  <input id="name" name="name" type="text" placeholder="مثال: أحمد محمد" required minlength="2">
+                </div>
 
-              <div class="field">
-                <label for="email">البريد الإلكتروني</label>
-                <input id="email" name="email" type="email" placeholder="name@example.com" required>
-              </div>
+                <div class="field">
+                  <label for="email" data-i18n="f_email">البريد الإلكتروني</label>
+                  <input id="email" name="email" type="email" placeholder="name@example.com" required>
+                </div>
 
-              <div class="field span-2">
-                <label for="subject">الموضوع</label>
-                <input id="subject" name="subject" type="text" placeholder="مثال: إدارة حسابات / إنتاج فيديوهات / حملة إعلانية" required minlength="3">
-              </div>
+                <div class="field span2">
+                  <label for="account" data-i18n="f_account">رابط حسابك / اسم الصفحة</label>
+                  <input id="account" name="account" type="text" placeholder="Instagram / TikTok / YouTube / Facebook…" required minlength="3">
+                </div>
 
-              <div class="field span-2">
-                <label for="message">الرسالة</label>
-                <textarea id="message" name="message" placeholder="اكتب تفاصيل طلبك هنا..." required minlength="10"></textarea>
-              </div>
+                <div class="field span2">
+                  <label for="service" data-i18n="f_service">ما الذي تحتاجه؟</label>
+                  <select id="service" name="service" required>
+                    <option value="" selected disabled data-i18n="f_service_ph">اختر خدمة</option>
+                    <option value="Trend & Growth" data-i18n="opt_1">صناعة ترند + نمو سريع</option>
+                    <option value="Celebrity Management" data-i18n="opt_2">إدارة مشاهير / براند شخصي</option>
+                    <option value="Monetization" data-i18n="opt_3">تحويل الشهرة إلى دخل</option>
+                    <option value="Production" data-i18n="opt_4">إنتاج فيديوهات وإعلانات (Premium)</option>
+                    <option value="Website" data-i18n="opt_5">موقع / Landing / SEO</option>
+                  </select>
+                </div>
 
-              <div id="status" class="status"></div>
+                <div class="field span2">
+                  <label for="message" data-i18n="f_msg">تفاصيل سريعة</label>
+                  <textarea id="message" name="message" placeholder="هدفك + المنصة + ما الذي تريد تحقيقه خلال 30 يوم؟" required minlength="10"></textarea>
+                </div>
 
-              <div class="actions">
-                <button class="btn btn-primary" type="submit" aria-label="إرسال الرسالة">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
-                    <path d="M22 2 11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M22 2 15 22l-4-9-9-4 20-7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                  </svg>
-                  إرسال
-                </button>
-                <span class="hint">بالضغط على “إرسال” أنت توافق على مشاركة بياناتك للتواصل معك.</span>
+                <div id="status" class="status"></div>
+
+                <div class="actions">
+                  <button class="btn primary magnetic" type="submit" data-i18n="send_btn">إرسال الطلب</button>
+                  <span class="hint" data-i18n="hint">
+                    بالضغط على “إرسال” أنت توافق على مشاركة بياناتك بهدف التواصل وتقديم عرض مناسب.
+                  </span>
+                </div>
               </div>
             </form>
           </div>
+        </div>
 
-          <!-- Side -->
-          <aside class="side">
-            <div class="card">
-              <div class="section-title" style="margin-bottom:0">
-                <h2 style="font-size:1.05rem">طرق تواصل سريعة</h2>
-                <p style="margin-top:6px">اختر الطريقة الأنسب لك وسنكون معك فورًا.</p>
-              </div>
+        <!-- Side card -->
+        <aside class="glassCard reveal">
+          <div class="cardHead">
+            <h2 data-i18n="side_title">طرق تواصل سريعة</h2>
+            <p data-i18n="side_desc">اختر الطريقة الأسرع — وسنرد عليك فورًا.</p>
+          </div>
+
+          <div class="sideBody">
+            <div class="miniCard">
+              <h3 data-i18n="fast_title">الأسرع للمشاهير والصفحات</h3>
+              <p data-i18n="fast_desc">إذا عندك حملة قريبة أو تريد “Push” لصناعة ترند، أرسل لنا الرابط والهدف وسنقترح مسارًا واضحًا.</p>
 
               <div class="methods">
-                <a class="method" href="https://wa.me/4915565678291?text=مرحباً، أود الاستفسار عن خدمات Viva Media Creative" target="_blank" rel="noopener">
+                <a class="method" href="https://wa.me/4915565678291?text=Hi%20VMC%2C%20I%20want%20to%20grow%20my%20account%20and%20monetize%20it." target="_blank" rel="noopener">
                   <div class="left">
-                    <div class="badge wa" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
-                        <path d="M20 11.5A8.5 8.5 0 1 1 7.7 3.8" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M8 20l.7-2.7" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                      </svg>
-                    </div>
+                    <div class="badge" aria-hidden="true">WA</div>
                     <div>
-                      <b>واتساب</b>
-                      <small>رد سريع</small>
+                      <b data-i18n="wa_title">WhatsApp</b>
+                      <small data-i18n="wa_desc">رد سريع</small>
                     </div>
                   </div>
                   <span aria-hidden="true">↗</span>
@@ -443,14 +282,9 @@
 
                 <a class="method" href="mailto:info@vivamediacreative.com">
                   <div class="left">
-                    <div class="badge em" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
-                        <path d="M4 7.5l8 5 8-5" stroke="white" stroke-width="2" stroke-linecap="round" />
-                        <path d="M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2Z" stroke="white" stroke-width="2" />
-                      </svg>
-                    </div>
+                    <div class="badge" aria-hidden="true">@</div>
                     <div>
-                      <b>البريد الإلكتروني</b>
+                      <b data-i18n="em_title">Email</b>
                       <small>info@vivamediacreative.com</small>
                     </div>
                   </div>
@@ -459,14 +293,10 @@
 
                 <a class="method" href="https://www.facebook.com/vivamediacreative" target="_blank" rel="noopener">
                   <div class="left">
-                    <div class="badge fb" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
-                        <path d="M14 8h2V5h-2c-1.7 0-3 1.3-3 3v2H9v3h2v7h3v-7h2.1l.9-3H14V8c0-.6.4-1 1-1Z" fill="white"/>
-                      </svg>
-                    </div>
+                    <div class="badge" aria-hidden="true">f</div>
                     <div>
-                      <b>فيسبوك</b>
-                      <small>صفحتنا الرسمية</small>
+                      <b data-i18n="fb_title">Facebook</b>
+                      <small data-i18n="fb_desc">الصفحة الرسمية</small>
                     </div>
                   </div>
                   <span aria-hidden="true">↗</span>
@@ -474,7 +304,7 @@
               </div>
             </div>
 
-            <div class="map" aria-label="خريطة الموقع">
+            <div class="map" aria-label="Map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2428.7706991268624!2d13.4508165!3d52.5013902!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fcc74462302a6b%3A0x9954b3eef5b55235!2sViva%20Media%20Creative!5e0!3m2!1sde!2sde!4v1762564205407!5m2!1sde!2sde"
                 loading="lazy"
@@ -482,19 +312,45 @@
                 allowfullscreen>
               </iframe>
             </div>
-          </aside>
-
-        </div>
+          </div>
+        </aside>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <footer>
-    © 2025 Viva Media Creative — جميع الحقوق محفوظة
+  <footer class="footer">
+    <p>© <span id="y"></span> Viva Media Creative</p>
+    <div class="footer__links">
+      <a href="/privacy/">Privacy</a>
+      <a href="/contact/">Contact</a>
+    </div>
   </footer>
 
   <script>
-    // تحسين تجربة المستخدم: تحقق بسيط قبل الإرسال
+    // year
+    const y = document.getElementById("y");
+    if (y) y.textContent = String(new Date().getFullYear());
+
+    // reveal
+    const io = new IntersectionObserver(
+      (entries) => { for (const e of entries) if (e.isIntersecting) e.target.classList.add("is-in"); },
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    // magnetic
+    document.querySelectorAll(".magnetic").forEach((el) => {
+      const strength = 10;
+      el.addEventListener("pointermove", (ev) => {
+        const r = el.getBoundingClientRect();
+        const dx = ev.clientX - (r.left + r.width / 2);
+        const dy = ev.clientY - (r.top + r.height / 2);
+        el.style.transform = `translate(${dx / strength}px, ${dy / strength}px)`;
+      });
+      el.addEventListener("pointerleave", () => { el.style.transform = `translate(0px, 0px)`; });
+    });
+
+    // lightweight validation
     const form = document.getElementById('contactForm');
     const statusBox = document.getElementById('status');
 
@@ -503,39 +359,92 @@
       statusBox.textContent = msg;
     }
 
-    form.addEventListener('submit', (e) => {
+    form?.addEventListener('submit', (e) => {
       statusBox.className = 'status';
       statusBox.textContent = '';
 
       const name = form.name.value.trim();
       const email = form.email.value.trim();
-      const subject = form.subject.value.trim();
+      const account = form.account.value.trim();
+      const service = form.service.value;
       const message = form.message.value.trim();
 
-      if (name.length < 2){
-        e.preventDefault();
-        showStatus('err', 'من فضلك اكتب الاسم بشكل صحيح.');
-        return;
-      }
-      if (!/^\S+@\S+\.\S+$/.test(email)){
-        e.preventDefault();
-        showStatus('err', 'من فضلك اكتب بريد إلكتروني صحيح.');
-        return;
-      }
-      if (subject.length < 3){
-        e.preventDefault();
-        showStatus('err', 'من فضلك اكتب موضوع الرسالة.');
-        return;
-      }
-      if (message.length < 10){
-        e.preventDefault();
-        showStatus('err', 'من فضلك اكتب تفاصيل أكثر داخل الرسالة (10 أحرف على الأقل).');
-        return;
-      }
+      if (name.length < 2){ e.preventDefault(); showStatus('err', 'من فضلك اكتب الاسم بشكل صحيح.'); return; }
+      if (!/^\S+@\S+\.\S+$/.test(email)){ e.preventDefault(); showStatus('err', 'من فضلك اكتب بريد إلكتروني صحيح.'); return; }
+      if (account.length < 3){ e.preventDefault(); showStatus('err', 'من فضلك اكتب رابط حسابك أو اسم الصفحة.'); return; }
+      if (!service){ e.preventDefault(); showStatus('err', 'من فضلك اختر الخدمة المطلوبة.'); return; }
+      if (message.length < 10){ e.preventDefault(); showStatus('err', 'اكتب تفاصيل أكثر داخل الرسالة (10 أحرف على الأقل).'); return; }
 
-      // رسالة لطيفة قبل الإرسال (الإرسال سيتم فعلاً عبر FormSubmit)
-      showStatus('ok', 'تمام! يتم إرسال رسالتك الآن...');
+      showStatus('ok', 'تمام! يتم إرسال طلبك الآن...');
     });
+
+    // i18n (minimal for this page)
+    const dict = {
+      ar: {
+        nav_services:"الخدمات", nav_tenets:"مبادئنا", nav_trusted:"عملاؤنا", nav_contact:"تواصل",
+        hero_kicker:"تواصل • شراكة Premium • رد سريع",
+        hero_title_1:"خلّنا نبدأ من هدفك",
+        hero_title_2:"ونحوّله لترند… ثم نمو… ثم دخل",
+        hero_sub:"اكتب حسابك وهدفك ونوع الخدمة التي تريدها. سنرد عليك برسالة واضحة وخطة أولية — بدون كلام عام.",
+        pill_1:"⚡ رد سريع", pill_2:"🔒 سرية تامة", pill_3:"🎯 خطة مبيعات/ترند", pill_4:"📈 قياس وتحسين",
+        form_title:"أرسل طلبك", form_desc:"اكتب تفاصيل مختصرة — وسنقترح عليك المسار الأنسب خلال وقت قصير.",
+        f_name:"الاسم", f_email:"البريد الإلكتروني", f_account:"رابط حسابك / اسم الصفحة",
+        f_service:"ما الذي تحتاجه؟", f_service_ph:"اختر خدمة",
+        opt_1:"صناعة ترند + نمو سريع", opt_2:"إدارة مشاهير / براند شخصي", opt_3:"تحويل الشهرة إلى دخل",
+        opt_4:"إنتاج فيديوهات وإعلانات (Premium)", opt_5:"موقع / Landing / SEO",
+        f_msg:"تفاصيل سريعة",
+        send_btn:"إرسال الطلب",
+        hint:"بالضغط على “إرسال” أنت توافق على مشاركة بياناتك بهدف التواصل وتقديم عرض مناسب.",
+        side_title:"طرق تواصل سريعة", side_desc:"اختر الطريقة الأسرع — وسنرد عليك فورًا.",
+        fast_title:"الأسرع للمشاهير والصفحات",
+        fast_desc:"إذا عندك حملة قريبة أو تريد “Push” لصناعة ترند، أرسل لنا الرابط والهدف وسنقترح مسارًا واضحًا.",
+        wa_title:"واتساب", wa_desc:"رد سريع",
+        em_title:"البريد الإلكتروني",
+        fb_title:"فيسبوك", fb_desc:"الصفحة الرسمية",
+      },
+      en: {
+        nav_services:"Services", nav_tenets:"Principles", nav_trusted:"Clients", nav_contact:"Contact",
+        hero_kicker:"Contact • Premium partnership • Fast reply",
+        hero_title_1:"Start with your goal",
+        hero_title_2:"and turn it into trends, growth & revenue",
+        hero_sub:"Share your account, goal, and what you need. We’ll reply with a clear direction — no generic talk.",
+        pill_1:"⚡ Fast reply", pill_2:"🔒 Confidential", pill_3:"🎯 Trend + sales plan", pill_4:"📈 Track & optimize",
+        form_title:"Send your request", form_desc:"Short details are enough — we’ll propose the best path quickly.",
+        f_name:"Name", f_email:"Email", f_account:"Account link / page name",
+        f_service:"What do you need?", f_service_ph:"Choose a service",
+        opt_1:"Trend creation & growth", opt_2:"Celebrity / personal brand management", opt_3:"Monetization & revenue",
+        opt_4:"Premium video & ads production", opt_5:"Website / landing / SEO",
+        f_msg:"Quick details",
+        send_btn:"Send request",
+        hint:"By submitting, you agree to share your data for contact and proposal purposes.",
+        side_title:"Fast contact", side_desc:"Pick the quickest method — we’ll respond ASAP.",
+        fast_title:"Best for celebrities & big pages",
+        fast_desc:"If you have a campaign coming or want a trend push, send your link and goal — we’ll map a clear route.",
+        wa_title:"WhatsApp", wa_desc:"Fast reply",
+        em_title:"Email",
+        fb_title:"Facebook", fb_desc:"Official page",
+      }
+    };
+
+    let lang = "ar";
+    const langBtn = document.getElementById("langBtn");
+    const langLabel = document.getElementById("langLabel");
+
+    function applyLang(next){
+      lang = next;
+      document.documentElement.lang = (lang === "ar") ? "ar" : "en";
+      document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
+      if (langLabel) langLabel.textContent = (lang === "ar") ? "EN" : "AR";
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        const v = dict[lang]?.[key];
+        if (typeof v === "string") el.textContent = v;
+      });
+    }
+
+    applyLang("ar");
+    langBtn?.addEventListener("click", () => applyLang(lang === "ar" ? "en" : "ar"));
   </script>
 </body>
 </html>
