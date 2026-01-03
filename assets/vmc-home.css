@@ -356,9 +356,9 @@ html[dir="ltr"] .hero__reel{
   color: rgba(238,241,246,.62);
   letter-spacing:.06em;
 }
-.r1{transform: translateZ(0) rotateX(0deg)}
-.r2{transform: translateZ(0) translateX(10px)}
-.r3{transform: translateZ(0) translateX(18px)}
+.r1{ transform: translateZ(6px); }
+.r2{ transform: translateZ(12px); margin-inline-start: 10px; }
+.r3{ transform: translateZ(18px); margin-inline-start: 18px; }
 
 .reelHint{
   position:absolute;
