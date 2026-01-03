@@ -148,24 +148,6 @@ a{color:inherit; text-decoration:none}
   margin: 0 auto;
 }
 
-/* =============== Hero Layout: Copy + Globe =============== */
-.hero__grid{
-  display:grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: clamp(18px, 4vw, 54px);
-  align-items:center;
-}
-
-.hero__copy{min-width:0;}
-
-.hero__art{
-  min-width:0;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding-top: 10px;
-}
-
 /* =============== Hero Globe (Brand Orb) =============== */
 .hero__grid{
   display:grid;
@@ -175,19 +157,16 @@ a{color:inherit; text-decoration:none}
 }
 
 .hero__copy{ min-width:0; }
+
 .hero__art{
   min-width:0;
   display:flex;
-  align-items:center;
   justify-content:center;
-  padding-top: 6px;
+  align-items:center;
+  padding-top: 10px;
 }
 
-/* In RTL the empty space is on the left; in LTR it's on the right.
-   So we bias the orb slightly toward the outer edge (cinematic, but safe). */
-:dir(rtl) .hero__art{ justify-content:flex-start; }
-:dir(ltr) .hero__art{ justify-content:flex-end; }
-
+/* Container */
 .globe{
   position:relative;
   width: clamp(340px, 36vw, 560px);
@@ -197,8 +176,6 @@ a{color:inherit; text-decoration:none}
   transform: translateZ(0);
   margin-inline: clamp(6px, 2vw, 22px);
 }
-:dir(rtl) .globe{ transform: translateX(-10px) translateZ(0); }
-:dir(ltr) .globe{ transform: translateX(10px) translateZ(0); }
 
 /* Sphere */
 .globe__sphere{
@@ -227,50 +204,62 @@ a{color:inherit; text-decoration:none}
       rgba(0,0,0,0) 10px 24px
     );
   opacity:.55;
-  filter: blur(.2px) saturate(1.05);
-  animation: vmcTexture 10s linear infinite;
+  filter: blur(.2px);
+  animation: vmcTexture 12s linear infinite;
+  will-change: transform;
   transform: translateZ(0);
-  will-change: transform;
 }
+
 @keyframes vmcTexture{
-  from{ transform: translateX(0) translateZ(0); }
-  to{ transform: translateX(120px) translateZ(0); }
+  from{ transform: translateX(0) rotate(18deg) translateZ(0); }
+  to{ transform: translateX(-32%) rotate(18deg) translateZ(0); }
 }
 
-/* Shine */
+/* Shine + depth */
 .globe__shine{
-  position:absolute; inset:-22%;
-  background: radial-gradient(600px 420px at 35% 30%, rgba(255,255,255,.16), transparent 60%);
+  position:absolute; inset:-40%;
+  background: radial-gradient(closest-side at 35% 35%, rgba(255,255,255,.12), transparent 60%);
   transform: translateX(-18%) rotate(10deg);
+  animation: vmcShine 10s ease-in-out infinite;
+  opacity:.7;
   mix-blend-mode: screen;
-  opacity:.65;
   pointer-events:none;
-  animation: vmcShine2 9s ease-in-out infinite;
   will-change: transform;
 }
-@keyframes vmcShine2{
+@keyframes vmcShine{
   0%,100%{ transform: translateX(-18%) rotate(10deg); }
-  50%{ transform: translateX(16%) rotate(10deg); }
+  50%{ transform: translateX(18%) rotate(10deg); }
 }
 
-/* Logo core */
+.globe__rim{
+  position:absolute; inset:0;
+  border-radius:50%;
+  box-shadow:
+    inset 0 0 0 1px rgba(245,208,122,.22),
+    inset 0 0 30px rgba(0,0,0,.55);
+  pointer-events:none;
+}
+
+/* Center logo */
 .globe__logo{
   position:absolute; inset:0;
-  display:grid; place-items:center;
+  display:grid;
+  place-items:center;
 }
 .globe__logo img{
-  width: clamp(118px, 12vw, 160px);
-  height: clamp(118px, 12vw, 160px);
+  width: clamp(128px, 12vw, 170px);
+  height: clamp(128px, 12vw, 170px);
   border-radius: 50%;
   background:#000;
   box-shadow:
-    0 0 0 1px rgba(245,208,122,.30),
-    0 0 0 12px rgba(245,208,122,.07),
-    0 30px 120px rgba(0,0,0,.75);
+    0 0 0 1px rgba(245,208,122,.28),
+    0 0 0 12px rgba(245,208,122,.06),
+    0 40px 120px rgba(0,0,0,.75);
   animation: vmcFloatLogo 6.5s ease-in-out infinite;
-  transform: translateZ(0);
   will-change: transform;
+  transform: translateZ(0);
 }
+
 @keyframes vmcFloatLogo{
   0%,100%{ transform: translateY(0) translateZ(0); }
   50%{ transform: translateY(-8px) translateZ(0); }
@@ -305,21 +294,18 @@ a{color:inherit; text-decoration:none}
   letter-spacing: .34em;
   text-transform: uppercase;
   font-family: "Space Grotesk", Manrope, sans-serif;
+  opacity:.9;
 }
 
-/* RTL readability: keep the ring motion elegant + Arabic shaping */
+/* RTL tweaks: reverse rotation only (avoid SVG bidi bugs) */
 :dir(rtl) .globe__ring svg{ animation-direction: reverse; }
-:dir(rtl) .globe__ring text{
-  direction: rtl;
-  unicode-bidi: plaintext;
-  letter-spacing: .16em;
-}
+:dir(rtl) .globe__ring text{ letter-spacing: .10em; }
 
 /* Responsive */
 @media (max-width: 980px){
   .hero__grid{ grid-template-columns: 1fr; }
   .hero__art{ justify-content:center !important; }
-  .globe{ width: min(460px, 92vw); margin: 18px auto 0; transform: translateZ(0) !important; }
+  .globe{ width: min(520px, 90vw); margin-inline: 0; }
 }
 
 /* Reduce Motion */
@@ -330,6 +316,95 @@ a{color:inherit; text-decoration:none}
   .globe__logo img{ animation: none !important; }
 }
 
+
+.kicker{
+  margin:0 0 14px;
+  letter-spacing:.08em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: rgba(238,241,246,.62);
+}
+
+.h1{
+  margin:0 0 14px;
+  font-size: clamp(40px, 5.4vw, 84px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.gold{
+  background: linear-gradient(90deg, var(--gold1), rgba(255,255,255,.85), var(--gold2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.sub{
+  margin:0 0 24px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.85;
+  max-width: 64ch;
+}
+
+.hero__cta{display:flex; gap:12px; flex-wrap:wrap; margin-bottom: 18px;}
+
+.btn{
+  position:relative;
+  display:inline-flex; align-items:center; justify-content:center;
+  padding: 14px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.03);
+  color: rgba(238,241,246,.92);
+  font-weight: 800;
+  letter-spacing:.01em;
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+  will-change: transform;
+  transform: translateZ(0);
+}
+.btn:hover{transform: translateY(-1px) translateZ(0); border-color: rgba(255,255,255,.20)}
+.btn.primary{
+  border-color: rgba(245,208,122,.24);
+  background: linear-gradient(180deg, rgba(245,208,122,.18), rgba(255,255,255,.04));
+  box-shadow: var(--shadow);
+}
+.btn.ghost{ background: rgba(255,255,255,.02); }
+
+.hero__meta{display:flex; gap:12px; flex-wrap:wrap; margin-top: 10px;}
+.meta{
+  min-width: 170px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.meta__num{display:block; font-weight:900}
+.meta__label{display:block; margin-top:2px; font-size:12px; color: rgba(238,241,246,.62)}
+
+.scroll{
+  position:absolute; left:50%; bottom: 24px;
+  width: 28px; height: 44px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius: 999px;
+  transform: translateX(-50%);
+  display:grid; place-items:center;
+  background: rgba(255,255,255,.02);
+}
+.scroll span{
+  width:4px;height:8px;border-radius:999px;background: rgba(245,208,122,.72);
+  animation: scroll 1.4s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+@keyframes scroll{
+  0%{transform:translateY(-6px);opacity:.35}
+  50%{transform:translateY(6px);opacity:1}
+  100%{transform:translateY(-6px);opacity:.35}
+}
 
 /* =============== Sections =============== */
 .section{
