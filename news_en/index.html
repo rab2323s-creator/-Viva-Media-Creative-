@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
@@ -21,14 +21,18 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="stylesheet" href="../style.css" />
+  <!-- ✅ NEW: same Arabic news styling -->
+  <link rel="stylesheet" href="./news.css" />
+
   <link rel="icon" href="../assets/logo.jpeg" />
 </head>
-<body>
+
+<!-- ✅ IMPORTANT: class="news" -->
+<body class="news">
 
 <header class="site-header">
   <div class="container header-inner">
     <div class="brand">
-      <!-- شعار يعود للصفحة الرئيسية بالإنجليزية -->
       <a href="../index.html">
         <img src="../assets/logo.jpeg" alt="Viva Media Creative" class="logo" />
       </a>
@@ -45,7 +49,7 @@
     </nav>
 
     <div class="lang">
-      🌐 <a href="../news/">العربية</a> |  <a href="./">English</a>
+      🌐 <a href="../news/">العربية</a> |  <a href="./" aria-current="page">English</a>
     </div>
   </div>
 </header>
@@ -62,49 +66,41 @@
   <p class="section-desc">Discover what's new in media production, digital marketing, and the future of AI-driven creativity.</p>
 
   <div class="services-grid">
-    <!-- Article 1 -->
     <article class="card">
       <img src="../assets/ai-content.jpg" alt="AI in Content Creation" loading="lazy" />
       <h3><a href="ai-content-creation/">AI is Transforming the Future of Content Creation</a></h3>
       <p>New technologies now make it possible to create professional-quality content in just minutes using AI-powered tools.</p>
     </article>
 
-    <!-- Article 2 -->
     <article class="card">
       <img src="../assets/trends-2026.jpg" alt="Digital Marketing Trends 2026" loading="lazy" />
       <h3><a href="digital-marketing-trends-2026/">Digital Marketing Trends for 2026</a></h3>
       <p>Short videos, personalized content, and artificial intelligence will shape the future of marketing campaigns.</p>
     </article>
 
-    <!-- Article 3 -->
     <article class="card">
       <img src="../assets/studio-tech.jpg" alt="Modern Filming & Production" loading="lazy" />
       <h3><a href="modern-filming-production/">Modern Filming and Production Technologies</a></h3>
       <p>Smart cameras, advanced lighting, and cloud editing tools are revolutionizing the workflow of creators.</p>
     </article>
 
-    <!-- Article 4 -->
     <article class="card">
       <img src="../assets/social-media.jpg" alt="Social Media Algorithms" loading="lazy" />
       <h3><a href="social-media-algorithms/">Understanding Social Media Algorithms</a></h3>
       <p>Learn how social platform algorithms work to boost your reach and improve audience engagement.</p>
     </article>
 
-    <!-- Article 5 -->
     <article class="card">
       <img src="../assets/ai-video.jpg" alt="AI Video Creation Tools" loading="lazy" />
       <h3><a href="ai-video-creation-tools/">Top AI Video Creation Tools for 2025</a></h3>
       <p>Discover the most powerful AI video creation tools for 2025 to boost your content marketing, save time, and produce professional videos effortlessly.</p>
     </article>
 
-    <!-- Article 6 (AI Content Automation Tools) -->
-<article class="card">
-  <img src="../assets/ai-automation.jpg" alt="AI Content Automation Tools" loading="lazy" />
-  <h3><a href="ai-content-automation-tools/">Top AI Content Automation Tools for 2025</a></h3>
-  <p>Explore the leading AI content automation tools in 2025 that help marketers, agencies, and content creators generate high-quality content efficiently and optimize their SEO strategy.</p>
-</article>
-
-    
+    <article class="card">
+      <img src="../assets/ai-automation.jpg" alt="AI Content Automation Tools" loading="lazy" />
+      <h3><a href="ai-content-automation-tools/">Top AI Content Automation Tools for 2025</a></h3>
+      <p>Explore the leading AI content automation tools in 2025 that help marketers, agencies, and content creators generate high-quality content efficiently and optimize their SEO strategy.</p>
+    </article>
   </div>
 </main>
 
@@ -117,3 +113,4 @@
 
 </body>
 </html>
+
