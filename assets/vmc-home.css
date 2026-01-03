@@ -535,3 +535,64 @@ a{color:inherit;text-decoration:none}
   .nav,.btn,.stat,.system__rail,.reelCard,.final__card{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
 }
 
+/* === VMC Luxury Hero FIX (override) === */
+
+/* 1) اجعل الشبكة واضحة: نص + Reel واضح */
+.hero__grid{
+  grid-template-columns: minmax(0, 1fr) 520px !important;
+  gap: 26px !important;
+  align-items: center !important;
+}
+
+/* RTL: خلي النص يمين والرييل يسار بشكل مضبوط */
+html[dir="rtl"] .hero__copy{ justify-self: end; text-align: right; }
+html[dir="rtl"] .hero__reel{ justify-self: start; }
+
+/* 2) سيطرة أقل للنص = فخامة أكثر */
+.hero__title{
+  font-size: clamp(42px, 4.6vw, 76px) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.02em !important;
+  max-width: 16ch;           /* يمنع العنوان من ابتلاع الصفحة */
+}
+
+/* 3) اجعل السطر الصغير أوضح */
+.hero__sub{
+  max-width: 52ch !important;
+  font-size: 16px !important;
+  opacity: .92;
+}
+
+/* 4) الرييل لازم يبان قوي ويشد العين */
+.hero__reel{
+  min-height: 560px !important;
+  transform: translateY(-6px);
+}
+
+/* 5) اجعل الـMonogram عنصر “فاخر” */
+.monogram{
+  font-size: 72px !important;
+  opacity: .16 !important;
+  filter: blur(.2px);
+}
+
+/* 6) لمعة الرييل: أقوى + تتبع الماوس */
+.reelCard::after{
+  opacity: .72 !important;
+  transform: translateX(var(--shift, -20%)) rotate(10deg) !important;
+}
+
+/* 7) خط الذهب: أخف لكن “أغلى” */
+.goldLine{
+  opacity: .35 !important;
+  height: 2px !important;
+  filter: blur(.2px);
+}
+
+/* 8) على الشاشات الصغيرة: الرييل تحت النص */
+@media (max-width: 980px){
+  .hero__grid{ grid-template-columns: 1fr !important; }
+  .hero__title{ max-width: none; }
+  .hero__reel{ min-height: 420px !important; }
+}
+
