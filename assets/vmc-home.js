@@ -1,6 +1,5 @@
- 
-/* =========================
-   VMC HOME — Luxury V3
+ /* =========================
+   VMC HOME — Luxury V3 (Final)
 ========================= */
 
 // year
@@ -8,21 +7,25 @@ const y = document.getElementById("y");
 if (y) y.textContent = String(new Date().getFullYear());
 
 /* =========================
-   reveal on scroll (unobserve)
+   Reveal on scroll (unobserve)
 ========================= */
-(function setupReveal(){
+(function setupReveal() {
   const els = document.querySelectorAll(".reveal");
   if (!els.length) return;
 
   if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver((entries) => {
-      for (const e of entries) {
-        if (e.isIntersecting) {
-          e.target.classList.add("is-in");
-          io.unobserve(e.target);
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-in");
+            io.unobserve(e.target);
+          }
         }
-      }
-    }, { threshold: 0.12 });
+      },
+      { threshold: 0.12 }
+    );
+
     els.forEach((el) => io.observe(el));
   } else {
     els.forEach((el) => el.classList.add("is-in"));
@@ -30,19 +33,24 @@ if (y) y.textContent = String(new Date().getFullYear());
 })();
 
 /* =========================
-   magnetic (rAF)
+   Magnetic buttons (rAF)
 ========================= */
-(function setupMagnetic(){
-  document.querySelectorAll(".magnetic").forEach((el) => {
+(function setupMagnetic() {
+  const items = document.querySelectorAll(".magnetic");
+  if (!items.length) return;
+
+  items.forEach((el) => {
     const strength = 10;
-    let raf = 0, lastX = 0, lastY = 0;
+    let raf = 0;
+    let lastX = 0;
+    let lastY = 0;
 
     el.addEventListener("pointermove", (ev) => {
       const r = el.getBoundingClientRect();
       lastX = ev.clientX - (r.left + r.width / 2);
       lastY = ev.clientY - (r.top + r.height / 2);
-      if (raf) return;
 
+      if (raf) return;
       raf = requestAnimationFrame(() => {
         raf = 0;
         el.style.transform = `translate(${lastX / strength}px, ${lastY / strength}px)`;
@@ -232,10 +240,20 @@ let lang = "ar";
 const langBtn = document.getElementById("langBtn");
 const langLabel = document.getElementById("langLabel");
 
-function safeGetLang(){ try { return localStorage.getItem("vmc_lang"); } catch { return null; } }
-function safeSetLang(v){ try { localStorage.setItem("vmc_lang", v); } catch {} }
+function safeGetLang() {
+  try {
+    return localStorage.getItem("vmc_lang");
+  } catch {
+    return null;
+  }
+}
+function safeSetLang(v) {
+  try {
+    localStorage.setItem("vmc_lang", v);
+  } catch {}
+}
 
-function applyLang(next){
+function applyLang(next) {
   lang = next === "en" ? "en" : "ar";
   safeSetLang(lang);
 
@@ -255,7 +273,7 @@ langBtn?.addEventListener("click", () => applyLang(lang === "ar" ? "en" : "ar"))
 /* =========================
    Count-up (premium feel)
 ========================= */
-function formatCount(n, mode){
+function formatCount(n, mode) {
   if (mode === "short") {
     if (n >= 1000000) return `${Math.round(n / 1000000)}M+`;
     if (n >= 1000) return `${Math.round(n / 1000)}K+`;
@@ -265,14 +283,14 @@ function formatCount(n, mode){
   return String(n);
 }
 
-(function setupCountUp(){
+(function setupCountUp() {
   const nums = document.querySelectorAll("[data-count]");
   if (!nums.length) return;
 
   const run = (el) => {
     const to = Number(el.getAttribute("data-count") || "0");
     const mode = el.getAttribute("data-format") || "";
-    const dur = 900; // ms
+    const dur = 900;
     const start = performance.now();
     const from = 0;
 
@@ -287,14 +305,17 @@ function formatCount(n, mode){
   };
 
   if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver((entries) => {
-      for (const e of entries) {
-        if (e.isIntersecting) {
-          run(e.target);
-          io.unobserve(e.target);
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            run(e.target);
+            io.unobserve(e.target);
+          }
         }
-      }
-    }, { threshold: 0.35 });
+      },
+      { threshold: 0.35 }
+    );
     nums.forEach((n) => io.observe(n));
   } else {
     nums.forEach(run);
@@ -308,53 +329,59 @@ const railSteps = Array.from(document.querySelectorAll(".step"));
 const panels = Array.from(document.querySelectorAll(".panel"));
 const marks = Array.from(document.querySelectorAll(".mark"));
 
-function setActive(i){
+function setActive(i) {
   railSteps.forEach((b, idx) => b.classList.toggle("is-active", idx === i));
   panels.forEach((p, idx) => p.classList.toggle("is-active", idx === i));
 }
+
 railSteps.forEach((btn) => {
   btn.addEventListener("click", () => {
     const i = Number(btn.getAttribute("data-step") || "0");
     setActive(i);
-    document.querySelector("#system")?.scrollIntoView({ behavior:"smooth", block:"start" });
+    document.querySelector("#system")?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
+
 if ("IntersectionObserver" in window && marks.length) {
-  const io = new IntersectionObserver((entries) => {
-    const visible = entries.filter(e => e.isIntersecting)
-      .sort((a,b)=> (b.intersectionRatio||0)-(a.intersectionRatio||0))[0];
-    if (!visible) return;
-    const i = Number(visible.target.getAttribute("data-mark") || "0");
-    setActive(i);
-  }, { threshold: [0.15, 0.35, 0.55] });
+  const io = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0))[0];
+      if (!visible) return;
+
+      const i = Number(visible.target.getAttribute("data-mark") || "0");
+      setActive(i);
+    },
+    { threshold: [0.15, 0.35, 0.55] }
+  );
   marks.forEach((m) => io.observe(m));
 }
 
 /* =========================
    Reel Parallax + Shine (signature)
 ========================= */
-(function setupReel(){
+(function setupReel() {
   const reel = document.getElementById("reel");
   if (!reel) return;
 
   const cards = Array.from(reel.querySelectorAll(".reelCard"));
+  if (!cards.length) return;
+
   let raf = 0;
-  let px = 0, py = 0;
+  let px = 0.5,
+    py = 0.5;
 
   const apply = () => {
     raf = 0;
-    // gentle tilt
-    const rx = (py - 0.5) * 10;  // -5..5
+
+    const rx = (py - 0.5) * 10; // -5..5
     const ry = (px - 0.5) * -12; // -6..6
+
     cards.forEach((c, i) => {
       const depth = (i + 1) * 6;
       c.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(${depth}px)`;
-      // move shine
-      c.style.setProperty("--sx", `${(px * 40) - 20}%`);
-      c.style.setProperty("--sy", `${(py * 40) - 20}%`);
-      c.style.setProperty("--srot", `${(px - 0.5) * 10}deg`);
-      // animate pseudo highlight by nudging after layer
-      c.style.setProperty("--shift", `${(px * 50) - 25}%`);
+      c.style.setProperty("--shift", `${px * 50 - 25}%`);
     });
   };
 
@@ -369,10 +396,16 @@ if ("IntersectionObserver" in window && marks.length) {
     raf = requestAnimationFrame(apply);
   };
 
-  reel.addEventListener("pointermove", onMove);
+  reel.addEventListener("pointermove", onMove, { passive: true });
+
   reel.addEventListener("pointerleave", () => {
-    cards.forEach((c, i) => {
+    if (raf) cancelAnimationFrame(raf);
+    raf = 0;
+
+    cards.forEach((c) => {
       c.style.transform = "";
+      c.style.removeProperty("--shift");
     });
   });
 })();
+
