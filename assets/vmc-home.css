@@ -817,7 +817,10 @@ a{color:inherit; text-decoration:none}
 }
 
 @media (prefers-reduced-motion: reduce){
-  .halo,.track,.scroll span,.visual__shine,.slide::after{animation:none !important;}
+  .halo,.track,.scroll span,.visual__shine,.slide::after{animation:none !important;
+  .orbit--1,.orbit--2,.orbit--3{ animation:none !important; }
+  .heroScene__logo img{ animation:none !important; }
+}
   .reveal{transition:none}
   .visual, .scene{ transition:none !important; }
   .sliderViewport{ scroll-behavior:auto; }
@@ -848,16 +851,18 @@ a{color:inherit; text-decoration:none}
 }
 
 /* Scene */
+/* Scene */
 .heroScene{
   position:relative;
   width: min(980px, 100%);
   margin: 0 auto;
   aspect-ratio: 16 / 9;
   border-radius: 32px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.02);
-  box-shadow: 0 30px 120px rgba(0,0,0,.55);
-  overflow:hidden;
+  /* remove the framed card feel */
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
 }
 
 .heroScene::before{
@@ -950,6 +955,9 @@ a{color:inherit; text-decoration:none}
   pointer-events:none;
 }
 .heroScene__logo img{
+  animation: corePulse 7.2s ease-in-out infinite;
+  transform-origin: center;
+
   width: clamp(92px, 9vw, 126px);
   height: clamp(92px, 9vw, 126px);
   border-radius: 50%;
@@ -984,4 +992,39 @@ a{color:inherit; text-decoration:none}
 @media (prefers-reduced-motion: reduce){
   .ring,.orb,.bands{ animation: none !important; }
 }
+
+
+@keyframes corePulse{
+  0%,100%{ transform: scale(1); filter: drop-shadow(0 0 0 rgba(245,208,122,0)); }
+  45%{ transform: scale(1.01); }
+  55%{ transform: scale(1.025); filter: drop-shadow(0 0 18px rgba(245,208,122,.22)); }
+}
+
+/* Orbits */
+.orbits{ transform-origin: 400px 260px; }
+.orbit{ transform-origin: 400px 260px; }
+.orbit--1{ animation: orbitSpin 42s linear infinite; }
+.orbit--2{ animation: orbitSpin 58s linear infinite reverse; opacity: .9; }
+.orbit--3{ animation: orbitSpin 78s linear infinite; opacity: .75; }
+
+.orbitText{
+  fill: rgba(245,208,122,.55);
+  font-family: "Space Grotesk", Manrope, sans-serif;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+.orbitText--1{ font-size: 12px; fill: rgba(245,208,122,.65); }
+.orbitText--3{ font-size: 11px; fill: rgba(245,208,122,.38); }
+
+.orbitLabels text{
+  fill: rgba(238,241,246,.70);
+  font-family: "Noto Kufi Arabic", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0;
+}
+.orbitLabels .lbl{
+  transform-origin: 400px 260px;
+  transform: rotate(var(--a)) translate(0,-210px) rotate(var(--ai));
+}
+@keyframes orbitSpin{ from{ transform: rotate(0deg);} to{ transform: rotate(360deg);} }
 
