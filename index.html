@@ -76,23 +76,51 @@
                 <stop offset="100%" stop-color="rgba(0,255,200,.0)"/>
               </linearGradient>
 
+              <path id="ring1Path" d="M 400 260 m -170 0 a 170 170 0 1 1 340 0 a 170 170 0 1 1 -340 0"/>
+              <path id="ring3Path" d="M 400 260 m -232 0 a 232 232 0 1 1 464 0 a 232 232 0 1 1 -464 0"/>
               <path id="ringPath" d="M 400 260 m -180 0 a 180 180 0 1 1 360 0 a 180 180 0 1 1 -360 0"/>
             </defs>
 
             <!-- soft field -->
             <rect x="0" y="0" width="800" height="520" fill="url(#orbGlow)" opacity=".55"/>
 
-            <!-- orbit ring -->
-            <g class="ring">
-              <circle cx="400" cy="260" r="198" fill="none" stroke="rgba(245,208,122,.22)" stroke-width="1"/>
-              <text class="ringText">
-                <textPath href="#ringPath" startOffset="50%" text-anchor="middle">
-                  VIVA MEDIA CREATIVE • TREND • INFLUENCE • GROWTH • SALES •
-                </textPath>
-              </text>
-            </g>
+            
+            <!-- ORBITS (3 levels) -->
+            <g class="orbits">
+              <!-- Orbit 1 (core / most important) -->
+              <g class="orbit orbit--1">
+                <circle cx="400" cy="260" r="178" fill="none" stroke="rgba(245,208,122,.18)" stroke-width="1"/>
+                <text class="orbitText orbitText--1">
+                  <textPath href="#ring1Path" startOffset="50%" text-anchor="middle">
+                    INFLUENCE • VALUE • DECISION • AUTHORITY •
+                  </textPath>
+                </text>
+              </g>
 
-            <!-- orb -->
+              <!-- Orbit 2 (Arabic labels, kept upright for readability) -->
+              <g class="orbit orbit--2">
+                <circle cx="400" cy="260" r="210" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                <g class="orbitLabels" aria-hidden="true">
+                <g class="lbl" style="--a:-60deg;--ai:60deg"><text x="400" y="260">تأثير</text></g>
+                <g class="lbl" style="--a:-20deg;--ai:20deg"><text x="400" y="260">ترند</text></g>
+                <g class="lbl" style="--a:20deg;--ai:-20deg"><text x="400" y="260">نمو</text></g>
+                <g class="lbl" style="--a:60deg;--ai:-60deg"><text x="400" y="260">قيمة</text></g>
+                <g class="lbl" style="--a:110deg;--ai:-110deg"><text x="400" y="260">ثقة</text></g>
+                <g class="lbl" style="--a:160deg;--ai:-160deg"><text x="400" y="260">مبيعات</text></g>
+                </g>
+              </g>
+
+              <!-- Orbit 3 (outer / outcomes) -->
+              <g class="orbit orbit--3">
+                <circle cx="400" cy="260" r="242" fill="none" stroke="rgba(245,208,122,.12)" stroke-width="1" stroke-dasharray="2 10"/>
+                <text class="orbitText orbitText--3">
+                  <textPath href="#ring3Path" startOffset="50%" text-anchor="middle">
+                    TREND • GROWTH • REACH • SALES • VIRAL •
+                  </textPath>
+                </text>
+              </g>
+            </g>
+<!-- orb -->
             <g class="orb">
               <circle cx="400" cy="260" r="150" fill="rgba(0,0,0,.25)" />
               <circle cx="400" cy="260" r="150" fill="url(#orbBody)"/>
