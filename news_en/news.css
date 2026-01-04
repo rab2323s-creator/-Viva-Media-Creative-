@@ -1,359 +1,319 @@
  /* =========================
-   Viva Media Creative - News Page (Luxury Blog UI)
-   ضع هذا الملف كـ news.css داخل /news/
+   Viva Media Creative - Article Page (Luxury Read UI)
+   File: /news/article.css
    ========================= */
 
-/* أساسيات */
-.news {
-  background: #0b0f19;
-  color: #e9eefc;
+/* Tokens */
+:root{
+  --bg: #0b0f19;
+  --panel: rgba(255,255,255,0.06);
+  --panel-2: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.10);
+  --text: #e9eefc;
+  --muted: rgba(233,238,252,0.76);
+  --muted-2: rgba(233,238,252,0.62);
+  --accent: #0077ff;
+  --accent-2: #74b4ff;
+  --shadow: 0 18px 60px rgba(0,0,0,0.50);
+  --shadow-soft: 0 12px 40px rgba(0,0,0,0.35);
+  --radius: 18px;
+  --radius-lg: 22px;
+  --max: 920px;
 }
 
-/* حاوية الصفحة (لو عندك .container أصلاً في style.css سيكمل، هذا فقط لتحسينها) */
-.news .container {
+/* Page base */
+.article{
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Container spacing */
+.article .section{
+  padding-top: 28px;
+  padding-bottom: 70px;
+}
+
+/* Reading width */
+.article .container{
   max-width: 1180px;
 }
 
-/* عنوان + وصف */
-.news .section {
-  padding-top: 28px;
-  padding-bottom: 60px;
+/* Article shell */
+.blog-article{
+  max-width: var(--max);
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.035));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  position: relative;
 }
 
-.news .section-title {
-  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
-  font-weight: 800;
-  margin: 14px 0 10px;
+/* Ambient glow */
+.blog-article::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: radial-gradient(900px 320px at 20% 0%,
+    rgba(0,119,255,0.28),
+    transparent 60%);
+  opacity: 0.9;
+  pointer-events:none;
+}
+
+/* Top image */
+.article-img{
+  width: 100%;
+  height: clamp(240px, 38vw, 420px);
+  object-fit: cover;
+  display:block;
+  filter: saturate(1.10) contrast(1.05);
+  transform: scale(1.01);
+  position: relative;
+  z-index: 1;
+}
+
+/* Gradient overlay on image area */
+.blog-article::after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  top:0;
+  height: clamp(260px, 38vw, 460px);
+  background: linear-gradient(to bottom,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.55));
+  pointer-events:none;
+  z-index: 2;
+}
+
+/* Inner typography padding */
+.blog-article > *:not(.article-img){
+  position: relative;
+  z-index: 3;
+}
+
+.blog-article h1,
+.blog-article h2,
+.blog-article h3,
+.blog-article p,
+.blog-article ul,
+.blog-article ol,
+.blog-article blockquote,
+.blog-article .article-date,
+.blog-article .back-link{
+  padding-left: 26px;
+  padding-right: 26px;
+}
+
+@media (max-width: 640px){
+  .blog-article h1,
+  .blog-article h2,
+  .blog-article h3,
+  .blog-article p,
+  .blog-article ul,
+  .blog-article ol,
+  .blog-article blockquote,
+  .blog-article .article-date,
+  .blog-article .back-link{
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+/* Headline */
+.blog-article h1{
+  margin: 18px 0 10px;
+  font-size: clamp(1.65rem, 2.8vw, 2.35rem);
+  line-height: 1.25;
+  font-weight: 900;
   letter-spacing: 0.2px;
+  text-wrap: balance;
 }
 
-.news .section-desc {
-  color: rgba(233, 238, 252, 0.78);
-  max-width: 780px;
-  line-height: 1.9;
-  margin: 0 0 26px;
-}
-
-/* Breadcrumb */
-.news nav[aria-label="Breadcrumb"] {
-  margin-top: 10px;
-  margin-bottom: 18px;
-  font-size: 0.95rem;
-}
-
-.news nav[aria-label="Breadcrumb"] ol {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
+/* Meta line */
+.article-date{
+  margin: 0 0 22px;
+  color: rgba(233,238,252,0.74);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  display:flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 6px;
   align-items: center;
 }
 
-.news nav[aria-label="Breadcrumb"] a {
-  color: rgba(233, 238, 252, 0.85);
-  text-decoration: none;
+.article-date strong{
+  color: rgba(233,238,252,0.92);
 }
 
-.news nav[aria-label="Breadcrumb"] a:hover {
-  text-decoration: underline;
+/* Sections */
+.blog-article h2{
+  margin: 28px 0 12px;
+  font-size: clamp(1.25rem, 1.9vw, 1.55rem);
+  line-height: 1.3;
+  font-weight: 900;
+  letter-spacing: 0.15px;
 }
 
-.news nav[aria-label="Breadcrumb"] li {
-  color: rgba(233, 238, 252, 0.7);
-}
-
-.news nav[aria-label="Breadcrumb"] li::after {
-  content: "•";
-  margin: 0 10px;
-  color: rgba(233, 238, 252, 0.35);
-}
-
-.news nav[aria-label="Breadcrumb"] li:last-child::after {
-  content: "";
-  margin: 0;
-}
-
-/* شبكة المقالات */
-.news .services-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 18px;
-}
-
-/* الكروت */
-.news .card {
-  grid-column: span 4;
-  position: relative;
-  overflow: hidden;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  box-shadow:
-    0 12px 40px rgba(0,0,0,0.35),
-    inset 0 1px 0 rgba(255,255,255,0.06);
-  transform: translateY(0);
-  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
-}
-
-/* “وهج” بسيط في الخلفية */
-.news .card::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  background: radial-gradient(900px 280px at 20% 0%,
-    rgba(0,119,255,0.35),
-    transparent 60%);
-  opacity: 0;
-  transition: opacity .28s ease;
-  pointer-events: none;
-}
-
-.news .card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(0,119,255,0.35);
-  box-shadow:
-    0 18px 60px rgba(0,0,0,0.50),
-    0 0 0 1px rgba(0,119,255,0.10) inset;
-}
-
-.news .card:hover::before {
-  opacity: 1;
-}
-
-/* صورة المقال */
-.news .card img {
-  width: 100%;
-  height: 210px;
-  object-fit: cover;
-  display: block;
-  filter: saturate(1.08) contrast(1.03);
-  transform: scale(1.01);
-  transition: transform .35s ease, filter .35s ease;
-}
-
-.news .card:hover img {
-  transform: scale(1.06);
-  filter: saturate(1.18) contrast(1.06);
-}
-
-/* طبقة تدرّج فوق الصورة */
-.news .card::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0;
-  top: 0;
-  height: 220px;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.10),
-    rgba(0,0,0,0.45)
-  );
-  pointer-events: none;
-}
-
-/* محتوى الكارت */
-.news .card h3 {
-  margin: 16px 16px 8px;
+.blog-article h3{
+  margin: 18px 0 10px;
   font-size: 1.08rem;
-  line-height: 1.55;
-  font-weight: 800;
+  line-height: 1.35;
+  font-weight: 850;
+  color: rgba(233,238,252,0.95);
 }
 
-.news .card h3 a {
-  color: #f2f6ff;
+/* Paragraphs */
+.blog-article p{
+  margin: 0 0 14px;
+  color: var(--muted);
+  line-height: 1.95;
+  font-size: 1.03rem;
+  text-wrap: pretty;
+}
+
+/* Links inside article */
+.blog-article a{
+  color: var(--accent-2);
   text-decoration: none;
+  border-bottom: 1px solid rgba(116,180,255,0.35);
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
 }
 
-.news .card h3 a:hover {
-  color: #74b4ff;
+.blog-article a:hover{
+  color: #bfe0ff;
+  border-color: rgba(191,224,255,0.65);
 }
 
-.news .card p {
-  margin: 0 16px 18px;
-  color: rgba(233, 238, 252, 0.74);
-  line-height: 1.85;
-  font-size: 0.96rem;
+/* Lists */
+.blog-article ul,
+.blog-article ol{
+  margin: 0 0 18px;
+  padding-left: 46px; /* keep bullets readable */
+  color: rgba(233,238,252,0.78);
+  line-height: 1.9;
 }
 
-/* شارة “اقرأ” لطيفة */
-.news .card h3 a::after {
-  content: "  ↗";
-  opacity: 0.55;
-  font-weight: 700;
+.blog-article li{
+  margin: 8px 0;
 }
 
-/* ===== مقال مميز (أول كرت فقط) ===== */
-.news .services-grid .card:first-child {
-  grid-column: span 12;
-  border-radius: 22px;
+.blog-article ul li::marker{
+  color: rgba(116,180,255,0.9);
 }
 
-.news .services-grid .card:first-child img {
-  height: 360px;
+/* Callout / quote style */
+.blog-article blockquote{
+  margin: 18px 0 22px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(0,119,255,0.10);
+  border: 1px solid rgba(0,119,255,0.18);
+  color: rgba(233,238,252,0.90);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
 }
 
-.news .services-grid .card:first-child h3 {
-  font-size: clamp(1.25rem, 1.8vw, 1.6rem);
-  margin: 18px 18px 10px;
+.blog-article blockquote p{
+  margin: 0;
+  color: rgba(233,238,252,0.90);
 }
 
-.news .services-grid .card:first-child p {
-  max-width: 900px;
-  font-size: 1.02rem;
-  margin: 0 18px 20px;
+/* Horizontal divider (optional if you add <hr>) */
+.blog-article hr{
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent,
+    rgba(255,255,255,0.14),
+    transparent);
+  margin: 26px 0;
 }
 
-/* ===== تحسين الهيدر داخل صفحة الأخبار (لو كان شكله “مكسور”) ===== */
-.news .site-header {
-  background: rgba(10, 14, 25, 0.75);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+/* Emphasis */
+.blog-article strong{
+  color: rgba(233,238,252,0.95);
 }
 
-.news .main-nav a {
-  color: rgba(233, 238, 252, 0.86);
+.blog-article em{
+  color: rgba(233,238,252,0.90);
 }
 
-.news .main-nav a.active {
-  color: #9ad0ff;
+/* Selection */
+.article ::selection{
+  background: rgba(0,119,255,0.35);
+  color: #fff;
 }
 
-.news .lang a {
-  color: #9ad0ff;
-  text-decoration: none;
+/* Back link button */
+.back-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 26px 0 28px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(233,238,252,0.92);
+  text-decoration: none !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.28);
 }
 
-.news .lang a:hover {
-  text-decoration: underline;
+.back-link:hover{
+  background: rgba(0,119,255,0.14);
+  border-color: rgba(0,119,255,0.25);
+  color: #cfe8ff;
 }
 
-/* ===== موبايل ===== */
-@media (max-width: 980px) {
-  .news .card { grid-column: span 6; }
-  .news .services-grid .card:first-child { grid-column: span 12; }
+/* Subtle bottom padding */
+.blog-article .back-link{
+  margin-left: 26px;
+  margin-right: 26px;
 }
 
-@media (max-width: 640px) {
-  .news .services-grid { gap: 14px; }
-  .news .card { grid-column: span 12; border-radius: 16px; }
-  .news .card img { height: 190px; }
-  .news .services-grid .card:first-child img { height: 240px; }
+@media (max-width: 640px){
+  .blog-article .back-link{
+    margin-left: 18px;
+    margin-right: 18px;
+  }
 }
 
-/* =========================
-   FIX HEADER (News Page)
-   ========================= */
-
-.news .site-header{
+/* ===== Optional: improve header on article pages too ===== */
+.article .site-header{
   background: rgba(10,14,25,0.75);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-.news .site-header .header-inner{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 12px 0;
-  flex-wrap: wrap;
+.article .main-nav a{
+  color: rgba(233,238,252,0.86);
 }
 
-/* يمنع “تمدد” اللوجو اللي عامل المشكلة */
-.news .site-header .logo{
-  width: 56px !important;
-  height: 56px !important;
-  max-width: 56px !important;
-  max-height: 56px !important;
-  object-fit: cover !important;
-  border-radius: 14px;
-  display: block;
-}
-
-/* منطقة البراند (لوجو + اسم) */
-.news .site-header .brand{
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-width: 260px;
-}
-
-.news .site-header .brand a{
-  display: inline-flex;
-  align-items: center;
-}
-
-/* نص البراند */
-.news .site-header .brand-text{
-  text-align: right;
-}
-
-.news .site-header .brand-text h1{
-  margin: 0;
-  font-size: 1.1rem;
-  line-height: 1.2;
-}
-
-.news .site-header .brand-text .tag{
-  margin: 4px 0 0;
-  font-size: 0.9rem;
-  color: rgba(233,238,252,0.75);
-}
-
-/* منيو الهيدر */
-.news .site-header .main-nav{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.news .site-header .main-nav a{
-  color: rgba(233,238,252,0.9);
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 10px;
-}
-
-.news .site-header .main-nav a:hover{
-  background: rgba(255,255,255,0.08);
-}
-
-.news .site-header .main-nav a.active{
-  background: rgba(0,119,255,0.18);
+.article .main-nav a.active{
   color: #9ad0ff;
 }
 
-/* اللغة */
-.news .site-header .lang{
-  color: rgba(233,238,252,0.8);
-  white-space: nowrap;
-}
-
-.news .site-header .lang a{
+.article .lang a{
   color: #9ad0ff;
   text-decoration: none;
 }
 
-.news .site-header .lang a:hover{
+.article .lang a:hover{
   text-decoration: underline;
 }
 
-/* موبايل */
-@media (max-width: 768px){
-  .news .site-header .header-inner{
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .news .site-header .brand{
-    justify-content: center;
-  }
-  .news .site-header .main-nav{
-    justify-content: center;
-  }
-  .news .site-header .lang{
-    text-align: center;
+/* ===== Responsive fine-tuning ===== */
+@media (max-width: 980px){
+  .blog-article{
+    max-width: 100%;
   }
 }
+
+@media (max-width: 420px){
+  .blog-article p{
+    font-size: 1.01rem;
+  }
+}
+
