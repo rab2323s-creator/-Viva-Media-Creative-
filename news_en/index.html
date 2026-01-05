@@ -1,11 +1,12 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Viva Media Creative News — Growth for Creators & Social Pages</title>
   <meta name="description" content="Insights, strategies, and growth tactics for creators, social media pages, and digital platforms — built for real results, not noise." />
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow" />
 
   <!-- Canonical & hreflang -->
   <link rel="canonical" href="https://vivamediacreative.com/news_en/" />
@@ -14,16 +15,32 @@
   <link rel="alternate" hreflang="x-default" href="https://vivamediacreative.com/news_en/" />
 
   <!-- Open Graph -->
+  <meta property="og:type" content="website">
   <meta property="og:title" content="Viva Media Creative — Growth Insights for Creators">
   <meta property="og:description" content="Actionable insights for creators and social media pages looking to grow reach, engagement, and revenue with clarity." />
   <meta property="og:image" content="https://vivamediacreative.com/assets/ai-content.jpg">
   <meta property="og:url" content="https://vivamediacreative.com/news_en/">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Viva Media Creative News — Insights for Growth" />
+  <meta name="twitter:description" content="Insights, strategies, and growth tactics for creators and social pages." />
+  <meta name="twitter:image" content="https://vivamediacreative.com/assets/ai-content.jpg" />
 
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="./news.css" />
+  <!-- CSS (match /en/ look) -->
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/luxury.css" />
+  <!-- Keep your news styles for cards/grid if needed -->
+  <link rel="stylesheet" href="/news_en/news.css" />
 
-  <link rel="icon" href="../assets/logo.jpeg" />
+  <link rel="icon" href="/assets/logo.jpeg" />
+
+  <!-- Google Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SR129X7VN0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SR129X7VN0');
+  </script>
 </head>
 
 <body class="news">
@@ -31,103 +48,142 @@
 <header class="site-header">
   <div class="container header-inner">
     <div class="brand">
-      <a href="../index.html">
-        <img src="../assets/logo.jpeg" alt="Viva Media Creative" class="logo" />
+      <a href="/en/">
+        <img src="/assets/logo.jpeg" alt="Viva Media Creative" class="logo" loading="lazy" />
       </a>
       <div class="brand-text">
         <h1>Viva Media Creative</h1>
-        <p class="tag">Growth-driven marketing for creators & digital platforms</p>
+        <p class="tag">Leading company in visual content production and marketing</p>
       </div>
     </div>
 
-    <nav class="main-nav" aria-label="Main menu">
-      <a href="../index.html">Home</a>
-      <a href="./" class="active">Insights</a>
-      <a href="#contact">Contact</a>
+    <div class="hamburger" id="hamburger">☰</div>
+
+    <nav class="main-nav" id="main-nav" aria-label="Main Menu">
+      <a href="/en/">Home</a>
+      <a href="/en/#services">Services</a>
+      <a href="/en/#about">About Us</a>
+      <a href="/en/#support">Creator Support</a>
+      <a href="/news_en/" class="active">News</a>
+      <a href="/en/#contact">Contact</a>
+      <a href="/en/#apply">Careers</a>
     </nav>
 
     <div class="lang">
-      🌐 <a href="../news/">العربية</a> | <a href="./" aria-current="page">English</a>
+      🌐 <a href="/news/">العربية</a> | <a href="/news_en/" aria-current="page">English</a>
     </div>
   </div>
 </header>
 
-<main class="container section">
+<!-- HERO (same structure as /en/, but tailored to News) -->
+<section class="hero">
+  <div class="container hero-content">
+    <h2>Insights That Build Real Growth</h2>
+    <p class="lead">
+      Practical strategies, clear analysis, and content frameworks for creators, social media pages, and digital brands —
+      built for results, not noise.
+    </p>
+    <div class="hero-cta">
+      <a class="btn" href="#insights">Explore Articles</a>
+      <a class="btn btn-outline" href="/en/#contact">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<main class="container section" id="insights">
   <nav aria-label="Breadcrumb">
     <ol>
-      <li><a href="../index.html">Home</a></li>
-      <li>Insights</li>
+      <li><a href="/en/">Home</a></li>
+      <li>News</li>
     </ol>
   </nav>
 
-  <h2 class="section-title">🧠 Insights for Creators & Social Growth</h2>
+  <h2 class="section-title">🧠 News & Insights for Creators & Social Growth</h2>
   <p class="section-desc">
-    Practical strategies, real analysis, and growth thinking for creators, social media pages, and digital platforms that want results — not vanity numbers.
+    Articles designed to help you grow reach, engagement, and revenue — with strategy, clarity, and real-world execution.
   </p>
 
+  <!-- Use your existing grid/cards -->
   <div class="services-grid">
+
     <article class="card">
-      <img src="../assets/ai-content.jpg" alt="AI for Creators" loading="lazy" />
-      <h3><a href="ai-content-creation/">How AI Is Changing Content Creation for Creators</a></h3>
+      <img src="/assets/ai-content.jpg" alt="AI for Creators" loading="lazy" />
+      <h3><a href="/news_en/ai-content-creation/">How AI Is Changing Content Creation for Creators</a></h3>
       <p>How creators and page managers use AI to produce smarter content, save time, and stay consistent without burning out.</p>
     </article>
 
     <article class="card">
-      <img src="../assets/trends-2026.jpg" alt="Social Media Trends" loading="lazy" />
-      <h3><a href="digital-marketing-trends-2026/">Social Media Growth Trends Creators Must Understand</a></h3>
+      <img src="/assets/trends-2026.jpg" alt="Social Media Trends" loading="lazy" />
+      <h3><a href="/news_en/digital-marketing-trends-2026/">Social Media Growth Trends Creators Must Understand</a></h3>
       <p>The trends shaping reach, engagement, and monetization — and what creators should actually focus on.</p>
     </article>
 
     <article class="card">
-      <img src="../assets/studio-tech.jpg" alt="Content Production Strategy" loading="lazy" />
-      <h3><a href="modern-filming-production/">When Production Matters — And When It Doesn’t</a></h3>
+      <img src="/assets/studio-tech.jpg" alt="Content Production Strategy" loading="lazy" />
+      <h3><a href="/news_en/modern-filming-production/">When Production Matters — And When It Doesn’t</a></h3>
       <p>Why strategy and distribution matter more than expensive production — and how creators should decide what to produce.</p>
     </article>
 
     <article class="card">
-      <img src="../assets/social-media.jpg" alt="Algorithms Explained" loading="lazy" />
-      <h3><a href="social-media-algorithms/">Understanding Algorithms Without Chasing Them</a></h3>
+      <img src="/assets/social-media.jpg" alt="Algorithms Explained" loading="lazy" />
+      <h3><a href="/news_en/social-media-algorithms/">Understanding Algorithms Without Chasing Them</a></h3>
       <p>A clear breakdown of how platforms think — and how creators can grow without guessing or copying trends blindly.</p>
     </article>
 
     <article class="card">
-      <img src="../assets/ai-video.jpg" alt="AI Video Tools" loading="lazy" />
-      <h3><a href="ai-video-creation-tools/">AI Video Tools That Actually Help Creators Grow</a></h3>
+      <img src="/assets/ai-video.jpg" alt="AI Video Tools" loading="lazy" />
+      <h3><a href="/news_en/ai-video-creation-tools/">AI Video Tools That Actually Help Creators Grow</a></h3>
       <p>A practical look at AI video tools creators use to improve output, storytelling, and consistency — not just automation.</p>
     </article>
 
     <article class="card">
-      <img src="../assets/ai-automation.jpg" alt="Automation for Creators" loading="lazy" />
-      <h3><a href="ai-content-automation-tools/">Smart Automation for Creators & Social Pages</a></h3>
+      <img src="/assets/ai-automation.jpg" alt="Automation for Creators" loading="lazy" />
+      <h3><a href="/news_en/ai-content-automation-tools/">Smart Automation for Creators & Social Pages</a></h3>
       <p>How creators and page owners automate workflows, content planning, and optimization without losing authenticity.</p>
     </article>
-   
-   <article class="card">
-  <img src="../assets/ai-human-content-2026.jpg" alt="Human Content vs AI in 2026" loading="lazy" />
-  <h3>
-    <a href="human-content-vs-ai-2026/">
-      Why Brands Will Lose Without Human Content in the Age of AI
-    </a>
-  </h3>
-  <p>
-    In 2026, AI can generate content at scale — but only human storytelling builds trust, engagement, and long-term brand growth.
-  </p>
-</article>
 
-   
+    <article class="card">
+      <img src="/assets/ai-human-content-2026.jpg" alt="Human Content vs AI in 2026" loading="lazy" />
+      <h3>
+        <a href="/news_en/human-content-vs-ai-2026/">
+          Why Brands Will Lose Without Human Content in the Age of AI
+        </a>
+      </h3>
+      <p>
+        In 2026, AI can generate content at scale — but only human storytelling builds trust, engagement, and long-term brand growth.
+      </p>
+    </article>
+
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p>© 2025 Viva Media Creative — All rights reserved.</p>
+    <p>© 2026 Viva Media Creative. All rights reserved.</p>
     <p class="small">
-      Growth Strategy & Digital Marketing —
+      Digital design &amp; production — Contact:
       <a href="mailto:vivamediacreations@gmail.com">vivamediacreations@gmail.com</a>
     </p>
+    <div class="lang-switcher" style="margin-top:10px; font-size:14px;">
+      🌐 <a href="/news/">العربية</a> | <a href="/news_en/" aria-current="page">English</a>
+    </div>
   </div>
 </footer>
 
+<!-- Scripts: hamburger (same behavior as /en/) -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('main-nav');
+
+  if (hamburger && nav) {
+    hamburger.addEventListener('click', () => nav.classList.toggle('active'));
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('active'));
+    });
+  }
+});
+</script>
+
 </body>
 </html>
-
