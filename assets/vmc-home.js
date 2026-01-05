@@ -62,16 +62,17 @@ const dict = {
     nav_trusted: "عملاؤنا",
     nav_contact: "تواصل",
 
-    hero_kicker: "وكالة متخصصة في صناعة الترند • إدارة المشاهير • تحويل الشهرة إلى دخل",
-    hero_title_1: "نحوّل شهرتك الرقمية",
-    hero_title_2: "إلى تأثير يصنع ترند… ويبيع باستمرار",
+    hero_kicker: "Creative agency for trend-making • celebrity management • turning fame into revenue",
+    hero_micro: "We engineer influence — not noise.",
+    hero_title_1: "We turn your digital fame",
+    hero_title_2: "into influence that drives trends — and sells repeatedly",
     hero_sub:
-      "نعمل مع مشاهير، صُنّاع محتوى، وصفحات كبرى لنقلك من “الانتشار” إلى “القيمة”. استراتيجية + تنفيذ + توزيع + قياس — ليصبح محتواك مصدر رعايات ومبيعات ونفوذ حقيقي.",
-    hero_cta_primary: "ابدأ طريق الترند",
-    hero_cta_secondary: "شاهد كيف نعمل",
-    meta_1: "متابعون نؤثر عليهم",
-    meta_2: "سنوات صناعة ترند",
-    meta_3: "شبكة تأثير",
+      "We work with celebrities, creators, and large pages to move you from reach to real value. Strategy + execution + distribution + measurement — built to generate deals, revenue, and influence.",
+    hero_cta_primary: "Start Your Growth",
+    hero_cta_secondary: "See How We Work",
+    meta_1: "Engaged followers",
+    meta_2: "Years of trend-making",
+    meta_3: "Influence network",
 
     services_cap: "Services",
     services_title: "خدماتنا",
@@ -135,7 +136,6 @@ const dict = {
       "أرسل حسابك وهدفك—وسنقترح مسارًا واضحًا لصناعة ترند، نمو مستمر، ثم دخل ومبيعات قابلة للقياس.",
     final_cta: "اطلب استشارة الآن",
   },
-
   en: {
     nav_services: "Services",
     nav_tenets: "Principles",
@@ -143,6 +143,7 @@ const dict = {
     nav_contact: "Contact",
 
     hero_kicker: "Trend-making agency • Celebrity management • Monetization & growth",
+    hero_micro: "We engineer influence — not noise.",
     hero_title_1: "We turn digital fame",
     hero_title_2: "into trends that sell — repeatedly",
     hero_sub:
@@ -325,23 +326,16 @@ if (viewport) {
 
   // wheel -> horizontal
   viewport.addEventListener(
-  "wheel",
-  (e) => {
-    // allow trackpads to scroll naturally; only intercept vertical intent
-    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-      e.preventDefault();
-      document.body.classList.add("pause-hero-anim");
-      viewport.scrollLeft += e.deltaY;
-
-      clearTimeout(window.__heroWheelT);
-      window.__heroWheelT = setTimeout(() => {
-        document.body.classList.remove("pause-hero-anim");
-      }, 120);
-    }
-  },
-  { passive: false }
-);
-
+    "wheel",
+    (e) => {
+      // allow trackpads to scroll naturally; only intercept vertical intent
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        viewport.scrollLeft += e.deltaY;
+      }
+    },
+    { passive: false }
+  );
 
   // keyboard
   viewport.addEventListener("keydown", (e) => {
@@ -353,59 +347,38 @@ if (viewport) {
     }
   });
 
-  // drag to scroll (optimized: rAF + pause hero anims while dragging)
-let isDown = false;
-let startX = 0;
-let startLeft = 0;
+  // drag to scroll
+  let isDown = false;
+  let startX = 0;
+  let startLeft = 0;
 
-let dragRaf = 0;
-let lastClientX = 0;
+  viewport.addEventListener("pointerdown", (e) => {
+    isDown = true;
+    viewport.classList.add("is-dragging");
+    startX = e.clientX;
+    startLeft = viewport.scrollLeft;
+    viewport.setPointerCapture?.(e.pointerId);
+  });
 
-function setHeroPaused(v) {
-  document.body.classList.toggle("pause-hero-anim", v);
-}
-
-viewport.addEventListener("pointerdown", (e) => {
-  isDown = true;
-  viewport.classList.add("is-dragging");
-  startX = e.clientX;
-  lastClientX = e.clientX;
-  startLeft = viewport.scrollLeft;
-
-  setHeroPaused(true); // pause hero while interacting
-  viewport.setPointerCapture?.(e.pointerId);
-});
-
-viewport.addEventListener("pointermove", (e) => {
-  if (!isDown) return;
-  lastClientX = e.clientX;
-
-  if (dragRaf) return;
-  dragRaf = requestAnimationFrame(() => {
-    dragRaf = 0;
-    const dx = lastClientX - startX;
+  viewport.addEventListener("pointermove", (e) => {
+    if (!isDown) return;
+    const dx = e.clientX - startX;
     viewport.scrollLeft = startLeft - dx;
   });
-});
 
-function endDrag() {
-  if (!isDown) return;
-  isDown = false;
-  viewport.classList.remove("is-dragging");
+  function endDrag() {
+    if (!isDown) return;
+    isDown = false;
+    viewport.classList.remove("is-dragging");
 
-  if (dragRaf) cancelAnimationFrame(dragRaf);
-  dragRaf = 0;
+    // snap to nearest slide
+    const idx = getIndexFromScroll();
+    scrollToIndex(idx);
+  }
 
-  setHeroPaused(false); // resume hero
-
-  // snap to nearest slide
-  const idx = getIndexFromScroll();
-  scrollToIndex(idx);
-}
-
-viewport.addEventListener("pointerup", endDrag);
-viewport.addEventListener("pointercancel", endDrag);
-viewport.addEventListener("pointerleave", endDrag);
+  viewport.addEventListener("pointerup", endDrag);
+  viewport.addEventListener("pointercancel", endDrag);
+  viewport.addEventListener("pointerleave", endDrag);
 }
 
 // arrows
