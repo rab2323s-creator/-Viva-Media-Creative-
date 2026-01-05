@@ -1105,4 +1105,34 @@ body.pause-hero-anim .halo{
 @media (prefers-reduced-motion: reduce){
   .orbitLabels{ animation: none !important; }
 }
+/* =========================
+   Fix: remove "boxed" look of hero scene on mobile
+   (blend scene into hero background)
+========================= */
+
+/* 1) Fade the scene overlays so edges disappear (all sizes) */
+.heroScene::before,
+.heroScene::after{
+  /* يخفي حواف المستطيل بدون قصّ */
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 52%, transparent 78%);
+  mask-image: radial-gradient(circle at 50% 50%, #000 52%, transparent 78%);
+}
+
+/* 2) On mobile: make it even softer / no rectangle feel */
+@media (max-width: 980px){
+  .heroScene{
+    border-radius: 0;          /* لا شكل بطاقة */
+    aspect-ratio: 1 / 1;       /* كرة أوضح داخل مربع الشاشة */
+  }
+
+  .heroScene::before{
+    inset: -18px;              /* تمديد للتموج خارج الحواف */
+    filter: saturate(1.05);
+    opacity: .85;
+  }
+
+  .heroScene::after{
+    opacity: .55;              /* تخفيف التعتيم الذي يبرز الحواف */
+  }
+}
 
