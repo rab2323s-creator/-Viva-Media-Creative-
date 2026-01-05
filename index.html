@@ -51,7 +51,10 @@
       <div class="heroLayout">
         <!-- HERO SCENE (Creative Engine) -->
         <div class="heroScene reveal" aria-hidden="true">
-<svg class="engine" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+          <div class="heroScene__label l1">CREATIVE MODE: ACTIVE</div>
+          <div class="heroScene__label l2">TREND ENGINE RUNNING</div>
+
+          <svg class="engine" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
             <defs>
               <radialGradient id="orbGlow" cx="35%" cy="30%" r="70%">
                 <stop offset="0%" stop-color="rgba(245,208,122,.55)"/>
@@ -78,8 +81,8 @@
               <path id="ringPath" d="M 400 260 m -180 0 a 180 180 0 1 1 360 0 a 180 180 0 1 1 -360 0"/>
             </defs>
 
-            <!-- soft field -->
-            <rect x="0" y="0" width="800" height="520" fill="url(#orbGlow)" opacity=".55"/>
+            <!-- soft field (no square) -->
+            <circle cx="400" cy="260" r="300" fill="url(#orbGlow)" opacity=".40"/>
 
             
             <!-- ORBITS (3 levels) -->
@@ -94,28 +97,16 @@
                 </text>
               </g>
 
-              <!-- Orbit 2 (Arabic labels, kept upright for readability) -->
+              <!-- Orbit 2 (English labels, upright + orbiting) -->
               <g class="orbit orbit--2">
-                <circle cx="400" cy="260" r="210" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                <circle cx="400" cy="260" r="210" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
                 <g class="orbitLabels" aria-hidden="true">
-  <g class="lbl" style="--a:-60deg;"><text x="400" y="260">INFLUENCE</text></g>
-  <g class="lbl" style="--a:-25deg;"><text x="400" y="260">VALUE</text></g>
-  <g class="lbl" style="--a:10deg;"><text x="400" y="260">DECISION</text></g>
-  <g class="lbl" style="--a:45deg;"><text x="400" y="260">TREND</text></g>
-  <g class="lbl" style="--a:80deg;"><text x="400" y="260">GROWTH</text></g>
-  <g class="lbl" style="--a:115deg;"><text x="400" y="260">SALES</text></g>
-  <g class="lbl" style="--a:150deg;"><text x="400" y="260">REACH</text></g>
-  <g class="lbl" style="--a:185deg;"><text x="400" y="260">AUTHORITY</text></g>
-  <g class="lbl" style="--a:220deg;"><text x="400" y="260">VIRAL</text></g>
-  <g class="lbl" style="--a:255deg;"><text x="400" y="260">MONETIZE</text></g>
-  <g class="lbl" style="--a:290deg;"><text x="400" y="260">STRATEGY</text></g>
-  <g class="lbl" style="--a:325deg;"><text x="400" y="260">STUDIO</text></g>
-</g>
-<g class="lbl" style="--a:-20deg;--ai:20deg"><text x="400" y="260">ترند</text></g>
-                <g class="lbl" style="--a:20deg;--ai:-20deg"><text x="400" y="260">نمو</text></g>
-                <g class="lbl" style="--a:60deg;--ai:-60deg"><text x="400" y="260">قيمة</text></g>
-                <g class="lbl" style="--a:110deg;--ai:-110deg"><text x="400" y="260">ثقة</text></g>
-                <g class="lbl" style="--a:160deg;--ai:-160deg"><text x="400" y="260">مبيعات</text></g>
+                  <g class="lbl" style="--a:-60deg;--ai:60deg"><text x="400" y="260">IMPACT</text></g>
+                  <g class="lbl" style="--a:-20deg;--ai:20deg"><text x="400" y="260">TRUST</text></g>
+                  <g class="lbl" style="--a:20deg;--ai:-20deg"><text x="400" y="260">BRAND</text></g>
+                  <g class="lbl" style="--a:60deg;--ai:-60deg"><text x="400" y="260">STORY</text></g>
+                  <g class="lbl" style="--a:110deg;--ai:-110deg"><text x="400" y="260">STRATEGY</text></g>
+                  <g class="lbl" style="--a:160deg;--ai:-160deg"><text x="400" y="260">REVENUE</text></g>
                 </g>
               </g>
 
@@ -173,13 +164,13 @@
           </div>
         </div>
 
-
-        <p class="heroMicro reveal">We engineer influence — not noise.</p>
         <!-- HERO COPY -->
         <div class="heroCopy">
 <p class="kicker reveal" data-i18n="hero_kicker">
           وكالة متخصصة في صناعة الترند • إدارة المشاهير • تحويل الشهرة إلى دخل
         </p>
+
+        <p class="micro reveal" data-i18n="hero_micro">We engineer influence — not noise.</p>
 
         <h1 class="heroTitle2 reveal">
           <span data-i18n="hero_title_1">نحوّل شهرتك الرقمية</span><br/>
