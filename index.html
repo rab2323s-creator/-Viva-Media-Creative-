@@ -81,8 +81,8 @@
               <path id="ringPath" d="M 400 260 m -180 0 a 180 180 0 1 1 360 0 a 180 180 0 1 1 -360 0"/>
             </defs>
 
-            <!-- soft field -->
-            <rect x="0" y="0" width="800" height="520" fill="url(#orbGlow)" opacity=".55"/>
+            <!-- soft field (no square) -->
+            <circle cx="400" cy="260" r="300" fill="url(#orbGlow)" opacity=".40"/>
 
             
             <!-- ORBITS (3 levels) -->
@@ -97,16 +97,16 @@
                 </text>
               </g>
 
-              <!-- Orbit 2 (Arabic labels, kept upright for readability) -->
+              <!-- Orbit 2 (English labels, upright + orbiting) -->
               <g class="orbit orbit--2">
-                <circle cx="400" cy="260" r="210" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                <circle cx="400" cy="260" r="210" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
                 <g class="orbitLabels" aria-hidden="true">
-                <g class="lbl" style="--a:-60deg;--ai:60deg"><text x="400" y="260">تأثير</text></g>
-                <g class="lbl" style="--a:-20deg;--ai:20deg"><text x="400" y="260">ترند</text></g>
-                <g class="lbl" style="--a:20deg;--ai:-20deg"><text x="400" y="260">نمو</text></g>
-                <g class="lbl" style="--a:60deg;--ai:-60deg"><text x="400" y="260">قيمة</text></g>
-                <g class="lbl" style="--a:110deg;--ai:-110deg"><text x="400" y="260">ثقة</text></g>
-                <g class="lbl" style="--a:160deg;--ai:-160deg"><text x="400" y="260">مبيعات</text></g>
+                  <g class="lbl" style="--a:-60deg;--ai:60deg"><text x="400" y="260">IMPACT</text></g>
+                  <g class="lbl" style="--a:-20deg;--ai:20deg"><text x="400" y="260">TRUST</text></g>
+                  <g class="lbl" style="--a:20deg;--ai:-20deg"><text x="400" y="260">BRAND</text></g>
+                  <g class="lbl" style="--a:60deg;--ai:-60deg"><text x="400" y="260">STORY</text></g>
+                  <g class="lbl" style="--a:110deg;--ai:-110deg"><text x="400" y="260">STRATEGY</text></g>
+                  <g class="lbl" style="--a:160deg;--ai:-160deg"><text x="400" y="260">REVENUE</text></g>
                 </g>
               </g>
 
@@ -169,6 +169,8 @@
 <p class="kicker reveal" data-i18n="hero_kicker">
           وكالة متخصصة في صناعة الترند • إدارة المشاهير • تحويل الشهرة إلى دخل
         </p>
+
+        <p class="micro reveal" data-i18n="hero_micro">We engineer influence — not noise.</p>
 
         <h1 class="heroTitle2 reveal">
           <span data-i18n="hero_title_1">نحوّل شهرتك الرقمية</span><br/>
