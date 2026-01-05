@@ -62,16 +62,17 @@ const dict = {
     nav_trusted: "عملاؤنا",
     nav_contact: "تواصل",
 
-    hero_kicker: "وكالة متخصصة في صناعة الترند • إدارة المشاهير • تحويل الشهرة إلى دخل",
-    hero_title_1: "نحوّل شهرتك الرقمية",
-    hero_title_2: "إلى تأثير يصنع ترند… ويبيع باستمرار",
+    hero_kicker: "Creative agency for trend-making • celebrity management • turning fame into revenue",
+    hero_micro: "We engineer influence — not noise.",
+    hero_title_1: "We turn your digital fame",
+    hero_title_2: "into influence that drives trends — and sells repeatedly",
     hero_sub:
-      "نعمل مع مشاهير، صُنّاع محتوى، وصفحات كبرى لنقلك من “الانتشار” إلى “القيمة”. استراتيجية + تنفيذ + توزيع + قياس — ليصبح محتواك مصدر رعايات ومبيعات ونفوذ حقيقي.",
-    hero_cta_primary: "ابدأ طريق الترند",
-    hero_cta_secondary: "شاهد كيف نعمل",
-    meta_1: "متابعون نؤثر عليهم",
-    meta_2: "سنوات صناعة ترند",
-    meta_3: "شبكة تأثير",
+      "We work with celebrities, creators, and large pages to move you from reach to real value. Strategy + execution + distribution + measurement — built to generate deals, revenue, and influence.",
+    hero_cta_primary: "Start Your Growth",
+    hero_cta_secondary: "See How We Work",
+    meta_1: "Engaged followers",
+    meta_2: "Years of trend-making",
+    meta_3: "Influence network",
 
     services_cap: "Services",
     services_title: "خدماتنا",
@@ -135,7 +136,6 @@ const dict = {
       "أرسل حسابك وهدفك—وسنقترح مسارًا واضحًا لصناعة ترند، نمو مستمر، ثم دخل ومبيعات قابلة للقياس.",
     final_cta: "اطلب استشارة الآن",
   },
-
   en: {
     nav_services: "Services",
     nav_tenets: "Principles",
@@ -143,6 +143,7 @@ const dict = {
     nav_contact: "Contact",
 
     hero_kicker: "Trend-making agency • Celebrity management • Monetization & growth",
+    hero_micro: "We engineer influence — not noise.",
     hero_title_1: "We turn digital fame",
     hero_title_2: "into trends that sell — repeatedly",
     hero_sub:
