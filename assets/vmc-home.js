@@ -1,4 +1,4 @@
-  /* =========================
+   /* =========================
    VMC HOME (Slider Services C)
 ========================= */
 
@@ -62,12 +62,12 @@ const dict = {
     nav_trusted: "عملاؤنا",
     nav_contact: "تواصل",
 
-    hero_kicker: "Creative agency for trend-making • celebrity management • turning fame into revenue",
+    hero_kicker: "وكالة تسويق عبر المؤثرين • ربط المشاهير بالعلامات التجارية • تحويل التأثير إلى مبيعات قابلة للقياس",
     hero_micro: "We engineer influence — not noise.",
-    hero_title_1: "We turn your digital fame",
-    hero_title_2: "into influence that drives trends — and sells repeatedly",
+    hero_title_1: "نحوّل شهرتك الرقمية",
+    hero_title_2: "إلى تأثير يصنع ترند… ويبيع باستمرار",
     hero_sub:
-      "We work with celebrities, creators, and large pages to move you from reach to real value. Strategy + execution + distribution + measurement — built to generate deals, revenue, and influence.",
+      "نعمل مع مشاهير وصُنّاع محتوى وعلامات تجارية لربط “الانتشار” بـ “الربح”. استراتيجية + تنفيذ + توزيع + قياس — لتصبح شهرتك مصدر شراكات مدفوعة، مبيعات، ونفوذ حقيقي.",
     hero_cta_primary: "Start Your Growth",
     hero_cta_secondary: "See How We Work",
     meta_1: "Engaged followers",
@@ -77,41 +77,41 @@ const dict = {
     services_cap: "Services",
     services_title: "خدماتنا",
     services_desc:
-      "نحن لا نبدأ بالكاميرا… نبدأ بالترند، ثم النمو، ثم البيع — وبعدها يأتي الإنتاج كأداة تنفيذ تخدم النتائج.",
+      "نبدأ من الهدف التجاري: ربط المشاهير بالعلامات التجارية، صناعة ترند، ثم تحويله إلى مبيعات — والإنتاج يأتي كأداة تنفيذ تخدم النتائج.",
     services_hint: "اسحب ← → أو استخدم عجلة الماوس",
     contact_us: "تواصل معنا",
 
     // Slide 1
-    s1_title: "صناعة الترند والنمو السريع",
+    s1_title: "إدارة وربط المشاهير بالعلامات التجارية",
     s1_desc:
-      "نحلّل حسابك، جمهورك، ومنصّتك—ثم نبني استراتيجية تجعل اسمك حاضرًا، متداولًا، ومطلوبًا باستمرار. هوك + زوايا + توقيت + توزيع… لنمو واضح وليس عشوائي.",
-    s1_b1: "• أفكار ترند أسبوعية",
-    s1_b2: "• تحليل خوارزميات",
-    s1_b3: "• خطة نمو قابلة للقياس",
+      "نربط المشاهير وصُنّاع المحتوى بعلامات تجارية مناسبة عبر عقود واضحة — ونحوّل التأثير إلى حملات مدفوعة ونتائج قابلة للقياس (مبيعات / Leads / زيارات).",
+    s1_b1: "• التسويق عبر المؤثرين (Influencer Marketing)",
+    s1_b2: "• ربط المشاهير بالعلامات التجارية",
+    s1_b3: "• تقارير أداء وقياس ROI",
 
     // Slide 2
-    s2_title: "إدارة المشاهير والبراند الشخصي",
+    s2_title: "إدارة حسابات المشاهير وصنّاع المحتوى",
     s2_desc:
-      "ندير حسابك كعلامة تجارية: تقويم محتوى، هوية رقمية، ظهور ذكي، وتعاونات مدفوعة بعقود واضحة— لتكبر بثبات بدون حرق صورتك أو فقدان مصداقيتك.",
-    s2_b1: "• تقويم محتوى شهري",
-    s2_b2: "• بناء هوية قوية",
-    s2_b3: "• إدارة رعايات وشراكات",
+      "ندير حسابك كعلامة تجارية: تقويم شهري، تنظيم الهوية الرقمية، إدارة النشر، وتحسين الأداء — لتكبر بثبات بدون حرق صورة أو فقدان مصداقية.",
+    s2_b1: "• إدارة حسابات إنستغرام للمشاهير",
+    s2_b2: "• إدارة حسابات مؤثرين",
+    s2_b3: "• نمو + تفاعل + ثقة",
 
     // Slide 3
-    s3_title: "تحويل الشهرة إلى دخل ومبيعات",
+    s3_title: "صناعة المحتوى والترندات على السوشيال ميديا",
     s3_desc:
-      "نربط الانتشار بالربح: رعايات، عروض، حملات، وFunnel واضح—مع تتبّع وقياس لتحسين النتائج. لا “أرقام فارغة”… بل دخل يتصاعد وطلبات تزيد.",
-    s3_b1: "• عروض ورعايات مدروسة",
-    s3_b2: "• Funnel وتسويق بالأداء",
-    s3_b3: "• تقارير وقياس نتائج",
+      "نصنع ترند بذكاء: زوايا قوية + هوك + توقيت + توزيع. الهدف ليس مشاهدات فقط — بل حضور متكرر يضاعف الوصول ويجذب طلبات حقيقية.",
+    s3_b1: "• كيف تصنع ترند",
+    s3_b2: "• أفكار فيديوهات ترند",
+    s3_b3: "• Viral video strategy",
 
     // Slide 4
-    s4_title: "إنتاج فيديوهات وإعلانات (Premium)",
+    s4_title: "كتابة النصوص الإعلانية وسيناريوهات الفيديو",
     s4_desc:
-      "هنا يأتي التنفيذ الذي يخدم الاستراتيجية: كتابة سكريبت، تصوير/Remote Production، مونتاج فاخر، Shorts/Reels، وإعلانات جاهزة للنشر—بإيقاع يجعل الجمهور يكمل، يتفاعل، ويشارك.",
-    s4_b1: "• سكريبت + هوك قوي",
-    s4_b2: "• مونتاج يخدم المشاهدة",
-    s4_b3: "• فيديوهات ترند وريلز",
+      "سكريبتات “تبيع”: هوك أول 3 ثواني، بناء قصة، CTA ذكي، ورسالة تناسب جمهورك. تُربط دائمًا بالإعلانات والترند والربح — لأن النص هو الذي يحرك القرار.",
+    s4_b1: "• كتابة سكريبت فيديو",
+    s4_b2: "• كتابة نص إعلاني",
+    s4_b3: "• Copywriting عربي",
 
     tenets_title: "مبادئنا",
     tenets_desc: "الشهرة وحدها لا تكفي… نحن نصنع قرارًا ذكيًا خلف كل ظهور: ترند + استمرارية + دخل.",
@@ -135,6 +135,12 @@ const dict = {
     final_desc:
       "أرسل حسابك وهدفك—وسنقترح مسارًا واضحًا لصناعة ترند، نمو مستمر، ثم دخل ومبيعات قابلة للقياس.",
     final_cta: "اطلب استشارة الآن",
+    service_details: "تفاصيل الخدمة",
+    s5_title: "التسويق للمواقع والمتاجر الإلكترونية (SEO & Growth)",
+    s5_desc: "نحول الموقع/المتجر إلى ماكينة نمو: SEO + محتوى + صفحات هبوط + Funnels + تحسين تحويل. مناسب لعلامات تجارية تريد مبيعات أعلى مع قابلية قياس واضحة.",
+    s5_b1: "• تحسين محركات البحث SEO",
+    s5_b2: "• تسويق المتاجر الإلكترونية",
+    s5_b3: "• زيادة المبيعات",
   },
   en: {
     nav_services: "Services",
@@ -142,12 +148,12 @@ const dict = {
     nav_trusted: "Clients",
     nav_contact: "Contact",
 
-    hero_kicker: "Trend-making agency • Celebrity management • Monetization & growth",
+    hero_kicker: "Influencer marketing agency • Celebrity & creator management • Partnerships that drive measurable sales",
     hero_micro: "We engineer influence — not noise.",
-    hero_title_1: "We turn digital fame",
-    hero_title_2: "into trends that sell — repeatedly",
+    hero_title_1: "We turn your digital fame",
+    hero_title_2: "into influence that drives trends — and sells repeatedly",
     hero_sub:
-      "We work with celebrities, creators, and large pages to move you from reach to real value. Strategy, execution, distribution, and measurement — built to generate deals, revenue, and influence.",
+      "We connect celebrities and creators with brands through clear deals and measurable outcomes. Strategy + execution + distribution + measurement — built to generate partnerships, sales, and real authority.",
     hero_cta_primary: "Start Your Growth",
     hero_cta_secondary: "See How We Work",
     meta_1: "Engaged followers",
@@ -157,41 +163,41 @@ const dict = {
     services_cap: "Services",
     services_title: "What We Do",
     services_desc:
-      "We don’t start with the camera. We start with trends, then growth, then monetization — production comes last to serve results.",
+      "We start with business intent: brand–creator partnerships, trend strategy, then conversion to sales — production comes last to serve results.",
     services_hint: "Drag ← → or scroll",
     contact_us: "Contact us",
 
     // Slide 1
-    s1_title: "Trend Creation & Rapid Growth",
+    s1_title: "Influencer Marketing & Brand Partnerships",
     s1_desc:
-      "We analyze your account, audience, and platform — then build a system that keeps your name visible, talked about, and in demand. Hooks, angles, timing, and distribution for real growth.",
-    s1_b1: "• Weekly trend ideas",
-    s1_b2: "• Algorithm analysis",
-    s1_b3: "• Measurable growth plan",
+      "We match celebrities and creators with the right brands through clear contracts — turning influence into paid campaigns with measurable results (sales / leads / traffic).",
+    s1_b1: "• Influencer marketing strategy",
+    s1_b2: "• Brand–creator matchmaking",
+    s1_b3: "• ROI tracking & reporting",
 
     // Slide 2
-    s2_title: "Celebrity & Personal Brand Management",
+    s2_title: "Celebrity & Creator Account Management",
     s2_desc:
-      "We manage your presence as a brand: content calendars, digital identity, smart positioning, and paid collaborations — scaling without damaging credibility.",
-    s2_b1: "• Monthly content planning",
-    s2_b2: "• Strong brand identity",
-    s2_b3: "• Deals & sponsorship management",
+      "We run your account like a business: monthly planning, brand identity, publishing ops, and performance optimization — growth without harming credibility.",
+    s2_b1: "• Instagram management for influencers",
+    s2_b2: "• Creator account operations",
+    s2_b3: "• Growth + engagement + trust",
 
     // Slide 3
-    s3_title: "Turning Fame into Revenue",
+    s3_title: "Viral Content & Trend Strategy",
     s3_desc:
-      "We connect reach to income: sponsorships, offers, campaigns, and performance funnels — tracked, optimized, and scaled. No vanity metrics. Real revenue.",
-    s3_b1: "• Strategic sponsorships",
-    s3_b2: "• Funnels & performance marketing",
-    s3_b3: "• Revenue tracking & reports",
+      "Trend creation done smart: strong angles, hooks, timing, and distribution. Not just views — consistent demand and real inquiries.",
+    s3_b1: "• How to create trends",
+    s3_b2: "• Viral video ideas",
+    s3_b3: "• Viral strategy system",
 
     // Slide 4
-    s4_title: "Premium Video & Ad Production",
+    s4_title: "Ad Copywriting & Video Scripts",
     s4_desc:
-      "Execution that serves strategy: scripting, filming or remote production, premium editing, shorts and reels — designed to retain attention, drive engagement, and convert.",
-    s4_b1: "• Scripts & strong hooks",
-    s4_b2: "• Retention-focused editing",
-    s4_b3: "• Trend-driven videos",
+      "Scripts that sell: first-3-seconds hook, story structure, sharp CTA, and platform-native messaging — tied directly to ads, trends, and revenue.",
+    s4_b1: "• Video scripts",
+    s4_b2: "• Ad copy",
+    s4_b3: "• Arabic & English copywriting",
 
     tenets_title: "Our Principles",
     tenets_desc:
@@ -216,6 +222,12 @@ const dict = {
     final_desc:
       "Send us your account and goal — we’ll map a clear path to trends, consistent growth, and monetization.",
     final_cta: "Request a Strategy Call",
+    service_details: "View service",
+    s5_title: "SEO & Growth for Websites & E-commerce",
+    s5_desc: "Turn your website/store into a growth engine: SEO, content, landing pages, funnels, and conversion optimization — built for measurable sales.",
+    s5_b1: "• Technical & content SEO",
+    s5_b2: "• E-commerce growth",
+    s5_b3: "• Conversion optimization",
   },
 };
 
@@ -269,7 +281,25 @@ langBtn?.addEventListener("click", () => {
 ========================= */
 const viewport = document.getElementById("servicesViewport");
 const bar = document.getElementById("servicesBar");
-const dots = Array.from(document.querySelectorAll(".dot2"));
+const slides = viewport ? Array.from(viewport.querySelectorAll(".slide")) : [];
+const dotsWrap = document.getElementById("servicesDots");
+let dots = Array.from(document.querySelectorAll(".dot2"));
+
+function buildServicesDots() {
+  if (!viewport) return;
+  if (!dotsWrap || !slides.length) return;
+  dotsWrap.innerHTML = slides
+    .map((_, i) => `<span class="dot2 ${i === 0 ? "is-active" : ""}" data-i="${i}"></span>`)
+    .join("");
+  dots = Array.from(dotsWrap.querySelectorAll(".dot2"));
+  dotsWrap.addEventListener("click", (e) => {
+    const dot = e.target.closest(".dot2");
+    if (!dot) return;
+    const i = Number(dot.dataset.i);
+    scrollToIndex(clamp(i, 0, Math.max(0, slides.length - 1)));
+  });
+}
+
 const prevBtn = document.getElementById("prevSlide");
 const nextBtn = document.getElementById("nextSlide");
 
@@ -286,7 +316,7 @@ function getIndexFromScroll() {
   if (!viewport) return 0;
   const w = getSlideWidth();
   if (!w) return 0;
-  return clamp(Math.round(viewport.scrollLeft / w), 0, 3);
+  return clamp(Math.round(viewport.scrollLeft / w), 0, Math.max(0, slides.length - 1));
 }
 
 function scrollToIndex(idx) {
@@ -304,12 +334,16 @@ function updateServicesUI() {
 
   // progress bar
   if (bar) {
-    const pct = ((idx + 1) / 4) * 100;
+    const total = Math.max(1, slides.length || 1);
+    const pct = ((idx + 1) / total) * 100;
     bar.style.width = `${pct}%`;
   }
 }
 
 if (viewport) {
+  // build dots (dynamic)
+  buildServicesDots();
+
   // initial
   updateServicesUI();
 
@@ -343,7 +377,7 @@ if (viewport) {
       e.preventDefault();
       const dir = e.key === "ArrowRight" ? 1 : -1;
       const idx = getIndexFromScroll();
-      scrollToIndex(clamp(idx + dir, 0, 3));
+      scrollToIndex(clamp(idx + dir, 0, Math.max(0, slides.length - 1)));
     }
   });
 
@@ -384,11 +418,11 @@ if (viewport) {
 // arrows
 prevBtn?.addEventListener("click", () => {
   const idx = getIndexFromScroll();
-  scrollToIndex(clamp(idx - 1, 0, 3));
+  scrollToIndex(clamp(idx - 1, 0, Math.max(0, slides.length - 1)));
 });
 nextBtn?.addEventListener("click", () => {
   const idx = getIndexFromScroll();
-  scrollToIndex(clamp(idx + 1, 0, 3));
+  scrollToIndex(clamp(idx + 1, 0, Math.max(0, slides.length - 1)));
 });
 
 // on resize keep correct snap
@@ -398,5 +432,6 @@ window.addEventListener("resize", () => {
   viewport.scrollLeft = idx * getSlideWidth();
   updateServicesUI();
 });
+
 
 
