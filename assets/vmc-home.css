@@ -1,4 +1,4 @@
- :root{
+  :root{
   --bg:#06070a;
   --fg:#eef1f6;
   --muted: rgba(238,241,246,.72);
@@ -257,6 +257,29 @@ a{color:inherit; text-decoration:none}
   color: rgba(245,208,122,.85);
 }
 .desc{margin:0; color: rgba(238,241,246,.62); line-height:1.8}
+
+/* =============== SEO Services (Static Text Section) =============== */
+.services-seo h2{
+  margin: 0 0 10px;
+  font-size: 28px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.services-seo p{
+  margin: 0 0 14px;
+  color: rgba(238,241,246,.62);
+  line-height: 1.8;
+  max-width: 80ch;
+}
+.services-seo ul{
+  margin: 0;
+  padding-inline-start: 18px;
+  color: rgba(238,241,246,.62);
+  line-height: 1.9;
+}
+.services-seo li{ margin: 6px 0; }
 
 .service-list{display:flex; flex-direction:column; gap:16px;}
 .service{
@@ -1041,4 +1064,17 @@ a{color:inherit; text-decoration:none}
   transform: rotate(var(--a)) translate(0,-210px) rotate(var(--ai));
 }
 @keyframes orbitSpin{ from{ transform: rotate(0deg);} to{ transform: rotate(360deg);} }
+
+/* =============== SEO helpers =============== */
+.sr-only{
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  padding:0 !important;
+  margin:-1px !important;
+  overflow:hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space:nowrap !important;
+  border:0 !important;
+}
 
