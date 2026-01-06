@@ -81,6 +81,16 @@ const dict = {
     services_hint: "اسحب ← → أو استخدم عجلة الماوس",
     contact_us: "تواصل معنا",
 
+    services_seo_title: "خدمات إدارة المشاهير والتسويق عبر المؤثرين",
+    services_seo_desc:
+      "تقدم Viva Media Creative خدمات متخصصة في إدارة حسابات المشاهير، ربط المؤثرين بالعلامات التجارية، صناعة الترند، وكتابة النصوص الإعلانية التي تحول المشاهدات إلى دخل حقيقي — مع تركيز على الخليج ومصر والعالم العربي.",
+    services_seo_li1: "إدارة وربط المشاهير بالعلامات التجارية (Influencer Marketing)",
+    services_seo_li2: "إدارة حسابات المشاهير وصنّاع المحتوى",
+    services_seo_li3: "صناعة المحتوى والترندات على السوشيال ميديا",
+    services_seo_li4: "كتابة السكريبتات والنصوص الإعلانية (Copywriting)",
+    services_seo_li5: "التسويق للمواقع والمتاجر الإلكترونية (SEO & Growth)",
+
+
     // Slide 1
     s1_title: "إدارة وربط المشاهير بالعلامات التجارية",
     s1_desc:
@@ -166,6 +176,16 @@ const dict = {
       "We start with business intent: brand–creator partnerships, trend strategy, then conversion to sales — production comes last to serve results.",
     services_hint: "Drag ← → or scroll",
     contact_us: "Contact us",
+
+    services_seo_title: "Celebrity Management & Influencer Marketing Services",
+    services_seo_desc:
+      "Viva Media Creative delivers influencer marketing, celebrity account management, viral content strategy, conversion copywriting, and SEO growth — focused on the Gulf, Egypt, and the Arab world.",
+    services_seo_li1: "Influencer marketing & brand partnerships",
+    services_seo_li2: "Celebrity & creator account management",
+    services_seo_li3: "Viral content & trend strategy",
+    services_seo_li4: "Copywriting & video scripts that convert",
+    services_seo_li5: "SEO & growth for websites and e-commerce",
+
 
     // Slide 1
     s1_title: "Influencer Marketing & Brand Partnerships",
