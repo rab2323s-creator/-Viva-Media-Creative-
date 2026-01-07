@@ -3,18 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Viva Media Creative — إنتاج المحتوى المرئي، دعم صناع المحتوى وإدارة حسابات المشاهير</title>
-  <meta name="description" content="Viva Media Creative — إنتاج الفيديوهات والإعلانات، دعم صناع المحتوى، إدارة حسابات المشاهير، التسويق الرقمي، والإبداع في إنتاج المحتوى.">
 
-  <!-- ✅ FIX: كان عندك <<link وهذا خطأ -->
+  <title>مركز المعرفة | Viva Media Creative — مقالات وأدوات للتسويق بالمؤثرين وصناعة المحتوى</title>
+  <meta name="description" content="مركز المعرفة في Viva Media Creative: مقالات، أدوات، وقوالب عملية في التسويق عبر المؤثرين، صناعة الترند، إدارة حسابات صناع المحتوى، وSEO للنمو. تعلّم ثم انتقل لخدماتنا الرئيسية." />
+
+  <!-- Canonical -->
   <link rel="canonical" href="https://vivamediacreative.com/ar/" />
+
+  <!-- Hreflang (AR/EN hubs) -->
   <link rel="alternate" hreflang="ar" href="https://vivamediacreative.com/ar/" />
   <link rel="alternate" hreflang="en" href="https://vivamediacreative.com/en/" />
-  <link rel="alternate" hreflang="x-default" href="https://vivamediacreative.com/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://vivamediacreative.com/" />
 
-  <!-- اتركه كما هو لو عندك اعتمادات عليه في صفحات ثانية -->
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:title" content="مركز المعرفة | Viva Media Creative">
+  <meta property="og:description" content="مقالات وأدوات عملية في التسويق بالمؤثرين وصناعة المحتوى والترند وSEO — ثم انتقل لخدماتنا الرئيسية.">
+  <meta property="og:url" content="https://vivamediacreative.com/ar/">
+  <meta property="og:image" content="https://vivamediacreative.com/assets/hero.webp">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="مركز المعرفة | Viva Media Creative">
+  <meta name="twitter:description" content="مقالات وأدوات عملية في التسويق بالمؤثرين وصناعة المحتوى والترند وSEO.">
+  <meta name="twitter:image" content="https://vivamediacreative.com/assets/hero.webp">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="../style.css">
-
   <link rel="icon" href="../assets/logo.jpeg">
 
   <!-- Google Tag -->
@@ -26,7 +42,7 @@
     gtag('config', 'G-SR129X7VN0');
   </script>
 
-  <!-- ===== Luxury Override (Black + Gold) ===== -->
+  <!-- ===== Luxury SEO Hub Style (derived from your Arabic page look) ===== -->
   <style>
     :root{
       --bg:#06070a;
@@ -59,14 +75,12 @@
       mix-blend-mode: overlay;
       z-index:0;
     }
-
-    /* Make sure content is above noise */
     body > *{ position:relative; z-index:1; }
 
     a{ color:inherit; text-decoration:none; }
     .container{ max-width:1180px; margin:0 auto; padding:0 22px; }
 
-    /* ===== Header (luxury) ===== */
+    /* Header */
     .site-header{
       position:fixed;
       top:0; left:0; right:0;
@@ -74,6 +88,10 @@
       background: linear-gradient(to bottom, rgba(6,7,10,.88), rgba(6,7,10,0));
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .site-header.scrolled{
+      background: rgba(6,7,10,.92);
+      border-bottom:1px solid rgba(255,255,255,.10);
     }
     .header-inner{
       display:flex;
@@ -83,17 +101,18 @@
       padding: 14px 0;
     }
 
-    .brand{ display:flex; align-items:center; gap:12px; }
+    .brand{ display:flex; align-items:center; gap:12px; min-width: 220px; }
     .logo{
       width:52px; height:52px;
       border-radius:999px;
       border:1px solid rgba(255,255,255,.12);
       box-shadow: 0 18px 60px rgba(0,0,0,.45);
     }
-    .brand-text h1{
+    .brand-text .brand-name{
       margin:0;
       font-size:16px;
       letter-spacing:.02em;
+      font-weight:800;
     }
     .brand-text .tag{
       margin:4px 0 0;
@@ -114,14 +133,16 @@
     .main-nav{
       display:flex;
       align-items:center;
-      gap:16px;
+      gap:10px;
       color: rgba(238,241,246,.74);
     }
-    .main-nav a:hover{ color: rgba(238,241,246,.95); }
     .main-nav a{
-      padding:10px 8px;
+      padding:10px 10px;
       border-radius:12px;
+      white-space:nowrap;
     }
+    .main-nav a:hover{ color: rgba(238,241,246,.95); }
+
     .lang{
       color: rgba(238,241,246,.72);
       font-size: 13px;
@@ -139,16 +160,10 @@
       color: rgba(245,208,122,.95);
     }
 
-    /* Header scrolled */
-    .site-header.scrolled{
-      background: rgba(6,7,10,.92);
-      border-bottom:1px solid rgba(255,255,255,.10);
-    }
-
-    /* ===== Hero (luxury) ===== */
+    /* Hero */
     .hero{
-      min-height: 92vh;
-      padding: 120px 0 60px;
+      min-height: 78vh;
+      padding: 120px 0 64px;
       position:relative;
       overflow:hidden;
       background:
@@ -161,31 +176,42 @@
       content:"";
       position:absolute; inset:0;
       background:
-        linear-gradient(to top, rgba(6,7,10,.85), rgba(6,7,10,.15)),
+        linear-gradient(to top, rgba(6,7,10,.88), rgba(6,7,10,.18)),
         url('../assets/hero.webp');
       background-size: cover;
       background-position: center;
-      opacity:.22; /* keeps image but luxury subtle */
+      opacity:.22;
       pointer-events:none;
     }
-    .overlay{ display:none; } /* old overlay not needed */
 
-    .hero-content{ padding-top: 40px; }
-    .hero-text h2{
-      margin: 0 0 10px;
-      font-size: clamp(34px, 5.2vw, 72px);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 24px;
+      align-items:end;
     }
-    .hero-text .lead{
+
+    .hero h1{
+      margin: 0 0 10px;
+      font-size: clamp(30px, 4.6vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+    .hero .lead{
       margin:0 0 18px;
       color: rgba(238,241,246,.72);
       font-size: 16px;
-      line-height: 1.9;
-      max-width: 62ch;
+      line-height: 2.0;
+      max-width: 64ch;
     }
 
-    /* buttons */
+    .hero-cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 16px;
+    }
+
     .btn{
       display:inline-flex;
       align-items:center;
@@ -207,15 +233,44 @@
       background: linear-gradient(180deg, rgba(245,208,122,.18), rgba(255,255,255,.04));
       box-shadow: var(--shadow);
     }
+    .btn.btn-ghost{
+      border-color: rgba(255,255,255,.14);
+      background: rgba(255,255,255,.02);
+      color: rgba(238,241,246,.85);
+    }
 
-    .hero-icons .stars{
-      margin-top: 14px;
+    .hero-badges{
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--r);
+      background: rgba(255,255,255,.02);
+      box-shadow: 0 22px 80px rgba(0,0,0,.35);
+      padding: 16px;
+    }
+    .hero-badges .k{
+      margin:0 0 10px;
       color: rgba(245,208,122,.92);
-      letter-spacing:.12em;
+      letter-spacing:.08em;
+      font-weight: 900;
+      font-size: 12px;
+    }
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .pill{
+      padding:10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.02);
+      color: rgba(238,241,246,.72);
+      font-size: 12px;
+      line-height:1;
+      white-space:nowrap;
     }
 
     /* Sections */
-    .section{ padding: 90px 0; }
+    .section{ padding: 70px 0; }
     .section.light{
       background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
       border-top:1px solid rgba(255,255,255,.08);
@@ -231,124 +286,74 @@
     .section-desc{
       margin:0 0 18px;
       color: rgba(238,241,246,.62);
-      line-height: 1.9;
+      line-height: 1.95;
+      max-width: 80ch;
     }
 
-    /* ===== Services blocks (luxury cards) ===== */
-    #services.container.section{ padding-top: 110px; }
-    .services-rows{ display:flex; flex-direction:column; gap:16px; }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 14px;
+    }
 
-    .services-block{
+    .card{
+      grid-column: span 4;
       border: 1px solid rgba(255,255,255,.12);
       border-radius: var(--r);
       background: rgba(255,255,255,.02);
-      box-shadow: 0 22px 80px rgba(0,0,0,.45);
+      box-shadow: 0 22px 80px rgba(0,0,0,.35);
+      padding: 16px;
       overflow:hidden;
-    }
-
-    .block-header{
-      padding: 20px 20px 10px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      background:
-        radial-gradient(900px 420px at 15% 0%, rgba(245,208,122,.10), transparent 60%),
-        radial-gradient(900px 420px at 90% 0%, rgba(145,90,255,.10), transparent 60%);
-    }
-    .block-header h3{ margin:0 0 6px; font-size: 20px; }
-    .block-sub{ margin:0 0 10px; color: rgba(238,241,246,.62); line-height:1.8; }
-
-    .block-cards{
-      padding: 18px;
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .service-card{
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 22px;
-      background: rgba(255,255,255,.02);
-      overflow:hidden;
+      min-height: 170px;
       display:flex;
       flex-direction:column;
-      min-height: 380px;
+      gap: 10px;
     }
-
-    .card-media{
-      height: 160px;
-      background-size: cover;
-      background-position: center;
-      position:relative;
+    .card h3{
+      margin:0;
+      font-size: 16px;
+      line-height: 1.5;
     }
-    .card-media::after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(to top, rgba(6,7,10,.85), rgba(6,7,10,0));
-      opacity:.85;
+    .card p{
+      margin:0;
+      color: rgba(238,241,246,.66);
+      line-height: 1.9;
+      font-size: 13px;
     }
-
-    .card-body{ padding: 14px 14px 16px; display:flex; flex-direction:column; gap:10px; }
-    .card-body h4{ margin:0; font-size: 16px; }
-    .card-short{ margin:0; color: rgba(238,241,246,.68); line-height: 1.85; font-size: 13px; }
-
-    .card-actions{ margin-top:auto; display:flex; gap:10px; }
-    .btn-details{
-      width:100%;
-      justify-content:center;
+    .card .actions{ margin-top:auto; display:flex; gap:10px; flex-wrap:wrap; }
+    .card .actions a{ width:fit-content; }
+    .card .mini{
+      padding: 10px 12px;
+      font-size: 12px;
+      border-radius: 999px;
+    }
+    .mini.gold{
       border-color: rgba(245,208,122,.24);
       background: linear-gradient(180deg, rgba(245,208,122,.14), rgba(255,255,255,.03));
       color: rgba(245,208,122,.95);
     }
 
-    .section-contact{
-      padding: 0 18px 18px;
-      display:flex;
-      justify-content:flex-start;
+    .list{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--r);
+      background: rgba(255,255,255,.02);
+      box-shadow: 0 22px 80px rgba(0,0,0,.35);
+      padding: 16px;
     }
-    .section-whatsapp{
+    .list ul{
+      margin:0;
+      padding:0 18px 0 0;
+      display:grid;
       gap:10px;
-      border-color: rgba(255,255,255,.14);
-      background: rgba(255,255,255,.03);
     }
-    .section-whatsapp:hover{
-      border-color: rgba(245,208,122,.24);
-      background: rgba(255,255,255,.04);
+    .list li{
+      color: rgba(238,241,246,.75);
+      line-height: 1.9;
     }
-
-    /* Modal */
-    .modal{
-      position:fixed;
-      inset:0;
-      background: rgba(0,0,0,.65);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding: 20px;
-      z-index:80;
-    }
-    .modal.active{ display:flex; }
-
-    .modal-content{
-      width:min(760px, 100%);
-      border-radius: 26px;
-      border: 1px solid rgba(255,255,255,.14);
-      background:
-        radial-gradient(900px 420px at 15% 0%, rgba(245,208,122,.10), transparent 60%),
-        radial-gradient(900px 420px at 90% 0%, rgba(145,90,255,.10), transparent 60%),
-        rgba(6,7,10,.92);
-      box-shadow: var(--shadow);
-      padding: 18px 18px 16px;
-      color: rgba(238,241,246,.92);
-    }
-    .modal-content h3{ margin: 6px 0 10px; }
-    #modal-text{ color: rgba(238,241,246,.72); line-height: 1.95; }
-    .modal-close{
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.03);
-      color: rgba(238,241,246,.9);
-      border-radius: 999px;
-      width:40px;height:40px;
-      cursor:pointer;
-      float:inline-end;
+    .list a{
+      color: rgba(245,208,122,.92);
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
     /* Footer */
@@ -356,6 +361,13 @@
       border-top: 1px solid rgba(255,255,255,.10);
       padding: 26px 0;
       color: rgba(238,241,246,.60);
+    }
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 16px;
+      flex-wrap:wrap;
     }
 
     /* Responsive */
@@ -377,426 +389,283 @@
       }
       .main-nav.active{ display:flex; }
 
-      .block-cards{ grid-template-columns: 1fr; }
-      .service-card{ min-height: auto; }
+      .hero-grid{ grid-template-columns: 1fr; }
+      .card{ grid-column: span 12; }
     }
   </style>
+
+  <!-- Structured Data: Organization + Blog -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Viva Media Creative",
+    "url":"https://vivamediacreative.com/",
+    "logo":"https://vivamediacreative.com/assets/logo.jpeg"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Blog",
+    "name":"Viva Media Creative — Knowledge Hub (AR)",
+    "url":"https://vivamediacreative.com/ar/",
+    "inLanguage":"ar",
+    "publisher":{
+      "@type":"Organization",
+      "name":"Viva Media Creative",
+      "url":"https://vivamediacreative.com/"
+    }
+  }
+  </script>
 </head>
 
 <body>
-  <header class="site-header">
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <div class="brand">
-        <a href="./"><img src="../assets/logo.jpeg" alt="Viva Media Creative" class="logo" loading="lazy"></a>
+        <a href="/" aria-label="الانتقال للصفحة الرئيسية للخدمات">
+          <img src="../assets/logo.jpeg" alt="Viva Media Creative" class="logo" loading="lazy">
+        </a>
         <div class="brand-text">
-          <h1>Viva Media Creative</h1>
-          <p class="tag">شركة رائدة في إنتاج المحتوى المرئي والتسويق</p>
+          <p class="brand-name">Viva Media Creative</p>
+          <p class="tag">مركز المعرفة — مقالات وأدوات تقوّي ظهورك</p>
         </div>
       </div>
 
-      <div class="hamburger" id="hamburger" aria-label="فتح القائمة">☰</div>
+      <button class="hamburger" id="hamburger" aria-label="فتح القائمة">☰</button>
 
-      <!-- ✅ نفس الروابط بدون تغيير -->
+      <!-- ✅ روابط ثابتة لا نكسرها -->
       <nav class="main-nav" id="main-nav" aria-label="القائمة الرئيسية">
-        <a href="/ar/">الرئيسية</a>
-        <a href="#services">الخدمات</a>
-        <a href="/ar/tools/">الأدوات</a>
+        <a href="/ar/" aria-current="page">مركز المعرفة</a>
         <a href="/news/">المقالات</a>
-        <a href="#about">من نحن</a>
+        <a href="/ar/tools/">الأدوات</a>
         <a href="/contact">تواصل</a>
+        <a href="/" title="الصفحة الرئيسية للخدمات">خدماتنا</a>
       </nav>
 
-      <!-- ✅ نفس روابط اللغة بدون تغيير -->
       <div class="lang">
         <a href="/ar/" aria-current="page">العربية</a> | <a href="/en/">English</a>
       </div>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h2>إنتاج فيديو احترافي</h2>
-        <p class="lead">نساعدك في بناء حضورك على الإنترنت وزيادة أرباحك من خلال الفيديوهات الإبداعية.</p>
-        <a href="#contact" class="btn btn-gold">ابدأ الآن</a>
-        <div class="hero-icons">
-          <div class="stars">★★★★★</div>
+  <!-- Hero -->
+  <section class="hero" aria-label="مقدمة مركز المعرفة">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <h1>مركز المعرفة في التسويق بالمؤثرين وصناعة المحتوى</h1>
+          <p class="lead">
+            هنا تجد مقالات وأدوات وقوالب عملية تساعدك على فهم التسويق عبر المؤثرين، صناعة الترند، إدارة حسابات صُنّاع المحتوى،
+            ونمو المواقع والمتاجر عبر SEO — ثم تربط كل ذلك بتطبيق واقعي عبر خدماتنا الأساسية.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-gold" href="/news/">ابدأ بالمقالات</a>
+            <a class="btn btn-ghost" href="/ar/tools/">استخدم الأدوات</a>
+            <a class="btn btn-ghost" href="/" aria-label="الانتقال للصفحة الرئيسية للخدمات">انتقل لخدماتنا الرئيسية</a>
+          </div>
+        </div>
+
+        <aside class="hero-badges" aria-label="ماذا ستجد هنا؟">
+          <p class="k">ستجد هنا</p>
+          <div class="pill-row">
+            <span class="pill">أدلة عملية</span>
+            <span class="pill">قوالب جاهزة</span>
+            <span class="pill">أفكار ترند</span>
+            <span class="pill">تحسين SEO</span>
+            <span class="pill">قياس النتائج</span>
+            <span class="pill">روابط داخلية ذكية</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Start -->
+  <section class="section light" aria-label="ابدأ بسرعة">
+    <div class="container">
+      <h2 class="section-title">ابدأ بسرعة</h2>
+      <p class="section-desc">
+        اختر المسار المناسب لك. كل صفحة هنا هدفها تقديم قيمة عملية، ومعها روابط داخلية تقودك لتطبيق فعلي عبر صفحة الخدمات الرئيسية.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>📰 مقالات عملية تقوّي ظهورك</h3>
+          <p>اقرأ محتوى يساعدك على اتخاذ قرارات أفضل: مؤثرين، محتوى، حملات، وSEO — بطريقة واضحة وواقعية.</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/news/">اذهب للمقالات</a>
+            <a class="btn mini" href="/">خدماتنا الرئيسية</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>🧰 أدوات وقوالب مجانية</h3>
+          <p>أدوات تساعدك في التخطيط السريع: قوالب، Checklists، ونماذج جاهزة تسهّل العمل.</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/ar/tools/">اذهب للأدوات</a>
+            <a class="btn mini" href="/contact">تواصل معنا</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>📌 تريد تطبيقًا سريعًا على مشروعك؟</h3>
+          <p>بعد أن تفهم الفكرة من المقالات/الأدوات، يمكنك الانتقال مباشرة لصفحة الخدمات وتحديد ما يناسبك.</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/">الصفحة الرئيسية للخدمات</a>
+            <a class="btn mini" href="/contact">تواصل</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======= قسم خدماتنا (نفس النصوص + نفس الروابط + ستايل فخم) ======= -->
-  <section id="services" class="container section">
-    <h2 class="section-title">خدماتنا</h2>
-    <p class="section-desc">✨ نقدم في Viva Media Creative مجموعة متكاملة من الخدمات الإبداعية التي تجمع بين الإنتاج الإعلامي، التسويق الذكي، وبناء العلامة الرقمية — كل ما تحتاجه لتصنع تأثيرك وتوسّع انتشارك على الإنترنت.</p>
+  <!-- Knowledge Tracks -->
+  <section class="section" aria-label="مسارات المعرفة">
+    <div class="container">
+      <h2 class="section-title">مسارات المعرفة</h2>
+      <p class="section-desc">
+        هذه المسارات مبنية حول أكثر ما يبحث عنه الناس فعليًا. ابدأ بما يناسب هدفك، ثم انتقل للتطبيق عبر الصفحة الرئيسية للخدمات.
+      </p>
 
-    <div class="services-rows">
-      <!-- BLOCK 1 -->
-      <div class="services-block block-production" aria-labelledby="prod-title">
-        <div class="block-header">
-          <h3 id="prod-title">🎬 الإنتاج الإبداعي</h3>
-          <p class="block-sub">من الفكرة إلى الفيديو الجاهز للنشر.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>🤝 التسويق عبر المؤثرين</h3>
+          <p>اختيار المؤثر الصحيح، بناء حملة مؤثرة، قياس ROI، وتفادي الأخطاء الشائعة.</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/news/">استعرض المقالات</a>
+            <a class="btn mini" href="/">طبّق عبر خدماتنا</a>
+          </div>
         </div>
 
-        <div class="block-cards">
-          <article class="service-card" data-title="إنتاج الفيديوهات عن بُعد">
-            <div class="card-media" role="img" aria-label="إنتاج فيديو عن بُعد" style="background-image:url('../assets/remote-video.jpg')"></div>
-            <div class="card-body">
-              <h4>🎥 إنتاج الفيديوهات عن بُعد</h4>
-              <p class="card-short">ننتج فيديوهات احترافية بالكامل عن بُعد — أنت تسجل، ونحن نحرر وننشر.</p>
-              <div class="card-actions">
-                <button class="btn btn-details">عرض التفاصيل</button>
-              </div>
-              <div class="card-full" style="display:none">
-                <p>نقدّم خدمة إنتاج الفيديوهات عن بُعد بطريقة مبتكرة وسهلة. كل ما عليك فعله هو استلام النص الجاهز من فريقنا، تسجيل الفيديو من مكانك، وسنتولى نحن الباقي — من المونتاج والإخراج إلى النشر على منصاتنا التي يتابعها ملايين المستخدمين.
-                تتيح لك هذه الخدمة الوصول إلى جمهور واسع، وبناء حضور رقمي قوي دون الحاجة إلى معدات أو استوديو تصوير.
-                تتم جميع مراحل التعاون وفق عقود شراكة وتعاون عادلة وشفافة مع المبدعين، تضمن الحقوق المالية والمعنوية للطرفين.
-                سواء كنت صانع محتوى أو صاحب مشروع أو شخصًا يسعى لزيادة تأثيره الرقمي، نحن نجعل العملية بسيطة، احترافية، ومربحة للجميع.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="service-card" data-title="إنتاج الفيديوهات الدعائية والتجارية">
-            <div class="card-media" role="img" aria-label="فيديو دعائي" style="background-image:url('../assets/commercial-video.jpg')"></div>
-            <div class="card-body">
-              <h4>📣 إنتاج الفيديوهات الدعائية والتجارية</h4>
-              <p class="card-short">نحوّل فكرتك إلى فيديو دعائي مؤثر يعكس هوية علامتك التجارية.</p>
-              <div class="card-actions">
-                <button class="btn btn-details">عرض التفاصيل</button>
-              </div>
-              <div class="card-full" style="display:none">
-                <p>نحوّل فكرتك إلى فيديو دعائي مؤثر يبدأ من التخطيط وكتابة النص، مرورًا بالإنتاج والمونتاج، وصولًا إلى التسويق والنشر.
-                يعمل فريقنا على مزج الهوية البصرية مع الرسالة التسويقية بأسلوب إبداعي يناسب المنصات المختلفة مثل إنستجرام، تيك توك، ويوتيوب.
-                نحرص على أن يكون كل فيديو قادرًا على البيع والإقناع، وأن يعبر عن روح مشروعك بدقة واحتراف.
-                هدفنا هو أن يصنع الفيديو الذي نقدمه لك فارقًا حقيقيًا في نتائج أعمالك.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="service-card" data-title="كتابة النصوص الإعلانية والسكريبت">
-            <div class="card-media" role="img" aria-label="كتابة النصوص" style="background-image:url('../assets/copywriting.jpg')"></div>
-            <div class="card-body">
-              <h4>🧠 كتابة النصوص الإعلانية والفيديو سكريبت</h4>
-              <p class="card-short">نكتب لك نصوصًا إبداعية للفيديوهات والإعلانات تلامس جمهورك.</p>
-              <div class="card-actions">
-                <button class="btn btn-details">عرض التفاصيل</button>
-              </div>
-              <div class="card-full" style="display:none">
-                <p>نؤمن أن الكلمة القوية تصنع فرقًا. لذلك نقدم خدمة كتابة النصوص الإعلانية وسيناريوهات الفيديو (Video Scripts) التي تعبر عن رسالتك بأسلوب بسيط وجذاب.
-                يقوم فريقنا ببحث السوق والجمهور المستهدف قبل كتابة أي نص، لضمان أن يكون مقنعًا، مؤثرًا، ومناسبًا لهوية العلامة.
-                سواء كنت مؤثرًا، صاحب مشروع، أو علامة تجارية — نكتب لك النص الذي يجعلك تتحدث إلى جمهورك بطريقة تترك الأثر وتحقق الهدف.</p>
-              </div>
-            </div>
-          </article>
+        <div class="card">
+          <h3>👑 إدارة حسابات صناع المحتوى</h3>
+          <p>هوية رقمية، خطط نشر، تفاعل، ونمو مستقر بدون “حرق” الصورة.</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/news/">استعرض المقالات</a>
+            <a class="btn mini" href="/">خدماتنا الرئيسية</a>
+          </div>
         </div>
 
-        <div class="section-contact">
-          <a class="btn section-whatsapp" role="button" aria-label="تواصل عبر واتساب — الإنتاج الإبداعي"
-             data-number="4915565678291"
-             data-msg="مرحباً، أود الاستفسار عن خدمات الإنتاج الإبداعي في Viva Media Creative.">
-            <span class="wa-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M20.52 3.48A11.94 11.94 0 0 0 12 0C5.37 0 .08 5.29.08 11.92c0 2.1.55 4.15 1.6 5.97L0 24l6.34-1.6A11.9 11.9 0 0 0 12 23.92c6.63 0 11.92-5.29 11.92-11.92 0-3.18-1.22-6.17-3.4-8.52z" fill="#25D366"/>
-                <path d="M17.2 14.4c-.3-.15-1.76-.86-2.03-.96-.27-.1-.46-.15-.66.15-.2.3-.77.96-.94 1.15-.17.2-.34.22-.63.07-1.71-.86-2.85-1.54-4.01-3.47-.3-.47.3-.44.86-1.46.09-.15.05-.28-.02-.43-.07-.15-.66-1.6-.9-2.2-.24-.58-.48-.5-.66-.5-.18 0-.4 0-.62 0-.2 0-.52.07-.8.35-.28.28-1.06 1.03-1.06 2.5 0 1.47 1.09 2.89 1.24 3.08.15.2 2.14 3.26 5.19 4.56 3.05 1.3 3.05.87 3.6.81.55-.07 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.08-.12-.3-.18-.6-.33z" fill="#fff"/>
-              </svg>
-            </span>
-            تواصل عبر واتساب
-          </a>
-        </div>
-      </div>
-
-      <!-- BLOCK 2 -->
-      <div class="services-block block-marketing" aria-labelledby="mark-title">
-        <div class="block-header">
-          <h3 id="mark-title">🚀 التسويق والتأثير الرقمي</h3>
-          <p class="block-sub">نصنع لك تأثيرًا رقميًا حقيقيًا يحقق النتائج.</p>
+        <div class="card">
+          <h3>🔥 صناعة الترند والمحتوى الفيروسي</h3>
+          <p>هوك أول 3 ثواني، زوايا قوية، توقيت، توزيع — ليس مشاهدات فقط بل نتائج.</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/news/">استعرض المقالات</a>
+            <a class="btn mini" href="/ar/tools/">جرّب الأدوات</a>
+          </div>
         </div>
 
-        <div class="block-cards">
-          <article class="service-card" data-title="إدارة حسابات المشاهير">
-            <div class="card-media" role="img" aria-label="ادارة حسابات" style="background-image:url('../assets/influencer-management.jpg')"></div>
-            <div class="card-body">
-              <h4>👑 إدارة حسابات المشاهير وصنّاع المحتوى</h4>
-              <p class="card-short">نُدير حسابات المشاهير بصياغة هوية رقمية قوية وزيادة التفاعل.</p>
-              <div class="card-actions">
-                <button class="btn btn-details">عرض التفاصيل</button>
-              </div>
-              <div class="card-full" style="display:none">
-                <p>نقدّم خدمة إدارة حسابات المشاهير وصنّاع المحتوى عبر استراتيجية مدروسة تجمع بين الإبداع والتحليل.
-                نقوم بإعداد خطة محتوى متكاملة تشمل كتابة المنشورات، جدولة النشر، تحليل الأداء، والتفاعل الذكي مع الجمهور، مع التركيز على تعزيز العلامة الشخصية للمؤثر وبناء جمهور وفيّ.
-                نعتني بكل تفاصيل الهوية الرقمية — من المظهر العام للحساب إلى طريقة التواصل مع العلامات التجارية — لضمان حضور احترافي يليق بالمشاهير وصُنّاع التأثير.
-                كما نوفّر فرص تعاون حقيقية مع شركائنا من المعلنين، ضمن عقود عادلة تحفظ حقوق الطرفين وتضمن الشفافية التامة في إدارة الحملات والعوائد.
-                هدفنا هو أن نصنع من كل مؤثر قصة نجاح رقمية مستمرة.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="service-card" data-title="التسويق عبر المؤثرين">
-            <div class="card-media" role="img" aria-label="تسويق عبر المؤثرين" style="background-image:url('../assets/influencer-marketing.jpg')"></div>
-            <div class="card-body">
-              <h4>🤝 التسويق عبر المؤثرين</h4>
-              <p class="card-short">نربط العلامات بالمؤثرين الأنسب لتحقيق نتائج قابلة للقياس.</p>
-              <div class="card-actions">
-                <button class="btn btn-details">عرض التفاصيل</button>
-              </div>
-              <div class="card-full" style="display:none">
-                <p>نقدّم خدمة التسويق عبر المؤثرين كجسر فعّال بين العلامات التجارية وصُنّاع المحتوى.
-                نعمل على اختيار المؤثرين الأنسب لمنتجاتك أو خدمتك، بناءً على جمهورهم الحقيقي واهتماماتهم، لضمان أن تصل رسالتك إلى الفئة المثالية.
-                نُدير كامل العملية من التخطيط إلى التنفيذ — كتابة النصوص، إعداد الإعلانات، متابعة الأداء، وقياس النتائج بدقة — مع تقديم تقارير تفصيلية عن مدى نجاح الحملة وتأثيرها.
-                تتم جميع التعاونات بعقود شفافة وعادلة تحفظ حقوق العلامة التجارية والمؤثر معًا، وتضمن أن يكون التعاون احترافيًا ومثمرًا.
-                مع Viva Media Creative، يتحول التسويق عبر المؤثرين من إعلان عابر إلى تأثير حقيقي ونتائج قابلة للقياس.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="service-card" data-title="التسويق للمواقع والمتاجر الإلكترونية">
-            <div class="card-media" role="img" aria-label="تسويق متاجر" style="background-image:url('../assets/ecommerce-marketing.jpg')"></div>
-            <div class="card-body">
-              <h4>💼 التسويق للمواقع والمتاجر الإلكترونية</h4>
-              <p class="card-short">نساعدك على زيادة مبيعات متجرك عبر استراتيجيات تسويق وSEO فعّالة.</p>
-              <div class="card-actions">
-                <button class="btn btn-details">عرض التفاصيل</button>
-              </div>
-              <div class="card-full" style="display:none">
-                <p>نوفّر حلول تسويق رقمية متكاملة للمواقع والمتاجر الإلكترونية.
-                نبدأ بتحليل وضعك الرقمي الحالي، ثم نعمل على تحسين ظهورك في نتائج البحث (SEO)، وإنشاء محتوى جذاب ومتوافق مع محركات البحث.
-                نصمم أيضًا استراتيجيات تسويق عبر شبكات التواصل الاجتماعي لزيادة الزيارات والعملاء المحتملين، مع متابعة الأداء بشكل مستمر وتقديم تقارير دقيقة.
-                هدفنا هو تحقيق نتائج ملموسة وقابلة للقياس، من زيادة المبيعات إلى بناء قاعدة عملاء دائمة.
-                مع Viva Media Creative، يصبح موقعك أكثر ظهورًا، انتشارًا، وربحية.</p>
-              </div>
-            </div>
-          </article>
+        <div class="card">
+          <h3>🌐 SEO & Growth للمواقع والمتاجر</h3>
+          <p>محتوى متوافق مع البحث، صفحات هبوط، Funnels، وتحسين تحويل بشكل قابل للقياس.</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/news/">اقرأ المحتوى</a>
+            <a class="btn mini" href="/">الخدمات</a>
+          </div>
         </div>
 
-        <div class="section-contact">
-          <a class="btn section-whatsapp" role="button" aria-label="تواصل عبر واتساب — التسويق الرقمي"
-             data-number="4915565678291"
-             data-msg="مرحباً، أود الاستفسار عن خدمات التسويق والتأثير الرقمي في Viva Media Creative.">
-            <span class="wa-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M20.52 3.48A11.94 11.94 0 0 0 12 0C5.37 0 .08 5.29.08 11.92c0 2.1.55 4.15 1.6 5.97L0 24l6.34-1.6A11.9 11.9 0 0 0 12 23.92c6.63 0 11.92-5.29 11.92-11.92 0-3.18-1.22-6.17-3.4-8.52z" fill="#25D366"/>
-                <path d="M17.2 14.4c-.3-.15-1.76-.86-2.03-.96-.27-.1-.46-.15-.66.15-.2.3-.77.96-.94 1.15-.17.2-.34.22-.63.07-1.71-.86-2.85-1.54-4.01-3.47-.3-.47.3-.44.86-1.46.09-.15.05-.28-.02-.43-.07-.15-.66-1.6-.9-2.2-.24-.58-.48-.5-.66-.5-.18 0-.4 0-.62 0-.2 0-.52.07-.8.35-.28.28-1.06 1.03-1.06 2.5 0 1.47 1.09 2.89 1.24 3.08.15.2 2.14 3.26 5.19 4.56 3.05 1.3 3.05.87 3.6.81.55-.07 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.08-.12-.3-.18-.6-.33z" fill="#fff"/>
-              </svg>
-            </span>
-            تواصل عبر واتساب
-          </a>
-        </div>
-      </div>
-
-      <!-- BLOCK 3 -->
-      <div class="services-block block-growth" aria-labelledby="growth-title">
-        <div class="block-header">
-          <h3 id="growth-title">🌟 النمو والدعم الإبداعي</h3>
-          <p class="block-sub">لأن النجاح المستمر يحتاج إلى شراكة طويلة الأمد.</p>
+        <div class="card">
+          <h3>🧠 كتابة سكريبت ونصوص إعلانية</h3>
+          <p>بناء رسالة تقنع، CTA ذكي، وتوجيه للقرار — نصوص مصممة للأداء.</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/news/">اقرأ المقالات</a>
+            <a class="btn mini" href="/">تطبيق عملي</a>
+          </div>
         </div>
 
-        <div class="block-cards">
-          <article class="service-card" data-title="بناء الهوية الرقمية">
-            <div class="card-media" role="img" aria-label="بناء الهوية" style="background-image:url('../assets/digital-branding.jpg')"></div>
-            <div class="card-body">
-              <h4>🌈 بناء الهوية الرقمية</h4>
-              <p class="card-short">نصمم لك هوية رقمية مميزة تبرزك على السوشيال ميديا.</p>
-              <div class="card-actions">
-                <button class="btn btn-details">عرض التفاصيل</button>
-              </div>
-              <div class="card-full" style="display:none">
-                <p>الهوية الرقمية هي ما يراك به جمهورك على الإنترنت، ونحن نساعدك في بنائها خطوة بخطوة.
-                من اختيار الألوان والشعار ونمط المحتوى، إلى صياغة طريقة التواصل مع الجمهور — نرسم معك هوية متكاملة تجعل حضورك الرقمي فريدًا ومتناسقًا عبر كل المنصات.
-                سواء كنت مؤثرًا أو شركة ناشئة، نضع معك خطة استراتيجية تُبرزك وتمنحك صورة احترافية تبني الثقة وتزيد من التفاعل.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="service-card" data-title="دعم وتطوير صنّاع المحتوى">
-            <div class="card-media" role="img" aria-label="دعم صناع المحتوى" style="background-image:url('../assets/creators-support.jpg')"></div>
-            <div class="card-body">
-              <h4>🤝 دعم وتطوير صنّاع المحتوى</h4>
-              <p class="card-short">برنامج متكامل يدعم النمو والتعاون مع العلامات التجارية.</p>
-              <div class="card-actions">
-                <button class="btn btn-details">عرض التفاصيل</button>
-              </div>
-              <div class="card-full" style="display:none">
-                <p>نقدم برنامجًا شاملاً لدعم صنّاع المحتوى وتمكينهم من تحقيق النجاح والاستدامة.
-                نوفر تدريبات متخصصة في صناعة الفيديو، إدارة العلامة الشخصية، واستراتيجيات النمو على السوشيال ميديا.
-                كما نفتح الباب أمام المبدعين للانضمام إلى شبكة Viva Media Creative للتعاون في مشاريع تجارية، وفق عقود عادلة وشفافة تضمن تحقيق المكاسب للجميع.
-                نحن نؤمن أن النجاح الرقمي يبدأ بالتعاون، ونمنح صُنّاع المحتوى الأدوات والدعم ليكونوا شركاء حقيقيين في صناعة التأثير.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="service-card" data-title="بناء وتصميم المواقع الإلكترونية">
-            <div class="card-media" role="img" aria-label="تصميم مواقع" style="background-image:url('../assets/web-design.jpg')"></div>
-            <div class="card-body">
-              <h4>🌐 بناء وتصميم المواقع الإلكترونية</h4>
-              <p class="card-short">نصمم ونبني مواقع سريعة الاستجابة تناسب مشروعك.</p>
-              <div class="card-actions">
-                <button class="btn btn-details">عرض التفاصيل</button>
-              </div>
-              <div class="card-full" style="display:none">
-                <p>نقدّم خدمة متكاملة لبناء المواقع الإلكترونية للشركات والأفراد والمتاجر الإلكترونية.
-                نبدأ من تصميم الواجهة وتجربة المستخدم، مرورًا بالبرمجة والتكامل مع أنظمة الدفع، وانتهاءً بتحسين محركات البحث (SEO) وربط الموقع بمنصات التواصل الاجتماعي.
-                كل موقع نقوم ببنائه يكون متجاوبًا مع جميع الأجهزة، سهل الاستخدام وسريع التحميل، مع لوحة تحكم مرنة لإدارة المحتوى.
-                هدفنا أن نصنع لك موقعًا إلكترونيًا يمثل علامتك بتميز ويحوّل الزوار إلى عملاء.</p>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="section-contact">
-          <a class="btn section-whatsapp" role="button" aria-label="تواصل عبر واتساب — الدعم والنمو الإبداعي"
-             data-number="4915565678291"
-             data-msg="مرحباً، أود الاستفسار عن برامج الدعم وتطوير صنّاع المحتوى في Viva Media Creative.">
-            <span class="wa-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M20.52 3.48A11.94 11.94 0 0 0 12 0C5.37 0 .08 5.29.08 11.92c0 2.1.55 4.15 1.6 5.97L0 24l6.34-1.6A11.9 11.9 0 0 0 12 23.92c6.63 0 11.92-5.29 11.92-11.92 0-3.18-1.22-6.17-3.4-8.52z" fill="#25D366"/>
-                <path d="M17.2 14.4c-.3-.15-1.76-.86-2.03-.96-.27-.1-.46-.15-.66.15-.2.3-.77.96-.94 1.15-.17.2-.34.22-.63.07-1.71-.86-2.85-1.54-4.01-3.47-.3-.47.3-.44.86-1.46.09-.15.05-.28-.02-.43-.07-.15-.66-1.6-.9-2.2-.24-.58-.48-.5-.66-.5-.18 0-.4 0-.62 0-.2 0-.52.07-.8.35-.28.28-1.06 1.03-1.06 2.5 0 1.47 1.09 2.89 1.24 3.08.15.2 2.14 3.26 5.19 4.56 3.05 1.3 3.05.87 3.6.81.55-.07 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.08-.12-.3-.18-.6-.33z" fill="#fff"/>
-              </svg>
-            </span>
-            تواصل عبر واتساب
-          </a>
+        <div class="card">
+          <h3>📊 قياس الأداء والتحسين</h3>
+          <p>كيف تقرأ النتائج؟ ماذا تغيّر؟ وكيف تمنع تكرار نفس الأخطاء؟</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/news/">ابدأ الآن</a>
+            <a class="btn mini" href="/contact">اسألنا</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Modal details -->
-  <div class="modal" id="service-modal" aria-hidden="true">
-    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal-close" id="modal-close" aria-label="إغلاق">&times;</button>
-      <h3 id="modal-title"></h3>
-      <div id="modal-text"></div>
-    </div>
-  </div>
+  <!-- Latest (safe links only) -->
+  <section class="section light" aria-label="آخر المحتوى">
+    <div class="container">
+      <h2 class="section-title">آخر المحتوى</h2>
+      <p class="section-desc">
+        هنا سنعرض أحدث المقالات/الأدوات. (حالياً الروابط تقود للأقسام الرئيسية لتجنب أي روابط غير موجودة.)
+      </p>
 
-  <section id="about" class="container section light">
-    <h2 class="section-title">من نحن</h2>
-    <p> نحن في Viva Media Creative نؤمن بقوة الصورة والكلمة. نعمل لتحويل أفكاركم إلى محتوى ملموس يترك أثرًا، سواء عبر الحملات الإعلانية أو الإنتاج الوثائقي أو برامج الترفيه والتعليم. </p>
-    <p> فريقنا مكوّن من متخصصين في الإنتاج، التحرير، وإستراتيجيات التسويق الرقمي — نرافق مشروعك منذ الفكرة وحتى التوزيع والتحليل. </p>
-  </section>
+      <div class="grid">
+        <div class="list" style="grid-column: span 6;">
+          <h3 style="margin:0 0 10px;font-size:16px;">📰 أحدث المقالات</h3>
+          <ul>
+            <li><a href="/news/">تصفّح جميع المقالات</a> ثم اختر ما يناسب هدفك.</li>
+            <li>ابدأ بـ “التسويق عبر المؤثرين” ثم انتقل للتطبيق عبر <a href="/">صفحة الخدمات</a>.</li>
+            <li>استخدم الأدوات لتسريع التنفيذ من <a href="/ar/tools/">هنا</a>.</li>
+          </ul>
+        </div>
 
-  <section id="support" class="container section">
-    <h2 class="section-title">دعم صناع المحتوى — برنامجنا الشامل</h2>
-    <div class="support-grid">
-      <div class="support-text">
-        <p>نقدّم الدعم الكامل لتحقيق أقصى استفادة من المحتوى المرئي الذي تقدمه.</p>
-        <p>نوفر تدريبًا عمليًا وأدوات تحليل تساعدك على فهم جمهورك وتحسين محتواك.</p>
-        <p>كما نبني شراكات مع علامات تجارية ومؤسسات إعلامية لفتح آفاق تعاون جديدة.</p>
+        <div class="list" style="grid-column: span 6;">
+          <h3 style="margin:0 0 10px;font-size:16px;">🧰 أدوات موصى بها</h3>
+          <ul>
+            <li><a href="/ar/tools/">مكتبة الأدوات العربية</a> — قوالب وChecklists عملية.</li>
+            <li>إذا احتجت تطبيقًا سريعًا: <a href="/contact">تواصل معنا</a>.</li>
+            <li>خدماتنا الأساسية على الصفحة الرئيسية: <a href="/">vivamediacreative.com</a>.</li>
+          </ul>
+        </div>
       </div>
-      <aside class="support-aside">
-        <h3>ماذا نقدّم؟</h3>
-        <ul>
-          <li>منصات نشر وتوزيع متقدمة</li>
-          <li>ورش وتدريبات متخصصة</li>
-          <li>تحليل المشاهدات والتفاعل</li>
-          <li>دعم مالي وإمكانيات إنتاج</li>
-          <li>شبكات ترويج وشراكات</li>
-        </ul>
-      </aside>
     </div>
   </section>
 
-  <section id="apply" class="container section light">
-    <h2 class="section-title">قدّم لوظيفة</h2>
-    <p>إذا كنت ترغب في الانضمام لفريقنا، أرسل سيرتك الذاتية مباشرة من هنا:</p>
-    <form action="https://formsubmit.co/vivamediacreations@gmail.com" method="POST" enctype="multipart/form-data" class="job-form">
-      <input type="hidden" name="_next" value="https://vivamediacreative.com/thank-you.html">
-      <label for="name">الاسم الكامل:</label>
-      <input type="text" id="name" name="name" required>
-      <label for="email">البريد الإلكتروني:</label>
-      <input type="email" id="email" name="email" required>
-      <label for="position">المسمى الوظيفي المطلوب:</label>
-      <input type="text" id="position" name="position" required>
-      <label for="cv">ارفق سيرتك الذاتية (PDF / Word):</label>
-      <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
-      <button type="submit" class="btn">أرسل طلبك</button>
-    </form>
+  <!-- About (light, non-commercial) -->
+  <section class="section" aria-label="عن المركز">
+    <div class="container">
+      <h2 class="section-title">عن مركز المعرفة</h2>
+      <p class="section-desc">
+        الهدف من هذا القسم هو تقديم محتوى عملي عالي الجودة — يساعد صناع المحتوى والعلامات التجارية على اتخاذ قرارات أفضل.
+        وعندما تصبح جاهزًا للتطبيق، ستجد بوابتك واضحة عبر الصفحة الرئيسية للخدمات.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="/">انتقل للصفحة الرئيسية للخدمات</a>
+        <a class="btn btn-ghost" href="/contact">تواصل معنا</a>
+      </div>
+    </div>
   </section>
 
-  <section id="contact" class="container section">
-    <h2 class="section-title">تواصل معنا</h2>
-    <p>هل تطمح لتصدر قوائم الترند؟ تواصل مع فريقنا لنبدأ رحلتك نحو التميز.</p>
-    <ul class="contact-list">
-      <li>البريد الإلكتروني: <a href="mailto:info@vivamediacreative.com">info@vivamediacreative.com</a></li>
-      <li>واتساب: <a href="https://wa.me/4915565678291">اضغط هنا للتواصل عبر واتساب</a></li>
-      <li>فيسبوك: <a href="https://www.facebook.com/vivamediacreative">Facebook</a></li>
-    </ul>
-  </section>
-
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2025 Viva Media Creative جميع الحقوق محفوظة.</p>
-      <p class="small">تواصل معنا: <a href="mailto:vivamediacreations@gmail.com">vivamediacreations@gmail.com</a> </p>
+      <div>© <span id="y"></span> Viva Media Creative</div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="/news/">المقالات</a>
+        <a href="/ar/tools/">الأدوات</a>
+        <a href="/contact">تواصل</a>
+        <a href="/">الخدمات</a>
+      </div>
     </div>
   </footer>
 
   <script>
-    /* القوائم المتحركة */
-    const hamburger = document.getElementById('hamburger');
+    // Header scroll
+    const header = document.getElementById('siteHeader');
+    const onScroll = () => {
+      if (window.scrollY > 8) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Mobile nav
+    const burger = document.getElementById('hamburger');
     const nav = document.getElementById('main-nav');
-    const navLinks = nav.querySelectorAll('a');
+    burger.addEventListener('click', () => nav.classList.toggle('active'));
 
-    hamburger.addEventListener('click', () => { nav.classList.toggle('active'); });
-    navLinks.forEach(link => { link.addEventListener('click', () => { nav.classList.remove('active'); }); });
-    document.addEventListener('click', (e) => { if (!nav.contains(e.target) && !hamburger.contains(e.target)) { nav.classList.remove('active'); } });
-
-    window.addEventListener("scroll", () => {
-      const header = document.querySelector(".site-header");
-      if (window.scrollY > 50) { header.classList.add("scrolled"); } else { header.classList.remove("scrolled"); }
-    });
-
-    /* Modal الخدمات */
-    const modal = document.getElementById('service-modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalText = document.getElementById('modal-text');
-    const modalClose = document.getElementById('modal-close');
-
-    document.querySelectorAll('.service-card .btn-details').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const card = e.target.closest('.service-card');
-        const title = card.dataset.title || card.querySelector('h4').textContent;
-        const fullContainer = card.querySelector('.card-full');
-        const fullHTML = fullContainer ? fullContainer.innerHTML : 'التفاصيل غير متاحة حالياً.';
-        modalTitle.textContent = title;
-        modalText.innerHTML = fullHTML;
-        modal.classList.add('active');
-        modal.setAttribute('aria-hidden','false');
-      });
-    });
-
-    modalClose.addEventListener('click', () => {
-      modal.classList.remove('active'); modal.setAttribute('aria-hidden','true');
-      modalTitle.textContent = ''; modalText.innerHTML = '';
-    });
-
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-        modal.setAttribute('aria-hidden','true');
-        modalTitle.textContent = '';
-        modalText.innerHTML = '';
-      }
-    });
-
-    /* Section WhatsApp buttons */
-    document.querySelectorAll('.section-whatsapp').forEach(a => {
-      const number = a.dataset.number || '4915565678291';
-      const msg = a.dataset.msg || 'مرحباً، أود الاستفسار عن خدماتكم';
-      const encoded = encodeURIComponent(msg);
-      a.href = `https://wa.me/${number}?text=${encoded}`;
-      a.setAttribute('target','_blank');
-      a.setAttribute('rel','noopener noreferrer');
-    });
-
-    /* Accessibility: close modal with Escape */
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        modal.classList.remove('active');
-        modal.setAttribute('aria-hidden','true');
-        modalTitle.textContent = '';
-        modalText.innerHTML = '';
-      }
-    });
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
