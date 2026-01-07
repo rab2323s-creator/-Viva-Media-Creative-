@@ -1,20 +1,36 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viva Media Creative — Visual Content Production, Creator Support & Celebrity Account Management</title>
-  <meta name="description" content="Viva Media Creative — Video production and advertising, creator support, celebrity account management, digital marketing, and creative content production.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+  <title>Knowledge Hub | Viva Media Creative — Influencer Marketing, Content Strategy & SEO Insights</title>
+  <meta name="description" content="Viva Media Creative Knowledge Hub: practical articles, frameworks, and insights on influencer marketing, content strategy, creator growth, and SEO. Learn first — then apply through our main services page." />
+
+  <!-- Canonical -->
   <link rel="canonical" href="https://vivamediacreative.com/en/" />
+
+  <!-- Hreflang (AR/EN hubs) -->
   <link rel="alternate" hreflang="ar" href="https://vivamediacreative.com/ar/" />
   <link rel="alternate" hreflang="en" href="https://vivamediacreative.com/en/" />
-  <link rel="alternate" hreflang="x-default" href="https://vivamediacreative.com/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://vivamediacreative.com/" />
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Knowledge Hub | Viva Media Creative">
+  <meta property="og:description" content="Frameworks, insights, and practical learnings on influencer marketing, content strategy, creator growth, and SEO.">
+  <meta property="og:url" content="https://vivamediacreative.com/en/">
+  <meta property="og:image" content="https://vivamediacreative.com/assets/hero.webp">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Knowledge Hub | Viva Media Creative">
+  <meta name="twitter:description" content="Practical insights on influence, content, growth, and SEO.">
+  <meta name="twitter:image" content="https://vivamediacreative.com/assets/hero.webp">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/style.css">
-  <!-- ✅ NEW: luxury style (same as Arabic look) -->
-  <link rel="stylesheet" href="/luxury.css">
-
   <link rel="icon" href="/assets/logo.jpeg">
 
   <!-- Google Tag -->
@@ -25,398 +41,633 @@
     gtag('js', new Date());
     gtag('config', 'G-SR129X7VN0');
   </script>
-</head>
-<body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <a href="/en"><img src="/assets/logo.jpeg" alt="Viva Media Creative" class="logo" loading="lazy"></a>
-      <div class="brand-text">
-        <h1>Viva Media Creative</h1>
-        <p class="tag">Leading company in visual content production and marketing</p>
-      </div>
-    </div>
+  <!-- ===== Luxury SEO Hub Style (unique EN layout & wording; not a translation) ===== -->
+  <style>
+    :root{
+      --bg:#06070a;
+      --fg:#eef1f6;
+      --muted: rgba(238,241,246,.72);
+      --line: rgba(255,255,255,.12);
 
-    <div class="hamburger" id="hamburger">☰</div>
+      --gold1: #f5d07a;
+      --gold2: #b88a2a;
 
-    <nav class="main-nav" id="main-nav" aria-label="Main Menu">
-      <a href="/en/">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About Us</a>
-      <a href="#support">Creator Support</a>
-      <a href="/news_en/">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#apply" class="active">Careers</a>
-    </nav>
+      --r: 26px;
+      --shadow: 0 40px 120px rgba(0,0,0,.65);
+    }
 
-    <div class="lang">
-     🌐 <a href="/ar/">العربية</a> | <a href="/en/" aria-current="page">English</a>
-    </div>
-  </div>
-</header>
+    html,body{height:100%;}
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      overflow-x:hidden;
+    }
 
-<!-- HERO -->
-<!-- ✅ FIX: removed inline background-image so luxury.css controls it -->
-<section class="hero">
-  <div class="container hero-content">
-    <h2>Creating Content That Makes an Impact</h2>
-    <p class="lead">
-      We are your right hand in the world of creative business — helping you produce outstanding content that engages audiences and delivers results.
-    </p>
-    <div class="hero-cta">
-      <a class="btn" href="#contact">Contact Us Now</a>
-      <a class="btn btn-outline" href="#support">Learn More About Support</a>
-    </div>
-  </div>
-</section>
+    /* Soft noise layer */
+    body::before{
+      content:"";
+      position:fixed; inset:0; pointer-events:none;
+      opacity:.08;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+      z-index:0;
+    }
+    body > *{ position:relative; z-index:1; }
 
-<!-- ======= Our Services Section ======= -->
-<!-- ✅ FIX: id changed to "services" to match Arabic CSS -->
-<section id="services" class="container section">
-  <h2 class="section-title">Our Services</h2>
-  <p class="section-desc">✨ At Viva Media Creative, we offer a full spectrum of creative solutions, including media production, digital marketing, and branding strategies, designed to amplify your online presence and deliver measurable results.</p>
+    a{ color:inherit; text-decoration:none; }
+    .container{ max-width:1180px; margin:0 auto; padding:0 22px; }
 
-  <div class="services-rows">
+    /* Header */
+    .site-header{
+      position:fixed;
+      top:0; left:0; right:0;
+      z-index:50;
+      background: linear-gradient(to bottom, rgba(6,7,10,.88), rgba(6,7,10,0));
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .site-header.scrolled{
+      background: rgba(6,7,10,.92);
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .header-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding: 14px 0;
+    }
 
-    <!-- BLOCK 1: Creative Production -->
-    <div class="services-block block-production" aria-labelledby="prod-title-en">
-      <div class="block-header">
-        <h3 id="prod-title-en">🎬 Creative Production</h3>
-        <p class="block-sub">From concept to high-impact video content.</p>
-      </div>
+    .brand{ display:flex; align-items:center; gap:12px; min-width: 260px; }
+    .logo{
+      width:52px; height:52px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: 0 18px 60px rgba(0,0,0,.45);
+    }
+    .brand-text .brand-name{
+      margin:0;
+      font-size:16px;
+      letter-spacing:.02em;
+      font-weight:800;
+    }
+    .brand-text .tag{
+      margin:4px 0 0;
+      font-size:12px;
+      color: rgba(238,241,246,.62);
+    }
 
-      <div class="block-cards">
+    .hamburger{
+      display:none;
+      cursor:pointer;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.03);
+      color: rgba(238,241,246,.9);
+    }
 
-        <!-- Card 1 -->
-        <article class="service-card" data-title="Remote Video Production">
-          <div class="card-media" role="img" aria-label="Remote Video Production" style="background-image:url('/assets/remote-video.jpg')"></div>
-          <div class="card-body">
-            <h4>🎥 Remote Video Production</h4>
-            <p class="card-short">Professional videos produced entirely remotely — you shoot, we edit and publish.</p>
-            <div class="card-actions">
-              <button class="btn btn-details">View Details</button>
-            </div>
-            <div class="card-full" style="display:none">
-              <p>Produce high-quality video content without leaving your home or office. Receive a professional script, record footage at your convenience, and let our expert team handle editing, graphics, and distribution. Perfect for content creators and businesses seeking maximum reach efficiently.</p>
-            </div>
-          </div>
-        </article>
+    .main-nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color: rgba(238,241,246,.74);
+    }
+    .main-nav a{
+      padding:10px 10px;
+      border-radius:12px;
+      white-space:nowrap;
+    }
+    .main-nav a:hover{ color: rgba(238,241,246,.95); }
 
-        <!-- Card 2 -->
-        <article class="service-card" data-title="Commercial & Promo Videos">
-          <div class="card-media" role="img" aria-label="Commercial Video" style="background-image:url('/assets/commercial-video.jpg')"></div>
-          <div class="card-body">
-            <h4>📣 Commercial & Promo Videos</h4>
-            <p class="card-short">Transform ideas into impactful promotional content that drives engagement.</p>
-            <div class="card-actions">
-              <button class="btn btn-details">View Details</button>
-            </div>
-            <div class="card-full" style="display:none">
-              <p>From concept and scriptwriting to production and publishing, we create commercial videos that resonate with your audience. Each video is designed to reflect your brand identity, increase reach, and deliver measurable results on social media and digital platforms.</p>
-            </div>
-          </div>
-        </article>
+    .lang{
+      color: rgba(238,241,246,.72);
+      font-size: 13px;
+      white-space:nowrap;
+    }
+    .lang a{
+      padding:10px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.03);
+    }
+    .lang a[aria-current="page"]{
+      border-color: rgba(245,208,122,.24);
+      background: linear-gradient(180deg, rgba(245,208,122,.14), rgba(255,255,255,.03));
+      color: rgba(245,208,122,.95);
+    }
 
-        <!-- Card 3 -->
-        <article class="service-card" data-title="Copywriting & Video Scripts">
-          <div class="card-media" role="img" aria-label="Copywriting" style="background-image:url('/assets/copywriting.jpg')"></div>
-          <div class="card-body">
-            <h4>🧠 Copywriting & Video Scripts</h4>
-            <p class="card-short">Creative scripts and copy tailored to engage your audience effectively.</p>
-            <div class="card-actions">
-              <button class="btn btn-details">View Details</button>
-            </div>
-            <div class="card-full" style="display:none">
-              <p>We craft persuasive scripts and copy for video and marketing campaigns that connect with your audience. Our team researches your industry and target market to create content that informs, inspires, and converts while enhancing your brand voice.</p>
-            </div>
-          </div>
-        </article>
+    /* Hero */
+    .hero{
+      min-height: 78vh;
+      padding: 120px 0 64px;
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(1200px 600px at 20% 12%, rgba(184,138,42,.13), transparent 60%),
+        radial-gradient(900px 520px at 85% 25%, rgba(145, 90, 255, .12), transparent 60%),
+        radial-gradient(900px 520px at 70% 82%, rgba(0, 255, 200, .08), transparent 60%),
+        var(--bg);
+    }
+    .hero::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(to top, rgba(6,7,10,.88), rgba(6,7,10,.18)),
+        url('/assets/hero.webp');
+      background-size: cover;
+      background-position: center;
+      opacity:.22;
+      pointer-events:none;
+    }
 
-      </div>
-    </div>
+    .hero-layout{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      align-items:end;
+    }
 
-    <!-- BLOCK 2: Digital Marketing -->
-    <div class="services-block block-marketing" aria-labelledby="mark-title-en">
-      <div class="block-header">
-        <h3 id="mark-title-en">🚀 Digital Marketing & Influence</h3>
-        <p class="block-sub">We create measurable online impact for brands and creators.</p>
-      </div>
-      <div class="block-cards">
-        <!-- Card 4 -->
-        <article class="service-card" data-title="Influencer Account Management">
-          <div class="card-media" role="img" aria-label="Influencer Management" style="background-image:url('/assets/influencer-management.jpg')"></div>
-          <div class="card-body">
-            <h4>👑 Influencer Account Management</h4>
-            <p class="card-short">Professional management for influencers and creators to grow their digital presence.</p>
-            <div class="card-actions">
-              <button class="btn btn-details">View Details</button>
-            </div>
-            <div class="card-full" style="display:none">
-              <p>We manage influencer accounts with a mix of creativity and data analytics. Services include content planning, post scheduling, performance monitoring, and engagement strategies to strengthen personal brands and audience loyalty.</p>
-            </div>
-          </div>
-        </article>
+    .hero h1{
+      margin: 0 0 10px;
+      font-size: clamp(30px, 4.2vw, 54px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+    .hero .lead{
+      margin:0 0 18px;
+      color: rgba(238,241,246,.72);
+      font-size: 16px;
+      line-height: 2.0;
+      max-width: 68ch;
+    }
 
-        <!-- Card 5 -->
-        <article class="service-card" data-title="Influencer Marketing">
-          <div class="card-media" role="img" aria-label="Influencer Marketing" style="background-image:url('/assets/influencer-marketing.jpg')"></div>
-          <div class="card-body">
-            <h4>🤝 Influencer Marketing</h4>
-            <p class="card-short">Connecting brands with the right influencers to maximize results.</p>
-            <div class="card-actions">
-              <button class="btn btn-details">View Details</button>
-            </div>
-            <div class="card-full" style="display:none">
-              <p>We execute influencer campaigns tailored to your brand, selecting creators whose audience aligns with your target market. From concept to performance analysis, we ensure measurable ROI and transparent collaborations.</p>
-            </div>
-          </div>
-        </article>
+    .hero-cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 16px;
+    }
 
-        <!-- Card 6 -->
-        <article class="service-card" data-title="E-Commerce & Website Marketing">
-          <div class="card-media" role="img" aria-label="E-commerce Marketing" style="background-image:url('/assets/ecommerce-marketing.jpg')"></div>
-          <div class="card-body">
-            <h4>💼 E-Commerce & Website Marketing</h4>
-            <p class="card-short">Increase online sales with optimized marketing and SEO strategies.</p>
-            <div class="card-actions">
-              <button class="btn btn-details">View Details</button>
-            </div>
-            <div class="card-full" style="display:none">
-              <p>Comprehensive marketing solutions for e-commerce and websites, including SEO, social media campaigns, content creation, and analytics. Designed to enhance visibility, attract potential customers, and increase sales.</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 14px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.03);
+      color: rgba(238,241,246,.92);
+      font-weight: 800;
+      letter-spacing:.01em;
+      backdrop-filter: blur(10px);
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+      cursor:pointer;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.20); }
+    .btn.btn-gold{
+      border-color: rgba(245,208,122,.24);
+      background: linear-gradient(180deg, rgba(245,208,122,.18), rgba(255,255,255,.04));
+      box-shadow: var(--shadow);
+    }
+    .btn.btn-ghost{
+      border-color: rgba(255,255,255,.14);
+      background: rgba(255,255,255,.02);
+      color: rgba(238,241,246,.85);
+    }
 
-    <!-- BLOCK 3: Growth & Support -->
-    <div class="services-block block-growth" aria-labelledby="growth-title-en">
-      <div class="block-header">
-        <h3 id="growth-title-en">🌟 Growth & Creative Support</h3>
-        <p class="block-sub">Long-term strategies for sustained digital success.</p>
-      </div>
-      <div class="block-cards">
-        <!-- Card 7 -->
-        <article class="service-card" data-title="Digital Branding">
-          <div class="card-media" role="img" aria-label="Digital Branding" style="background-image:url('/assets/digital-branding.jpg')"></div>
-          <div class="card-body">
-            <h4>🌈 Digital Branding</h4>
-            <p class="card-short">Crafting distinctive digital identities for online impact.</p>
-            <div class="card-actions">
-              <button class="btn btn-details">View Details</button>
-            </div>
-            <div class="card-full" style="display:none">
-              <p>We develop a unique digital identity for your brand, including color schemes, logos, content style, and audience communication. Build recognition, trust, and engagement across all platforms.</p>
-            </div>
-          </div>
-        </article>
+    .hero-panel{
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--r);
+      background: rgba(255,255,255,.02);
+      box-shadow: 0 22px 80px rgba(0,0,0,.35);
+      padding: 16px;
+    }
+    .hero-panel .k{
+      margin:0 0 10px;
+      color: rgba(245,208,122,.92);
+      letter-spacing:.10em;
+      font-weight: 900;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .pill{
+      padding:10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.02);
+      color: rgba(238,241,246,.72);
+      font-size: 12px;
+      line-height:1;
+      white-space:nowrap;
+    }
 
-        <!-- Card 8 -->
-        <article class="service-card" data-title="Creator Support & Development">
-          <div class="card-media" role="img" aria-label="Creator Support" style="background-image:url('/assets/creators-support.jpg')"></div>
-          <div class="card-body">
-            <h4>🤝 Creator Support & Development</h4>
-            <p class="card-short">Programs empowering creators to grow and collaborate successfully.</p>
-            <div class="card-actions">
-              <button class="btn btn-details">View Details</button>
-            </div>
-            <div class="card-full" style="display:none">
-              <p>Structured programs for creators, including video production training, personal branding, and growth strategies. Opportunities for collaboration with transparent agreements ensure long-term digital success.</p>
-            </div>
-          </div>
-        </article>
+    /* Sections */
+    .section{ padding: 70px 0; }
+    .section.light{
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border-top:1px solid rgba(255,255,255,.08);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .section-title{
+      margin:0 0 10px;
+      font-size: 28px;
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+    }
+    .section-desc{
+      margin:0 0 18px;
+      color: rgba(238,241,246,.62);
+      line-height: 1.95;
+      max-width: 86ch;
+    }
 
-        <!-- Card 9 -->
-        <article class="service-card" data-title="Web Design & Development">
-          <div class="card-media" role="img" aria-label="Web Design" style="background-image:url('/assets/web-design.jpg')"></div>
-          <div class="card-body">
-            <h4>🌐 Web Design & Development</h4>
-            <p class="card-short">Responsive websites designed to convert visitors into customers.</p>
-            <div class="card-actions">
-              <button class="btn btn-details">View Details</button>
-            </div>
-            <div class="card-full" style="display:none">
-              <p>Full-service website design and development, including UX/UI design, coding, payment integration, SEO, and social media linkage. Responsive and fast-loading sites that strengthen your online presence.</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .card{
+      grid-column: span 4;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--r);
+      background: rgba(255,255,255,.02);
+      box-shadow: 0 22px 80px rgba(0,0,0,.35);
+      padding: 16px;
+      min-height: 170px;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+    .card h3{
+      margin:0;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .card p{
+      margin:0;
+      color: rgba(238,241,246,.66);
+      line-height: 1.9;
+      font-size: 13px;
+    }
+    .card .actions{ margin-top:auto; display:flex; gap:10px; flex-wrap:wrap; }
+    .card .mini{
+      padding: 10px 12px;
+      font-size: 12px;
+      border-radius: 999px;
+    }
+    .mini.gold{
+      border-color: rgba(245,208,122,.24);
+      background: linear-gradient(180deg, rgba(245,208,122,.14), rgba(255,255,255,.03));
+      color: rgba(245,208,122,.95);
+    }
 
-  </div>
-</section>
+    .list{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--r);
+      background: rgba(255,255,255,.02);
+      box-shadow: 0 22px 80px rgba(0,0,0,.35);
+      padding: 16px;
+    }
+    .list ul{
+      margin:0;
+      padding-left: 18px;
+      display:grid;
+      gap:10px;
+    }
+    .list li{
+      color: rgba(238,241,246,.75);
+      line-height: 1.9;
+    }
+    .list a{
+      color: rgba(245,208,122,.92);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
 
-<!-- ======= Modal ======= -->
-<div id="service-modal" class="modal" aria-hidden="true">
-  <div class="modal-content">
-    <span id="modal-close" class="modal-close">&times;</span>
-    <h3 id="modal-title"></h3>
-    <div id="modal-text"></div>
-  </div>
-</div>
+    /* Footer */
+    .site-footer{
+      border-top: 1px solid rgba(255,255,255,.10);
+      padding: 26px 0;
+      color: rgba(238,241,246,.60);
+    }
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 16px;
+      flex-wrap:wrap;
+    }
 
-<!-- About -->
-<section id="about" class="container section light">
-  <h2 class="section-title">About Us</h2>
-  <p>
-    At Viva Media Creative, we believe in the power of visuals and words. We work tirelessly to turn your ideas into tangible content that leaves an impact — whether through advertising campaigns, documentaries, or entertainment and educational programs.
-  </p>
-  <p>
-    Our team consists of specialists in production, editing, and digital marketing strategies — accompanying your project from concept to distribution and analysis.
-  </p>
-</section>
+    /* Responsive */
+    @media (max-width: 980px){
+      .hamburger{ display:inline-flex; }
+      .main-nav{
+        position:absolute;
+        top: 64px;
+        left: 22px;
+        right: 22px;
+        display:none;
+        flex-direction:column;
+        gap:8px;
+        padding: 12px;
+        border-radius: 22px;
+        border: 1px solid rgba(255,255,255,.12);
+        background: rgba(6,7,10,.92);
+        backdrop-filter: blur(12px);
+      }
+      .main-nav.active{ display:flex; }
 
-<!-- Creator Support -->
-<section id="support" class="container section">
-  <h2 class="section-title">Creator Support — Our Comprehensive Program</h2>
-  <div class="support-grid">
-    <div class="support-text">
-      <p>
-        We provide full support to maximize the impact of your visual content. Support includes innovative platforms, tech tools, training programs, and data analysis to enhance quality and reach.
-      </p>
-      <p>
-        Practical training in editing, production, and digital marketing, along with analytics tools to help you understand your audience and improve content types. We also assist with equipment and professional production when needed.
-      </p>
-      <p>
-        Building networks and partnerships with brands and media organizations to open new collaboration opportunities for creators.
-      </p>
-    </div>
-    <aside class="support-aside">
-      <h3>What We Offer</h3>
-      <ul>
-        <li>Advanced publishing and distribution platforms</li>
-        <li>Hands-on training and specialized workshops</li>
-        <li>Analytics for views and engagement</li>
-        <li>Financial support and production capabilities</li>
-        <li>Partnership networks and joint promotion</li>
-      </ul>
-    </aside>
-  </div>
-</section>
+      .hero-layout{ grid-template-columns: 1fr; }
+      .card{ grid-column: span 12; }
+    }
+  </style>
 
-<!-- Documentary -->
-<section id="documentary" class="container section light">
-  <h2 class="section-title">Documentary Production</h2>
-  <div class="doc">
-    <img src="/assets/doc.jpg" alt="Documentary Production" class="doc-img" loading="lazy">
-    <div class="doc-text">
-      <p>
-        In a diverse world, real stories remain the most impactful. We treat each story as a treasure to be preserved and shared. Using cameras as a tool to understand history and humanity, we create strong and meaningful narratives.
-      </p>
-      <p>Join us to document your story professionally, reaching hearts and minds.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Careers -->
-<section id="apply" class="container section light">
-  <h2 class="section-title">Apply for a Position</h2>
-  <p>If you wish to join our team, submit your CV directly here:</p>
-
-  <form action="https://formsubmit.co/vivamediacreations@gmail.com" method="POST" enctype="multipart/form-data" class="job-form">
-    <input type="hidden" name="_next" value="https://vivamediacreative.com/thank-you-en.html">
-    <label for="name">Full Name:</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="position">Position:</label>
-    <input type="text" id="position" name="position" required>
-
-    <label for="cv">Attach CV (PDF / Word):</label>
-    <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
-
-    <button type="submit" class="btn">Submit</button>
-  </form>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="container section">
-  <h2 class="section-title">Contact Us</h2>
-  <p>Want to trend? Get in touch with our team and start your journey to excellence.</p>
-
-  <ul class="contact-list">
-    <li>Email: <a href="mailto:info@vivamediacreative.com">info@vivamediacreative.com</a></li>
-    <li>WhatsApp: <a href="https://wa.me/15565678291">Click to chat</a></li>
-    <li>Social Media: <a href="https://www.facebook.com/vivamediacreative">Facebook</a></li>
-  </ul>
-
-  <p class="small">Or send a message directly via email, and we will respond within 24 hours.</p>
-</section>
-
-<!-- Footer -->
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <p>© 2025 Viva Media Creative. All rights reserved.</p>
-    <p class="small">
-      Digital design & production — Contact:
-      <a href="mailto:vivamediacreations@gmail.com">vivamediacreations@gmail.com</a>
-    </p>
-    <div class="lang-switcher" style="margin-top:10px; font-size:14px;">
-      🌐 <a href="/ar.html">العربية</a> | <a href="/en.html" aria-current="page">English</a>
-    </div>
-  </div>
-</footer>
-
-<!-- Scripts -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-
-  // Hamburger menu
-  const hamburger = document.getElementById('hamburger');
-  const nav = document.getElementById('main-nav');
-  if (hamburger && nav) {
-    hamburger.addEventListener('click', () => nav.classList.toggle('active'));
-    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => nav.classList.remove('active')));
+  <!-- Structured Data: Organization + Blog -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Viva Media Creative",
+    "url":"https://vivamediacreative.com/",
+    "logo":"https://vivamediacreative.com/assets/logo.jpeg"
   }
+  </script>
 
-  // Modal functionality
-  const modal = document.getElementById('service-modal');
-  const modalTitle = document.getElementById('modal-title');
-  const modalText = document.getElementById('modal-text');
-  const modalClose = document.getElementById('modal-close');
-
-  document.querySelectorAll('.service-card .btn-details').forEach(btn => {
-    btn.addEventListener('click', e => {
-      const card = e.target.closest('.service-card');
-      const title = card.dataset.title || card.querySelector('h4').textContent;
-      const fullContent = card.querySelector('.card-full') ? card.querySelector('.card-full').innerHTML : 'Details not available.';
-      modalTitle.textContent = title;
-      modalText.innerHTML = fullContent;
-      modal.classList.add('active');
-      modal.setAttribute('aria-hidden', 'false');
-    });
-  });
-
-  modalClose.addEventListener('click', () => {
-    modal.classList.remove('active');
-    modal.setAttribute('aria-hidden', 'true');
-    modalTitle.textContent = '';
-    modalText.innerHTML = '';
-  });
-
-  modal.addEventListener('click', e => {
-    if (e.target === modal) {
-      modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-      modalTitle.textContent = '';
-      modalText.innerHTML = '';
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Blog",
+    "name":"Viva Media Creative — Knowledge Hub (EN)",
+    "url":"https://vivamediacreative.com/en/",
+    "inLanguage":"en",
+    "publisher":{
+      "@type":"Organization",
+      "name":"Viva Media Creative",
+      "url":"https://vivamediacreative.com/"
     }
-  });
+  }
+  </script>
+</head>
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-      modalTitle.textContent = '';
-      modalText.innerHTML = '';
-    }
-  });
+<body>
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="/" aria-label="Go to main services homepage">
+          <img src="/assets/logo.jpeg" alt="Viva Media Creative" class="logo" loading="lazy">
+        </a>
+        <div class="brand-text">
+          <p class="brand-name">Viva Media Creative</p>
+          <p class="tag">Knowledge Hub — insights, frameworks & playbooks</p>
+        </div>
+      </div>
 
-});
-</script>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
 
+      <!-- ✅ Stable links -->
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="/en/" aria-current="page">Knowledge Hub</a>
+        <a href="/news_en/">Articles</a>
+        <a href="/ar/tools/" title="Tools library currently available in Arabic">Tools (AR)</a>
+        <a href="/contact">Contact</a>
+        <a href="/" title="Main services homepage">Services</a>
+      </nav>
+
+      <div class="lang">
+        <a href="/ar/">العربية</a> | <a href="/en/" aria-current="page">English</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Knowledge Hub intro">
+    <div class="container">
+      <div class="hero-layout">
+        <div>
+          <h1>Influence, Content & Growth — made practical</h1>
+          <p class="lead">
+            This hub is not a “services page.” It’s a library of practical thinking: how to design influencer campaigns,
+            build creator-friendly content systems, create repeatable viral mechanics, and use SEO to compound results.
+            When you’re ready to apply it, you can move to our main services homepage.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-gold" href="/news_en/">Start reading</a>
+            <a class="btn btn-ghost" href="/contact">Ask a question</a>
+            <a class="btn btn-ghost" href="/" aria-label="Go to main services homepage">Go to Services</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="What you will find here">
+          <p class="k">Inside this hub</p>
+          <div class="pill-row">
+            <span class="pill">Campaign frameworks</span>
+            <span class="pill">Creator playbooks</span>
+            <span class="pill">Viral mechanics</span>
+            <span class="pill">SEO growth loops</span>
+            <span class="pill">Measurement basics</span>
+            <span class="pill">Practical checklists</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to use this hub (EN-only, unique structure) -->
+  <section class="section light" aria-label="How to use this hub">
+    <div class="container">
+      <h2 class="section-title">How to use this hub</h2>
+      <p class="section-desc">
+        The fastest path is: learn → plan → apply. Each piece here aims to reduce guesswork and increase clarity.
+        When you need execution, the main services homepage is your “apply” destination.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>1) Learn the system</h3>
+          <p>Read a short set of articles to understand the “why” behind creator-led marketing and content distribution.</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/news_en/">Browse Articles</a>
+            <a class="btn mini" href="/">Apply via Services</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>2) Choose a playbook</h3>
+          <p>Pick the track that matches your goal: growth, conversions, brand lift, or creator consistency.</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/news_en/">Pick a Track</a>
+            <a class="btn mini" href="/contact">Talk to us</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>3) Apply with clarity</h3>
+          <p>Execution becomes simpler when the strategy is clear. Use Services when you want hands-on delivery.</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/">Main Services Homepage</a>
+            <a class="btn mini" href="/contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Knowledge Tracks (EN unique — not mirroring AR wording) -->
+  <section class="section" aria-label="Knowledge tracks">
+    <div class="container">
+      <h2 class="section-title">Knowledge tracks</h2>
+      <p class="section-desc">
+        These tracks map to real search intent: people looking for clarity, not marketing slogans.
+        Use them as a learning route, then move to Services when you want to execute.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Influencer campaign design</h3>
+          <p>How to pick creators, structure deliverables, protect brand voice, and measure outcomes beyond vanity metrics.</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/news_en/">Read articles</a>
+            <a class="btn mini" href="/">Apply via Services</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Creator account growth systems</h3>
+          <p>Consistency, identity, content calendars, and feedback loops that keep growth stable (not chaotic).</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/news_en/">Explore</a>
+            <a class="btn mini" href="/contact">Ask us</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Viral mechanics & distribution</h3>
+          <p>Hooks, angles, timing, packaging, distribution, and iteration — built for repeatability, not luck.</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/news_en/">Learn</a>
+            <a class="btn mini" href="/ar/tools/" title="Tools library currently available in Arabic">Tools (AR)</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>SEO compounding growth</h3>
+          <p>Content that ranks, page intent matching, internal linking, and simple funnels that compound over time.</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/news_en/">Read</a>
+            <a class="btn mini" href="/">Services</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Copy for conversion</h3>
+          <p>Messaging clarity, short-form scripts, CTAs, and creative constraints that push decisions — not noise.</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/news_en/">Start here</a>
+            <a class="btn mini" href="/contact">Contact</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Measurement basics</h3>
+          <p>What to measure, how to interpret results, and how to iterate without breaking momentum.</p>
+          <div class="actions">
+            <a class="btn mini gold" href="/news_en/">Go</a>
+            <a class="btn mini" href="/">Apply</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content & Tools (safe links only) -->
+  <section class="section light" aria-label="Start here">
+    <div class="container">
+      <h2 class="section-title">Start here</h2>
+      <p class="section-desc">
+        Use the links below to navigate content. This page stays stable and points to existing sections.
+      </p>
+
+      <div class="grid">
+        <div class="list" style="grid-column: span 6;">
+          <h3 style="margin:0 0 10px;font-size:16px;">Latest articles</h3>
+          <ul>
+            <li><a href="/news_en/">Browse all English articles</a> and choose by your goal.</li>
+            <li>Prefer implementation? Jump to the <a href="/">main services homepage</a>.</li>
+            <li>Need a direct answer? <a href="/contact">Contact us</a>.</li>
+          </ul>
+        </div>
+
+        <div class="list" style="grid-column: span 6;">
+          <h3 style="margin:0 0 10px;font-size:16px;">Tools library</h3>
+          <ul>
+            <li><a href="/ar/tools/">Tools (Arabic)</a> — checklists & templates currently available.</li>
+            <li>If you want execution support, go to <a href="/">Services</a>.</li>
+            <li>For questions, <a href="/contact">reach out</a>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Minimal about (non-commercial) -->
+  <section class="section" aria-label="About this hub">
+    <div class="container">
+      <h2 class="section-title">About this hub</h2>
+      <p class="section-desc">
+        We publish content to make creator-led growth and influencer marketing easier to understand and apply.
+        This is a learning layer — the execution layer lives on the main services homepage.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="/">Go to main services homepage</a>
+        <a class="btn btn-ghost" href="/contact">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="y"></span> Viva Media Creative</div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="/news_en/">Articles</a>
+        <a href="/ar/tools/" title="Tools library currently available in Arabic">Tools (AR)</a>
+        <a href="/contact">Contact</a>
+        <a href="/">Services</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll
+    const header = document.getElementById('siteHeader');
+    const onScroll = () => {
+      if (window.scrollY > 8) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Mobile nav
+    const burger = document.getElementById('hamburger');
+    const nav = document.getElementById('main-nav');
+    burger.addEventListener('click', () => nav.classList.toggle('active'));
+
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
