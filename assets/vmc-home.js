@@ -70,7 +70,7 @@ const dict = {
       "نعمل مع مشاهير وصُنّاع محتوى وعلامات تجارية لربط “الانتشار” بـ “الربح”. استراتيجية + تنفيذ + توزيع + قياس — لتصبح شهرتك مصدر شراكات مدفوعة، مبيعات، ونفوذ حقيقي.",
     hero_cta_primary: "Start Your Growth",
     hero_cta_secondary: "See How We Work",
-    hero_cta_elite: "شراكات النخبة مع المؤثرين",
+    hero_cta_elite: "Elite Influencer Partnerships",
     meta_1: "Engaged followers",
     meta_2: "Years of trend-making",
     meta_3: "Influence network",
