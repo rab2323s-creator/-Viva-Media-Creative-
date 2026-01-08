@@ -1,4 +1,4 @@
-   /* =========================
+    /* =========================
    VMC HOME (Slider Services C)
 ========================= */
 
@@ -139,8 +139,8 @@ const dict = {
     t6: "نمو ودخل قابلان للقياس",
     t6d: "نقيس ونحلل ثم نكرر ما ينجح—لتزيد الأرقام المهمة: الوصول، الطلبات، والدخل.",
 
-    trusted_title: "يثق بنا",
-    trusted_note: "حاليًا نستخدم شعارات “Placeholder” — وعندما تجهز قائمة العملاء، نستبدلها فورًا.",
+    trusted_title: "نطاق الثقة",
+    trusted_note: "نعمل ضمن نطاق محدد من الشراكات عالية التأثير مع مشاهير، صُنّاع محتوى، وعلامات تجارية تُدار بعقلية نمو لا ضجيج. بعض الشراكات تخضع لخصوصية كاملة — لأن الثقة تُبنى على النتائج لا على عرض الأسماء.",
 
     final_title: "جاهز تتحول من مشهور… إلى علامة تبيع؟",
     final_desc:
@@ -237,8 +237,8 @@ const dict = {
     t6: "Measurable growth & income",
     t6d: "We track what matters: reach, demand, and revenue.",
 
-    trusted_title: "Trusted By",
-    trusted_note: "Logos are placeholders for now — we’ll replace them once client approvals are ready.",
+    trusted_title: "Trust Scope",
+    trusted_note: "We operate within a high-impact partnership scope across celebrities, creators, and brands focused on measurable growth. Some collaborations remain confidential — because trust is built on results, not name-dropping.",
 
     final_title: "Ready to turn fame into a selling brand?",
     final_desc:
