@@ -1,4 +1,4 @@
-    /* =========================
+     /* =========================
    VMC HOME (Slider Services C)
 ========================= */
 
@@ -152,6 +152,18 @@ const dict = {
     s5_b1: "• تحسين محركات البحث SEO",
     s5_b2: "• تسويق المتاجر الإلكترونية",
     s5_b3: "• زيادة المبيعات",
+    footer_tagline: "نُحوّل التأثير إلى شراكات مدفوعة، مبيعات، ونمو قابل للقياس.",
+    footer_links: "روابط سريعة",
+    footer_contact: "تواصل",
+    footer_cta: "اطلب استشارة",
+    footer_region: "النطاق",
+    footer_privacy: "الخصوصية",
+    footer_terms: "الشروط",
+    footer_elite_title: "Elite Influencer Partnerships",
+    footer_elite_sub: "للشركات وصنّاع المحتوى من الفئة العليا",
+    footer_trust_1: "شراكات آمنة للعلامات",
+    footer_trust_2: "نمو يقوده الأداء",
+
   },
   en: {
     nav_services: "Services",
@@ -250,6 +262,18 @@ const dict = {
     s5_b1: "• Technical & content SEO",
     s5_b2: "• E-commerce growth",
     s5_b3: "• Conversion optimization",
+    footer_tagline: "We turn influence into paid partnerships, measurable sales, and scalable growth.",
+    footer_links: "Quick links",
+    footer_contact: "Contact",
+    footer_cta: "Request a call",
+    footer_region: "Region",
+    footer_privacy: "Privacy",
+    footer_terms: "Terms",
+    footer_elite_title: "Elite Influencer Partnerships",
+    footer_elite_sub: "For brands & high-profile creators",
+    footer_trust_1: "Brand-safe partnerships",
+    footer_trust_2: "Performance-led growth",
+
   },
 };
 
