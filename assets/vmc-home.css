@@ -368,11 +368,9 @@ a{color:inherit; text-decoration:none}
   border-radius: 999px;
   background: rgba(255,255,255,.02);
 }
-
-/* Seamless marquee: track contains 2 identical groups */
 .track{
-  display:flex;
-  width: max-content;
+  display:flex; gap:18px; white-space:nowrap;
+  padding: 14px 18px;
   animation: marquee 18s linear infinite;
   color: rgba(238,241,246,.72);
   letter-spacing:.22em;
@@ -380,20 +378,15 @@ a{color:inherit; text-decoration:none}
   font-family: "Space Grotesk", Manrope, sans-serif;
   font-size: 12px;
   will-change: transform;
-  transform: translate3d(0,0,0);
-}
-.track__group{
-  display:flex;
-  gap:18px;
-  white-space:nowrap;
-  padding: 14px 18px;
-  align-items:center;
+  transform: translateZ(0);
 }
 .logo{color: rgba(245,208,122,.92)}
-@keyframes marquee{
-  from{ transform: translate3d(0,0,0); }
-  to{ transform: translate3d(-50%,0,0); }
-}
+@keyframes marquee{ from{transform:translateX(0) translateZ(0)} to{transform:translateX(-50%) translateZ(0)} }
+
+/* Optional: pause marquee until hover (reduces constant work)
+   If you prefer always-moving, comment the next 2 rules. */
+.marquee .track{ animation-play-state: paused; }
+.marquee.is-running .track{ animation-play-state: running; }
 
 .small{color: rgba(238,241,246,.58); margin: 12px 0 0; }
 
@@ -424,6 +417,11 @@ a{color:inherit; text-decoration:none}
 /* =============== Reveal =============== */
 .reveal{opacity:0; transform: translateY(14px); transition: opacity .75s ease, transform .75s ease;}
 .reveal.is-in{opacity:1; transform: translateY(0);}
+
+/* Fix: prevent jitter when marquee animates inside a transformed reveal */
+.reveal--opacity{ transform: none !important; }
+.reveal--opacity.is-in{ transform: none !important; }
+
 
 /* =============== Sticky Services Scenes =============== */
 .services-sticky .section__head{ margin-bottom: 22px; }
@@ -804,31 +802,6 @@ a{color:inherit; text-decoration:none}
   cursor: grabbing;
   scroll-behavior:auto;
 }
-
-/* أثناء السحب/العجلة: خفّف المؤثرات الثقيلة لتقليل التقطيع */
-.sliderViewport.is-dragging .slide__inner{
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  box-shadow: none;
-}
-.sliderViewport.is-dragging .shine{
-  animation: none;
-  opacity: 0;
-}
-
-
-/* iOS performance: reduce expensive blur/animations on older devices (e.g., iPhone 9) */
-.is-ios .slide__inner{
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  /* keep look without blur */
-  background: rgba(6,7,10,.55);
-}
-.is-ios .shine{
-  animation: none;
-  opacity: .35;
-}
-.is-ios .sliderViewport{ scroll-behavior: auto; }
 
 /* =============== Responsive / Reduced Motion / Fallbacks =============== */
 @media (max-width: 980px){
@@ -1329,3 +1302,13 @@ a{color:inherit; text-decoration:none}
   .siteFooter__inner{ grid-template-columns: 1fr; }
   .siteFooter__bottom{ flex-direction:column; align-items:flex-start; }
 }
+
+
+/* iOS performance: reduce heavy blur/animations on older devices */
+html.is-ios .sliderViewport{ scroll-behavior: auto; }
+html.is-ios .slide__inner{
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  background: rgba(6,7,10,.55);
+}
+html.is-ios .shine{ animation: none !important; opacity: .35; }
