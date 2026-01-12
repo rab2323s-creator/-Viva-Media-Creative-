@@ -1,141 +1,382 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+ <!doctype html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Celebrity & Creator Account Management | Viva Media Creative</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- SEO -->
-  <meta name="description" content="Strategic management of celebrity and creator social media accounts. Brand-first growth without harming reputation or credibility." />
+  <title>إدارة حسابات المشاهير وصنّاع المحتوى — Viva Media Creative</title>
+  <meta name="description" content="إدارة حسابات المشاهير وصنّاع المحتوى كعلامة تجارية: تقويم شهري، تنظيم الهوية الرقمية، إدارة النشر، وتحسين الأداء — لنمو ثابت بدون حرق صورة أو فقدان مصداقية." />
   <link rel="canonical" href="https://vivamediacreative.com/services/celebrity-account-management/" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Noto+Kufi+Arabic:wght@400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- i18n -->
-  <script src="/assets/js/i18n.js" defer></script>
+  <!-- نفس ستايل الموقع -->
+  <link rel="stylesheet" href="/assets/vmc-home.css" />
 </head>
 
 <body>
+  <div class="noise" aria-hidden="true"></div>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="container header__inner">
-    <a href="/" class="logo">Viva Media Creative</a>
+  <!-- NAV -->
+  <header class="nav">
+    <a class="brand" href="/">
+      <span class="brand__mark">VMC</span>
+      <span class="brand__name">Viva Media Creative</span>
+    </a>
 
-    <div class="lang-switch">
-      <button data-lang="en">EN</button>
-      <button data-lang="ar">AR</button>
+    <nav class="nav__links">
+      <a href="/#services" data-i18n="nav_services">الخدمات</a>
+      <a href="/#tenets" data-i18n="nav_tenets">مبادئنا</a>
+      <a href="/#trusted" data-i18n="nav_trusted">عملاؤنا</a>
+      <a class="pill" href="/contact/" data-i18n="nav_contact">تواصل</a>
+
+      <button class="lang" id="langBtn" aria-label="Toggle language">
+        <span class="lang__dot"></span>
+        <span id="langLabel">EN</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" style="min-height:auto; padding-bottom: 40px;">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="halo h1"></div>
+        <div class="halo h2"></div>
+        <div class="halo h3"></div>
+        <div class="gridlines"></div>
+      </div>
+
+      <div class="hero__inner">
+        <p class="kicker reveal" data-i18n="svc_kicker">Account Management • Brand • Credibility</p>
+
+        <h1 class="h1 reveal">
+          <span data-i18n="svc_title_1">إدارة حسابات المشاهير</span><br/>
+          <span class="gold" data-i18n="svc_title_2">وصنّاع المحتوى</span>
+        </h1>
+
+        <p class="sub reveal" data-i18n="svc_sub">
+          ندير حسابك كعلامة تجارية: تقويم شهري، تنظيم الهوية الرقمية، إدارة النشر، وتحسين الأداء — لتكبر بثبات بدون حرق صورة أو فقدان مصداقية.
+        </p>
+
+        <div class="hero__meta reveal">
+          <div class="meta">
+            <span class="meta__num" data-i18n="svc_meta_1_label">التركيز</span>
+            <span class="meta__label" data-i18n="svc_meta_1_value">هوية + نمو</span>
+          </div>
+          <div class="meta">
+            <span class="meta__num" data-i18n="svc_meta_2_label">النظام</span>
+            <span class="meta__label" data-i18n="svc_meta_2_value">إدارة شهرية</span>
+          </div>
+          <div class="meta">
+            <span class="meta__num" data-i18n="svc_meta_3_label">الأسلوب</span>
+            <span class="meta__label" data-i18n="svc_meta_3_value">بدون ضجيج</span>
+          </div>
+        </div>
+
+        <div class="hero__cta reveal" style="margin-top:18px;">
+          <a class="btn primary magnetic" href="/contact/" data-i18n="svc_cta_primary">احجز استشارة خاصة</a>
+          <a class="btn ghost magnetic" href="/#services" data-i18n="svc_cta_secondary">استعرض الخدمات</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="section" style="padding-top: 40px;">
+      <div class="section__head">
+        <h2 class="title reveal">
+          <span class="cap" data-i18n="svc_cap">Service</span>
+          <span data-i18n="svc_section_title">ماذا نعني بإدارة الحساب كعلامة تجارية</span>
+        </h2>
+        <p class="desc reveal" data-i18n="svc_section_desc">
+          ليست “منشورات أكثر”… بل قرارات تحمي الاسم، تضبط النبرة، وتنمّي الحضور بصورة متسقة ومحترفة.
+        </p>
+      </div>
+
+      <div class="service-list">
+
+        <!-- Card 1 -->
+        <article class="service reveal">
+          <div class="service__copy">
+            <div class="service__tag" data-i18n="c1_tag">STRATEGY & IDENTITY</div>
+            <h3 data-i18n="c1_title">استراتيجية + هوية رقمية</h3>
+            <p data-i18n="c1_desc">
+              نحدد تموضعك الرقمي، نبرة الصوت، وحدود المحتوى المناسب لك — بحيث يظل حسابك متسقًا مع صورتك العامة ومع ما تريد أن تُعرف به.
+            </p>
+            <span class="link" data-i18n="c1_note">صورة ثابتة… نمو ثابت</span>
+          </div>
+          <div class="service__visual v2" aria-hidden="true"></div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="service reveal">
+          <div class="service__copy">
+            <div class="service__tag" data-i18n="c2_tag">MONTHLY CALENDAR</div>
+            <h3 data-i18n="c2_title">تقويم شهري واضح</h3>
+            <p data-i18n="c2_desc">
+              ننظّم الشهر مسبقًا: أفكار، محاور، توقيت نشر، وتوازن بين الظهور والقيمة — بدون ارتجال يومي أو ضغط أو قرارات متسرعة.
+            </p>
+            <span class="link" data-i18n="c2_note">تخطيط يريحك ويضبط الأداء</span>
+          </div>
+          <div class="service__visual v3" aria-hidden="true"></div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="service reveal">
+          <div class="service__copy">
+            <div class="service__tag" data-i18n="c3_tag">PUBLISHING & OPTIMIZATION</div>
+            <h3 data-i18n="c3_title">إدارة النشر والتحسين</h3>
+            <p data-i18n="c3_desc">
+              ننشر بذكاء ونحسّن باستمرار: صياغة، عناوين، ترتيب، وإيقاع — بما يخدم التفاعل بدون التضحية بالهيبة أو المصداقية.
+            </p>
+            <span class="link" data-i18n="c3_note">أداء أقوى بدون “ترندات مدمّرة”</span>
+          </div>
+          <div class="service__visual v4" aria-hidden="true"></div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="service reveal">
+          <div class="service__copy">
+            <div class="service__tag" data-i18n="c4_tag">PERFORMANCE & INSIGHTS</div>
+            <h3 data-i18n="c4_title">تحليل الأداء بواقعية</h3>
+            <p data-i18n="c4_desc">
+              نراقب الأداء ونقرأه بشكل استراتيجي: ما الذي يرفع القيمة؟ ما الذي يستهلك الاسم؟ ثم نعدّل الخطة بناءً على البيانات والاتجاه.
+            </p>
+            <span class="link" data-i18n="c4_note">الهدف: مسار مستدام</span>
+          </div>
+          <div class="service__visual" aria-hidden="true"></div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="service reveal">
+          <div class="service__copy">
+            <div class="service__tag" data-i18n="c5_tag">WHO IT'S FOR</div>
+            <h3 data-i18n="c5_title">لمن هذه الخدمة؟</h3>
+            <p data-i18n="c5_desc">
+              مناسبة للمشاهير وصنّاع المحتوى وأصحاب العلامات الشخصية الذين يريدون نموًا هادئًا ومحسوبًا. غير مناسبة لمن يريد ضجة سريعة بأي ثمن.
+            </p>
+            <span class="link" data-i18n="c5_note">فلترة تحفظ وقت الجميع</span>
+          </div>
+          <div class="service__visual v2" aria-hidden="true"></div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="service reveal">
+          <div class="service__copy">
+            <div class="service__tag" data-i18n="c6_tag">FAQ</div>
+            <h3 data-i18n="c6_title">أسئلة سريعة</h3>
+            <p data-i18n="c6_desc">
+              هل تضمنون أرقامًا؟ لا — النتائج تتأثر بعوامل كثيرة. نحن نضمن إدارة احترافية ضمن نطاق واضح وخطة شهرية ومراجعة منتظمة.
+            </p>
+            <a class="link" href="/contact/" data-i18n="c6_link">اسألنا عن حالتك</a>
+          </div>
+          <div class="service__visual v3" aria-hidden="true"></div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final">
+      <div class="final__card reveal">
+        <h2 data-i18n="final_title">جاهز لإدارة حسابك بشكل استراتيجي؟</h2>
+        <p data-i18n="final_desc">
+          تواصل معنا لاستشارة خاصة — بسرية تامة وبخطة واضحة تناسب صورتك وجمهورك.
+        </p>
+        <a class="btn primary magnetic" href="/contact/" data-i18n="final_cta">تواصل الآن</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="y"></span> Viva Media Creative</p>
+    <div class="footer__links">
+      <a href="/terms/" data-i18n="footer_terms">Terms</a>
+      <a href="/privacy/" data-i18n="footer_privacy">Privacy</a>
+      <a href="/contact/" data-i18n="footer_contact">Contact</a>
     </div>
-  </div>
-</header>
+  </footer>
 
-<!-- HERO -->
-<section class="hero hero--service">
-  <div class="container">
-    <h1 data-i18n="h1">
-      Celebrity & Creator Account Management
-    </h1>
+  <script>
+    // year
+    const y = document.getElementById("y");
+    if (y) y.textContent = String(new Date().getFullYear());
 
-    <p class="hero__subtitle" data-i18n="hero_sub">
-      Sustainable growth. Protected image. Long-term credibility.
-    </p>
-  </div>
-</section>
+    // reveal
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) if (e.isIntersecting) e.target.classList.add("is-in");
+      },
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
-<!-- INTRO -->
-<section class="section">
-  <div class="container text-block">
-    <p data-i18n="intro">
-      Managing high-visibility accounts is not about posting more content.
-      It is about protecting identity, shaping perception, and growing with intention.
-      At Viva Media Creative, we manage accounts as brands — not timelines.
-    </p>
-  </div>
-</section>
+    // magnetic
+    document.querySelectorAll(".magnetic").forEach((el) => {
+      const strength = 10;
+      el.addEventListener("pointermove", (ev) => {
+        const r = el.getBoundingClientRect();
+        const dx = ev.clientX - (r.left + r.width / 2);
+        const dy = ev.clientY - (r.top + r.height / 2);
+        el.style.transform = `translate(${dx / strength}px, ${dy / strength}px)`;
+      });
+      el.addEventListener("pointerleave", () => {
+        el.style.transform = `translate(0px, 0px)`;
+      });
+    });
 
-<!-- WHAT WE MANAGE -->
-<section class="section section--light">
-  <div class="container">
-    <h2 data-i18n="what_title">What We Manage</h2>
+    // i18n
+    const dict = {
+      ar: {
+        nav_services: "الخدمات",
+        nav_tenets: "مبادئنا",
+        nav_trusted: "عملاؤنا",
+        nav_contact: "تواصل",
 
-    <ul class="service-list">
-      <li data-i18n="wm1">Content strategy and direction</li>
-      <li data-i18n="wm2">Monthly content calendar</li>
-      <li data-i18n="wm3">Digital identity & brand tone</li>
-      <li data-i18n="wm4">Publishing & optimization</li>
-      <li data-i18n="wm5">Performance monitoring</li>
-      <li data-i18n="wm6">Reputation-safe growth planning</li>
-    </ul>
-  </div>
-</section>
+        svc_kicker: "إدارة حسابات • علامة شخصية • مصداقية",
+        svc_title_1: "إدارة حسابات المشاهير",
+        svc_title_2: "وصنّاع المحتوى",
+        svc_sub: "ندير حسابك كعلامة تجارية: تقويم شهري، تنظيم الهوية الرقمية، إدارة النشر، وتحسين الأداء — لتكبر بثبات بدون حرق صورة أو فقدان مصداقية.",
 
-<!-- PHILOSOPHY -->
-<section class="section">
-  <div class="container text-block">
-    <h2 data-i18n="phil_title">Our Philosophy</h2>
-    <p data-i18n="phil_text">
-      Visibility without noise. Growth without reputation damage.
-      We believe that long-term credibility matters more than short-term reach.
-    </p>
-  </div>
-</section>
+        svc_meta_1_label: "التركيز",
+        svc_meta_1_value: "هوية + نمو",
+        svc_meta_2_label: "النظام",
+        svc_meta_2_value: "إدارة شهرية",
+        svc_meta_3_label: "الأسلوب",
+        svc_meta_3_value: "بدون ضجيج",
 
-<!-- PROCESS -->
-<section class="section section--light">
-  <div class="container">
-    <h2 data-i18n="process_title">How We Work</h2>
+        svc_cta_primary: "احجز استشارة خاصة",
+        svc_cta_secondary: "استعرض الخدمات",
 
-    <ol class="process-list">
-      <li data-i18n="p1">Brand & persona audit</li>
-      <li data-i18n="p2">Strategic content architecture</li>
-      <li data-i18n="p3">Monthly execution plan</li>
-      <li data-i18n="p4">Publishing & optimization</li>
-      <li data-i18n="p5">Review & strategic adjustment</li>
-    </ol>
-  </div>
-</section>
+        svc_cap: "Service",
+        svc_section_title: "ماذا نعني بإدارة الحساب كعلامة تجارية",
+        svc_section_desc: "ليست “منشورات أكثر”… بل قرارات تحمي الاسم، تضبط النبرة، وتنمّي الحضور بصورة متسقة ومحترفة.",
 
-<!-- WHO IS IT FOR -->
-<section class="section">
-  <div class="container text-block">
-    <h2 data-i18n="for_title">Who This Service Is For</h2>
-    <p data-i18n="for_text">
-      Celebrities, public figures, creators, and personal brands who value
-      consistency, credibility, and long-term positioning.
-    </p>
-  </div>
-</section>
+        c1_tag: "STRATEGY & IDENTITY",
+        c1_title: "استراتيجية + هوية رقمية",
+        c1_desc: "نحدد تموضعك الرقمي، نبرة الصوت، وحدود المحتوى المناسب لك — بحيث يظل حسابك متسقًا مع صورتك العامة ومع ما تريد أن تُعرف به.",
+        c1_note: "صورة ثابتة… نمو ثابت",
 
-<!-- FAQ -->
-<section class="section section--light">
-  <div class="container">
-    <h2 data-i18n="faq_title">Frequently Asked Questions</h2>
+        c2_tag: "MONTHLY CALENDAR",
+        c2_title: "تقويم شهري واضح",
+        c2_desc: "ننظّم الشهر مسبقًا: أفكار، محاور، توقيت نشر، وتوازن بين الظهور والقيمة — بدون ارتجال يومي أو ضغط أو قرارات متسرعة.",
+        c2_note: "تخطيط يريحك ويضبط الأداء",
 
-    <div class="faq">
-      <p data-i18n="faq1"><strong>Do you guarantee follower growth?</strong><br>No. We guarantee strategic management, not artificial numbers.</p>
-      <p data-i18n="faq2"><strong>Is this a monthly service?</strong><br>Yes. Management is structured on a monthly basis.</p>
-      <p data-i18n="faq3"><strong>Is the content published in the client’s voice?</strong><br>Always. The identity remains authentic.</p>
-    </div>
-  </div>
-</section>
+        c3_tag: "PUBLISHING & OPTIMIZATION",
+        c3_title: "إدارة النشر والتحسين",
+        c3_desc: "ننشر بذكاء ونحسّن باستمرار: صياغة، عناوين، ترتيب، وإيقاع — بما يخدم التفاعل بدون التضحية بالهيبة أو المصداقية.",
+        c3_note: "أداء أقوى بدون ترندات مدمّرة",
 
-<!-- CTA -->
-<section class="section section--cta">
-  <div class="container">
-    <h2 data-i18n="cta_title">Ready for strategic account management?</h2>
-    <a href="/contact/" class="btn" data-i18n="cta_btn">Book a Private Consultation</a>
-  </div>
-</section>
+        c4_tag: "PERFORMANCE & INSIGHTS",
+        c4_title: "تحليل الأداء بواقعية",
+        c4_desc: "نراقب الأداء ونقرأه بشكل استراتيجي: ما الذي يرفع القيمة؟ ما الذي يستهلك الاسم؟ ثم نعدّل الخطة بناءً على البيانات والاتجاه.",
+        c4_note: "الهدف: مسار مستدام",
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container footer__links">
-    <a href="/privacy/">Privacy</a>
-    <a href="/terms/">Terms</a>
-    <a href="/contact/">Contact</a>
-  </div>
-</footer>
+        c5_tag: "WHO IT'S FOR",
+        c5_title: "لمن هذه الخدمة؟",
+        c5_desc: "مناسبة للمشاهير وصنّاع المحتوى وأصحاب العلامات الشخصية الذين يريدون نموًا هادئًا ومحسوبًا. غير مناسبة لمن يريد ضجة سريعة بأي ثمن.",
+        c5_note: "فلترة تحفظ وقت الجميع",
 
+        c6_tag: "FAQ",
+        c6_title: "أسئلة سريعة",
+        c6_desc: "هل تضمنون أرقامًا؟ لا — النتائج تتأثر بعوامل كثيرة. نحن نضمن إدارة احترافية ضمن نطاق واضح وخطة شهرية ومراجعة منتظمة.",
+        c6_link: "اسألنا عن حالتك",
+
+        final_title: "جاهز لإدارة حسابك بشكل استراتيجي؟",
+        final_desc: "تواصل معنا لاستشارة خاصة — بسرية تامة وبخطة واضحة تناسب صورتك وجمهورك.",
+        final_cta: "تواصل الآن",
+
+        footer_terms: "الشروط",
+        footer_privacy: "Privacy",
+        footer_contact: "Contact",
+      },
+
+      en: {
+        nav_services: "Services",
+        nav_tenets: "Principles",
+        nav_trusted: "Clients",
+        nav_contact: "Contact",
+
+        svc_kicker: "Account Management • Brand • Credibility",
+        svc_title_1: "Celebrity & Creator",
+        svc_title_2: "Account Management",
+        svc_sub: "We manage your account as a brand: monthly calendar, digital identity, publishing management, and performance optimization — for steady growth without harming reputation or credibility.",
+
+        svc_meta_1_label: "Focus",
+        svc_meta_1_value: "Brand + Growth",
+        svc_meta_2_label: "Model",
+        svc_meta_2_value: "Monthly management",
+        svc_meta_3_label: "Style",
+        svc_meta_3_value: "No noise",
+
+        svc_cta_primary: "Book a private consultation",
+        svc_cta_secondary: "Explore services",
+
+        svc_cap: "Service",
+        svc_section_title: "What it means to manage an account as a brand",
+        svc_section_desc: "Not “more posts” — but decisions that protect identity, sharpen voice, and grow presence with consistency and professionalism.",
+
+        c1_tag: "STRATEGY & IDENTITY",
+        c1_title: "Strategy & digital identity",
+        c1_desc: "We define positioning, tone of voice, and content boundaries — so the account stays consistent with public image and long-term goals.",
+        c1_note: "Stable image, stable growth",
+
+        c2_tag: "MONTHLY CALENDAR",
+        c2_title: "A clear monthly calendar",
+        c2_desc: "We plan the month ahead: themes, ideas, timing, and balance — without daily improvisation or rushed decisions.",
+        c2_note: "Structure that protects you",
+
+        c3_tag: "PUBLISHING & OPTIMIZATION",
+        c3_title: "Publishing & optimization",
+        c3_desc: "We publish smart and optimize continuously — improving performance without sacrificing credibility or brand value.",
+        c3_note: "Better performance, safer choices",
+
+        c4_tag: "PERFORMANCE & INSIGHTS",
+        c4_title: "Performance insights",
+        c4_desc: "We monitor results strategically: what builds value vs. what consumes credibility — then adjust based on direction and data.",
+        c4_note: "Sustainable trajectory",
+
+        c5_tag: "WHO IT'S FOR",
+        c5_title: "Who it’s for",
+        c5_desc: "Celebrities, creators, and personal brands who want consistent, reputation-safe growth. Not for shock tactics or quick hype at any cost.",
+        c5_note: "Better-fit clients",
+
+        c6_tag: "FAQ",
+        c6_title: "Quick questions",
+        c6_desc: "Do we guarantee numbers? No — outcomes depend on many variables. We guarantee professional delivery, clear scope, and monthly planning with reviews.",
+        c6_link: "Ask about your case",
+
+        final_title: "Ready for strategic account management?",
+        final_desc: "Contact us for a private consultation — confidential, structured, and tailored to your public image.",
+        final_cta: "Contact now",
+
+        footer_terms: "Terms",
+        footer_privacy: "Privacy",
+        footer_contact: "Contact",
+      },
+    };
+
+    let lang = "ar";
+    const langBtn = document.getElementById("langBtn");
+    const langLabel = document.getElementById("langLabel");
+
+    function applyLang(next) {
+      lang = next;
+      document.documentElement.lang = lang === "ar" ? "ar" : "en";
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      if (langLabel) langLabel.textContent = lang === "ar" ? "EN" : "AR";
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        const v = dict[lang]?.[key];
+        if (typeof v === "string") el.textContent = v;
+      });
+    }
+
+    applyLang("ar");
+    langBtn?.addEventListener("click", () => applyLang(lang === "ar" ? "en" : "ar"));
+  </script>
 </body>
 </html>
