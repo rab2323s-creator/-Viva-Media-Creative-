@@ -1,4 +1,4 @@
-     /* =========================
+      /* =========================
    VMC HOME (Slider Services C)
 ========================= */
 
@@ -404,14 +404,31 @@ if (viewport) {
     { passive: true }
   );
 
-  // wheel -> horizontal
+  // wheel -> horizontal (throttled for smoothness)
+  let wheelRAF = 0;
+  let wheelAcc = 0;
+  let wheelT = 0;
+
   viewport.addEventListener(
     "wheel",
     (e) => {
       // allow trackpads to scroll naturally; only intercept vertical intent
       if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
         e.preventDefault();
-        viewport.scrollLeft += e.deltaY;
+        wheelAcc += e.deltaY;
+
+        if (!wheelRAF) {
+          viewport.classList.add("is-dragging");
+
+          wheelRAF = requestAnimationFrame(() => {
+            viewport.scrollLeft += wheelAcc;
+            wheelAcc = 0;
+            wheelRAF = 0;
+
+            clearTimeout(wheelT);
+            wheelT = setTimeout(() => viewport.classList.remove("is-dragging"), 120);
+          });
+        }
       }
     },
     { passive: false }
@@ -427,33 +444,55 @@ if (viewport) {
     }
   });
 
-  // drag to scroll
+  // drag to scroll (improved: no click stealing + threshold)
   let isDown = false;
+  let moved = false;
   let startX = 0;
   let startLeft = 0;
 
   viewport.addEventListener("pointerdown", (e) => {
+    // Left click / primary touch only
+    if (e.button !== 0) return;
+
+    // Don't start dragging when interacting with controls inside a slide
+    if (e.target.closest("a, button, [role='button'], input, textarea, select, label")) return;
+
     isDown = true;
-    viewport.classList.add("is-dragging");
+    moved = false;
     startX = e.clientX;
     startLeft = viewport.scrollLeft;
-    viewport.setPointerCapture?.(e.pointerId);
   });
 
   viewport.addEventListener("pointermove", (e) => {
     if (!isDown) return;
+
     const dx = e.clientX - startX;
+
+    // Small threshold so taps/clicks don't become drags
+    if (!moved && Math.abs(dx) < 6) return;
+
+    if (!moved) {
+      moved = true;
+      viewport.classList.add("is-dragging");
+      viewport.setPointerCapture?.(e.pointerId);
+    }
+
     viewport.scrollLeft = startLeft - dx;
   });
 
   function endDrag() {
     if (!isDown) return;
     isDown = false;
-    viewport.classList.remove("is-dragging");
 
-    // snap to nearest slide
-    const idx = getIndexFromScroll();
-    scrollToIndex(idx);
+    if (moved) {
+      viewport.classList.remove("is-dragging");
+
+      // snap to nearest slide
+      const idx = getIndexFromScroll();
+      scrollToIndex(idx);
+    }
+
+    moved = false;
   }
 
   viewport.addEventListener("pointerup", endDrag);
