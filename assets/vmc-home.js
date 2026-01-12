@@ -1,4 +1,12 @@
-      /* =========================
+ 
+
+// iOS flag for performance tweaks
+(function () {
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  if (isIOS) document.documentElement.classList.add("is-ios");
+})();
+     /* =========================
    VMC HOME (Slider Services C)
 ========================= */
 
@@ -21,6 +29,39 @@ if ("IntersectionObserver" in window) {
   );
 
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+
+// ===== Trusted marquee fixes (no shake + seamless + run only when visible) =====
+(function () {
+  const marquees = Array.from(document.querySelectorAll(".marquee"));
+  if (!marquees.length) return;
+
+  // Make the loop seamless by duplicating track children once (no HTML changes)
+  marquees.forEach((mq) => {
+    const track = mq.querySelector(".track");
+    if (!track || track.dataset.duplicated === "1") return;
+
+    const kids = Array.from(track.children);
+    kids.forEach((node) => track.appendChild(node.cloneNode(true)));
+    track.dataset.duplicated = "1";
+  });
+
+  // Run animation only when marquee is near viewport (reduces work + prevents jitter on scroll)
+  if ("IntersectionObserver" in window) {
+    const mo = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) en.target.classList.add("is-running");
+          else en.target.classList.remove("is-running");
+        });
+      },
+      { threshold: 0.05, rootMargin: "120px 0px" }
+    );
+    marquees.forEach((mq) => mo.observe(mq));
+  } else {
+    marquees.forEach((mq) => mq.classList.add("is-running"));
+  }
+})();
 } else {
   // fallback: reveal everything if IO not supported
   document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-in"));
@@ -412,23 +453,22 @@ if (viewport) {
   viewport.addEventListener(
     "wheel",
     (e) => {
-      // allow trackpads to scroll naturally; only intercept vertical intent
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault();
-        wheelAcc += e.deltaY;
+      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
 
-        if (!wheelRAF) {
-          viewport.classList.add("is-dragging");
+      e.preventDefault();
+      wheelAcc += e.deltaY;
 
-          wheelRAF = requestAnimationFrame(() => {
-            viewport.scrollLeft += wheelAcc;
-            wheelAcc = 0;
-            wheelRAF = 0;
+      if (!wheelRAF) {
+        viewport.classList.add("is-dragging");
 
-            clearTimeout(wheelT);
-            wheelT = setTimeout(() => viewport.classList.remove("is-dragging"), 120);
-          });
-        }
+        wheelRAF = requestAnimationFrame(() => {
+          viewport.scrollLeft += wheelAcc;
+          wheelAcc = 0;
+          wheelRAF = 0;
+
+          clearTimeout(wheelT);
+          wheelT = setTimeout(() => viewport.classList.remove("is-dragging"), 120);
+        });
       }
     },
     { passive: false }
@@ -444,7 +484,7 @@ if (viewport) {
     }
   });
 
-  // drag to scroll (improved: no click stealing + threshold)
+  // drag to scroll (fixed: no click stealing + threshold)
   let isDown = false;
   let moved = false;
   let startX = 0;
