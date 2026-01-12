@@ -1,4 +1,4 @@
-   :root{
+    :root{
   --bg:#06070a;
   --fg:#eef1f6;
   --muted: rgba(238,241,246,.72);
@@ -368,9 +368,11 @@ a{color:inherit; text-decoration:none}
   border-radius: 999px;
   background: rgba(255,255,255,.02);
 }
+
+/* Seamless marquee: track contains 2 identical groups */
 .track{
-  display:flex; gap:18px; white-space:nowrap;
-  padding: 14px 18px;
+  display:flex;
+  width: max-content;
   animation: marquee 18s linear infinite;
   color: rgba(238,241,246,.72);
   letter-spacing:.22em;
@@ -378,15 +380,20 @@ a{color:inherit; text-decoration:none}
   font-family: "Space Grotesk", Manrope, sans-serif;
   font-size: 12px;
   will-change: transform;
-  transform: translateZ(0);
+  transform: translate3d(0,0,0);
+}
+.track__group{
+  display:flex;
+  gap:18px;
+  white-space:nowrap;
+  padding: 14px 18px;
+  align-items:center;
 }
 .logo{color: rgba(245,208,122,.92)}
-@keyframes marquee{ from{transform:translateX(0) translateZ(0)} to{transform:translateX(-50%) translateZ(0)} }
-
-/* Optional: pause marquee until hover (reduces constant work)
-   If you prefer always-moving, comment the next 2 rules. */
-.marquee .track{ animation-play-state: paused; }
-.trusted:hover .track{ animation-play-state: running; }
+@keyframes marquee{
+  from{ transform: translate3d(0,0,0); }
+  to{ transform: translate3d(-50%,0,0); }
+}
 
 .small{color: rgba(238,241,246,.58); margin: 12px 0 0; }
 
@@ -796,6 +803,17 @@ a{color:inherit; text-decoration:none}
 .sliderViewport.is-dragging{
   cursor: grabbing;
   scroll-behavior:auto;
+}
+
+/* أثناء السحب/العجلة: خفّف المؤثرات الثقيلة لتقليل التقطيع */
+.sliderViewport.is-dragging .slide__inner{
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+.sliderViewport.is-dragging .shine{
+  animation: none;
+  opacity: 0;
 }
 
 /* =============== Responsive / Reduced Motion / Fallbacks =============== */
