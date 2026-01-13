@@ -241,6 +241,28 @@
   <priority>0.7</priority>
 </url>
 
+  <url>
+    <loc>https://vivamediacreative.com/services/viral-strategy/</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://vivamediacreative.com/services/copywriting/</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://vivamediacreative.com/services/seo-growth/</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  
   
 </urlset>
 
