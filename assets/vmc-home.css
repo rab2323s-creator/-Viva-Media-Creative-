@@ -1,4 +1,4 @@
-    :root{
+     :root{
   --bg:#06070a;
   --fg:#eef1f6;
   --muted: rgba(238,241,246,.72);
@@ -1312,3 +1312,75 @@ html.is-ios .slide__inner{
   background: rgba(6,7,10,.55);
 }
 html.is-ios .shine{ animation: none !important; opacity: .35; }
+
+/* =============== Knowledge Hub (Home) =============== */
+.knowledge .section__head{ margin-bottom: 18px; }
+
+.kWrap{
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+  box-shadow: 0 30px 120px rgba(0,0,0,.45);
+  padding: 18px;
+  overflow: hidden;
+}
+
+.kGrid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.kCard{
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 22px;
+  background: rgba(6,7,10,.30);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  min-height: 240px;
+}
+
+.kTag{
+  font-family: "Space Grotesk", Manrope, sans-serif;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: rgba(238,241,246,.62);
+  margin-bottom: 10px;
+}
+
+.kTitle{
+  margin: 0 0 10px;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.kDesc{
+  margin: 0 0 14px;
+  color: rgba(238,241,246,.70);
+  line-height: 1.85;
+  flex: 1;
+}
+
+.kLink{
+  display: inline-flex;
+  width: fit-content;
+  border-bottom: 1px solid rgba(245,208,122,.55);
+  padding-bottom: 3px;
+  color: rgba(245,208,122,.92);
+}
+
+.kCtaRow{
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 14px;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .kGrid{ grid-template-columns: 1fr; }
+  .kCard{ min-height: auto; }
+}
