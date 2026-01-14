@@ -1,4 +1,4 @@
- 
+  
 
 // iOS flag for performance tweaks
 (function () {
@@ -205,6 +205,25 @@ const dict = {
     footer_trust_1: "شراكات آمنة للعلامات",
     footer_trust_2: "نمو يقوده الأداء",
 
+
+    knowledge_cap: "Knowledge Hub",
+    knowledge_title: "مركز المعرفة في التسويق بالمؤثرين وصناعة المحتوى",
+    knowledge_desc: "تحليلات وأطر تفكير في التسويق بالمؤثرين، الهوية، وصناعة المحتوى في عصر الذكاء الاصطناعي—لتبدو قراراتك أقرب للعلم منها للتجربة العشوائية.",
+    knowledge_cta: "دخول مركز المعرفة",
+    k_read: "اقرأ التحليل →",
+
+    k1_tag: "الهوية الشخصية",
+    k1_title: "إدارة العلامة الشخصية: من الظهور إلى بناء الثقة",
+    k1_desc: "دليل استراتيجي يشرح كيف تُبنى العلامة الشخصية كمنظومة طويلة المدى (هوية، رسالة، اتساق) لا كحضور مؤقت على المنصات.",
+
+    k2_tag: "الهوية في عصر AI",
+    k2_title: "هل ستصبح كل العلامات التجارية متشابهة؟",
+    k2_desc: "قراءة معمّقة لخطر التشابه الذي يفرضه الذكاء الاصطناعي، وكيف تحمي العلامات التجارية تميزها عبر “خندق الهوية” والقرارات الإبداعية الصحيحة.",
+
+    k3_tag: "المحتوى والذكاء الاصطناعي",
+    k3_title: "لماذا ستخسر العلامات التجارية بدون محتوى إنساني؟",
+    k3_desc: "إطار واضح يوضح حدود المحتوى الآلي ولماذا “الإشارة الإنسانية” (خبرة، موقف، قصص، مسؤولية) هي مفتاح الثقة والتحويل في 2026.",
+
   },
   en: {
     nav_services: "Services",
@@ -315,6 +334,25 @@ const dict = {
     footer_trust_1: "Brand-safe partnerships",
     footer_trust_2: "Performance-led growth",
 
+
+    knowledge_cap: "Knowledge Hub",
+    knowledge_title: "Knowledge Hub for Influencer Marketing & Content Creation",
+    knowledge_desc: "Strategic insights and frameworks on influencer marketing, brand identity, and content systems in the age of AI—so decisions feel driven by evidence, not guesswork.",
+    knowledge_cta: "Enter the Knowledge Hub",
+    k_read: "Read the insight →",
+
+    k1_tag: "AI & CONTENT",
+    k1_title: "How AI Is Transforming Content Creation",
+    k1_desc: "A foundational perspective on how AI reshapes content workflows—without replacing human strategy, taste, and accountability.",
+
+    k2_tag: "BRAND IDENTITY",
+    k2_title: "Will All Brands Become the Same in the Age of AI?",
+    k2_desc: "A deep dive into AI-driven homogenization—and how to protect differentiation with identity moats and smarter creative decisions.",
+
+    k3_tag: "HUMAN CONTENT",
+    k3_title: "Why Brands Will Lose Without Human Content (2026)",
+    k3_desc: "A clear framework on AI limits and why human signals (experience, stance, stories, accountability) drive trust and conversion in 2026.",
+
   },
 };
 
@@ -350,6 +388,11 @@ function applyLang(next) {
     const key = el.getAttribute("data-i18n");
     const v = dict[lang]?.[key];
     if (typeof v === "string") el.textContent = v;
+  });
+
+  // language-aware links (Knowledge Hub + featured insights)
+  document.querySelectorAll("[data-href-ar][data-href-en]").forEach((a) => {
+    a.setAttribute("href", lang === "ar" ? a.getAttribute("data-href-ar") : a.getAttribute("data-href-en"));
   });
 
   // update slider progress visuals after language flip
