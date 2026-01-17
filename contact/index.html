@@ -1,4 +1,4 @@
- <!doctype html>
+  <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
@@ -204,11 +204,8 @@
           </div>
 
           <div class="formBody">
-            <form id="contactForm" action="https://formsubmit.co/vivamediacreations@gmail.com" method="POST" novalidate>
-              <input type="hidden" name="_subject" value="New inquiry — Viva Media Creative">
-              <input type="hidden" name="_captcha" value="true">
-              <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_next" value="https://vivamediacreative.com/thank-you.html">
+            <!-- EmailJS form (no redirect, no third-party form action) -->
+            <form id="contactForm" novalidate>
 
               <div class="formGrid">
                 <div class="field">
@@ -326,6 +323,9 @@
     </div>
   </footer>
 
+  <!-- EmailJS (client-side email sending) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <script>
     // year
     const y = document.getElementById("y");
@@ -350,7 +350,10 @@
       el.addEventListener("pointerleave", () => { el.style.transform = `translate(0px, 0px)`; });
     });
 
-    // lightweight validation
+    // EmailJS + lightweight validation
+    // IMPORTANT: Replace YOUR_PUBLIC_KEY with your EmailJS Public Key (Account -> API Keys)
+    emailjs.init({ publicKey: "SzBBlvEjgwysF8vHJ" });
+
     const form = document.getElementById('contactForm');
     const statusBox = document.getElementById('status');
 
@@ -359,7 +362,9 @@
       statusBox.textContent = msg;
     }
 
-    form?.addEventListener('submit', (e) => {
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
       statusBox.className = 'status';
       statusBox.textContent = '';
 
@@ -369,13 +374,27 @@
       const service = form.service.value;
       const message = form.message.value.trim();
 
-      if (name.length < 2){ e.preventDefault(); showStatus('err', 'من فضلك اكتب الاسم بشكل صحيح.'); return; }
-      if (!/^\S+@\S+\.\S+$/.test(email)){ e.preventDefault(); showStatus('err', 'من فضلك اكتب بريد إلكتروني صحيح.'); return; }
-      if (account.length < 3){ e.preventDefault(); showStatus('err', 'من فضلك اكتب رابط حسابك أو اسم الصفحة.'); return; }
-      if (!service){ e.preventDefault(); showStatus('err', 'من فضلك اختر الخدمة المطلوبة.'); return; }
-      if (message.length < 10){ e.preventDefault(); showStatus('err', 'اكتب تفاصيل أكثر داخل الرسالة (10 أحرف على الأقل).'); return; }
+      if (name.length < 2){ showStatus('err', 'من فضلك اكتب الاسم بشكل صحيح.'); return; }
+      if (!/^\S+@\S+\.\S+$/.test(email)){ showStatus('err', 'من فضلك اكتب بريد إلكتروني صحيح.'); return; }
+      if (account.length < 3){ showStatus('err', 'من فضلك اكتب رابط حسابك أو اسم الصفحة.'); return; }
+      if (!service){ showStatus('err', 'من فضلك اختر الخدمة المطلوبة.'); return; }
+      if (message.length < 10){ showStatus('err', 'اكتب تفاصيل أكثر داخل الرسالة (10 أحرف على الأقل).'); return; }
 
       showStatus('ok', 'تمام! يتم إرسال طلبك الآن...');
+
+      try {
+        await emailjs.sendForm(
+          'service_6w76hdv',
+          'template_iqqczb8',
+          form
+        );
+
+        form.reset();
+        showStatus('ok', '✅ تم إرسال طلبك بنجاح. سنرد عليك خلال 24 ساعة.');
+      } catch (err) {
+        console.error(err);
+        showStatus('err', '❌ حصل خطأ في الإرسال. جرّب مرة ثانية أو تواصل معنا على واتساب.');
+      }
     });
 
     // i18n (minimal for this page)
