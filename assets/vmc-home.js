@@ -192,6 +192,7 @@ const dict = {
       "أرسل حسابك وهدفك—وسنقترح مسارًا واضحًا لصناعة ترند، نمو مستمر، ثم دخل ومبيعات قابلة للقياس.",
     final_cta: "اطلب استشارة الآن",
     service_details: "تفاصيل الخدمة",
+    s5_btn: "تفاصيل خدمة SEO & Growth",
     s5_title: "التسويق للمواقع والمتاجر الإلكترونية (SEO & Growth)",
     s5_desc: "نحول الموقع/المتجر إلى ماكينة نمو: SEO + محتوى + صفحات هبوط + Funnels + تحسين تحويل. مناسب لعلامات تجارية تريد مبيعات أعلى مع قابلية قياس واضحة.",
     s5_b1: "• تحسين محركات البحث SEO",
@@ -324,6 +325,10 @@ const dict = {
       "Send us your account and goal — we’ll map a clear path to trends, consistent growth, and monetization.",
     final_cta: "Request a Strategy Call",
     service_details: "View service",
+
+s5_btn: "SEO & Growth Service Details",
+
+    
     s5_title: "SEO & Growth for Websites & E-commerce",
     s5_desc: "Turn your website/store into a growth engine: SEO, content, landing pages, funnels, and conversion optimization — built for measurable sales.",
     s5_b1: "• Technical & content SEO",
