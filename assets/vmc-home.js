@@ -140,6 +140,7 @@ const dict = {
     s1_b1: "• التسويق عبر المؤثرين (Influencer Marketing)",
     s1_b2: "• ربط المشاهير بالعلامات التجارية",
     s1_b3: "• تقارير أداء وقياس ROI",
+    s1_btn: "تفاصيل خدمة التسويق عبر المؤثرين",
 
     // Slide 2
     s2_title: "إدارة حسابات المشاهير وصنّاع المحتوى",
@@ -148,6 +149,7 @@ const dict = {
     s2_b1: "• إدارة حسابات إنستغرام للمشاهير",
     s2_b2: "• إدارة حسابات مؤثرين",
     s2_b3: "• نمو + تفاعل + ثقة",
+    s2_btn: "تفاصيل خدمة إدارة الحسابات",
 
     // Slide 3
     s3_title: "صناعة المحتوى والترندات على السوشيال ميديا",
@@ -156,6 +158,7 @@ const dict = {
     s3_b1: "• كيف تصنع ترند",
     s3_b2: "• أفكار فيديوهات ترند",
     s3_b3: "• Viral video strategy",
+     s3_btn: "تفاصيل خدمة صناعة الترند",
 
     // Slide 4
     s4_title: "كتابة النصوص الإعلانية وسيناريوهات الفيديو",
@@ -164,6 +167,7 @@ const dict = {
     s4_b1: "• كتابة سكريبت فيديو",
     s4_b2: "• كتابة نص إعلاني",
     s4_b3: "• Copywriting عربي",
+     s4_btn: "تفاصيل خدمة كتابة المحتوى (Copywriting)",
 
     tenets_title: "مبادئنا",
     tenets_desc: "الشهرة وحدها لا تكفي… نحن نصنع قرارًا ذكيًا خلف كل ظهور: ترند + استمرارية + دخل.",
@@ -268,7 +272,7 @@ const dict = {
     s1_b1: "• Influencer marketing strategy",
     s1_b2: "• Brand–creator matchmaking",
     s1_b3: "• ROI tracking & reporting",
-
+    s1_btn: "Influencer Marketing Service Details",
     // Slide 2
     s2_title: "Celebrity & Creator Account Management",
     s2_desc:
@@ -276,6 +280,7 @@ const dict = {
     s2_b1: "• Instagram management for influencers",
     s2_b2: "• Creator account operations",
     s2_b3: "• Growth + engagement + trust",
+   s2_btn: "Account Management Service Details",
 
     // Slide 3
     s3_title: "Viral Content & Trend Strategy",
@@ -284,6 +289,7 @@ const dict = {
     s3_b1: "• How to create trends",
     s3_b2: "• Viral video ideas",
     s3_b3: "• Viral strategy system",
+    s3_btn: "Viral Strategy Service Details",
 
     // Slide 4
     s4_title: "Ad Copywriting & Video Scripts",
@@ -292,6 +298,7 @@ const dict = {
     s4_b1: "• Video scripts",
     s4_b2: "• Ad copy",
     s4_b3: "• Arabic & English copywriting",
+   s4_btn: "Copywriting Service Details",
 
     tenets_title: "Our Principles",
     tenets_desc:
