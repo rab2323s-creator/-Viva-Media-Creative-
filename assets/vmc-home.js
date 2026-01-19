@@ -269,14 +269,26 @@ services_seo_li5:
     services_hint: "Drag ← → or scroll",
     contact_us: "Contact us",
 
-    services_seo_title: "Celebrity Management & Influencer Marketing Services",
-    services_seo_desc:
-      "Viva Media Creative delivers influencer marketing, celebrity account management, viral content strategy, conversion copywriting, and SEO growth — focused on the Gulf, Egypt, and the Arab world.",
-    services_seo_li1: "Influencer marketing & brand partnerships",
-    services_seo_li2: "Celebrity & creator account management",
-    services_seo_li3: "Viral content & trend strategy",
-    services_seo_li4: "Copywriting & video scripts that convert",
-    services_seo_li5: "SEO & growth for websites and e-commerce",
+services_seo_title:
+  "Celebrity Management & Influencer Marketing Services for Sales-Driven Brand Growth",
+
+services_seo_desc:
+  "Viva Media Creative delivers strategic solutions for managing celebrities and creators, building high-impact brand partnerships, and producing trend-driven content designed to convert attention into real demand and measurable sales. We work with brands and public figures across the Gulf, Egypt, and the Arab world, where digital influence is directly aligned with clear commercial objectives.",
+
+services_seo_li1:
+  "Celebrity and influencer brand partnerships — turning influence into paid collaborations and measurable business outcomes.",
+
+services_seo_li2:
+  "Celebrity and creator account management — building consistent digital presence that drives trust and demand.",
+
+services_seo_li3:
+  "Social media content and viral strategies — increasing reach while stimulating real brand interest.",
+
+services_seo_li4:
+  "Advertising scripts and conversion-focused copywriting — connecting views to revenue.",
+
+services_seo_li5:
+  "Website and e-commerce growth (SEO & Growth) — increasing organic demand with scalable, measurable results.",
 
 
     // Slide 1
