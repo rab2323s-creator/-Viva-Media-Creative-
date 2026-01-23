@@ -235,6 +235,13 @@
     <priority>0.6</priority>
   </url>
 
+<url>
+  <loc>https://vivamediacreative.com/news_en/digital-video-agency/</loc>
+  <lastmod>2026-01-20</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+  
   <url>
     <loc>https://vivamediacreative.com/news_en/social-media-algorithms/</loc>
     <lastmod>2026-01-06</lastmod>
