@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>حاسبة تكلفة حملة المؤثرين (الخليج ومصر) | تقدير ميزانية | Viva Media Creative</title>
+  <meta name="description" content="احسب تقدير تكلفة حملة المؤثرين في الخليج ومصر حسب المنصة (إنستغرام/تيك توك/سناب)، نوع المحتوى، حجم المؤثر، عدد المخرجات، مدة الحملة، وحقوق الاستخدام. احصل على باقات مقترحة + رسالة جاهزة لطلب عرض سعر رسمي من Viva." />
+  <meta name="keywords" content="حاسبة تكلفة حملة المؤثرين, تكلفة التسويق بالمؤثرين, اسعار المؤثرين السعودية, اسعار المؤثرين مصر, influencer campaign cost calculator, influencer marketing budget" />
+  <link rel="canonical" href="https://vivamediacreative.com/ar/influencer-campaign-cost-calculator/" />
+
+  <meta property="og:title" content="حاسبة تكلفة حملة المؤثرين (الخليج ومصر) | تقدير ميزانية" />
+  <meta property="og:description" content="تقدير نطاق ميزانية حملة المؤثرين حسب المنصة والمخرجات وحجم المؤثر + باقات مقترحة وطلب عرض سعر رسمي." />
+  <meta property="og:image" content="https://vivamediacreative.com/assets/influencer-calculator.jpg" />
+  <meta property="og:url" content="https://vivamediacreative.com/ar/influencer-campaign-cost-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ar_AR" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="حاسبة تكلفة حملة المؤثرين | Viva Media Creative" />
+  <meta name="twitter:description" content="احسب نطاق ميزانية حملة المؤثرين في الخليج ومصر + باقات مقترحة." />
+  <meta name="twitter:image" content="https://vivamediacreative.com/assets/influencer-calculator.jpg" />
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/assets/logo.jpeg" />
+
+  <!-- WebApplication schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"حاسبة تكلفة حملة المؤثرين (الخليج ومصر)",
+    "applicationCategory":"BusinessApplication",
+    "operatingSystem":"Web",
+    "url":"https://vivamediacreative.com/ar/influencer-campaign-cost-calculator/",
+    "publisher":{"@type":"Organization","name":"Viva Media Creative"},
+    "description":"أداة مجانية تقدّر نطاق ميزانية حملة المؤثرين في الخليج ومصر حسب المنصة ونوع المحتوى وحجم المؤثر وعدد المخرجات وحقوق الاستخدام."
+  }
+  </script>
+
+  <!-- FAQ schema (helps rich results) -->
+  <script type="application/ld+json" id="faqSchema">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "هل هذه الأرقام أسعار نهائية للمؤثرين؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "لا. هذه الأداة تعطي تقديرًا على شكل نطاق (حد أدنى/حد أعلى) بناءً على متوسطات سوقية عامة وعوامل مثل المنصة ونوع المحتوى وحجم المؤثر وحقوق الاستخدام. السعر النهائي يختلف حسب المؤثر وتوقيت الحملة ونوعية الجمهور وشروط العقد."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ما الذي يرفع سعر حملة المؤثرين أكثر شيء؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "عادةً: حقوق الاستخدام الإعلاني (Usage Rights)، الحصرية (Exclusivity)، الإعلانات الممولة عبر حساب المؤثر (Whitelisting/Spark Ads)، جودة الإنتاج، وتوقيت المواسم (مثل رمضان)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل الأفضل مؤثر واحد كبير أم عدة مؤثرين Micro؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "للوصول وبناء الوعي غالبًا عدة Micro/Nano تعطي تنويعًا واختبارًا أفضل. للمصداقية أو إطلاق منتج قد يفيد Macro واحد + دعم Micro. الأداة تقترح توزيعًا مبدئيًا حسب هدفك."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل يمكنني الحصول على قائمة مؤثرين مناسبة لميزانيتي؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعم. بعد حساب التقدير، استخدم زر “اطلب عرض سعر رسمي” وسنرسل لك Shortlist من مؤثرين مناسبين حسب المجال والبلد والميزانية." 
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0f172a;
+      --card:#0b1220;
+      --accent:#06b6d4;
+      --muted:#94a3b8;
+      --glass:rgba(255,255,255,0.04);
+      --ok:#22c55e;
+      --warn:#f59e0b;
+      --bad:#ef4444;
+    }
+    *{box-sizing:border-box;font-family:"Segoe UI",Tahoma,Arial,"Noto Kufi Arabic",sans-serif}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071233 0%, #071a2b 100%);color:#e6eef8}
+    .container{max-width:1080px;margin:28px auto;padding:22px}
+    header{text-align:center;margin-bottom:18px}
+    header h1{font-size:26px;margin:0 0 8px}
+    header p{margin:0;color:var(--muted);line-height:1.8}
+
+    .card{background:var(--card);padding:20px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,.6);margin-bottom:16px}
+
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+    .kpi{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border-radius:14px;padding:12px;border:1px solid rgba(255,255,255,.06)}
+    .kpi strong{display:block;font-size:13px;color:#cfe3ff}
+    .kpi .v{font-size:18px;margin-top:6px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;font-size:12px;margin-top:8px;background:rgba(255,255,255,.06);color:var(--muted)}
+    .pill.ok{background:rgba(34,197,94,.15);color:#bbf7d0}
+    .pill.warn{background:rgba(245,158,11,.15);color:#fde68a}
+    .pill.bad{background:rgba(239,68,68,.14);color:#fecaca}
+
+    form{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    label{display:block;font-size:13px;margin-bottom:6px;color:var(--muted)}
+    select,input,textarea{width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:var(--glass);color:inherit;outline:none}
+    textarea{min-height:90px;resize:vertical}
+    .full{grid-column:1/-1}
+
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+    button,.btn{background:var(--accent);border:none;padding:10px 14px;border-radius:12px;color:#012;cursor:pointer;font-weight:900;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+    .secondary{background:transparent;border:1px solid rgba(255,255,255,.12);color:var(--muted)}
+    .ghost{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);color:#e6eef8}
+
+    .note{color:var(--muted);font-size:13px;line-height:1.8}
+    .split{display:grid;grid-template-columns:1.2fr .8fr;gap:12px}
+
+    table{width:100%;border-collapse:collapse;margin-top:10px}
+    th,td{padding:10px;border-bottom:1px solid rgba(255,255,255,.06);text-align:right;vertical-align:top}
+    th{color:#cfe3ff;font-size:13px}
+    td{color:#e6eef8;font-size:14px}
+
+    .list{margin:8px 0 0;padding-right:18px}
+    .list li{margin:6px 0}
+
+    .callout{border:1px solid rgba(0,119,255,.25);background:rgba(0,119,255,.10);padding:12px;border-radius:14px;line-height:1.8}
+    .danger{border:1px solid rgba(239,68,68,.22);background:rgba(239,68,68,.10)}
+
+    .faq details{border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px;background:rgba(255,255,255,.03)}
+    .faq details+details{margin-top:10px}
+    .faq summary{cursor:pointer;font-weight:800}
+
+    footer{color:var(--muted);text-align:center;font-size:13px;margin-top:14px}
+
+    @media(max-width:920px){
+      .split{grid-template-columns:1fr}
+      .kpis{grid-template-columns:1fr 1fr}
+      form{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>حاسبة تكلفة حملة المؤثرين (الخليج ومصر)</h1>
+      <p>
+        أدخل تفاصيل حملتك واحصل على <strong>تقدير نطاق ميزانية</strong> + <strong>باقات مقترحة</strong> + رسالة جاهزة لطلب عرض سعر رسمي.
+        <br><span class="note">مهم: الأداة تعطي تقديرات إرشادية (Range) وليست سعرًا نهائيًا لكل مؤثر.</span>
+      </p>
+
+      <div class="kpis" aria-label="ملخص سريع">
+        <div class="kpi"><strong>ماذا ستحصل عليه؟</strong><div class="v">Range + باقات + CTA</div><span class="pill ok">جاهزة للنسخ</span></div>
+        <div class="kpi"><strong>سوق</strong><div class="v">الخليج / مصر</div><span class="pill">عملة تلقائية</span></div>
+        <div class="kpi"><strong>يشمل</strong><div class="v">Add-ons</div><span class="pill warn">حقوق/حصرية</span></div>
+        <div class="kpi"><strong>الهدف</strong><div class="v">وصول / مبيعات</div><span class="pill">توصية توزيع</span></div>
+      </div>
+    </header>
+
+    <main class="split">
+      <!-- Calculator -->
+      <section class="card" role="main">
+        <h2 style="margin:0 0 10px">احسب التقدير</h2>
+        <form id="calcForm" novalidate>
+          <div>
+            <label for="market">السوق</label>
+            <select id="market" required>
+              <option value="gcc">الخليج (GCC)</option>
+              <option value="eg">مصر</option>
+            </select>
+            <div class="note" style="margin-top:6px">يمكنك اختيار دولة لاحقًا عند طلب العرض الرسمي.</div>
+          </div>
+
+          <div>
+            <label for="platform">المنصّة</label>
+            <select id="platform" required>
+              <option value="instagram">Instagram</option>
+              <option value="tiktok">TikTok</option>
+              <option value="snapchat">Snapchat</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="goal">هدف الحملة</label>
+            <select id="goal" required>
+              <option value="awareness">وعي/انتشار</option>
+              <option value="engagement">تفاعل</option>
+              <option value="leads">عملاء محتملون</option>
+              <option value="sales">مبيعات</option>
+              <option value="launch">إطلاق منتج/افتتاح</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="industry">مجال النشاط (لصياغة الرسالة)</label>
+            <input id="industry" placeholder="مثال: مطعم / عيادة / متجر إلكتروني / عقار" />
+          </div>
+
+          <div>
+            <label for="influencerSize">حجم المؤثر</label>
+            <select id="influencerSize" required>
+              <option value="nano">Nano (1K–10K)</option>
+              <option value="micro" selected>Micro (10K–100K)</option>
+              <option value="macro">Macro (100K–1M)</option>
+              <option value="mega">Mega (1M+)</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="contentType">نوع المحتوى الأساسي</label>
+            <select id="contentType" required>
+              <option value="reel">فيديو قصير (Reels / TikTok)</option>
+              <option value="story">Stories</option>
+              <option value="post">Post / Carousel</option>
+              <option value="live">Live</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="deliverables">عدد المخرجات (Deliverables)</label>
+            <input id="deliverables" type="number" min="1" max="120" value="4" required />
+            <div class="note" style="margin-top:6px">مثال: 1 Reel + 3 Stories = 4 مخرجات.</div>
+          </div>
+
+          <div>
+            <label for="campaignDays">مدة الحملة (أيام)</label>
+            <select id="campaignDays" required>
+              <option value="7">7</option>
+              <option value="14" selected>14</option>
+              <option value="30">30</option>
+              <option value="60">60</option>
+            </select>
+          </div>
+
+          <div class="full">
+            <label for="complexity">مستوى السوق (للتقدير) — اختياري</label>
+            <select id="complexity">
+              <option value="conservative">متحفّظ (أقل)</option>
+              <option value="typical" selected>متوسط (الأقرب)</option>
+              <option value="premium">مرتفع (مواسم/طلب عالي)</option>
+            </select>
+          </div>
+
+          <div class="full">
+            <label>إضافات شائعة (قد ترفع التكلفة)</label>
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+              <label style="display:flex;gap:10px;align-items:flex-start;color:#e6eef8">
+                <input type="checkbox" id="usageRights" />
+                <span>
+                  <strong>حقوق استخدام إعلان (Usage Rights)</strong>
+                  <div class="note">استخدام محتوى المؤثر كإعلان ممول/على موقعك/متجرك.</div>
+                </span>
+              </label>
+              <label style="display:flex;gap:10px;align-items:flex-start;color:#e6eef8">
+                <input type="checkbox" id="exclusivity" />
+                <span>
+                  <strong>حصرية (Exclusivity)</strong>
+                  <div class="note">منع الإعلان لمنافسين لمدة محددة.</div>
+                </span>
+              </label>
+              <label style="display:flex;gap:10px;align-items:flex-start;color:#e6eef8">
+                <input type="checkbox" id="whitelisting" />
+                <span>
+                  <strong>Whitelisting / Spark Ads</strong>
+                  <div class="note">تشغيل الإعلان من حساب المؤثر لرفع الثقة.</div>
+                </span>
+              </label>
+              <label style="display:flex;gap:10px;align-items:flex-start;color:#e6eef8">
+                <input type="checkbox" id="production" />
+                <span>
+                  <strong>إنتاج/تصوير احترافي</strong>
+                  <div class="note">عند الحاجة لفريق تصوير/ممنتج/ستايل.</div>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="full actions">
+            <button type="submit">احسب الآن</button>
+            <button type="button" class="secondary" id="copyBtn" disabled>نسخ الملخص</button>
+            <button type="button" class="secondary" id="resetBtn">مسح</button>
+            <button type="button" class="ghost" id="printBtn" disabled>طباعة / PDF</button>
+          </div>
+        </form>
+
+        <div class="note" style="margin-top:10px">
+          <strong>ملاحظة مهمة:</strong> النتائج إرشادية، الهدف منها إعطاء <strong>تصوّر ميزانية</strong>. التسعير النهائي يعتمد على المؤثرين المختارين وشروط العقد.
+        </div>
+
+        <section id="results" style="display:none;margin-top:14px">
+          <div class="card" style="margin:0">
+            <h3 style="margin:0 0 8px">النتيجة</h3>
+            <div class="kpis" style="grid-template-columns:repeat(3,1fr)">
+              <div class="kpi">
+                <strong>نطاق الميزانية التقديري</strong>
+                <div class="v" id="budgetRange">—</div>
+                <span class="pill" id="rangePill">—</span>
+              </div>
+              <div class="kpi">
+                <strong>متوسط تكلفة المخرج</strong>
+                <div class="v" id="perDeliverable">—</div>
+                <span class="pill">حسب اختياراتك</span>
+              </div>
+              <div class="kpi">
+                <strong>توصية سريعة</strong>
+                <div class="v" id="quickRec">—</div>
+                <span class="pill ok" id="planPill">خطة مبدئية</span>
+              </div>
+            </div>
+
+            <table aria-label="تفاصيل التقدير">
+              <thead>
+                <tr>
+                  <th>البند</th>
+                  <th>الحد الأدنى</th>
+                  <th>الحد الأعلى</th>
+                </tr>
+              </thead>
+              <tbody id="breakdown"></tbody>
+            </table>
+
+            <div class="callout" style="margin-top:12px">
+              <strong>ماذا بعد؟</strong>
+              <div class="note" style="margin-top:6px">
+                إذا أحببت تحويل هذا التقدير إلى <strong>عرض سعر رسمي</strong> + <strong>قائمة مؤثرين مناسبة</strong> + <strong>خطة محتوى</strong>، اضغط الزر التالي.
+              </div>
+              <div class="actions" style="margin-top:10px">
+                <a class="btn" id="waBtn" href="#">اطلب عرض سعر رسمي (واتساب)</a>
+                <a class="btn secondary" id="mailBtn" href="#">إرسال عبر الإيميل</a>
+                <a class="btn ghost" href="/ar/tools/" title="صفحة الأدوات">عودة للأدوات</a>
+              </div>
+            </div>
+
+            <div class="card danger" style="margin-top:12px">
+              <strong>حتى لا تضيع ميزانيتك:</strong>
+              <ul class="list note">
+                <li>اطلب دائمًا <strong>إحصائيات Insights</strong> وتأكد من الجمهور (بلد/عمر/جنس).</li>
+                <li>حدّد <strong>حقوق الاستخدام</strong> والحصرية قبل الاتفاق لتجنب مفاجآت.</li>
+                <li>قسّم حملتك: اختبار 7–14 يوم + توسيع للفائزين.</li>
+              </ul>
+            </div>
+
+            <div style="margin-top:12px" class="note">
+              <strong>ملاحظة قانونية:</strong> الأسعار تقديرية وقد تختلف حسب المؤثر وتوقيت الحملة وشروط العقد والبلد.
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:12px">
+            <h3 style="margin:0 0 8px">باقات مقترحة (قابلة للتعديل)</h3>
+            <div class="note">هذه الباقات تساعدك على فهم توزيع الحملة. عند طلب عرض سعر رسمي سنضبطها حسب منتجك وجمهورك.</div>
+            <table aria-label="باقات مقترحة">
+              <thead>
+                <tr>
+                  <th>الباقة</th>
+                  <th>التوزيع المقترح</th>
+                  <th>متى تناسب؟</th>
+                </tr>
+              </thead>
+              <tbody id="packages"></tbody>
+            </table>
+          </div>
+
+        </section>
+      </section>
+
+      <!-- SEO + Lead booster -->
+      <aside class="card">
+        <h2 style="margin:0 0 10px">كيف نقرأ التسعير؟ (مفيد للسيو + لقرار العميل)</h2>
+        <p class="note">
+          تكلفة حملة المؤثرين في <strong>الخليج ومصر</strong> تعتمد على 5 أشياء: <strong>المنصة</strong>، <strong>نوع المحتوى</strong>، <strong>حجم المؤثر</strong>، <strong>عدد المخرجات</strong>، و<strong>حقوق الاستخدام</strong>.
+          هذه الحاسبة تساعدك على تكوين <strong>تصوّر ميزانية</strong> قبل التواصل — ثم نحولها إلى خطة واقعية مع قائمة مؤثرين مناسبة.
+        </p>
+
+        <div class="callout" style="margin-top:12px">
+          <strong>لماذا Viva؟</strong>
+          <ul class="list note">
+            <li>اختيار مؤثرين مناسبين حسب الهدف والميزانية (وليس فقط عدد المتابعين).</li>
+            <li>تفاوض وتثبيت حقوق الاستخدام والحصرية بعقد واضح.</li>
+            <li>خطة قياس: أهداف، روابط تتبع، وتقرير مختصر بعد الحملة.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3 style="margin:0 0 8px">أسئلة شائعة</h3>
+          <div class="faq">
+            <details open>
+              <summary>هل الأرقام نهائية؟</summary>
+              <div class="note" style="margin-top:8px">لا. هي تقدير نطاق. السعر النهائي يتحدد بعد اختيار المؤثرين وتأكيد الشروط.</div>
+            </details>
+            <details>
+              <summary>كيف أخفّض التكلفة بدون خسارة النتائج؟</summary>
+              <div class="note" style="margin-top:8px">استخدم Micro/Nano أكثر، وابدأ باختبار 7–14 يوم ثم وسّع الفائزين، وقلّل الحصرية وحقوق الاستخدام إن لم تكن ضرورية.</div>
+            </details>
+            <details>
+              <summary>ما الفرق بين Reels وStories في التسعير؟</summary>
+              <div class="note" style="margin-top:8px">الفيديو (Reels/TikTok) غالبًا أعلى لأنه إنتاج + وقت مشاهدة أعلى. القصص أرخص لكنها ممتازة للـ CTA والزيارات.</div>
+            </details>
+            <details>
+              <summary>هل يمكن تشغيل إعلان من حساب المؤثر؟</summary>
+              <div class="note" style="margin-top:8px">نعم عبر Whitelisting/Spark Ads في بعض المنصات، وغالبًا يزيد التكلفة لكنه يرفع الثقة والتحويل.</div>
+            </details>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3 style="margin:0 0 8px">نموذج سريع (لتحويل الزائر إلى عميل)</h3>
+          <p class="note">إذا أردت Shortlist مؤثرين + عرض سعر رسمي، اترك بياناتك وسنعود لك.</p>
+          <form id="leadForm" style="margin-top:10px">
+            <div class="full">
+              <label for="name">الاسم</label>
+              <input id="name" required placeholder="اسمك" />
+            </div>
+            <div>
+              <label for="email">البريد</label>
+              <input id="email" type="email" required placeholder="name@email.com" />
+            </div>
+            <div>
+              <label for="whats">واتساب (اختياري)</label>
+              <input id="whats" placeholder="+966..." />
+            </div>
+            <div class="full">
+              <label for="notes">ملاحظة سريعة</label>
+              <textarea id="notes" placeholder="اذكر البلد/المنتج/الميزانية التقريبية أو أي تفاصيل."></textarea>
+            </div>
+            <div class="full actions">
+              <button type="submit">تجهيز رسالة الطلب</button>
+              <button type="button" class="secondary" id="copyLeadMsg" disabled>نسخ الرسالة</button>
+            </div>
+            <div id="leadOut" class="note" style="display:none;margin-top:10px"></div>
+          </form>
+          <div class="note" style="margin-top:10px">لن يتم إرسال البيانات تلقائيًا (بدون سيرفر). الهدف تجهيز رسالة مرتبة لتلصقها في واتساب/إيميل أو نموذجك الحالي.</div>
+        </div>
+      </aside>
+    </main>
+
+    <section class="card" style="margin-top:14px">
+      <h2 style="margin:0 0 10px">دليل سريع: كيف تختار مؤثرين بدون حرق الميزانية؟</h2>
+      <div class="split" style="grid-template-columns:1fr 1fr">
+        <div>
+          <h3 style="margin:0 0 6px">قبل الدفع</h3>
+          <ul class="list note">
+            <li>اطلب Insights لآخر 30 يوم: بلد الجمهور + الأعمار + الجنس.</li>
+            <li>شاهد آخر 10 محتويات: هل الجمهور حقيقي ويتفاعل؟</li>
+            <li>اتفق على: عدد المخرجات + موعد النشر + عدد التعديلات + حقوق الاستخدام.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin:0 0 6px">أثناء الحملة</h3>
+          <ul class="list note">
+            <li>استخدم UTM/كود خصم لكل مؤثر لقياس النتائج.</li>
+            <li>اختبر 7–14 يوم ثم وسّع الفائزين.</li>
+            <li>حوّل أفضل فيديو لإعلان ممول (إذا مناسب) بدل إعادة التصوير.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note" style="margin-top:10px">هذه الصفحة صُممت لتقوية الظهور في البحث عبر محتوى مفيد + أداة تفاعلية + FAQ Schema.</div>
+    </section>
+
+    <footer>© 2026 Viva Media Creative</footer>
+  </div>
+
+  <script>
+    // ============================
+    // Pricing model (editable)
+    // ============================
+    // IMPORTANT: These are market-wide ESTIMATION ranges, not official influencer prices.
+
+    const CURRENCY = {
+      gcc: { code: 'SAR', symbol: 'ر.س' },
+      eg:  { code: 'EGP', symbol: 'ج.م' }
+    };
+
+    // Base price per deliverable (min/max) by market -> platform -> influencer size -> content type
+    // You can tune these numbers later from one place.
+    const BASE = {
+      gcc: {
+        instagram: {
+          nano:  { story:[250,650],  post:[600,1600], reel:[1400,4200], live:[2500,7000] },
+          micro: { story:[500,1400], post:[1500,4500], reel:[4500,14000], live:[9000,24000] },
+          macro: { story:[1200,3500],post:[4500,12000],reel:[12000,35000],live:[25000,60000] },
+          mega:  { story:[2500,7000],post:[9000,22000],reel:[25000,80000],live:[60000,140000] }
+        },
+        tiktok: {
+          nano:  { story:[0,0],      post:[0,0],      reel:[1200,3800], live:[2200,6500] },
+          micro: { story:[0,0],      post:[0,0],      reel:[4000,12500],live:[8500,22000] },
+          macro: { story:[0,0],      post:[0,0],      reel:[11000,32000],live:[24000,56000] },
+          mega:  { story:[0,0],      post:[0,0],      reel:[24000,78000],live:[56000,130000] }
+        },
+        snapchat: {
+          nano:  { story:[350,900],  post:[0,0],      reel:[0,0],       live:[0,0] },
+          micro: { story:[900,2500], post:[0,0],      reel:[0,0],       live:[0,0] },
+          macro: { story:[2200,6000],post:[0,0],      reel:[0,0],       live:[0,0] },
+          mega:  { story:[4500,12000],post:[0,0],     reel:[0,0],       live:[0,0] }
+        }
+      },
+      eg: {
+        instagram: {
+          nano:  { story:[120,350],  post:[350,900],  reel:[900,2800],  live:[1400,4200] },
+          micro: { story:[250,750],  post:[900,2600],  reel:[2500,9000], live:[4500,14000] },
+          macro: { story:[600,1800], post:[2600,7000], reel:[8000,25000],live:[14000,36000] },
+          mega:  { story:[1200,3500],post:[6000,16000],reel:[18000,55000],live:[35000,90000] }
+        },
+        tiktok: {
+          nano:  { story:[0,0],      post:[0,0],      reel:[800,2500],   live:[1200,3800] },
+          micro: { story:[0,0],      post:[0,0],      reel:[2200,8000],  live:[4000,12000] },
+          macro: { story:[0,0],      post:[0,0],      reel:[7000,22000], live:[12000,30000] },
+          mega:  { story:[0,0],      post:[0,0],      reel:[15000,48000],live:[28000,75000] }
+        },
+        snapchat: {
+          nano:  { story:[150,450],  post:[0,0],      reel:[0,0],       live:[0,0] },
+          micro: { story:[350,1100], post:[0,0],      reel:[0,0],       live:[0,0] },
+          macro: { story:[900,2600], post:[0,0],      reel:[0,0],       live:[0,0] },
+          mega:  { story:[1800,5200],post:[0,0],      reel:[0,0],       live:[0,0] }
+        }
+      }
+    };
+
+    // Multipliers
+    const COMPLEXITY_MULT = {
+      conservative: { min: 0.90, max: 0.95 },
+      typical:      { min: 1.00, max: 1.00 },
+      premium:      { min: 1.08, max: 1.18 }
+    };
+
+    const DURATION_MULT = (days) => {
+      // More days usually means more coordination + possible reposts/extra rounds.
+      if (days <= 7) return { min: 1.00, max: 1.00 };
+      if (days <= 14) return { min: 1.03, max: 1.06 };
+      if (days <= 30) return { min: 1.06, max: 1.12 };
+      return { min: 1.10, max: 1.18 };
+    };
+
+    const ADDONS = {
+      usageRights:  { min: 1.15, max: 1.60 },
+      exclusivity:  { min: 1.12, max: 1.55 },
+      whitelisting: { min: 1.10, max: 1.35 },
+      production:   { min: 1.08, max: 1.25 }
+    };
+
+    // Volume discount (bundles) - applies to base influencer fees only
+    function volumeDiscount(n) {
+      if (n >= 20) return { min: 0.88, max: 0.94 };
+      if (n >= 10) return { min: 0.92, max: 0.97 };
+      if (n >= 6)  return { min: 0.95, max: 0.99 };
+      return { min: 1.00, max: 1.00 };
+    }
+
+    // ============================
+    // Helpers
+    // ============================
+    function fmt(n, cur) {
+      const x = Math.round(n);
+      // Arabic thousands separator
+      return x.toLocaleString('ar-EG') + ' ' + (cur.symbol || cur.code);
+    }
+
+    function clamp(v, a, b){ return Math.max(a, Math.min(b, v)); }
+
+    function getBase(market, platform, size, type){
+      const p = (BASE[market]||{})[platform];
+      if (!p) return [0,0];
+      const s = p[size];
+      if (!s) return [0,0];
+      return s[type] || [0,0];
+    }
+
+    function isSupported(platform, type) {
+      // TikTok doesn't have "story" or "post" in our model.
+      if (platform === 'tiktok' && (type === 'story' || type === 'post')) return false;
+      if (platform === 'snapchat' && type !== 'story') return false;
+      // Live on Snapchat is not modeled.
+      if (platform === 'snapchat' && type === 'live') return false;
+      return true;
+    }
+
+    function suggestPlan({goal, platform, market, size}){
+      // Output a simple, actionable recommendation.
+      // (No hard promises.)
+      const isGcc = market === 'gcc';
+      const platformName = platform === 'instagram' ? 'إنستغرام' : platform === 'tiktok' ? 'تيك توك' : 'سناب شات';
+
+      const tips = [];
+      if (goal === 'awareness') tips.push('ابدأ بعدة Micro/Nano لاختبار الرسائل قبل التوسيع.');
+      if (goal === 'engagement') tips.push('ادمج Reel/فيديو + Stories بأسئلة/تصويت لرفع التفاعل.');
+      if (goal === 'leads') tips.push('ركّز على Stories مع CTA واضح + رابط/واتساب + كود خاص.');
+      if (goal === 'sales') tips.push('استخدم كود خصم + تتبع UTM + إعادة استخدام أفضل فيديو كإعلان ممول.');
+      if (goal === 'launch') tips.push('امزج Macro للضجة + Micro للتكرار + جدول نشر مكثف أسبوعين.');
+
+      // Market nuance
+      if (isGcc) tips.push('في الخليج غالبًا ترتفع الأسعار في المواسم (خصوصًا رمضان) — اختر “مستوى سوق مرتفع” للتقدير.');
+      else tips.push('في مصر الجودة/الانتشار يختلفان جدًا — تأكد من الجمهور الحقيقي قبل الدفع.');
+
+      // Platform nuance
+      if (platform === 'snapchat') tips.push('سناب ممتاز للعروض والـ CTA السريع عبر القصص، واحرص على تكرار الرسالة.');
+      if (platform === 'tiktok') tips.push('تيك توك يحتاج فكرة قوية في أول ثانيتين — ركّز على “Hook” واضح.');
+      if (platform === 'instagram') tips.push('إنستغرام: Reels للانتشار + Stories للتحويل والرسائل.');
+
+      return { title: `خطة مبدئية لـ ${platformName}`, bullets: tips.slice(0,4) };
+    }
+
+    function buildPackages({goal, platform}){
+      // Packages are heuristic templates (not prices) to drive conversion.
+      // We keep them platform-aware.
+      const rows = [];
+
+      const base = platform === 'snapchat'
+        ? {
+            basic:  '2 مؤثر Nano/Micro + 8 قصص (Story Frames)',
+            growth: '4 مؤثرين Micro + 20 قصة + تكرار عرض/CTA',
+            premium:'1 Macro + 6 Micro + 40 قصة + تغطية أسبوعين'
+          }
+        : {
+            basic:  '1 Micro + 1 فيديو + 3 قصص (أو 1 Post)',
+            growth: '3 Micro + 3 فيديو + 9 قصص + كود خصم لكل مؤثر',
+            premium:'1 Macro + 5 Micro + 6 فيديو + 15 قصة + إعادة استخدام أفضل فيديو كإعلان'
+          };
+
+      const when = {
+        awareness: {
+          b:'اختبار سريع + أول بيانات.',
+          g:'زيادة انتشار مع تنويع.',
+          p:'دفعة قوية لبراند/افتتاح.'
+        },
+        engagement: {
+          b:'رفع تفاعل محتوى واحد.',
+          g:'تفاعل مستمر أسبوعين.',
+          p:'تفاعل + وصول واسع.'
+        },
+        leads: {
+          b:'جمع Leads محدود.',
+          g:'Leads ثابتة مع CTA.',
+          p:'Lead machine + إعادة استهداف.'
+        },
+        sales: {
+          b:'مبيعات تجريبية.',
+          g:'تحسين تحويل مع أكواد.',
+          p:'مبيعات + حملات ممولة.'
+        },
+        launch: {
+          b:'تهيئة قبل الإطلاق.',
+          g:'أسبوعين إطلاق.',
+          p:'إطلاق ضخم متعدد مؤثرين.'
+        }
+      };
+
+      const w = when[goal] || when.awareness;
+      rows.push({name:'Basic', dist: base.basic, why: w.b});
+      rows.push({name:'Growth', dist: base.growth, why: w.g});
+      rows.push({name:'Premium', dist: base.premium, why: w.p});
+      return rows;
+    }
+
+    function buildWhatsappMessage(summary){
+      const lines = [
+        'مرحبًا Viva Media Creative 👋',
+        'أريد عرض سعر رسمي + قائمة مؤثرين مناسبة لحملة مؤثرين.',
+        '',
+        `السوق: ${summary.marketLabel}`,
+        `المنصة: ${summary.platformLabel}`,
+        `الهدف: ${summary.goalLabel}`,
+        `حجم المؤثر: ${summary.sizeLabel}`,
+        `نوع المحتوى: ${summary.typeLabel}`,
+        `عدد المخرجات: ${summary.deliverables}`,
+        `مدة الحملة: ${summary.days} يوم`,
+        `إضافات: ${summary.addonsLabel || 'بدون'}`,
+        `تقدير الميزانية (Range): ${summary.rangeLabel}`,
+        '',
+        summary.industry ? `المجال: ${summary.industry}` : '',
+        'أرسلوا لي الخيارات المناسبة وخطة مقترحة. شكرًا 🙏'
+      ].filter(Boolean);
+      return lines.join('\n');
+    }
+
+    // ============================
+    // UI wiring
+    // ============================
+    const el = (id) => document.getElementById(id);
+
+    const calcForm = el('calcForm');
+    const results = el('results');
+    const budgetRange = el('budgetRange');
+    const perDeliverable = el('perDeliverable');
+    const breakdown = el('breakdown');
+    const copyBtn = el('copyBtn');
+    const resetBtn = el('resetBtn');
+    const printBtn = el('printBtn');
+    const rangePill = el('rangePill');
+    const quickRec = el('quickRec');
+    const packagesEl = el('packages');
+    const waBtn = el('waBtn');
+    const mailBtn = el('mailBtn');
+
+    function updateCompatibilityHint(){
+      const platform = el('platform').value;
+      const type = el('contentType').value;
+      const ok = isSupported(platform, type);
+
+      // If not supported, auto-switch to a supported option to reduce confusion.
+      if (!ok) {
+        if (platform === 'tiktok') el('contentType').value = 'reel';
+        if (platform === 'snapchat') el('contentType').value = 'story';
+      }
+    }
+
+    el('platform').addEventListener('change', updateCompatibilityHint);
+    el('contentType').addEventListener('change', updateCompatibilityHint);
+
+    function compute(){
+      const market = el('market').value;
+      const platform = el('platform').value;
+      const goal = el('goal').value;
+      const industry = (el('industry').value || '').trim();
+      const size = el('influencerSize').value;
+      const type = el('contentType').value;
+      const deliverables = clamp(parseInt(el('deliverables').value || '1', 10), 1, 120);
+      const days = parseInt(el('campaignDays').value, 10);
+      const complexity = el('complexity').value;
+
+      const addons = {
+        usageRights: el('usageRights').checked,
+        exclusivity: el('exclusivity').checked,
+        whitelisting: el('whitelisting').checked,
+        production: el('production').checked
+      };
+
+      if (!isSupported(platform, type)) {
+        return { error: 'اختيار غير مدعوم لهذه المنصّة. غيّر نوع المحتوى.' };
+      }
+
+      const cur = CURRENCY[market];
+      const base = getBase(market, platform, size, type);
+      const baseMin = base[0];
+      const baseMax = base[1];
+      if (!baseMin && !baseMax) {
+        return { error: 'لا توجد بيانات تقديرية لهذا الاختيار. جرّب نوع محتوى أو منصّة أخرى.' };
+      }
+
+      // Core: deliverables * base
+      let min = baseMin * deliverables;
+      let max = baseMax * deliverables;
+
+      // Volume discount on base
+      const vd = volumeDiscount(deliverables);
+      min *= vd.min;
+      max *= vd.max;
+
+      // Complexity multiplier
+      const cm = COMPLEXITY_MULT[complexity] || COMPLEXITY_MULT.typical;
+      min *= cm.min;
+      max *= cm.max;
+
+      // Duration multiplier
+      const dm = DURATION_MULT(days);
+      min *= dm.min;
+      max *= dm.max;
+
+      // Add-ons (multiplicative)
+      const appliedAddons = [];
+      Object.entries(addons).forEach(([k, on]) => {
+        if (!on) return;
+        const mlt = ADDONS[k];
+        if (!mlt) return;
+        min *= mlt.min;
+        max *= mlt.max;
+        appliedAddons.push(k);
+      });
+
+      // Guard
+      min = Math.max(0, min);
+      max = Math.max(min, max);
+
+      // Breakdown table entries
+      const rows = [];
+      rows.push({
+        label: `رسوم المؤثرين (تقريبية) × ${deliverables} مخرج`,
+        min: baseMin * deliverables,
+        max: baseMax * deliverables
+      });
+
+      if (deliverables >= 6) rows.push({ label: 'خصم باقة (Volume) — تقديري', min: -(baseMin * deliverables) * (1 - vd.min), max: -(baseMax * deliverables) * (1 - vd.max) });
+
+      rows.push({ label: `مستوى السوق (${complexity === 'conservative' ? 'متحفّظ' : complexity === 'premium' ? 'مرتفع' : 'متوسط'})`, min: (baseMin * deliverables * vd.min) * (cm.min - 1), max: (baseMax * deliverables * vd.max) * (cm.max - 1) });
+      rows.push({ label: `مدة الحملة (${days} يوم)`, min: (baseMin * deliverables * vd.min * cm.min) * (dm.min - 1), max: (baseMax * deliverables * vd.max * cm.max) * (dm.max - 1) });
+
+      const addonLabels = {
+        usageRights:'حقوق استخدام',
+        exclusivity:'حصرية',
+        whitelisting:'Whitelisting/Spark',
+        production:'إنتاج'
+      };
+      appliedAddons.forEach(k => {
+        const mlt = ADDONS[k];
+        rows.push({ label: `إضافة: ${addonLabels[k]}`, min: min / mlt.min * (mlt.min - 1), max: max / mlt.max * (mlt.max - 1) });
+      });
+
+      // Recommendation
+      const plan = suggestPlan({goal, platform, market, size});
+
+      // Packages
+      const packs = buildPackages({goal, platform});
+
+      // Labels
+      const marketLabel = market === 'gcc' ? 'الخليج (GCC)' : 'مصر';
+      const platformLabel = platform === 'instagram' ? 'Instagram' : platform === 'tiktok' ? 'TikTok' : 'Snapchat';
+      const goalLabel = {
+        awareness:'وعي/انتشار',
+        engagement:'تفاعل',
+        leads:'عملاء محتملون',
+        sales:'مبيعات',
+        launch:'إطلاق'
+      }[goal] || goal;
+      const sizeLabel = {
+        nano:'Nano', micro:'Micro', macro:'Macro', mega:'Mega'
+      }[size] || size;
+      const typeLabel = {
+        reel:'فيديو قصير', story:'Stories', post:'Post/Carousel', live:'Live'
+      }[type] || type;
+
+      const addonsLabel = Object.entries(addons).filter(([,v])=>v).map(([k])=>addonLabels[k]).join(' + ');
+
+      const rangeLabel = `${fmt(min, cur)} — ${fmt(max, cur)}`;
+
+      return {
+        min, max, cur, rows,
+        plan, packs,
+        summary: {
+          marketLabel, platformLabel, goalLabel, sizeLabel, typeLabel,
+          deliverables, days,
+          rangeLabel,
+          addonsLabel,
+          industry
+        }
+      };
+    }
+
+    function render(out){
+      if (out.error) {
+        alert(out.error);
+        return;
+      }
+
+      results.style.display = '';
+      copyBtn.disabled = false;
+      printBtn.disabled = false;
+
+      budgetRange.textContent = `${fmt(out.min, out.cur)} — ${fmt(out.max, out.cur)}`;
+      const avg = (out.min + out.max) / 2;
+      perDeliverable.textContent = fmt(avg / out.summary.deliverables, out.cur);
+
+      // Pill based on width of range
+      const width = out.max - out.min;
+      const ratio = width / Math.max(1, out.min);
+      if (ratio <= 0.35) {
+        rangePill.textContent = 'نطاق ضيق (أقرب)';
+        rangePill.className = 'pill ok';
+      } else if (ratio <= 0.75) {
+        rangePill.textContent = 'نطاق متوسط';
+        rangePill.className = 'pill warn';
+      } else {
+        rangePill.textContent = 'نطاق واسع (حسب المؤثر)';
+        rangePill.className = 'pill bad';
+      }
+
+      // Quick rec
+      quickRec.textContent = out.plan.title;
+
+      // Breakdown
+      breakdown.innerHTML = out.rows.map(r => {
+        const minTxt = fmt(r.min, out.cur);
+        const maxTxt = fmt(r.max, out.cur);
+        return `<tr><td>${r.label}</td><td>${minTxt}</td><td>${maxTxt}</td></tr>`;
+      }).join('');
+
+      // Packages
+      packagesEl.innerHTML = out.packs.map(p => {
+        return `<tr><td><strong>${p.name}</strong></td><td>${p.dist}</td><td class="note">${p.why}</td></tr>`;
+      }).join('');
+
+      // Build CTA links
+      const msg = buildWhatsappMessage(out.summary);
+
+      // NOTE: Replace this with your official WhatsApp number (international format without +)
+      const VIVA_WA_NUMBER = '0000000000';
+      const waHref = `https://wa.me/${VIVA_WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+      waBtn.href = waHref;
+
+      const mailSubject = `طلب عرض سعر رسمي — حملة مؤثرين (${out.summary.marketLabel})`;
+      const mailBody = msg;
+      mailBtn.href = `mailto:info@vivamediacreative.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+
+      // Copy summary
+      copyBtn.onclick = async () => {
+        const text = [
+          'ملخص حاسبة تكلفة حملة المؤثرين — Viva Media Creative',
+          `التقدير: ${out.summary.rangeLabel}`,
+          `السوق: ${out.summary.marketLabel} | المنصة: ${out.summary.platformLabel}`,
+          `الهدف: ${out.summary.goalLabel} | حجم المؤثر: ${out.summary.sizeLabel}`,
+          `نوع المحتوى: ${out.summary.typeLabel} | المخرجات: ${out.summary.deliverables} | المدة: ${out.summary.days} يوم`,
+          `الإضافات: ${out.summary.addonsLabel || 'بدون'}`
+        ].join('\n');
+        try{
+          await navigator.clipboard.writeText(text);
+          copyBtn.textContent = '✅ تم النسخ';
+          setTimeout(()=>copyBtn.textContent='نسخ الملخص', 1200);
+        }catch(e){
+          alert('تعذر النسخ. يمكنك تحديد النص ونسخه يدويًا.');
+        }
+      };
+
+      // Print
+      printBtn.onclick = () => window.print();
+
+      // Store last summary for lead form
+      window.__lastSummary = { summary: out.summary, msg };
+
+      // Update recommendation bullets in UI (optional future)
+      const recBullets = out.plan.bullets.map(t => `• ${t}`).join('  ');
+      document.getElementById('planPill').title = recBullets;
+    }
+
+    calcForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      updateCompatibilityHint();
+      const out = compute();
+      render(out);
+    });
+
+    resetBtn.addEventListener('click', () => {
+      calcForm.reset();
+      results.style.display = 'none';
+      copyBtn.disabled = true;
+      printBtn.disabled = true;
+      window.__lastSummary = null;
+      updateCompatibilityHint();
+    });
+
+    // Lead form (message builder)
+    const leadForm = document.getElementById('leadForm');
+    const leadOut = document.getElementById('leadOut');
+    const copyLeadMsg = document.getElementById('copyLeadMsg');
+
+    function buildLeadMessage(){
+      const name = (document.getElementById('name').value || '').trim();
+      const email = (document.getElementById('email').value || '').trim();
+      const whats = (document.getElementById('whats').value || '').trim();
+      const notes = (document.getElementById('notes').value || '').trim();
+
+      const base = window.__lastSummary?.msg || 'أريد عرض سعر رسمي + قائمة مؤثرين مناسبة.';
+      const lines = [
+        base,
+        '',
+        '— بيانات التواصل —',
+        `الاسم: ${name}`,
+        `البريد: ${email}`,
+        whats ? `واتساب: ${whats}` : '',
+        notes ? `ملاحظات: ${notes}` : ''
+      ].filter(Boolean);
+
+      return lines.join('\n');
+    }
+
+    leadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const msg = buildLeadMessage();
+      leadOut.style.display = '';
+      leadOut.textContent = '✅ تم تجهيز رسالة الطلب. انسخها وأرسلها في واتساب/إيميل:\n\n' + msg;
+      copyLeadMsg.disabled = false;
+      copyLeadMsg.onclick = async () => {
+        try{
+          await navigator.clipboard.writeText(msg);
+          copyLeadMsg.textContent = '✅ تم النسخ';
+          setTimeout(()=>copyLeadMsg.textContent='نسخ الرسالة', 1200);
+        }catch(err){
+          alert('تعذر النسخ.');
+        }
+      };
+    });
+
+    // Initial
+    updateCompatibilityHint();
+  </script>
+</body>
+</html>
