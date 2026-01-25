@@ -1,10 +1,12 @@
-   <!doctype html>
+    <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact — Viva Media Creative</title>
   <meta name="description" content="تواصل مع Viva Media Creative — ابدأ طريق الترند، النمو، ثم الدخل." />
+
+<link rel="canonical" href="https://vivamediacreative.com/contact/" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -206,8 +208,9 @@
           <div class="formBody">
             <!-- EmailJS form (no redirect, no third-party form action) -->
             <form id="contactForm" novalidate>
-
-              <div class="formGrid">
+        <!-- Anti-spam honeypot (should stay empty) -->
+        <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0;" aria-hidden="true" />
+<div class="formGrid">
                 <div class="field">
                   <label for="name" data-i18n="f_name">الاسم</label>
                   <input id="name" name="name" type="text" placeholder="الاسم كما تحب أن نناديك" required minlength="2">
@@ -354,6 +357,26 @@
     // IMPORTANT: Replace YOUR_PUBLIC_KEY with your EmailJS Public Key (Account -> API Keys)
     emailjs.init({ publicKey: "SzBBlvEjgwysF8vHJ" });
 
+  // ANTI_SPAM_VMC: client-side anti-spam protections (no UI change)
+  const VMC_RATE_LIMIT_MS = 25000; // 25s
+  const VMC_MIN_MESSAGE_LEN = 15;
+  let vmcLastSubmitAt = Number(sessionStorage.getItem('vmcLastSubmitAt') || '0');
+
+  function vmcIsBotSubmission() {
+    const hp = document.getElementById("website");
+    if (hp && hp.value && hp.value.trim().length > 0) return true; // honeypot filled
+    return false;
+  }
+
+  function vmcCanSubmitNow() {
+    const now = Date.now();
+    if (now - vmcLastSubmitAt < VMC_RATE_LIMIT_MS) return false;
+    vmcLastSubmitAt = now;
+    sessionStorage.setItem('vmcLastSubmitAt', String(now));
+    return true;
+  }
+
+
     const form = document.getElementById('contactForm');
     const statusBox = document.getElementById('status');
 
@@ -365,7 +388,18 @@
     form?.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      statusBox.className = 'status';
+      
+
+      // anti-spam checks (no UI changes)
+      if (vmcIsBotSubmission()) {
+        showStatus('err', '❌ تعذر إرسال الطلب.');
+        return;
+      }
+      if (!vmcCanSubmitNow()) {
+        showStatus('err', 'من فضلك انتظر قليلًا ثم أعد المحاولة.');
+        return;
+      }
+statusBox.className = 'status';
       statusBox.textContent = '';
 
       const name = form.name.value.trim();
@@ -373,8 +407,7 @@
       const account = form.account.value.trim();
       const service = form.service.value;
       const message = form.message.value.trim();
-
-      if (name.length < 2){ showStatus('err', 'من فضلك اكتب الاسم بشكل صحيح.'); return; }
+if (name.length < 2){ showStatus('err', 'من فضلك اكتب الاسم بشكل صحيح.'); return; }
       if (!/^\S+@\S+\.\S+$/.test(email)){ showStatus('err', 'من فضلك اكتب بريد إلكتروني صحيح.'); return; }
       if (account.length < 3){ showStatus('err', 'من فضلك اكتب رابط حسابك أو اسم الصفحة.'); return; }
       if (!service){ showStatus('err', 'من فضلك اختر الخدمة المطلوبة.'); return; }
