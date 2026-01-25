@@ -1,4 +1,4 @@
- /* =========================
+  /* =========================
    Viva Media Creative - News Page (Luxury Blog UI)
    ضع هذا الملف كـ news.css داخل /news/
    ========================= */
@@ -205,7 +205,7 @@
   margin: 0 18px 20px;
 }
 
-/* ===== تحسين الهيدر داخل صفحة الأخبار ===== */
+/* ===== تحسين الهيدر داخل صفحة الأخبار (لو كان شكله “مكسور”) ===== */
 .news .site-header {
   background: rgba(10, 14, 25, 0.75);
   backdrop-filter: blur(10px);
@@ -229,6 +229,19 @@
   text-decoration: underline;
 }
 
+/* ===== موبايل ===== */
+@media (max-width: 980px) {
+  .news .card { grid-column: span 6; }
+  .news .services-grid .card:first-child { grid-column: span 12; }
+}
+
+@media (max-width: 640px) {
+  .news .services-grid { gap: 14px; }
+  .news .card { grid-column: span 12; border-radius: 16px; }
+  .news .card img { height: 190px; }
+  .news .services-grid .card:first-child img { height: 240px; }
+}
+
 /* =========================
    FIX HEADER (News Page)
    ========================= */
@@ -248,7 +261,7 @@
   flex-wrap: wrap;
 }
 
-/* يمنع “تمدد” اللوجو */
+/* يمنع “تمدد” اللوجو اللي عامل المشكلة */
 .news .site-header .logo{
   width: 56px !important;
   height: 56px !important;
@@ -281,16 +294,6 @@
   margin: 0;
   font-size: 1.1rem;
   line-height: 1.2;
-}
-
-/* رابط اسم البراند للصفحة الرئيسية */
-.news .site-header .brand-text .brand-home{
-  color: rgba(233,238,252,0.95);
-  text-decoration: none;
-}
-
-.news .site-header .brand-text .brand-home:hover{
-  text-decoration: underline;
 }
 
 .news .site-header .brand-text .tag{
@@ -338,30 +341,7 @@
   text-decoration: underline;
 }
 
-/* ===== Accessibility: Focus Visible ===== */
-.news a:focus-visible{
-  outline: 2px solid rgba(0,119,255,0.75);
-  outline-offset: 4px;
-  border-radius: 12px;
-}
-
-/* ===== Reduce Motion ===== */
-@media (prefers-reduced-motion: reduce){
-  .news .card,
-  .news .card img{
-    transition: none !important;
-  }
-  .news .card:hover{
-    transform: none !important;
-  }
-}
-
-/* ===== موبايل ===== */
-@media (max-width: 980px) {
-  .news .card { grid-column: span 6; }
-  .news .services-grid .card:first-child { grid-column: span 12; }
-}
-
+/* موبايل */
 @media (max-width: 768px){
   .news .site-header .header-inner{
     flex-direction: column;
@@ -378,9 +358,3 @@
   }
 }
 
-@media (max-width: 640px) {
-  .news .services-grid { gap: 14px; }
-  .news .card { grid-column: span 12; border-radius: 16px; }
-  .news .card img { height: 190px; }
-  .news .services-grid .card:first-child img { height: 240px; }
-}
