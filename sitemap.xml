@@ -1,306 +1,249 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
     <loc>https://vivamediacreative.com/</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/services/influencer-marketing/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/elite/influencer-partnerships/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <url>
     <loc>https://vivamediacreative.com/ar/</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://vivamediacreative.com/ar/best-time-to-post-instagram/</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://vivamediacreative.com/ar/hashtag-analyzer/</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
+  <url>
+    <loc>https://vivamediacreative.com/ar/influencer-campaign-cost-calculator/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://vivamediacreative.com/ar/instagram-analyzer/</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://vivamediacreative.com/ar/tools/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-<url>
-  <loc>https://vivamediacreative.com/ar/influencer-campaign-cost-calculator/</loc>
-  <lastmod>2026-01-24</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-  
-  <url>
-    <loc>https://vivamediacreative.com/contact/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/en/</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://vivamediacreative.com/news/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/news/ai-transforms-content-creation/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-<url>
-  <loc>https://vivamediacreative.com/news/facebook-algorithm/</loc>
-  <lastmod>2026-01-23</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-  
-  <url>
-    <loc>https://vivamediacreative.com/news/ai-vs-human-content-2026/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/news/brand-strategy-building/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/news/content-marketing-strategy-2026/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/news/how-to-grow-instagram-organically/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/news/instagram-reels-ads-guide/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/news/local-seo-for-businesses/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/news/modern-filming-production/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/news/social-media-algorithms/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-  <loc>https://vivamediacreative.com/news/personal-brand-management/</loc>
-  <lastmod>2026-01-12</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-
-  
-  <url>
-    <loc>https://vivamediacreative.com/news_en/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/news_en/ai-transforms-content-creation/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/news_en/ai-vs-human-content-2026/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/news_en/brand-strategy-building/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/news_en/content-marketing-strategy-2026/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-  <loc>https://vivamediacreative.com/news/hashtag-strategy/</loc>
-  <lastmod>2026-01-14</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-  <url>
-  <loc>https://vivamediacreative.com/news/why-influencer-marketing-fails/</loc>
-  <lastmod>2026-01-16</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-  
-  <url>
-    <loc>https://vivamediacreative.com/news_en/how-to-grow-instagram-organically/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/news_en/instagram-reels-ads-guide/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/news_en/local-seo-for-businesses/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/news_en/modern-filming-production/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-<url>
-  <loc>https://vivamediacreative.com/news_en/digital-video-agency/</loc>
-  <lastmod>2026-01-20</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-  
-  <url>
-    <loc>https://vivamediacreative.com/news_en/social-media-algorithms/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://vivamediacreative.com/privacy/</loc>
-    <lastmod>2026-01-06</lastmod>
+    <loc>https://vivamediacreative.com/contact/</loc>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-
-
   <url>
-  <loc>https://vivamediacreative.com/terms/</loc>
-  <lastmod>2026-01-06</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.4</priority>
-</url>
-
-  <url>
-  <loc>https://vivamediacreative.com/services/personal-brand-management/</loc>
-  <lastmod>2026-01-12</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-  <url>
-    <loc>https://vivamediacreative.com/services/viral-strategy/</loc>
-    <lastmod>2026-01-12</lastmod>
+    <loc>https://vivamediacreative.com/elite/influencer-partnerships/</loc>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
+  <url>
+    <loc>https://vivamediacreative.com/en/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news/ai-transforms-content-creation/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news/ai-vs-human-content-2026/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news/best-instagram-hashtags-2026/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news/best-time-to-post-instagram/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news/brand-identity-ai-2026/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news/digital-marketing-trends-2026/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news/facebook-algorithm/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news/hashtag-strategy/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news/instagram-engagement-rate-calculator/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news/personal-brand-management/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news/social-media-algorithms-2026/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news/studio-production-tech-2026/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news/why-influencer-marketing-fails/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news_en/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news_en/ai-content-automation-tools/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news_en/ai-content-creation/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news_en/ai-video-creation-tools/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news_en/brand-identity-ai-2026/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news_en/digital-marketing-trends-2026/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news_en/digital-video-agency/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news_en/human-content-vs-ai-2026/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news_en/modern-filming-production/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/news_en/social-media-algorithms/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/privacy/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
   <url>
     <loc>https://vivamediacreative.com/services/copywriting/</loc>
-    <lastmod>2026-01-12</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
+  <url>
+    <loc>https://vivamediacreative.com/services/influencer-marketing/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/services/personal-brand-management/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://vivamediacreative.com/services/seo-growth/</loc>
-    <lastmod>2026-01-12</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  
-  
+  <url>
+    <loc>https://vivamediacreative.com/services/viral-strategy/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vivamediacreative.com/terms/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
 </urlset>
-
