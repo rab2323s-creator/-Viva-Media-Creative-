@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>أخبار Viva Media Creative</title>
   <meta name="description" content="تابع آخر أخبار Viva Media Creative وأحدث الابتكارات والتقنيات في الإنتاج الإعلامي والتسويق الرقمي والذكاء الاصطناعي." />
   <meta name="robots" content="index, follow" />
@@ -13,18 +14,101 @@
   <link rel="alternate" hreflang="en" href="https://vivamediacreative.com/news_en/" />
   <link rel="alternate" hreflang="x-default" href="https://vivamediacreative.com/news_en/" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="أخبار Viva Media Creative">
-  <meta property="og:description" content="اكتشف أحدث الأخبار، الاتجاهات، والابتكارات في الإنتاج الإعلامي، التسويق الرقمي، والذكاء الاصطناعي من Viva Media Creative.">
-  <meta property="og:image" content="/assets/ai-content.jpg">
-  <meta property="og:url" content="https://vivamediacreative.com/news/">
-  <meta name="twitter:card" content="summary_large_image">
+  <!-- Performance: preload CSS (optional but recommended) -->
+  <link rel="preload" href="/style.css" as="style" />
+  <link rel="preload" href="/news/news.css" as="style" />
 
-  <!-- روابط الموارد المعدلة -->
+  <!-- Styles -->
   <link rel="stylesheet" href="/style.css" />
- <link rel="stylesheet" href="news.css" />
+  <link rel="stylesheet" href="/news/news.css" />
 
+  <!-- Favicon -->
   <link rel="icon" href="/assets/logo.jpeg" />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="ar_AR" />
+  <meta property="og:site_name" content="Viva Media Creative" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="أخبار Viva Media Creative" />
+  <meta property="og:description" content="اكتشف أحدث الأخبار، الاتجاهات، والابتكارات في الإنتاج الإعلامي، التسويق الرقمي، والذكاء الاصطناعي من Viva Media Creative." />
+  <meta property="og:image" content="https://vivamediacreative.com/assets/ai-content.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="أخبار Viva Media Creative" />
+  <meta property="og:url" content="https://vivamediacreative.com/news/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="أخبار Viva Media Creative" />
+  <meta name="twitter:description" content="اكتشف أحدث الأخبار، الاتجاهات، والابتكارات في الإنتاج الإعلامي، التسويق الرقمي، والذكاء الاصطناعي من Viva Media Creative." />
+  <meta name="twitter:image" content="https://vivamediacreative.com/assets/ai-content.jpg" />
+
+  <!-- UX/SEO extras -->
+  <meta name="theme-color" content="#0b0f19" />
+  <meta name="color-scheme" content="dark light" />
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Viva Media Creative",
+    "url": "https://vivamediacreative.com/",
+    "logo": "https://vivamediacreative.com/assets/logo.jpeg"
+  }
+  </script>
+
+  <!-- Structured Data: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "الرئيسية",
+        "item": "https://vivamediacreative.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "الأخبار",
+        "item": "https://vivamediacreative.com/news/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: News Collection (ItemList) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "أخبار Viva Media Creative",
+    "url": "https://vivamediacreative.com/news/",
+    "inLanguage": "ar",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "numberOfItems": 12,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "url": "https://vivamediacreative.com/news/ai-transforms-content-creation/" },
+        { "@type": "ListItem", "position": 2, "url": "https://vivamediacreative.com/news/digital-marketing-trends-2026/" },
+        { "@type": "ListItem", "position": 3, "url": "https://vivamediacreative.com/news/studio-production-tech-2026/" },
+        { "@type": "ListItem", "position": 4, "url": "https://vivamediacreative.com/news/social-media-algorithms-2026/" },
+        { "@type": "ListItem", "position": 5, "url": "https://vivamediacreative.com/news/instagram-engagement-rate-calculator/" },
+        { "@type": "ListItem", "position": 6, "url": "https://vivamediacreative.com/news/best-time-to-post-instagram/" },
+        { "@type": "ListItem", "position": 7, "url": "https://vivamediacreative.com/news/best-instagram-hashtags-2026/" },
+        { "@type": "ListItem", "position": 8, "url": "https://vivamediacreative.com/news/ai-vs-human-content-2026/" },
+        { "@type": "ListItem", "position": 9, "url": "https://vivamediacreative.com/news/brand-identity-ai-2026/" },
+        { "@type": "ListItem", "position": 10, "url": "https://vivamediacreative.com/news/personal-brand-management/" },
+        { "@type": "ListItem", "position": 11, "url": "https://vivamediacreative.com/news/hashtag-strategy/" },
+        { "@type": "ListItem", "position": 12, "url": "https://vivamediacreative.com/news/why-influencer-marketing-fails/" }
+      ]
+    }
+  }
+  </script>
 </head>
 
 <body class="news">
@@ -32,28 +116,44 @@
 <header class="site-header">
   <div class="container header-inner">
     <div class="brand">
-<a href="https://vivamediacreative.com/">
-  <img src="/assets/logo.jpeg" alt="Viva Media Creative" class="logo" />
-</a>      <div class="brand-text">
-        <h1>Viva Media Creative</h1>
+      <!-- اللوجو يشير للصفحة الرئيسية (مطلوب) -->
+      <a href="https://vivamediacreative.com/" aria-label="Viva Media Creative - الصفحة الرئيسية">
+        <img
+          src="/assets/logo.jpeg"
+          alt="Viva Media Creative"
+          class="logo"
+          width="56"
+          height="56"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </a>
+
+      <div class="brand-text">
+        <!-- اسم الموقع يشير للصفحة الرئيسية (مطلوب) -->
+        <h1><a class="brand-home" href="https://vivamediacreative.com/">Viva Media Creative</a></h1>
         <p class="tag">شركة رائدة في إنتاج المحتوى المرئي والتسويق</p>
       </div>
     </div>
 
     <nav class="main-nav" aria-label="القائمة الرئيسية">
-     <a href="https://vivamediacreative.com/">الرئيسية</a>
-      <a href="/news/" class="active">الأخبار</a>
+      <a href="https://vivamediacreative.com/">الرئيسية</a>
+      <a href="/news/" class="active" aria-current="page">الأخبار</a>
       <a href="/contact/">تواصل</a>
     </nav>
 
-    <div class="lang">🌐 <a href="/news_en/">English</a>  | <a href="/news/">العربية</a></div>
+    <div class="lang" aria-label="اللغة">
+      🌐 <a href="/news_en/" hreflang="en">English</a> | <a href="/news/" hreflang="ar">العربية</a>
+    </div>
   </div>
 </header>
 
-<main class="container section">
+<main class="container section" id="main-content">
   <nav aria-label="Breadcrumb">
     <ol>
-      <li><a href="/ar">الرئيسية</a></li>
+      <!-- إصلاح رابط الرئيسية (كان /ar) ليشير للصفحة الرئيسية -->
+      <li><a href="https://vivamediacreative.com/">الرئيسية</a></li>
       <li>الأخبار</li>
     </ol>
   </nav>
@@ -62,241 +162,300 @@
   <p class="section-desc">كل جديد في عالم الإنتاج الإعلامي، التسويق الرقمي، وتقنيات الذكاء الاصطناعي في صناعة المحتوى.</p>
 
   <div class="services-grid">
-   <!-- المقال الأول -->
-<article class="card">
-  <img src="/assets/ai-content.jpg" alt="الذكاء الاصطناعي في صناعة المحتوى" loading="lazy" />
-  <h3><a href="/news/ai-transforms-content-creation/">الذكاء الاصطناعي يغير مستقبل صناعة المحتوى</a></h3>
-  <p>التقنيات الجديدة في توليد النصوص والفيديوهات تجعل من الممكن إنشاء محتوى احترافي بجودة عالية خلال دقائق فقط.</p>
-</article>
+    <!-- المقال الأول -->
+    <article class="card">
+      <img
+        src="/assets/ai-content.jpg"
+        alt="الذكاء الاصطناعي في صناعة المحتوى"
+        width="1600"
+        height="900"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+      />
+      <h3><a href="/news/ai-transforms-content-creation/">الذكاء الاصطناعي يغير مستقبل صناعة المحتوى</a></h3>
+      <p>التقنيات الجديدة في توليد النصوص والفيديوهات تجعل من الممكن إنشاء محتوى احترافي بجودة عالية خلال دقائق فقط.</p>
+    </article>
 
-   <!-- المقال الثاني -->
-<article class="card">
-  <img src="/assets/trends-2026.jpg" alt="اتجاهات التسويق الرقمي 2026" loading="lazy" />
-  <h3><a href="/news/digital-marketing-trends-2026/">اتجاهات التسويق الرقمي لعام 2026</a></h3>
-  <p>الفيديو القصير، الذكاء الاصطناعي، والواقع المعزز سيقودون مستقبل الحملات التسويقية.</p>
-</article>
-
-
+    <!-- المقال الثاني -->
+    <article class="card">
+      <img
+        src="/assets/trends-2026.jpg"
+        alt="اتجاهات التسويق الرقمي 2026"
+        width="1200"
+        height="630"
+        loading="lazy"
+        decoding="async"
+      />
+      <h3><a href="/news/digital-marketing-trends-2026/">اتجاهات التسويق الرقمي لعام 2026</a></h3>
+      <p>الفيديو القصير، الذكاء الاصطناعي، والواقع المعزز سيقودون مستقبل الحملات التسويقية.</p>
+    </article>
 
     <!-- المقال الثالث -->
-  <article class="card">
-  <a href="/news/studio-production-tech-2026/" class="card-image">
-    <img
-      src="/assets/studio-tech.jpg"
-      alt="أحدث تقنيات التصوير والإنتاج الإعلامي في 2026"
-      loading="lazy"
-    />
-  </a>
-
-  <div class="card-content">
-    <h3>
-      <a href="/news/studio-production-tech-2026/">
-        أحدث تقنيات التصوير والإنتاج الإعلامي في 2026
+    <article class="card">
+      <a href="/news/studio-production-tech-2026/" class="card-image">
+        <img
+          src="/assets/studio-tech.jpg"
+          alt="أحدث تقنيات التصوير والإنتاج الإعلامي في 2026"
+          width="1200"
+          height="630"
+          loading="lazy"
+          decoding="async"
+        />
       </a>
-    </h3>
 
-    <p>
-      دليل شامل يشرح الكاميرات الذكية، الإضاءة السينمائية،
-      المونتاج السحابي، والإنتاج الافتراضي (Virtual Production)
-      لصناع المحتوى المحترفين في 2026.
-    </p>
+      <div class="card-content">
+        <h3>
+          <a href="/news/studio-production-tech-2026/">
+            أحدث تقنيات التصوير والإنتاج الإعلامي في 2026
+          </a>
+        </h3>
 
-    <a href="/news/studio-production-tech-2026/" class="card-link">
-      اقرأ المقال →
-    </a>
-  </div>
-</article>
+        <p>
+          دليل شامل يشرح الكاميرات الذكية، الإضاءة السينمائية،
+          المونتاج السحابي، والإنتاج الافتراضي (Virtual Production)
+          لصناع المحتوى المحترفين في 2026.
+        </p>
 
+        <a href="/news/studio-production-tech-2026/" class="card-link">
+          اقرأ المقال →
+        </a>
+      </div>
+    </article>
 
     <!-- المقال الرابع -->
-   <article class="card">
-  <a href="/news/social-media-algorithms-2026/" class="card-image">
-    <img src="/assets/social-media.jpg" alt="فهم خوارزميات السوشال ميديا في 2026" loading="lazy" />
-  </a>
-
-  <div class="card-content">
-    <h3><a href="/news/social-media-algorithms-2026/">فهم خوارزميات السوشال ميديا في 2026</a></h3>
-    <p>دليل عملي لزيادة الوصول والتفاعل عبر إنستغرام وتيك توك ويوتيوب: احتفاظ، حفظ، مشاركة، وكلمات مفتاحية.</p>
-    <a href="/news/social-media-algorithms-2026/" class="card-link">اقرأ المقال →</a>
-  </div>
-</article>
-
-
-<!-- المقال الخامس -->
-<article class="card">
-  <img src="/assets/instagram-engagement.jpg" alt="حاسبة معدل التفاعل على إنستغرام" loading="lazy" />
-  <h3>
-    <a href="/news/instagram-engagement-rate-calculator/">
-      حاسبة معدل التفاعل على إنستغرام (Engagement Rate)
-    </a>
-  </h3>
-  <p>
-    دليل عملي لشرح كيفية حساب معدل التفاعل على إنستغرام، مع أداة تحليل مجانية تساعدك
-    على تقييم أداء حسابك واتخاذ قرارات مبنية على بيانات حقيقية.
-  </p>
-</article>
-
-<!-- المقال السادس -->
-<article class="card">
-  <img src="/assets/instagram-best-time.jpg" alt="أفضل وقت للنشر على إنستغرام" loading="lazy" />
-  <h3>
-    <a href="/news/best-time-to-post-instagram/">
-      أفضل وقت للنشر على إنستغرام لزيادة التفاعل في 2025
-    </a>
-  </h3>
-  <p>
-    تعرّف على أفضل أوقات النشر على إنستغرام حسب الأيام والدول،
-    مع دليل عملي وأداة عربية مجانية تساعدك على اختيار التوقيت المثالي
-    لزيادة التفاعل والوصول.
-  </p>
-</article>
-
-<!-- مقال: أفضل هاشتاغات إنستغرام 2026 -->
-<article class="card">
-  <img
-    src="/assets/instagram-engagement.jpg"
-    alt="أفضل هاشتاغات إنستغرام في 2026 لزيادة الوصول والتفاعل"
-    loading="lazy"
-  />
-
-  <h3>
-    <a href="/news/best-instagram-hashtags-2026/">
-      أفضل هاشتاغات إنستغرام في 2026 (دليل ذكي + أداة مجانية)
-    </a>
-  </h3>
-
-  <p>
-    تعرّف على <strong>أفضل طريقة لاختيار هاشتاغات إنستغرام في 2026</strong>،
-    وتجنّب الأخطاء الشائعة، مع <strong>أداة عربية مجانية</strong>
-    تمنحك مجموعات هاشتاغات جاهزة لزيادة الوصول والتفاعل بدون سبام.
-  </p>
-</article>
-
-<!-- مقال: محتوى إنساني vs الذكاء الاصطناعي -->
-<article class="card">
-  <img
-    src="/assets/ai-human-content-2026.jpg"
-    alt="محتوى إنساني مقابل محتوى الذكاء الاصطناعي في التسويق لعام 2026"
-    loading="lazy"
-  />
-  <h3>
-    <a href="/news/ai-vs-human-content-2026/">
-      محتوى إنساني أم ذكاء اصطناعي؟ من يربح في تسويق 2026؟
-    </a>
-  </h3>
-  <p>
-    تحليل عملي يشرح لماذا لا يكفي محتوى الذكاء الاصطناعي وحده لبناء الثقة والتفاعل.
-    يتضمن إطار Human Signal™، دراسة حالة عملية، ونموذج تشغيل ذكي يجمع بين الإنسان وAI.
-  </p>
-</article>
-
-<!-- مقال: هوية العلامة التجارية في عصر الذكاء الاصطناعي -->
-<article class="card">
-  <img
-    src="/assets/brand-identity-ai-2026.jpg"
-    alt="هوية العلامة التجارية في عصر الذكاء الاصطناعي 2026"
-    loading="lazy"
-  />
-  <h3>
-    <a href="/news/brand-identity-ai-2026/">
-      هل ستصبح كل العلامات التجارية متشابهة؟ مستقبل الهوية في عصر الذكاء الاصطناعي
-    </a>
-  </h3>
-  <p>
-    تحليل فكري وإنساني عميق يكشف كيف يدفع الذكاء الاصطناعي العلامات التجارية نحو التشابه،
-    ولماذا أصبحت الهوية والموقف والدليل الواقعي أهم من أي وقت مضى.
-    يتضمن نموذج «خندق الهوية»، دراسة حالة مجهولة من منظور CMO، وخارطة عملية لحماية صوت علامتك.
-  </p>
-</article>
-
-   <!-- مقال: إدارة العلامة الشخصية -->
-<article class="card">
-  <img
-    src="/assets/personal-brand.jpg"
-    alt="إدارة العلامة الشخصية في العصر الرقمي"
-    loading="lazy"
-  />
-  <h3>
-    <a href="/news/personal-brand-management/">
-      إدارة العلامة الشخصية: لماذا أصبحت الهوية والثقة أهم أصولك المهنية؟
-    </a>
-  </h3>
-  <p>
-    دليل موسوعي إنساني يشرح مفهوم إدارة العلامة الشخصية بعيدًا عن التسويق السطحي،
-    ويحلّل الفرق بين السمعة والظهور والتأثير، ودور الخوارزميات والذكاء الاصطناعي،
-    ولماذا أصبحت الهوية الواضحة أصلًا طويل المدى في عالم رقمي مزدحم.
-  </p>
-</article>
-
-   <!-- مقال: استراتيجية الهاشتاغات (مرجع طويل) -->
-<article class="card">
-  <img
-    src="/assets/hashtag-strategy-digital-discovery.jpg"
-    alt="استراتيجية الهاشتاغات لفهم الاكتشاف الرقمي عبر منصات التواصل"
-    loading="lazy"
-  />
-
-  <h3>
-    <a href="/news/hashtag-strategy/">
-      استراتيجية الهاشتاغات: دليل عميق لفهم الاكتشاف الرقمي دون أوهام
-    </a>
-  </h3>
-
-  <p>
-    الهاشتاغات لم تختفِ… لكنها تغيّر دورها. في هذا المقال الموسوعي نُفكّك
-    <strong>متى تعمل الهاشتاغات ومتى تصبح ضجيجًا</strong>، وما الفرق بينها وبين
-    <strong>الكلمات المفتاحية</strong> عبر كل منصات التواصل. وإذا أردت أن تنتقل من
-    التخمين إلى وضوح هادئ، ستجد ربطًا طبيعيًا لأدواتنا:
-    <strong>Instagram Analyzer</strong> لفهم إشارات الحساب، و<strong>Hashtag Analyzer</strong>
-    لفهم سياق الهاشتاغات—بدون وصفات سحرية.
-  </p>
-</article>
-
-   <article class="card">
-  <img
-    src="/assets/og/why-influencer-marketing-fails.jpg"
-    alt="لماذا تفشل حملات المؤثرين رغم صحة الأرقام؟ اختيار المؤثر كقرار استراتيجي"
-    loading="lazy"
-  />
-
-  <h3>
-    <a href="/news/why-influencer-marketing-fails/">
-      لماذا تفشل حملات المؤثرين رغم صحة الأرقام؟ مشكلة اختيار المؤثر في التسويق الحديث
-    </a>
-  </h3>
-
-  <p>
-    كثير من الحملات تبدو “ناجحة” على الورق: <strong>متابعون</strong>، <strong>تفاعل</strong>، و<strong>مشاهدات</strong>…
-    ثم تنتهي بلا أثر: لا مبيعات، لا ثقة، ولا ذاكرة. في هذا المقال التحليلي نفكّك
-    <strong>لماذا لا تكفي الأرقام وحدها</strong>، وكيف يتحول اختيار المؤثر من “فلترة حسابات”
-    إلى <strong>قرار استراتيجي</strong> يبني علاقة ويمنع حرق الصورة. وإذا أردت أن تنتقل من
-    تعاونات قصيرة إلى نتائج قابلة للقياس، ستجد ربطًا طبيعيًا لفلسفتنا في
-    <strong>الشراكات النخبوية مع المؤثرين</strong>، ومعيار “الإشارة الإنسانية” الذي شرحناه في
-    <strong>محتوى الإنسان vs الذكاء الاصطناعي</strong>—بدون وصفات سحرية.
-  </p>
-</article>
-
-   <!-- مقال فيسبوك  -->
-<article class="card">
-  <a href="/news/facebook-algorithm/" class="card-image">
-    <img src="/assets/facebook-algorithm.jpg" alt="خوارزمية فيسبوك 2026" loading="lazy" />
-  </a>
-
-  <div class="card-content">
-    <h3>
-      <a href="/news/facebook-algorithm/">
-        خوارزمية فيسبوك 2026: الدليل الذي يغيّر فهمك للوصول
+    <article class="card">
+      <a href="/news/social-media-algorithms-2026/" class="card-image">
+        <img
+          src="/assets/social-media.jpg"
+          alt="فهم خوارزميات السوشال ميديا في 2026"
+          width="1200"
+          height="630"
+          loading="lazy"
+          decoding="async"
+        />
       </a>
-    </h3>
-    <p>
-      لماذا تنتشر بعض البوستات بدون إعلانات؟ 3 خرافات عن فيسبوك،
-      أمثلة حقيقية، وقواعد عملية لفهم ما الذي يريده فيسبوك فعلًا.
-    </p>
-    <a href="/news/facebook-algorithm/" class="card-link">اقرأ المقال →</a>
-  </div>
-</article>
 
-   
+      <div class="card-content">
+        <h3><a href="/news/social-media-algorithms-2026/">فهم خوارزميات السوشال ميديا في 2026</a></h3>
+        <p>دليل عملي لزيادة الوصول والتفاعل عبر إنستغرام وتيك توك ويوتيوب: احتفاظ، حفظ، مشاركة، وكلمات مفتاحية.</p>
+        <a href="/news/social-media-algorithms-2026/" class="card-link">اقرأ المقال →</a>
+      </div>
+    </article>
+
+    <!-- المقال الخامس -->
+    <article class="card">
+      <img
+        src="/assets/instagram-engagement.jpg"
+        alt="حاسبة معدل التفاعل على إنستغرام"
+        width="1200"
+        height="630"
+        loading="lazy"
+        decoding="async"
+      />
+      <h3>
+        <a href="/news/instagram-engagement-rate-calculator/">
+          حاسبة معدل التفاعل على إنستغرام (Engagement Rate)
+        </a>
+      </h3>
+      <p>
+        دليل عملي لشرح كيفية حساب معدل التفاعل على إنستغرام، مع أداة تحليل مجانية تساعدك
+        على تقييم أداء حسابك واتخاذ قرارات مبنية على بيانات حقيقية.
+      </p>
+    </article>
+
+    <!-- المقال السادس -->
+    <article class="card">
+      <img
+        src="/assets/instagram-best-time.jpg"
+        alt="أفضل وقت للنشر على إنستغرام"
+        width="1200"
+        height="630"
+        loading="lazy"
+        decoding="async"
+      />
+      <h3>
+        <a href="/news/best-time-to-post-instagram/">
+          أفضل وقت للنشر على إنستغرام لزيادة التفاعل في 2025
+        </a>
+      </h3>
+      <p>
+        تعرّف على أفضل أوقات النشر على إنستغرام حسب الأيام والدول،
+        مع دليل عملي وأداة عربية مجانية تساعدك على اختيار التوقيت المثالي
+        لزيادة التفاعل والوصول.
+      </p>
+    </article>
+
+    <!-- مقال: أفضل هاشتاغات إنستغرام 2026 -->
+    <article class="card">
+      <img
+        src="/assets/instagram-engagement.jpg"
+        alt="أفضل هاشتاغات إنستغرام في 2026 لزيادة الوصول والتفاعل"
+        width="1200"
+        height="630"
+        loading="lazy"
+        decoding="async"
+      />
+
+      <h3>
+        <a href="/news/best-instagram-hashtags-2026/">
+          أفضل هاشتاغات إنستغرام في 2026 (دليل ذكي + أداة مجانية)
+        </a>
+      </h3>
+
+      <p>
+        تعرّف على <strong>أفضل طريقة لاختيار هاشتاغات إنستغرام في 2026</strong>،
+        وتجنّب الأخطاء الشائعة، مع <strong>أداة عربية مجانية</strong>
+        تمنحك مجموعات هاشتاغات جاهزة لزيادة الوصول والتفاعل بدون سبام.
+      </p>
+    </article>
+
+    <!-- مقال: محتوى إنساني vs الذكاء الاصطناعي -->
+    <article class="card">
+      <img
+        src="/assets/ai-human-content-2026.jpg"
+        alt="محتوى إنساني مقابل محتوى الذكاء الاصطناعي في التسويق لعام 2026"
+        width="1200"
+        height="630"
+        loading="lazy"
+        decoding="async"
+      />
+      <h3>
+        <a href="/news/ai-vs-human-content-2026/">
+          محتوى إنساني أم ذكاء اصطناعي؟ من يربح في تسويق 2026؟
+        </a>
+      </h3>
+      <p>
+        تحليل عملي يشرح لماذا لا يكفي محتوى الذكاء الاصطناعي وحده لبناء الثقة والتفاعل.
+        يتضمن إطار Human Signal™، دراسة حالة عملية، ونموذج تشغيل ذكي يجمع بين الإنسان وAI.
+      </p>
+    </article>
+
+    <!-- مقال: هوية العلامة التجارية في عصر الذكاء الاصطناعي -->
+    <article class="card">
+      <img
+        src="/assets/brand-identity-ai-2026.jpg"
+        alt="هوية العلامة التجارية في عصر الذكاء الاصطناعي 2026"
+        width="1200"
+        height="630"
+        loading="lazy"
+        decoding="async"
+      />
+      <h3>
+        <a href="/news/brand-identity-ai-2026/">
+          هل ستصبح كل العلامات التجارية متشابهة؟ مستقبل الهوية في عصر الذكاء الاصطناعي
+        </a>
+      </h3>
+      <p>
+        تحليل فكري وإنساني عميق يكشف كيف يدفع الذكاء الاصطناعي العلامات التجارية نحو التشابه،
+        ولماذا أصبحت الهوية والموقف والدليل الواقعي أهم من أي وقت مضى.
+        يتضمن نموذج «خندق الهوية»، دراسة حالة مجهولة من منظور CMO، وخارطة عملية لحماية صوت علامتك.
+      </p>
+    </article>
+
+    <!-- مقال: إدارة العلامة الشخصية -->
+    <article class="card">
+      <img
+        src="/assets/personal-brand.jpg"
+        alt="إدارة العلامة الشخصية في العصر الرقمي"
+        width="1200"
+        height="630"
+        loading="lazy"
+        decoding="async"
+      />
+      <h3>
+        <a href="/news/personal-brand-management/">
+          إدارة العلامة الشخصية: لماذا أصبحت الهوية والثقة أهم أصولك المهنية؟
+        </a>
+      </h3>
+      <p>
+        دليل موسوعي إنساني يشرح مفهوم إدارة العلامة الشخصية بعيدًا عن التسويق السطحي،
+        ويحلّل الفرق بين السمعة والظهور والتأثير، ودور الخوارزميات والذكاء الاصطناعي،
+        ولماذا أصبحت الهوية الواضحة أصلًا طويل المدى في عالم رقمي مزدحم.
+      </p>
+    </article>
+
+    <!-- مقال: استراتيجية الهاشتاغات (مرجع طويل) -->
+    <article class="card">
+      <img
+        src="/assets/hashtag-strategy-digital-discovery.jpg"
+        alt="استراتيجية الهاشتاغات لفهم الاكتشاف الرقمي عبر منصات التواصل"
+        width="1200"
+        height="630"
+        loading="lazy"
+        decoding="async"
+      />
+
+      <h3>
+        <a href="/news/hashtag-strategy/">
+          استراتيجية الهاشتاغات: دليل عميق لفهم الاكتشاف الرقمي دون أوهام
+        </a>
+      </h3>
+
+      <p>
+        الهاشتاغات لم تختفِ… لكنها تغيّر دورها. في هذا المقال الموسوعي نُفكّك
+        <strong>متى تعمل الهاشتاغات ومتى تصبح ضجيجًا</strong>، وما الفرق بينها وبين
+        <strong>الكلمات المفتاحية</strong> عبر كل منصات التواصل. وإذا أردت أن تنتقل من
+        التخمين إلى وضوح هادئ، ستجد ربطًا طبيعيًا لأدواتنا:
+        <strong>Instagram Analyzer</strong> لفهم إشارات الحساب، و<strong>Hashtag Analyzer</strong>
+        لفهم سياق الهاشتاغات—بدون وصفات سحرية.
+      </p>
+    </article>
+
+    <article class="card">
+      <img
+        src="/assets/og/why-influencer-marketing-fails.jpg"
+        alt="لماذا تفشل حملات المؤثرين رغم صحة الأرقام؟ اختيار المؤثر كقرار استراتيجي"
+        width="1200"
+        height="630"
+        loading="lazy"
+        decoding="async"
+      />
+
+      <h3>
+        <a href="/news/why-influencer-marketing-fails/">
+          لماذا تفشل حملات المؤثرين رغم صحة الأرقام؟ مشكلة اختيار المؤثر في التسويق الحديث
+        </a>
+      </h3>
+
+      <p>
+        كثير من الحملات تبدو “ناجحة” على الورق: <strong>متابعون</strong>، <strong>تفاعل</strong>، و<strong>مشاهدات</strong>…
+        ثم تنتهي بلا أثر: لا مبيعات، لا ثقة، ولا ذاكرة. في هذا المقال التحليلي نفكّك
+        <strong>لماذا لا تكفي الأرقام وحدها</strong>، وكيف يتحول اختيار المؤثر من “فلترة حسابات”
+        إلى <strong>قرار استراتيجي</strong> يبني علاقة ويمنع حرق الصورة. وإذا أردت أن تنتقل من
+        تعاونات قصيرة إلى نتائج قابلة للقياس، ستجد ربطًا طبيعيًا لفلسفتنا في
+        <strong>الشراكات النخبوية مع المؤثرين</strong>، ومعيار “الإشارة الإنسانية” الذي شرحناه في
+        <strong>محتوى الإنسان vs الذكاء الاصطناعي</strong>—بدون وصفات سحرية.
+      </p>
+    </article>
+
+    <!-- مقال فيسبوك -->
+    <article class="card">
+      <a href="/news/facebook-algorithm/" class="card-image">
+        <img
+          src="/assets/facebook-algorithm.jpg"
+          alt="خوارزمية فيسبوك 2026"
+          width="1200"
+          height="630"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+
+      <div class="card-content">
+        <h3>
+          <a href="/news/facebook-algorithm/">
+            خوارزمية فيسبوك 2026: الدليل الذي يغيّر فهمك للوصول
+          </a>
+        </h3>
+        <p>
+          لماذا تنتشر بعض البوستات بدون إعلانات؟ 3 خرافات عن فيسبوك،
+          أمثلة حقيقية، وقواعد عملية لفهم ما الذي يريده فيسبوك فعلًا.
+        </p>
+        <a href="/news/facebook-algorithm/" class="card-link">اقرأ المقال →</a>
+      </div>
+    </article>
+
   </div>
 </main>
 
@@ -305,7 +464,7 @@
     <p>© 2025 Viva Media Creative جميع الحقوق محفوظة.</p>
     <p class="small">
       تصميم وإنتاج رقمي —
-      <a href="info@vivamediacreative.com">info@vivamediacreative.com</a>
+      <a href="mailto:info@vivamediacreative.com">info@vivamediacreative.com</a>
     </p>
   </div>
 </footer>
