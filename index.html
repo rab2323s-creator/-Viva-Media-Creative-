@@ -613,7 +613,7 @@
     <div class="fCol">
       <h3 class="fTitle" data-i18n="footer_links">روابط سريعة</h3>
       <nav class="fLinks" aria-label="Footer quick links">
-        <a href="#services" data-i18n="nav_services">الخدمات</a>
+        <a href="/services/" data-i18n="footer_services">الخدمات</a>
         <a href="#tenets" data-i18n="nav_tenets">مبادئنا</a>
         <a href="#trusted" data-i18n="nav_trusted">عملاؤنا</a>
         <a href="/contact/" data-i18n="nav_contact">تواصل</a>
@@ -644,6 +644,9 @@
     <p class="fCopy">© <span id="y"></span> Viva Media Creative</p>
   </div>
 </footer>
+<script>
+  if (location.hash === '#services') location.replace('/services/');
+</script>
 
   <script type="module" src="/assets/vmc-home.js"></script>
 </body>
