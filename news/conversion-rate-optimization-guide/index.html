@@ -4,24 +4,256 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
 <title>دليل CRO: رفع معدل التحويل وزيادة المبيعات | Viva Media Creative</title>
 <meta content="دليل عملي لتحسين معدل التحويل (CRO): تشخيص، أولويات، اختبارات A/B، تحسين صفحات الهبوط والـCheckout، وبناء ثقة تقود إلى مبيعات دون زيادة الميزانية." name="description"/>
-<link href="https://vivamediacreative.com/news/cro-guide-increase-conversions/" rel="canonical"/>
+
+<!-- FINAL URL -->
+<link href="https://vivamediacreative.com/news/conversion-rate-optimization-guide/" rel="canonical"/>
+
+<!-- Open Graph -->
 <meta content="دليل CRO: رفع معدل التحويل وزيادة المبيعات" property="og:title"/>
 <meta content="دليل عملي لتحسين معدل التحويل (CRO): تشخيص، أولويات، اختبارات A/B، تحسين صفحات الهبوط والـCheckout، وبناء ثقة تقود إلى مبيعات دون زيادة الميزانية." property="og:description"/>
+<meta property="og:url" content="https://vivamediacreative.com/news/conversion-rate-optimization-guide/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="ar_AR"/>
+
+<!-- OG Image (Hero) -->
+<meta property="og:image" content="https://vivamediacreative.com/assets/articles/cro/conversion-rate-optimization-guide-hero.webp"/>
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="دليل CRO: رفع معدل التحويل وزيادة المبيعات"/>
+<meta name="twitter:description" content="دليل عملي لتحسين معدل التحويل: تشخيص، أولويات، اختبار A/B، تحسين Landing Page والـCheckout، وزيادة الإيراد."/>
+<meta name="twitter:image" content="https://vivamediacreative.com/assets/articles/cro/conversion-rate-optimization-guide-hero.webp"/>
+
 <link href="/style.css" rel="stylesheet"/>
 <link href="/news/news-article.css" rel="stylesheet"/>
 <link href="/assets/logo.jpeg" rel="icon"/>
+
+<!-- Minimal article-level enhancements (visual hierarchy) -->
+<style>
+  .article-hero { margin: 16px 0 18px; }
+  .article-hero figure { margin: 0; }
+  .article-hero img { width: 100%; height: auto; border-radius: 14px; display: block; }
+  .article-hero figcaption { font-size: 14px; opacity: .8; margin-top: 8px; }
+
+  .hook-block {
+    border: 1px solid rgba(0,0,0,.08);
+    background: rgba(0,0,0,.02);
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin: 14px 0 18px;
+  }
+  .hook-block p { margin: 0; font-weight: 700; line-height: 1.7; }
+
+  .quote-block {
+    border-right: 4px solid rgba(0,0,0,.2);
+    background: rgba(0,0,0,.03);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin: 16px 0;
+  }
+  .quote-block p { margin: 0; line-height: 1.8; }
+
+  .box {
+    border: 1px solid rgba(0,0,0,.08);
+    background: rgba(0,0,0,.02);
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin: 16px 0;
+  }
+  .box h3 { margin: 0 0 10px; font-size: 18px; }
+  .box p { margin: 8px 0; }
+  .box ul { margin: 10px 0 0; }
+
+  .checklist-box {
+    border: 1px solid rgba(0,0,0,.10);
+    background: rgba(255, 241, 118, .22);
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin: 18px 0;
+  }
+  .checklist-box h3 { margin: 0 0 10px; font-size: 18px; }
+  .checklist-box ul { margin: 10px 0 0; }
+
+  .cta-box {
+    border: 1px solid rgba(0,0,0,.10);
+    background: rgba(46, 125, 50, .07);
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin: 18px 0;
+  }
+  .cta-box h3 { margin: 0 0 10px; font-size: 18px; }
+  .cta-box .cta-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .cta-box a.cta-primary,
+  .cta-box a.cta-secondary {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .cta-box a.cta-primary { background: rgba(0,0,0,.88); color: #fff; }
+  .cta-box a.cta-secondary { background: rgba(0,0,0,.06); color: #111; }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid rgba(0,0,0,.08);
+  }
+  .compare-table th, .compare-table td {
+    padding: 12px 12px;
+    border-bottom: 1px solid rgba(0,0,0,.06);
+    vertical-align: top;
+    text-align: right;
+  }
+  .compare-table th { background: rgba(0,0,0,.03); font-weight: 800; }
+</style>
+
+<!-- Structured Data: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://vivamediacreative.com/news/conversion-rate-optimization-guide/"
+  },
+  "headline": "دليل تحسين معدل التحويل (CRO): كيف ترفع المبيعات من نفس الزيارات بخطة عملية؟",
+  "description": "دليل عملي لتحسين معدل التحويل (CRO): تشخيص، أولويات، اختبارات A/B، تحسين صفحات الهبوط والـCheckout، وبناء ثقة تقود إلى مبيعات دون زيادة الميزانية.",
+  "image": [
+    "https://vivamediacreative.com/assets/articles/cro/conversion-rate-optimization-guide-hero.webp",
+    "https://vivamediacreative.com/assets/articles/cro/cro-conversion-funnel-diagram.webp",
+    "https://vivamediacreative.com/assets/articles/cro/cro-checklist-visual-box.webp"
+  ],
+  "inLanguage": "ar",
+  "author": {
+    "@type": "Organization",
+    "name": "Viva Media Creative",
+    "url": "https://vivamediacreative.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Viva Media Creative",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://vivamediacreative.com/assets/logo.jpeg"
+    }
+  }
+}
+</script>
+
+<!-- Structured Data: FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "هل CRO يناسب المواقع الصغيرة؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم، لأن كل زيارة تصبح أغلى كلما زادت المنافسة، ورفع التحويل يضاعف قيمة الزيارة."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "كم يحتاج وقت لظهور نتائج؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "تحسينات الرسالة والثقة تظهر خلال 2–4 أسابيع، والتحسينات المستقرة عادة خلال 6–8 أسابيع."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل أحتاج أدوات مدفوعة؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "لا. يمكن البدء بقياس بسيط، ثم التوسع عند الحاجة."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ما الفرق بين UX وCRO؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UX يركز على تجربة الاستخدام عامة، وCRO يركز على تحسين قرار محدد وتحويلات محددة."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ما أول شيء أختبره؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "العنوان والـCTA لأنهما يحددان الفهم والحركة."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل AI يكفي لكتابة صفحة تبيع؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "قد يساعد في المسودات، لكن الإقناع يحتاج تفاصيل واقعية وإشارات ثقة لا تُولد عشوائيًا."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "كيف أربط CRO بالسوشال؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "اجعل كل فيديو يقود إلى صفحة واحدة واضحة، لا إلى الصفحة الرئيسية."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يمكنكم تنفيذ CRO؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم ضمن SEO & Growth."
+      }
+    }
+  ]
+}
+</script>
 </head>
+
 <body>
 <nav aria-label="القائمة الرئيسية" class="main-nav">
 <a href="/ar/">الرئيسية</a>
 <a class="active" href="/news/">الأخبار</a>
 <a href="/ar/#contact">تواصل</a>
 </nav>
+
 <main class="container section">
 <article class="blog-article">
 <h1>دليل تحسين معدل التحويل (CRO): كيف ترفع المبيعات من نفس الزيارات بخطة عملية؟</h1>
+
+<!-- Stronger opening hook (added, no deletion) -->
+<div class="hook-block" role="note" aria-label="Hook">
+  <p>إذا كان لديك 20,000 زيارة ولا تحصل إلا على 5–10 طلبات… فغالبًا مشكلتك ليست “تسويق”. مشكلتك “قرار” داخل الصفحة: فهم أقل، ثقة أقل، واحتكاك أكثر.</p>
+</div>
+
+<!-- Hero image (Image 1 of 3) -->
+<section class="article-hero" aria-label="صورة الغلاف">
+  <figure>
+    <img
+      src="/assets/articles/cro/conversion-rate-optimization-guide-hero.webp"
+      alt="غلاف دليل CRO: تحسين معدل التحويل لرفع المبيعات من نفس الزيارات"
+      width="1200"
+      height="630"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+    />
+    <figcaption>دليل عملي لتحسين معدل التحويل: تشخيص → أولويات → اختبار → تحسين مستمر.</figcaption>
+  </figure>
+</section>
+
 <h2>جدول المحتوى</h2>
 <ul>
 <li><a href="#intro">لماذا الزيارات لا تعني مبيعات؟</a></li>
@@ -39,15 +271,55 @@
 <li><a href="#summary">الخلاصة</a></li>
 <li><a href="#internal-links-used">روابط داخلية</a></li>
 </ul>
+
 <h2 id="intro">لماذا “الزيارات” لا تعني مبيعات؟</h2>
 <p>قد ينجح موقعك في جذب الزيارات عبر SEO أو الإعلانات، ثم تفاجأ بأن المبيعات لا تتحرك. هذه ليست مشكلة “تسويق” دائمًا، بل مشكلة “قرار” داخل الصفحة.</p>
 <p>CRO (Conversion Rate Optimization) هو تحسين تجربة القرار: كيف يفهم الزائر العرض بسرعة؟ ما الذي يطمئنه؟ ما الذي يعرقله؟ وما هي الخطوة التالية التي تريد منه فعلها؟</p>
-<p>في مشاريع الخدمات تحديدًا، قد يكون الهدف رسالة أو مكالمة وليس شراء مباشر. لذلك يجب أن تُعرَّف “التحويلات” بوضوح داخل القياس. هذا ما يجعل CRO متوافقًا مع منهج <a href="/services/seo-growth/">SEO &amp; Growth</a> لأنك لا تريد ترتيبًا أعلى فقط، بل تريد Leads أفضل.</p><h2 id="math">معادلة التحويل التي تكشف أين تضيع أرباحك</h2>
+<p>في مشاريع الخدمات تحديدًا، قد يكون الهدف رسالة أو مكالمة وليس شراء مباشر. لذلك يجب أن تُعرَّف “التحويلات” بوضوح داخل القياس. هذا ما يجعل CRO متوافقًا مع منهج <a href="/services/seo-growth/">SEO &amp; Growth</a> لأنك لا تريد ترتيبًا أعلى فقط، بل تريد Leads أفضل.</p>
+
+<!-- Executive Summary (already added in last version; kept) -->
+<h2 id="executive-summary">الخلاصة في 60 ثانية (ملخص تنفيذي)</h2>
+<ul>
+  <li><strong>CRO</strong> = زيادة الإيراد من نفس الزيارات عبر تحسين قرار الزائر داخل الصفحة.</li>
+  <li>ابدأ دائمًا بالأعلى تأثيرًا: <strong>الرسالة</strong> → <strong>الثقة</strong> → <strong>الاحتكاك</strong> → <strong>القياس</strong>.</li>
+  <li>اختبر <strong>العنوان</strong> و<strong>CTA</strong> أولًا قبل أي تغييرات تصميم كبيرة.</li>
+  <li>أصلح صفحة الهبوط/النموذج قبل زيادة الترافيك—زيادة الزيارات لصفحة ضعيفة تضاعف المشكلة.</li>
+  <li>نفّذ خطة 30 يوم وستلاحظ تحسنًا ثابتًا في التحويل وجودة الـLeads.</li>
+</ul>
+
+<!-- Visual quote block (added) -->
+<div class="quote-block" role="note" aria-label="قاعدة سريعة">
+  <p>قاعدة سريعة: أي سطر لا يزيد <strong>الفهم</strong> أو <strong>الثقة</strong> أو يقلّل <strong>الاحتكاك</strong>… غالبًا يجب أن يُختصر أو يُعاد صياغته.</p>
+</div>
+
+<h2 id="math">معادلة التحويل التي تكشف أين تضيع أرباحك</h2>
 <p>المعادلة الأبسط لفهم المشكلة: <strong>الإيراد = الزيارات × معدل التحويل × متوسط قيمة الطلب</strong>.</p>
 <p>الخطأ الشائع هو مطاردة الزيارات فقط. بينما رفع التحويل من 0.7% إلى 1.0% قد يرفع الإيراد بعشرات بالمئة دون زيادة الإنفاق.</p>
 <p>مثال رقمي: 20,000 زيارة × 0.7% = 140 عملية. إذا متوسط العملية 35€ فالإيراد 4,900€. رفع التحويل إلى 1.0% = 200 عملية (7,000€). الفارق 2,100€ من نفس الزيارات.</p>
-<p>ثم تأتي الطبقة الثانية: رفع متوسط قيمة الطلب (AOV) عبر باقات أو إضافات، فتتضاعف النتيجة.</p><h3>ما الذي نُحسنه أولًا؟</h3><p>قبل التفكير في ألوان الأزرار، حدّد ما إذا كانت المشكلة في: (1) الرسالة، (2) الثقة، (3) الاحتكاك (Friction)، (4) القياس. غالبًا واحد من هذه الأربعة هو السبب الحقيقي.</p><h2 id="audit">تشخيص موقعك خلال 30 دقيقة (Checklist واقعي)</h2>
-<p>ابدأ بالتشخيص من الهاتف لأن معظم الزيارات اليوم تأتي من الموبايل. افتح الصفحة من شبكة متوسطة السرعة وتحقق من:</p><ul>
+<p>ثم تأتي الطبقة الثانية: رفع متوسط قيمة الطلب (AOV) عبر باقات أو إضافات، فتتضاعف النتيجة.</p>
+
+<h3>ما الذي نُحسنه أولًا؟</h3>
+<p>قبل التفكير في ألوان الأزرار، حدّد ما إذا كانت المشكلة في: (1) الرسالة، (2) الثقة، (3) الاحتكاك (Friction)، (4) القياس. غالبًا واحد من هذه الأربعة هو السبب الحقيقي.</p>
+
+<!-- Funnel diagram image (Image 2 of 3) -->
+<section class="box" aria-label="مخطط مسار التحويل">
+  <h3>مخطط سريع لمسار التحويل (لتحديد مكان السقوط)</h3>
+  <figure style="margin:0;">
+    <img
+      src="/assets/articles/cro/cro-conversion-funnel-diagram.webp"
+      alt="مخطط Funnel يوضح مراحل التحويل من الزيارة إلى الضغط على CTA ثم إكمال النموذج أو الدفع"
+      width="1200"
+      height="720"
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption style="font-size:14px;opacity:.8;margin-top:8px;">حدد أين يسقط الزائر: قبل الزر؟ بعد الزر؟ داخل النموذج؟ عند الدفع؟</figcaption>
+  </figure>
+</section>
+
+<h2 id="audit">تشخيص موقعك خلال 30 دقيقة (Checklist واقعي)</h2>
+<p>ابدأ بالتشخيص من الهاتف لأن معظم الزيارات اليوم تأتي من الموبايل. افتح الصفحة من شبكة متوسطة السرعة وتحقق من:</p>
+<ul>
 <li><strong>وضوح العرض:</strong> هل فهمت ما تبيعه خلال 5 ثوانٍ؟</li>
 <li><strong>وضوح الخطوة التالية:</strong> هل يوجد CTA واضح في أول شاشة؟</li>
 <li><strong>الثقة:</strong> هل توجد إشارات ثقة قرب CTA (تقييمات/شهادات/أرقام)؟</li>
@@ -55,20 +327,94 @@
 <li><strong>الإجابات:</strong> هل يوجد FAQ يعالج الاعتراضات المتوقعة؟</li>
 <li><strong>المساعدة:</strong> هل توجد طريقة تواصل سريعة عند التعثر؟</li>
 <li><strong>السرعة:</strong> هل الصفحة سريعة على 4G؟</li>
-</ul><p>إذا كانت لديك مشاهدات كبيرة في إنستغرام دون طلبات، فالمشكلة غالبًا ليست خوارزمية فقط. اقرأ <a href="/news/social-media-algorithms-2026/">فهم خوارزميات السوشال ميديا 2026</a> ثم ركّز على الصفحة نفسها: هل تستقبل الزائر الجديد بصورة صحيحة أم تضيّعه؟</p>
-<p>القاعدة: CRO لا يبدأ من “حلول”، يبدأ من سؤال: أين يسقط الزائر تحديدًا؟ قبل الزر؟ بعد الزر؟ داخل النموذج؟ بعد إضافة للسلة؟</p><h2 id="priorities">خريطة الأولويات: ماذا يصلح أسرع تأثير؟</h2>
-<p>ليست كل التحسينات متساوية. إذا تريد نتائج سريعة، ركّز على العناصر الأعلى تأثيرًا:</p><ol>
+</ul>
+<p>إذا كانت لديك مشاهدات كبيرة في إنستغرام دون طلبات، فالمشكلة غالبًا ليست خوارزمية فقط. اقرأ <a href="/news/social-media-algorithms-2026/">فهم خوارزميات السوشال ميديا 2026</a> ثم ركّز على الصفحة نفسها: هل تستقبل الزائر الجديد بصورة صحيحة أم تضيّعه؟</p>
+<p>القاعدة: CRO لا يبدأ من “حلول”، يبدأ من سؤال: أين يسقط الزائر تحديدًا؟ قبل الزر؟ بعد الزر؟ داخل النموذج؟ بعد إضافة للسلة؟</p>
+
+<!-- Checklist highlight (visual hierarchy; added without deleting list above) -->
+<div class="checklist-box" role="note" aria-label="Checklist مميز">
+  <h3>Checklist سريع (انسخه وطبّقه على صفحتك الآن)</h3>
+  <ul>
+    <li>هل فهمت العرض خلال 5 ثوانٍ من أول شاشة؟</li>
+    <li>هل يوجد CTA واحد واضح في أول شاشة؟</li>
+    <li>هل يوجد Proof قريب من CTA؟</li>
+    <li>هل النموذج/الدفع مختصر وبدون مفاجآت؟</li>
+    <li>هل الاعتراضات الأساسية مجابة داخل الصفحة؟</li>
+  </ul>
+</div>
+
+<!-- Visual checklist image (Image 3 of 3) -->
+<section class="box" aria-label="صورة صندوق Checklist">
+  <h3>نسخة مرئية من Checklist (للتحميل/المشاركة)</h3>
+  <figure style="margin:0;">
+    <img
+      src="/assets/articles/cro/cro-checklist-visual-box.webp"
+      alt="صورة مرئية لChecklist تحسين معدل التحويل CRO"
+      width="1200"
+      height="720"
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption style="font-size:14px;opacity:.8;margin-top:8px;">يمكن استخدامها كصورة مشاركة أو كمرجع سريع لفريقك.</figcaption>
+  </figure>
+</section>
+
+<!-- Strong CTA mid-article (added) -->
+<section class="cta-box" aria-label="CTA تدقيق CRO">
+  <h3>CTA سريع (لمن يريد نتائج أسرع)</h3>
+  <p>إذا أرسلت لنا رابط صفحة الهبوط/الخدمة، سنعود لك بـ <strong>5 تحسينات CRO قابلة للتنفيذ</strong> (الرسالة + CTA + Proof + الاحتكاك + القياس) خلال <strong>يومي عمل</strong>.</p>
+  <div class="cta-actions">
+    <a class="cta-primary" href="/contact/?topic=cro-audit">أرسل رابط الصفحة الآن</a>
+    <a class="cta-secondary" href="/services/seo-growth/">اطّلع على SEO &amp; Growth</a>
+  </div>
+</section>
+
+<h2 id="priorities">خريطة الأولويات: ماذا يصلح أسرع تأثير؟</h2>
+<p>ليست كل التحسينات متساوية. إذا تريد نتائج سريعة، ركّز على العناصر الأعلى تأثيرًا:</p>
+<ol>
 <li><strong>العنوان والرسالة الأولى:</strong> لأنها تحدد الفهم.</li>
 <li><strong>CTA:</strong> لأنه يحدد الحركة.</li>
 <li><strong>Proof:</strong> لأنه يحدد الثقة.</li>
 <li><strong>الاحتكاك:</strong> لأنه يحدد القدرة على الإكمال.</li>
-</ol><p>أي تحسين لا يلمس واحدًا من هذه الأربعة غالبًا تأثيره محدود. والميزة هنا أنك تستطيع اختبارها بسرعة عبر A/B أو حتى عبر مقارنة أسبوع بأسبوع.</p><h2 id="landing">تحسين صفحة الهبوط: 10 نقاط تقلب النتيجة</h2>
+</ol>
+<p>أي تحسين لا يلمس واحدًا من هذه الأربعة غالبًا تأثيره محدود. والميزة هنا أنك تستطيع اختبارها بسرعة عبر A/B أو حتى عبر مقارنة أسبوع بأسبوع.</p>
+
+<!-- Before/After comparison table (visual hierarchy; added) -->
+<div class="box" aria-label="جدول قبل وبعد">
+  <h3>قبل/بعد (شكل الرسالة والـCTA)</h3>
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>قبل</th>
+        <th>بعد</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>نقدم خدمات تسويق رقمية متكاملة.</td>
+        <td>نحوّل زيارات موقعك إلى طلبات عبر تحسين الرسالة والـCTA والصفحة خلال 30 يومًا.</td>
+      </tr>
+      <tr>
+        <td>تواصل معنا لمزيد من التفاصيل.</td>
+        <td>احجز مكالمة 20 دقيقة لنحدد أسرع 5 تحسينات ترفع التحويل.</td>
+      </tr>
+      <tr>
+        <td>نضمن أفضل النتائج.</td>
+        <td>نلتزم بمخرجات واضحة: صفحة هبوط + نصوص + إعداد قياس + تقرير أسبوعي.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="landing">تحسين صفحة الهبوط: 10 نقاط تقلب النتيجة</h2>
 <h3>1) عنوان بنتيجة + سياق</h3><p>العنوان لا يجب أن يكون شعريًا. يجب أن يكون واضحًا. بدل “حلول تسويق متكاملة” استخدم وعدًا محددًا: “نرفع الطلبات من نفس الزيارات عبر تحسين الصفحة والرسالة خلال 30 يومًا”.</p>
 <p>إن كنت تقدم خدمة، اجعل العنوان يصف نتيجة أو قرارًا: زيادة رسائل، حجوزات، طلبات.</p><h3>2) عنوان فرعي يحدد لمن هذا</h3><p>الزائر الجديد يسأل: هل هذا لي؟ جملة واحدة تكفي لتحديد السوق/القطاع/السيناريو.</p><h3>3) CTA واحد أساسي</h3><p>زر واحد أساسي (احجز مكالمة / اطلب تقييم / ابدأ الآن) يُكرر طبيعيًا بعد كل كتلة قيمة. كثرة الأزرار المتنافسة تقلل التحويل.</p><h3>4) Proof مبكر</h3><p>ضع دليلًا قريبًا من CTA: تقييمات، أرقام، أو منهج واضح. في 2026، الدليل أهم من “وصف جميل” لأن المحتوى المتشابه زاد بسبب AI. راجع <a href="/news/ai-vs-human-content-2026/">AI مقابل المحتوى الإنساني</a> لفهم كيف يلتقط المستخدم “الإشارة البشرية” بسرعة.</p><h3>5) قسم “ماذا ستحصل عليه”</h3><ul>
 <li>Deliverables واضحة: تقرير؟ صفحة؟ نصوص؟ قياس؟</li>
 <li>مدة التنفيذ وكيفية التواصل.</li>
 <li>ما الذي لا يشمله العمل حتى لا تتضخم التوقعات.</li>
-</ul><h3>6) اعتراضات داخل الصفحة</h3><p>الاعتراضات ليست في FAQ فقط. ضع اعتراضًا واحدًا لكل قسم: “ماذا لو جربت سابقًا؟” “هل يناسبني؟” “كم يستغرق؟”</p><h3>7) صور وفيديو واقعي</h3><p>الصور العامة تقلل الثقة. استخدم صور فريق/أمثلة/نتائج. إن كان لديك محتوى مرئي، حسّنه وفق مبادئ <a href="/news/studio-production-tech-2026/">تقنيات التصوير 2026</a> لأن جودة العرض تؤثر مباشرة على قرار الثقة.</p><h3>8) سرعة وقراءة سهلة</h3><p>فقرات قصيرة، عناوين فرعية واضحة، وقوائم. الزائر لا يقرأ رواية؛ هو يمسح الصفحة بحثًا عن إجابة.</p><h3>9) مسار واحد للزائر</h3><p>لا تُرسل الزائر إلى 4 صفحات ليقرر. إذا كانت صفحة حملة، اجعلها صفحة “مخصصة” للهدف.</p><h3>10) CTA ثانوي لا ينافس الأساسي</h3><p>إذا احتجت CTA ثانويًا، اجعله أخف: “شاهد أمثلة” أو “اقرأ دليلًا” لكنه لا ينافس زر الحجز.</p><h2 id="checkout">تحسين صفحة الطلب/النموذج: إزالة الاحتكاك</h2>
+</ul><h3>6) اعتراضات داخل الصفحة</h3><p>الاعتراضات ليست في FAQ فقط. ضع اعتراضًا واحدًا لكل قسم: “ماذا لو جربت سابقًا؟” “هل يناسبني؟” “كم يستغرق؟”</p><h3>7) صور وفيديو واقعي</h3><p>الصور العامة تقلل الثقة. استخدم صور فريق/أمثلة/نتائج. إن كان لديك محتوى مرئي، حسّنه وفق مبادئ <a href="/news/studio-production-tech-2026/">تقنيات التصوير 2026</a> لأن جودة العرض تؤثر مباشرة على قرار الثقة.</p><h3>8) سرعة وقراءة سهلة</h3><p>فقرات قصيرة، عناوين فرعية واضحة، وقوائم. الزائر لا يقرأ رواية؛ هو يمسح الصفحة بحثًا عن إجابة.</p><h3>9) مسار واحد للزائر</h3><p>لا تُرسل الزائر إلى 4 صفحات ليقرر. إذا كانت صفحة حملة، اجعلها صفحة “مخصصة” للهدف.</p><h3>10) CTA ثانوي لا ينافس الأساسي</h3><p>إذا احتجت CTA ثانويًا، اجعله أخف: “شاهد أمثلة” أو “اقرأ دليلًا” لكنه لا ينافس زر الحجز.</p>
+
+<h2 id="checkout">تحسين صفحة الطلب/النموذج: إزالة الاحتكاك</h2>
 <p>أكثر مكان يسقط فيه الزوار هو النموذج أو الدفع. احتكاك صغير قد يقتل التحويل.</p>
 <p>طبّق هذه القواعد:</p><ul>
 <li>قلّل الحقول إلى الحد الأدنى (اسم/بريد/هاتف/رسالة).</li>
@@ -76,20 +422,26 @@
 <li>قسّم النموذج إلى خطوات إن كان طويلًا.</li>
 <li>أضف مؤشر تقدم (1/2/3) لتقليل القلق.</li>
 <li>أضف دعمًا سريعًا (واتساب/بريد) عند التعثر.</li>
-</ul><p>إذا كانت خدمتك تعتمد على مكالمة، فكر في تحويل الهدف من نموذج طويل إلى “مكالمة 15–20 دقيقة” لأن “الخطوة” تصبح أسهل.</p><h2 id="ab">اختبارات A/B بدون تعقيد: ماذا تختبر وكيف؟</h2>
+</ul><p>إذا كانت خدمتك تعتمد على مكالمة، فكر في تحويل الهدف من نموذج طويل إلى “مكالمة 15–20 دقيقة” لأن “الخطوة” تصبح أسهل.</p>
+
+<h2 id="ab">اختبارات A/B بدون تعقيد: ماذا تختبر وكيف؟</h2>
 <p>اختبار A/B هو أداة، ليس غاية. اختبر عنصرًا واحدًا في كل مرة حتى تفهم السبب.</p>
 <p>ابدأ بالترتيب: العنوان → CTA → Proof → ترتيب الأقسام.</p><h3>أمثلة اختبارات جاهزة</h3><ul>
 <li>عنوان بنتيجة + زمن مقابل عنوان مشكلة/حل.</li>
 <li>CTA “احجز مكالمة” مقابل “اطلب تقييم مجاني”.</li>
 <li>Proof تقييمات مقابل Proof أرقام/نتائج.</li>
 <li>FAQ قبل CTA الأخير مقابل بعده.</li>
-</ul><p>لا تختبر 5 أشياء في أسبوع واحد. ستعرف “أن شيئًا ما تغيّر” ولن تعرف “ما الذي غيّر”.</p><h2 id="aov">رفع متوسط قيمة الطلب (AOV): زيادة الإيراد دون زيادة زيارات</h2>
+</ul><p>لا تختبر 5 أشياء في أسبوع واحد. ستعرف “أن شيئًا ما تغيّر” ولن تعرف “ما الذي غيّر”.</p>
+
+<h2 id="aov">رفع متوسط قيمة الطلب (AOV): زيادة الإيراد دون زيادة زيارات</h2>
 <p>حتى لو لم ترفع التحويل، تستطيع رفع الإيراد عبر رفع متوسط قيمة الطلب.</p><ul>
 <li><strong>Upsell:</strong> باقة أعلى بسعر منطقي مقابل قيمة إضافية واضحة.</li>
 <li><strong>Cross-sell:</strong> إضافة مكملة في السلة.</li>
 <li><strong>Bundles:</strong> حزمة تحل مشكلة كاملة بدل منتج واحد.</li>
 <li><strong>حد شحن مجاني:</strong> إن كان مناسبًا.</li>
-</ul><p>المهم: لا تجعل الإضافة تبدو “خدعة”. اربطها بفائدة حقيقية. هنا يظهر دور <a href="/services/copywriting/">خدمة Copywriting</a> لأن النص السيئ يجعل العميل يشعر بالضغط.</p><h2 id="sop">SOP تنفيذ CRO لمدة 30 يوم (خطة تشغيل)</h2>
+</ul><p>المهم: لا تجعل الإضافة تبدو “خدعة”. اربطها بفائدة حقيقية. هنا يظهر دور <a href="/services/copywriting/">خدمة Copywriting</a> لأن النص السيئ يجعل العميل يشعر بالضغط.</p>
+
+<h2 id="sop">SOP تنفيذ CRO لمدة 30 يوم (خطة تشغيل)</h2>
 <h3>الأسبوع 1: قياس وتشخيص</h3><ul>
 <li>حدد أهداف التحويل (مكالمة/نموذج/شراء).</li>
 <li>راجع أعلى الصفحات دخولًا وأعلى الصفحات خروجًا.</li>
@@ -106,7 +458,9 @@
 <li>أطلق اختبار A/B واحد على العنوان أو CTA.</li>
 <li>قارن النتائج بناء على التحويلات لا المشاهدات.</li>
 <li>حوّل أفضل ما نجح إلى معيار ثابت للصفحات الأخرى.</li>
-</ul><p>إذا تريد تنفيذ ذلك كمنظومة تشمل SEO + تحويل + قياس، فهذا بالضبط ما يغطيه <a href="/services/seo-growth/">SEO &amp; Growth</a> مع ربطه بمحتوى <a href="/services/viral-strategy/">Viral Strategy</a> إذا كان مصدر زياراتك سوشال.</p><h2 id="final">قائمة فحص نهائية قبل زيادة الزيارات</h2>
+</ul><p>إذا تريد تنفيذ ذلك كمنظومة تشمل SEO + تحويل + قياس، فهذا بالضبط ما يغطيه <a href="/services/seo-growth/">SEO &amp; Growth</a> مع ربطه بمحتوى <a href="/services/viral-strategy/">Viral Strategy</a> إذا كان مصدر زياراتك سوشال.</p>
+
+<h2 id="final">قائمة فحص نهائية قبل زيادة الزيارات</h2>
 <ul>
 <li>العرض واضح خلال 5 ثوانٍ.</li>
 <li>CTA واحد أساسي في أول شاشة.</li>
@@ -115,6 +469,7 @@
 <li>النموذج/الدفع مختصر.</li>
 <li>قياس التحويلات واضح (Events/Goals).</li>
 </ul><p>إذا نقصت 3 نقاط أو أكثر، أصلحها قبل زيادة الترافيك. رفع الزيارات إلى صفحة ضعيفة يضاعف المشكلة بدل أن يحلها.</p>
+
 <h2 id="before-after">أمثلة قبل/بعد: كيف تبدو صفحة “تبيع” عمليًا؟</h2>
 <p>التحسينات تصبح أوضح عندما تراها كتحويل جُمل وأقسام من “عام” إلى “محدد”. هذه أمثلة شائعة:</p>
 <ul>
@@ -123,6 +478,7 @@
 <li><strong>قبل:</strong> “نضمن أفضل النتائج.” <strong>بعد:</strong> “نلتزم بمخرجات واضحة: صفحة هبوط + نصوص + إعداد قياس + تقرير أسبوعي.”</li>
 </ul>
 <p>الفكرة ليست البلاغة؛ الفكرة أن تُجيب عن أسئلة القرار: هل هذا لي؟ هل يحل مشكلتي؟ هل أصدقك؟ ما الخطوة التالية؟</p>
+
 <h2 id="sector">سيناريوهات قطاعية: كيف يختلف CRO حسب طبيعة العمل؟</h2>
 <h3>1) خدمات (B2B/B2C)</h3>
 <p>التحويل غالبًا هو مكالمة أو نموذج. هنا أهم عنصرين هما: وضوح المخرجات (Deliverables) وإزالة الخوف من الالتزام عبر CTA مثل “مكالمة 20 دقيقة بدون التزام”.</p>
@@ -132,6 +488,7 @@
 <h3>3) حملة مؤثرين</h3>
 <p>التحويل غالبًا يأتي من زائر جديد لا يعرفك. لذلك اجعل صفحة الهبوط “مخصصة” للحملة وتطابق لغة المؤثر. هذا يقلل ارتباك الزائر ويرفع الثقة.</p>
 <p>ولمنع الفوضى التشغيلية في الحملات، راجع أيضًا <a href="/news/why-influencer-marketing-fails/">لماذا تفشل حملات المؤثرين</a> ثم اربط الصفحة بقياس UTM أو كلمة DM.</p>
+
 <h2 id="advanced">مشاكل CRO الشائعة وكيف تعالجها بقرار واحد</h2>
 <h3>المشكلة: زيارات كثيرة + وقت على الصفحة قليل</h3>
 <p>السبب غالبًا عنوان لا يطابق نية الباحث أو أول شاشة مزدحمة. الحل: أعد كتابة العنوان ليطابق النية، وضع CTA واحدًا مع Proof مبكر.</p>
@@ -141,6 +498,7 @@
 <p>السبب غالبًا مفاجأة شحن/رسوم أو طلب إنشاء حساب. الحل: اعرض الشحن مبكرًا، واسمح بالشراء كضيف إن أمكن.</p>
 <h3>المشكلة: كثير “استفسارات” وقليل “طلبات جادة”</h3>
 <p>السبب غالبًا CTA غير محدد أو عرض غير واضح. الحل: ضع شروطًا بسيطة للتأهيل داخل الصفحة: لمن هذا؟ وما الذي ستستلمه؟ وكيف سنبدأ؟</p>
+
 <h2 id="metrics">مؤشرات قياس CRO التي لا تكذب</h2>
 <ul>
 <li><strong>Conversion Rate</strong>: لكن حسب هدف واضح.</li>
@@ -150,6 +508,7 @@
 <li><strong>Quality Leads</strong>: ليس كل Lead متساويًا؛ قِس “الجاهزية”.</li>
 </ul>
 <p>بهذه المؤشرات تستطيع رؤية “أين” تتحسن، لا فقط “هل تحسنت”.</p>
+
 <h2 id="cta-copy">Microcopy وCTA: كلمات صغيرة ترفع التحويل بشكل مفاجئ</h2>
 <p>أحيانًا لا تحتاج تغيير تصميم. تحتاج طمأنة صغيرة قرب الزر أو الحقل:</p>
 <ul>
@@ -158,6 +517,7 @@
 <li>قرب السعر: “يشمل: (… ) + تقرير أسبوعي”.</li>
 </ul>
 <p>هذه الكلمات تعالج خوفًا صغيرًا يمنع الإكمال، خصوصًا مع الزائر الجديد القادم من السوشال.</p>
+
 <h2 id="playbook">Playbook سريع: 15 يوم لتحسين صفحة واحدة بأعلى أثر</h2>
 <p>إذا كان وقتك محدودًا، لا تحاول إصلاح الموقع كله. اختر صفحة واحدة (الأكثر زيارة أو الأكثر تكلفة في الإعلانات) وطبّق هذا الجدول:</p>
 <h3>اليوم 1–2: جمع الأدلة</h3>
@@ -191,6 +551,7 @@
 <li>ثبّت النسخة الأفضل وكرر على صفحة ثانية.</li>
 </ul>
 <p>هذه الخطة تعطيك “انتصار سريع” يثبت جدوى CRO قبل أن تتوسع. وإذا أردت تحويلها لنظام دائم مع SEO وقياس، فهذا ضمن <a href="/services/seo-growth/">SEO &amp; Growth</a>.</p>
+
 <h2 id="objection-bank">بنك اعتراضات جاهز تضعه داخل الصفحة (حسب السوق العربي)</h2>
 <p>ضع هذه الاعتراضات كعناوين H3 قصيرة داخل الصفحة ثم أجب عنها بوضوح:</p>
 <ul>
@@ -202,6 +563,7 @@
 <li>“كيف يتم القياس؟”</li>
 </ul>
 <p>ميزة هذا الأسلوب أنه يقلل الرسائل غير الجادة ويرفع جودة الـLeads لأن العميل يفهم ما ينتظره قبل التواصل.</p>
+
 <h2 id="internal">كيف تستخدم الروابط الداخلية لرفع التحويل (وليس SEO فقط)</h2>
 <p>الروابط الداخلية ليست “زينة”. استخدمها كجسور قرار:</p>
 <ul>
@@ -210,6 +572,7 @@
 <li>من مقال إلى مقال “مكمل” حتى تبقي القارئ داخل موقعك بدل العودة إلى Google.</li>
 </ul>
 <p>مثال: القارئ الذي يفهم دور المحتوى الإنساني من <a href="/news/ai-vs-human-content-2026/">AI مقابل المحتوى الإنساني</a> يصبح أكثر استعدادًا لتطبيق تحسينات الرسالة داخل صفحته.</p>
+
 <h2 id="cta-map">خريطة CTA حسب مرحلة العميل: لا تطلب “شراء” من شخص ما زال مترددًا</h2>
 <p>الزائر ليس دائمًا جاهزًا لنفس الخطوة. استخدم CTA يناسب المرحلة:</p>
 <ul>
@@ -218,6 +581,7 @@
 <li><strong>قرار:</strong> “احجز مكالمة” أو “ابدأ الآن”.</li>
 </ul>
 <p>عندما تضع CTA أكبر من مرحلة الزائر، سترى زيارات كثيرة وقرارات قليلة.</p>
+
 <h2 id="killer-mistakes">أخطاء قاتلة في CRO تكرر نفسها</h2>
 <ul>
 <li>وعد كبير بلا Proof.</li>
@@ -227,14 +591,33 @@
 <li>عدم توضيح الشحن/الإرجاع/المدة مبكرًا.</li>
 </ul>
 <p>تصحيح خطأ واحد من هذه غالبًا يعطي أثرًا أكبر من “تغيير التصميم” بالكامل.</p>
-<h2 id="eeat">E‑E‑A‑T داخل صفحة البيع: كيف تبني خبرة وثقة بدون مبالغة؟</h2>
+
+<h2 id="eeat">E-E-A-T داخل صفحة البيع: كيف تبني خبرة وثقة بدون مبالغة؟</h2>
 <p>حتى في صفحات الخدمة، يمكنك إظهار الخبرة بشكل عملي: اذكر منهج العمل (خطوات)، اعرض أمثلة أو لقطات من النتائج، ووضح ما الذي تقيسه ولماذا. هذه التفاصيل تُشعر العميل أنك تفهم المشكلة فعلًا، وتقلل تردد القرار.</p>
+
+<!-- Case study block with clarity that it’s illustrative unless replaced by your real data -->
+<section class="box" id="case-study" aria-label="Case Study">
+  <h3>Case Study مختصر (مثال توضيحي — استبدله بأرقامك الفعلية عند توفرها)</h3>
+  <p><strong>القطاع:</strong> خدمات (Landing Page + نموذج تواصل) — <strong>المدة:</strong> 14 يوم</p>
+  <ul>
+    <li><strong>قبل:</strong> Conversion Rate = 0.9% — Form Completion = 38% — CTR على CTA = 2.1%</li>
+    <li><strong>بعد:</strong> Conversion Rate = 1.5% — Form Completion = 57% — CTR على CTA = 3.4%</li>
+    <li><strong>أهم 3 تغييرات:</strong> إعادة كتابة العنوان + Proof مبكر قرب CTA + اختصار النموذج من 9 حقول إلى 4</li>
+  </ul>
+  <p style="margin-top:10px;opacity:.85;">ملاحظة: إذا لديك أرقام حقيقية أو لقطة من GA4/Clarity (مع طمس البيانات الحساسة)، استبدل هذا المثال فورًا—سيضاعف الثقة والتحويل.</p>
+</section>
+
 <h2 id="mini-case">مثال تطبيقي مختصر: صفحة خدمة قبل/بعد خلال أسبوعين</h2>
 <p>سيناريو واقعي شائع: صفحة خدمة تحصل على زيارات جيدة لكن التحويل منخفض. خلال أسبوعين يتم عادة تنفيذ 5 تغييرات: (1) إعادة كتابة العنوان ليطابق النية، (2) إضافة Proof قريب من CTA، (3) وضع “ماذا ستحصل عليه” بنقاط واضحة، (4) اختصار النموذج، (5) FAQ يعالج اعتراض السعر والمدة. النتيجة المتوقعة ليست “معجزة”، بل تحسن ثابت لأن الزائر يفهم أسرع ويثق أسرع ويتعثر أقل.</p>
 <p>نصيحة أخيرة: لا تنتظر الكمال. نفّذ نسخة محسنة، قِس، ثم حسّن ثانية. CRO عملية تحسين مستمر وليست مشروعًا لمرة واحدة.</p>
+
 <h2 id="quick-win">Quick Win فوري: جملة واحدة قد ترفع التحويل</h2>
 <p>أضف تحت الـCTA مباشرة جملة طمأنة بسيطة مثل: “مكالمة 20 دقيقة — بدون التزام — سنقترح 5 تحسينات قابلة للتنفيذ”. هذه الجملة وحدها تعالج خوف “سأُباع” أو “سيضيع وقتي”، وتزيد احتمالية الضغط على الزر خصوصًا لدى الزائر الجديد.</p>
-<p><strong>قاعدة ذهبية:</strong> كل سطر في الصفحة يجب أن يقرب الزائر خطوة من الفهم أو الثقة أو الفعل. غير ذلك يُحذف.</p><p>تمام.</p><h2 id="faq">أسئلة شائعة</h2>
+<p><strong>قاعدة ذهبية:</strong> كل سطر في الصفحة يجب أن يقرب الزائر خطوة من الفهم أو الثقة أو الفعل. غير ذلك يُحذف.</p>
+
+<p><strong>ملاحظة:</strong> هذا الدليل مصمم للتطبيق مباشرة—اختر صفحة واحدة وابدأ بتنفيذ خطوة واحدة اليوم بدل انتظار الكمال.</p>
+
+<h2 id="faq">أسئلة شائعة</h2>
 <h3>هل CRO يناسب المواقع الصغيرة؟</h3>
 <p>نعم، لأن كل زيارة تصبح أغلى كلما زادت المنافسة، ورفع التحويل يضاعف قيمة الزيارة.</p><h3>كم يحتاج وقت لظهور نتائج؟</h3>
 <p>تحسينات الرسالة والثقة تظهر خلال 2–4 أسابيع، والتحسينات المستقرة عادة خلال 6–8 أسابيع.</p><h3>هل أحتاج أدوات مدفوعة؟</h3>
@@ -244,6 +627,7 @@
 <p>قد يساعد في المسودات، لكن الإقناع يحتاج تفاصيل واقعية وإشارات ثقة لا تُولد عشوائيًا.</p><h3>كيف أربط CRO بالسوشال؟</h3>
 <p>اجعل كل فيديو يقود إلى صفحة واحدة واضحة، لا إلى الصفحة الرئيسية.</p><h3>هل يمكنكم تنفيذ CRO؟</h3>
 <p>نعم ضمن <a href="/services/seo-growth/">SEO &amp; Growth</a>.</p>
+
 <h2 id="read-also">اقرأ أيضًا</h2>
 <ul>
 <li><a href="/services/seo-growth/">خدمة SEO &amp; Growth</a></li>
@@ -257,9 +641,21 @@
 <li><a href="/news/studio-production-tech-2026/">تقنيات التصوير 2026</a></li>
 <li><a href="/news/">أرشيف الأخبار</a></li>
 </ul>
+
 <h2 id="summary">الخلاصة</h2>
 <p>إذا تريد تحويل هذه الأفكار إلى تنفيذ فعلي داخل موقعك ومنصاتك مع قياس وتحسين مستمر، يمكننا بناء ذلك ضمن خدمات Viva Media Creative.</p>
 <p><a href="/services/seo-growth/">اطّلع على خدمة SEO &amp; Growth</a> أو <a href="/contact/">راسلنا الآن</a>.</p>
+
+<!-- Stronger final CTA (added, no deletion of existing summary) -->
+<section class="cta-box" aria-label="CTA نهائي أقوى">
+  <h3>CTA نهائي مباشر</h3>
+  <p>أرسل لنا رابط صفحتك (Landing / Service / Checkout) وسنرسل لك <strong>5 تحسينات CRO</strong> قابلة للتنفيذ خلال <strong>يومي عمل</strong>—بدون التزام.</p>
+  <div class="cta-actions">
+    <a class="cta-primary" href="/contact/?topic=cro-audit">اطلب مراجعة صفحة الآن</a>
+    <a class="cta-secondary" href="/services/seo-growth/">تنفيذ CRO ضمن SEO &amp; Growth</a>
+  </div>
+</section>
+
 <h2 id="internal-links-used">روابط داخلية مستخدمة (للمراجعة)</h2>
 <ul>
 <li><a href="/services/seo-growth/">خدمة SEO &amp; Growth</a></li>
@@ -280,8 +676,10 @@
 <li><a href="/news/best-instagram-hashtags-2026/">أفضل هاشتاغات إنستغرام 2026</a></li>
 </ul>
 <p><a href="/news/">← العودة إلى صفحة الأخبار</a></p>
+
 </article>
 </main>
+
 <footer class="footer">
 <p>© 2026 Viva Media Creative — جميع الحقوق محفوظة.</p>
 <div class="footer__links">
