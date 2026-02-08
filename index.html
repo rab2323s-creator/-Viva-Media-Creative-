@@ -670,8 +670,14 @@
   </div>
 </footer>
 <script>
-  if (location.hash === '#services') location.replace('/services/');
+  (function () {
+    var isHome = location.pathname === '/' || location.pathname.endsWith('/index.html');
+    if (isHome && location.hash === '#services') {
+      location.replace('/services/' + location.search);
+    }
+  })();
 </script>
+
 
   <script type="module" src="/assets/vmc-home.js"></script>
 </body>
