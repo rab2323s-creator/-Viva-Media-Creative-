@@ -846,11 +846,11 @@ a{color:inherit; text-decoration:none}
 }
 
 @media (prefers-reduced-motion: reduce){
-  .halo,.track,.scroll span,.visual__shine,.slide::after{animation:none !important;}
+  .halo,.track,.scroll span,.visual__shine,.slide::after{ animation:none !important; }
   .orbit--1,.orbit--2,.orbit--3{ animation:none !important; }
   .heroScene__logo img{ animation:none !important; }
-}
-  .reveal{transition:none}
+
+  .reveal{ transition:none; }
   .visual, .scene{ transition:none !important; }
   .sliderViewport{ scroll-behavior:auto; }
 }
