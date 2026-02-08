@@ -1385,12 +1385,4 @@ html.is-ios .shine{ animation: none !important; opacity: .35; }
   .kGrid{ grid-template-columns: 1fr; }
   .kCard{ min-height: auto; }
 }
-.services-seo .seo-text {
-  max-width: 860px;
-  margin: 0 auto 2.5rem;
-  font-size: 1.05rem;
-  line-height: 1.9;
-  color: rgba(255, 255, 255, 0.85);
-  text-align: center;
-}
-
+ 
