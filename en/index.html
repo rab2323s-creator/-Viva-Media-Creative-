@@ -1,697 +1,528 @@
- <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <title>Knowledge Hub | Viva Media Creative — Influencer Marketing, Content Strategy & SEO Insights</title>
-  <meta name="description" content="Viva Media Creative Knowledge Hub: practical articles, frameworks, and insights on influencer marketing, content strategy, creator growth, and SEO. Learn first — then apply through our main services page." />
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://vivamediacreative.com/en/" />
-
-  <!-- Hreflang (AR/EN hubs) -->
-  <link rel="alternate" hreflang="ar" href="https://vivamediacreative.com/ar/" />
-  <link rel="alternate" hreflang="en" href="https://vivamediacreative.com/en/" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Knowledge Hub | Viva Media Creative">
-  <meta property="og:description" content="Frameworks, insights, and practical learnings on influencer marketing, content strategy, creator growth, and SEO.">
-  <meta property="og:url" content="https://vivamediacreative.com/en/">
-  <meta property="og:image" content="https://vivamediacreative.com/assets/hero.webp">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Knowledge Hub | Viva Media Creative">
-  <meta name="twitter:description" content="Practical insights on influence, content, growth, and SEO.">
-  <meta name="twitter:image" content="https://vivamediacreative.com/assets/hero.webp">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="/style.css">
-  <link rel="icon" href="/assets/logo.jpeg">
-
-  <!-- Google Tag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SR129X7VN0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SR129X7VN0');
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Viva Media Creative | Influencer Marketing Agency</title>
+<meta content="Viva Media Creative – influencer marketing, content strategy, and talent management." name="description"/>
+<link href="https://vivamediacreative.com/en/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Influencer Marketing Agency in GCC &amp; Egypt | Viva Media Creative" property="og:title"/>
+<meta content="High-trust influencer partnerships, celebrity management, and content systems that convert attention into revenue." property="og:description"/>
+<meta content="https://vivamediacreative.com/en/" property="og:url"/>
+<meta content="https://vivamediacreative.com/assets/logo.jpeg" property="og:image"/>
+<meta content="Viva Media Creative" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Influencer Marketing in GCC &amp; Egypt | Viva Media Creative" name="twitter:title"/>
+<meta content="Campaign strategy, creator partnerships, and talent management designed for measurable growth—not noise." name="twitter:description"/>
+<meta content="https://vivamediacreative.com/assets/logo.jpeg" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="/assets/logo.jpeg" rel="icon"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&amp;family=Noto+Kufi+Arabic:wght@400;600;700;800&amp;family=Space+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="/assets/vmc-home.css" rel="stylesheet"/>
+<!-- SEO: Structured Data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Viva Media Creative",
+    "alternateName": "VMC",
+    "url": "https://vivamediacreative.com/en/",
+    "logo": "https://vivamediacreative.com/assets/logo.jpeg",
+    "sameAs": [
+        "https://www.linkedin.com/company/viva-media-creative/",
+        "https://www.facebook.com/vivamediacreative"
+    ]
+}
   </script>
-
-  <!-- ===== Luxury SEO Hub Style (unique EN layout & wording; not a translation) ===== -->
-  <style>
-    :root{
-      --bg:#06070a;
-      --fg:#eef1f6;
-      --muted: rgba(238,241,246,.72);
-      --line: rgba(255,255,255,.12);
-
-      --gold1: #f5d07a;
-      --gold2: #b88a2a;
-
-      --r: 26px;
-      --shadow: 0 40px 120px rgba(0,0,0,.65);
-    }
-
-    html,body{height:100%;}
-    body{
-      margin:0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      overflow-x:hidden;
-    }
-
-    /* Soft noise layer */
-    body::before{
-      content:"";
-      position:fixed; inset:0; pointer-events:none;
-      opacity:.08;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
-      mix-blend-mode: overlay;
-      z-index:0;
-    }
-    body > *{ position:relative; z-index:1; }
-
-    a{ color:inherit; text-decoration:none; }
-    .container{ max-width:1180px; margin:0 auto; padding:0 22px; }
-
-    /* Header */
-    .site-header{
-      position:fixed;
-      top:0; left:0; right:0;
-      z-index:50;
-      background: linear-gradient(to bottom, rgba(6,7,10,.88), rgba(6,7,10,0));
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .site-header.scrolled{
-      background: rgba(6,7,10,.92);
-      border-bottom:1px solid rgba(255,255,255,.10);
-    }
-    .header-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding: 14px 0;
-    }
-
-    .brand{ display:flex; align-items:center; gap:12px; min-width: 260px; }
-    .logo{
-      width:52px; height:52px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow: 0 18px 60px rgba(0,0,0,.45);
-    }
-    .brand-text .brand-name{
-      margin:0;
-      font-size:16px;
-      letter-spacing:.02em;
-      font-weight:800;
-    }
-    .brand-text .tag{
-      margin:4px 0 0;
-      font-size:12px;
-      color: rgba(238,241,246,.62);
-    }
-
-    .hamburger{
-      display:none;
-      cursor:pointer;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.03);
-      color: rgba(238,241,246,.9);
-    }
-
-    .main-nav{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      color: rgba(238,241,246,.74);
-    }
-    .main-nav a{
-      padding:10px 10px;
-      border-radius:12px;
-      white-space:nowrap;
-    }
-    .main-nav a:hover{ color: rgba(238,241,246,.95); }
-
-    .lang{
-      color: rgba(238,241,246,.72);
-      font-size: 13px;
-      white-space:nowrap;
-    }
-    .lang a{
-      padding:10px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.03);
-    }
-    .lang a[aria-current="page"]{
-      border-color: rgba(245,208,122,.24);
-      background: linear-gradient(180deg, rgba(245,208,122,.14), rgba(255,255,255,.03));
-      color: rgba(245,208,122,.95);
-    }
-
-    /* Hero */
-    .hero{
-      min-height: 78vh;
-      padding: 120px 0 64px;
-      position:relative;
-      overflow:hidden;
-      background:
-        radial-gradient(1200px 600px at 20% 12%, rgba(184,138,42,.13), transparent 60%),
-        radial-gradient(900px 520px at 85% 25%, rgba(145, 90, 255, .12), transparent 60%),
-        radial-gradient(900px 520px at 70% 82%, rgba(0, 255, 200, .08), transparent 60%),
-        var(--bg);
-    }
-    .hero::after{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        linear-gradient(to top, rgba(6,7,10,.88), rgba(6,7,10,.18)),
-        url('/assets/hero.webp');
-      background-size: cover;
-      background-position: center;
-      opacity:.22;
-      pointer-events:none;
-    }
-
-    .hero-layout{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 18px;
-      align-items:end;
-    }
-
-    .hero h1{
-      margin: 0 0 10px;
-      font-size: clamp(30px, 4.2vw, 54px);
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-    }
-    .hero .lead{
-      margin:0 0 18px;
-      color: rgba(238,241,246,.72);
-      font-size: 16px;
-      line-height: 2.0;
-      max-width: 68ch;
-    }
-
-    .hero-cta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top: 16px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 14px 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.03);
-      color: rgba(238,241,246,.92);
-      font-weight: 800;
-      letter-spacing:.01em;
-      backdrop-filter: blur(10px);
-      transition: transform .18s ease, border-color .18s ease, background .18s ease;
-      cursor:pointer;
-    }
-    .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.20); }
-    .btn.btn-gold{
-      border-color: rgba(245,208,122,.24);
-      background: linear-gradient(180deg, rgba(245,208,122,.18), rgba(255,255,255,.04));
-      box-shadow: var(--shadow);
-    }
-    .btn.btn-ghost{
-      border-color: rgba(255,255,255,.14);
-      background: rgba(255,255,255,.02);
-      color: rgba(238,241,246,.85);
-    }
-
-    .hero-panel{
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: var(--r);
-      background: rgba(255,255,255,.02);
-      box-shadow: 0 22px 80px rgba(0,0,0,.35);
-      padding: 16px;
-    }
-    .hero-panel .k{
-      margin:0 0 10px;
-      color: rgba(245,208,122,.92);
-      letter-spacing:.10em;
-      font-weight: 900;
-      font-size: 12px;
-      text-transform: uppercase;
-    }
-    .pill-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-    .pill{
-      padding:10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.02);
-      color: rgba(238,241,246,.72);
-      font-size: 12px;
-      line-height:1;
-      white-space:nowrap;
-    }
-
-    /* Sections */
-    .section{ padding: 70px 0; }
-    .section.light{
-      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
-      border-top:1px solid rgba(255,255,255,.08);
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-    .section-title{
-      margin:0 0 10px;
-      font-size: 28px;
-      display:flex;
-      align-items:baseline;
-      gap:10px;
-    }
-    .section-desc{
-      margin:0 0 18px;
-      color: rgba(238,241,246,.62);
-      line-height: 1.95;
-      max-width: 86ch;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 14px;
-    }
-    .card{
-      grid-column: span 4;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: var(--r);
-      background: rgba(255,255,255,.02);
-      box-shadow: 0 22px 80px rgba(0,0,0,.35);
-      padding: 16px;
-      min-height: 170px;
-      display:flex;
-      flex-direction:column;
-      gap: 10px;
-    }
-    .card h3{
-      margin:0;
-      font-size: 16px;
-      line-height: 1.5;
-    }
-    .card p{
-      margin:0;
-      color: rgba(238,241,246,.66);
-      line-height: 1.9;
-      font-size: 13px;
-    }
-    .card .actions{ margin-top:auto; display:flex; gap:10px; flex-wrap:wrap; }
-    .card .mini{
-      padding: 10px 12px;
-      font-size: 12px;
-      border-radius: 999px;
-    }
-    .mini.gold{
-      border-color: rgba(245,208,122,.24);
-      background: linear-gradient(180deg, rgba(245,208,122,.14), rgba(255,255,255,.03));
-      color: rgba(245,208,122,.95);
-    }
-
-    .list{
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: var(--r);
-      background: rgba(255,255,255,.02);
-      box-shadow: 0 22px 80px rgba(0,0,0,.35);
-      padding: 16px;
-    }
-    .list ul{
-      margin:0;
-      padding-left: 18px;
-      display:grid;
-      gap:10px;
-    }
-    .list li{
-      color: rgba(238,241,246,.75);
-      line-height: 1.9;
-    }
-    .list a{
-      color: rgba(245,208,122,.92);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    /* Footer */
-    .site-footer{
-      border-top: 1px solid rgba(255,255,255,.10);
-      padding: 26px 0;
-      color: rgba(238,241,246,.60);
-    }
-    .footer-inner{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap: 16px;
-      flex-wrap:wrap;
-    }
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .hamburger{ display:inline-flex; }
-      .main-nav{
-        position:absolute;
-        top: 64px;
-        left: 22px;
-        right: 22px;
-        display:none;
-        flex-direction:column;
-        gap:8px;
-        padding: 12px;
-        border-radius: 22px;
-        border: 1px solid rgba(255,255,255,.12);
-        background: rgba(6,7,10,.92);
-        backdrop-filter: blur(12px);
-      }
-      .main-nav.active{ display:flex; }
-
-      .hero-layout{ grid-template-columns: 1fr; }
-      .card{ grid-column: span 12; }
-    }
-  </style>
-
-  <!-- Structured Data: Organization + Blog -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Viva Media Creative",
-    "url":"https://vivamediacreative.com/",
-    "logo":"https://vivamediacreative.com/assets/logo.jpeg"
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Blog",
-    "name":"Viva Media Creative — Knowledge Hub (EN)",
-    "url":"https://vivamediacreative.com/en/",
-    "inLanguage":"en",
-    "publisher":{
-      "@type":"Organization",
-      "name":"Viva Media Creative",
-      "url":"https://vivamediacreative.com/"
-    }
-  }
-  </script>
-</head>
-
+<link href="https://vivamediacreative.com/en/" hreflang="en" rel="alternate"/><link href="https://vivamediacreative.com/" hreflang="ar" rel="alternate"/><link href="https://vivamediacreative.com/" hreflang="x-default" rel="alternate"/></head>
 <body>
-  <!-- Header -->
-  <header class="site-header" id="siteHeader">
-    <div class="container header-inner">
-      <div class="brand">
-        <a href="/" aria-label="Go to main services homepage">
-          <img src="/assets/logo.jpeg" alt="Viva Media Creative" class="logo" loading="lazy">
-        </a>
-        <div class="brand-text">
-          <p class="brand-name">Viva Media Creative</p>
-          <p class="tag">Knowledge Hub — insights, frameworks & playbooks</p>
-        </div>
-      </div>
-
-      <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
-
-      <!-- ✅ Stable links -->
-      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-        <a href="/en/" aria-current="page">Knowledge Hub</a>
-        <a href="/news_en/">Articles</a>
-        <a href="/ar/tools/" title="Tools library currently available in Arabic">Tools (AR)</a>
-        <a href="/contact">Contact</a>
-        <a href="/" title="Main services homepage">Services</a>
-      </nav>
-
-      <div class="lang">
-        <a href="/ar/">العربية</a> | <a href="/en/" aria-current="page">English</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero" aria-label="Knowledge Hub intro">
-    <div class="container">
-      <div class="hero-layout">
-        <div>
-          <h1>Influence, Content & Growth — made practical</h1>
-          <p class="lead">
-            This hub is not a “services page.” It’s a library of practical thinking: how to design influencer campaigns,
-            build creator-friendly content systems, create repeatable viral mechanics, and use SEO to compound results.
-            When you’re ready to apply it, you can move to our main services homepage.
+<div aria-hidden="true" class="noise"></div>
+<!-- NAV -->
+<header class="nav">
+<a class="brand" href="/">
+<span class="brand__mark">VMC</span>
+<span class="brand__name">Viva Media Creative</span>
+</a>
+<nav class="nav__links">
+<a href="/services/">Services</a>
+<a href="#tenets">Our Approach</a>
+<a href="#trusted">Clients</a>
+<a class="pill" href="/contact/">Contact</a>
+</nav>
+</header>
+<main>
+<!-- HERO -->
+<section class="hero">
+<div aria-hidden="true" class="hero__bg">
+<div class="halo h1"></div>
+<div class="halo h2"></div>
+<div class="halo h3"></div>
+<div class="gridlines"></div>
+</div>
+<div class="hero__inner">
+<div class="heroLayout">
+<!-- HERO SCENE (Creative Engine) -->
+<div aria-hidden="true" class="heroScene reveal">
+<svg aria-label="" class="engine" role="img" viewbox="0 0 800 520" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="35%" cy="30%" id="orbGlow" r="70%">
+<stop offset="0%" stop-color="rgba(245,208,122,.55)"></stop>
+<stop offset="40%" stop-color="rgba(145,90,255,.25)"></stop>
+<stop offset="100%" stop-color="rgba(0,0,0,0)"></stop>
+</radialgradient>
+<radialgradient cx="35%" cy="30%" id="orbBody" r="75%">
+<stop offset="0%" stop-color="rgba(255,255,255,.18)"></stop>
+<stop offset="25%" stop-color="rgba(245,208,122,.18)"></stop>
+<stop offset="55%" stop-color="rgba(145,90,255,.12)"></stop>
+<stop offset="100%" stop-color="rgba(6,7,10,.0)"></stop>
+</radialgradient>
+<lineargradient id="scan" x1="0" x2="1">
+<stop offset="0%" stop-color="rgba(245,208,122,.0)"></stop>
+<stop offset="45%" stop-color="rgba(245,208,122,.18)"></stop>
+<stop offset="55%" stop-color="rgba(145,90,255,.12)"></stop>
+<stop offset="100%" stop-color="rgba(0,255,200,.0)"></stop>
+</lineargradient>
+<path d="M 400 260 m -170 0 a 170 170 0 1 1 340 0 a 170 170 0 1 1 -340 0" id="ring1Path"></path>
+<path d="M 400 260 m -232 0 a 232 232 0 1 1 464 0 a 232 232 0 1 1 -464 0" id="ring3Path"></path>
+<path d="M 400 260 m -180 0 a 180 180 0 1 1 360 0 a 180 180 0 1 1 -360 0" id="ringPath"></path>
+</defs>
+<!-- soft field (no square) -->
+<circle cx="400" cy="260" fill="url(#orbGlow)" opacity=".40" r="300"></circle>
+<!-- ORBITS (3 levels) -->
+<g class="orbits">
+<!-- Orbit 1 (core / most important) -->
+<g class="orbit orbit--1">
+<circle cx="400" cy="260" fill="none" r="178" stroke="rgba(245,208,122,.18)" stroke-width="1"></circle>
+<text class="orbitText orbitText--1">
+<textpath href="#ring1Path" startoffset="50%" text-anchor="middle">
+                    INFLUENCE • VALUE • DECISION • AUTHORITY •
+                  </textpath>
+</text>
+</g>
+<!-- Orbit 2 (English labels, upright + orbiting) -->
+<g class="orbit orbit--2">
+<circle cx="400" cy="260" fill="none" r="210" stroke="rgba(255,255,255,.07)" stroke-width="1"></circle>
+<g aria-hidden="true" class="orbitLabels">
+<g class="lbl" style="--a:-60deg;--ai:60deg"><text x="400" y="260">IMPACT</text></g>
+<g class="lbl" style="--a:-20deg;--ai:20deg"><text x="400" y="260">TRUST</text></g>
+<g class="lbl" style="--a:20deg;--ai:-20deg"><text x="400" y="260">BRAND</text></g>
+<g class="lbl" style="--a:60deg;--ai:-60deg"><text x="400" y="260">STORY</text></g>
+<g class="lbl" style="--a:110deg;--ai:-110deg"><text x="400" y="260">STRATEGY</text></g>
+<g class="lbl" style="--a:160deg;--ai:-160deg"><text x="400" y="260">REVENUE</text></g>
+</g>
+</g>
+<!-- Orbit 3 (outer / outcomes) -->
+<g class="orbit orbit--3">
+<circle cx="400" cy="260" fill="none" r="242" stroke="rgba(245,208,122,.12)" stroke-dasharray="2 10" stroke-width="1"></circle>
+<text class="orbitText orbitText--3">
+<textpath href="#ring3Path" startoffset="50%" text-anchor="middle">
+                    TREND • GROWTH • REACH • SALES • VIRAL •
+                  </textpath>
+</text>
+</g>
+</g>
+<!-- orb -->
+<g class="orb">
+<circle cx="400" cy="260" fill="rgba(0,0,0,.25)" r="150"></circle>
+<circle cx="400" cy="260" fill="url(#orbBody)" r="150"></circle>
+<!-- rotating bands -->
+<g class="bands" opacity=".55">
+<rect clip-path="url(#clipOrb)" fill="url(#scan)" height="220" opacity=".55" width="300" x="250" y="150"></rect>
+</g>
+<!-- logo core -->
+<g class="core">
+<circle cx="400" cy="260" fill="rgba(0,0,0,.45)" r="88" stroke="rgba(245,208,122,.30)" stroke-width="1"></circle>
+</g>
+</g>
+<!-- mask + clip -->
+<clippath id="clipOrb">
+<circle cx="400" cy="260" r="150"></circle>
+</clippath>
+<!-- subtle grid inside orb -->
+<g class="orbGrid" clip-path="url(#clipOrb)" opacity=".22">
+<path d="M250 200 H550" stroke="rgba(255,255,255,.20)" stroke-width="1"></path>
+<path d="M250 240 H550" stroke="rgba(255,255,255,.18)" stroke-width="1"></path>
+<path d="M250 280 H550" stroke="rgba(255,255,255,.16)" stroke-width="1"></path>
+<path d="M250 320 H550" stroke="rgba(255,255,255,.14)" stroke-width="1"></path>
+<path d="M320 110 V410" stroke="rgba(255,255,255,.12)" stroke-width="1"></path>
+<path d="M400 110 V410" stroke="rgba(255,255,255,.12)" stroke-width="1"></path>
+<path d="M480 110 V410" stroke="rgba(255,255,255,.12)" stroke-width="1"></path>
+</g>
+<!-- outer highlight -->
+<circle cx="400" cy="260" fill="none" r="150" stroke="rgba(245,208,122,.20)" stroke-width="1"></circle>
+<circle cx="400" cy="260" fill="none" opacity=".55" r="152" stroke="rgba(255,255,255,.06)" stroke-width="6"></circle>
+<!-- logo image (HTML overlay, keeps crisp) -->
+</svg>
+<div class="heroScene__logo">
+<img alt="VMC" src="/assets/logo.jpeg"/>
+</div>
+</div>
+<!-- HERO COPY -->
+<div class="heroCopy">
+<div class="kicker reveal">Viva Media Creative</div>
+<div class="micro reveal">Influencer marketing • Content strategy • Talent management</div>
+<h1 class="reveal">
+            We turn <span class="gold">content</span> into measurable growth
+          </h1>
+<p class="reveal">
+            Strategy-led influencer campaigns, premium content, and brand storytelling—built for results.
           </p>
-
-          <div class="hero-cta">
-            <a class="btn btn-gold" href="/news_en/">Start reading</a>
-            <a class="btn btn-ghost" href="/contact">Ask a question</a>
-            <a class="btn btn-ghost" href="/" aria-label="Go to main services homepage">Go to Services</a>
-          </div>
-        </div>
-
-        <aside class="hero-panel" aria-label="What you will find here">
-          <p class="k">Inside this hub</p>
-          <div class="pill-row">
-            <span class="pill">Campaign frameworks</span>
-            <span class="pill">Creator playbooks</span>
-            <span class="pill">Viral mechanics</span>
-            <span class="pill">SEO growth loops</span>
-            <span class="pill">Measurement basics</span>
-            <span class="pill">Practical checklists</span>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================
-       ✅ SEO AUTHORITY INTRO (ADDED)
-       ========================= -->
-  <section class="section" aria-label="How to use the Knowledge Hub">
-    <div class="container">
-      <h2 class="section-title">How to use this Knowledge Hub to build measurable growth</h2>
-
-      <p class="section-desc">
-        The Knowledge Hub exists to reduce guesswork in influencer marketing, content strategy, and SEO-led growth. Think of it as the “clarity layer”:
-        frameworks that explain how to design creator partnerships, structure deliverables, protect brand voice, and measure outcomes that matter
-        (demand, leads, sales)—not just views. If you’re researching an influencer marketing agency, building a creator program, or trying to turn content into
-        predictable performance, this hub helps you make better decisions before you spend budgets. Start with Articles to understand the mechanics, then use the
-        connected paths to apply what you learned through our core services when you need execution.
-      </p>
-
-      <p class="section-desc">
-        This hub is built for brands and founders across the Gulf and MENA who want brand-safe creator collaborations, for public figures and creators who want
-        sustainable account growth systems (identity, consistency, editorial planning), and for teams running e-commerce or websites who want SEO that compounds over time.
-        You’ll find guidance on campaign design, conversion copywriting, short-form scripting, viral packaging and distribution, landing page intent matching, funnels,
-        and measurement basics. The fastest way to use it is a simple loop: learn the framework → map the plan → apply with a service page. When you are ready for hands-on
-        delivery—creator matchmaking, celebrity management, influencer campaign ops, content & trend strategy, or SEO & growth—jump to the main Services homepage.
-        The goal is simple: turn knowledge into execution, and execution into measurable outcomes.
-      </p>
-    </div>
-  </section>
-
-  <!-- How to use this hub (EN-only, unique structure) -->
-  <section class="section light" aria-label="How to use this hub">
-    <div class="container">
-      <h2 class="section-title">How to use this hub</h2>
-      <p class="section-desc">
-        The fastest path is: learn → plan → apply. Each piece here aims to reduce guesswork and increase clarity.
-        When you need execution, the main services homepage is your “apply” destination.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>1) Learn the system</h3>
-          <p>Read a short set of articles to understand the “why” behind creator-led marketing and content distribution.</p>
-          <div class="actions">
-            <a class="btn mini gold" href="/news_en/">Browse Articles</a>
-            <a class="btn mini" href="/">Apply via Services</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>2) Choose a playbook</h3>
-          <p>Pick the track that matches your goal: growth, conversions, brand lift, or creator consistency.</p>
-          <div class="actions">
-            <a class="btn mini gold" href="/news_en/">Pick a Track</a>
-            <a class="btn mini" href="/contact">Talk to us</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>3) Apply with clarity</h3>
-          <p>Execution becomes simpler when the strategy is clear. Use Services when you want hands-on delivery.</p>
-          <div class="actions">
-            <a class="btn mini gold" href="/">Main Services Homepage</a>
-            <a class="btn mini" href="/contact">Contact</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Knowledge Tracks (EN unique — not mirroring AR wording) -->
-  <section class="section" aria-label="Knowledge tracks">
-    <div class="container">
-      <h2 class="section-title">Knowledge tracks</h2>
-      <p class="section-desc">
-        These tracks map to real search intent: people looking for clarity, not marketing slogans.
-        Use them as a learning route, then move to Services when you want to execute.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Influencer campaign design</h3>
-          <p>How to pick creators, structure deliverables, protect brand voice, and measure outcomes beyond vanity metrics.</p>
-          <div class="actions">
-            <a class="btn mini gold" href="/news_en/">Read articles</a>
-            <a class="btn mini" href="/">Apply via Services</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Creator account growth systems</h3>
-          <p>Consistency, identity, content calendars, and feedback loops that keep growth stable (not chaotic).</p>
-          <div class="actions">
-            <a class="btn mini gold" href="/news_en/">Explore</a>
-            <a class="btn mini" href="/contact">Ask us</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Viral mechanics & distribution</h3>
-          <p>Hooks, angles, timing, packaging, distribution, and iteration — built for repeatability, not luck.</p>
-          <div class="actions">
-            <a class="btn mini gold" href="/news_en/">Learn</a>
-            <a class="btn mini" href="/ar/tools/" title="Tools library currently available in Arabic">Tools (AR)</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>SEO compounding growth</h3>
-          <p>Content that ranks, page intent matching, internal linking, and simple funnels that compound over time.</p>
-          <div class="actions">
-            <a class="btn mini gold" href="/news_en/">Read</a>
-            <a class="btn mini" href="/">Services</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Copy for conversion</h3>
-          <p>Messaging clarity, short-form scripts, CTAs, and creative constraints that push decisions — not noise.</p>
-          <div class="actions">
-            <a class="btn mini gold" href="/news_en/">Start here</a>
-            <a class="btn mini" href="/contact">Contact</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Measurement basics</h3>
-          <p>What to measure, how to interpret results, and how to iterate without breaking momentum.</p>
-          <div class="actions">
-            <a class="btn mini gold" href="/news_en/">Go</a>
-            <a class="btn mini" href="/">Apply</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Content & Tools (safe links only) -->
-  <section class="section light" aria-label="Start here">
-    <div class="container">
-      <h2 class="section-title">Start here</h2>
-      <p class="section-desc">
-        Use the links below to navigate content. This page stays stable and points to existing sections.
-      </p>
-
-      <div class="grid">
-        <div class="list" style="grid-column: span 6;">
-          <h3 style="margin:0 0 10px;font-size:16px;">Latest articles</h3>
-          <ul>
-            <li><a href="/news_en/">Browse all English articles</a> and choose by your goal.</li>
-            <li>Prefer implementation? Jump to the <a href="/">main services homepage</a>.</li>
-            <li>Need a direct answer? <a href="/contact">Contact us</a>.</li>
-          </ul>
-        </div>
-
-        <div class="list" style="grid-column: span 6;">
-          <h3 style="margin:0 0 10px;font-size:16px;">Tools library</h3>
-          <ul>
-            <li><a href="/ar/tools/">Tools (Arabic)</a> — checklists & templates currently available.</li>
-            <li>If you want execution support, go to <a href="/">Services</a>.</li>
-            <li>For questions, <a href="/contact">reach out</a>.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Minimal about (non-commercial) -->
-  <section class="section" aria-label="About this hub">
-    <div class="container">
-      <h2 class="section-title">About this hub</h2>
-      <p class="section-desc">
-        We publish content to make creator-led growth and influencer marketing easier to understand and apply.
-        This is a learning layer — the execution layer lives on the main services homepage.
-      </p>
-
-      <div class="hero-cta">
-        <a class="btn btn-gold" href="/">Go to main services homepage</a>
-        <a class="btn btn-ghost" href="/contact">Contact</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="y"></span> Viva Media Creative</div>
-      <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <a href="/news_en/">Articles</a>
-        <a href="/ar/tools/" title="Tools library currently available in Arabic">Tools (AR)</a>
-        <a href="/contact">Contact</a>
-        <a href="/">Services</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Header scroll
-    const header = document.getElementById('siteHeader');
-    const onScroll = () => {
-      if (window.scrollY > 8) header.classList.add('scrolled');
-      else header.classList.remove('scrolled');
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    // Mobile nav
-    const burger = document.getElementById('hamburger');
-    const nav = document.getElementById('main-nav');
-    burger.addEventListener('click', () => nav.classList.toggle('active'));
-
-    // Year
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+<div class="hero__cta reveal">
+<a class="btn btn--primary" href="/contact/">Book a Call</a>
+<a class="btn btn--ghost" href="/services/">Explore Services</a>
+</div>
+</div>
+<div class="hero__cta reveal">
+<a class="btn primary magnetic" href="/contact/">Request a Strategy Call</a>
+<p class="cta-note">No commitment • initial review within 24 hours</p>
+<a class="btn ghost magnetic" href="/services/">See our process</a>
+<a class="btn ghost magnetic" href="/elite/influencer-partnerships/">
+    Elite Influencer Partnerships
+  </a>
+</div>
+<div class="hero__meta reveal">
+<div class="meta">
+<span class="meta__num">4M+</span>
+<span class="meta__label">Audience reached</span>
+</div>
+<div class="meta">
+<span class="meta__num">10+</span>
+<span class="meta__label">Years shaping trends</span>
+</div>
+<div class="meta">
+<span class="meta__num">GCC • Egypt</span>
+<span class="meta__label">Influence network</span>
+</div>
+</div>
+<!-- Proof Pills (no new links) -->
+<div aria-label="Key capabilities" class="hero__pills reveal">
+<span class="pillx">🔥 Repeatable creator campaigns</span>
+<span class="pillx">👑 Celebrity &amp; personal brand management</span>
+<span class="pillx">💰 Turn attention into revenue</span>
+<span class="pillx">🌐 SEO, funnels &amp; conversion growth</span>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="scroll"><span></span></div>
+</section>
+<!-- SERVICES (Horizontal Slider + Snap + Progress) -->
+<section class="section services-slider" id="services">
+<div class="section__head">
+<h2 class="title reveal">
+<span class="cap">Services</span>
+<span>What we deliver</span>
+</h2>
+<p class="desc reveal">We start with the business outcome—then design creator partnerships, content, and distribution to drive sales, leads, and repeat demand. Production is the execution layer, not the goal.</p>
+</div>
+<!-- Slider -->
+<div aria-label="Services horizontal slider" class="sliderShell reveal">
+<div class="sliderTop">
+<div class="sliderHint">Drag ← →</div>
+<div aria-hidden="true" class="sliderProgress">
+<span class="sliderProgress__bar" id="servicesBar"></span>
+</div>
+</div>
+<div aria-label="Services slides" class="sliderViewport" id="servicesViewport" tabindex="0">
+<!-- Slide 1 -->
+<article class="slide" data-slide="1">
+<div aria-hidden="true" class="slide__bg bg--1"></div>
+<div class="slide__inner">
+<div class="slide__num">01</div>
+<div class="slide__tag">INFLUENCER MARKETING</div>
+<h3 class="slide__title">Creator–Brand Partnerships</h3>
+<p class="slide__desc">We match creators and public figures with brands that fit—then structure clear agreements and campaigns built for measurable outcomes (sales, leads, qualified traffic).</p>
+<div class="slide__chips">
+<span class="chip">• Creator matchmaking &amp; fit</span>
+<span class="chip">• Celebrity-to-brand collaborations</span>
+<span class="chip">• Reporting &amp; ROI measurement</span>
+</div>
+<a class="btn ghost magnetic" href="/services/influencer-marketing/">Service details</a>
+</div>
+</article>
+<!-- Slide 2 -->
+<article class="slide" data-slide="2">
+<div aria-hidden="true" class="slide__bg bg--2"></div>
+<div class="slide__inner">
+<div class="slide__num">02</div>
+<div class="slide__tag">ACCOUNT MANAGEMENT</div>
+<h3 class="slide__title">Talent &amp; Account Management</h3>
+<p class="slide__desc">We run your social presence like a brand: monthly planning, content rhythms, publishing, and optimization—so you grow steadily without compromising trust.</p>
+<div class="slide__chips">
+<span class="chip">• Creator account operations</span>
+<span class="chip">• Publishing + community rhythm</span>
+<span class="chip">• Growth, trust &amp; retention</span>
+</div>
+<a class="btn ghost magnetic" href="/services/personal-brand-management/">Service details</a>
+</div>
+</article>
+<!-- Slide 3 -->
+<article class="slide" data-slide="3">
+<div aria-hidden="true" class="slide__bg bg--3"></div>
+<div class="slide__inner">
+<div class="slide__num">03</div>
+<div class="slide__tag">VIRAL STRATEGY</div>
+<h3 class="slide__title">Trend-Driven Content Systems</h3>
+<p class="slide__desc">We don’t chase views. We engineer repeatable formats: strong angles, sharp hooks, timing, and distribution—so momentum becomes consistent demand.</p>
+<div class="slide__chips">
+<span class="chip">• Trend formats &amp; hooks</span>
+<span class="chip">• Viral concept development</span>
+<span class="chip">• Distribution &amp; repetition plan</span>
+</div>
+<a class="btn ghost magnetic" href="/services/viral-strategy/">Service details</a>
+</div>
+</article>
+<!-- Slide 4 -->
+<article class="slide" data-slide="4">
+<div aria-hidden="true" class="slide__bg bg--4"></div>
+<div class="slide__inner">
+<div class="slide__num">04</div>
+<div class="slide__tag">COPYWRITING</div>
+<h3 class="slide__title">Copywriting &amp; Video Scripts</h3>
+<p class="slide__desc">Scripts that move decisions: the first 3 seconds, story structure, smart CTAs, and messaging tailored to your audience—aligned with performance and revenue.</p>
+<div class="slide__chips">
+<span class="chip">• Performance-first scripts</span>
+<span class="chip">• Ads &amp; landing copy</span>
+<span class="chip">• Messaging for conversion</span>
+</div>
+<a class="btn ghost magnetic" href="/services/copywriting/">Service details</a>
+</div>
+</article>
+<!-- Slide 5 -->
+<article class="slide" data-slide="5">
+<div aria-hidden="true" class="slide__bg bg--1"></div>
+<div class="slide__inner">
+<div class="slide__num">05</div>
+<div class="slide__tag">SEO &amp; GROWTH</div>
+<h3 class="slide__title">SEO &amp; Growth for Websites</h3>
+<p class="slide__desc">Turn your site or store into a growth engine: SEO strategy, landing pages, funnels, and conversion upgrades—so organic traffic and campaigns convert reliably.</p>
+<div class="slide__chips">
+<span class="chip">• Technical + content SEO</span>
+<span class="chip">• E‑commerce growth systems</span>
+<span class="chip">• Conversion &amp; revenue uplift</span>
+</div>
+<a class="btn ghost magnetic" href="/services/seo-growth/">Service details</a>
+</div>
+</article>
+</div>
+<div aria-hidden="true" class="sliderBottom">
+<div class="dotsRow" id="servicesDots"></div>
+<div class="arrows">
+<button aria-label="Previous" class="arrow" id="prevSlide">←</button>
+<button aria-label="Next" class="arrow" id="nextSlide">→</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SEO: Services summary (non-slider content for Google) -->
+<section aria-labelledby="services-seo-title" class="section services-seo vmc-intro">
+<p class="vmc-tagline">Viva Media Creative</p>
+<h2 class="vmc-headline" id="services-seo-title">Strategic growth services for creators, public figures, and brands</h2>
+<p class="vmc-description">We build end‑to‑end growth systems: the right partnerships, content that earns attention, and distribution that converts that attention into demand.<br/><br/>
+We work across GCC and Egypt with brands and talent who want sustainable growth—measured in leads, sales, and long‑term trust (not short‑lived hype).</p>
+<p class="vmc-note">Full details for each service are available on the <a href="/services/">Services page</a>.</p>
+<h3 class="vmc-subtitle">Core capabilities</h3>
+<ul class="vmc-services">
+<li class="vmc-service">
+<span class="vmc-service-title">Celebrity &amp; creator partnerships</span>
+<span class="vmc-service-desc">Translate influence into well-structured, paid collaborations that drive business outcomes.</span>
+</li>
+<li class="vmc-service">
+<span class="vmc-service-title">Account &amp; personal brand management</span>
+<span class="vmc-service-desc">A consistent operating system for content, publishing, community, and performance.</span>
+</li>
+<li class="vmc-service">
+<span class="vmc-service-title">Content systems &amp; trend strategy</span>
+<span class="vmc-service-desc">Repeatable formats built for reach, watch-time, and demand—without losing credibility.</span>
+</li>
+<li class="vmc-service">
+<span class="vmc-service-title">Copywriting &amp; scripting</span>
+<span class="vmc-service-desc">Message architecture, hooks, and CTAs designed to move decisions and lift conversions.</span>
+</li>
+<li class="vmc-service">
+<span class="vmc-service-title">SEO &amp; website growth</span>
+<span class="vmc-service-desc">Search visibility + conversion upgrades that turn traffic into customers over time.</span>
+</li>
+</ul>
+</section>
+<!-- TENETS -->
+<section class="section" id="tenets">
+<div class="section__head">
+<h2 class="title reveal">How we work</h2>
+<p class="desc reveal">Fame isn’t a strategy. We build a clear decision behind every appearance—momentum, consistency, and revenue.</p>
+</div>
+<div class="tenets">
+<div class="tenet reveal">
+<span class="n">01</span>
+<div>
+<h4>Message clarity</h4>
+<p>We reduce the story to a sharp point—then execute it with creative that people remember and share.</p>
+</div>
+</div>
+<div class="tenet reveal">
+<span class="n">02</span>
+<div>
+<h4>Momentum, not randomness</h4>
+<p>We know when to spike attention and when to build a cadence that keeps your audience returning.</p>
+</div>
+</div>
+<div class="tenet reveal">
+<span class="n">03</span>
+<div>
+<h4>Premium execution with purpose</h4>
+<p>Visuals, sound, pacing, and structure are performance levers—built to improve watch-time and conversion.</p>
+</div>
+</div>
+<div class="tenet reveal">
+<span class="n">04</span>
+<div>
+<h4>Transparent collaboration</h4>
+<p>Clear agreements, clear deliverables, and clean approvals—no ambiguity, no surprises.</p>
+</div>
+</div>
+<div class="tenet reveal">
+<span class="n">05</span>
+<div>
+<h4>Distribution beats production</h4>
+<p>We don’t stop at making content. We plan publishing, repetition, and scaling until results show up.</p>
+</div>
+</div>
+<div class="tenet reveal">
+<span class="n">06</span>
+<div>
+<h4>Measurable growth</h4>
+<p>We track, learn, and iterate—so the numbers that matter rise: reach, inquiries, and revenue.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- TRUSTED BY --><!-- TRUSTED BY -->
+<section class="trusted" id="trusted">
+<div class="trusted__inner">
+<h2 class="title reveal">Trusted scope</h2>
+<div aria-hidden="true" class="marquee reveal reveal--opacity">
+<div class="track">
+<span class="logo">CELEBRITY MANAGEMENT</span><span>•</span>
+<span class="logo">INFLUENCER PARTNERSHIPS</span><span>•</span>
+<span class="logo">CREATOR MONETIZATION</span><span>•</span>
+<span class="logo">BRAND COLLABORATIONS</span><span>•</span>
+<span class="logo">AUDIENCE GROWTH</span><span>•</span>
+<span class="logo">REVENUE STRATEGY</span><span>•</span>
+<span class="logo">VMC</span><span>•</span>
+</div>
+</div>
+<p class="small reveal">We operate within a curated set of high-impact partnerships—creators, public figures, and brands managed with a growth mindset. Confidentiality is built into our process, because trust is part of the work.</p>
+</div>
+</section>
+<!-- FINAL CTA -->
+<!-- KNOWLEDGE HUB (featured insights) -->
+<section aria-labelledby="knowledgeTitle" class="section knowledge" id="knowledge">
+<div class="section__head">
+<h2 class="title reveal" id="knowledgeTitle">Knowledge Hub</h2>
+<p class="desc reveal">Insights on influencer marketing, creator economy, and building brands that people trust.</p>
+</div>
+<div class="kWrap reveal">
+<div class="kGrid" role="list">
+<article class="kCard" role="listitem">
+<div class="kTag">Personal brand</div>
+<h3 class="kTitle">Personal branding: from attention to trust</h3>
+<p class="kDesc">A practical framework for building a long-term personal brand—identity, message, consistency, and credibility (not temporary virality).</p>
+<a class="kLink" href="/news_en/personal-brand-management/">Read the insight →</a>
+</article>
+<article class="kCard" role="listitem">
+<div class="kTag">Brand identity + AI</div>
+<h3 class="kTitle">When every brand starts to look the same</h3>
+<p class="kDesc">A deep look at AI-driven sameness—and how to protect differentiation through a strong identity moat and better creative decisions.</p>
+<a class="kLink" href="/news_en/brand-identity-ai-2026/">Read the insight →</a>
+</article>
+<article class="kCard" role="listitem">
+<div class="kTag">Content + AI</div>
+<h3 class="kTitle">Why brands lose without human signal</h3>
+<p class="kDesc">Where automation hits its limits—and why experience, stance, stories, and responsibility become the conversion advantage in 2026.</p>
+<a class="kLink" href="/news_en/ai-vs-human-content-2026/">Read the insight →</a>
+</article>
+</div>
+<div class="kCtaRow">
+<a class="btn ghost magnetic" href="https://vivamediacreative.com/news_en/">Open the Knowledge Hub</a>
+</div>
+</div>
+</section>
+<section class="final">
+<div class="final__card reveal">
+<h2>Ready to turn influence into income?</h2>
+<p>Send your profile and your goal—we’ll propose a focused roadmap for momentum, sustainable growth, and trackable revenue.</p>
+<a class="btn primary magnetic" href="/contact/">Request a strategy call</a>
+</div>
+</section>
+</main>
+<footer class="siteFooter" role="contentinfo">
+<div class="siteFooter__inner">
+<!-- Brand -->
+<div class="fCol fCol--brand">
+<a aria-label="Viva Media Creative" class="fBrand" href="/">
+<img alt="Viva Media Creative logo" class="fBrand__logo" decoding="async" loading="lazy" src="/assets/logo.jpeg"/>
+<div class="fBrand__text">
+<span class="fBrand__name">Viva Media Creative</span>
+<span class="fBrand__tag">We turn influence into paid partnerships, revenue, and measurable growth.</span>
+</div>
+</a>
+<div aria-label="Social links" class="fSocial">
+<a class="fSocial__link" href="https://www.linkedin.com/company/viva-media-creative/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a class="fSocial__link" href="https://www.facebook.com/vivamediacreative" rel="noopener noreferrer" target="_blank">Facebook</a>
+</div>
+<div aria-label="Trust" class="fMiniTrust">
+<span class="fDot"></span><span>Brand-safe partnerships</span>
+<span class="fDot"></span><span>Performance-led growth</span>
+</div>
+</div>
+<!-- Elite (Highlighted) -->
+<div class="fCol">
+<h3 class="fTitle">Elite</h3>
+<a aria-label="Elite Influencer Partnerships" class="fElite" href="/elite/influencer-partnerships/">
+<span class="fElite__top">Elite Influencer Partnerships</span>
+<span class="fElite__sub">For premium brands and top-tier creators</span>
+</a>
+</div>
+<!-- Quick links -->
+<div class="fCol">
+<h3 class="fTitle">Quick links</h3>
+<nav aria-label="Footer quick links" class="fLinks">
+<a href="/services/">Services</a>
+<a href="#tenets">Our Approach</a>
+<a href="#trusted">Clients</a>
+<a href="/contact/">Contact</a>
+</nav>
+</div>
+<!-- Contact / Legal -->
+<div class="fCol">
+<h3 class="fTitle">Contact</h3>
+<div class="fContact">
+<a class="fPill" href="/contact/">Request a consult</a>
+<div class="fMeta">
+<span class="fMeta__k">Markets</span>
+<span class="fMeta__v">GCC • Egypt</span>
+</div>
+<div class="fLegal">
+<a href="/privacy/">Privacy</a>
+<a href="/terms/">Terms</a>
+</div>
+</div>
+</div>
+</div>
+<div class="siteFooter__bottom">
+<p class="fCopy">© <span id="y"></span> Viva Media Creative</p>
+</div>
+</footer>
+<script>
+  (function () {
+    var isHome = location.pathname === '/' || location.pathname.endsWith('/index.html');
+    if (isHome && location.hash === '#services') {
+      location.replace('/services/' + location.search);
+    }
+  })();
+</script>
+<script src="/assets/vmc-home.js" type="module"></script>
 </body>
 </html>
