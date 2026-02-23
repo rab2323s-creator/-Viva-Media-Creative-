@@ -1,4 +1,4 @@
-/* Minimal reveal + magnetic (safe for pages without home slider elements) */
+ /* Minimal reveal + magnetic (safe for pages without home slider elements) */
 (() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -18,12 +18,13 @@
     els.forEach(el => el.classList.add('in'));
   }
 
-  // Magnetic buttons (same feel as home, but local)
+  // Magnetic buttons
   const mags = Array.from(document.querySelectorAll('.magnetic'));
   if (!reduceMotion) {
     mags.forEach(btn => {
       let raf = 0;
       const strength = 12;
+
       const onMove = (e) => {
         const r = btn.getBoundingClientRect();
         const x = (e.clientX - (r.left + r.width / 2)) / (r.width / 2);
@@ -33,10 +34,12 @@
           btn.style.transform = `translate(${x * strength}px, ${y * strength}px) translateZ(0)`;
         });
       };
+
       const onLeave = () => {
         cancelAnimationFrame(raf);
         btn.style.transform = 'translateZ(0)';
       };
+
       btn.addEventListener('mousemove', onMove);
       btn.addEventListener('mouseleave', onLeave);
     });
