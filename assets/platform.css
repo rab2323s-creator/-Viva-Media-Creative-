@@ -48,3 +48,19 @@
   .platformHero .btn{width:100%; min-width: unset;}
   .platformHero .btn.primary{width:100%;}
 }
+/* Reveal + fallback so page never looks blank */
+.reveal{
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .7s ease, transform .7s ease;
+  will-change: opacity, transform;
+}
+.reveal.in{
+  opacity: 1;
+  transform: none;
+}
+.no-js .reveal{
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
