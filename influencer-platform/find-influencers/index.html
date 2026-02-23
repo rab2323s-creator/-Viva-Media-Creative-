@@ -3,51 +3,599 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>قريبًا | Viva Media Creative</title>
-  <link rel="icon" href="/assets/logo.jpeg">
+
+  <title>اطلب مؤثرين لحملتك الإعلانية | مطابقة ذكية حسب المجال والميزانية</title>
+  <meta name="description" content="اطلب مؤثرين مناسبين لحملتك خلال دقائق. نطابق حسب المجال، الدولة، نوع المؤثر والميزانية — بدون بحث عشوائي." />
+
+  <link rel="canonical" href="https://vivamediacreative.com/influencer-platform/find-influencers/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="اطلب مؤثرين لحملتك الإعلانية | Viva Media Creative" />
+  <meta property="og:description" content="Brief سريع + مطابقة ذكية حسب المجال والميزانية + تواصل منظم." />
+  <meta property="og:url" content="https://vivamediacreative.com/influencer-platform/find-influencers/" />
+  <meta property="og:image" content="https://vivamediacreative.com/assets/logo.jpeg" />
+  <meta property="og:site_name" content="Viva Media Creative" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Noto+Kufi+Arabic:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/logo.jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Noto+Kufi+Arabic:wght@400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/assets/vmc-home.css" />
   <link rel="stylesheet" href="/assets/platform.css" />
+
+  <style>
+    /* Page-only additions (match Contact luxury system) */
+    .contactWrap{ padding-top: 40px; padding-bottom: 90px; }
+    .contactGrid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+      align-items:start;
+    }
+    .glassCard{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 30px;
+      background: rgba(255,255,255,.02);
+      box-shadow: 0 30px 120px rgba(0,0,0,.55);
+      overflow:hidden;
+    }
+    .cardHead{
+      padding: 18px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+    }
+    .cardHead h2{ margin:0 0 6px; font-size: 20px; }
+    .cardHead p{ margin:0; color: rgba(238,241,246,.62); line-height:1.8; }
+
+    .formBody{ padding: 18px; }
+    .formGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .field{ display:flex; flex-direction:column; gap:8px; }
+    .field label{ font-size: 12px; color: rgba(238,241,246,.72); font-weight: 800; letter-spacing:.02em; }
+    .field input, .field textarea, .field select{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(6,7,10,.35);
+      color: rgba(238,241,246,.92);
+      outline:none;
+      backdrop-filter: blur(10px);
+      transition: border-color .18s ease, transform .18s ease;
+      font-family: inherit;
+    }
+    .field input::placeholder, .field textarea::placeholder{ color: rgba(238,241,246,.45); }
+    .field input:focus, .field textarea:focus, .field select:focus{
+      border-color: rgba(245,208,122,.32);
+      box-shadow: 0 0 0 6px rgba(245,208,122,.10);
+    }
+    .span2{ grid-column: 1 / -1; }
+    textarea{ min-height: 140px; resize: vertical; }
+
+    .actions{
+      grid-column: 1 / -1;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin-top: 6px;
+    }
+    .hint{
+      color: rgba(238,241,246,.55);
+      font-size: 12px;
+      line-height: 1.7;
+      max-width: 60ch;
+    }
+    .status{
+      grid-column: 1 / -1;
+      display:none;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.02);
+      color: rgba(238,241,246,.80);
+      line-height: 1.8;
+    }
+    .status.ok{ display:block; border-color: rgba(16,185,129,.30); background: rgba(16,185,129,.10); }
+    .status.err{ display:block; border-color: rgba(239,68,68,.28); background: rgba(239,68,68,.10); }
+
+    .sideBody{ padding: 18px; display:flex; flex-direction:column; gap: 12px; }
+    .miniCard{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      background: rgba(255,255,255,.02);
+      padding: 16px;
+    }
+    .miniCard h3{ margin:0 0 8px; font-size: 16px; }
+    .miniCard p{ margin:0; color: rgba(238,241,246,.62); line-height:1.8; font-size: 13px; }
+
+    .steps{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .step{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      background: rgba(6,7,10,.35);
+      padding: 12px 12px;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+    .step .num{
+      width:34px; height:34px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(245,208,122,.14);
+      border: 1px solid rgba(245,208,122,.22);
+      flex: 0 0 auto;
+      font-weight: 900;
+      color: rgba(238,241,246,.92);
+    }
+    .step b{ display:block; font-size: 13px; margin-bottom: 2px; }
+    .step small{ display:block; font-size: 12px; color: rgba(238,241,246,.58); line-height: 1.7; }
+
+    .whatsBox{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      background: rgba(255,255,255,.02);
+      padding: 14px;
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap: wrap;
+    }
+    .whatsBox .txt{
+      min-width: 220px;
+      flex: 1 1 auto;
+    }
+    .whatsBox .txt b{ display:block; font-size: 13px; margin-bottom: 3px; }
+    .whatsBox .txt small{ display:block; font-size: 12px; color: rgba(238,241,246,.60); line-height: 1.7; }
+
+    @media (max-width: 980px){
+      .contactGrid{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px){
+      .formGrid{ grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "name":"Influencer Matching - Brand Brief",
+    "provider":{"@type":"Organization","name":"Viva Media Creative","url":"https://vivamediacreative.com/"},
+    "areaServed":"Arab World",
+    "inLanguage":"ar",
+    "serviceType":"Influencer Matching",
+    "url":"https://vivamediacreative.com/influencer-platform/find-influencers/"
+  }
+  </script>
 </head>
+
 <body>
   <div class="noise" aria-hidden="true"></div>
+
+  <!-- NAV (match platform page style) -->
   <header class="nav">
-    <a class="brand" href="/">
+    <a class="brand" href="/" aria-label="Viva Media Creative">
       <span class="brand__mark">VMC</span>
       <span class="brand__name">Viva Media Creative</span>
     </a>
     <nav class="nav__links">
-      <a href="/influencer-platform/">المنصة</a>
+      <a href="/services/">الخدمات</a>
+      <a href="/news/">المقالات</a>
       <a class="pill" href="/contact/">تواصل</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero platformHero">
+    <!-- HERO -->
+    <section class="hero platformHero" style="min-height:auto; padding-bottom: 26px;">
       <div class="hero__bg" aria-hidden="true">
         <div class="halo h1"></div>
         <div class="halo h2"></div>
         <div class="halo h3"></div>
         <div class="gridlines"></div>
       </div>
+
       <div class="hero__inner">
-        <div class="heroLayout">
-          <div class="heroCopy">
-            <p class="kicker reveal">قريبًا</p>
-            <h1 class="heroTitle reveal"><span class="gold">هذه الصفحة سيتم تحويلها لنموذج طلب شركة</span></h1>
-            <p class="sub reveal">في الخطوة التالية سنضيف نموذج + WhatsApp + إرسال بيانات (EmailJS) بنفس طريقة صفحة التواصل.</p>
-            <div class="hero__cta reveal">
-              <a class="btn primary magnetic" href="/influencer-platform/">العودة لصفحة المنصة</a>
-              <a class="btn ghost magnetic" href="/contact/">تواصل الآن</a>
-            </div>
+        <p class="kicker reveal">Brief سريع • مطابقة ذكية • تواصل منظم</p>
+
+        <h1 class="heroTitle reveal">
+          اطلب مؤثرين مناسبين لحملتك خلال دقائق
+          <br/>
+          <span class="gold">حسب المجال • الدولة • نوع المؤثر • الميزانية</span>
+        </h1>
+
+        <p class="sub reveal">
+          بدل البحث الطويل والرسائل العشوائية: اكتب Brief مختصرًا وسنرتب لك الخطوة التالية.
+        </p>
+
+        <div class="hero__cta reveal">
+          <a class="btn primary magnetic" href="#brandBrief">ابدأ الطلب الآن</a>
+          <a class="btn ghost magnetic" href="/influencer-platform/">العودة لصفحة المنصة</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="section contactWrap" style="padding-top: 30px;">
+      <div class="contactGrid">
+
+        <!-- Form card -->
+        <div class="glassCard reveal" id="brandBrief">
+          <div class="cardHead">
+            <h2>Brief سريع للشركات</h2>
+            <p>حقول قليلة لكنها كافية لنرشّح مؤثرين مناسبين بسرعة.</p>
+          </div>
+
+          <div class="formBody">
+            <form id="brandForm" novalidate>
+              <!-- Anti-spam honeypot (should stay empty) -->
+              <input type="text" name="website" id="website" tabindex="-1" autocomplete="off"
+                style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0;"
+                aria-hidden="true" />
+
+              <!-- Hidden helpers -->
+              <input type="hidden" name="form_type" value="brand_brief" />
+              <input type="hidden" name="wa_message" id="wa_message" value="" />
+
+              <div class="formGrid">
+                <div class="field">
+                  <label for="company">اسم الشركة</label>
+                  <input id="company" name="company" type="text" placeholder="مثال: Viva Store" required minlength="2">
+                </div>
+
+                <div class="field">
+                  <label for="contact_person">اسم المسؤول (اختياري)</label>
+                  <input id="contact_person" name="contact_person" type="text" placeholder="الاسم للتواصل">
+                </div>
+
+                <div class="field">
+                  <label for="target_country">الدولة المستهدفة</label>
+                  <input id="target_country" name="target_country" type="text" placeholder="مثال: السعودية" required minlength="2">
+                </div>
+
+                <div class="field">
+                  <label for="niche">المجال</label>
+                  <select id="niche" name="niche" required>
+                    <option value="" selected disabled>اختر المجال</option>
+                    <option>تجميل وعناية</option>
+                    <option>أزياء</option>
+                    <option>مطاعم وكافيهات</option>
+                    <option>تطبيقات وخدمات</option>
+                    <option>تعليم</option>
+                    <option>سفر وسياحة</option>
+                    <option>لياقة وصحة</option>
+                    <option>ألعاب</option>
+                    <option>عقارات</option>
+                    <option>تقنية</option>
+                    <option>أخرى</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="goal">الهدف</label>
+                  <select id="goal" name="goal" required>
+                    <option value="" selected disabled>اختر الهدف</option>
+                    <option value="Awareness">زيادة الوعي بالعلامة</option>
+                    <option value="Sales">مبيعات/طلبات</option>
+                    <option value="Launch">إطلاق منتج</option>
+                    <option value="AppInstalls">تحميل تطبيق</option>
+                    <option value="Leads">تجميع عملاء محتملين</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="platform">المنصة المطلوبة</label>
+                  <select id="platform" name="platform" required>
+                    <option value="" selected disabled>اختر المنصة</option>
+                    <option>Instagram</option>
+                    <option>TikTok</option>
+                    <option>YouTube</option>
+                    <option>Snapchat</option>
+                    <option>Multiple</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="creator_type">نوع المؤثر</label>
+                  <select id="creator_type" name="creator_type" required>
+                    <option value="" selected disabled>اختر النوع</option>
+                    <option value="Nano">Nano (1K–10K)</option>
+                    <option value="Micro">Micro (10K–100K)</option>
+                    <option value="Macro">Macro (100K–1M)</option>
+                    <option value="Celebrity">Celebrity (1M+)</option>
+                    <option value="Mixed">Mixed</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="creators_count">عدد المؤثرين (اختياري)</label>
+                  <select id="creators_count" name="creators_count">
+                    <option value="" selected>غير محدد</option>
+                    <option>1</option>
+                    <option>2-3</option>
+                    <option>4-6</option>
+                    <option>7-10</option>
+                    <option>10+</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="budget">الميزانية (نطاق)</label>
+                  <select id="budget" name="budget" required>
+                    <option value="" selected disabled>اختر الميزانية</option>
+                    <option value="Under 500">أقل من 500€</option>
+                    <option value="500-1k">500€ – 1K€</option>
+                    <option value="1k-3k">1K€ – 3K€</option>
+                    <option value="3k-7k">3K€ – 7K€</option>
+                    <option value="7k-15k">7K€ – 15K€</option>
+                    <option value="15k+">15K€+</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="execution_date">موعد التنفيذ (تقريبي)</label>
+                  <input id="execution_date" name="execution_date" type="date">
+                </div>
+
+                <div class="field span2">
+                  <label for="notes">ملاحظات (اختياري قوي)</label>
+                  <textarea id="notes" name="notes" placeholder="مثال: نوع المحتوى المطلوب، رسالة الحملة، أي شروط، رابط المنتج…"></textarea>
+                </div>
+
+                <div class="field">
+                  <label for="whatsapp">واتساب</label>
+                  <input id="whatsapp" name="whatsapp" type="tel" placeholder="+966xxxxxxxxx" required minlength="6">
+                </div>
+
+                <div class="field">
+                  <label for="email">الإيميل (اختياري)</label>
+                  <input id="email" name="email" type="email" placeholder="name@company.com">
+                </div>
+
+                <div id="status" class="status"></div>
+
+                <div class="actions">
+                  <button class="btn primary magnetic" type="submit">إرسال الطلب</button>
+                  <span class="hint">
+                    بالضغط على “إرسال” أنت توافق على مشاركة بياناتك بهدف مطابقة مؤثرين والتواصل حول الخطوة التالية.
+                  </span>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
+
+        <!-- Side card -->
+        <aside class="glassCard reveal">
+          <div class="cardHead">
+            <h2>كيف تعمل؟</h2>
+            <p>ثلاث خطوات واضحة بدون تعقيد.</p>
+          </div>
+
+          <div class="sideBody">
+            <div class="miniCard">
+              <h3>الخطوات</h3>
+              <div class="steps">
+                <div class="step">
+                  <div class="num">1</div>
+                  <div>
+                    <b>أرسل Brief سريع</b>
+                    <small>مجال + دولة + منصة + ميزانية.</small>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">2</div>
+                  <div>
+                    <b>مطابقة وترشيح</b>
+                    <small>نرشّح لك مؤثرين مناسبين حسب البيانات.</small>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">3</div>
+                  <div>
+                    <b>تواصل منظم</b>
+                    <small>نرسل لك الخطوة التالية عبر واتساب/إيميل.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="whatsBox">
+              <div class="txt">
+                <b>تريد المتابعة فورًا على واتساب؟</b>
+                <small>بعد إرسال الـ Brief سيظهر زر واتساب برسالة جاهزة.</small>
+              </div>
+              <a id="waQuick" class="btn ghost magnetic" href="https://wa.me/4915565678291" target="_blank" rel="noopener" aria-disabled="true">
+                WhatsApp ↗
+              </a>
+            </div>
+
+            <div class="miniCard">
+              <h3>معلومة مهمة</h3>
+              <p>هذه الصفحة لجمع Brief والمطابقة. إذا تريد إدارة حملة كاملة وإنتاج محتوى، ستجد ذلك في صفحة الخدمات.</p>
+              <p style="margin-top:10px;">
+                <a class="btn ghost magnetic" href="/services/">عرض الخدمات</a>
+              </p>
+            </div>
+          </div>
+        </aside>
+
       </div>
     </section>
   </main>
 
+  <footer class="footer">
+    <p>© <span id="y"></span> Viva Media Creative</p>
+    <div class="footer__links">
+      <a href="/services/">Services</a>
+      <a href="/news/">Articles</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </footer>
+
   <script src="/assets/platform.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>
+    // year
+    const y = document.getElementById("y");
+    if (y) y.textContent = String(new Date().getFullYear());
+
+    // reveal
+    const io = new IntersectionObserver(
+      (entries) => { for (const e of entries) if (e.isIntersecting) e.target.classList.add("is-in"); },
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    // magnetic
+    document.querySelectorAll(".magnetic").forEach((el) => {
+      const strength = 10;
+      el.addEventListener("pointermove", (ev) => {
+        const r = el.getBoundingClientRect();
+        const dx = ev.clientX - (r.left + r.width / 2);
+        const dy = ev.clientY - (r.top + r.height / 2);
+        el.style.transform = `translate(${dx / strength}px, ${dy / strength}px)`;
+      });
+      el.addEventListener("pointerleave", () => { el.style.transform = `translate(0px, 0px)`; });
+    });
+
+    // EmailJS init (same public key as your contact page)
+    emailjs.init({ publicKey: "SzBBlvEjgwysF8vHJ" });
+
+    // anti-spam
+    const VMC_RATE_LIMIT_MS = 25000; // 25s
+    let vmcLastSubmitAt = Number(sessionStorage.getItem('vmcBrandLastSubmitAt') || '0');
+
+    function vmcIsBotSubmission() {
+      const hp = document.getElementById("website");
+      if (hp && hp.value && hp.value.trim().length > 0) return true;
+      return false;
+    }
+    function vmcCanSubmitNow() {
+      const now = Date.now();
+      if (now - vmcLastSubmitAt < VMC_RATE_LIMIT_MS) return false;
+      vmcLastSubmitAt = now;
+      sessionStorage.setItem('vmcBrandLastSubmitAt', String(now));
+      return true;
+    }
+
+    const form = document.getElementById('brandForm');
+    const statusBox = document.getElementById('status');
+    const waQuick = document.getElementById('waQuick');
+    const waMessageField = document.getElementById('wa_message');
+
+    function showStatus(type, msg){
+      statusBox.className = 'status ' + type;
+      statusBox.textContent = msg;
+    }
+
+    function buildWhatsAppText(data){
+      const parts = [
+        "مرحبًا VMC، أرسلت Brief لطلب مؤثرين عبر الموقع وأرغب بالمتابعة.",
+        "",
+        `الشركة: ${data.company}`,
+        data.contact_person ? `المسؤول: ${data.contact_person}` : null,
+        `الدولة: ${data.target_country}`,
+        `المجال: ${data.niche}`,
+        `الهدف: ${data.goal}`,
+        `المنصة: ${data.platform}`,
+        `نوع المؤثر: ${data.creator_type}`,
+        data.creators_count ? `عدد المؤثرين: ${data.creators_count}` : null,
+        `الميزانية: ${data.budget}`,
+        data.execution_date ? `موعد التنفيذ: ${data.execution_date}` : null
+      ].filter(Boolean);
+      return parts.join("\n");
+    }
+
+    function setWhatsAppLink(text){
+      const encoded = encodeURIComponent(text);
+      const href = `https://wa.me/4915565678291?text=${encoded}`;
+      waQuick.setAttribute('href', href);
+      waQuick.removeAttribute('aria-disabled');
+    }
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (vmcIsBotSubmission()) {
+        showStatus('err', '❌ تعذر إرسال الطلب.');
+        return;
+      }
+      if (!vmcCanSubmitNow()) {
+        showStatus('err', 'من فضلك انتظر قليلًا ثم أعد المحاولة.');
+        return;
+      }
+
+      statusBox.className = 'status';
+      statusBox.textContent = '';
+
+      const data = {
+        company: form.company.value.trim(),
+        contact_person: form.contact_person.value.trim(),
+        target_country: form.target_country.value.trim(),
+        niche: form.niche.value,
+        goal: form.goal.value,
+        platform: form.platform.value,
+        creator_type: form.creator_type.value,
+        creators_count: form.creators_count.value,
+        budget: form.budget.value,
+        execution_date: form.execution_date.value,
+        notes: form.notes.value.trim(),
+        whatsapp: form.whatsapp.value.trim(),
+        email: form.email.value.trim()
+      };
+
+      // validation
+      if (data.company.length < 2){ showStatus('err', 'اكتب اسم الشركة بشكل صحيح.'); return; }
+      if (data.target_country.length < 2){ showStatus('err', 'اكتب الدولة المستهدفة.'); return; }
+      if (!data.niche){ showStatus('err', 'اختر المجال.'); return; }
+      if (!data.goal){ showStatus('err', 'اختر الهدف.'); return; }
+      if (!data.platform){ showStatus('err', 'اختر المنصة.'); return; }
+      if (!data.creator_type){ showStatus('err', 'اختر نوع المؤثر.'); return; }
+      if (!data.budget){ showStatus('err', 'اختر نطاق الميزانية.'); return; }
+      if (data.whatsapp.length < 6){ showStatus('err', 'اكتب رقم واتساب صحيح.'); return; }
+      if (data.email && !/^\S+@\S+\.\S+$/.test(data.email)){ showStatus('err', 'اكتب بريد إلكتروني صحيح أو اتركه فارغًا.'); return; }
+
+      // prepare WhatsApp message (also send in email)
+      const waText = buildWhatsAppText(data) + (data.notes ? `\n\nملاحظات:\n${data.notes}` : "");
+      waMessageField.value = waText;
+      setWhatsAppLink(waText);
+
+      showStatus('ok', 'تمام! يتم إرسال طلبك الآن...');
+
+      try {
+        // IMPORTANT:
+        // - service_6w76hdv: same as your contact
+        // - template_BRAND_BRIEF: create a new EmailJS template, then replace its id here
+        await emailjs.sendForm(
+          'service_6w76hdv',
+          'template_BRAND_BRIEF',
+          form
+        );
+
+        form.reset();
+        showStatus('ok', '✅ تم إرسال طلبك بنجاح. اضغط زر WhatsApp للمتابعة السريعة، أو انتظر ردنا خلال 24 ساعة عمل.');
+      } catch (err) {
+        console.error(err);
+        showStatus('err', '❌ حصل خطأ في الإرسال. جرّب مرة ثانية أو تابع عبر واتساب.');
+      }
+    });
+  </script>
 </body>
 </html>
