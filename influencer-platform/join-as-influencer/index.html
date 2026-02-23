@@ -3,51 +3,589 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>قريبًا | Viva Media Creative</title>
-  <link rel="icon" href="/assets/logo.jpeg">
+
+  <title>سجل كمؤثر واحصل على فرص إعلانية مدفوعة | منصة المؤثرين العربية</title>
+  <meta name="description" content="سجل كمؤثر للحصول على عروض إعلانية حقيقية. نموذج سريع + تصنيف ذكي + تواصل منظم خلال 24 ساعة عمل." />
+
+  <link rel="canonical" href="https://vivamediacreative.com/influencer-platform/join-as-influencer/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="سجل كمؤثر واحصل على فرص إعلانية مدفوعة | Viva Media Creative" />
+  <meta property="og:description" content="سجل بياناتك خلال دقائق — ونرتب لك فرص رعايات/إعلانات مناسبة حسب المجال والدولة والمنصة." />
+  <meta property="og:url" content="https://vivamediacreative.com/influencer-platform/join-as-influencer/" />
+  <meta property="og:image" content="https://vivamediacreative.com/assets/logo.jpeg" />
+  <meta property="og:site_name" content="Viva Media Creative" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Noto+Kufi+Arabic:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/logo.jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Noto+Kufi+Arabic:wght@400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/assets/vmc-home.css" />
   <link rel="stylesheet" href="/assets/platform.css" />
+
+  <style>
+    /* Page-only additions (match your Contact luxury system) */
+    .wrap{ padding-top: 40px; padding-bottom: 90px; }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+      align-items:start;
+    }
+    .glassCard{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 30px;
+      background: rgba(255,255,255,.02);
+      box-shadow: 0 30px 120px rgba(0,0,0,.55);
+      overflow:hidden;
+    }
+    .cardHead{
+      padding: 18px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+    }
+    .cardHead h2{ margin:0 0 6px; font-size: 20px; }
+    .cardHead p{ margin:0; color: rgba(238,241,246,.62); line-height:1.8; }
+
+    .formBody{ padding: 18px; }
+    .formGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .field{ display:flex; flex-direction:column; gap:8px; }
+    .field label{ font-size: 12px; color: rgba(238,241,246,.72); font-weight: 800; letter-spacing:.02em; }
+    .field input, .field textarea, .field select{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(6,7,10,.35);
+      color: rgba(238,241,246,.92);
+      outline:none;
+      backdrop-filter: blur(10px);
+      transition: border-color .18s ease, transform .18s ease;
+      font-family: inherit;
+    }
+    .field input::placeholder, .field textarea::placeholder{ color: rgba(238,241,246,.45); }
+    .field input:focus, .field textarea:focus, .field select:focus{
+      border-color: rgba(245,208,122,.32);
+      box-shadow: 0 0 0 6px rgba(245,208,122,.10);
+    }
+    .span2{ grid-column: 1 / -1; }
+    textarea{ min-height: 120px; resize: vertical; }
+
+    .checks{
+      display:flex; flex-wrap:wrap; gap:10px;
+      padding: 10px 10px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(6,7,10,.25);
+    }
+    .check{
+      display:flex; gap:8px; align-items:center;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+      border-radius: 999px;
+      padding: 8px 10px;
+      font-size: 12px;
+      color: rgba(238,241,246,.80);
+      user-select:none;
+    }
+    .check input{ width:16px; height:16px; }
+
+    .actions{
+      grid-column: 1 / -1;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin-top: 6px;
+    }
+    .hint{
+      color: rgba(238,241,246,.55);
+      font-size: 12px;
+      line-height: 1.7;
+      max-width: 60ch;
+    }
+    .status{
+      grid-column: 1 / -1;
+      display:none;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.02);
+      color: rgba(238,241,246,.85);
+      white-space: pre-line;
+      line-height: 1.8;
+    }
+    .status.ok{ display:block; border-color: rgba(16,185,129,.30); background: rgba(16,185,129,.10); }
+    .status.err{ display:block; border-color: rgba(239,68,68,.28); background: rgba(239,68,68,.10); }
+
+    .sideBody{ padding: 18px; display:flex; flex-direction:column; gap: 12px; }
+    .miniCard{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      background: rgba(255,255,255,.02);
+      padding: 16px;
+    }
+    .miniCard h3{ margin:0 0 8px; font-size: 16px; }
+    .miniCard p{ margin:0; color: rgba(238,241,246,.62); line-height:1.8; font-size: 13px; }
+
+    .steps{
+      display:grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .step{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      background: rgba(6,7,10,.35);
+      padding: 12px 12px;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+    .step .num{
+      width:34px; height:34px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(245,208,122,.14);
+      border: 1px solid rgba(245,208,122,.22);
+      flex: 0 0 auto;
+      font-weight: 900;
+    }
+    .step b{ display:block; font-size: 13px; margin-bottom: 2px; }
+    .step small{ display:block; font-size: 12px; color: rgba(238,241,246,.58); line-height: 1.7; }
+
+    .whatsBox{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      background: rgba(255,255,255,.02);
+      padding: 14px;
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap: wrap;
+    }
+    .whatsBox .txt{ min-width: 220px; flex: 1 1 auto; }
+    .whatsBox .txt b{ display:block; font-size: 13px; margin-bottom: 3px; }
+    .whatsBox .txt small{ display:block; font-size: 12px; color: rgba(238,241,246,.60); line-height: 1.7; }
+
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px){
+      .formGrid{ grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "name":"Influencer Signup - Viva Media Creative Platform",
+    "provider":{"@type":"Organization","name":"Viva Media Creative","url":"https://vivamediacreative.com/"},
+    "areaServed":"Arab World",
+    "inLanguage":"ar",
+    "serviceType":"Influencer Matching",
+    "url":"https://vivamediacreative.com/influencer-platform/join-as-influencer/"
+  }
+  </script>
 </head>
+
 <body>
   <div class="noise" aria-hidden="true"></div>
+
   <header class="nav">
-    <a class="brand" href="/">
+    <a class="brand" href="/" aria-label="Viva Media Creative">
       <span class="brand__mark">VMC</span>
       <span class="brand__name">Viva Media Creative</span>
     </a>
     <nav class="nav__links">
-      <a href="/منصة-المؤثرين/">المنصة</a>
+      <a href="/services/">الخدمات</a>
+      <a href="/news/">المقالات</a>
       <a class="pill" href="/contact/">تواصل</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero platformHero">
+    <section class="hero platformHero" style="min-height:auto; padding-bottom: 26px;">
       <div class="hero__bg" aria-hidden="true">
         <div class="halo h1"></div>
         <div class="halo h2"></div>
         <div class="halo h3"></div>
         <div class="gridlines"></div>
       </div>
+
       <div class="hero__inner">
-        <div class="heroLayout">
-          <div class="heroCopy">
-            <p class="kicker reveal">قريبًا</p>
-            <h1 class="heroTitle reveal"><span class="gold">هذه الصفحة سيتم تحويلها لنموذج تسجيل</span></h1>
-            <p class="sub reveal">في الخطوة التالية سنضيف نموذج + WhatsApp + إرسال بيانات (EmailJS) بنفس طريقة صفحة التواصل.</p>
-            <div class="hero__cta reveal">
-              <a class="btn primary magnetic" href="/منصة-المؤثرين/">العودة لصفحة المنصة</a>
-              <a class="btn ghost magnetic" href="/contact/">تواصل الآن</a>
-            </div>
+        <p class="kicker reveal">فرص مدفوعة • تصنيف ذكي • تواصل منظم</p>
+
+        <h1 class="heroTitle reveal">
+          سجل كمؤثر للحصول على عروض إعلانية حقيقية
+          <br/>
+          <span class="gold">خلال دقائق — وبخطوة تالية واضحة خلال 24 ساعة عمل</span>
+        </h1>
+
+        <p class="sub reveal">
+          سجّل بياناتك الأساسية لنفهم مجالك وجمهورك بسرعة. عند وجود حملة مناسبة، سيتم التواصل معك بالخطوة التالية.
+        </p>
+
+        <div class="hero__cta reveal">
+          <a class="btn primary magnetic" href="#influencerForm">ابدأ التسجيل الآن</a>
+          <a class="btn ghost magnetic" href="/influencer-platform/">العودة لصفحة المنصة</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" style="padding-top: 30px;">
+      <div class="grid">
+
+        <div class="glassCard reveal" id="influencerForm">
+          <div class="cardHead">
+            <h2>تسجيل المؤثرين</h2>
+            <p>حقول قليلة لكنها كافية للمطابقة — بدون تعقيد.</p>
+          </div>
+
+          <div class="formBody">
+            <form id="infForm" novalidate>
+              <!-- Honeypot -->
+              <input type="text" name="website" id="website" tabindex="-1" autocomplete="off"
+                style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0;"
+                aria-hidden="true" />
+
+              <!-- Hidden helpers -->
+              <input type="hidden" name="form_type" value="influencer_signup" />
+              <input type="hidden" name="wa_message" id="wa_message" value="" />
+
+              <div class="formGrid">
+                <div class="field">
+                  <label for="full_name">الاسم الكامل</label>
+                  <input id="full_name" name="full_name" type="text" placeholder="الاسم كما تريد أن يظهر" required minlength="2">
+                </div>
+
+                <div class="field">
+                  <label for="country">الدولة</label>
+                  <input id="country" name="country" type="text" placeholder="مثال: السعودية" required minlength="2">
+                </div>
+
+                <div class="field">
+                  <label for="city">المدينة</label>
+                  <input id="city" name="city" type="text" placeholder="مثال: الرياض" required minlength="2">
+                </div>
+
+                <div class="field">
+                  <label for="account_link">رابط الحساب (Instagram/TikTok…)</label>
+                  <input id="account_link" name="account_link" type="url" placeholder="https://instagram.com/..." required>
+                </div>
+
+                <div class="field">
+                  <label for="niche">المجال</label>
+                  <select id="niche" name="niche" required>
+                    <option value="" selected disabled>اختر المجال</option>
+                    <option>تجميل وعناية</option>
+                    <option>أزياء</option>
+                    <option>مطاعم وكافيهات</option>
+                    <option>لايف ستايل</option>
+                    <option>تقنية</option>
+                    <option>ألعاب</option>
+                    <option>لياقة وصحة</option>
+                    <option>تعليم</option>
+                    <option>سفر وسياحة</option>
+                    <option>أمومة/عائلة</option>
+                    <option>أخرى</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label>المنصات</label>
+                  <!-- Checkboxes for UI + hidden field for EmailJS -->
+                  <input type="hidden" name="platforms" id="platforms" value="" />
+                  <div class="checks" role="group" aria-label="Platforms">
+                    <label class="check"><input type="checkbox" value="Instagram" class="pf"> Instagram</label>
+                    <label class="check"><input type="checkbox" value="TikTok" class="pf"> TikTok</label>
+                    <label class="check"><input type="checkbox" value="YouTube" class="pf"> YouTube</label>
+                    <label class="check"><input type="checkbox" value="Snapchat" class="pf"> Snapchat</label>
+                    <label class="check"><input type="checkbox" value="Facebook" class="pf"> Facebook</label>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="followers_range">عدد المتابعين</label>
+                  <select id="followers_range" name="followers_range" required>
+                    <option value="" selected disabled>اختر نطاقًا</option>
+                    <option value="1K–10K">1K–10K (Nano)</option>
+                    <option value="10K–100K">10K–100K (Micro)</option>
+                    <option value="100K–1M">100K–1M (Macro)</option>
+                    <option value="1M+">1M+ (Celebrity)</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="avg_views">متوسط المشاهدات (اختياري قوي)</label>
+                  <select id="avg_views" name="avg_views">
+                    <option value="" selected>غير محدد</option>
+                    <option value="Under 5K">أقل من 5K</option>
+                    <option value="5K–20K">5K–20K</option>
+                    <option value="20K–100K">20K–100K</option>
+                    <option value="100K–300K">100K–300K</option>
+                    <option value="300K+">300K+</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="whatsapp">واتساب (مهم)</label>
+                  <input id="whatsapp" name="whatsapp" type="tel" placeholder="+966xxxxxxxxx" required minlength="6">
+                </div>
+
+                <div class="field">
+                  <label for="email">إيميل (اختياري)</label>
+                  <input id="email" name="email" type="email" placeholder="name@example.com">
+                </div>
+
+                <div class="field span2">
+                  <label for="note">ملاحظة قصيرة (اختياري)</label>
+                  <textarea id="note" name="note" placeholder="مثال: نوع الإعلانات المناسبة لك / دول الاستهداف / ملاحظات عن الجمهور…"></textarea>
+                </div>
+
+                <div id="status" class="status"></div>
+
+                <div class="actions">
+                  <button class="btn primary magnetic" type="submit">إرسال التسجيل</button>
+                  <span class="hint">
+                    بالإرسال أنت توافق على مشاركة بياناتك بهدف المطابقة والتواصل حول فرص مناسبة.
+                  </span>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
+
+        <aside class="glassCard reveal">
+          <div class="cardHead">
+            <h2>ماذا يحدث بعد التسجيل؟</h2>
+            <p>بخطوات واضحة حتى تعرف ما التالي.</p>
+          </div>
+
+          <div class="sideBody">
+            <div class="miniCard">
+              <h3>الخطوات</h3>
+              <div class="steps">
+                <div class="step">
+                  <div class="num">1</div>
+                  <div>
+                    <b>تسجيل سريع</b>
+                    <small>نجمع بيانات تساعدنا على المطابقة.</small>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">2</div>
+                  <div>
+                    <b>تصنيف ومراجعة</b>
+                    <small>نراجع الحساب لتحديد النوع المناسب للحملات.</small>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">3</div>
+                  <div>
+                    <b>التواصل عند وجود فرصة</b>
+                    <small>نرسل لك الخطوة التالية خلال 24 ساعة عمل (عند توفر طلب مناسب).</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="whatsBox">
+              <div class="txt">
+                <b>تريد متابعة فورية على واتساب؟</b>
+                <small>بعد الإرسال سيظهر زر واتساب برسالة جاهزة.</small>
+              </div>
+              <a id="waQuick" class="btn ghost magnetic" href="https://wa.me/4915565678291" target="_blank" rel="noopener" aria-disabled="true">
+                WhatsApp ↗
+              </a>
+            </div>
+
+            <div class="miniCard">
+              <h3>ملاحظة مهمة</h3>
+              <p>قد يصل ردنا إلى البريد العشوائي (Spam/Junk). إذا لم تجد رسالة منا، تفقده وأضف info@vivamediacreative.com لجهات الاتصال.</p>
+            </div>
+          </div>
+        </aside>
+
       </div>
     </section>
   </main>
 
+  <footer class="footer">
+    <p>© <span id="y"></span> Viva Media Creative</p>
+    <div class="footer__links">
+      <a href="/services/">Services</a>
+      <a href="/news/">Articles</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </footer>
+
   <script src="/assets/platform.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>
+    // year
+    const y = document.getElementById("y");
+    if (y) y.textContent = String(new Date().getFullYear());
+
+    // reveal
+    const io = new IntersectionObserver(
+      (entries) => { for (const e of entries) if (e.isIntersecting) e.target.classList.add("is-in"); },
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    // magnetic
+    document.querySelectorAll(".magnetic").forEach((el) => {
+      const strength = 10;
+      el.addEventListener("pointermove", (ev) => {
+        const r = el.getBoundingClientRect();
+        const dx = ev.clientX - (r.left + r.width / 2);
+        const dy = ev.clientY - (r.top + r.height / 2);
+        el.style.transform = `translate(${dx / strength}px, ${dy / strength}px)`;
+      });
+      el.addEventListener("pointerleave", () => { el.style.transform = `translate(0px, 0px)`; });
+    });
+
+    // EmailJS init (same public key as your contact page)
+    emailjs.init({ publicKey: "SzBBlvEjgwysF8vHJ" });
+
+    // anti-spam
+    const VMC_RATE_LIMIT_MS = 25000; // 25s
+    let vmcLastSubmitAt = Number(sessionStorage.getItem('vmcInfLastSubmitAt') || '0');
+
+    function vmcIsBotSubmission() {
+      const hp = document.getElementById("website");
+      if (hp && hp.value && hp.value.trim().length > 0) return true;
+      return false;
+    }
+    function vmcCanSubmitNow() {
+      const now = Date.now();
+      if (now - vmcLastSubmitAt < VMC_RATE_LIMIT_MS) return false;
+      vmcLastSubmitAt = now;
+      sessionStorage.setItem('vmcInfLastSubmitAt', String(now));
+      return true;
+    }
+
+    const form = document.getElementById('infForm');
+    const statusBox = document.getElementById('status');
+    const waQuick = document.getElementById('waQuick');
+    const waMessageField = document.getElementById('wa_message');
+    const platformsHidden = document.getElementById('platforms');
+
+    function showStatus(type, msg){
+      statusBox.className = 'status ' + type;
+      statusBox.textContent = msg;
+    }
+
+    function getPlatforms(){
+      const selected = Array.from(document.querySelectorAll('.pf'))
+        .filter(cb => cb.checked)
+        .map(cb => cb.value);
+      return selected;
+    }
+
+    function buildWhatsAppText(data){
+      const parts = [
+        "مرحبًا VMC، قمت بتسجيل بياناتي كمؤثر عبر الموقع وأرغب بالمتابعة.",
+        "",
+        `الاسم: ${data.full_name}`,
+        `رابط الحساب: ${data.account_link}`,
+        `الدولة/المدينة: ${data.country} - ${data.city}`,
+        `المجال: ${data.niche}`,
+        `المنصات: ${data.platforms || '-'}`,
+        `نطاق المتابعين: ${data.followers_range}`,
+        data.avg_views ? `متوسط المشاهدات: ${data.avg_views}` : null,
+        `واتساب: ${data.whatsapp}`
+      ].filter(Boolean);
+      return parts.join("\n");
+    }
+
+    function setWhatsAppLink(text){
+      const encoded = encodeURIComponent(text);
+      const href = `https://wa.me/4915565678291?text=${encoded}`;
+      waQuick.setAttribute('href', href);
+      waQuick.removeAttribute('aria-disabled');
+    }
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (vmcIsBotSubmission()) {
+        showStatus('err', '❌ تعذر إرسال الطلب.');
+        return;
+      }
+      if (!vmcCanSubmitNow()) {
+        showStatus('err', 'من فضلك انتظر قليلًا ثم أعد المحاولة.');
+        return;
+      }
+
+      statusBox.className = 'status';
+      statusBox.textContent = '';
+
+      const platforms = getPlatforms();
+      platformsHidden.value = platforms.join(", ");
+
+      const data = {
+        full_name: form.full_name.value.trim(),
+        account_link: form.account_link.value.trim(),
+        country: form.country.value.trim(),
+        city: form.city.value.trim(),
+        niche: form.niche.value,
+        platforms: platformsHidden.value,
+        followers_range: form.followers_range.value,
+        avg_views: form.avg_views.value,
+        whatsapp: form.whatsapp.value.trim(),
+        email: form.email.value.trim(),
+        note: form.note.value.trim()
+      };
+
+      // validation
+      if (data.full_name.length < 2){ showStatus('err', 'اكتب الاسم بشكل صحيح.'); return; }
+      try { new URL(data.account_link); } catch { showStatus('err', 'اكتب رابط حساب صحيح.'); return; }
+      if (data.country.length < 2){ showStatus('err', 'اكتب الدولة.'); return; }
+      if (data.city.length < 2){ showStatus('err', 'اكتب المدينة.'); return; }
+      if (!data.niche){ showStatus('err', 'اختر المجال.'); return; }
+      if (platforms.length === 0){ showStatus('err', 'اختر منصة واحدة على الأقل.'); return; }
+      if (!data.followers_range){ showStatus('err', 'اختر نطاق المتابعين.'); return; }
+      if (data.whatsapp.length < 6){ showStatus('err', 'اكتب رقم واتساب صحيح.'); return; }
+      if (data.email && !/^\S+@\S+\.\S+$/.test(data.email)){ showStatus('err', 'اكتب بريد إلكتروني صحيح أو اتركه فارغًا.'); return; }
+
+      // WhatsApp message
+      const waText = buildWhatsAppText(data) + (data.note ? `\n\nملاحظة:\n${data.note}` : "");
+      waMessageField.value = waText;
+      setWhatsAppLink(waText);
+
+      showStatus('ok', 'تمام! يتم إرسال تسجيلك الآن...');
+
+      try {
+        await emailjs.sendForm(
+          'service_6w76hdv',
+          'template_INFLUENCER_SIGNUP',  // <-- ضع Template ID الخاص بالمؤثرين هنا
+          form
+        );
+
+        form.reset();
+        platformsHidden.value = '';
+        showStatus(
+          'ok',
+          '🚀 تم استلام تسجيلك بنجاح.\n\nسيتواصل معك فريقنا خلال 24 ساعة عمل بالخطوة التالية.\n\nيمكنك الضغط على زر WhatsApp للمتابعة الفورية.\n\nملاحظة: إذا لم تجد ردنا، يرجى تفقد البريد العشوائي (Spam/Junk).'
+        );
+      } catch (err) {
+        console.error(err);
+        showStatus('err', '❌ حصل خطأ في الإرسال. جرّب مرة ثانية أو تابع عبر واتساب.');
+      }
+    });
+  </script>
 </body>
 </html>
