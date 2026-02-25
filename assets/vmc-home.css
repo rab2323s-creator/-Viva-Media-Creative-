@@ -1497,4 +1497,17 @@ html.is-ios .shine{ animation: none !important; opacity: .35; }
 @media (max-width: 980px){
   .platformBlock__grid{ grid-template-columns: 1fr; }
 }
+
+.eliteCta{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap: 8px;
+  text-align:center;
+  margin: 8px 0 0;
+}
+.eliteCta .btn{
+  width: fit-content;
+}
  
