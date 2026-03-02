@@ -10,9 +10,8 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://vivamediacreative.com/insights/" />
 
-  <!-- Hreflang (AR/EN hubs) -->
   <link rel="alternate" hreflang="ar" href="https://vivamediacreative.com/insights/" />
-  <link rel="alternate" hreflang="en" href="https://vivamediacreative.com/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://vivamediacreative.com/insights/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -171,6 +170,18 @@
         radial-gradient(900px 520px at 70% 80%, rgba(0, 255, 200, .08), transparent 60%),
         var(--bg);
     }
+
+    /* ✅ ADDED: mobile hero image swap without touching desktop */
+    @media (max-width: 768px){
+      .hero::after{
+        background:
+          linear-gradient(to top, rgba(6,7,10,.88), rgba(6,7,10,.18)),
+          url('../assets/hero-mobile.webp');
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
     .hero::after{
       content:"";
       position:absolute; inset:0;
@@ -683,6 +694,7 @@
       </div>
     </div>
   </section>
+
 <footer class="site-footer" role="contentinfo">
   <div class="container footer-grid">
 
@@ -802,8 +814,9 @@
     const nav = document.getElementById('main-nav');
     burger.addEventListener('click', () => nav.classList.toggle('active'));
 
-    // Year
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // Year (✅ safe even if element doesn't exist)
+    const y = document.getElementById('y');
+    if (y) y.textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
