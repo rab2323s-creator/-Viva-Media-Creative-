@@ -252,6 +252,30 @@
       font-weight: 900;
       font-size: 12px;
     }
+   @media (max-width: 768px){
+
+  .hero{
+    min-height: 88vh;           /* يعطي حضور أقوى */
+    padding: 100px 0 40px;      /* يقلل الفراغ العلوي */
+  }
+
+  .hero::after{
+    background-size: cover;
+    background-position: 72% center; /* حرّكها بين 65% - 80% حسب مكان الشخص */
+    opacity: .32;               /* يوضح الصورة أكثر على الموبايل */
+  }
+
+  .hero h1{
+    font-size: clamp(26px, 7vw, 36px);
+    line-height: 1.15;
+  }
+
+  .hero .lead{
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+}
     .pill-row{
       display:flex;
       flex-wrap:wrap;
