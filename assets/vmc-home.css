@@ -1510,4 +1510,35 @@ html.is-ios .shine{ animation: none !important; opacity: .35; }
 .eliteCta .btn{
   width: fit-content;
 }
- 
+
+.langCapsule{
+display:flex;
+align-items:center;
+gap:6px;
+padding:6px 12px;
+border-radius:999px;
+font-size:13px;
+font-weight:600;
+text-decoration:none;
+color:#fff;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.12);
+backdrop-filter:blur(6px);
+transition:all .25s ease;
+}
+
+.langCapsule:hover{
+background:linear-gradient(135deg,#f5d07a,#915aff);
+color:#000;
+border-color:transparent;
+transform:translateY(-1px);
+}
+
+.langIcon{
+font-size:14px;
+opacity:.9;
+}
+
+.langText{
+letter-spacing:.2px;
+}
