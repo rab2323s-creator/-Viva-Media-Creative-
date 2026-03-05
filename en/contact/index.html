@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Viva Media Creative</title>
+  <meta name="description" content="Contact Viva Media Creative. Share your goal and account link — we’ll reply with a clear, data-driven action plan to turn attention into trends, growth, and revenue." />
+
+  <!-- Canonical + hreflang -->
+  <link rel="canonical" href="https://vivamediacreative.com/en/contact/" />
+  <link rel="alternate" hreflang="ar" href="https://vivamediacreative.com/contact/" />
+  <link rel="alternate" hreflang="en" href="https://vivamediacreative.com/en/contact/" />
+  <link rel="alternate" hreflang="x-default" href="https://vivamediacreative.com/contact/" />
+
+  <!-- Social / Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Viva Media Creative" />
+  <meta property="og:title" content="Contact — Viva Media Creative" />
+  <meta property="og:description" content="Start with your goal. We build a premium strategy that turns it into trends, measurable growth, and revenue." />
+  <meta property="og:url" content="https://vivamediacreative.com/en/contact/" />
+  <meta property="og:image" content="https://vivamediacreative.com/assets/logo.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Your existing CSS -->
+  <link rel="stylesheet" href="/assets/vmc-home.css" />
+  <link rel="stylesheet" href="/style.css">
+
+  <style>
+    /* Contact-only additions that MATCH your luxury system */
+    .contactWrap{ padding-top: 40px; padding-bottom: 90px; }
+    .contactGrid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+      align-items:start;
+    }
+    .glassCard{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 30px;
+      background: rgba(255,255,255,.02);
+      box-shadow: 0 30px 120px rgba(0,0,0,.55);
+      overflow:hidden;
+    }
+    .cardHead{
+      padding: 18px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+    }
+    .cardHead h2{ margin:0 0 6px; font-size: 20px; }
+    .cardHead p{ margin:0; color: rgba(238,241,246,.62); line-height:1.8; }
+
+    .formBody{ padding: 18px; }
+    .formGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .field{ display:flex; flex-direction:column; gap:8px; }
+    .field label{ font-size: 12px; color: rgba(238,241,246,.72); font-weight: 800; letter-spacing:.02em; }
+    .field input, .field textarea, .field select{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(6,7,10,.35);
+      color: rgba(238,241,246,.92);
+      outline:none;
+      backdrop-filter: blur(10px);
+      transition: border-color .18s ease, transform .18s ease;
+      font-family: inherit;
+    }
+    .field input::placeholder, .field textarea::placeholder{ color: rgba(238,241,246,.45); }
+    .field input:focus, .field textarea:focus, .field select:focus{
+      border-color: rgba(245,208,122,.32);
+      box-shadow: 0 0 0 6px rgba(245,208,122,.10);
+    }
+    .span2{ grid-column: 1 / -1; }
+    textarea{ min-height: 150px; resize: vertical; }
+
+    .actions{
+      grid-column: 1 / -1;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin-top: 6px;
+    }
+    .hint{
+      color: rgba(238,241,246,.55);
+      font-size: 12px;
+      line-height: 1.7;
+      max-width: 60ch;
+    }
+    .status{
+      grid-column: 1 / -1;
+      display:none;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.02);
+      color: rgba(238,241,246,.80);
+      white-space: pre-line;
+    }
+    .status.ok{ display:block; border-color: rgba(16,185,129,.30); background: rgba(16,185,129,.10); }
+    .status.err{ display:block; border-color: rgba(239,68,68,.28); background: rgba(239,68,68,.10); }
+
+    .sideBody{ padding: 18px; display:flex; flex-direction:column; gap: 12px; }
+    .miniCard{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      background: rgba(255,255,255,.02);
+      padding: 16px;
+    }
+    .miniCard h3{ margin:0 0 8px; font-size: 16px; }
+    .miniCard p{ margin:0; color: rgba(238,241,246,.62); line-height:1.8; font-size: 13px; }
+
+    .methods{ display:flex; flex-direction:column; gap:10px; margin-top: 12px; }
+    .method{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding: 12px 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(6,7,10,.35);
+      transition: transform .18s ease, border-color .18s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .method:hover{ transform: translateY(-1px); border-color: rgba(245,208,122,.22); }
+    .method .left{ display:flex; gap:10px; align-items:center; min-width:0; }
+    .badge{
+      width:40px; height:40px; border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(245,208,122,.14);
+      border: 1px solid rgba(245,208,122,.22);
+      flex: 0 0 auto;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+    .method b{ display:block; font-size: 13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .method small{ display:block; font-size: 12px; color: rgba(238,241,246,.58); margin-top: 2px; }
+
+    .map{
+      border-radius: 22px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.02);
+    }
+    .map iframe{ width:100%; height: 280px; border:0; display:block; filter: saturate(1.05) contrast(1.05); }
+
+    /* CRO: micro trust strip */
+    .trustStrip{
+      margin-top: 10px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-start;
+    }
+    .trustChip{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 999px;
+      padding: 8px 10px;
+      font-size: 12px;
+      color: rgba(238,241,246,.70);
+      background: rgba(255,255,255,.02);
+    }
+
+    @media (max-width: 980px){
+      .contactGrid{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px){
+      .formGrid{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- NAV (English) -->
+  <header class="nav">
+    <a class="brand" href="/en/" aria-label="Viva Media Creative">
+      <span class="brand__mark">VMC</span>
+      <span class="brand__name">Viva Media Creative</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary navigation">
+      <a href="/en/#services">Services</a>
+      <a href="/en/#tenets">Principles</a>
+      <a href="/en/#trusted">Clients</a>
+      <a class="pill" href="/en/contact/">Contact</a>
+
+      <!-- Language switch: points to /en/ as you requested -->
+      <a class="lang" href="https://vivamediacreative.com/en/" aria-label="English home">
+        <span class="lang__dot"></span>
+        <span>EN</span>
+      </a>
+      <a class="lang" href="https://vivamediacreative.com/" aria-label="Arabic home">
+        <span class="lang__dot"></span>
+        <span>AR</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" style="min-height:auto; padding-bottom: 34px;">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="halo h1"></div>
+        <div class="halo h2"></div>
+        <div class="halo h3"></div>
+        <div class="gridlines"></div>
+      </div>
+
+      <div class="hero__inner">
+        <p class="kicker reveal">Contact • Premium partnership • Fast response</p>
+
+        <h1 class="h1 reveal">
+          Start with your goal<br/>
+          <span class="gold">We turn it into trends, growth, and revenue</span>
+        </h1>
+
+        <p class="sub reveal">
+          Share your account, your goal, and what you need. We’ll reply with a clear direction and a practical plan — no generic talk.
+        </p>
+
+        <div class="hero__pills reveal" aria-label="Key notes">
+          <span class="pillx">⚡ Fast response</span>
+          <span class="pillx">🔒 Full confidentiality</span>
+          <span class="pillx">🎯 Trend + revenue strategy</span>
+          <span class="pillx">📈 Tracking & optimization</span>
+        </div>
+
+        <!-- CRO: trust strip -->
+        <div class="trustStrip reveal" aria-label="Trust indicators">
+          <span class="trustChip">Typical reply: within 24 business hours</span>
+          <span class="trustChip">Languages: Arabic • English • German</span>
+          <span class="trustChip">Data-first execution</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="section contactWrap" style="padding-top: 30px;">
+      <div class="contactGrid">
+        <!-- Form card -->
+        <div class="glassCard reveal">
+          <div class="cardHead">
+            <h2>Send your request</h2>
+            <p>Short details are enough — we’ll propose the best path quickly.</p>
+          </div>
+
+          <div class="formBody">
+            <!-- EmailJS form -->
+            <form id="contactForm" novalidate aria-label="Contact form">
+              <!-- Anti-spam honeypot -->
+              <input type="text" name="website" id="website" tabindex="-1" autocomplete="off"
+                     style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0;" aria-hidden="true" />
+
+              <div class="formGrid">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" placeholder="Your name" required minlength="2" />
+                </div>
+
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="name@example.com" required />
+                </div>
+
+                <div class="field span2">
+                  <label for="account">Account link / page name</label>
+                  <input id="account" name="account" type="text" placeholder="Instagram / TikTok / YouTube / Facebook…" required minlength="3" />
+                </div>
+
+                <div class="field span2">
+                  <label for="service">What do you need?</label>
+                  <select id="service" name="service" required>
+                    <option value="" selected disabled>Choose a service</option>
+                    <option value="Trend & Growth">Trend creation & rapid growth</option>
+                    <option value="Celebrity Management">Celebrity / Personal brand management</option>
+                    <option value="Monetization">Monetization & revenue strategy</option>
+                    <option value="Production">Premium video & ads production</option>
+                    <option value="Website">Website / Landing page / SEO</option>
+                  </select>
+                </div>
+
+                <div class="field span2">
+                  <label for="message">Quick details</label>
+                  <textarea id="message" name="message" placeholder="Your goal + platform + what you want to achieve in the next 30 days" required minlength="15"></textarea>
+                </div>
+
+                <div id="status" class="status" role="status" aria-live="polite"></div>
+
+                <div class="actions">
+                  <button class="btn primary magnetic" type="submit">Send request</button>
+                  <span class="hint">
+                    By submitting, you agree to share your information for contact and proposal purposes.
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Side card -->
+        <aside class="glassCard reveal" aria-label="Fast contact">
+          <div class="cardHead">
+            <h2>Fast contact methods</h2>
+            <p>Pick the quickest method — we’ll respond as soon as possible.</p>
+          </div>
+
+          <div class="sideBody">
+            <div class="miniCard">
+              <h3>Best for creators & large pages</h3>
+              <p>
+                If you have a campaign coming up or want a “push” to make a trend, send your link and your goal — we’ll map a clear route.
+              </p>
+
+              <div class="methods" aria-label="Contact methods">
+                <a class="method"
+                   href="https://wa.me/4915565678291?text=Hi%20VMC%2C%20I%20want%20to%20grow%20my%20account%20and%20monetize%20it."
+                   target="_blank" rel="noopener">
+                  <div class="left">
+                    <div class="badge" aria-hidden="true">WA</div>
+                    <div>
+                      <b>WhatsApp</b>
+                      <small>Fast reply</small>
+                    </div>
+                  </div>
+                  <span aria-hidden="true">↗</span>
+                </a>
+
+                <a class="method" href="mailto:info@vivamediacreative.com">
+                  <div class="left">
+                    <div class="badge" aria-hidden="true">@</div>
+                    <div>
+                      <b>Email</b>
+                      <small>info@vivamediacreative.com</small>
+                    </div>
+                  </div>
+                  <span aria-hidden="true">↗</span>
+                </a>
+
+                <a class="method" href="https://www.facebook.com/vivamediacreative" target="_blank" rel="noopener">
+                  <div class="left">
+                    <div class="badge" aria-hidden="true">f</div>
+                    <div>
+                      <b>Facebook</b>
+                      <small>Official page</small>
+                    </div>
+                  </div>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="map" aria-label="Map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2428.7706991268624!2d13.4508165!3d52.5013902!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fcc74462302a6b%3A0x9954b3eef5b55235!2sViva%20Media%20Creative!5e0!3m2!1sen!2sde!4v1762564205407!5m2!1sen!2sde"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+
+      <!-- Brand / Summary -->
+      <section class="footer-col footer-brand" aria-label="About Viva Media Creative">
+        <a class="footer-logo" href="https://vivamediacreative.com/en/services/" aria-label="Viva Media Creative">
+          <img src="/assets/logo.jpeg" alt="Viva Media Creative logo" loading="lazy" />
+        </a>
+        <p class="footer-desc">
+          A premium agency specializing in <strong>Influencer Marketing</strong>, reputation & public image management,
+          and measurable growth via <strong>SEO</strong> and <strong>CRO</strong> — with a data-driven execution framework.
+        </p>
+
+        <div class="footer-contact">
+          <a class="footer-mail" href="mailto:info@vivamediacreative.com">info@vivamediacreative.com</a>
+          <div class="footer-lang" aria-label="Language switch">
+            <a href="https://vivamediacreative.com/">العربية</a>
+            <span aria-hidden="true">•</span>
+            <a href="https://vivamediacreative.com/en/">English</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main -->
+      <nav class="footer-col" aria-label="Main links">
+        <h3>Main</h3>
+        <ul>
+          <li><a href="https://vivamediacreative.com/en/">Home</a></li>
+          <li><a href="https://vivamediacreative.com/en/services/">Services</a></li>
+          <li><a href="https://vivamediacreative.com/en/insights/">Insights</a></li>
+          <li><a href="https://vivamediacreative.com/en/news/">Articles</a></li>
+          <li><a href="https://vivamediacreative.com/en/contact/">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Services -->
+      <nav class="footer-col" aria-label="Services">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="https://vivamediacreative.com/services/influencer-marketing/">Influencer marketing</a></li>
+          <li><a href="https://vivamediacreative.com/services/personal-brand-management/">Personal brand management</a></li>
+          <li><a href="https://vivamediacreative.com/services/seo-growth/">SEO & growth</a></li>
+          <li><a href="https://vivamediacreative.com/services/copywriting/">Copywriting</a></li>
+          <li><a href="https://vivamediacreative.com/services/viral-strategy/">Viral strategy</a></li>
+          <li><a href="https://vivamediacreative.com/elite/influencer-partnerships/">Elite influencer partnerships</a></li>
+        </ul>
+      </nav>
+
+      <!-- Platform -->
+      <nav class="footer-col" aria-label="Influencer platform">
+        <h3>Influencer platform</h3>
+        <ul>
+          <li><a href="https://vivamediacreative.com/influencer-platform/">Overview</a></li>
+          <li><a href="https://vivamediacreative.com/influencer-platform/find-influencers/">Find influencers</a></li>
+          <li><a href="https://vivamediacreative.com/influencer-platform/join-as-influencer/">Join as influencer</a></li>
+        </ul>
+
+        <div class="footer-cta">
+          <a class="btn primary" href="https://vivamediacreative.com/en/contact/">Request a consultation</a>
+          <a class="btn" href="https://vivamediacreative.com/influencer-platform/find-influencers/">Request influencers</a>
+        </div>
+      </nav>
+
+      <!-- Tools -->
+      <nav class="footer-col" aria-label="Tools">
+        <h3>Tools</h3>
+        <ul>
+          <li><a href="https://vivamediacreative.com/ar/tools/">All tools</a></li>
+          <li><a href="https://vivamediacreative.com/ar/instagram-analyzer/">Instagram Analyzer</a></li>
+          <li><a href="https://vivamediacreative.com/ar/hashtag-analyzer/">Hashtag Analyzer</a></li>
+          <li><a href="https://vivamediacreative.com/ar/influencer-campaign-cost-calculator/">Influencer cost calculator</a></li>
+          <li><a href="https://vivamediacreative.com/ar/best-time-to-post-instagram/">Best time to post</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="copyright">© 2026 Viva Media Creative. All rights reserved.</p>
+      <nav class="footer-legal" aria-label="Legal links">
+        <a href="https://vivamediacreative.com/privacy/">Privacy</a>
+        <span aria-hidden="true">•</span>
+        <a href="https://vivamediacreative.com/terms/">Terms</a>
+      </nav>
+    </div>
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Viva Media Creative",
+      "url": "https://vivamediacreative.com/en/",
+      "logo": "https://vivamediacreative.com/assets/logo.jpeg",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "info@vivamediacreative.com",
+        "availableLanguage": ["Arabic", "English", "German"]
+      }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Contact — Viva Media Creative",
+      "url": "https://vivamediacreative.com/en/contact/",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Viva Media Creative",
+        "url": "https://vivamediacreative.com/en/"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "Viva Media Creative"
+      }
+    }
+    </script>
+  </footer>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>
+    // reveal
+    const io = new IntersectionObserver(
+      (entries) => { for (const e of entries) if (e.isIntersecting) e.target.classList.add("is-in"); },
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    // magnetic
+    document.querySelectorAll(".magnetic").forEach((el) => {
+      const strength = 10;
+      el.addEventListener("pointermove", (ev) => {
+        const r = el.getBoundingClientRect();
+        const dx = ev.clientX - (r.left + r.width / 2);
+        const dy = ev.clientY - (r.top + r.height / 2);
+        el.style.transform = `translate(${dx / strength}px, ${dy / strength}px)`;
+      });
+      el.addEventListener("pointerleave", () => { el.style.transform = `translate(0px, 0px)`; });
+    });
+
+    // EmailJS init (your public key)
+    emailjs.init({ publicKey: "SzBBlvEjgwysF8vHJ" });
+
+    // Anti-spam + rate limit
+    const VMC_RATE_LIMIT_MS = 25000; // 25s
+    const VMC_MIN_MESSAGE_LEN = 15;
+
+    let vmcLastSubmitAt = Number(sessionStorage.getItem('vmcLastSubmitAt') || '0');
+
+    function vmcIsBotSubmission() {
+      const hp = document.getElementById("website");
+      if (hp && hp.value && hp.value.trim().length > 0) return true;
+      return false;
+    }
+
+    function vmcCanSubmitNow() {
+      const now = Date.now();
+      if (now - vmcLastSubmitAt < VMC_RATE_LIMIT_MS) return false;
+      vmcLastSubmitAt = now;
+      sessionStorage.setItem('vmcLastSubmitAt', String(now));
+      return true;
+    }
+
+    const form = document.getElementById('contactForm');
+    const statusBox = document.getElementById('status');
+
+    function showStatus(type, msg){
+      statusBox.className = 'status ' + type;
+      statusBox.textContent = msg;
+    }
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Anti-spam checks
+      if (vmcIsBotSubmission()) {
+        showStatus('err', '❌ Unable to send your request.');
+        return;
+      }
+      if (!vmcCanSubmitNow()) {
+        showStatus('err', 'Please wait a few seconds and try again.');
+        return;
+      }
+
+      statusBox.className = 'status';
+      statusBox.textContent = '';
+
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const account = form.account.value.trim();
+      const service = form.service.value;
+      const message = form.message.value.trim();
+
+      if (name.length < 2){ showStatus('err', 'Please enter a valid name.'); return; }
+      if (!/^\S+@\S+\.\S+$/.test(email)){ showStatus('err', 'Please enter a valid email address.'); return; }
+      if (account.length < 3){ showStatus('err', 'Please enter your account link or page name.'); return; }
+      if (!service){ showStatus('err', 'Please select the service you need.'); return; }
+      if (message.length < VMC_MIN_MESSAGE_LEN){ showStatus('err', `Please add more details (at least ${VMC_MIN_MESSAGE_LEN} characters).`); return; }
+
+      showStatus('ok', 'Perfect — sending your request now...');
+
+      try {
+        await emailjs.sendForm(
+          'service_6w76hdv',
+          'template_iqqczb8',
+          form
+        );
+
+        form.reset();
+        showStatus(
+          'ok',
+          '✅ Your message has been received successfully.\n\nWe will contact you within 24 business hours.\n\nNote: If you do not see our reply, please check your Spam/Junk folder and add info@vivamediacreative.com to your contacts.'
+        );
+      } catch (err) {
+        console.error(err);
+        showStatus('err', '❌ Sending failed. Please try again or contact us on WhatsApp.');
+      }
+    });
+  </script>
+</body>
+</html>
