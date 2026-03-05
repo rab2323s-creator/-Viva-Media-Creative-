@@ -305,3 +305,44 @@
     <priority>0.4</priority>
   </url>
 </urlset>
+<url>
+  <loc>https://vivamediacreative.com/en/services/</loc>
+  <lastmod>2026-01-25</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://vivamediacreative.com/en/services/influencer-marketing/</loc>
+  <lastmod>2026-01-25</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<url>
+  <loc>https://vivamediacreative.com/en/services/personal-brand-management/</loc>
+  <lastmod>2026-01-25</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<url>
+  <loc>https://vivamediacreative.com/en/services/viral-strategy/</loc>
+  <lastmod>2026-01-25</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<url>
+  <loc>https://vivamediacreative.com/en/services/copywriting/</loc>
+  <lastmod>2026-01-25</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<url>
+  <loc>https://vivamediacreative.com/en/services/seo-growth/</loc>
+  <lastmod>2026-01-25</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
