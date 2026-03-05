@@ -1,0 +1,346 @@
+/* =========================================================
+   EN Article Page (Luxury) — news_en
+   يعمل عندما body فيه class="article-en"
+   يدعم RTL/LTR تلقائياً ويعطي شكل فخم جداً
+   ========================================================= */
+
+/* ---------- Base tokens ---------- */
+.article-en{
+  --bg0:#070a12;
+  --bg1:#0b1020;
+  --card:rgba(255,255,255,.06);
+  --card2:rgba(255,255,255,.08);
+  --stroke:rgba(255,255,255,.10);
+  --stroke2:rgba(255,255,255,.14);
+  --text:#e9eefc;
+  --muted:rgba(233,238,252,.74);
+  --muted2:rgba(233,238,252,.60);
+  --accent:#9ad0ff;
+  --accent2:#ff5c8a;
+  --shadow:0 18px 70px rgba(0,0,0,.50);
+  --radius:20px;
+  --radius2:14px;
+
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(0,119,255,.18), transparent 60%),
+              radial-gradient(900px 500px at 90% 10%, rgba(255,92,138,.14), transparent 55%),
+              linear-gradient(180deg, var(--bg0), var(--bg1));
+  color: var(--text);
+}
+
+/* تحسين مساحة المقال */
+.article-en .section{
+  padding-top: 26px;
+  padding-bottom: 70px;
+}
+
+/* ---------- Article container ---------- */
+.article-en .full-article,
+.article-en .blog-article{
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, var(--card), rgba(255,255,255,.03));
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+/* Glow outline */
+.article-en .full-article::before,
+.article-en .blog-article::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius: inherit;
+  background: radial-gradient(600px 220px at 20% 0%, rgba(0,119,255,.22), transparent 60%),
+              radial-gradient(520px 240px at 85% 10%, rgba(255,92,138,.18), transparent 62%);
+  pointer-events:none;
+  opacity:.9;
+  mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+  -webkit-mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+  padding:1px;
+  box-sizing:border-box;
+}
+
+/* داخل الصندوق */
+.article-en .full-article > *:not(.article-img),
+.article-en .blog-article > *:not(.article-img){
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* ---------- Hero image ---------- */
+.article-en .article-img{
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.12) contrast(1.06);
+}
+
+/* overlay on hero for luxury feel */
+.article-en .article-img{
+  position: relative;
+}
+.article-en .article-img + h1{
+  margin-top: 0;
+}
+
+/* ---------- Typography ---------- */
+.article-en h1{
+  padding-top: 22px;
+  margin: 0;
+  font-size: clamp(1.75rem, 2.6vw, 2.45rem);
+  line-height: 1.25;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.article-en .article-meta,
+.article-en .article-date{
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+  padding-bottom: 16px;
+}
+
+/* Intro paragraph */
+.article-en p{
+  margin: 0 0 14px;
+  line-height: 1.95;
+  color: rgba(233,238,252,.84);
+  font-size: 1.03rem;
+}
+
+/* Section headings */
+.article-en h2{
+  margin: 28px 0 10px;
+  font-size: 1.28rem;
+  font-weight: 900;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.article-en h3{
+  margin: 20px 0 8px;
+  font-size: 1.12rem;
+  font-weight: 850;
+  color: rgba(233,238,252,.95);
+}
+
+/* Quotes */
+.article-en blockquote{
+  margin: 18px 24px;
+  padding: 14px 16px;
+  border-left: 3px solid rgba(0,119,255,.55);
+  background: rgba(0,119,255,.10);
+  border-radius: 14px;
+  color: rgba(233,238,252,.88);
+}
+
+/* ---------- Lists ---------- */
+.article-en ul, .article-en ol{
+  margin: 10px 0 14px;
+  padding: 0 24px 6px;
+}
+
+.article-en ul{
+  list-style: none;
+}
+
+.article-en ul li{
+  padding: 10px 0 10px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: rgba(233,238,252,0.86);
+  position: relative;
+}
+
+.article-en ul li::before{
+  content:"";
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  top: 16px;
+  background: linear-gradient(135deg, rgba(0,119,255,.9), rgba(255,92,138,.9));
+  box-shadow: 0 0 0 3px rgba(255,255,255,.03);
+}
+
+.article-en ul li:last-child{
+  border-bottom: none;
+}
+
+/* Ordered list */
+.article-en ol{
+  padding-left: 44px;
+  color: rgba(233,238,252,0.86);
+}
+.article-en ol li{
+  padding: 8px 0;
+}
+
+/* ---------- Links (premium highlight) ---------- */
+.article-en a{
+  color: var(--accent);
+  text-decoration: none;
+}
+.article-en p a, .article-en li a{
+  color: var(--accent2);
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.article-en p a:hover, .article-en li a:hover{
+  color: #ff86a6;
+  background: rgba(255,92,138,0.12);
+  border-radius: 8px;
+  box-shadow: 0 0 0 4px rgba(255,92,138,.06);
+}
+
+/* ---------- Details / FAQ ---------- */
+.article-en details{
+  margin: 12px 24px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 14px;
+  background: rgba(255,255,255,.04);
+  overflow: hidden;
+}
+.article-en summary{
+  cursor: pointer;
+  padding: 14px 14px;
+  color: rgba(233,238,252,.92);
+  font-weight: 800;
+  list-style: none;
+}
+.article-en summary::-webkit-details-marker{ display:none; }
+.article-en details[open] summary{
+  background: rgba(0,119,255,.10);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.article-en details p{
+  padding: 0 14px 14px;
+  margin: 0;
+  color: rgba(233,238,252,.82);
+}
+
+/* ---------- Back link button ---------- */
+.article-en .back-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 24px 26px;
+  padding: 11px 15px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--accent);
+  background: rgba(0,119,255,0.14);
+  border: 1px solid rgba(0,119,255,0.22);
+  transition: transform .15s ease, background .2s ease;
+}
+.article-en .back-link:hover{
+  background: rgba(0,119,255,0.22);
+  transform: translateY(-1px);
+}
+
+/* ---------- Header fix (same as Arabic but scoped) ---------- */
+.article-en .site-header{
+  background: rgba(10,14,25,0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.article-en .header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  flex-wrap: wrap;
+}
+
+.article-en .logo{
+  width: 56px !important;
+  height: 56px !important;
+  max-width: 56px !important;
+  max-height: 56px !important;
+  object-fit: cover !important;
+  border-radius: 14px;
+  display: block;
+}
+
+.article-en .brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 260px;
+}
+
+.article-en .brand a{
+  display: inline-flex;
+  align-items: center;
+}
+
+.article-en .brand-text h1{
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.article-en .main-nav{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.article-en .main-nav a{
+  color: rgba(233,238,252,0.9);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.article-en .main-nav a:hover{
+  background: rgba(255,255,255,0.08);
+}
+
+.article-en .main-nav a.active{
+  background: rgba(0,119,255,0.18);
+  color: var(--accent);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px){
+  .article-en .article-img{ height: 320px; }
+}
+
+@media (max-width: 640px){
+  .article-en .full-article,
+  .article-en .blog-article{
+    border-radius: var(--radius2);
+  }
+
+  .article-en .article-img{
+    height: 240px;
+  }
+
+  .article-en .full-article > *:not(.article-img),
+  .article-en .blog-article > *:not(.article-img){
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .article-en details{
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+/* ---------- Optional: make English look sharper ---------- */
+.article-en{
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
