@@ -1,7 +1,6 @@
  /* =========================
-   Viva Media Creative - Article Page (Luxury Read UI)
-   File: /news/article.css
-   Updated: includes Luxury Cards styling for Articles Library (news page)
+   Viva Media Creative — News (EN) — Ultra Luxury Cards UI
+   File: /news_en/news.css
    ========================= */
 
 /* Tokens */
@@ -10,492 +9,449 @@
   --panel: rgba(255,255,255,0.06);
   --panel-2: rgba(255,255,255,0.04);
   --border: rgba(255,255,255,0.10);
+  --border-2: rgba(255,255,255,0.14);
   --text: #e9eefc;
   --muted: rgba(233,238,252,0.76);
   --muted-2: rgba(233,238,252,0.62);
   --accent: #0077ff;
   --accent-2: #74b4ff;
-  --shadow: 0 18px 60px rgba(0,0,0,0.50);
-  --shadow-soft: 0 12px 40px rgba(0,0,0,0.35);
+  --shadow: 0 22px 80px rgba(0,0,0,0.55);
+  --shadow-soft: 0 14px 55px rgba(0,0,0,0.42);
   --radius: 18px;
-  --radius-lg: 22px;
-  --max: 920px;
+  --radius-lg: 24px;
+  --ring: 0 0 0 1px rgba(0,119,255,0.10) inset;
 }
 
 /* Page base */
-.article{
+.news{
   background: var(--bg);
   color: var(--text);
 }
 
-/* Container spacing */
-.article .section{
-  padding-top: 28px;
-  padding-bottom: 70px;
-}
-
-/* Reading width */
-.article .container{
+/* Container */
+.news .container{
   max-width: 1180px;
 }
 
-/* Article shell */
-.blog-article{
-  max-width: var(--max);
-  margin: 0 auto;
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.035));
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
-  overflow: hidden;
-  position: relative;
+/* Section spacing */
+.news .section{
+  padding-top: 28px;
+  padding-bottom: 60px;
 }
 
-/* Ambient glow */
-.blog-article::before{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  background: radial-gradient(900px 320px at 20% 0%,
-    rgba(0,119,255,0.28),
-    transparent 60%);
-  opacity: 0.9;
-  pointer-events:none;
-}
-
-/* Top image */
-.article-img{
-  width: 100%;
-  height: clamp(240px, 38vw, 420px);
-  object-fit: cover;
-  display:block;
-  filter: saturate(1.10) contrast(1.05);
-  transform: scale(1.01);
-  position: relative;
-  z-index: 1;
-}
-
-/* Gradient overlay on image area */
-.blog-article::after{
-  content:"";
-  position:absolute;
-  left:0; right:0;
-  top:0;
-  height: clamp(260px, 38vw, 460px);
-  background: linear-gradient(to bottom,
-    rgba(0,0,0,0.15),
-    rgba(0,0,0,0.55));
-  pointer-events:none;
-  z-index: 2;
-}
-
-/* Inner typography padding */
-.blog-article > *:not(.article-img){
-  position: relative;
-  z-index: 3;
-}
-
-.blog-article h1,
-.blog-article h2,
-.blog-article h3,
-.blog-article p,
-.blog-article ul,
-.blog-article ol,
-.blog-article blockquote,
-.blog-article .article-date,
-.blog-article .back-link{
-  padding-left: 26px;
-  padding-right: 26px;
-}
-
-@media (max-width: 640px){
-  .blog-article h1,
-  .blog-article h2,
-  .blog-article h3,
-  .blog-article p,
-  .blog-article ul,
-  .blog-article ol,
-  .blog-article blockquote,
-  .blog-article .article-date,
-  .blog-article .back-link{
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-}
-
-/* Headline */
-.blog-article h1{
-  margin: 18px 0 10px;
-  font-size: clamp(1.65rem, 2.8vw, 2.35rem);
-  line-height: 1.25;
+/* Titles */
+.news .section-title{
+  font-size: clamp(1.55rem, 2.2vw, 2.25rem);
   font-weight: 900;
+  margin: 14px 0 10px;
   letter-spacing: 0.2px;
-  text-wrap: balance;
 }
 
-/* Meta line */
-.article-date{
-  margin: 0 0 22px;
-  color: rgba(233,238,252,0.74);
-  font-size: 0.98rem;
-  line-height: 1.7;
-  display:flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  align-items: center;
-}
-
-.article-date strong{
-  color: rgba(233,238,252,0.92);
-}
-
-/* Sections */
-.blog-article h2{
-  margin: 28px 0 12px;
-  font-size: clamp(1.25rem, 1.9vw, 1.55rem);
-  line-height: 1.3;
-  font-weight: 900;
-  letter-spacing: 0.15px;
-}
-
-.blog-article h3{
-  margin: 18px 0 10px;
-  font-size: 1.08rem;
-  line-height: 1.35;
-  font-weight: 850;
-  color: rgba(233,238,252,0.95);
-}
-
-/* Paragraphs */
-.blog-article p{
-  margin: 0 0 14px;
+.news .section-desc{
   color: var(--muted);
-  line-height: 1.95;
-  font-size: 1.03rem;
-  text-wrap: pretty;
-}
-
-/* Links inside article */
-.blog-article a{
-  color: var(--accent-2);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(116,180,255,0.35);
-  transition: color .2s ease, border-color .2s ease, background .2s ease;
-}
-
-.blog-article a:hover{
-  color: #bfe0ff;
-  border-color: rgba(191,224,255,0.65);
-}
-
-/* Lists */
-.blog-article ul,
-.blog-article ol{
-  margin: 0 0 18px;
-  padding-left: 46px; /* keep bullets readable */
-  color: rgba(233,238,252,0.78);
+  max-width: 820px;
   line-height: 1.9;
+  margin: 0 0 26px;
 }
 
-.blog-article li{
-  margin: 8px 0;
+/* Breadcrumb */
+.news nav[aria-label="Breadcrumb"]{
+  margin-top: 10px;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
 }
 
-.blog-article ul li::marker{
-  color: rgba(116,180,255,0.9);
-}
-
-/* Callout / quote style */
-.blog-article blockquote{
-  margin: 18px 0 22px;
-  padding: 16px 18px;
-  border-radius: 16px;
-  background: rgba(0,119,255,0.10);
-  border: 1px solid rgba(0,119,255,0.18);
-  color: rgba(233,238,252,0.90);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
-}
-
-.blog-article blockquote p{
+.news nav[aria-label="Breadcrumb"] ol{
+  list-style: none;
+  padding: 0;
   margin: 0;
-  color: rgba(233,238,252,0.90);
-}
-
-/* Horizontal divider (optional if you add <hr>) */
-.blog-article hr{
-  border: 0;
-  height: 1px;
-  background: linear-gradient(to right,
-    transparent,
-    rgba(255,255,255,0.14),
-    transparent);
-  margin: 26px 0;
-}
-
-/* Emphasis */
-.blog-article strong{
-  color: rgba(233,238,252,0.95);
-}
-
-.blog-article em{
-  color: rgba(233,238,252,0.90);
-}
-
-/* Selection */
-.article ::selection{
-  background: rgba(0,119,255,0.35);
-  color: #fff;
-}
-
-/* Back link button */
-.back-link{
-  display: inline-flex;
-  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
-  margin: 26px 0 28px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  color: rgba(233,238,252,0.92);
-  text-decoration: none !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+  align-items: center;
 }
 
-.back-link:hover{
-  background: rgba(0,119,255,0.14);
-  border-color: rgba(0,119,255,0.25);
-  color: #cfe8ff;
-}
-
-/* Subtle bottom padding */
-.blog-article .back-link{
-  margin-left: 26px;
-  margin-right: 26px;
-}
-
-@media (max-width: 640px){
-  .blog-article .back-link{
-    margin-left: 18px;
-    margin-right: 18px;
-  }
-}
-
-/* ===== Optional: improve header on article pages too ===== */
-.article .site-header{
-  background: rgba(10,14,25,0.75);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.article .main-nav a{
-  color: rgba(233,238,252,0.86);
-}
-
-.article .main-nav a.active{
-  color: #9ad0ff;
-}
-
-.article .lang a{
-  color: #9ad0ff;
+.news nav[aria-label="Breadcrumb"] a{
+  color: rgba(233,238,252,0.88);
   text-decoration: none;
 }
 
-.article .lang a:hover{
+.news nav[aria-label="Breadcrumb"] a:hover{
   text-decoration: underline;
 }
 
-/* ===== Responsive fine-tuning ===== */
-@media (max-width: 980px){
-  .blog-article{
-    max-width: 100%;
-  }
+.news nav[aria-label="Breadcrumb"] li{
+  color: rgba(233,238,252,0.72);
 }
 
-@media (max-width: 420px){
-  .blog-article p{
-    font-size: 1.01rem;
-  }
+.news nav[aria-label="Breadcrumb"] li::after{
+  content: "•";
+  margin: 0 10px;
+  color: rgba(233,238,252,0.35);
+}
+
+.news nav[aria-label="Breadcrumb"] li:last-child::after{
+  content: "";
+  margin: 0;
 }
 
 /* ==========================================================
-   NEW: Luxury Cards for Articles Library (News listing pages)
-   Scope: body.news (Arabic + English listing)
-   Uses the same tokens for consistent "fancy" look
+   Grid layout (premium editorial)
+   - 1st card: full width hero
+   - 2nd & 3rd: two-up feature
+   - next cards: 3 columns
    ========================================================== */
 
-/* Optional: slightly better grid spacing */
 .news .services-grid{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   gap: 18px;
+  align-items: stretch;
 }
 
-/* Card base */
-.news .services-grid .card{
+/* Base card */
+.news .card{
+  grid-column: span 4;
   position: relative;
   overflow: hidden;
   border-radius: var(--radius);
   background: linear-gradient(180deg, rgba(255,255,255,0.065), rgba(255,255,255,0.035));
-  border: 1px solid rgba(255,255,255,0.10);
-  box-shadow: 0 14px 55px rgba(0,0,0,0.42);
-  transform: translateZ(0);
-  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255,255,255,0.06);
+  transform: translateY(0);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background .28s ease;
 }
 
 /* Ambient glow */
-.news .services-grid .card::before{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  background: radial-gradient(700px 260px at 18% 0%,
-    rgba(0,119,255,0.26),
+.news .card::before{
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: radial-gradient(900px 300px at 18% 0%,
+    rgba(0,119,255,0.32),
     transparent 60%);
-  opacity: .85;
-  pointer-events:none;
+  opacity: 0;
+  transition: opacity .28s ease;
+  pointer-events: none;
 }
 
 /* Image */
-.news .services-grid .card img{
+.news .card img{
   width: 100%;
-  height: 190px;
+  height: 210px;
   object-fit: cover;
   display: block;
-  filter: saturate(1.08) contrast(1.06);
+  filter: saturate(1.08) contrast(1.05);
   transform: scale(1.01);
-  transition: transform .35s ease;
+  transition: transform .35s ease, filter .35s ease;
 }
 
-/* Overlay on image area for readability */
-.news .services-grid .card::after{
-  content:"";
-  position:absolute;
-  left:0; right:0;
-  top:0;
-  height: 210px;
-  background: linear-gradient(to bottom,
-    rgba(0,0,0,0.10),
-    rgba(0,0,0,0.55));
-  pointer-events:none;
+/* Image overlay */
+.news .card::after{
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  top: 0;
+  height: 220px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.10), rgba(0,0,0,0.55));
+  pointer-events: none;
 }
 
-/* Ensure content stays above overlays */
-.news .services-grid .card h3,
-.news .services-grid .card p,
-.news .services-grid .card .card-content,
-.news .services-grid .card .card-link{
+/* Content spacing: supports both card variants */
+.news .card h3,
+.news .card p{
   position: relative;
   z-index: 2;
-}
-
-/* Content padding (supports both your card variants) */
-.news .services-grid .card h3,
-.news .services-grid .card p{
   padding-left: 16px;
   padding-right: 16px;
 }
 
-/* If you use .card-content wrapper in some cards */
-.news .services-grid .card .card-content{
+.news .card .card-content{
+  position: relative;
+  z-index: 2;
   padding: 0 16px 16px;
 }
 
 /* Title */
-.news .services-grid .card h3{
-  margin: 14px 0 8px;
-  font-size: 1.05rem;
-  line-height: 1.35;
+.news .card h3{
+  margin: 16px 0 8px;
+  font-size: 1.08rem;
+  line-height: 1.55;
   font-weight: 900;
-  letter-spacing: .15px;
+  letter-spacing: 0.15px;
   text-wrap: balance;
 }
 
-.news .services-grid .card h3 a{
-  color: rgba(233,238,252,0.96);
+.news .card h3 a{
+  color: rgba(242,246,255,0.98);
   text-decoration: none;
 }
 
+.news .card h3 a:hover{
+  color: var(--accent-2);
+}
+
 /* Excerpt */
-.news .services-grid .card p{
-  margin: 0 0 16px;
+.news .card p{
+  margin: 0 0 18px;
   color: rgba(233,238,252,0.74);
   line-height: 1.85;
-  font-size: 0.98rem;
+  font-size: 0.96rem;
 
-  /* Keep cards aligned (3 lines) */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
 
-/* Optional: card link style if you use .card-link */
-.news .services-grid .card .card-link{
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 6px;
-  color: var(--accent-2);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(116,180,255,0.35);
-  transition: color .2s ease, border-color .2s ease;
-}
-
-.news .services-grid .card .card-link:hover{
-  color: #bfe0ff;
-  border-color: rgba(191,224,255,0.65);
-}
-
-/* Hover / focus */
-.news .services-grid .card:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 22px 80px rgba(0,0,0,0.55);
-  border-color: rgba(0,119,255,0.30);
-  background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.04));
-}
-
-.news .services-grid .card:hover img{
-  transform: scale(1.04);
-}
-
-.news .services-grid .card h3 a:hover{
-  color: #cfe8ff;
-}
-
-/* Subtle "Read" chip on titles (optional) */
-.news .services-grid .card h3::after{
-  content:"Read";
-  display: inline-flex;
-  align-items: center;
-  margin-inline-start: 10px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 0.78rem;
+/* Optional arrow hint */
+.news .card h3 a::after{
+  content: "  ↗";
+  opacity: 0.55;
   font-weight: 800;
-  letter-spacing: .2px;
-  color: rgba(233,238,252,0.86);
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  transform: translateY(-1px);
 }
 
-html[lang="ar"] .news .services-grid .card h3::after{
-  content:"اقرأ";
+/* Hover */
+.news .card:hover{
+  transform: translateY(-8px);
+  border-color: rgba(0,119,255,0.35);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+  box-shadow: var(--shadow), var(--ring);
 }
 
-/* Featured first card stays special */
+.news .card:hover::before{
+  opacity: 1;
+}
+
+.news .card:hover img{
+  transform: scale(1.06);
+  filter: saturate(1.18) contrast(1.08);
+}
+
+/* ==========================================================
+   Featured layouts
+   ========================================================== */
+
+/* 1st card — full hero */
 .news .services-grid .card:first-child{
-  border-color: rgba(0,119,255,0.28);
+  grid-column: span 12;
+  border-radius: var(--radius-lg);
+  border-color: rgba(0,119,255,0.22);
   background: linear-gradient(180deg, rgba(0,119,255,0.14), rgba(255,255,255,0.035));
 }
 
-.news .services-grid .card:first-child::before{
-  background: radial-gradient(900px 340px at 15% 0%,
-    rgba(0,119,255,0.35),
-    transparent 60%);
+.news .services-grid .card:first-child img{
+  height: clamp(260px, 32vw, 420px);
 }
 
-/* Responsive */
-@media (max-width: 640px){
-  .news .services-grid .card img{
-    height: 170px;
+.news .services-grid .card:first-child h3{
+  font-size: clamp(1.35rem, 1.9vw, 1.75rem);
+  margin: 18px 0 10px;
+}
+
+.news .services-grid .card:first-child p{
+  max-width: 950px;
+  font-size: 1.02rem;
+  margin: 0 0 20px;
+  -webkit-line-clamp: 4;
+}
+
+/* 2nd & 3rd cards — two-up feature row */
+.news .services-grid .card:nth-child(2),
+.news .services-grid .card:nth-child(3){
+  grid-column: span 6;
+}
+
+.news .services-grid .card:nth-child(2) img,
+.news .services-grid .card:nth-child(3) img{
+  height: 260px;
+}
+
+/* Premium separator blocks on EN page (optional)
+   If you use .section-split in EN too, this will style it */
+.news .section-split{
+  grid-column: span 12;
+  padding: 16px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+.news .section-split h3{
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+
+.news .section-split p{
+  margin: 0;
+  color: rgba(233, 238, 252, 0.75);
+  line-height: 1.9;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================
+   Header tweaks (safe overrides)
+   ========================================================== */
+
+.news .site-header{
+  background: rgba(10,14,25,0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.news .site-header .header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  flex-wrap: wrap;
+}
+
+.news .site-header .logo{
+  width: 56px !important;
+  height: 56px !important;
+  max-width: 56px !important;
+  max-height: 56px !important;
+  object-fit: cover !important;
+  border-radius: 14px;
+  display: block;
+}
+
+.news .site-header .brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 260px;
+}
+
+.news .site-header .brand a{
+  display: inline-flex;
+  align-items: center;
+}
+
+.news .site-header .brand-text{
+  text-align: left;
+}
+
+.news .site-header .brand-text h1{
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.news .site-header .brand-text .tag{
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: rgba(233,238,252,0.75);
+}
+
+.news .site-header .main-nav{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.news .site-header .main-nav a{
+  color: rgba(233,238,252,0.90);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.news .site-header .main-nav a:hover{
+  background: rgba(255,255,255,0.08);
+}
+
+.news .site-header .main-nav a.active{
+  background: rgba(0,119,255,0.18);
+  color: #9ad0ff;
+}
+
+.news .site-header .lang{
+  color: rgba(233,238,252,0.80);
+  white-space: nowrap;
+}
+
+.news .site-header .lang a{
+  color: #9ad0ff;
+  text-decoration: none;
+}
+
+.news .site-header .lang a:hover{
+  text-decoration: underline;
+}
+
+/* Hamburger support (if your /en/ layout uses .hamburger + .active) */
+.news .hamburger{
+  display: none;
+  user-select: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+}
+
+@media (max-width: 900px){
+  .news .hamburger{ display: inline-flex; }
+  .news .main-nav{
+    display: none;
+    width: 100%;
+    justify-content: center;
   }
+  .news .main-nav.active{
+    display: flex;
+  }
+}
+
+/* ==========================================================
+   Footer (simple, premium)
+   ========================================================== */
+
+.site-footer{
+  margin-top: 64px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.02);
+}
+
+.site-footer .footer-inner{
+  padding: 26px 0 32px;
+  color: rgba(233,238,252,0.74);
+}
+
+.site-footer a{
+  color: rgba(233,238,252,0.90);
+  text-decoration: none;
+}
+
+.site-footer a:hover{
+  color: rgba(233,238,252,1);
+  text-decoration: underline;
+}
+
+/* ==========================================================
+   Responsive layout
+   ========================================================== */
+
+@media (max-width: 1100px){
+  .news .services-grid .card{ grid-column: span 6; }
+  .news .services-grid .card:first-child{ grid-column: span 12; }
+  .news .services-grid .card:nth-child(2),
+  .news .services-grid .card:nth-child(3){ grid-column: span 12; }
+  .news .services-grid .card:nth-child(2) img,
+  .news .services-grid .card:nth-child(3) img{ height: 220px; }
+}
+
+@media (max-width: 640px){
+  .news .services-grid{ gap: 14px; }
+  .news .card{
+    grid-column: span 12;
+    border-radius: 16px;
+  }
+  .news .card img{ height: 190px; }
+  .news .services-grid .card:first-child img{ height: 240px; }
 }
