@@ -1,6 +1,7 @@
  /* =========================
    Viva Media Creative - Article Page (Luxury Read UI)
    File: /news/article.css
+   Updated: includes Luxury Cards styling for Articles Library (news page)
    ========================= */
 
 /* Tokens */
@@ -317,3 +318,184 @@
   }
 }
 
+/* ==========================================================
+   NEW: Luxury Cards for Articles Library (News listing pages)
+   Scope: body.news (Arabic + English listing)
+   Uses the same tokens for consistent "fancy" look
+   ========================================================== */
+
+/* Optional: slightly better grid spacing */
+.news .services-grid{
+  gap: 18px;
+}
+
+/* Card base */
+.news .services-grid .card{
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,0.065), rgba(255,255,255,0.035));
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 14px 55px rgba(0,0,0,0.42);
+  transform: translateZ(0);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+}
+
+/* Ambient glow */
+.news .services-grid .card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: radial-gradient(700px 260px at 18% 0%,
+    rgba(0,119,255,0.26),
+    transparent 60%);
+  opacity: .85;
+  pointer-events:none;
+}
+
+/* Image */
+.news .services-grid .card img{
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.08) contrast(1.06);
+  transform: scale(1.01);
+  transition: transform .35s ease;
+}
+
+/* Overlay on image area for readability */
+.news .services-grid .card::after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  top:0;
+  height: 210px;
+  background: linear-gradient(to bottom,
+    rgba(0,0,0,0.10),
+    rgba(0,0,0,0.55));
+  pointer-events:none;
+}
+
+/* Ensure content stays above overlays */
+.news .services-grid .card h3,
+.news .services-grid .card p,
+.news .services-grid .card .card-content,
+.news .services-grid .card .card-link{
+  position: relative;
+  z-index: 2;
+}
+
+/* Content padding (supports both your card variants) */
+.news .services-grid .card h3,
+.news .services-grid .card p{
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* If you use .card-content wrapper in some cards */
+.news .services-grid .card .card-content{
+  padding: 0 16px 16px;
+}
+
+/* Title */
+.news .services-grid .card h3{
+  margin: 14px 0 8px;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  font-weight: 900;
+  letter-spacing: .15px;
+  text-wrap: balance;
+}
+
+.news .services-grid .card h3 a{
+  color: rgba(233,238,252,0.96);
+  text-decoration: none;
+}
+
+/* Excerpt */
+.news .services-grid .card p{
+  margin: 0 0 16px;
+  color: rgba(233,238,252,0.74);
+  line-height: 1.85;
+  font-size: 0.98rem;
+
+  /* Keep cards aligned (3 lines) */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+/* Optional: card link style if you use .card-link */
+.news .services-grid .card .card-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  color: var(--accent-2);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(116,180,255,0.35);
+  transition: color .2s ease, border-color .2s ease;
+}
+
+.news .services-grid .card .card-link:hover{
+  color: #bfe0ff;
+  border-color: rgba(191,224,255,0.65);
+}
+
+/* Hover / focus */
+.news .services-grid .card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 22px 80px rgba(0,0,0,0.55);
+  border-color: rgba(0,119,255,0.30);
+  background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.04));
+}
+
+.news .services-grid .card:hover img{
+  transform: scale(1.04);
+}
+
+.news .services-grid .card h3 a:hover{
+  color: #cfe8ff;
+}
+
+/* Subtle "Read" chip on titles (optional) */
+.news .services-grid .card h3::after{
+  content:"Read";
+  display: inline-flex;
+  align-items: center;
+  margin-inline-start: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: .2px;
+  color: rgba(233,238,252,0.86);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  transform: translateY(-1px);
+}
+
+html[lang="ar"] .news .services-grid .card h3::after{
+  content:"اقرأ";
+}
+
+/* Featured first card stays special */
+.news .services-grid .card:first-child{
+  border-color: rgba(0,119,255,0.28);
+  background: linear-gradient(180deg, rgba(0,119,255,0.14), rgba(255,255,255,0.035));
+}
+
+.news .services-grid .card:first-child::before{
+  background: radial-gradient(900px 340px at 15% 0%,
+    rgba(0,119,255,0.35),
+    transparent 60%);
+}
+
+/* Responsive */
+@media (max-width: 640px){
+  .news .services-grid .card img{
+    height: 170px;
+  }
+}
