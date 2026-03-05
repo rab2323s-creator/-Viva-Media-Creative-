@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <url>
     <loc>https://vivamediacreative.com/</loc>
     <lastmod>2026-01-25</lastmod>
@@ -92,7 +93,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Services (AR) ↔ (EN) -->
+  <!-- Services ↔ EN Services -->
   <url>
     <loc>https://vivamediacreative.com/services/</loc>
     <xhtml:link rel="alternate" hreflang="ar" href="https://vivamediacreative.com/services/" />
@@ -111,7 +112,6 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Service pages (last week = 2026-02-26) -->
   <url>
     <loc>https://vivamediacreative.com/services/copywriting/</loc>
     <xhtml:link rel="alternate" hreflang="ar" href="https://vivamediacreative.com/services/copywriting/" />
@@ -216,7 +216,7 @@
     <priority>0.4</priority>
   </url>
 
-  <!-- News (AR) ↔ (EN) -->
+  <!-- News ↔ News_EN -->
   <url>
     <loc>https://vivamediacreative.com/news/</loc>
     <xhtml:link rel="alternate" hreflang="ar" href="https://vivamediacreative.com/news/" />
