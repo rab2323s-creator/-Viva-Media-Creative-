@@ -197,7 +197,12 @@
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
-
+<url>
+  <loc>https://vivamediacreative.com/news/ai-transforms-content-creation/</loc>
+  <lastmod>2026-01-25</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
 <url>
 <loc>https://vivamediacreative.com/news/personal-brand-management/</loc>
 <lastmod>2026-01-25</lastmod>
@@ -246,7 +251,12 @@
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
-
+<url>
+  <loc>https://vivamediacreative.com/news_en/ai-content-automation-tools/</loc>
+  <lastmod>2026-01-25</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
 <url>
 <loc>https://vivamediacreative.com/news_en/ai-content-creation/</loc>
 <lastmod>2026-01-25</lastmod>
