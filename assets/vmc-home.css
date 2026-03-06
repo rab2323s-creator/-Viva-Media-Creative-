@@ -1566,3 +1566,10 @@ opacity:.9;
 .langText{
 letter-spacing:.2px;
 }
+.kImage{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:10px 10px 0 0;
+  margin-bottom:12px;
+}
