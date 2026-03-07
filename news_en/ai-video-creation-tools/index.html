@@ -276,19 +276,28 @@ to explore how your brand can work with influencers and creators.
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p>© 2026 Viva Media Creative — All rights reserved.</p>
-    
+
+    <p>© <span id="year"></span> Viva Media Creative — All rights reserved.</p>
+
     <p class="small">
-      Digital Design & Production — 
+      Digital Design & Production —
       <a href="mailto:info@vivamediacreative.com">info@vivamediacreative.com</a>
     </p>
 
     <p class="small">
+      <a href="/en/services/">Services</a> ·
+      <a href="/en/services/influencer-marketing/">Influencer Marketing</a> ·
+      <a href="/en/contact/">Start a Project</a> ·
       <a href="/en/privacy/">Privacy</a> ·
       <a href="/en/terms/">Terms</a>
     </p>
+
   </div>
 </footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
