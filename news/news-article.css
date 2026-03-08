@@ -240,6 +240,79 @@
 }
 
 
+/* =========================
+   Case Study Section
+   ========================= */
 
+.article .case-study{
+  margin: 22px 0;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.03);
+}
+
+.article .case-intro{
+  font-size: 1.02rem;
+  line-height: 1.9;
+}
+
+.article .case-table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+}
+
+.article .case-table th,
+.article .case-table td{
+  border: 1px solid rgba(255,255,255,0.10);
+  padding: 10px;
+  vertical-align: top;
+  text-align: right;
+}
+
+.article .case-table thead th{
+  background: rgba(255,255,255,0.04);
+}
+
+.article .case-points{
+  margin: 12px 0 0;
+  padding-right: 20px;
+  list-style: disc;
+}
+
+.article .case-points li{
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: rgba(233,238,252,0.85);
+}
+
+.article .case-points li:last-child{
+  border-bottom: none;
+}
+
+.article .case-note{
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.025);
+}
+
+.article .case-note p{
+  margin: 0;
+}
+
+@media (max-width: 640px){
+  .article .case-study{
+    padding: 14px;
+  }
+
+  .article .case-table th,
+  .article .case-table td{
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+}
 
 
