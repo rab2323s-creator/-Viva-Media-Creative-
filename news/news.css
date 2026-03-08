@@ -97,7 +97,7 @@
   transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
 }
 
-/* “وهج” بسيط في الخلفية */
+/* وهج */
 .news .card::before {
   content: "";
   position: absolute;
@@ -122,8 +122,14 @@
   opacity: 1;
 }
 
-/* صورة المقال */
-.news .card img {
+/* الصورة */
+.news .card-image {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.news .card-image img {
   width: 100%;
   height: 210px;
   object-fit: cover;
@@ -133,18 +139,16 @@
   transition: transform .35s ease, filter .35s ease;
 }
 
-.news .card:hover img {
+.news .card:hover .card-image img {
   transform: scale(1.06);
   filter: saturate(1.18) contrast(1.06);
 }
 
-/* طبقة تدرّج فوق الصورة */
-.news .card::after {
+/* التدرج فوق الصورة فقط */
+.news .card-image::after {
   content: "";
   position: absolute;
-  left: 0; right: 0;
-  top: 0;
-  height: 220px;
+  inset: 0;
   background: linear-gradient(
     to bottom,
     rgba(0,0,0,0.10),
@@ -153,9 +157,15 @@
   pointer-events: none;
 }
 
-/* محتوى الكارت */
+/* المحتوى */
+.news .card-content {
+  position: relative;
+  z-index: 2;
+  padding: 16px;
+}
+
 .news .card h3 {
-  margin: 16px 16px 8px;
+  margin: 0 0 8px;
   font-size: 1.08rem;
   line-height: 1.55;
   font-weight: 800;
@@ -171,75 +181,62 @@
 }
 
 .news .card p {
-  margin: 0 16px 18px;
+  margin: 0 0 14px;
   color: rgba(233, 238, 252, 0.74);
   line-height: 1.85;
   font-size: 0.96rem;
 }
 
-/* شارة “اقرأ” لطيفة */
+.news .card-link {
+  display: inline-block;
+  color: #9ad0ff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.news .card-link:hover {
+  text-decoration: underline;
+}
+
+/* شارة بسيطة */
 .news .card h3 a::after {
-  content: "  ↗";
+  content: " ↗";
   opacity: 0.55;
   font-weight: 700;
 }
 
-/* ===== مقال مميز (أول كرت فقط) ===== */
+/* المقال المميز */
 .news .services-grid .card:first-child {
   grid-column: span 12;
   border-radius: 22px;
 }
 
-.news .services-grid .card:first-child img {
+.news .services-grid .card:first-child .card-image img {
   height: 360px;
 }
 
 .news .services-grid .card:first-child h3 {
   font-size: clamp(1.25rem, 1.8vw, 1.6rem);
-  margin: 18px 18px 10px;
 }
 
 .news .services-grid .card:first-child p {
   max-width: 900px;
   font-size: 1.02rem;
-  margin: 0 18px 20px;
 }
 
-/* ===== تحسين الهيدر داخل صفحة الأخبار (لو كان شكله “مكسور”) ===== */
-.news .site-header {
-  background: rgba(10, 14, 25, 0.75);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.news .main-nav a {
-  color: rgba(233, 238, 252, 0.86);
-}
-
-.news .main-nav a.active {
-  color: #9ad0ff;
-}
-
-.news .lang a {
-  color: #9ad0ff;
-  text-decoration: none;
-}
-
-.news .lang a:hover {
-  text-decoration: underline;
-}
-
-/* ===== موبايل ===== */
+/* تابلت */
 @media (max-width: 980px) {
   .news .card { grid-column: span 6; }
   .news .services-grid .card:first-child { grid-column: span 12; }
 }
 
+/* موبايل */
 @media (max-width: 640px) {
   .news .services-grid { gap: 14px; }
   .news .card { grid-column: span 12; border-radius: 16px; }
-  .news .card img { height: 190px; }
-  .news .services-grid .card:first-child img { height: 240px; }
+  .news .card-image img { height: 190px; }
+  .news .services-grid .card:first-child .card-image img { height: 240px; }
+  .news .card-content { padding: 14px; }
 }
 
 /* =========================
