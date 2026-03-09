@@ -407,6 +407,36 @@
 </ul>
 
 </main>
+<!-- TOC Script (slugify + تجنّب التكرار) -->
+<script>
+(function () {
+  const tocList = document.getElementById("tocList");
+  if (!tocList) return;
+
+  const headings = document.querySelectorAll(".blog-article h2, .blog-article h3");
+  const used = new Map();
+
+  function slugify(text) {
+    let s = text.trim()
+      .toLowerCase()
+      .replace(/[^\u0600-\u06FFa-z0-9\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-");
+    const count = (used.get(s) || 0) + 1;
+    used.set(s, count);
+    if (count > 1) s = `${s}-${count}`;
+    return s || `section-${Math.random().toString(16).slice(2)}`;
+  }
+
+  headings.forEach(h => {
+    if (!h.id) h.id = slugify(h.textContent);
+    const li = document.createElement("li");
+    li.className = h.tagName === "H3" ? "toc-sub" : "toc-main";
+    li.innerHTML = `<a href="#${h.id}">${h.textContent}</a>`;
+    tocList.appendChild(li);
+  });
+})();
+</script>
 
 </body>
 </html>
