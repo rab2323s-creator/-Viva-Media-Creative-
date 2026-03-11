@@ -52,15 +52,26 @@
       weekend: { w1: 30, w2: 50, w3: 69, w4: 70, w5: 76, w6: 82, w7: 74, w8: 52 }
     }
   };
-
-  const AUDIENCE_PROFILES = {
-    mixed:    { w1: 42, w2: 56, w3: 71, w4: 68, w5: 74, w6: 83, w7: 82, w8: 58 },
-    students: { w1: 18, w2: 24, w3: 49, w4: 44, w5: 66, w6: 84, w7: 92, w8: 79 },
-    workers:  { w1: 46, w2: 58, w3: 83, w4: 64, w5: 70, w6: 87, w7: 78, w8: 46 },
-    parents:  { w1: 36, w2: 62, w3: 75, w4: 66, w5: 70, w6: 81, w7: 77, w8: 50 },
-    business: { w1: 64, w2: 90, w3: 87, w4: 76, w5: 61, w6: 43, w7: 24, w8: 12 },
-    night:    { w1: 20, w2: 28, w3: 42, w4: 53, w5: 68, w6: 83, w7: 93, w8: 91 }
-  };
+const AUDIENCE_PROFILES = {
+  mixed: {
+    w1: 44, w2: 55, w3: 67, w4: 71, w5: 76, w6: 79, w7: 74, w8: 60
+  },
+  students: {
+    w1: 22, w2: 28, w3: 46, w4: 52, w5: 68, w6: 81, w7: 86, w8: 76
+  },
+  workers: {
+    w1: 30, w2: 42, w3: 73, w4: 62, w5: 78, w6: 83, w7: 69, w8: 44
+  },
+  parents: {
+    w1: 36, w2: 58, w3: 72, w4: 69, w5: 73, w6: 77, w7: 68, w8: 46
+  },
+  business: {
+    w1: 66, w2: 86, w3: 82, w4: 70, w5: 56, w6: 40, w7: 21, w8: 10
+  },
+  night: {
+    w1: 16, w2: 24, w3: 38, w4: 50, w5: 66, w6: 80, w7: 91, w8: 90
+  }
+};
 
   const CONTENT_PROFILES = {
     reels:    { w1: 34, w2: 46, w3: 58, w4: 64, w5: 78, w6: 88, w7: 93, w8: 82 },
@@ -70,13 +81,23 @@
     mixed:    { w1: 42, w2: 62, w3: 72, w4: 71, w5: 77, w6: 83, w7: 79, w8: 48 }
   };
 
-  const GOAL_PROFILES = {
-    reach:     { w1: 36, w2: 52, w3: 67, w4: 70, w5: 78, w6: 88, w7: 92, w8: 74 },
-    engagement:{ w1: 38, w2: 57, w3: 73, w4: 71, w5: 78, w6: 86, w7: 88, w8: 65 },
-    sales:     { w1: 30, w2: 48, w3: 66, w4: 76, w5: 86, w6: 89, w7: 79, w8: 51 },
-    saves:     { w1: 48, w2: 78, w3: 86, w4: 78, w5: 67, w6: 73, w7: 58, w8: 25 },
-    authority: { w1: 54, w2: 84, w3: 88, w4: 80, w5: 68, w6: 74, w7: 52, w8: 20 }
-  };
+const GOAL_PROFILES = {
+  reach: {
+    w1: 34, w2: 48, w3: 62, w4: 68, w5: 76, w6: 84, w7: 86, w8: 70
+  },
+  engagement: {
+    w1: 40, w2: 54, w3: 68, w4: 72, w5: 77, w6: 82, w7: 81, w8: 62
+  },
+  sales: {
+    w1: 26, w2: 40, w3: 58, w4: 72, w5: 84, w6: 88, w7: 76, w8: 46
+  },
+  saves: {
+    w1: 50, w2: 76, w3: 84, w4: 79, w5: 68, w6: 71, w7: 54, w8: 24
+  },
+  authority: {
+    w1: 58, w2: 86, w3: 90, w4: 82, w5: 66, w6: 62, w7: 44, w8: 18
+  }
+};
 
   const DEPTH_PROFILES = {
     light:       { w1: 34, w2: 44, w3: 56, w4: 60, w5: 73, w6: 85, w7: 89, w8: 80 },
@@ -101,23 +122,23 @@
     personal:{ w1: 38, w2: 52, w3: 66, w4: 68, w5: 75, w6: 84, w7: 83, w8: 62 }
   };
 
-  const DAY_QUALITY = {
-    reach: {
-      sat: 58, sun: 64, mon: 72, tue: 84, wed: 86, thu: 88, fri: 62
-    },
-    engagement: {
-      sat: 63, sun: 67, mon: 73, tue: 80, wed: 82, thu: 84, fri: 69
-    },
-    sales: {
-      sat: 60, sun: 68, mon: 76, tue: 81, wed: 86, thu: 91, fri: 72
-    },
-    saves: {
-      sat: 57, sun: 65, mon: 79, tue: 86, wed: 87, thu: 81, fri: 58
-    },
-    authority: {
-      sat: 54, sun: 69, mon: 82, tue: 87, wed: 89, thu: 80, fri: 51
-    }
-  };
+const DAY_QUALITY = {
+  reach: {
+    sat: 60, sun: 66, mon: 72, tue: 79, wed: 81, thu: 83, fri: 68
+  },
+  engagement: {
+    sat: 64, sun: 68, mon: 72, tue: 77, wed: 79, thu: 81, fri: 71
+  },
+  sales: {
+    sat: 58, sun: 65, mon: 73, tue: 78, wed: 82, thu: 85, fri: 70
+  },
+  saves: {
+    sat: 60, sun: 68, mon: 78, tue: 83, wed: 84, thu: 78, fri: 61
+  },
+  authority: {
+    sat: 56, sun: 70, mon: 81, tue: 85, wed: 86, thu: 77, fri: 54
+  }
+};
 
   const ELS = {
     form: document.getElementById("toolForm"),
@@ -443,7 +464,7 @@
     return clamp(score, 10, 98);
   }
 
- function getRegionalOverlapScore(day, window, ctx) {
+function getRegionalOverlapScore(day, window, ctx) {
   const dayType = WEEKEND_DAYS.has(day.key) ? "weekend" : "weekday";
 
   let score = 0;
@@ -528,7 +549,7 @@
     return clamp(score, 18, 98);
   }
 
- function getCompetitionPressureScore(day, window, ctx) {
+function getCompetitionPressureScore(day, window, ctx) {
   let score = 70;
 
   const isPrime = window.start === 18 || window.start === 20;
@@ -691,11 +712,11 @@
     return bonus;
   }
 
-  function getPrimaryGroupTieBreaker(day, window, ctx) {
-    const dayType = WEEKEND_DAYS.has(day.key) ? "weekend" : "weekday";
-    const primaryValue = REGION_GROUPS[ctx.primaryGroup][dayType][window.key];
-    return (primaryValue - 50) * 0.05;
-  }
+function getPrimaryGroupTieBreaker(day, window, ctx) {
+  const dayType = WEEKEND_DAYS.has(day.key) ? "weekend" : "weekday";
+  const primaryValue = REGION_GROUPS[ctx.primaryGroup][dayType][window.key];
+  return (primaryValue - 50) * 0.12;
+}
 
 function getUniformityPenalty(window, ctx) {
   let penalty = 0;
@@ -705,12 +726,10 @@ function getUniformityPenalty(window, ctx) {
   const isMid = window.start === 12 || window.start === 14 || window.start === 16;
   const isMorning = window.start === 8 || window.start === 10;
 
-  // عقوبة أساسية على ساعات الذروة حتى لا تفوز دائمًا
   if (window.start === 20) penalty += 8;
   if (window.start === 18) penalty += 6;
   if (window.start === 22) penalty += 5;
 
-  // تخفيف العقوبة فقط إذا كان السيناريو فعلاً مناسبًا للمساء
   if (ctx.contentType === "reels" && ctx.goalType === "reach" && isPrime) {
     penalty -= 4;
   }
@@ -758,34 +777,36 @@ function getUniformityPenalty(window, ctx) {
     return Math.min(9, Math.abs(100 - ctx.rawDistributionTotal) * 0.15);
   }
 
-  function computeBestDays(scoredSlots) {
-    const map = new Map();
+function computeBestDays(scoredSlots) {
+  const map = new Map();
 
-    scoredSlots.forEach(function (slot) {
-      if (!map.has(slot.dayKey)) {
-        map.set(slot.dayKey, {
-          dayKey: slot.dayKey,
-          label: slot.dayLabel,
-          total: 0,
-          count: 0
-        });
-      }
-      const item = map.get(slot.dayKey);
-      item.total += slot.total;
-      item.count += 1;
-    });
+  scoredSlots.forEach(function (slot) {
+    if (!map.has(slot.dayKey)) {
+      map.set(slot.dayKey, {
+        dayKey: slot.dayKey,
+        label: slot.dayLabel,
+        scores: []
+      });
+    }
+    map.get(slot.dayKey).scores.push(slot.total);
+  });
 
-    const days = Array.from(map.values()).map(function (item) {
-      return {
-        dayKey: item.dayKey,
-        label: item.label,
-        avg: round(item.total / item.count)
-      };
-    });
+  const days = Array.from(map.values()).map(function (item) {
+    const sorted = item.scores.slice().sort(function (a, b) { return b - a; });
+    const top1 = sorted[0] || 0;
+    const top2 = sorted[1] || 0;
+    const top3 = sorted[2] || 0;
 
-    days.sort(function (a, b) { return b.avg - a.avg; });
-    return days.slice(0, 3);
-  }
+    return {
+      dayKey: item.dayKey,
+      label: item.label,
+      avg: round((top1 * 0.5) + (top2 * 0.3) + (top3 * 0.2))
+    };
+  });
+
+  days.sort(function (a, b) { return b.avg - a.avg; });
+  return days.slice(0, 3);
+}
 
   function buildWeeklyPlan(scoredSlots, ctx) {
     return DAYS.map(function (day) {
@@ -809,29 +830,26 @@ function getUniformityPenalty(window, ctx) {
     });
   }
 
-  function pickTopUniqueSlots(scoredSlots, limit) {
-    const results = [];
-    const used = new Set();
+function pickTopUniqueSlots(scoredSlots, limit) {
+  const results = [];
+  const usedDays = new Set();
+  const usedWindows = new Set();
 
-    for (let i = 0; i < scoredSlots.length; i++) {
-      const slot = scoredSlots[i];
-      const signature = `${slot.dayKey}-${slot.windowKey}`;
-      if (used.has(signature)) continue;
+  for (let i = 0; i < scoredSlots.length; i++) {
+    const slot = scoredSlots[i];
 
-      const sameDayCount = results.filter(function (r) {
-        return r.dayKey === slot.dayKey;
-      }).length;
+    if (usedDays.has(slot.dayKey)) continue;
+    if (usedWindows.has(slot.windowKey) && results.length < limit - 1) continue;
 
-      if (sameDayCount >= 1 && results.length < 2) continue;
+    results.push(slot);
+    usedDays.add(slot.dayKey);
+    usedWindows.add(slot.windowKey);
 
-      results.push(slot);
-      used.add(signature);
-
-      if (results.length >= limit) break;
-    }
-
-    return results;
+    if (results.length >= limit) break;
   }
+
+  return results;
+}
 
   function computeConfidence(topOverall, ctx) {
     let confidence = 56;
