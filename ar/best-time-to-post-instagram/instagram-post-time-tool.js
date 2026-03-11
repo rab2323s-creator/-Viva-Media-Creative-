@@ -508,10 +508,10 @@ function calculateWindowBreakdown(day, window, ctx) {
       if (window.start >= 22) score -= 8;
     }
 
-    if (ctx.contentType === "reels" && ctx.contentDepth === "light") {
-      if (window.start === 18 || window.start === 20 || window.start === 22) score += 6;
-    }
-
+   if (ctx.contentType === "reels" && ctx.contentDepth === "light") {
+  if (window.start === 16 || window.start === 18 || window.start === 20) score += 4;
+  if (window.start === 22) score += 1;
+}
     if (ctx.contentType === "story") {
       if (window.start === 14 || window.start === 16) score += 6;
     }
@@ -539,11 +539,12 @@ function calculateWindowBreakdown(day, window, ctx) {
       if (window.start === 12 || window.start === 14) score += 4;
     }
 
-    if (ctx.goalType === "reach") {
-      if (ctx.contentType === "reels") score += 6;
-      if (window.start === 20) score += 4;
-    }
-
+   if (ctx.goalType === "reach") {
+  if (ctx.contentType === "reels") {
+    if (window.start === 18 || window.start === 20) score += 4;
+    if (window.start === 22) score += 1;
+  }
+}
     return clamp(score, 10, 98);
   }
 
@@ -734,9 +735,9 @@ function getCompetitionPressureScore(day, window, ctx) {
     let score = 60;
 
     if (ctx.postingFrequency === "1") {
-      if (day.key === "tue" || day.key === "wed" || day.key === "thu") score += 16;
-      if (window.start === 18 || window.start === 20) score += 6;
-    }
+  if (day.key === "tue" || day.key === "wed" || day.key === "thu") score += 8;
+  if (window.start === 16 || window.start === 18) score += 3;
+}
 
     if (ctx.postingFrequency === "3") {
       if (day.key === "mon" || day.key === "tue" || day.key === "wed" || day.key === "thu") score += 8;
