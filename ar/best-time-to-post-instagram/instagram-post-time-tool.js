@@ -697,26 +697,61 @@
     return (primaryValue - 50) * 0.05;
   }
 
-  function getUniformityPenalty(window, ctx) {
-    let penalty = 0;
+function getUniformityPenalty(window, ctx) {
+  let penalty = 0;
 
-    if (window.start === 20) penalty += 1.2;
-    if (window.start === 18) penalty += 0.8;
+  const isPrime = window.start === 18 || window.start === 20;
+  const isLate = window.start === 22;
+  const isMid = window.start === 12 || window.start === 14 || window.start === 16;
+  const isMorning = window.start === 8 || window.start === 10;
 
-    if (ctx.competitionLevel === "avoid") {
-      if (window.start === 18 || window.start === 20) penalty += 5;
-    }
+  // عقوبة أساسية على ساعات الذروة حتى لا تفوز دائمًا
+  if (window.start === 20) penalty += 8;
+  if (window.start === 18) penalty += 6;
+  if (window.start === 22) penalty += 5;
 
-    if (ctx.audienceType === "business") {
-      if (window.start === 20 || window.start === 22) penalty += 6;
-    }
-
-    if (ctx.goalType === "authority" || ctx.goalType === "saves") {
-      if (window.start === 22) penalty += 5;
-    }
-
-    return penalty;
+  // تخفيف العقوبة فقط إذا كان السيناريو فعلاً مناسبًا للمساء
+  if (ctx.contentType === "reels" && ctx.goalType === "reach" && isPrime) {
+    penalty -= 4;
   }
+
+  if (ctx.audienceType === "students" && (isPrime || isLate)) {
+    penalty -= 3;
+  }
+
+  if (ctx.audienceType === "night" && (isPrime || isLate)) {
+    penalty -= 5;
+  }
+
+  if (ctx.goalType === "sales" && (window.start === 16 || window.start === 18)) {
+    penalty -= 3;
+  }
+
+  if (ctx.goalType === "authority" || ctx.goalType === "saves") {
+    if (isPrime) penalty += 4;
+    if (isLate) penalty += 8;
+    if (isMorning || isMid) penalty -= 3;
+  }
+
+  if (ctx.audienceType === "business") {
+    if (isPrime) penalty += 8;
+    if (isLate) penalty += 10;
+    if (isMorning || isMid) penalty -= 4;
+  }
+
+  if (ctx.competitionLevel === "high") {
+    if (isPrime) penalty += 8;
+    if (isLate) penalty += 4;
+  }
+
+  if (ctx.competitionLevel === "avoid") {
+    if (isPrime) penalty += 14;
+    if (isLate) penalty += 8;
+    if (isMid) penalty -= 4;
+  }
+
+  return Math.max(0, penalty);
+}
 
   function getDistributionPenalty(ctx) {
     if (ctx.rawDistributionTotal === 100) return 0;
