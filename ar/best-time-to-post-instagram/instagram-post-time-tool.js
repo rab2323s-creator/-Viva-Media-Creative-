@@ -193,7 +193,7 @@ const DAY_QUALITY = {
     seasonType: document.getElementById("seasonType"),
     competitionLevel: document.getElementById("competitionLevel"),
     weekendMode: document.getElementById("weekendMode"),
-
+    debugTableBody: document.getElementById("debugTableBody"),
     distGulf: document.getElementById("distGulf"),
     distEgypt: document.getElementById("distEgypt"),
     distLevant: document.getElementById("distLevant"),
@@ -426,18 +426,18 @@ function calculateWindowBreakdown(day, window, ctx) {
     psychologicalDelta * 0.08 +
     consistencyDelta * 0.05;
 
-  total += getScenarioSynergyBonus(day, window, ctx, {
+  const synergyBonus = getScenarioSynergyBonus(day, window, ctx, {
     audience, content, goal, regional, dayQuality,
     seasonal, competition, maturity, psychological, consistency
   });
 
-  total += getPrimaryGroupTieBreaker(day, window, ctx);
-  total += getDayWindowInteraction(day, window, ctx);
-  total -= getUniformityPenalty(window, ctx);
-  total -= getDistributionPenalty(ctx);
-  total -= getWindowBaselinePenalty(window, ctx);
+  const primaryTieBreaker = getPrimaryGroupTieBreaker(day, window, ctx);
+  const dayWindowBonus = getDayWindowInteraction(day, window, ctx);
+  const uniformityPenalty = getUniformityPenalty(window, ctx);
+  const distributionPenalty = getDistributionPenalty(ctx);
+  const baselinePenalty = getWindowBaselinePenalty(window, ctx);
 
-  total += getScenarioContrastBonus(window, ctx, {
+  const contrastBonus = getScenarioContrastBonus(window, ctx, {
     audience,
     content,
     goal,
@@ -450,7 +450,17 @@ function calculateWindowBreakdown(day, window, ctx) {
     consistency
   });
 
-  total = total * getScenarioWindowMultiplier(window, ctx);
+  const multiplier = getScenarioWindowMultiplier(window, ctx);
+
+  total += synergyBonus;
+  total += primaryTieBreaker;
+  total += dayWindowBonus;
+  total -= uniformityPenalty;
+  total -= distributionPenalty;
+  total -= baselinePenalty;
+  total += contrastBonus;
+
+  total = total * multiplier;
 
   return {
     total: clamp(round(total), 20, 99),
@@ -463,7 +473,28 @@ function calculateWindowBreakdown(day, window, ctx) {
     competition: round(competition),
     maturity: round(maturity),
     psychological: round(psychological),
-    consistency: round(consistency)
+    consistency: round(consistency),
+
+    debug: {
+      audienceDelta: round(audienceDelta),
+      contentDelta: round(contentDelta),
+      goalDelta: round(goalDelta),
+      regionalDelta: round(regionalDelta),
+      dayDelta: round(dayDelta),
+      seasonalDelta: round(seasonalDelta),
+      competitionDelta: round(competitionDelta),
+      maturityDelta: round(maturityDelta),
+      psychologicalDelta: round(psychologicalDelta),
+      consistencyDelta: round(consistencyDelta),
+      synergyBonus: round(synergyBonus),
+      primaryTieBreaker: round(primaryTieBreaker),
+      dayWindowBonus: round(dayWindowBonus),
+      uniformityPenalty: round(uniformityPenalty),
+      distributionPenalty: round(distributionPenalty),
+      baselinePenalty: round(baselinePenalty),
+      contrastBonus: round(contrastBonus),
+      multiplier: round(multiplier)
+    }
   };
 }
   function getAudienceActivityScore(day, window, ctx) {
@@ -1070,7 +1101,31 @@ function suggestDayFocus(dayKey, ctx, primary) {
 
   return primary.focus || "محتوى متوازن حسب الخطة";
 }
+function renderDebugTable(scoredSlots) {
+  if (!ELS.debugTableBody) return;
 
+  const top = scoredSlots.slice(0, 8);
+
+  ELS.debugTableBody.innerHTML = top.map(function (slot, index) {
+    const d = slot.breakdown.debug || {};
+
+    return `
+      <tr>
+        <td>${index + 1}</td>
+        <td>${slot.dayLabel}</td>
+        <td>${slot.windowLabel}</td>
+        <td><strong>${slot.total}</strong></td>
+        <td>${d.audienceDelta ?? "—"}</td>
+        <td>${d.contentDelta ?? "—"}</td>
+        <td>${d.goalDelta ?? "—"}</td>
+        <td>${d.regionalDelta ?? "—"}</td>
+        <td>${d.contrastBonus ?? "—"}</td>
+        <td>${d.dayWindowBonus ?? "—"}</td>
+        <td>${d.uniformityPenalty ?? "—"}</td>
+      </tr>
+    `;
+  }).join("");
+}
   function renderResults(analysis, ctx) {
     ELS.resultsWrap.hidden = false;
 
@@ -1088,6 +1143,7 @@ function suggestDayFocus(dayKey, ctx, primary) {
     renderTopThree(analysis.topThree);
     renderReasons(analysis.reasons);
     renderWeeklyPlan(analysis.weeklyPlan);
+   renderDebugTable(analysis.scoredSlots);
   }
 
   function renderTopThree(topThree) {
