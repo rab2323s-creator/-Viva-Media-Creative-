@@ -431,12 +431,12 @@ function calculateWindowBreakdown(day, window, ctx) {
     seasonal, competition, maturity, psychological, consistency
   });
 
-  const primaryTieBreaker = getPrimaryGroupTieBreaker(day, window, ctx);
-  const dayWindowBonus = getDayWindowInteraction(day, window, ctx);
-  const uniformityPenalty = getUniformityPenalty(window, ctx);
-  const distributionPenalty = getDistributionPenalty(ctx);
-  const baselinePenalty = getWindowBaselinePenalty(window, ctx);
-
+const primaryTieBreaker = getPrimaryGroupTieBreaker(day, window, ctx);
+const dayWindowBonus = getDayWindowInteraction(day, window, ctx);
+const dayVariationOffset = getDayVariationOffset(day, window, ctx);
+const uniformityPenalty = getUniformityPenalty(window, ctx);
+const distributionPenalty = getDistributionPenalty(ctx);
+const baselinePenalty = getWindowBaselinePenalty(window, ctx);
   const contrastBonus = getScenarioContrastBonus(window, ctx, {
     audience,
     content,
@@ -452,14 +452,14 @@ function calculateWindowBreakdown(day, window, ctx) {
 
   const multiplier = getScenarioWindowMultiplier(window, ctx);
 
-  total += synergyBonus;
-  total += primaryTieBreaker;
-  total += dayWindowBonus;
-  total -= uniformityPenalty;
-  total -= distributionPenalty;
-  total -= baselinePenalty;
-  total += contrastBonus;
-
+ total += synergyBonus;
+total += primaryTieBreaker;
+total += dayWindowBonus;
+total += dayVariationOffset;
+total -= uniformityPenalty;
+total -= distributionPenalty;
+total -= baselinePenalty;
+total += contrastBonus;
   total = total * multiplier;
 
   return {
@@ -475,26 +475,27 @@ function calculateWindowBreakdown(day, window, ctx) {
     psychological: round(psychological),
     consistency: round(consistency),
 
-    debug: {
-      audienceDelta: round(audienceDelta),
-      contentDelta: round(contentDelta),
-      goalDelta: round(goalDelta),
-      regionalDelta: round(regionalDelta),
-      dayDelta: round(dayDelta),
-      seasonalDelta: round(seasonalDelta),
-      competitionDelta: round(competitionDelta),
-      maturityDelta: round(maturityDelta),
-      psychologicalDelta: round(psychologicalDelta),
-      consistencyDelta: round(consistencyDelta),
-      synergyBonus: round(synergyBonus),
-      primaryTieBreaker: round(primaryTieBreaker),
-      dayWindowBonus: round(dayWindowBonus),
-      uniformityPenalty: round(uniformityPenalty),
-      distributionPenalty: round(distributionPenalty),
-      baselinePenalty: round(baselinePenalty),
-      contrastBonus: round(contrastBonus),
-      multiplier: round(multiplier)
-    }
+   debug: {
+  audienceDelta: round(audienceDelta),
+  contentDelta: round(contentDelta),
+  goalDelta: round(goalDelta),
+  regionalDelta: round(regionalDelta),
+  dayDelta: round(dayDelta),
+  seasonalDelta: round(seasonalDelta),
+  competitionDelta: round(competitionDelta),
+  maturityDelta: round(maturityDelta),
+  psychologicalDelta: round(psychologicalDelta),
+  consistencyDelta: round(consistencyDelta),
+  synergyBonus: round(synergyBonus),
+  primaryTieBreaker: round(primaryTieBreaker),
+  dayWindowBonus: round(dayWindowBonus),
+  dayVariationOffset: round(dayVariationOffset),
+  uniformityPenalty: round(uniformityPenalty),
+  distributionPenalty: round(distributionPenalty),
+  baselinePenalty: round(baselinePenalty),
+  contrastBonus: round(contrastBonus),
+  multiplier: round(multiplier)
+}
   };
 }
   function getAudienceActivityScore(day, window, ctx) {
@@ -1581,6 +1582,63 @@ function getDayWindowInteraction(day, window, ctx) {
   }
 
   return bonus;
+}
+ function getDayVariationOffset(day, window, ctx) {
+  let offset = 0;
+  const s = window.start;
+
+  // تنويع خفيف لأيام العمل
+  if (day.key === "mon") {
+    if (s === 16) offset += 1.2;
+    if (s === 20) offset -= 1.2;
+  }
+
+  if (day.key === "tue") {
+    if (s === 18) offset += 1.0;
+  }
+
+  if (day.key === "wed") {
+    if (s === 16) offset += 0.8;
+    if (s === 18) offset += 0.6;
+  }
+
+  if (day.key === "thu") {
+    if (s === 18) offset += 1.4;
+    if (s === 20) offset += 0.8;
+  }
+
+  if (day.key === "fri") {
+    if (s === 18) offset += 1.0;
+    if (s === 22) offset += 0.6;
+    if (ctx.audienceType === "business") offset -= 1.4;
+  }
+
+  if (day.key === "sat") {
+    if (s === 16) offset += 0.8;
+    if (s === 18) offset += 0.6;
+  }
+
+  if (day.key === "sun") {
+    if (s === 16) offset += 0.9;
+    if (s === 10 && (ctx.goalType === "authority" || ctx.accountType === "service")) {
+      offset += 0.8;
+    }
+  }
+
+  // تعزيز بسيط حسب نوع الهدف
+  if (ctx.goalType === "reach" && (s === 18 || s === 20)) {
+    offset += 0.4;
+  }
+
+  if ((ctx.goalType === "authority" || ctx.goalType === "saves") && (s === 10 || s === 12 || s === 14)) {
+    offset += 0.5;
+  }
+
+  if (ctx.goalType === "sales" && (s === 16 || s === 18)) {
+    offset += 0.5;
+  }
+
+  return round(offset);
 }
 init();
 })();
