@@ -37,32 +37,32 @@
   w8: 63
 };
 
-  const REGION_GROUPS = {
-    gulf: {
-      label: "الخليج العربي",
-      countries: ["السعودية", "الإمارات", "الكويت", "قطر", "البحرين", "عُمان"],
-      weekday: { w1: 32, w2: 46, w3: 60, w4: 64, w5: 74, w6: 87, w7: 91, w8: 78 },
-      weekend: { w1: 26, w2: 36, w3: 54, w4: 63, w5: 76, w6: 89, w7: 94, w8: 84 }
-    },
-    egypt: {
-      label: "مصر والسودان",
-      countries: ["مصر", "السودان"],
-      weekday: { w1: 42, w2: 61, w3: 74, w4: 70, w5: 76, w6: 84, w7: 79, w8: 58 },
-      weekend: { w1: 34, w2: 50, w3: 68, w4: 68, w5: 73, w6: 82, w7: 80, w8: 60 }
-    },
-    levant: {
-      label: "بلاد الشام والعراق",
-      countries: ["الأردن", "لبنان", "فلسطين", "سوريا", "العراق"],
-      weekday: { w1: 38, w2: 54, w3: 68, w4: 70, w5: 79, w6: 86, w7: 85, w8: 66 },
-      weekend: { w1: 31, w2: 45, w3: 62, w4: 66, w5: 76, w6: 84, w7: 86, w8: 71 }
-    },
-    maghreb: {
-      label: "المغرب العربي",
-      countries: ["المغرب", "الجزائر", "تونس", "ليبيا", "موريتانيا"],
-      weekday: { w1: 40, w2: 62, w3: 76, w4: 74, w5: 78, w6: 83, w7: 72, w8: 49 },
-      weekend: { w1: 30, w2: 50, w3: 69, w4: 70, w5: 76, w6: 82, w7: 74, w8: 52 }
-    }
-  };
+ const REGION_GROUPS = {
+  gulf: {
+    label: "الخليج العربي",
+    countries: ["السعودية", "الإمارات", "الكويت", "قطر", "البحرين", "عُمان"],
+    weekday: { w1: 28, w2: 42, w3: 58, w4: 66, w5: 76, w6: 84, w7: 86, w8: 74 },
+    weekend: { w1: 24, w2: 36, w3: 52, w4: 62, w5: 74, w6: 86, w7: 90, w8: 80 }
+  },
+  egypt: {
+    label: "مصر والسودان",
+    countries: ["مصر", "السودان"],
+    weekday: { w1: 38, w2: 56, w3: 70, w4: 72, w5: 76, w6: 80, w7: 76, w8: 56 },
+    weekend: { w1: 32, w2: 48, w3: 64, w4: 68, w5: 74, w6: 79, w7: 77, w8: 60 }
+  },
+  levant: {
+    label: "بلاد الشام والعراق",
+    countries: ["الأردن", "لبنان", "فلسطين", "سوريا", "العراق"],
+    weekday: { w1: 34, w2: 50, w3: 66, w4: 70, w5: 77, w6: 82, w7: 80, w8: 62 },
+    weekend: { w1: 28, w2: 44, w3: 60, w4: 65, w5: 74, w6: 81, w7: 82, w8: 68 }
+  },
+  maghreb: {
+    label: "المغرب العربي",
+    countries: ["المغرب", "الجزائر", "تونس", "ليبيا", "موريتانيا"],
+    weekday: { w1: 42, w2: 60, w3: 74, w4: 76, w5: 78, w6: 79, w7: 68, w8: 46 },
+    weekend: { w1: 34, w2: 52, w3: 68, w4: 71, w5: 76, w6: 78, w7: 70, w8: 50 }
+  }
+};
 const AUDIENCE_PROFILES = {
   mixed: {
     w1: 44, w2: 55, w3: 67, w4: 71, w5: 76, w6: 79, w7: 74, w8: 60
@@ -84,13 +84,23 @@ const AUDIENCE_PROFILES = {
   }
 };
 
-  const CONTENT_PROFILES = {
-    reels:    { w1: 34, w2: 46, w3: 58, w4: 64, w5: 78, w6: 88, w7: 93, w8: 82 },
-    carousel: { w1: 48, w2: 80, w3: 88, w4: 79, w5: 70, w6: 76, w7: 59, w8: 28 },
-    single:   { w1: 44, w2: 64, w3: 74, w4: 70, w5: 76, w6: 81, w7: 72, w8: 42 },
-    story:    { w1: 52, w2: 68, w3: 76, w4: 81, w5: 84, w6: 78, w7: 69, w8: 46 },
-    mixed:    { w1: 42, w2: 62, w3: 72, w4: 71, w5: 77, w6: 83, w7: 79, w8: 48 }
-  };
+ const CONTENT_PROFILES = {
+  reels: {
+    w1: 30, w2: 40, w3: 52, w4: 60, w5: 74, w6: 82, w7: 84, w8: 72
+  },
+  carousel: {
+    w1: 46, w2: 74, w3: 84, w4: 80, w5: 68, w6: 64, w7: 50, w8: 24
+  },
+  single: {
+    w1: 40, w2: 58, w3: 70, w4: 72, w5: 74, w6: 76, w7: 66, w8: 40
+  },
+  story: {
+    w1: 44, w2: 58, w3: 68, w4: 78, w5: 82, w6: 76, w7: 64, w8: 42
+  },
+  mixed: {
+    w1: 38, w2: 56, w3: 68, w4: 72, w5: 74, w6: 76, w7: 68, w8: 44
+  }
+};
 
 const GOAL_PROFILES = {
   reach: {
@@ -111,13 +121,22 @@ const GOAL_PROFILES = {
 };
 
   const DEPTH_PROFILES = {
-    light:       { w1: 34, w2: 44, w3: 56, w4: 60, w5: 73, w6: 85, w7: 89, w8: 80 },
-    balanced:    { w1: 42, w2: 62, w3: 74, w4: 72, w5: 75, w6: 81, w7: 76, w8: 50 },
-    deep:        { w1: 51, w2: 84, w3: 91, w4: 82, w5: 70, w6: 74, w7: 54, w8: 21 },
-    emotional:   { w1: 29, w2: 40, w3: 55, w4: 61, w5: 74, w6: 85, w7: 91, w8: 83 },
-    promotional: { w1: 26, w2: 44, w3: 58, w4: 72, w5: 86, w6: 90, w7: 82, w8: 43 }
-  };
-
+  light: {
+    w1: 30, w2: 40, w3: 52, w4: 58, w5: 70, w6: 80, w7: 84, w8: 74
+  },
+  balanced: {
+    w1: 40, w2: 58, w3: 70, w4: 72, w5: 74, w6: 78, w7: 72, w8: 48
+  },
+  deep: {
+    w1: 54, w2: 82, w3: 90, w4: 84, w5: 70, w6: 64, w7: 44, w8: 18
+  },
+  emotional: {
+    w1: 28, w2: 36, w3: 50, w4: 60, w5: 72, w6: 82, w7: 88, w8: 80
+  },
+  promotional: {
+    w1: 24, w2: 38, w3: 54, w4: 68, w5: 82, w6: 86, w7: 76, w8: 40
+  }
+};
   const ACCOUNT_STAGE_PROFILE = {
     new:         { w1: 34, w2: 48, w3: 60, w4: 64, w5: 74, w6: 86, w7: 88, w8: 65 },
     growing:     { w1: 39, w2: 58, w3: 70, w4: 72, w5: 78, w6: 84, w7: 83, w8: 57 },
@@ -125,13 +144,23 @@ const GOAL_PROFILES = {
     large:       { w1: 50, w2: 71, w3: 78, w4: 77, w5: 79, w6: 79, w7: 71, w8: 46 }
   };
 
-  const ACCOUNT_TYPE_PROFILE = {
-    creator: { w1: 30, w2: 46, w3: 60, w4: 64, w5: 75, w6: 88, w7: 92, w8: 76 },
-    brand:   { w1: 46, w2: 66, w3: 76, w4: 74, w5: 78, w6: 82, w7: 71, w8: 40 },
-    store:   { w1: 26, w2: 42, w3: 58, w4: 74, w5: 88, w6: 91, w7: 84, w8: 46 },
-    service: { w1: 48, w2: 74, w3: 82, w4: 78, w5: 72, w6: 71, w7: 54, w8: 24 },
-    personal:{ w1: 38, w2: 52, w3: 66, w4: 68, w5: 75, w6: 84, w7: 83, w8: 62 }
-  };
+ const ACCOUNT_TYPE_PROFILE = {
+  creator: {
+    w1: 26, w2: 40, w3: 56, w4: 64, w5: 76, w6: 84, w7: 88, w8: 74
+  },
+  brand: {
+    w1: 42, w2: 60, w3: 72, w4: 74, w5: 76, w6: 78, w7: 68, w8: 40
+  },
+  store: {
+    w1: 24, w2: 36, w3: 52, w4: 70, w5: 84, w6: 88, w7: 78, w8: 42
+  },
+  service: {
+    w1: 50, w2: 76, w3: 84, w4: 80, w5: 70, w6: 62, w7: 46, w8: 20
+  },
+  personal: {
+    w1: 36, w2: 50, w3: 64, w4: 68, w5: 74, w6: 80, w7: 76, w8: 58
+  }
+};
 
 const DAY_QUALITY = {
   reach: {
@@ -427,12 +456,12 @@ function calculateWindowBreakdown(day, window, ctx) {
   function getAudienceActivityScore(day, window, ctx) {
     let score = AUDIENCE_PROFILES[ctx.audienceType][window.key];
 
-    if (ctx.audienceType === "students") {
-      if (day.key === "fri" || day.key === "sat") {
-        if (window.start >= 20) score += 6;
-      }
-    }
-
+  if (ctx.audienceType === "students") {
+  if (day.key === "fri" || day.key === "sat") {
+    if (window.start === 18 || window.start === 20) score += 4;
+    if (window.start === 22) score += 2;
+  }
+}
     if (ctx.audienceType === "workers") {
       if (day.key === "mon" || day.key === "tue" || day.key === "wed" || day.key === "thu") {
         if (window.start === 12 || window.start === 18) score += 5;
@@ -540,10 +569,10 @@ function getRegionalOverlapScore(day, window, ctx) {
   function getDayQualityScore(day, ctx) {
     let score = DAY_QUALITY[ctx.goalType][day.key];
 
-    if (ctx.contentType === "reels" && (day.key === "thu" || day.key === "fri")) score += 4;
+    if (ctx.contentType === "reels" && (day.key === "thu" || day.key === "fri")) score += 2;
     if (ctx.contentType === "carousel" && (day.key === "mon" || day.key === "tue" || day.key === "wed")) score += 4;
     if (ctx.audienceType === "business" && (day.key === "fri" || day.key === "sat")) score -= 7;
-    if (ctx.accountType === "store" && day.key === "thu") score += 5;
+    if (ctx.accountType === "store" && day.key === "thu") score += 3;
 
     return clamp(score, 15, 97);
   }
@@ -714,45 +743,74 @@ function getCompetitionPressureScore(day, window, ctx) {
     return clamp(score, 20, 95);
   }
 
-  function getScenarioSynergyBonus(day, window, ctx, b) {
-    let bonus = 0;
+function getScenarioSynergyBonus(day, window, ctx, b) {
+  let bonus = 0;
+  const s = window.start;
+  const isMorning = s === 8 || s === 10;
+  const isMid = s === 12 || s === 14;
+  const isAfternoon = s === 16 || s === 18;
+  const isEvening = s === 20;
+  const isLate = s === 22;
 
-    if (ctx.audienceType === "business" && ctx.goalType === "authority" && (window.start === 10 || window.start === 12)) {
-      bonus += 10;
-    }
-
-    if (ctx.accountType === "store" && ctx.goalType === "sales" && (window.start === 16 || window.start === 18)) {
-      bonus += 10;
-    }
-
-    if (ctx.contentType === "carousel" && ctx.contentDepth === "deep" && (window.start === 10 || window.start === 12 || window.start === 14)) {
-      bonus += 9;
-    }
-
-    if (ctx.contentType === "reels" && ctx.goalType === "reach" && (window.start === 18 || window.start === 20)) {
-      bonus += 8;
-    }
-
-    if (ctx.seasonType === "ramadan" && (window.start === 20 || window.start === 22)) {
-      bonus += 10;
-    }
-
-    if (ctx.audienceType === "parents" && ctx.accountType === "service" && (window.start === 10 || window.start === 12 || window.start === 20)) {
-      bonus += 8;
-    }
-
-    if (ctx.competitionLevel === "avoid" && (window.start === 12 || window.start === 16) &&
-        (b.goal >= 70 || b.content >= 70)) {
-      bonus += 7;
-    }
-
-    if (ctx.weekendMode === "strong" && WEEKEND_DAYS.has(day.key) && (window.start === 18 || window.start === 20)) {
-      bonus += 6;
-    }
-
-    return bonus;
+  if (ctx.audienceType === "business" && ctx.goalType === "authority") {
+    if (isMorning || isMid) bonus += 6;
+    if (isEvening || isLate) bonus -= 4;
   }
 
+  if (ctx.accountType === "store" && ctx.goalType === "sales") {
+    if (isAfternoon) bonus += 6;
+    if (isLate) bonus -= 3;
+  }
+
+  if (ctx.contentType === "carousel" && ctx.contentDepth === "deep") {
+    if (isMorning || isMid) bonus += 6;
+    if (isEvening || isLate) bonus -= 5;
+  }
+
+  if (ctx.contentType === "reels" && ctx.goalType === "reach") {
+    if (s === 18 || s === 20) bonus += 5;
+    if (isMorning) bonus -= 2;
+  }
+
+  if (ctx.seasonType === "ramadan") {
+    if (s === 20 || s === 22) bonus += 6;
+    if (s === 10) bonus -= 4;
+  }
+
+  if (ctx.audienceType === "parents" && ctx.accountType === "service") {
+    if (s === 10 || s === 12 || s === 20) bonus += 4;
+  }
+
+  if (ctx.competitionLevel === "avoid") {
+    if ((s === 12 || s === 14 || s === 16) && (b.goal >= 68 || b.content >= 68)) {
+      bonus += 5;
+    }
+    if (s === 20) {
+      bonus -= 4;
+    }
+  }
+
+  if (ctx.weekendMode === "strong" && WEEKEND_DAYS.has(day.key)) {
+    if (s === 18 || s === 20) bonus += 4;
+  }
+
+  if (ctx.goalType === "authority" && ctx.contentDepth === "deep") {
+    if (s === 10 || s === 12) bonus += 5;
+    if (s >= 20) bonus -= 5;
+  }
+
+  if (ctx.goalType === "saves" && (ctx.contentType === "carousel" || ctx.contentDepth === "deep")) {
+    if (s === 12 || s === 14) bonus += 5;
+    if (s === 22) bonus -= 4;
+  }
+
+  if (ctx.audienceType === "students" && ctx.contentType === "reels") {
+    if (s === 18 || s === 20) bonus += 4;
+    if (s === 8) bonus -= 3;
+  }
+
+  return clamp(bonus, -12, 12);
+}
 function getPrimaryGroupTieBreaker(day, window, ctx) {
   const dayType = WEEKEND_DAYS.has(day.key) ? "weekend" : "weekday";
   const primaryValue = REGION_GROUPS[ctx.primaryGroup][dayType][window.key];
