@@ -439,17 +439,17 @@ function calculateWindowBreakdown(day, window, ctx) {
   const consistencyDelta = consistency - 60;
 
   let total =
-    45 +
-    audienceDelta * 0.30 +
-    contentDelta * 0.22 +
-    goalDelta * 0.20 +
-    regionalDelta * 0.18 +
-    dayDelta * 0.16 +
-    seasonalDelta * 0.10 +
-    competitionDelta * 0.14 +
-    maturityDelta * 0.07 +
-    psychologicalDelta * 0.12 +
-    consistencyDelta * 0.08;
+  48 +
+  audienceDelta * 0.26 +
+  contentDelta * 0.13 +
+  goalDelta * 0.18 +
+  regionalDelta * 0.16 +
+  dayDelta * 0.14 +
+  seasonalDelta * 0.10 +
+  competitionDelta * 0.13 +
+  maturityDelta * 0.06 +
+  psychologicalDelta * 0.11 +
+  consistencyDelta * 0.07;
 
   const synergyBonus = getScenarioSynergyBonus(day, window, ctx, {
     audience, content, goal, regional, dayQuality,
@@ -960,43 +960,43 @@ function getUniformityPenalty(window, ctx) {
   let penalty = 0;
   const s = window.start;
 
-  if (s === 20) penalty += 18;
-  if (s === 18) penalty += 10;
-  if (s === 22) penalty += 8;
+  if (s === 20) penalty += 24;
+  if (s === 18) penalty += 12;
+  if (s === 22) penalty += 10;
 
   if (ctx.contentType === "reels" && ctx.goalType === "reach") {
-    if (s === 18) penalty -= 4;
+    if (s === 18) penalty -= 5;
     if (s === 20) penalty -= 3;
   }
 
   if (ctx.goalType === "sales" && ctx.accountType === "store") {
-    if (s === 16) penalty -= 5;
-    if (s === 18) penalty -= 3;
+    if (s === 16) penalty -= 6;
+    if (s === 18) penalty -= 4;
   }
 
   if (ctx.goalType === "authority" || ctx.goalType === "saves") {
-    if (s === 10 || s === 12 || s === 14) penalty -= 5;
-    if (s === 20) penalty += 8;
-    if (s === 22) penalty += 12;
-  }
-
-  if (ctx.audienceType === "business") {
-    if (s === 10 || s === 12) penalty -= 5;
-    if (s === 18) penalty += 6;
+    if (s === 10 || s === 12 || s === 14) penalty -= 6;
     if (s === 20) penalty += 10;
     if (s === 22) penalty += 14;
   }
 
+  if (ctx.audienceType === "business") {
+    if (s === 10 || s === 12) penalty -= 6;
+    if (s === 18) penalty += 7;
+    if (s === 20) penalty += 12;
+    if (s === 22) penalty += 16;
+  }
+
   if (ctx.competitionLevel === "high") {
-    if (s === 18) penalty += 6;
-    if (s === 20) penalty += 10;
+    if (s === 18) penalty += 8;
+    if (s === 20) penalty += 12;
   }
 
   if (ctx.competitionLevel === "avoid") {
-    if (s === 18) penalty += 10;
-    if (s === 20) penalty += 16;
-    if (s === 22) penalty += 8;
-    if (s === 12 || s === 14 || s === 16) penalty -= 3;
+    if (s === 18) penalty += 12;
+    if (s === 20) penalty += 18;
+    if (s === 22) penalty += 10;
+    if (s === 12 || s === 14 || s === 16) penalty -= 4;
   }
 
   return Math.max(0, penalty);
@@ -1055,8 +1055,8 @@ function buildWeeklyPlan(scoredSlots, ctx) {
       const count = usedPrimaryWindows[candidate.windowKey] || 0;
       const scoreGap = primary.total - candidate.total;
 
-      if (count < 3) {
-        if (i === 0 || scoreGap <= 1.5) {
+      if (count < 2) {
+        if (i === 0 || scoreGap <= 2.2) {
           primary = candidate;
           break;
         }
@@ -1630,21 +1630,21 @@ function getScenarioContrastBonus(window, ctx, breakdown) {
 
   const scenarioSpecific =
     breakdown.audience * 0.34 +
-    breakdown.content * 0.24 +
-    breakdown.goal * 0.22 +
+    breakdown.content * 0.22 +
+    breakdown.goal * 0.24 +
     breakdown.regional * 0.20;
 
   const contrast = scenarioSpecific - generic;
 
-  if (contrast > 14) return 16;
-  if (contrast > 10) return 12;
-  if (contrast > 6) return 8;
-  if (contrast > 3) return 4;
+  if (contrast > 16) return 18;
+  if (contrast > 12) return 14;
+  if (contrast > 8) return 10;
+  if (contrast > 4) return 5;
 
-  if (contrast < -14) return -16;
-  if (contrast < -10) return -12;
-  if (contrast < -6) return -8;
-  if (contrast < -3) return -4;
+  if (contrast < -16) return -18;
+  if (contrast < -12) return -14;
+  if (contrast < -8) return -10;
+  if (contrast < -4) return -5;
 
   return 0;
 }
