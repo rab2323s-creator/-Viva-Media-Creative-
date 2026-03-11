@@ -314,9 +314,18 @@
       reasons
     };
   }
-
-function calculateWindowBreakdown(day, window, ctx) { const audience = getAudienceActivityScore(day, window, ctx); const content = getContentFitScore(day, window, ctx); const goal = getGoalMatchScore(day, window, ctx); const regional = getRegionalOverlapScore(day, window, ctx); const dayQuality = getDayQualityScore(day, ctx); const seasonal = getSeasonalAdjustmentScore(day, window, ctx); const competition = getCompetitionPressureScore(day, window, ctx); const maturity = getAccountMaturityScore(day, window, ctx); const psychological = getPsychologicalContextScore(day, window, ctx); const consistency = getPostingFrequencyScore(day, window, ctx);
-
+   function calculateWindowBreakdown(day, window, ctx) {
+  const audience = getAudienceActivityScore(day, window, ctx);
+  const content = getContentFitScore(day, window, ctx);
+  const goal = getGoalMatchScore(day, window, ctx);
+  const regional = getRegionalOverlapScore(day, window, ctx);
+  const dayQuality = getDayQualityScore(day, ctx);
+  const seasonal = getSeasonalAdjustmentScore(day, window, ctx);
+  const competition = getCompetitionPressureScore(day, window, ctx);
+  const maturity = getAccountMaturityScore(day, window, ctx);
+  const psychological = getPsychologicalContextScore(day, window, ctx);
+  const consistency = getPostingFrequencyScore(day, window, ctx);
+  
     let total =
       audience * 0.22 +
       content * 0.14 +
