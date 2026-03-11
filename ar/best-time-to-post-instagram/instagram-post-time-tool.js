@@ -36,7 +36,32 @@
   w7: 83,
   w8: 63
 };
-
+const CALIBRATION = {
+  weights: {
+    audience: 0.22,
+    content: 0.18,
+    goal: 0.15,
+    regional: 0.14,
+    day: 0.10,
+    seasonal: 0.08,
+    competition: 0.10,
+    maturity: 0.05,
+    psychological: 0.08,
+    consistency: 0.05
+  },
+  penalties: {
+    distribution: 1,
+    baseline: 1,
+    uniformity: 1
+  },
+  bonuses: {
+    contrast: 1,
+    synergy: 1,
+    dayInteraction: 1,
+    dayVariation: 1,
+    primaryTieBreaker: 1
+  }
+};
  const REGION_GROUPS = {
   gulf: {
     label: "الخليج العربي",
@@ -415,28 +440,29 @@ function calculateWindowBreakdown(day, window, ctx) {
 
   let total =
     60 +
-    audienceDelta * 0.22 +
-    contentDelta * 0.18 +
-    goalDelta * 0.15 +
-    regionalDelta * 0.14 +
-    dayDelta * 0.10 +
-    seasonalDelta * 0.08 +
-    competitionDelta * 0.10 +
-    maturityDelta * 0.05 +
-    psychologicalDelta * 0.08 +
-    consistencyDelta * 0.05;
+    audienceDelta * CALIBRATION.weights.audience +
+    contentDelta * CALIBRATION.weights.content +
+    goalDelta * CALIBRATION.weights.goal +
+    regionalDelta * CALIBRATION.weights.regional +
+    dayDelta * CALIBRATION.weights.day +
+    seasonalDelta * CALIBRATION.weights.seasonal +
+    competitionDelta * CALIBRATION.weights.competition +
+    maturityDelta * CALIBRATION.weights.maturity +
+    psychologicalDelta * CALIBRATION.weights.psychological +
+    consistencyDelta * CALIBRATION.weights.consistency;
 
   const synergyBonus = getScenarioSynergyBonus(day, window, ctx, {
     audience, content, goal, regional, dayQuality,
     seasonal, competition, maturity, psychological, consistency
   });
 
-const primaryTieBreaker = getPrimaryGroupTieBreaker(day, window, ctx);
-const dayWindowBonus = getDayWindowInteraction(day, window, ctx);
-const dayVariationOffset = getDayVariationOffset(day, window, ctx);
-const uniformityPenalty = getUniformityPenalty(window, ctx);
-const distributionPenalty = getDistributionPenalty(ctx);
-const baselinePenalty = getWindowBaselinePenalty(window, ctx);
+  const primaryTieBreaker = getPrimaryGroupTieBreaker(day, window, ctx);
+  const dayWindowBonus = getDayWindowInteraction(day, window, ctx);
+  const dayVariationOffset = getDayVariationOffset(day, window, ctx);
+  const uniformityPenalty = getUniformityPenalty(window, ctx);
+  const distributionPenalty = getDistributionPenalty(ctx);
+  const baselinePenalty = getWindowBaselinePenalty(window, ctx);
+
   const contrastBonus = getScenarioContrastBonus(window, ctx, {
     audience,
     content,
@@ -452,14 +478,15 @@ const baselinePenalty = getWindowBaselinePenalty(window, ctx);
 
   const multiplier = getScenarioWindowMultiplier(window, ctx);
 
- total += synergyBonus;
-total += primaryTieBreaker;
-total += dayWindowBonus;
-total += dayVariationOffset;
-total -= uniformityPenalty;
-total -= distributionPenalty;
-total -= baselinePenalty;
-total += contrastBonus;
+  total += synergyBonus * CALIBRATION.bonuses.synergy;
+  total += primaryTieBreaker * CALIBRATION.bonuses.primaryTieBreaker;
+  total += dayWindowBonus * CALIBRATION.bonuses.dayInteraction;
+  total += dayVariationOffset * CALIBRATION.bonuses.dayVariation;
+  total -= uniformityPenalty * CALIBRATION.penalties.uniformity;
+  total -= distributionPenalty * CALIBRATION.penalties.distribution;
+  total -= baselinePenalty * CALIBRATION.penalties.baseline;
+  total += contrastBonus * CALIBRATION.bonuses.contrast;
+
   total = total * multiplier;
 
   return {
@@ -475,27 +502,27 @@ total += contrastBonus;
     psychological: round(psychological),
     consistency: round(consistency),
 
-   debug: {
-  audienceDelta: round(audienceDelta),
-  contentDelta: round(contentDelta),
-  goalDelta: round(goalDelta),
-  regionalDelta: round(regionalDelta),
-  dayDelta: round(dayDelta),
-  seasonalDelta: round(seasonalDelta),
-  competitionDelta: round(competitionDelta),
-  maturityDelta: round(maturityDelta),
-  psychologicalDelta: round(psychologicalDelta),
-  consistencyDelta: round(consistencyDelta),
-  synergyBonus: round(synergyBonus),
-  primaryTieBreaker: round(primaryTieBreaker),
-  dayWindowBonus: round(dayWindowBonus),
-  dayVariationOffset: round(dayVariationOffset),
-  uniformityPenalty: round(uniformityPenalty),
-  distributionPenalty: round(distributionPenalty),
-  baselinePenalty: round(baselinePenalty),
-  contrastBonus: round(contrastBonus),
-  multiplier: round(multiplier)
-}
+    debug: {
+      audienceDelta: round(audienceDelta),
+      contentDelta: round(contentDelta),
+      goalDelta: round(goalDelta),
+      regionalDelta: round(regionalDelta),
+      dayDelta: round(dayDelta),
+      seasonalDelta: round(seasonalDelta),
+      competitionDelta: round(competitionDelta),
+      maturityDelta: round(maturityDelta),
+      psychologicalDelta: round(psychologicalDelta),
+      consistencyDelta: round(consistencyDelta),
+      synergyBonus: round(synergyBonus),
+      primaryTieBreaker: round(primaryTieBreaker),
+      dayWindowBonus: round(dayWindowBonus),
+      dayVariationOffset: round(dayVariationOffset),
+      uniformityPenalty: round(uniformityPenalty),
+      distributionPenalty: round(distributionPenalty),
+      baselinePenalty: round(baselinePenalty),
+      contrastBonus: round(contrastBonus),
+      multiplier: round(multiplier)
+    }
   };
 }
   function getAudienceActivityScore(day, window, ctx) {
@@ -622,7 +649,74 @@ function getRegionalOverlapScore(day, window, ctx) {
 
     return clamp(score, 15, 97);
   }
+const PRESET_PERSONAS = {
+  local_store: {
+    label: "متجر محلي",
+    accountType: "store",
+    audienceType: "workers",
+    contentType: "single",
+    goalType: "sales",
+    contentDepth: "promotional",
+    accountStage: "growing",
+    postingFrequency: "3",
+    competitionLevel: "normal",
+    weekendMode: "balanced"
+  },
+  edu_creator: {
+    label: "صانع محتوى تعليمي",
+    accountType: "creator",
+    audienceType: "mixed",
+    contentType: "carousel",
+    goalType: "saves",
+    contentDepth: "deep",
+    accountStage: "growing",
+    postingFrequency: "3",
+    competitionLevel: "normal",
+    weekendMode: "balanced"
+  },
+  entertainment_creator: {
+    label: "صانع محتوى ترفيهي",
+    accountType: "creator",
+    audienceType: "students",
+    contentType: "reels",
+    goalType: "reach",
+    contentDepth: "light",
+    accountStage: "growing",
+    postingFrequency: "5",
+    competitionLevel: "normal",
+    weekendMode: "strong"
+  },
+  service_business: {
+    label: "خدمات / عيادة / مؤسسة",
+    accountType: "service",
+    audienceType: "business",
+    contentType: "carousel",
+    goalType: "authority",
+    contentDepth: "deep",
+    accountStage: "established",
+    postingFrequency: "3",
+    competitionLevel: "avoid",
+    weekendMode: "weak"
+  }
+};
 
+  function applyPreset(presetKey) {
+  const preset = PRESET_PERSONAS[presetKey];
+  if (!preset) return;
+
+  ELS.accountType.value = preset.accountType;
+  ELS.audienceType.value = preset.audienceType;
+  ELS.contentType.value = preset.contentType;
+  ELS.goalType.value = preset.goalType;
+  ELS.contentDepth.value = preset.contentDepth;
+  ELS.accountStage.value = preset.accountStage;
+  ELS.postingFrequency.value = preset.postingFrequency;
+  ELS.competitionLevel.value = preset.competitionLevel;
+  ELS.weekendMode.value = preset.weekendMode;
+
+  computeAndRender();
+}
+  
   function getSeasonalAdjustmentScore(day, window, ctx) {
     let score = 60;
 
@@ -954,27 +1048,48 @@ function computeBestDays(scoredSlots) {
   return days.slice(0, 3);
 }
 
-  function buildWeeklyPlan(scoredSlots, ctx) {
-    return DAYS.map(function (day) {
-      const daySlots = scoredSlots
-        .filter(function (slot) { return slot.dayKey === day.key; })
-        .sort(function (a, b) { return b.total - a.total; });
+function buildWeeklyPlan(scoredSlots, ctx) {
+  const usedPrimaryWindows = {};
+  const plan = [];
 
-      const primary = daySlots[0];
-      const secondary = daySlots.find(function (slot) {
-        return slot.windowKey !== primary.windowKey;
-      }) || daySlots[1] || primary;
+  DAYS.forEach(function (day) {
+    const daySlots = scoredSlots
+      .filter(function (slot) { return slot.dayKey === day.key; })
+      .sort(function (a, b) { return b.total - a.total; });
 
-      return {
-        dayLabel: day.label,
-        primaryWindow: primary.windowLabel,
-        secondaryWindow: secondary.windowLabel,
-        primaryScore: primary.total,
-        secondaryScore: secondary.total,
-        focus: suggestDayFocus(day.key, ctx, primary)
-      };
+    let primary = daySlots[0];
+
+    for (let i = 0; i < daySlots.length; i++) {
+      const candidate = daySlots[i];
+      const count = usedPrimaryWindows[candidate.windowKey] || 0;
+      const scoreGap = primary.total - candidate.total;
+
+      if (count < 3) {
+        if (i === 0 || scoreGap <= 1.5) {
+          primary = candidate;
+          break;
+        }
+      }
+    }
+
+    usedPrimaryWindows[primary.windowKey] = (usedPrimaryWindows[primary.windowKey] || 0) + 1;
+
+    const secondary = daySlots.find(function (slot) {
+      return slot.windowKey !== primary.windowKey;
+    }) || daySlots[1] || primary;
+
+    plan.push({
+      dayLabel: day.label,
+      primaryWindow: primary.windowLabel,
+      secondaryWindow: secondary.windowLabel,
+      primaryScore: primary.total,
+      secondaryScore: secondary.total,
+      focus: suggestDayFocus(day.key, ctx, primary)
     });
-  }
+  });
+
+  return plan;
+}
 
 function pickTopUniqueSlots(scoredSlots, limit) {
   const results = [];
@@ -1000,29 +1115,35 @@ function pickTopUniqueSlots(scoredSlots, limit) {
 function computeConfidence(scoredSlots, topOverall, ctx) {
   const second = scoredSlots[1] || topOverall;
   const third = scoredSlots[2] || topOverall;
+  const fifth = scoredSlots[4] || third;
 
   const gap1 = topOverall.total - second.total;
   const gap2 = topOverall.total - third.total;
+  const gap5 = topOverall.total - fifth.total;
 
-  let confidence = 52;
+  let confidence = 50;
 
-  confidence += Math.min(14, gap1 * 2.2);
+  confidence += Math.min(12, gap1 * 2.0);
   confidence += Math.min(8, gap2 * 1.2);
+  confidence += Math.min(6, gap5 * 0.8);
 
-  confidence += (topOverall.breakdown.regional - 50) * 0.05;
-  confidence += (topOverall.breakdown.goal - 50) * 0.04;
-  confidence += (topOverall.breakdown.content - 50) * 0.04;
+  const breakdown = topOverall.breakdown;
+  const consistencyOfFactors =
+    (breakdown.audience + breakdown.content + breakdown.goal + breakdown.regional) / 4;
 
-  if (ctx.rawDistributionTotal === 100) confidence += 5;
+  confidence += (consistencyOfFactors - 50) * 0.08;
+
+  if (ctx.rawDistributionTotal === 100) confidence += 4;
   else confidence -= 5;
 
-  if (ctx.goalType === "authority" || ctx.goalType === "saves") confidence += 2;
-  if (ctx.competitionLevel === "avoid") confidence += 2;
+  if (ctx.audienceType === "mixed") confidence -= 2;
+  if (ctx.contentType === "mixed") confidence -= 2;
+  if (ctx.goalType === "reach" && ctx.contentType === "reels") confidence -= 1;
 
-  if (gap1 < 2) confidence -= 10;
-  if (gap1 < 1) confidence -= 6;
+  if (gap1 < 1.5) confidence -= 8;
+  if (gap2 < 2) confidence -= 5;
 
-  return clamp(Math.round(confidence), 38, 95);
+  return clamp(Math.round(confidence), 35, 94);
 }
 
   function buildReasons(topOverall, topDays, ctx) {
@@ -1463,6 +1584,32 @@ function getWindowBaselinePenalty(window, ctx) {
 
   return penalty;
 }
+  const CALIBRATION = {
+  weights: {
+    audience: 0.22,
+    content: 0.18,
+    goal: 0.15,
+    regional: 0.14,
+    day: 0.10,
+    seasonal: 0.08,
+    competition: 0.10,
+    maturity: 0.05,
+    psychological: 0.08,
+    consistency: 0.05
+  },
+  penalties: {
+    distribution: 1,
+    baseline: 1,
+    uniformity: 1
+  },
+  bonuses: {
+    contrast: 1,
+    synergy: 1,
+    dayInteraction: 1,
+    dayVariation: 1,
+    primaryTieBreaker: 1
+  }
+};
 
 function getScenarioWindowMultiplier(window, ctx) {
   let multiplier = 1;
