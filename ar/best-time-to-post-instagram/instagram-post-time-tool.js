@@ -326,17 +326,17 @@
   const psychological = getPsychologicalContextScore(day, window, ctx);
   const consistency = getPostingFrequencyScore(day, window, ctx);
   
-    let total =
-      audience * 0.22 +
-      content * 0.14 +
-      goal * 0.14 +
-      regional * 0.16 +
-      dayQuality * 0.08 +
-      seasonal * 0.07 +
-      competition * 0.05 +
-      maturity * 0.05 +
-      psychological * 0.05 +
-      consistency * 0.04;
+   let total =
+  audience * 0.15 +
+  content * 0.13 +
+  goal * 0.14 +
+  regional * 0.14 +
+  dayQuality * 0.10 +
+  seasonal * 0.08 +
+  competition * 0.12 +
+  maturity * 0.05 +
+  psychological * 0.05 +
+  consistency * 0.04;
 
     total += getScenarioSynergyBonus(day, window, ctx, {
       audience, content, goal, regional, dayQuality,
@@ -443,21 +443,37 @@
     return clamp(score, 10, 98);
   }
 
-  function getRegionalOverlapScore(day, window, ctx) {
-    const dayType = WEEKEND_DAYS.has(day.key) ? "weekend" : "weekday";
+ function getRegionalOverlapScore(day, window, ctx) {
+  const dayType = WEEKEND_DAYS.has(day.key) ? "weekend" : "weekday";
 
-    let score = 0;
-    Object.keys(ctx.distribution).forEach(function (groupKey) {
-      score += REGION_GROUPS[groupKey][dayType][window.key] * ctx.distribution[groupKey];
-    });
+  let score = 0;
+  let strongestGroup = null;
+  let strongestWeight = 0;
 
-    if (ctx.primaryGroup) {
-      const primaryBonus = REGION_GROUPS[ctx.primaryGroup][dayType][window.key] * 0.08;
-      score += primaryBonus;
+  Object.keys(ctx.distribution).forEach(function (groupKey) {
+    const weight = ctx.distribution[groupKey];
+    const value = REGION_GROUPS[groupKey][dayType][window.key];
+
+    score += value * weight;
+
+    if (weight > strongestWeight) {
+      strongestWeight = weight;
+      strongestGroup = groupKey;
     }
+  });
 
-    return clamp(score, 10, 98);
+  if (strongestGroup) {
+    const dominantValue = REGION_GROUPS[strongestGroup][dayType][window.key];
+    score += (dominantValue - 50) * 0.20;
   }
+
+  if (ctx.primaryGroup) {
+    const primaryValue = REGION_GROUPS[ctx.primaryGroup][dayType][window.key];
+    score += (primaryValue - 50) * 0.12;
+  }
+
+  return clamp(score, 10, 98);
+}
 
   function getDayQualityScore(day, ctx) {
     let score = DAY_QUALITY[ctx.goalType][day.key];
@@ -512,36 +528,44 @@
     return clamp(score, 18, 98);
   }
 
-  function getCompetitionPressureScore(day, window, ctx) {
-    let score = 72;
+ function getCompetitionPressureScore(day, window, ctx) {
+  let score = 70;
 
-    const isPrime = window.start === 18 || window.start === 20;
-    const isShoulder = window.start === 16 || window.start === 12;
-    const isBusinessHour = window.start === 10 || window.start === 12 || window.start === 14;
+  const isPrime = window.start === 18 || window.start === 20;
+  const isShoulder = window.start === 16 || window.start === 14;
+  const isBusinessHour = window.start === 10 || window.start === 12;
+  const isLate = window.start === 22;
 
-    if (ctx.competitionLevel === "normal") {
-      if (isPrime) score -= 3;
-      if (isShoulder) score += 3;
-    }
-
-    if (ctx.competitionLevel === "high") {
-      if (isPrime) score -= 10;
-      if (isShoulder) score += 6;
-      if (window.start === 10) score += 5;
-    }
-
-    if (ctx.competitionLevel === "avoid") {
-      if (isPrime) score -= 18;
-      if (isShoulder) score += 12;
-      if (isBusinessHour) score += 8;
-    }
-
-    if (ctx.goalType === "reach" && ctx.contentType === "reels" && isPrime) {
-      score += 6;
-    }
-
-    return clamp(score, 18, 96);
+  if (ctx.competitionLevel === "normal") {
+    if (isPrime) score -= 8;
+    if (isShoulder) score += 6;
+    if (isBusinessHour) score += 3;
   }
+
+  if (ctx.competitionLevel === "high") {
+    if (isPrime) score -= 18;
+    if (isShoulder) score += 10;
+    if (isBusinessHour) score += 8;
+    if (isLate) score -= 4;
+  }
+
+  if (ctx.competitionLevel === "avoid") {
+    if (isPrime) score -= 28;
+    if (isShoulder) score += 16;
+    if (isBusinessHour) score += 12;
+    if (isLate) score -= 8;
+  }
+
+  if (ctx.goalType === "reach" && ctx.contentType === "reels" && isPrime) {
+    score += 4;
+  }
+
+  if (ctx.goalType === "sales" && (window.start === 16 || window.start === 18)) {
+    score += 6;
+  }
+
+  return clamp(score, 10, 95);
+}
 
   function getAccountMaturityScore(day, window, ctx) {
     let score = ACCOUNT_STAGE_PROFILE[ctx.accountStage][window.key];
