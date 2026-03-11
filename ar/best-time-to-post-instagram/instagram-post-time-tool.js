@@ -870,8 +870,8 @@ function getUniformityPenalty(window, ctx) {
   const isMid = window.start === 12 || window.start === 14 || window.start === 16;
   const isMorning = window.start === 8 || window.start === 10;
 
-  if (window.start === 20) penalty += 8;
-  if (window.start === 18) penalty += 6;
+  if (window.start === 20) penalty += 12;
+if (window.start === 18) penalty += 8;
   if (window.start === 22) penalty += 5;
 
   if (ctx.contentType === "reels" && ctx.goalType === "reach" && isPrime) {
@@ -1512,23 +1512,24 @@ function getGenericWindowScore(windowKey) {
 }
 
 function getScenarioContrastBonus(window, ctx, breakdown) {
+
   const generic = getGenericWindowScore(window.key);
 
   const scenarioSpecific =
-    breakdown.audience * 0.28 +
-    breakdown.content * 0.22 +
-    breakdown.goal * 0.20 +
-    breakdown.regional * 0.18 +
-    breakdown.psychological * 0.12;
+    breakdown.audience * 0.32 +
+    breakdown.content * 0.26 +
+    breakdown.goal * 0.22 +
+    breakdown.regional * 0.20;
 
   const contrast = scenarioSpecific - generic;
 
-  if (contrast > 12) return 8;
-  if (contrast > 8) return 5;
-  if (contrast > 4) return 3;
-  if (contrast < -10) return -8;
-  if (contrast < -6) return -5;
-  if (contrast < -3) return -2;
+  if (contrast > 8) return 12;
+  if (contrast > 5) return 8;
+  if (contrast > 2) return 4;
+
+  if (contrast < -8) return -10;
+  if (contrast < -5) return -6;
+  if (contrast < -2) return -3;
 
   return 0;
 }
