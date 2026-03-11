@@ -1584,32 +1584,7 @@ function getWindowBaselinePenalty(window, ctx) {
 
   return penalty;
 }
-  const CALIBRATION = {
-  weights: {
-    audience: 0.22,
-    content: 0.18,
-    goal: 0.15,
-    regional: 0.14,
-    day: 0.10,
-    seasonal: 0.08,
-    competition: 0.10,
-    maturity: 0.05,
-    psychological: 0.08,
-    consistency: 0.05
-  },
-  penalties: {
-    distribution: 1,
-    baseline: 1,
-    uniformity: 1
-  },
-  bonuses: {
-    contrast: 1,
-    synergy: 1,
-    dayInteraction: 1,
-    dayVariation: 1,
-    primaryTieBreaker: 1
-  }
-};
+
 
 function getScenarioWindowMultiplier(window, ctx) {
   let multiplier = 1;
