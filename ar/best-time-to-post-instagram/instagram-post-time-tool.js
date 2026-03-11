@@ -440,16 +440,16 @@ function calculateWindowBreakdown(day, window, ctx) {
 
   let total =
   48 +
-  audienceDelta * 0.26 +
-  contentDelta * 0.13 +
-  goalDelta * 0.18 +
-  regionalDelta * 0.16 +
-  dayDelta * 0.14 +
-  seasonalDelta * 0.10 +
-  competitionDelta * 0.13 +
-  maturityDelta * 0.06 +
-  psychologicalDelta * 0.11 +
-  consistencyDelta * 0.07;
+  audienceDelta * CALIBRATION.weights.audience +
+  contentDelta * CALIBRATION.weights.content +
+  goalDelta * CALIBRATION.weights.goal +
+  regionalDelta * CALIBRATION.weights.regional +
+  dayDelta * CALIBRATION.weights.day +
+  seasonalDelta * CALIBRATION.weights.seasonal +
+  competitionDelta * CALIBRATION.weights.competition +
+  maturityDelta * CALIBRATION.weights.maturity +
+  psychologicalDelta * CALIBRATION.weights.psychological +
+  consistencyDelta * CALIBRATION.weights.consistency;
 
   const synergyBonus = getScenarioSynergyBonus(day, window, ctx, {
     audience, content, goal, regional, dayQuality,
@@ -477,16 +477,16 @@ function calculateWindowBreakdown(day, window, ctx) {
     consistency
   });
 
-  total += synergyBonus * 1.4;
-  total += primaryTieBreaker * 1.0;
-  total += dayWindowBonus * 1.4;
-  total += dayVariationOffset * 1.2;
-  total += contrastBonus * 1.4;
+ total += synergyBonus * CALIBRATION.bonuses.synergy;
+total += primaryTieBreaker * CALIBRATION.bonuses.primaryTieBreaker;
+total += dayWindowBonus * CALIBRATION.bonuses.dayInteraction;
+total += dayVariationOffset * CALIBRATION.bonuses.dayVariation;
+total += contrastBonus * CALIBRATION.bonuses.contrast;
 
-  total -= uniformityPenalty * 1.6;
-  total -= distributionPenalty * 1.0;
-  total -= baselinePenalty * 1.3;
-  total -= hardPenalty;
+total -= uniformityPenalty * CALIBRATION.penalties.uniformity;
+total -= distributionPenalty * CALIBRATION.penalties.distribution;
+total -= baselinePenalty * CALIBRATION.penalties.baseline;
+total -= hardPenalty;
 
   return {
     total: clamp(round(total), 5, 99),
