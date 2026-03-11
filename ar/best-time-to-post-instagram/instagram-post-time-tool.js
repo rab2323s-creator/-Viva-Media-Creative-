@@ -315,39 +315,7 @@
     };
   }
 
- function calculateWindowBreakdown(day, window, ctx) {
-    const audience = getAudienceActivityScore(day, window, ctx);
-    console.log("Audience:", audience);
-
-    const content = getContentFitScore(day, window, ctx);
-    console.log("Content:", content);
-
-    const goal = getGoalMatchScore(day, window, ctx);
-    console.log("Goal:", goal);
-
-    const regional = getRegionalOverlapScore(day, window, ctx);
-    console.log("Regional:", regional);
-
-    const dayQuality = getDayQualityScore(day, ctx);
-    console.log("Day Quality:", dayQuality);
-
-    const seasonal = getSeasonalAdjustmentScore(day, window, ctx);
-    console.log("Seasonal:", seasonal);
-
-    const competition = getCompetitionPressureScore(day, window, ctx);
-    console.log("Competition:", competition);
-
-    const maturity = getAccountMaturityScore(day, window, ctx);
-    console.log("Maturity:", maturity);
-
-    const psychological = getPsychologicalContextScore(day, window, ctx);
-    console.log("Psychological:", psychological);
-
-    const consistency = getPostingFrequencyScore(day, window, ctx);
-    console.log("Consistency:", consistency);
-
-    // Rest of the function as is...
-}
+function calculateWindowBreakdown(day, window, ctx) { const audience = getAudienceActivityScore(day, window, ctx); const content = getContentFitScore(day, window, ctx); const goal = getGoalMatchScore(day, window, ctx); const regional = getRegionalOverlapScore(day, window, ctx); const dayQuality = getDayQualityScore(day, ctx); const seasonal = getSeasonalAdjustmentScore(day, window, ctx); const competition = getCompetitionPressureScore(day, window, ctx); const maturity = getAccountMaturityScore(day, window, ctx); const psychological = getPsychologicalContextScore(day, window, ctx); const consistency = getPostingFrequencyScore(day, window, ctx);
 
     let total =
       audience * 0.22 +
