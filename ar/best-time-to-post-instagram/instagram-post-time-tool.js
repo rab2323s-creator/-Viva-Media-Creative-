@@ -432,9 +432,23 @@ function calculateWindowBreakdown(day, window, ctx) {
   });
 
   total += getPrimaryGroupTieBreaker(day, window, ctx);
+  total += getDayWindowInteraction(day, window, ctx);
   total -= getUniformityPenalty(window, ctx);
   total -= getDistributionPenalty(ctx);
   total -= getWindowBaselinePenalty(window, ctx);
+
+  total += getScenarioContrastBonus(window, ctx, {
+    audience,
+    content,
+    goal,
+    regional,
+    dayQuality,
+    seasonal,
+    competition,
+    maturity,
+    psychological,
+    consistency
+  });
 
   total = total * getScenarioWindowMultiplier(window, ctx);
 
@@ -452,7 +466,6 @@ function calculateWindowBreakdown(day, window, ctx) {
     consistency: round(consistency)
   };
 }
-
   function getAudienceActivityScore(day, window, ctx) {
     let score = AUDIENCE_PROFILES[ctx.audienceType][window.key];
 
@@ -895,11 +908,12 @@ function computeBestDays(scoredSlots) {
     const top1 = sorted[0] || 0;
     const top2 = sorted[1] || 0;
     const top3 = sorted[2] || 0;
+    const spread = top1 - (sorted[4] || top3 || top1);
 
     return {
       dayKey: item.dayKey,
       label: item.label,
-      avg: round((top1 * 0.5) + (top2 * 0.3) + (top3 * 0.2))
+      avg: round((top1 * 0.45) + (top2 * 0.30) + (top3 * 0.15) + (spread * 0.10))
     };
   });
 
@@ -1424,6 +1438,91 @@ function getScenarioWindowMultiplier(window, ctx) {
 
   return clamp(multiplier, 0.78, 1.18);
 }
+function getGenericWindowScore(windowKey) {
+  const profiles = [
+    AUDIENCE_PROFILES.mixed,
+    CONTENT_PROFILES.mixed,
+    GOAL_PROFILES.engagement,
+    ACCOUNT_TYPE_PROFILE.personal,
+    ACCOUNT_STAGE_PROFILE.growing
+  ];
 
+  const total = profiles.reduce(function (sum, profile) {
+    return sum + profile[windowKey];
+  }, 0);
+
+  return total / profiles.length;
+}
+
+function getScenarioContrastBonus(window, ctx, breakdown) {
+  const generic = getGenericWindowScore(window.key);
+
+  const scenarioSpecific =
+    breakdown.audience * 0.28 +
+    breakdown.content * 0.22 +
+    breakdown.goal * 0.20 +
+    breakdown.regional * 0.18 +
+    breakdown.psychological * 0.12;
+
+  const contrast = scenarioSpecific - generic;
+
+  if (contrast > 12) return 8;
+  if (contrast > 8) return 5;
+  if (contrast > 4) return 3;
+  if (contrast < -10) return -8;
+  if (contrast < -6) return -5;
+  if (contrast < -3) return -2;
+
+  return 0;
+}
+
+function getDayWindowInteraction(day, window, ctx) {
+  let bonus = 0;
+  const s = window.start;
+
+  if (ctx.goalType === "authority") {
+    if ((day.key === "mon" || day.key === "tue" || day.key === "wed") && (s === 10 || s === 12 || s === 14)) {
+      bonus += 5;
+    }
+  }
+
+  if (ctx.goalType === "sales") {
+    if ((day.key === "wed" || day.key === "thu") && (s === 16 || s === 18)) {
+      bonus += 5;
+    }
+  }
+
+  if (ctx.goalType === "reach") {
+    if ((day.key === "thu" || day.key === "fri") && (s === 18 || s === 20)) {
+      bonus += 4;
+    }
+  }
+
+  if (ctx.audienceType === "business") {
+    if ((day.key === "mon" || day.key === "tue") && (s === 10 || s === 12)) {
+      bonus += 4;
+    }
+    if (day.key === "fri" && s >= 18) {
+      bonus -= 5;
+    }
+  }
+
+  if (ctx.audienceType === "students") {
+    if ((day.key === "fri" || day.key === "sat") && (s === 18 || s === 20)) {
+      bonus += 4;
+    }
+    if (day.key === "mon" && s === 8) {
+      bonus -= 3;
+    }
+  }
+
+  if (ctx.accountType === "service") {
+    if ((day.key === "sun" || day.key === "mon" || day.key === "tue") && (s === 10 || s === 12)) {
+      bonus += 4;
+    }
+  }
+
+  return bonus;
+}
 init();
 })();
