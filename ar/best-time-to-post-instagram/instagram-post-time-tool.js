@@ -439,17 +439,17 @@ function calculateWindowBreakdown(day, window, ctx) {
   const consistencyDelta = consistency - 60;
 
   let total =
-    60 +
-    audienceDelta * CALIBRATION.weights.audience +
-    contentDelta * CALIBRATION.weights.content +
-    goalDelta * CALIBRATION.weights.goal +
-    regionalDelta * CALIBRATION.weights.regional +
-    dayDelta * CALIBRATION.weights.day +
-    seasonalDelta * CALIBRATION.weights.seasonal +
-    competitionDelta * CALIBRATION.weights.competition +
-    maturityDelta * CALIBRATION.weights.maturity +
-    psychologicalDelta * CALIBRATION.weights.psychological +
-    consistencyDelta * CALIBRATION.weights.consistency;
+    45 +
+    audienceDelta * 0.30 +
+    contentDelta * 0.22 +
+    goalDelta * 0.20 +
+    regionalDelta * 0.18 +
+    dayDelta * 0.16 +
+    seasonalDelta * 0.10 +
+    competitionDelta * 0.14 +
+    maturityDelta * 0.07 +
+    psychologicalDelta * 0.12 +
+    consistencyDelta * 0.08;
 
   const synergyBonus = getScenarioSynergyBonus(day, window, ctx, {
     audience, content, goal, regional, dayQuality,
@@ -462,6 +462,7 @@ function calculateWindowBreakdown(day, window, ctx) {
   const uniformityPenalty = getUniformityPenalty(window, ctx);
   const distributionPenalty = getDistributionPenalty(ctx);
   const baselinePenalty = getWindowBaselinePenalty(window, ctx);
+  const hardPenalty = getHardDisqualifier(day, window, ctx);
 
   const contrastBonus = getScenarioContrastBonus(window, ctx, {
     audience,
@@ -476,21 +477,19 @@ function calculateWindowBreakdown(day, window, ctx) {
     consistency
   });
 
-  const multiplier = getScenarioWindowMultiplier(window, ctx);
+  total += synergyBonus * 1.4;
+  total += primaryTieBreaker * 1.0;
+  total += dayWindowBonus * 1.4;
+  total += dayVariationOffset * 1.2;
+  total += contrastBonus * 1.4;
 
-  total += synergyBonus * CALIBRATION.bonuses.synergy;
-  total += primaryTieBreaker * CALIBRATION.bonuses.primaryTieBreaker;
-  total += dayWindowBonus * CALIBRATION.bonuses.dayInteraction;
-  total += dayVariationOffset * CALIBRATION.bonuses.dayVariation;
-  total -= uniformityPenalty * CALIBRATION.penalties.uniformity;
-  total -= distributionPenalty * CALIBRATION.penalties.distribution;
-  total -= baselinePenalty * CALIBRATION.penalties.baseline;
-  total += contrastBonus * CALIBRATION.bonuses.contrast;
-
-  total = total * multiplier;
+  total -= uniformityPenalty * 1.6;
+  total -= distributionPenalty * 1.0;
+  total -= baselinePenalty * 1.3;
+  total -= hardPenalty;
 
   return {
-    total: clamp(round(total), 20, 99),
+    total: clamp(round(total), 5, 99),
     audience: round(audience),
     content: round(content),
     goal: round(goal),
@@ -520,8 +519,8 @@ function calculateWindowBreakdown(day, window, ctx) {
       uniformityPenalty: round(uniformityPenalty),
       distributionPenalty: round(distributionPenalty),
       baselinePenalty: round(baselinePenalty),
-      contrastBonus: round(contrastBonus),
-      multiplier: round(multiplier)
+      hardPenalty: round(hardPenalty),
+      contrastBonus: round(contrastBonus)
     }
   };
 }
@@ -959,53 +958,45 @@ function getPrimaryGroupTieBreaker(day, window, ctx) {
 
 function getUniformityPenalty(window, ctx) {
   let penalty = 0;
+  const s = window.start;
 
-  const isPrime = window.start === 18 || window.start === 20;
-  const isLate = window.start === 22;
-  const isMid = window.start === 12 || window.start === 14 || window.start === 16;
-  const isMorning = window.start === 8 || window.start === 10;
+  if (s === 20) penalty += 18;
+  if (s === 18) penalty += 10;
+  if (s === 22) penalty += 8;
 
-  if (window.start === 20) penalty += 12;
-if (window.start === 18) penalty += 8;
-  if (window.start === 22) penalty += 5;
-
-  if (ctx.contentType === "reels" && ctx.goalType === "reach" && isPrime) {
-    penalty -= 4;
+  if (ctx.contentType === "reels" && ctx.goalType === "reach") {
+    if (s === 18) penalty -= 4;
+    if (s === 20) penalty -= 3;
   }
 
-  if (ctx.audienceType === "students" && (isPrime || isLate)) {
-    penalty -= 3;
-  }
-
-  if (ctx.audienceType === "night" && (isPrime || isLate)) {
-    penalty -= 5;
-  }
-
-  if (ctx.goalType === "sales" && (window.start === 16 || window.start === 18)) {
-    penalty -= 3;
+  if (ctx.goalType === "sales" && ctx.accountType === "store") {
+    if (s === 16) penalty -= 5;
+    if (s === 18) penalty -= 3;
   }
 
   if (ctx.goalType === "authority" || ctx.goalType === "saves") {
-    if (isPrime) penalty += 4;
-    if (isLate) penalty += 8;
-    if (isMorning || isMid) penalty -= 3;
+    if (s === 10 || s === 12 || s === 14) penalty -= 5;
+    if (s === 20) penalty += 8;
+    if (s === 22) penalty += 12;
   }
 
   if (ctx.audienceType === "business") {
-    if (isPrime) penalty += 8;
-    if (isLate) penalty += 10;
-    if (isMorning || isMid) penalty -= 4;
+    if (s === 10 || s === 12) penalty -= 5;
+    if (s === 18) penalty += 6;
+    if (s === 20) penalty += 10;
+    if (s === 22) penalty += 14;
   }
 
   if (ctx.competitionLevel === "high") {
-    if (isPrime) penalty += 8;
-    if (isLate) penalty += 4;
+    if (s === 18) penalty += 6;
+    if (s === 20) penalty += 10;
   }
 
   if (ctx.competitionLevel === "avoid") {
-    if (isPrime) penalty += 14;
-    if (isLate) penalty += 8;
-    if (isMid) penalty -= 4;
+    if (s === 18) penalty += 10;
+    if (s === 20) penalty += 16;
+    if (s === 22) penalty += 8;
+    if (s === 12 || s === 14 || s === 16) penalty -= 3;
   }
 
   return Math.max(0, penalty);
@@ -1635,24 +1626,25 @@ function getGenericWindowScore(windowKey) {
 }
 
 function getScenarioContrastBonus(window, ctx, breakdown) {
-
   const generic = getGenericWindowScore(window.key);
 
   const scenarioSpecific =
-    breakdown.audience * 0.32 +
-    breakdown.content * 0.26 +
+    breakdown.audience * 0.34 +
+    breakdown.content * 0.24 +
     breakdown.goal * 0.22 +
     breakdown.regional * 0.20;
 
   const contrast = scenarioSpecific - generic;
 
-  if (contrast > 8) return 12;
-  if (contrast > 5) return 8;
-  if (contrast > 2) return 4;
+  if (contrast > 14) return 16;
+  if (contrast > 10) return 12;
+  if (contrast > 6) return 8;
+  if (contrast > 3) return 4;
 
-  if (contrast < -8) return -10;
-  if (contrast < -5) return -6;
-  if (contrast < -2) return -3;
+  if (contrast < -14) return -16;
+  if (contrast < -10) return -12;
+  if (contrast < -6) return -8;
+  if (contrast < -3) return -4;
 
   return 0;
 }
@@ -1761,6 +1753,52 @@ function getDayWindowInteraction(day, window, ctx) {
   }
 
   return round(offset);
+}
+  function getHardDisqualifier(day, window, ctx) {
+  let penalty = 0;
+  const s = window.start;
+
+  // جمهور أعمال + محتوى عميق/سلطة: الليل سيئ جدًا
+  if (
+    (ctx.audienceType === "business" || ctx.accountType === "service") &&
+    (ctx.goalType === "authority" || ctx.goalType === "saves")
+  ) {
+    if (s === 20) penalty += 10;
+    if (s === 22) penalty += 18;
+  }
+
+  // ريلز + وصول + طلاب: الصباح الباكر ضعيف
+  if (
+    ctx.contentType === "reels" &&
+    ctx.goalType === "reach" &&
+    (ctx.audienceType === "students" || ctx.audienceType === "night")
+  ) {
+    if (s === 8) penalty += 14;
+    if (s === 10) penalty += 8;
+  }
+
+  // متجر + مبيعات: الصباح والليل المتأخر غير مناسبين
+  if (ctx.accountType === "store" && ctx.goalType === "sales") {
+    if (s === 8 || s === 10) penalty += 12;
+    if (s === 22) penalty += 10;
+  }
+
+  // محتوى عميق/كاروسيل: 20 و 22 يجب أن يتراجعوا
+  if (
+    (ctx.contentDepth === "deep" || ctx.contentType === "carousel") &&
+    (ctx.goalType === "authority" || ctx.goalType === "saves")
+  ) {
+    if (s === 20) penalty += 8;
+    if (s === 22) penalty += 16;
+  }
+
+  // زحمة عالية + تجنب المنافسة
+  if (ctx.competitionLevel === "avoid") {
+    if (s === 18) penalty += 8;
+    if (s === 20) penalty += 14;
+  }
+
+  return penalty;
 }
 init();
 })();
