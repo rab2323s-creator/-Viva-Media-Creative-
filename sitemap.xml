@@ -133,6 +133,22 @@ xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   </image:image>
 
 </url>
+ <url>
+  <loc>https://vivamediacreative.com/news/how-to-grow-instagram-followers/</loc>
+  <lastmod>2026-03-11</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+
+  <image:image>
+    <image:loc>https://vivamediacreative.com/assets/how-to-grow-instagram-followers.jpg</image:loc>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://vivamediacreative.com/assets/how-to-grow-instagram-followers-growth-strategy.jpg</image:loc>
+  </image:image>
+
+</url>
+  
 <url>
 <loc>https://vivamediacreative.com/news/ai-vs-human-content-2026/</loc>
 <lastmod>2026-01-25</lastmod>
