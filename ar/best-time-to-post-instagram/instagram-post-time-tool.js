@@ -23,16 +23,7 @@
     { key: "w7", start: 20, end: 22, label: "20:00 - 22:00" },
     { key: "w8", start: 22, end: 24, label: "22:00 - 00:00" }
   ];
-  const WINDOW_BASELINE = {
-  w1: 38,
-  w2: 54,
-  w3: 67,
-  w4: 70,
-  w5: 75,
-  w6: 81,
-  w7: 83,
-  w8: 63
-};
+ 
     
   const WEEKEND_DAYS = new Set(["fri", "sat"]);
   const WINDOW_BASELINE = {
