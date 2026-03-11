@@ -23,8 +23,28 @@
     { key: "w7", start: 20, end: 22, label: "20:00 - 22:00" },
     { key: "w8", start: 22, end: 24, label: "22:00 - 00:00" }
   ];
-
+  const WINDOW_BASELINE = {
+  w1: 38,
+  w2: 54,
+  w3: 67,
+  w4: 70,
+  w5: 75,
+  w6: 81,
+  w7: 83,
+  w8: 63
+};
+    
   const WEEKEND_DAYS = new Set(["fri", "sat"]);
+  const WINDOW_BASELINE = {
+  w1: 38,
+  w2: 54,
+  w3: 67,
+  w4: 70,
+  w5: 75,
+  w6: 81,
+  w7: 83,
+  w8: 63
+};
 
   const REGION_GROUPS = {
     gulf: {
@@ -322,7 +342,7 @@ const DAY_QUALITY = {
     const topThree = pickTopUniqueSlots(scoredSlots, 3);
     const topDays = computeBestDays(scoredSlots);
     const weeklyPlan = buildWeeklyPlan(scoredSlots, ctx);
-    const confidence = computeConfidence(topOverall, ctx);
+   const confidence = computeConfidence(scoredSlots, topOverall, ctx);
     const reasons = buildReasons(topOverall, topDays, ctx);
 
     return {
@@ -335,7 +355,7 @@ const DAY_QUALITY = {
       reasons
     };
   }
-   function calculateWindowBreakdown(day, window, ctx) {
+function calculateWindowBreakdown(day, window, ctx) {
   const audience = getAudienceActivityScore(day, window, ctx);
   const content = getContentFitScore(day, window, ctx);
   const goal = getGoalMatchScore(day, window, ctx);
@@ -346,42 +366,72 @@ const DAY_QUALITY = {
   const maturity = getAccountMaturityScore(day, window, ctx);
   const psychological = getPsychologicalContextScore(day, window, ctx);
   const consistency = getPostingFrequencyScore(day, window, ctx);
-  
-   let total =
-  audience * 0.15 +
-  content * 0.13 +
-  goal * 0.14 +
-  regional * 0.14 +
-  dayQuality * 0.10 +
-  seasonal * 0.08 +
-  competition * 0.12 +
-  maturity * 0.05 +
-  psychological * 0.05 +
-  consistency * 0.04;
 
-    total += getScenarioSynergyBonus(day, window, ctx, {
-      audience, content, goal, regional, dayQuality,
-      seasonal, competition, maturity, psychological, consistency
-    });
+  const audienceDelta = relativeProfileDelta([
+    { profile: AUDIENCE_PROFILES[ctx.audienceType], weight: 1 }
+  ], window.key, 1.0);
 
-    total += getPrimaryGroupTieBreaker(day, window, ctx);
-    total -= getUniformityPenalty(window, ctx);
-    total -= getDistributionPenalty(ctx);
+  const contentDelta = relativeProfileDelta([
+    { profile: CONTENT_PROFILES[ctx.contentType], weight: 0.55 },
+    { profile: DEPTH_PROFILES[ctx.contentDepth], weight: 0.25 },
+    { profile: ACCOUNT_TYPE_PROFILE[ctx.accountType], weight: 0.20 }
+  ], window.key, 1.0);
 
-    return {
-      total: clamp(round(total), 20, 99),
-      audience: round(audience),
-      content: round(content),
-      goal: round(goal),
-      regional: round(regional),
-      dayQuality: round(dayQuality),
-      seasonal: round(seasonal),
-      competition: round(competition),
-      maturity: round(maturity),
-      psychological: round(psychological),
-      consistency: round(consistency)
-    };
-  }
+  const goalDelta = relativeProfileDelta([
+    { profile: GOAL_PROFILES[ctx.goalType], weight: 1 }
+  ], window.key, 1.0);
+
+  const maturityDelta = relativeProfileDelta([
+    { profile: ACCOUNT_STAGE_PROFILE[ctx.accountStage], weight: 1 }
+  ], window.key, 0.8);
+
+  const regionalDelta = getRegionalRelativeDelta(day, window, ctx);
+  const dayDelta = getDayRelativeDelta(day, ctx);
+
+  const seasonalDelta = seasonal - 60;
+  const competitionDelta = competition - 70;
+  const psychologicalDelta = psychological - 58;
+  const consistencyDelta = consistency - 60;
+
+  let total =
+    60 +
+    audienceDelta * 0.22 +
+    contentDelta * 0.18 +
+    goalDelta * 0.15 +
+    regionalDelta * 0.14 +
+    dayDelta * 0.10 +
+    seasonalDelta * 0.08 +
+    competitionDelta * 0.10 +
+    maturityDelta * 0.05 +
+    psychologicalDelta * 0.08 +
+    consistencyDelta * 0.05;
+
+  total += getScenarioSynergyBonus(day, window, ctx, {
+    audience, content, goal, regional, dayQuality,
+    seasonal, competition, maturity, psychological, consistency
+  });
+
+  total += getPrimaryGroupTieBreaker(day, window, ctx);
+  total -= getUniformityPenalty(window, ctx);
+  total -= getDistributionPenalty(ctx);
+  total -= getWindowBaselinePenalty(window, ctx);
+
+  total = total * getScenarioWindowMultiplier(window, ctx);
+
+  return {
+    total: clamp(round(total), 20, 99),
+    audience: round(audience),
+    content: round(content),
+    goal: round(goal),
+    regional: round(regional),
+    dayQuality: round(dayQuality),
+    seasonal: round(seasonal),
+    competition: round(competition),
+    maturity: round(maturity),
+    psychological: round(psychological),
+    consistency: round(consistency)
+  };
+}
 
   function getAudienceActivityScore(day, window, ctx) {
     let score = AUDIENCE_PROFILES[ctx.audienceType][window.key];
@@ -851,23 +901,33 @@ function pickTopUniqueSlots(scoredSlots, limit) {
   return results;
 }
 
-  function computeConfidence(topOverall, ctx) {
-    let confidence = 56;
+function computeConfidence(scoredSlots, topOverall, ctx) {
+  const second = scoredSlots[1] || topOverall;
+  const third = scoredSlots[2] || topOverall;
 
-    confidence += (topOverall.breakdown.audience - 50) * 0.08;
-    confidence += (topOverall.breakdown.content - 50) * 0.06;
-    confidence += (topOverall.breakdown.goal - 50) * 0.06;
-    confidence += (topOverall.breakdown.regional - 50) * 0.09;
+  const gap1 = topOverall.total - second.total;
+  const gap2 = topOverall.total - third.total;
 
-    if (ctx.rawDistributionTotal === 100) confidence += 6;
-    else confidence -= 4;
+  let confidence = 52;
 
-    if (ctx.contentType !== "mixed") confidence += 3;
-    if (ctx.goalType !== "reach") confidence += 2;
-    if (ctx.accountStage === "established" || ctx.accountStage === "large") confidence += 2;
+  confidence += Math.min(14, gap1 * 2.2);
+  confidence += Math.min(8, gap2 * 1.2);
 
-    return clamp(Math.round(confidence), 52, 96);
-  }
+  confidence += (topOverall.breakdown.regional - 50) * 0.05;
+  confidence += (topOverall.breakdown.goal - 50) * 0.04;
+  confidence += (topOverall.breakdown.content - 50) * 0.04;
+
+  if (ctx.rawDistributionTotal === 100) confidence += 5;
+  else confidence -= 5;
+
+  if (ctx.goalType === "authority" || ctx.goalType === "saves") confidence += 2;
+  if (ctx.competitionLevel === "avoid") confidence += 2;
+
+  if (gap1 < 2) confidence -= 10;
+  if (gap1 < 1) confidence -= 6;
+
+  return clamp(Math.round(confidence), 38, 95);
+}
 
   function buildReasons(topOverall, topDays, ctx) {
     const b = topOverall.breakdown;
@@ -923,25 +983,29 @@ function pickTopUniqueSlots(scoredSlots, limit) {
     return "منشور رئيسي متوازن";
   }
 
-  function suggestDayFocus(dayKey, ctx, primary) {
-    if (ctx.goalType === "sales" && (dayKey === "wed" || dayKey === "thu")) {
-      return "محتوى بيعي مباشر أو دعوة واضحة للتحويل";
-    }
-
-    if (ctx.goalType === "authority" && (dayKey === "mon" || dayKey === "tue" || dayKey === "wed")) {
-      return "محتوى يرسخ الخبرة والهوية";
-    }
-
-    if (ctx.goalType === "reach" && (dayKey === "thu" || dayKey === "fri")) {
-      return "ريلز أو محتوى سهل الانتشار";
-    }
-
-    if (ctx.contentType === "story") {
-      return "تفاعل قصير ومستمر";
-    }
-
-    return primary.focus || "محتوى متوازن حسب الخطة";
+function suggestDayFocus(dayKey, ctx, primary) {
+  if (ctx.goalType === "sales" && (primary.start === 16 || primary.start === 18 || primary.start === 20)) {
+    return "محتوى بيعي مباشر أو دعوة واضحة للتحويل";
   }
+
+  if (ctx.goalType === "authority" && (primary.start === 10 || primary.start === 12 || primary.start === 14)) {
+    return "محتوى يرسخ الخبرة والهوية";
+  }
+
+  if (ctx.goalType === "reach" && ctx.contentType === "reels") {
+    return "ريلز أو محتوى سريع الانتشار";
+  }
+
+  if (ctx.contentType === "story") {
+    return "تفاعل قصير ومستمر";
+  }
+
+  if (ctx.contentDepth === "deep") {
+    return "محتوى تعليمي أو تحليلي";
+  }
+
+  return primary.focus || "محتوى متوازن حسب الخطة";
+}
 
   function renderResults(analysis, ctx) {
     ELS.resultsWrap.hidden = false;
@@ -1210,8 +1274,107 @@ function pickTopUniqueSlots(scoredSlots, limit) {
   }
 
   function num(value) {
-    return Number(value || 0);
+  return Number(value || 0);
+}
+
+function meanValues(obj) {
+  const vals = Object.values(obj);
+  return vals.reduce(function (sum, n) { return sum + n; }, 0) / vals.length;
+}
+
+function weightedWindowValue(parts, windowKey) {
+  return parts.reduce(function (sum, part) {
+    return sum + (part.profile[windowKey] * part.weight);
+  }, 0);
+}
+
+function weightedWindowMean(parts) {
+  return parts.reduce(function (sum, part) {
+    return sum + (meanValues(part.profile) * part.weight);
+  }, 0);
+}
+
+function relativeProfileDelta(parts, windowKey, scale) {
+  const value = weightedWindowValue(parts, windowKey);
+  const avg = weightedWindowMean(parts);
+  return (value - avg) * (scale || 1);
+}
+
+function getRegionalRelativeDelta(day, window, ctx) {
+  const dayType = WEEKEND_DAYS.has(day.key) ? "weekend" : "weekday";
+
+  let current = 0;
+  Object.keys(ctx.distribution).forEach(function (groupKey) {
+    current += REGION_GROUPS[groupKey][dayType][window.key] * ctx.distribution[groupKey];
+  });
+
+  const allWindows = TIME_WINDOWS.map(function (w) {
+    let score = 0;
+    Object.keys(ctx.distribution).forEach(function (groupKey) {
+      score += REGION_GROUPS[groupKey][dayType][w.key] * ctx.distribution[groupKey];
+    });
+    return score;
+  });
+
+  const avg = allWindows.reduce(function (sum, n) { return sum + n; }, 0) / allWindows.length;
+  return current - avg;
+}
+
+function getDayRelativeDelta(day, ctx) {
+  const profile = DAY_QUALITY[ctx.goalType];
+  return profile[day.key] - meanValues(profile);
+}
+
+function getWindowBaselinePenalty(window, ctx) {
+  let penalty = Math.max(0, (WINDOW_BASELINE[window.key] - 65) * 0.22);
+
+  if (ctx.goalType === "reach" && ctx.contentType === "reels" && (window.start === 18 || window.start === 20)) {
+    penalty *= 0.45;
   }
 
-  init();
+  if (ctx.audienceType === "night" && window.start >= 20) {
+    penalty *= 0.65;
+  }
+
+  if (ctx.audienceType === "business" && (window.start === 10 || window.start === 12)) {
+    penalty *= 0.55;
+  }
+
+  return penalty;
+}
+
+function getScenarioWindowMultiplier(window, ctx) {
+  let multiplier = 1;
+  const s = window.start;
+
+  if ((ctx.goalType === "authority" || ctx.goalType === "saves") &&
+      (ctx.contentDepth === "deep" || ctx.contentType === "carousel")) {
+    if (s === 10 || s === 12 || s === 14) multiplier += 0.10;
+    if (s >= 20) multiplier -= 0.12;
+  }
+
+  if (ctx.goalType === "reach" && ctx.contentType === "reels") {
+    if (s === 18 || s === 20) multiplier += 0.08;
+    if (s === 8 || s === 10) multiplier -= 0.05;
+  }
+
+  if (ctx.audienceType === "business" || ctx.accountType === "service") {
+    if (s === 10 || s === 12) multiplier += 0.08;
+    if (s >= 20) multiplier -= 0.15;
+  }
+
+  if (ctx.goalType === "sales" &&
+      (ctx.accountType === "store" || ctx.contentDepth === "promotional")) {
+    if (s === 16 || s === 18) multiplier += 0.10;
+    if (s === 22) multiplier -= 0.10;
+  }
+
+  if (ctx.audienceType === "students" && (s === 18 || s === 20 || s === 22)) {
+    multiplier += 0.06;
+  }
+
+  return clamp(multiplier, 0.78, 1.18);
+}
+
+init();
 })();
