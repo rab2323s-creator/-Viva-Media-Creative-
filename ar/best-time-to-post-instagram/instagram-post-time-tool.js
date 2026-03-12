@@ -288,11 +288,11 @@ const DAY_QUALITY = {
     ELS.goalType.value = "reach";
     ELS.contentDepth.value = "balanced";
     ELS.accountStage.value = "growing";
-    ELS.postingFrequency.value = "3";
+    ELS.postingFrequency.value = "3";  
     ELS.seasonType.value = "normal";
     ELS.competitionLevel.value = "normal";
     ELS.weekendMode.value = "balanced";
-
+     
     ELS.distGulf.value = 40;
     ELS.distEgypt.value = 25;
     ELS.distLevant.value = 20;
