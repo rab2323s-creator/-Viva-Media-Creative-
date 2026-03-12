@@ -1838,50 +1838,6 @@ function getDayWindowInteraction(day, window, ctx) {
 
   return penalty;
 }
-  const copyBestTimeBtn = document.getElementById("copyBestTimeBtn");
-const shareXBtn = document.getElementById("shareXBtn");
-const shareLinkedInBtn = document.getElementById("shareLinkedInBtn");
-const shareWhatsAppBtn = document.getElementById("shareWhatsAppBtn");
-
-function getBestTimeShareText() {
-  const topWindowText = document.getElementById("topWindow")?.textContent?.trim() || "";
-  const bestDaysText = document.getElementById("bestDays")?.textContent?.trim() || "";
-  const pageUrl = window.location.href;
-
-  return `أفضل وقت للنشر على إنستغرام حسب التحليل: ${topWindowText}${bestDaysText ? ` | أفضل الأيام: ${bestDaysText}` : ""}. جرّب الأداة هنا: ${pageUrl}`;
-}
-
-function updateShareLinks() {
-  const shareText = getBestTimeShareText();
-  const pageUrl = window.location.href;
-
-  const encodedText = encodeURIComponent(shareText);
-  const encodedUrl = encodeURIComponent(pageUrl);
-
-  shareXBtn.href = `https://twitter.com/intent/tweet?text=${encodedText}`;
-  shareLinkedInBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
-  shareWhatsAppBtn.href = `https://wa.me/?text=${encodedText}`;
-}
-
-async function copyBestTime() {
-  const topWindowText = document.getElementById("topWindow")?.textContent?.trim() || "";
-  const bestDaysText = document.getElementById("bestDays")?.textContent?.trim() || "";
-
-  const textToCopy = `أفضل وقت للنشر على إنستغرام حسب التحليل: ${topWindowText}${bestDaysText ? ` | أفضل الأيام: ${bestDaysText}` : ""}`;
-
-  try {
-    await navigator.clipboard.writeText(textToCopy);
-    copyBestTimeBtn.textContent = "تم نسخ النتيجة";
-    setTimeout(() => {
-      copyBestTimeBtn.textContent = "نسخ أفضل وقت";
-    }, 1800);
-  } catch (error) {
-    alert("تعذر نسخ النتيجة، حاول مرة أخرى.");
-  }
-}
-
-if (copyBestTimeBtn) {
-  copyBestTimeBtn.addEventListener("click", copyBestTime);
-}
+ 
 init();
 })();
