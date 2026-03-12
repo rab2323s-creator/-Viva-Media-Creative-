@@ -1250,8 +1250,11 @@ function renderDebugTable(scoredSlots) {
     ELS.resultsWrap.hidden = false;
 
     ELS.topWindow.textContent = `${analysis.topOverall.dayLabel} | ${analysis.topOverall.windowLabel}`;
-    ELS.topWindowMeta.textContent =
-      `النتيجة التحليلية: ${analysis.topOverall.total}/100 | جمهورك الأساسي: ${REGION_GROUPS[ctx.primaryGroup].label}`;
+    const second = analysis.scoredSlots[1];
+const diff = analysis.topOverall.total - (second ? second.total : 0);
+
+ELS.topWindowMeta.textContent =
+  `النتيجة التحليلية: ${analysis.topOverall.total}/100 | الفارق عن الثاني: ${round(diff)} | جمهورك الأساسي: ${REGION_GROUPS[ctx.primaryGroup].label}`;
 
     ELS.bestDays.textContent = analysis.topDays.map(function (d) { return d.label; }).join("، ");
     ELS.bestDaysMeta.textContent =
