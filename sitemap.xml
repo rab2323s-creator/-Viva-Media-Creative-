@@ -45,10 +45,23 @@ xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 </url>
 
 <url>
-<loc>https://vivamediacreative.com/ar/best-time-to-post-instagram/</loc>
-<lastmod>2026-01-25</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
+  <loc>https://vivamediacreative.com/ar/best-time-to-post-instagram/</loc>
+  <lastmod>2026-03-12</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+
+  <image:image>
+    <image:loc>https://vivamediacreative.com/assets/instagram-best-time-to-post-tool-analysis.jpg</image:loc>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://vivamediacreative.com/assets/best-time-to-post-instagram-by-day-heatmap.jpg</image:loc>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://vivamediacreative.com/assets/golden-hour-instagram-best-time-to-post-6pm.jpg</image:loc>
+  </image:image>
+
 </url>
 
 <url>
