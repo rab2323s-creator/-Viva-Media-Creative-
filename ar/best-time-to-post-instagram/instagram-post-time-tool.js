@@ -1274,6 +1274,8 @@ function renderDebugTable(scoredSlots) {
           <h4>${slot.dayLabel}</h4>
           <p><strong>${slot.windowLabel}</strong></p>
           <p>النتيجة النهائية: ${slot.total}/100</p>
+        <p>التقييم: ${classifyScore(slot.total)}</p>
+
           <p>الجمهور: ${slot.breakdown.audience} | المحتوى: ${slot.breakdown.content} | الهدف: ${slot.breakdown.goal}</p>
           <p>${escapeHtml(slot.focus)}</p>
         </div>
@@ -1516,7 +1518,13 @@ function renderDebugTable(scoredSlots) {
   function num(value) {
   return Number(value || 0);
 }
-
+function classifyScore(score) {
+  if (score >= 85) return "قوي جدًا";
+  if (score >= 78) return "قوي";
+  if (score >= 70) return "جيد";
+  if (score >= 60) return "مقبول";
+  return "ضعيف";
+}
 function meanValues(obj) {
   const vals = Object.values(obj);
   return vals.reduce(function (sum, n) { return sum + n; }, 0) / vals.length;
