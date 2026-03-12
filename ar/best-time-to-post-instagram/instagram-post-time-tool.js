@@ -314,11 +314,18 @@ const DAY_QUALITY = {
       num(ELS.distLevant.value) +
       num(ELS.distMaghreb.value);
 
-    ELS.distributionNote.textContent = `المجموع الحالي: ${total}%`;
-    ELS.distributionNote.style.color =
-      total === 100 ? "#b6fff4" :
-      total > 100 ? "#fecaca" :
-      "#fde68a";
+    let note = `المجموع الحالي: ${total}%`;
+
+if (total !== 100) {
+  note += " — يفضّل أن يكون المجموع 100% لزيادة دقة التحليل";
+}
+
+ELS.distributionNote.textContent = note;
+
+ELS.distributionNote.style.color =
+  total === 100 ? "#b6fff4" :
+  total > 100 ? "#fecaca" :
+  "#fde68a";
   }
 
   function getContext() {
@@ -1270,21 +1277,22 @@ ELS.topWindowMeta.textContent =
   }
 
   function renderTopThree(topThree) {
-    ELS.topThree.innerHTML = topThree.map(function (slot, i) {
-      return `
-        <div class="top-box">
-          <span class="rank">${i + 1}</span>
-          <h4>${slot.dayLabel}</h4>
-          <p><strong>${slot.windowLabel}</strong></p>
-          <p>النتيجة النهائية: ${slot.total}/100</p>
-        <p>التقييم: ${classifyScore(slot.total)}</p>
+  ELS.topThree.innerHTML = topThree.map(function (slot, i) {
+    const scoreColor = getScoreColor(slot.total);
 
-          <p>الجمهور: ${slot.breakdown.audience} | المحتوى: ${slot.breakdown.content} | الهدف: ${slot.breakdown.goal}</p>
-          <p>${escapeHtml(slot.focus)}</p>
-        </div>
-      `;
-    }).join("");
-  }
+    return `
+      <div class="top-box" style="border: 1px solid ${scoreColor};">
+        <span class="rank">${i + 1}</span>
+        <h4>${slot.dayLabel}</h4>
+        <p><strong>${slot.windowLabel}</strong></p>
+        <p>النتيجة النهائية: <span style="color:${scoreColor}; font-weight:700;">${slot.total}/100</span></p>
+        <p>التقييم: ${classifyScore(slot.total)}</p>
+        <p>الجمهور: ${slot.breakdown.audience} | المحتوى: ${slot.breakdown.content} | الهدف: ${slot.breakdown.goal}</p>
+        <p>${escapeHtml(slot.focus)}</p>
+      </div>
+    `;
+  }).join("");
+}
 
   function renderReasons(reasons) {
     ELS.reasonsList.innerHTML = reasons.map(function (reason) {
@@ -1527,6 +1535,12 @@ function classifyScore(score) {
   if (score >= 70) return "جيد";
   if (score >= 60) return "مقبول";
   return "ضعيف";
+}
+  function getScoreColor(score) {
+  if (score >= 85) return "#22c55e";
+  if (score >= 78) return "#06b6d4";
+  if (score >= 70) return "#f59e0b";
+  return "#ef4444";
 }
 function meanValues(obj) {
   const vals = Object.values(obj);
