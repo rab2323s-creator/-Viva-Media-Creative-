@@ -102,8 +102,8 @@ const AUDIENCE_PROFILES = {
     w1: 36, w2: 58, w3: 72, w4: 69, w5: 73, w6: 77, w7: 68, w8: 46
   },
   business: {
-    w1: 66, w2: 86, w3: 82, w4: 70, w5: 56, w6: 40, w7: 21, w8: 10
-  },
+  w1: 60, w2: 78, w3: 74, w4: 68, w5: 58, w6: 46, w7: 30, w8: 16
+},
   night: {
     w1: 16, w2: 24, w3: 38, w4: 50, w5: 66, w6: 80, w7: 91, w8: 90
   }
@@ -543,10 +543,10 @@ total = total * multiplier;
       }
     }
 
-    if (ctx.audienceType === "business") {
-      if (day.key === "fri") score -= 8;
-      if (window.start >= 20) score -= 8;
-    }
+   if (ctx.audienceType === "business") {
+  if (day.key === "fri") score -= 8;
+  if (window.start >= 20) score -= 8;
+}
 
     if (ctx.audienceType === "parents") {
       if (window.start === 10 || window.start === 12 || window.start === 20) score += 4;
@@ -797,7 +797,10 @@ function getCompetitionPressureScore(day, window, ctx) {
   if (ctx.goalType === "sales" && (window.start === 16 || window.start === 18)) {
     score += 6;
   }
-
+ if (ctx.seasonType === "ramadan" && ctx.goalType === "reach" && ctx.contentType === "reels") {
+  if (window.start === 20) score += 10;
+  if (window.start === 22) score += 6;
+}
   return clamp(score, 10, 95);
 }
 
@@ -844,9 +847,9 @@ function getCompetitionPressureScore(day, window, ctx) {
     }
 
     if (ctx.audienceType === "business") {
-      if (isMorning || isLunch) score += 18;
-      if (isEvening || isLate) score -= 18;
-    }
+  if (isMorning || isLunch) score += 14;
+  if (isEvening || isLate) score -= 10;
+}
 
     if (ctx.audienceType === "students" || ctx.audienceType === "night") {
       if (isEvening || isLate) score += 14;
@@ -916,13 +919,13 @@ function getScenarioSynergyBonus(day, window, ctx, b) {
   }
 
   if (ctx.seasonType === "ramadan") {
-    if (s === 20 || s === 22) bonus += 6;
-    if (s === 10) bonus -= 4;
-  }
+  if (s === 20 || s === 22) bonus += 6;
+  if (s === 10) bonus -= 4;
+}
 
-  if (ctx.audienceType === "parents" && ctx.accountType === "service") {
-    if (s === 10 || s === 12 || s === 20) bonus += 4;
-  }
+if (ctx.audienceType === "parents" && ctx.accountType === "service") {
+  if (s === 10 || s === 12 || s === 20) bonus += 4;
+}
 
   if (ctx.competitionLevel === "avoid") {
     if ((s === 12 || s === 14 || s === 16) && (b.goal >= 68 || b.content >= 68)) {
@@ -1595,7 +1598,13 @@ function getScenarioWindowMultiplier(window, ctx) {
     if (s === 18 || s === 20) multiplier += 0.08;
     if (s === 8 || s === 10) multiplier -= 0.05;
   }
-
+  if (ctx.seasonType === "ramadan") {
+  if (s === 20) multiplier += 0.08;
+  if (s === 22) multiplier += 0.10;
+  if (ctx.audienceType === "business" && (s === 20 || s === 22)) {
+    multiplier += 0.04;
+  }
+}
   if (ctx.audienceType === "business" || ctx.accountType === "service") {
     if (s === 10 || s === 12) multiplier += 0.08;
     if (s >= 20) multiplier -= 0.15;
