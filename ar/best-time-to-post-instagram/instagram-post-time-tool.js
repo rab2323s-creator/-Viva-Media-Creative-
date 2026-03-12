@@ -38,28 +38,28 @@
 };
 const CALIBRATION = {
   weights: {
-    audience: 0.22,
-    content: 0.18,
-    goal: 0.15,
-    regional: 0.14,
-    day: 0.10,
-    seasonal: 0.08,
-    competition: 0.10,
-    maturity: 0.05,
-    psychological: 0.08,
-    consistency: 0.05
+    audience: 0.26,
+    content: 0.13,
+    goal: 0.18,
+    regional: 0.16,
+    day: 0.14,
+    seasonal: 0.10,
+    competition: 0.13,
+    maturity: 0.06,
+    psychological: 0.11,
+    consistency: 0.07
   },
   penalties: {
-    distribution: 1,
-    baseline: 1,
-    uniformity: 1
+    distribution: 1.0,
+    baseline: 1.2,
+    uniformity: 1.7
   },
   bonuses: {
-    contrast: 1,
-    synergy: 1,
-    dayInteraction: 1,
-    dayVariation: 1,
-    primaryTieBreaker: 1
+    contrast: 1.0,
+    synergy: 1.2,
+    dayInteraction: 0.9,
+    dayVariation: 1.0,
+    primaryTieBreaker: 0.8
   }
 };
  const REGION_GROUPS = {
@@ -477,7 +477,7 @@ function calculateWindowBreakdown(day, window, ctx) {
     consistency
   });
 
- total += synergyBonus * CALIBRATION.bonuses.synergy;
+total += synergyBonus * CALIBRATION.bonuses.synergy;
 total += primaryTieBreaker * CALIBRATION.bonuses.primaryTieBreaker;
 total += dayWindowBonus * CALIBRATION.bonuses.dayInteraction;
 total += dayVariationOffset * CALIBRATION.bonuses.dayVariation;
@@ -487,6 +487,9 @@ total -= uniformityPenalty * CALIBRATION.penalties.uniformity;
 total -= distributionPenalty * CALIBRATION.penalties.distribution;
 total -= baselinePenalty * CALIBRATION.penalties.baseline;
 total -= hardPenalty;
+
+const multiplier = getScenarioWindowMultiplier(window, ctx);
+total = total * multiplier;
 
   return {
     total: clamp(round(total), 5, 99),
@@ -501,27 +504,28 @@ total -= hardPenalty;
     psychological: round(psychological),
     consistency: round(consistency),
 
-    debug: {
-      audienceDelta: round(audienceDelta),
-      contentDelta: round(contentDelta),
-      goalDelta: round(goalDelta),
-      regionalDelta: round(regionalDelta),
-      dayDelta: round(dayDelta),
-      seasonalDelta: round(seasonalDelta),
-      competitionDelta: round(competitionDelta),
-      maturityDelta: round(maturityDelta),
-      psychologicalDelta: round(psychologicalDelta),
-      consistencyDelta: round(consistencyDelta),
-      synergyBonus: round(synergyBonus),
-      primaryTieBreaker: round(primaryTieBreaker),
-      dayWindowBonus: round(dayWindowBonus),
-      dayVariationOffset: round(dayVariationOffset),
-      uniformityPenalty: round(uniformityPenalty),
-      distributionPenalty: round(distributionPenalty),
-      baselinePenalty: round(baselinePenalty),
-      hardPenalty: round(hardPenalty),
-      contrastBonus: round(contrastBonus)
-    }
+  debug: {
+  audienceDelta: round(audienceDelta),
+  contentDelta: round(contentDelta),
+  goalDelta: round(goalDelta),
+  regionalDelta: round(regionalDelta),
+  dayDelta: round(dayDelta),
+  seasonalDelta: round(seasonalDelta),
+  competitionDelta: round(competitionDelta),
+  maturityDelta: round(maturityDelta),
+  psychologicalDelta: round(psychologicalDelta),
+  consistencyDelta: round(consistencyDelta),
+  synergyBonus: round(synergyBonus),
+  primaryTieBreaker: round(primaryTieBreaker),
+  dayWindowBonus: round(dayWindowBonus),
+  dayVariationOffset: round(dayVariationOffset),
+  uniformityPenalty: round(uniformityPenalty),
+  distributionPenalty: round(distributionPenalty),
+  baselinePenalty: round(baselinePenalty),
+  hardPenalty: round(hardPenalty),
+  contrastBonus: round(contrastBonus),
+  multiplier: round(multiplier)
+}
   };
 }
   function getAudienceActivityScore(day, window, ctx) {
@@ -1056,11 +1060,11 @@ function buildWeeklyPlan(scoredSlots, ctx) {
       const scoreGap = primary.total - candidate.total;
 
       if (count < 2) {
-        if (i === 0 || scoreGap <= 2.2) {
-          primary = candidate;
-          break;
-        }
-      }
+  if (i === 0 || scoreGap <= 1.4) {
+    primary = candidate;
+    break;
+  }
+}
     }
 
     usedPrimaryWindows[primary.windowKey] = (usedPrimaryWindows[primary.windowKey] || 0) + 1;
@@ -1607,7 +1611,7 @@ function getScenarioWindowMultiplier(window, ctx) {
     multiplier += 0.06;
   }
 
-  return clamp(multiplier, 0.78, 1.18);
+ return clamp(multiplier, 0.90, 1.10);
 }
 function getGenericWindowScore(windowKey) {
   const profiles = [
