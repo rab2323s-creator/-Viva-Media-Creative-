@@ -191,3 +191,126 @@
   .footer-desc{ max-width: none; }
   .footer-bottom{ flex-direction: column; align-items: flex-start; }
 }
+/* ===== PREMIUM PLATFORM STATS ===== */
+
+.platformStats{
+  position: relative;
+  z-index: 2;
+  padding: 34px 20px 10px;
+}
+
+.statsShell{
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px;
+  border-radius: 26px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+  backdrop-filter: blur(10px);
+}
+
+.statsIntro{
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.statsEyebrow{
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(232,194,106,0.85);
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.statsTitle{
+  margin: 0;
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 1.5;
+  font-weight: 800;
+  color: #F5F7FA;
+  font-family: "Noto Kufi Arabic", "Manrope", sans-serif;
+}
+
+.statsGrid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 18px;
+}
+
+.statCard{
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 28px 22px 24px;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at top, rgba(232,194,106,0.10), transparent 45%),
+    rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+}
+
+.statCard:hover{
+  transform: translateY(-4px);
+  border-color: rgba(232,194,106,0.28);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+}
+
+.statTopLine{
+  width: 56px;
+  height: 3px;
+  margin: 0 auto 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(232,194,106,0.18), #E8C26A, rgba(232,194,106,0.18));
+}
+
+.statNumber{
+  margin-bottom: 8px;
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #E8C26A;
+  font-family: "Space Grotesk", "Manrope", sans-serif;
+}
+
+.statLabel{
+  margin-bottom: 10px;
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #F3F5F7;
+  font-family: "Noto Kufi Arabic", "Manrope", sans-serif;
+}
+
+.statMeta{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.85;
+  color: rgba(191,195,201,0.92);
+}
+
+@media (max-width: 980px){
+  .statsGrid{
+    grid-template-columns: 1fr;
+  }
+
+  .statsShell{
+    padding: 24px 18px;
+  }
+
+  .platformStats{
+    padding: 26px 16px 6px;
+  }
+
+  .statCard{
+    padding: 24px 18px 22px;
+  }
+}
+
