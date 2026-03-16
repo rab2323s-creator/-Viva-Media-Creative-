@@ -239,7 +239,241 @@
   border-radius: 6px;
 }
 
+/* =========================
+   Rich Article Components
+   ========================= */
 
+.article .article-hero{
+  margin: 16px 0 18px;
+}
+
+.article .article-hero figure{
+  margin: 0;
+}
+
+.article .article-hero img{
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+}
+
+.article .article-hero figcaption{
+  font-size: 14px;
+  opacity: .8;
+  margin-top: 8px;
+  line-height: 1.8;
+  color: rgba(233,238,252,.72);
+}
+
+.article .hook-block{
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin: 14px 0 18px;
+}
+
+.article .hook-block p{
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.9;
+  color: #fff;
+}
+
+.article .quote-block{
+  border-right: 4px solid rgba(255,255,255,.20);
+  background: rgba(255,255,255,.04);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin: 16px 0;
+}
+
+.article .quote-block p{
+  margin: 0;
+  line-height: 1.95;
+  color: rgba(233,238,252,.92);
+}
+
+.article .box{
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.035);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin: 16px 0;
+}
+
+.article .box h3{
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.article .box p{
+  margin: 8px 0;
+}
+
+.article .box ul,
+.article .box ol{
+  margin: 10px 0 0;
+  padding-right: 20px;
+}
+
+.article .checklist-box{
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,241,118,.12);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin: 18px 0;
+}
+
+.article .checklist-box h3{
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.article .checklist-box ul{
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.article .checklist-box ul li{
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.article .checklist-box ul li:last-child{
+  border-bottom: none;
+}
+
+.article .cta-box{
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(46,125,50,.10);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin: 18px 0;
+}
+
+.article .cta-box h3{
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.article .cta-box .cta-actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.article .cta-box a.cta-primary,
+.article .cta-box a.cta-secondary{
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.article .cta-box a.cta-primary{
+  background: rgba(255,255,255,.92);
+  color: #0b0f19;
+}
+
+.article .cta-box a.cta-secondary{
+  background: rgba(255,255,255,.08);
+  color: #fff;
+}
+
+.article .compare-table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.article .compare-table th,
+.article .compare-table td{
+  padding: 12px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  vertical-align: top;
+  text-align: right;
+}
+
+.article .compare-table th{
+  background: rgba(255,255,255,.04);
+  font-weight: 900;
+  color: #fff;
+}
+
+.article .image-block{
+  margin: 18px 0 22px;
+}
+
+.article .image-block figure{
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.article .image-block img{
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+.article .image-block figcaption{
+  padding: 10px 12px 12px;
+  font-size: 14px;
+  opacity: .84;
+  line-height: 1.8;
+  color: rgba(233,238,252,.72);
+}
+
+.article .formula-box{
+  border: 1px dashed rgba(255,255,255,.16);
+  background: rgba(255,255,255,.03);
+  border-radius: 14px;
+  padding: 18px;
+  margin: 18px 0;
+  text-align: center;
+}
+
+.article .formula-box p{
+  margin: 8px 0;
+  font-weight: 800;
+  line-height: 1.9;
+  color: #fff;
+}
+
+.article .mini{
+  font-size: 14px;
+  opacity: .82;
+  color: rgba(233,238,252,.72);
+}
+
+@media (max-width: 640px){
+  .article .compare-table th,
+  .article .compare-table td{
+    padding: 9px;
+    font-size: .95rem;
+  }
+
+  .article .cta-box .cta-actions{
+    flex-direction: column;
+  }
+
+  .article .cta-box a.cta-primary,
+  .article .cta-box a.cta-secondary{
+    width: 100%;
+    text-align: center;
+  }
+}
 /* =========================
    Case Study Section
    ========================= */
