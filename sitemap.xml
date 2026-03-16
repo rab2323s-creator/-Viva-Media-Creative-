@@ -201,16 +201,37 @@ xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
 
+  <!-- الصورة الرئيسية للمقال -->
   <image:image>
-    <image:loc>https://vivamediacreative.com/assets/articles/why-good-ideas-fail/why-good-ideas-fail-hero.webp</image:loc>
+    <image:loc>
+      https://vivamediacreative.com/assets/articles/why-good-ideas-fail/why-good-ideas-fail-hero.webp
+    </image:loc>
+    <image:title>لماذا تفشل الأفكار الجيدة في السوق</image:title>
+    <image:caption>
+      فكرة مبتكرة تفصلها فجوة عن شبكة الجمهور، تعبير عن أخطاء التسويق التي تمنع الأفكار الجيدة من الوصول إلى السوق
+    </image:caption>
   </image:image>
 
+  <!-- صورة توضح فجوة توزيع الفكرة -->
   <image:image>
-    <image:loc>https://vivamediacreative.com/assets/articles/why-good-ideas-fail/idea-distribution-gap-network.webp</image:loc>
+    <image:loc>
+      https://vivamediacreative.com/assets/articles/why-good-ideas-fail/idea-distribution-gap-network.webp
+    </image:loc>
+    <image:title>فجوة توزيع الفكرة في التسويق</image:title>
+    <image:caption>
+      رسم مفاهيمي يوضح الفجوة بين الابتكار القوي والشبكة الاجتماعية التي تنقل الفكرة إلى الجمهور
+    </image:caption>
   </image:image>
 
+  <!-- صورة انتشار الابتكار عبر الشبكات -->
   <image:image>
-    <image:loc>https://vivamediacreative.com/assets/articles/why-good-ideas-fail/social-network-innovation-adoption.webp</image:loc>
+    <image:loc>
+      https://vivamediacreative.com/assets/articles/why-good-ideas-fail/social-network-innovation-adoption.webp
+    </image:loc>
+    <image:title>انتشار الابتكار عبر الشبكات الاجتماعية</image:title>
+    <image:caption>
+      انتقال الأفكار الجديدة عبر شبكة المستخدمين والمتبنين الأوائل حتى يتحقق تبني السوق
+    </image:caption>
   </image:image>
 
 </url>
