@@ -195,7 +195,25 @@ xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   </image:image>
 
 </url>
+<url>
+  <loc>https://vivamediacreative.com/news/why-good-ideas-fail/</loc>
+  <lastmod>2026-03-16</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
 
+  <image:image>
+    <image:loc>https://vivamediacreative.com/assets/articles/why-good-ideas-fail/why-good-ideas-fail-hero.webp</image:loc>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://vivamediacreative.com/assets/articles/why-good-ideas-fail/idea-distribution-gap-network.webp</image:loc>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://vivamediacreative.com/assets/articles/why-good-ideas-fail/social-network-innovation-adoption.webp</image:loc>
+  </image:image>
+
+</url>
 <url>
 <loc>https://vivamediacreative.com/news/brand-identity-ai-2026/</loc>
 <lastmod>2026-01-25</lastmod>
