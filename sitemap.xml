@@ -63,7 +63,21 @@ xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   </image:image>
 
 </url>
+<url>
+  <loc>https://vivamediacreative.com/news/الريلز-لماذا-لا-تتحول-إلى-مبيعات/</loc>
+  <lastmod>2026-03-17</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
 
+  <image:image>
+    <image:loc>https://vivamediacreative.com/assets/articles/مشاهدات-ريلز/مشاهدات-الريلز-بدون-مبيعات.webp</image:loc>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://vivamediacreative.com/assets/articles/مشاهدات-ريلز/مشاهدات-الريلز-ونية-الشراء.webp</image:loc>
+  </image:image>
+
+</url>
 <url>
 <loc>https://vivamediacreative.com/ar/hashtag-analyzer/</loc>
 <lastmod>2026-01-25</lastmod>
