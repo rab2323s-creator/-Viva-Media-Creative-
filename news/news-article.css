@@ -703,3 +703,117 @@
   white-space:nowrap;
   border:0;
 }
+/* =========================
+   Hero Image – New Articles Only
+   لا يؤثر على المقالات القديمة
+   ========================= */
+
+.article figure.media.media-hero{
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+  box-shadow: 0 18px 45px rgba(0,0,0,.34);
+}
+
+.article figure.media.media-hero img{
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 320px;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  box-shadow: none;
+}
+
+.article figure.media.media-hero::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(7,10,18,.82) 0%, rgba(7,10,18,.38) 42%, rgba(7,10,18,.06) 100%);
+  pointer-events: none;
+}
+
+.article .media-hero__overlay{
+  position: absolute;
+  right: 22px;
+  left: 22px;
+  bottom: 22px;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.article .media-hero__badge{
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.18);
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .2px;
+  backdrop-filter: blur(8px);
+}
+
+.article .media-hero__title{
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: clamp(1.35rem, 2.4vw, 2.35rem);
+  line-height: 1.2;
+  font-weight: 900;
+  text-shadow: 0 4px 18px rgba(0,0,0,.35);
+}
+
+.article .media-hero__text{
+  margin: 0;
+  max-width: 620px;
+  color: rgba(255,255,255,.92);
+  font-size: 1rem;
+  line-height: 1.8;
+  text-shadow: 0 2px 12px rgba(0,0,0,.32);
+}
+
+.article figure.media.media-hero figcaption{
+  position: relative;
+  z-index: 3;
+  margin-top: 0;
+  padding: 14px 16px 16px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.025);
+  color: rgba(233,238,252,.72);
+  font-size: .94rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 640px){
+  .article .media-hero__overlay{
+    right: 16px;
+    left: 16px;
+    bottom: 16px;
+  }
+
+  .article .media-hero__badge{
+    margin-bottom: 10px;
+    padding: 6px 10px;
+    font-size: .76rem;
+  }
+
+  .article .media-hero__title{
+    font-size: 1.28rem;
+    line-height: 1.28;
+  }
+
+  .article .media-hero__text{
+    font-size: .94rem;
+    line-height: 1.7;
+  }
+
+  .article figure.media.media-hero img{
+    min-height: 260px;
+  }
+}
