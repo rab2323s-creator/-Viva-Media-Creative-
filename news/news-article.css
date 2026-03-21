@@ -905,3 +905,16 @@
 }
 
 }
+/* الصورة الثالثة فقط تظهر بالطول */
+.article figure.media.media-composition{
+  text-align: center;
+}
+
+.article figure.media.media-composition img{
+  width: min(420px, 100%);
+  max-width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  margin-inline: auto;
+  height: auto;
+}
