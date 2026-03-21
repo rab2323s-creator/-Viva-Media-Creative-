@@ -150,7 +150,11 @@
   padding: 12px 0;
   flex-wrap: wrap;
 }
-
+.article .brand-text p{
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
 /* 🔴 هذا هو السطر الذي يحل مشكلة اللوجو الكبير */
 .article .logo{
   width: 56px !important;
