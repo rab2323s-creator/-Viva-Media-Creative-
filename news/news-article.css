@@ -821,3 +821,87 @@
     min-height: 260px;
   }
 }
+/* =========================
+   Composition Image
+   ========================= */
+
+.article .media-composition{
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.article .media-composition img{
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* overlay */
+
+.article .composition-overlay{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* frame */
+
+.article .composition-frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(255,255,255,.45);
+  border-radius: 22px;
+  box-shadow: 0 0 0 2000px rgba(0,0,0,.25);
+}
+
+/* lines */
+
+.article .composition-line{
+  position: absolute;
+  left: 50%;
+  width: 36%;
+  transform: translateX(-50%);
+  border-top: 1px dashed rgba(255,255,255,.35);
+}
+
+.article .composition-line-1{
+  top: 35%;
+}
+
+.article .composition-line-2{
+  top: 65%;
+}
+
+/* number */
+
+.article .composition-number{
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  font-size: 28px;
+  font-weight: 800;
+  color: rgba(255,255,255,.85);
+  letter-spacing: 2px;
+}
+
+/* mobile */
+
+@media (max-width:640px){
+
+.article .composition-frame{
+  width: 44%;
+  height: 82%;
+}
+
+.article .composition-number{
+  font-size: 20px;
+}
+
+}
