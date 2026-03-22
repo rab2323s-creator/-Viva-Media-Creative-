@@ -918,3 +918,10 @@
   margin-inline: auto;
   height: auto;
 }
+.article .media-editing img{
+  border-radius: 18px;
+  filter: saturate(1.05) contrast(1.02);
+}
+.article .media-lighting img{
+  border-radius: 18px;
+}
