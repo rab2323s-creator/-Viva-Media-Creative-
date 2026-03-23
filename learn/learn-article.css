@@ -1,0 +1,931 @@
+/* =========================
+   Article Page (Luxury)
+   يعمل فقط عندما body فيه class="article"
+   ========================= */
+
+.article{
+  background: #0b0f19;
+  color: #e9eefc;
+}
+
+/* تحسين مساحة المقال */
+.article .section{
+  padding-top: 26px;
+  padding-bottom: 60px;
+}
+
+/* صندوق المقال */
+.article .blog-article{
+  max-width: 860px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 60px rgba(0,0,0,0.45);
+}
+
+/* داخل الصندوق */
+.article .blog-article > *:not(.article-img){
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+/* عنوان المقال */
+.article .blog-article h1{
+  padding-top: 22px;
+  margin: 0;
+  font-size: clamp(1.6rem, 2.3vw, 2.2rem);
+  line-height: 1.35;
+  font-weight: 900;
+}
+
+/* التاريخ */
+.article .article-date{
+  margin: 10px 0 0;
+  color: rgba(233,238,252,0.70);
+  font-size: 0.95rem;
+  padding-bottom: 14px;
+}
+
+/* صورة الهيدر للمقال */
+.article .article-img{
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.15) contrast(1.05);
+}
+
+/* عناوين الأقسام */
+.article .blog-article h2{
+  margin: 26px 0 10px;
+  font-size: 1.25rem;
+  font-weight: 850;
+  line-height: 1.5;
+}
+
+.article .blog-article h3{
+  margin: 20px 0 8px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: rgba(233,238,252,0.95);
+}
+
+/* الفقرات */
+.article .blog-article p{
+  margin: 0 0 14px;
+  line-height: 2;
+  color: rgba(233,238,252,0.82);
+  font-size: 1.02rem;
+}
+
+/* قوائم */
+.article .blog-article ul{
+  margin: 10px 0 0;
+  padding: 0 22px 18px;
+  list-style: none;
+}
+
+.article .blog-article ul li{
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: rgba(233,238,252,0.85);
+}
+
+.article .blog-article ul li:last-child{
+  border-bottom: none;
+}
+
+/* رابط العودة */
+.article .back-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 22px 24px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #9ad0ff;
+  background: rgba(0,119,255,0.14);
+  border: 1px solid rgba(0,119,255,0.22);
+}
+
+.article .back-link:hover{
+  background: rgba(0,119,255,0.22);
+}
+
+/* موبايل */
+@media (max-width: 640px){
+  .article .blog-article{
+    border-radius: 14px;
+  }
+
+  .article .article-img{
+    height: 240px;
+  }
+
+  .article .blog-article > *:not(.article-img){
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+/* =========================
+   FIX HEADER – ARTICLE PAGE
+   ========================= */
+
+/* الهيدر */
+.article .site-header{
+  background: rgba(10,14,25,0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ترتيب المحتوى داخل الهيدر */
+.article .header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  flex-wrap: wrap;
+}
+.article .brand-text p{
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+/* 🔴 هذا هو السطر الذي يحل مشكلة اللوجو الكبير */
+.article .logo{
+  width: 56px !important;
+  height: 56px !important;
+  max-width: 56px !important;
+  max-height: 56px !important;
+  object-fit: cover !important;
+  border-radius: 14px;
+  display: block;
+}
+
+/* البراند */
+.article .brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 260px;
+}
+
+.article .brand a{
+  display: inline-flex;
+  align-items: center;
+}
+
+/* اسم الشركة */
+.article .brand-text h1{
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+/* المنيو */
+.article .main-nav{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.article .main-nav a{
+  color: rgba(233,238,252,0.9);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.article .main-nav a:hover{
+  background: rgba(255,255,255,0.08);
+}
+
+.article .main-nav a.active{
+  background: rgba(0,119,255,0.18);
+  color: #9ad0ff;
+}
+
+/* موبايل */
+@media (max-width: 768px){
+  .article .header-inner{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .article .brand{
+    justify-content: center;
+  }
+
+  .article .main-nav{
+    justify-content: center;
+  }
+}
+
+/* =========================
+   Highlight Article Links
+   ========================= */
+
+.article .blog-article p a{
+  color: #ff5c8a; /* وردي فاخر قريب من إنستغرام */
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.article .blog-article p a:hover{
+  color: #ff86a6;
+  background: rgba(255,92,138,0.12);
+  border-radius: 6px;
+}
+
+/* =========================
+   Rich Article Components
+   ========================= */
+
+.article .article-hero{
+  margin: 16px 0 18px;
+}
+
+.article .article-hero figure{
+  margin: 0;
+}
+
+.article .article-hero img{
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+}
+
+.article .article-hero figcaption{
+  font-size: 14px;
+  opacity: .8;
+  margin-top: 8px;
+  line-height: 1.8;
+  color: rgba(233,238,252,.72);
+}
+
+.article .hook-block{
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin: 14px 0 18px;
+}
+
+.article .hook-block p{
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.9;
+  color: #fff;
+}
+
+.article .quote-block{
+  border-right: 4px solid rgba(255,255,255,.20);
+  background: rgba(255,255,255,.04);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin: 16px 0;
+}
+
+.article .quote-block p{
+  margin: 0;
+  line-height: 1.95;
+  color: rgba(233,238,252,.92);
+}
+
+.article .box{
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.035);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin: 16px 0;
+}
+
+.article .box h3{
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.article .box p{
+  margin: 8px 0;
+}
+
+.article .box ul,
+.article .box ol{
+  margin: 10px 0 0;
+  padding-right: 20px;
+}
+
+.article .checklist-box{
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,241,118,.12);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin: 18px 0;
+}
+
+.article .checklist-box h3{
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.article .checklist-box ul{
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.article .checklist-box ul li{
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.article .checklist-box ul li:last-child{
+  border-bottom: none;
+}
+
+.article .cta-box{
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(46,125,50,.10);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin: 18px 0;
+}
+
+.article .cta-box h3{
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.article .cta-box .cta-actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.article .cta-box a.cta-primary,
+.article .cta-box a.cta-secondary{
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.article .cta-box a.cta-primary{
+  background: rgba(255,255,255,.92);
+  color: #0b0f19;
+}
+
+.article .cta-box a.cta-secondary{
+  background: rgba(255,255,255,.08);
+  color: #fff;
+}
+
+.article .compare-table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.article .compare-table th,
+.article .compare-table td{
+  padding: 12px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  vertical-align: top;
+  text-align: right;
+}
+
+.article .compare-table th{
+  background: rgba(255,255,255,.04);
+  font-weight: 900;
+  color: #fff;
+}
+
+.article .image-block{
+  margin: 18px 0 22px;
+}
+
+.article .image-block figure{
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.article .image-block img{
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+.article .image-block figcaption{
+  padding: 10px 12px 12px;
+  font-size: 14px;
+  opacity: .84;
+  line-height: 1.8;
+  color: rgba(233,238,252,.72);
+}
+
+.article .formula-box{
+  border: 1px dashed rgba(255,255,255,.16);
+  background: rgba(255,255,255,.03);
+  border-radius: 14px;
+  padding: 18px;
+  margin: 18px 0;
+  text-align: center;
+}
+
+.article .formula-box p{
+  margin: 8px 0;
+  font-weight: 800;
+  line-height: 1.9;
+  color: #fff;
+}
+
+.article .mini{
+  font-size: 14px;
+  opacity: .82;
+  color: rgba(233,238,252,.72);
+}
+
+@media (max-width: 640px){
+  .article .compare-table th,
+  .article .compare-table td{
+    padding: 9px;
+    font-size: .95rem;
+  }
+
+  .article .cta-box .cta-actions{
+    flex-direction: column;
+  }
+
+  .article .cta-box a.cta-primary,
+  .article .cta-box a.cta-secondary{
+    width: 100%;
+    text-align: center;
+  }
+}
+/* =========================
+   Case Study Section
+   ========================= */
+
+.article .case-study{
+  margin: 22px 0;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.03);
+}
+
+.article .case-intro{
+  font-size: 1.02rem;
+  line-height: 1.9;
+}
+
+.article .case-table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+}
+
+.article .case-table th,
+.article .case-table td{
+  border: 1px solid rgba(255,255,255,0.10);
+  padding: 10px;
+  vertical-align: top;
+  text-align: right;
+}
+
+.article .case-table thead th{
+  background: rgba(255,255,255,0.04);
+}
+
+.article .case-points{
+  margin: 12px 0 0;
+  padding-right: 20px;
+  list-style: disc;
+}
+
+.article .case-points li{
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: rgba(233,238,252,0.85);
+}
+
+.article .case-points li:last-child{
+  border-bottom: none;
+}
+
+.article .case-note{
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.025);
+}
+
+.article .case-note p{
+  margin: 0;
+}
+
+@media (max-width: 640px){
+  .article .case-study{
+    padding: 14px;
+  }
+
+  .article .case-table th,
+  .article .case-table td{
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+}
+.article .quote{
+  margin: 14px 0 18px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #fff;
+}
+.article .checklist{
+  margin: 18px 0 24px;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.article .checklist ul{
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.article .checklist ul li{
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.article .checklist ul li:last-child{
+  border-bottom: none;
+}
+
+.article .checklist .note{
+  margin-top: 14px;
+  color: rgba(233,238,252,0.75);
+}
+/* =========================
+   Article Content Elements
+   ========================= */
+
+/* الصور داخل المقال */
+.article figure.media{
+  margin: 20px 0 24px;
+}
+
+.article figure.media img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.article figure.media figcaption{
+  margin-top: 8px;
+  font-size: .95rem;
+  line-height: 1.8;
+  color: rgba(233,238,252,.72);
+}
+
+/* جدول المحتويات */
+.article .toc{
+  margin: 18px 0;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+.article .toc ol{
+  margin: 10px 0 0;
+  padding-right: 18px;
+}
+
+.article .toc a{
+  color: #9ad0ff;
+  text-decoration: none;
+}
+
+.article .toc a:hover{
+  text-decoration: underline;
+}
+
+/* grid cards */
+.article .grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.article .card{
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.1);
+  background: rgba(255,255,255,.03);
+}
+
+/* الجداول */
+.article .blog-article table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.article .blog-article th,
+.article .blog-article td{
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 10px;
+  vertical-align: top;
+}
+
+.article .blog-article thead th{
+  background: rgba(255,255,255,.04);
+}
+
+/* أزرار CTA */
+.article .cta-button{
+  display: inline-block;
+  padding: 12px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+}
+
+.article .cta-button:hover{
+  background: rgba(255,255,255,.12);
+}
+
+.article .note-box{
+  margin: 18px 0;
+  padding: 16px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px;
+  background: rgba(255,255,255,.04);
+}
+
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+/* =========================
+   Hero Image – New Articles Only
+   لا يؤثر على المقالات القديمة
+   ========================= */
+
+.article figure.media.media-hero{
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+  box-shadow: 0 18px 45px rgba(0,0,0,.34);
+}
+
+.article figure.media.media-hero img{
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 320px;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  box-shadow: none;
+}
+
+.article figure.media.media-hero::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(7,10,18,.82) 0%, rgba(7,10,18,.38) 42%, rgba(7,10,18,.06) 100%);
+  pointer-events: none;
+}
+
+.article .media-hero__overlay{
+  position: absolute;
+  right: 22px;
+  left: 22px;
+  bottom: 22px;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.article .media-hero__badge{
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.18);
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .2px;
+  backdrop-filter: blur(8px);
+}
+
+.article .media-hero__title{
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: clamp(1.35rem, 2.4vw, 2.35rem);
+  line-height: 1.2;
+  font-weight: 900;
+  text-shadow: 0 4px 18px rgba(0,0,0,.35);
+}
+
+.article .media-hero__text{
+  margin: 0;
+  max-width: 620px;
+  color: rgba(255,255,255,.92);
+  font-size: 1rem;
+  line-height: 1.8;
+  text-shadow: 0 2px 12px rgba(0,0,0,.32);
+}
+
+.article figure.media.media-hero figcaption{
+  position: relative;
+  z-index: 3;
+  margin-top: 0;
+  padding: 14px 16px 16px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.025);
+  color: rgba(233,238,252,.72);
+  font-size: .94rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 640px){
+  .article .media-hero__overlay{
+    right: 16px;
+    left: 16px;
+    bottom: 16px;
+  }
+
+  .article .media-hero__badge{
+    margin-bottom: 10px;
+    padding: 6px 10px;
+    font-size: .76rem;
+  }
+
+  .article .media-hero__title{
+    font-size: 1.28rem;
+    line-height: 1.28;
+  }
+
+  .article .media-hero__text{
+    font-size: .94rem;
+    line-height: 1.7;
+  }
+
+  .article figure.media.media-hero img{
+    min-height: 260px;
+  }
+}
+/* =========================
+   Composition Image
+   ========================= */
+
+.article .media-composition{
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.article .media-composition img{
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* overlay */
+
+.article .composition-overlay{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* frame */
+
+.article .composition-frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(255,255,255,.45);
+  border-radius: 22px;
+  box-shadow: 0 0 0 2000px rgba(0,0,0,.25);
+}
+
+/* lines */
+
+.article .composition-line{
+  position: absolute;
+  left: 50%;
+  width: 36%;
+  transform: translateX(-50%);
+  border-top: 1px dashed rgba(255,255,255,.35);
+}
+
+.article .composition-line-1{
+  top: 35%;
+}
+
+.article .composition-line-2{
+  top: 65%;
+}
+
+/* number */
+
+.article .composition-number{
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  font-size: 28px;
+  font-weight: 800;
+  color: rgba(255,255,255,.85);
+  letter-spacing: 2px;
+}
+
+/* mobile */
+
+@media (max-width:640px){
+
+.article .composition-frame{
+  width: 44%;
+  height: 82%;
+}
+
+.article .composition-number{
+  font-size: 20px;
+}
+
+}
+/* الصورة الثالثة فقط تظهر بالطول */
+.article figure.media.media-composition{
+  text-align: center;
+}
+
+.article figure.media.media-composition img{
+  width: min(420px, 100%);
+  max-width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  margin-inline: auto;
+  height: auto;
+}
+.article .media-editing img{
+  border-radius: 18px;
+  filter: saturate(1.05) contrast(1.02);
+}
+.article .media-lighting img{
+  border-radius: 18px;
+}
+.article .media-conversion img{
+  border-radius: 18px;
+  filter: saturate(1.04) contrast(1.03);
+}
