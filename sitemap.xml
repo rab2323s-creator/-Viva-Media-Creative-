@@ -63,6 +63,21 @@ xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   </image:image>
 
 </url>
+<url>
+  <loc>https://vivamediacreative.com/learn/why-people-trust-personal-content/</loc>
+  <lastmod>2026-03-30</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+
+  <image:image>
+    <image:loc>https://vivamediacreative.com/assets/personal-content-vs-brand-content-trust-hero.jpg</image:loc>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://vivamediacreative.com/assets/trust-to-purchase-content-funnel.jpg</image:loc>
+  </image:image>
+</url>
+  
   <url>
   <loc>https://vivamediacreative.com/learn/%D8%B7%D8%B1%D9%8A%D9%82%D8%A9-%D8%AA%D8%B5%D9%88%D9%8A%D8%B1-%D8%A7%D9%84%D8%B1%D9%8A%D9%84%D8%B2-%D8%A8%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%81/</loc>
  <lastmod>2026-03-23</lastmod>
