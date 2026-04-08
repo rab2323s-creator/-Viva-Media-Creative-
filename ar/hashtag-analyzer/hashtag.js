@@ -356,14 +356,16 @@
 }
 
 
-  function copyText(text) {
-    if (!text) return;
-    navigator.clipboard?.writeText(text).then(() => {
-      const old = runBtn.textContent;
-      runBtn.textContent = "✅ تم النسخ";
-      setTimeout(() => (runBtn.textContent = old), 900);
-    }).catch(() => alert("لم أستطع النسخ تلقائيًا. انسخ يدويًا."));
-  }
+ function copyText(text, buttonEl = null) {
+  if (!text) return;
+  navigator.clipboard?.writeText(text).then(() => {
+    if (buttonEl) {
+      const old = buttonEl.textContent;
+      buttonEl.textContent = "✅ تم النسخ";
+      setTimeout(() => (buttonEl.textContent = old), 900);
+    }
+  }).catch(() => alert("لم أستطع النسخ تلقائيًا. انسخ يدويًا."));
+}
 
   function renderSmartHeader(detectedLabels, counts, goal) {
     const goalText = {
@@ -459,11 +461,11 @@
 
     // ربط أزرار النسخ
     resultsEl.querySelectorAll("[data-copy]").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const t = decodeURIComponent(btn.getAttribute("data-copy") || "");
-        copyText(t);
-      });
-    });
+  btn.addEventListener("click", () => {
+    const t = decodeURIComponent(btn.getAttribute("data-copy") || "");
+    copyText(t, btn);
+  });
+});
 
     // تتبع استخدام بسيط (بدون سيرفر)
     try {
@@ -481,4 +483,160 @@
 
   runBtn.addEventListener("click", run);
   resetBtn?.addEventListener("click", reset);
+    const aiTopicEl = document.getElementById("aiTopicInput");
+  const aiSizeEl = document.getElementById("aiAccountSize");
+  const aiGoalEl = document.getElementById("aiGoal");
+  const aiResultsEl = document.getElementById("aiResults");
+  const aiRunBtn = document.getElementById("aiRunBtn");
+  const aiResetBtn = document.getElementById("aiResetBtn");
+
+  async function runAIRequest(text, size, goal) {
+    const res = await fetch("https://old-water-8caa.rab2323s.workers.dev", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ text, size, goal })
+    });
+
+    if (!res.ok) {
+      const msg = await res.text();
+      throw new Error(msg || "AI request failed");
+    }
+
+    return await res.json();
+  }
+
+  function parseAIResponse(raw) {
+    try {
+      if (raw && raw.intent && raw.set1 && raw.set2 && raw.set3) {
+        return raw;
+      }
+
+      if (raw && raw.output_text) {
+        return JSON.parse(raw.output_text);
+      }
+
+      if (raw && Array.isArray(raw.output)) {
+        const parts = [];
+
+        for (const item of raw.output) {
+          if (!item.content) continue;
+          for (const c of item.content) {
+            if (c.type === "output_text" && c.text) {
+              parts.push(c.text);
+            }
+          }
+        }
+
+        if (parts.length) {
+          return JSON.parse(parts.join("\n"));
+        }
+      }
+    } catch (e) {
+      console.error("AI parse error:", e, raw);
+    }
+
+    return null;
+  }
+
+  function cleanAITags(arr) {
+    return (arr || [])
+      .map(tag => String(tag || "").trim())
+      .filter(Boolean)
+      .map(tag => tag.startsWith("#") ? tag : "#" + tag)
+      .map(tag => tag.replace(/\s+/g, ""));
+  }
+
+  function renderAISet(title, tags) {
+    const line = cleanAITags(tags).join(" ");
+
+    return `
+      <div class="block">
+        <h3>${title}</h3>
+        <div class="tags">
+          <strong>جاهز للنسخ:</strong><br/>
+          ${line}
+        </div>
+        <div class="copybar">
+          <button class="btn small primary" type="button" data-copy="${encodeURIComponent(line)}">نسخ المجموعة</button>
+        </div>
+      </div>
+    `;
+  }
+
+  function bindAICopyButtons() {
+  aiResultsEl.querySelectorAll("[data-copy]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const t = decodeURIComponent(btn.getAttribute("data-copy") || "");
+      copyText(t, btn);
+    });
+  });
+}
+
+  async function runAITool() {
+    if (!aiTopicEl || !aiSizeEl || !aiGoalEl || !aiResultsEl || !aiRunBtn) return;
+
+    const text = aiTopicEl.value.trim();
+
+    if (!text) {
+      aiResultsEl.innerHTML = `<div class="block"><strong>اكتب وصف المحتوى أولًا.</strong></div>`;
+      return;
+    }
+
+    const size = aiSizeEl.value;
+    const goal = aiGoalEl.value;
+
+    aiRunBtn.disabled = true;
+    const oldText = aiRunBtn.textContent;
+    aiRunBtn.textContent = "جاري التحليل...";
+
+    try {
+      const raw = await runAIRequest(text, size, goal);
+      const data = parseAIResponse(raw);
+
+      if (!data) {
+        throw new Error("Invalid AI response");
+      }
+
+      aiResultsEl.innerHTML = `
+        <div class="block">
+          <h3>تحليل ذكي للمحتوى</h3>
+          <p style="margin:8px 0; line-height:1.9; opacity:.92">
+            تم فهم المحتوى على أنه: <strong>${data.intent || "غير محدد"}</strong>
+          </p>
+          <p style="margin:0; opacity:.75">
+            هذه 3 مجموعات هاشتاغات مقترحة باستخدام الذكاء الصناعي.
+          </p>
+        </div>
+
+        ${renderAISet("مجموعة 1", data.set1)}
+        ${renderAISet("مجموعة 2", data.set2)}
+        ${renderAISet("مجموعة 3", data.set3)}
+      `;
+
+      bindAICopyButtons();
+    } catch (err) {
+      console.error(err);
+      aiResultsEl.innerHTML = `
+        <div class="block">
+          <strong>حدث خطأ أثناء التحليل بالذكاء الصناعي.</strong><br/>
+          تأكد من أن الـ Worker يعمل وأن مفتاح OpenAI صحيح.
+        </div>
+      `;
+    } finally {
+      aiRunBtn.disabled = false;
+      aiRunBtn.textContent = oldText;
+    }
+  }
+
+  function resetAITool() {
+    if (!aiTopicEl || !aiResultsEl) return;
+    aiTopicEl.value = "";
+    aiResultsEl.innerHTML = "";
+    aiTopicEl.focus();
+  }
+
+  aiRunBtn?.addEventListener("click", runAITool);
+  aiResetBtn?.addEventListener("click", resetAITool);
 })();
