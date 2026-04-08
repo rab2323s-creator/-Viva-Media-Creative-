@@ -1,0 +1,650 @@
+/* =========================
+   TOOLS PAGES
+   يعمل فقط عندما body فيه class="tools"
+   ========================= */
+
+.tools{
+  background:
+    radial-gradient(1000px 500px at 15% 8%, rgba(120,80,255,.10), transparent 60%),
+    radial-gradient(900px 480px at 85% 12%, rgba(0,255,200,.08), transparent 55%),
+    #0b0f19;
+  color: #e9eefc;
+}
+
+/* مساحة الصفحة */
+.tools .tool-page{
+  padding: 34px 0 70px;
+}
+
+/* =========================
+   HEADER – TOOLS
+   ========================= */
+
+.tools .site-header{
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(10,14,25,.72);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.tools .header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 0;
+  flex-wrap: wrap;
+}
+
+.tools .brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 260px;
+}
+
+.tools .brand a{
+  display: inline-flex;
+  align-items: center;
+}
+
+.tools .logo{
+  width: 56px !important;
+  height: 56px !important;
+  max-width: 56px !important;
+  max-height: 56px !important;
+  border-radius: 14px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 8px 22px rgba(0,0,0,.25);
+}
+
+.tools .brand-text h2,
+.tools .brand-text h1{
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.tools .brand-text p{
+  margin: 4px 0 0;
+  font-size: .96rem;
+  line-height: 1.3;
+  color: rgba(233,238,252,.68);
+}
+
+.tools .main-nav{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tools .main-nav a{
+  color: rgba(233,238,252,.9);
+  text-decoration: none;
+  padding: 9px 13px;
+  border-radius: 12px;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.tools .main-nav a:hover{
+  background: rgba(255,255,255,.07);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.tools .main-nav a.active{
+  background: rgba(0,119,255,.16);
+  color: #9ad0ff;
+  border: 1px solid rgba(0,119,255,.24);
+}
+
+/* =========================
+   GENERIC CARDS
+   ========================= */
+
+.tools .hero-card,
+.tools .tool-card,
+.tools .content-card,
+.tools .links-card{
+  max-width: 1040px;
+  margin: 0 auto 18px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,.10);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  box-shadow: 0 18px 50px rgba(0,0,0,.34);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tools .hero-card::before,
+.tools .tool-card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(0,119,255,.12), transparent 22%),
+    radial-gradient(circle at top left, rgba(153,102,255,.08), transparent 20%);
+  pointer-events: none;
+}
+
+.tools .content-card,
+.tools .links-card{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.025));
+}
+
+/* =========================
+   HERO
+   ========================= */
+
+.tools .breadcrumbs{
+  color: rgba(233,238,252,.66);
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.tools .breadcrumbs a{
+  color: #8bc5ff;
+  text-decoration: none;
+}
+
+.tools .hero-card h1{
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.28;
+  color: #fff;
+  font-weight: 900;
+  max-width: 16ch;
+}
+
+.tools .hero-card .lead{
+  margin: 0 0 10px;
+  max-width: 760px;
+  font-size: 1.05rem;
+  line-height: 2;
+  color: rgba(233,238,252,.88);
+}
+
+.tools .mini-note,
+.tools .faq-note{
+  margin: 0;
+  color: rgba(233,238,252,.68);
+  font-size: .95rem;
+  line-height: 1.9;
+}
+
+.tools .sub-links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.tools .sub-links a{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #9ad0ff;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  transition: background .2s ease, transform .2s ease;
+}
+
+.tools .sub-links a:hover{
+  background: rgba(255,255,255,.07);
+  transform: translateY(-1px);
+}
+
+.tools .chips{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.tools .chip{
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.95);
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+/* =========================
+   HEADINGS + TEXT
+   ========================= */
+
+.tools .tool-card h2,
+.tools .content-card h2,
+.tools .links-card h2{
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  line-height: 1.45;
+  font-weight: 850;
+}
+
+.tools .content-card h3,
+.tools .links-card h3{
+  margin: 22px 0 8px;
+  color: rgba(255,255,255,.96);
+  font-size: 1.08rem;
+  line-height: 1.6;
+  font-weight: 800;
+}
+
+.tools .content-card p,
+.tools .links-card p,
+.tools .tool-card p,
+.tools .content-card li,
+.tools .links-card li{
+  line-height: 2;
+  color: rgba(233,238,252,.82);
+  font-size: 1rem;
+}
+
+.tools .content-card a,
+.tools .links-card a{
+  color: #8bc5ff;
+  text-decoration: none;
+}
+
+.tools .content-card a:hover,
+.tools .links-card a:hover{
+  text-decoration: underline;
+}
+
+/* =========================
+   TOOL BOX
+   ========================= */
+
+.tools .tool-box{
+  margin-top: 16px;
+  padding: 22px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.10);
+  background:
+    linear-gradient(180deg, rgba(8,14,32,.92), rgba(8,12,24,.96));
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+.tools .tool-box label{
+  display: block;
+  margin: 16px 0 8px;
+  color: #fff;
+  font-weight: 800;
+  font-size: .96rem;
+}
+
+.tools .tool-box textarea,
+.tools .tool-box select,
+.tools .tool-box input[type="text"],
+.tools .tool-box input[type="search"],
+.tools .tool-box input[type="email"],
+.tools .tool-box input[type="number"]{
+  width: 100%;
+  padding: 14px 15px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: #fff;
+  outline: none;
+  box-sizing: border-box;
+  font: inherit;
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease,
+    background .2s ease,
+    transform .2s ease;
+}
+
+.tools .tool-box textarea{
+  min-height: 132px;
+  resize: vertical;
+  line-height: 1.9;
+}
+
+.tools .tool-box textarea::placeholder,
+.tools .tool-box input::placeholder{
+  color: rgba(233,238,252,.42);
+}
+
+.tools .tool-box textarea:focus,
+.tools .tool-box select:focus,
+.tools .tool-box input:focus{
+  border-color: rgba(0,119,255,.45);
+  background: rgba(255,255,255,.06);
+  box-shadow: 0 0 0 4px rgba(0,119,255,.12);
+}
+
+/* صفوف الأزرار */
+.tools .row{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.tools .btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: .96rem;
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background .2s ease,
+    border-color .2s ease;
+}
+
+.tools .btn:hover{
+  transform: translateY(-1px);
+}
+
+.tools .btn.primary{
+  color: #fff;
+  background: linear-gradient(135deg, #0077ff, #00b7ff);
+  box-shadow: 0 14px 32px rgba(0,119,255,.28);
+}
+
+.tools .btn.primary:hover{
+  box-shadow: 0 18px 38px rgba(0,119,255,.34);
+}
+
+.tools .btn.ghost{
+  color: #9ad0ff;
+  border-color: rgba(154,208,255,.24);
+  background: rgba(255,255,255,.03);
+}
+
+.tools .btn.ghost:hover{
+  background: rgba(255,255,255,.06);
+  border-color: rgba(154,208,255,.36);
+}
+
+/* =========================
+   RESULTS
+   ========================= */
+
+.tools .results{
+  margin-top: 18px;
+}
+
+.tools .results .block{
+  margin-top: 14px;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.08);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  box-shadow: 0 10px 24px rgba(0,0,0,.16);
+}
+
+.tools .results h3{
+  margin: 0 0 10px;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 850;
+}
+
+.tools .tags{
+  line-height: 2.15;
+  word-break: break-word;
+  color: #d7e8ff;
+  font-size: .98rem;
+}
+
+.tools .copybar{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* =========================
+   CTA BOX
+   ========================= */
+
+.tools .cta-box{
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,198,255,.16);
+  background:
+    linear-gradient(180deg, rgba(0,119,255,.12), rgba(0,198,255,.05));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+.tools .cta-box h2,
+.tools .cta-box strong{
+  color: #fff;
+}
+
+.tools .cta-box p{
+  margin: 0;
+  line-height: 1.95;
+}
+
+/* =========================
+   LISTS + DIVIDER + DETAILS
+   ========================= */
+
+.tools .list{
+  margin: 10px 0 0;
+  padding-right: 18px;
+}
+
+.tools .list li{
+  margin-bottom: 8px;
+}
+
+.tools .divider{
+  height: 1px;
+  margin: 22px 0;
+  background: rgba(255,255,255,.08);
+}
+
+.tools details{
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.03);
+}
+
+.tools summary{
+  cursor: pointer;
+  color: #fff;
+  font-weight: 800;
+  list-style: none;
+}
+
+.tools summary::-webkit-details-marker{
+  display: none;
+}
+
+.tools details[open]{
+  background: rgba(255,255,255,.045);
+}
+
+/* =========================
+   LINKS CARD LISTS
+   ========================= */
+
+.tools .links-card ul.list{
+  padding-right: 18px;
+}
+
+.tools .links-card ul.list li{
+  margin-bottom: 10px;
+}
+
+.tools .links-card ul.list a{
+  color: rgba(233,238,252,.92);
+}
+
+.tools .links-card ul.list a:hover{
+  color: #8bc5ff;
+}
+
+/* =========================
+   FOOTER – TOOLS
+   ========================= */
+
+.tools .footer,
+.tools .site-footer{
+  margin-top: 40px;
+  padding: 28px 16px 38px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.02);
+  text-align: center;
+}
+
+.tools .footer p{
+  margin: 0 0 12px;
+  color: rgba(233,238,252,.68);
+}
+
+.tools .footer__links{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.tools .footer__links a{
+  color: rgba(233,238,252,.84);
+}
+
+.tools .footer__links a:hover{
+  color: #fff;
+}
+
+/* =========================
+   ACCESSIBILITY
+   ========================= */
+
+.tools .skip-link{
+  position: absolute;
+  top: -44px;
+  right: 12px;
+  z-index: 999;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #fff;
+  color: #000;
+  transition: top .2s ease;
+}
+
+.tools .skip-link:focus{
+  top: 12px;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 900px){
+  .tools .hero-card,
+  .tools .tool-card,
+  .tools .content-card,
+  .tools .links-card{
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .tools .hero-card h1{
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px){
+  .tools .header-inner{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tools .brand{
+    justify-content: center;
+  }
+
+  .tools .main-nav{
+    justify-content: center;
+  }
+
+  .tools .tool-page{
+    padding-top: 24px;
+  }
+}
+
+@media (max-width: 640px){
+  .tools .hero-card,
+  .tools .tool-card,
+  .tools .content-card,
+  .tools .links-card{
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .tools .tool-box{
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .tools .hero-card h1{
+    font-size: 1.8rem;
+    line-height: 1.35;
+  }
+
+  .tools .hero-card .lead,
+  .tools .content-card p,
+  .tools .links-card p,
+  .tools .tool-card p,
+  .tools .content-card li,
+  .tools .links-card li{
+    font-size: .97rem;
+  }
+
+  .tools .btn{
+    width: 100%;
+  }
+
+  .tools .row{
+    flex-direction: column;
+  }
+
+  .tools .sub-links,
+  .tools .chips,
+  .tools .footer__links{
+    gap: 8px;
+  }
+}
