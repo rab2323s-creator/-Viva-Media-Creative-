@@ -43,7 +43,18 @@ xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
 </url>
-
+  <url>
+  <loc>https://vivamediacreative.com/about/</loc>
+  <lastmod>2026-04-14</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://vivamediacreative.com/impressum/</loc>
+  <lastmod>2026-04-14</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.3</priority>
+</url>
 <url>
   <loc>https://vivamediacreative.com/ar/best-time-to-post-instagram/</loc>
   <lastmod>2026-03-12</lastmod>
