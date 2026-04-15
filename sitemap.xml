@@ -301,6 +301,45 @@ https://vivamediacreative.com/assets/articles/%D9%85%D8%B4%D8%A7%D9%87%D8%AF%D8%
   </image:image>
 
 </url>
+  <url>
+  <loc>https://vivamediacreative.com/learn/influencer-marketing/</loc>
+  <lastmod>2026-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+
+  <!-- الصورة الرئيسية للمقال -->
+  <image:image>
+    <image:loc>
+      https://vivamediacreative.com/assets/influencer-marketing-sales-strategy.jpg
+    </image:loc>
+    <image:title>التسويق عبر المؤثرين في 2026: كيف تحقق مبيعات فعلية بدل مجرد مشاهدات</image:title>
+    <image:caption>
+      صورة رئيسية تعبّر عن تحويل الثقة والمحتوى الإنساني في التسويق عبر المؤثرين إلى مبيعات فعلية ونتائج قابلة للقياس
+    </image:caption>
+  </image:image>
+
+  <!-- صورة اختيار المؤثر المناسب -->
+  <image:image>
+    <image:loc>
+      https://vivamediacreative.com/assets/influencer-selection-scorecard.jpg
+    </image:loc>
+    <image:title>كيف تختار المؤثر المناسب لحملتك التسويقية</image:title>
+    <image:caption>
+      تحليل لاختيار المؤثر المناسب بناءً على جودة الجمهور والتفاعل ومصداقية المحتوى لتحقيق نتائج ومبيعات حقيقية
+    </image:caption>
+  </image:image>
+
+  <!-- صورة الإطار العملي للحملة -->
+  <image:image>
+    <image:loc>
+      https://vivamediacreative.com/assets/influencer-marketing-strategy-framework.jpg
+    </image:loc>
+    <image:title>إطار عملي لبناء حملة تسويق عبر المؤثرين</image:title>
+    <image:caption>
+      نموذج عملي يوضح خطوات بناء حملة مؤثرين ناجحة من تحديد الهدف واختيار المؤثر إلى التنفيذ وقياس النتائج
+    </image:caption>
+  </image:image>
+</url>
 <url>
 <loc>https://vivamediacreative.com/learn/brand-identity-ai-2026/</loc>
 <lastmod>2026-03-23</lastmod>
