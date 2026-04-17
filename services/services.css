@@ -1,5 +1,4 @@
-<style>
-    :root{
+  :root{
       --bg:#060708;
       --bg-soft:#0c0d10;
       --panel:rgba(255,255,255,.035);
@@ -385,4 +384,4 @@
       .section-card,.cta-box,.cta-side,.footer-col{padding:18px}
       .hero{padding-top:34px}
     }
-  </style>
+ 
