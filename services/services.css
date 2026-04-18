@@ -154,7 +154,7 @@
 
     .hero-visual{
       position:relative;
-      min-height:690px;border-radius:34px;overflow:hidden;
+      min-height:600px;border-radius:34px;overflow:hidden;
       border:1px solid rgba(245,208,122,.14);
       background:#0b0c0e;
       box-shadow:var(--shadow);
