@@ -473,3 +473,22 @@
   }
 }
 
+#industries .glass{
+  display:block;
+  height:100%;
+  transition:var(--transition);
+}
+
+#industries .glass:hover{
+  transform:translateY(-4px);
+  border-color:rgba(245,208,122,.26);
+  background:linear-gradient(180deg, rgba(245,208,122,.07), rgba(255,255,255,.02));
+}
+
+#industries .glass h3{
+  transition:var(--transition);
+}
+
+#industries .glass:hover h3{
+  color:var(--gold);
+}
