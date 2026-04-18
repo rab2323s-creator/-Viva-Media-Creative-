@@ -173,11 +173,20 @@
         linear-gradient(90deg, rgba(6,7,8,.10), rgba(6,7,8,.44));
     }
     .hero-card{
-      position:absolute;left:22px;right:22px;bottom:22px;z-index:2;
-      border:1px solid rgba(245,208,122,.16);
-      background:rgba(10,11,14,.60);backdrop-filter:blur(12px);
-      border-radius:24px;padding:18px 18px 16px;box-shadow:var(--shadow-sm);
-    }
+  position:absolute;
+  right:22px;
+  left:auto;
+  bottom:22px;
+  z-index:2;
+
+  width:min(92%, 720px);
+  border:1px solid rgba(245,208,122,.16);
+  background:rgba(10,11,14,.60);
+  backdrop-filter:blur(12px);
+  border-radius:24px;
+  padding:18px 18px 16px;
+  box-shadow:var(--shadow-sm);
+}
     .hero-card__tag{color:var(--gold);font-size:.84rem;font-weight:800;margin-bottom:8px}
     .hero-card__title{font-size:1.04rem;font-weight:800;line-height:1.75}
     .hero-card__meta{
