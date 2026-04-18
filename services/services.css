@@ -492,3 +492,7 @@
 #industries .glass:hover h3{
   color:var(--gold);
 }
+.highlight {
+  border: 1px solid rgba(212,175,55,0.4);
+  background: rgba(212,175,55,0.06);
+}
