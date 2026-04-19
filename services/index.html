@@ -957,6 +957,32 @@
         font-size:.9rem;
       }
     }
+   /* يجعل كل البطاقة قابلة للنقر */
+.sector{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+/* تحسين تجربة الهوفر */
+.sector:hover{
+  text-decoration: none;
+}
+
+/* النص الإضافي (استكشف الخدمة) */
+.sector .d span{
+  display: block;
+  margin-top: 8px;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* تأثير بسيط عند المرور */
+.sector:hover .d span{
+  color: var(--gold-strong);
+}
   </style>
 </head>
 
@@ -1098,52 +1124,112 @@
     </section>
 
     <section class="section" aria-label="قطاعات نعمل معها">
-      <h2 class="gold">قطاعات تستفيد من تسويق المؤثرين وإدارة المشاهير والنمو الرقمي</h2>
-      <p>
-        نختار استراتيجية المحتوى والمؤثرين حسب القطاع، لأن ما ينجح في العقارات يختلف عن العيادات أو التجارة الإلكترونية.
-        هذه بعض القطاعات ذات بحث عالي ونيّة شراء واضحة:
-      </p>
+  <h2 class="gold">قطاعات تستفيد من تسويق المؤثرين وإدارة المشاهير والنمو الرقمي</h2>
+  <p>
+    نختار استراتيجية المحتوى والمؤثرين حسب القطاع، لأن ما ينجح في العقارات يختلف عن العيادات أو التجارة الإلكترونية.
+    هذه بعض القطاعات ذات بحث عالي ونيّة شراء واضحة:
+  </p>
 
-      <div class="sectors-grid" aria-label="قائمة قطاعات">
-       <a class="sector" href="/services/influencer-marketing/real-estate/">
-  <div class="t">العقارات</div>
-  <div class="d">تسويق عقارات عبر المؤثرين، تصوير وحدات، وحملات Leads للحجز والمعاينة.</div>
-</a>
-        <div class="sector">
-          <div class="t">التجميل والعيادات</div>
-          <div class="d">تسويق مؤثرين للعيادات، عروض مواسم، وبناء ثقة قبل الحجز.</div>
-        </div>
-       <a class="sector" href="/services/influencer-marketing/ecommerce/">
-    <div class="t">التجارة الإلكترونية</div>
-    <div class="d">Influencer + UGC + SEO للمتاجر لزيادة الطلبات وتقليل تكلفة الاستحواذ.</div>
-  </a>
-      
-        <div class="sector">
-          <div class="t">المطاعم والضيافة</div>
-          <div class="d">افتتاحات، تجارب، وتعاونات مؤثرين تحقق زيارات وحجوزات.</div>
-        </div>
-        <div class="sector">
-          <div class="t">البراندات الفاخرة</div>
-          <div class="d">إدارة مشاهير لعلامات فاخرة، سياق ظهور راقٍ، وتنفيذ يحمي الصورة.</div>
-        </div>
-        <div class="sector">
-          <div class="t">التعليم والكورسات</div>
-          <div class="d">إطلاقات دورات، Funnel تسجيل، وCopy يحول الاهتمام إلى اشتراك.</div>
-        </div>
-        <div class="sector">
-          <div class="t">التقنية والتطبيقات</div>
-          <div class="d">حملات تنزيل/تجربة، شراكات محتوى، وتكرار اعتمادًا على البيانات.</div>
-        </div>
-        <div class="sector">
-          <div class="t">الأزياء والموضة</div>
-          <div class="d">إطلاق مجموعات، مؤثرين متخصصين، وربط الانتشار بمبيعات قابلة للتتبع.</div>
-        </div>
-        <div class="sector">
-          <div class="t">السيارات</div>
-          <div class="d">حملات تجربة قيادة، محتوى مراجعات، وتوليد Leads للمعارض.</div>
-        </div>
+  <div class="sectors-grid" aria-label="قائمة قطاعات">
+
+    <a class="sector" href="/services/influencer-marketing/ecommerce/" title="التسويق عبر المؤثرين للمتاجر الإلكترونية">
+      <div class="t">التجارة الإلكترونية</div>
+      <div class="d">
+        زيادة المبيعات عبر المؤثرين + UGC + أكواد خصم.
+        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للمتاجر الإلكترونية</strong>.</span>
       </div>
-    </section>
+    </a>
+
+    <a class="sector" href="/services/influencer-marketing/real-estate/" title="التسويق عبر المؤثرين للعقارات">
+      <div class="t">العقارات</div>
+      <div class="d">
+        توليد عملاء مهتمين (Leads) لمشاريع البيع والاستثمار.
+        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للعقارات</strong>.</span>
+      </div>
+    </a>
+
+    <a class="sector" href="/services/influencer-marketing/clinics-aesthetics/" title="التسويق عبر المؤثرين للعيادات والتجميل">
+      <div class="t">التجميل والعيادات</div>
+      <div class="d">
+        زيادة الحجوزات والاستشارات وبناء الثقة.
+        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للعيادات</strong>.</span>
+      </div>
+    </a>
+
+    <a class="sector" href="/services/influencer-marketing/apps/" title="التسويق عبر المؤثرين للتطبيقات">
+      <div class="t">التقنية والتطبيقات</div>
+      <div class="d">
+        تحميلات، تسجيلات، ونمو المستخدمين.
+        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للتطبيقات</strong>.</span>
+      </div>
+    </a>
+
+    <a class="sector" href="/services/influencer-marketing/restaurants/" title="التسويق عبر المؤثرين للمطاعم">
+      <div class="t">المطاعم والضيافة</div>
+      <div class="d">
+        رفع الزيارات والحجوزات عبر تجارب مؤثرين.
+        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للمطاعم</strong>.</span>
+      </div>
+    </a>
+
+    <a class="sector" href="/services/influencer-marketing/beauty-fashion/" title="التسويق عبر المؤثرين للأزياء">
+      <div class="t">الأزياء والموضة</div>
+      <div class="d">
+        إطلاق مجموعات وربط الانتشار بالمبيعات.
+        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للأزياء</strong>.</span>
+      </div>
+    </a>
+
+    <a class="sector" href="/services/influencer-marketing/cars/" title="التسويق عبر المؤثرين للسيارات">
+      <div class="t">السيارات</div>
+      <div class="d">
+        حملات تجربة قيادة ومحتوى مراجعات.
+        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للسيارات</strong>.</span>
+      </div>
+    </a>
+
+    <a class="sector" href="/services/influencer-marketing/education/" title="التسويق عبر المؤثرين للتعليم">
+      <div class="t">التعليم والكورسات</div>
+      <div class="d">
+        جذب تسجيلات وبناء ثقة في المحتوى.
+        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للتعليم</strong>.</span>
+      </div>
+    </a>
+
+    <a class="sector" href="/services/influencer-marketing/travel/" title="التسويق عبر المؤثرين للسفر">
+      <div class="t">السفر والسياحة</div>
+      <div class="d">
+        تجارب مؤثرة تزيد الحجوزات.
+        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للسفر</strong>.</span>
+      </div>
+    </a>
+
+    <a class="sector" href="/services/influencer-marketing/fitness/" title="التسويق عبر المؤثرين للياقة">
+      <div class="t">اللياقة والصحة</div>
+      <div class="d">
+        زيادة الاشتراكات والحجوزات.
+        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للياقة</strong>.</span>
+      </div>
+    </a>
+
+    <a class="sector" href="/services/influencer-marketing/fintech/" title="التسويق عبر المؤثرين للخدمات المالية">
+      <div class="t">الخدمات المالية (Fintech)</div>
+      <div class="d">
+        تسجيلات وLeads وبناء الثقة.
+        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للخدمات المالية</strong>.</span>
+      </div>
+    </a>
+
+    <a class="sector" href="/elite/influencer-partnerships/" title="شراكات المؤثرين للعلامات الفاخرة">
+      <div class="t">البراندات الفاخرة</div>
+      <div class="d">
+        شراكات مؤثرين بمستوى راقٍ للعلامات الفخمة.
+        <span>استكشف <strong>Elite Influencer Partnerships</strong>.</span>
+      </div>
+    </a>
+
+  </div>
+</section>
 
     <section class="section" aria-label="الخدمات الأساسية">
       <h2 class="gold">خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي</h2>
