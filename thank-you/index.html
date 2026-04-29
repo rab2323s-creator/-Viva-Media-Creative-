@@ -1,15 +1,21 @@
-<!doctype html>
+ <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>تم استلام طلبك — Viva Media Creative</title>
 
+  <!-- SEO -->
+  <meta name="robots" content="noindex, nofollow">
+
   <style>
     body{
       margin:0;
       font-family:"Tahoma","Arial",sans-serif;
-      background:#07080c;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(245,208,122,.15), transparent 30%),
+        radial-gradient(circle at 10% 50%, rgba(255,255,255,.05), transparent 30%),
+        #07080c;
       color:#eef1f6;
       display:flex;
       align-items:center;
@@ -20,50 +26,92 @@
     }
 
     .box{
-      max-width:620px;
-      padding:40px 24px;
-      border-radius:24px;
+      max-width:640px;
+      padding:48px 28px;
+      border-radius:28px;
       border:1px solid rgba(255,255,255,.1);
-      background:rgba(255,255,255,.03);
-      backdrop-filter:blur(12px);
+      background:rgba(255,255,255,.04);
+      backdrop-filter:blur(16px);
+      box-shadow:0 30px 80px rgba(0,0,0,.6);
+      animation:fadeIn .6s ease;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0; transform:translateY(15px)}
+      to{opacity:1; transform:translateY(0)}
+    }
+
+    .brand{
+      font-size:13px;
+      color:#f5d07a;
+      margin-bottom:12px;
+      letter-spacing:.5px;
     }
 
     h1{
       color:#f5d07a;
-      margin-bottom:14px;
-      font-size:28px;
+      margin-bottom:16px;
+      font-size:30px;
+      line-height:1.4;
     }
 
     p{
-      color:rgba(238,241,246,.7);
+      color:rgba(238,241,246,.75);
       line-height:2;
       font-size:16px;
       margin:0;
     }
 
+    .sub{
+      margin-top:14px;
+      font-size:13px;
+      color:rgba(238,241,246,.5);
+    }
+
     .btn{
       display:inline-block;
-      margin-top:24px;
-      padding:12px 22px;
+      margin-top:28px;
+      padding:13px 26px;
       border-radius:999px;
       background:linear-gradient(135deg,#f5d07a,#b98b2d);
       color:#111;
       font-weight:900;
       text-decoration:none;
+      transition:.2s ease;
+      box-shadow:0 15px 40px rgba(245,208,122,.2);
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      box-shadow:0 18px 50px rgba(245,208,122,.25);
     }
   </style>
 </head>
 
 <body>
+
   <div class="box">
-    <h1>تم استلام طلبك</h1>
+    <div class="brand">Viva Media Creative</div>
+
+    <h1>
+      تم استلام طلبك —<br>
+      الآن يبدأ التقييم الحقيقي
+    </h1>
 
     <p>
       شكرًا لتقديمك على Viva Media Creative.<br>
-      سنقوم بمراجعة طلبك بعناية، وسيتم التواصل معك في حال كانت خبرتك مناسبة.
+      نحن لا نبحث عن عدد كبير من المتقدمين، بل عن أشخاص قادرين على تحقيق نتائج حقيقية.<br>
+      سيتم التواصل فقط مع المرشحين الذين تتوافق خبراتهم مع معاييرنا الحالية.
     </p>
 
-    <a href="/" class="btn">العودة إلى الرئيسية</a>
+    <p class="sub">
+      إذا تم التواصل معك، فهذا يعني أنك ضمن نسبة قليلة تم اختيارها بعناية.
+    </p>
+
+    <a href="https://vivamediacreative.com/" class="btn">
+      العودة إلى الرئيسية
+    </a>
   </div>
+
 </body>
 </html>
