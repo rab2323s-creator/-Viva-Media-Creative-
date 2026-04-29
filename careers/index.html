@@ -781,6 +781,37 @@
   align-items:center;
   gap:10px;
 }
+  .hero-actions{
+  display:flex;
+  justify-content:center;
+  margin-top:24px;
+}
+
+.hero-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  padding:15px 32px;
+  font-weight:950;
+  font-size:15px;
+  color:#111;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  box-shadow:0 18px 45px rgba(245,208,122,.20);
+  transition:.18s ease;
+}
+
+.hero-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 24px 60px rgba(245,208,122,.26);
+}
+
+@media(max-width:620px){
+  .hero-btn{
+    width:100%;
+    max-width:320px;
+  }
+}
 </style>
 </head>
 
@@ -813,18 +844,18 @@
       <section class="hero">
         <div class="kicker">Careers • Marketing • Growth • Influence</div>
 
-       <h1>
-  انضم إلى فريق يصنع<br>
-  <span class="gold">التأثير والسمعة والنمو الرقمي</span>
+     <h1>
+  قدّم للعمل في<br>
+  <span class="gold">التسويق عبر المؤثرين وSEO والنمو الرقمي</span>
 </h1>
 
-        <p>
-          نبحث عن محترفين يفهمون التسويق عبر المؤثرين، إدارة العلامة الشخصية، صناعة الرسائل المؤثرة،
-          كتابة السكريبتات، SEO، النمو الرقمي، وتحويل الانتشار إلى مبيعات وLeads قابلة للقياس.
-        </p>
+       <p>
+  نبحث عن محترفين بخبرة في التسويق عبر المؤثرين، إدارة الحسابات، كتابة السكريبتات وSEO،
+  مع القدرة على تحويل الوصول إلى Leads ومبيعات قابلة للقياس.
+</p>
 
         <div class="hero-actions">
-<a class="hero-btn" href="#application-form">انضم إلى الفريق</a>
+<a class="hero-btn" href="#application-form">قدّم طلبك الآن</a>
 </div>
       </section>
         <section class="vmc-service-strip" aria-label="خدمات Viva Media Creative">
