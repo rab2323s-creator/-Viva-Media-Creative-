@@ -750,3 +750,24 @@
     width: 100%;
   }
 }
+
+.site-header {
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+}
+
+.header__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 36px;
+  display: block;
+}
