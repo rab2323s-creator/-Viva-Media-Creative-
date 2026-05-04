@@ -771,3 +771,7 @@
   height: 36px;
   display: block;
 }
+.campaignSeoBlock p {
+  line-height: 2;
+  opacity: .78;
+}
