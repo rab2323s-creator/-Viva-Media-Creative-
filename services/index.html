@@ -1195,6 +1195,38 @@
     margin-bottom: 6px;
   }
 }
+    .dropdown-toggle {
+  background: none;
+  border: 0;
+  color: rgba(255,255,255,0.88);
+  font-weight: 700;
+  font-size: 0.96rem;
+  cursor: pointer;
+  padding: 10px 6px;
+  font-family: inherit;
+}
+
+.dropdown-toggle::after {
+  content: "▾";
+  font-size: 0.72rem;
+  margin-right: 6px;
+  color: #f5d07a;
+}
+
+.dropdown.is-open .dropdown-menu {
+  display: block;
+}
+
+@media (max-width: 980px) {
+  .dropdown-toggle {
+    padding: 9px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(245,208,122,0.10);
+    white-space: nowrap;
+    font-size: 0.92rem;
+  }
+}
   </style>
 </head>
 
@@ -1209,16 +1241,20 @@
     <nav class="nav-links" aria-label="القائمة الرئيسية">
       <a href="/">الرئيسية</a>
 
-      <div class="dropdown">
-        <a href="/services/">الخدمات</a>
-        <div class="dropdown-menu">
-          <a href="/services/influencer-marketing/">التسويق عبر المؤثرين</a>
-          <a href="/services/personal-brand-management/">إدارة العلامة الشخصية</a>
-          <a href="/services/viral-strategy/">استراتيجية الانتشار</a>
-          <a href="/services/copywriting/">كتابة المحتوى</a>
-          <a href="/services/seo-growth/">SEO & Growth</a>
-        </div>
-      </div>
+    <div class="dropdown">
+  <button class="dropdown-toggle" type="button" aria-expanded="false">
+    الخدمات
+  </button>
+
+  <div class="dropdown-menu">
+    <a href="/services/">كل الخدمات</a>
+    <a href="/services/influencer-marketing/">التسويق عبر المؤثرين</a>
+    <a href="/services/personal-brand-management/">إدارة العلامة الشخصية</a>
+    <a href="/services/viral-strategy/">استراتيجية الانتشار</a>
+    <a href="/services/copywriting/">كتابة المحتوى</a>
+    <a href="/services/seo-growth/">SEO & Growth</a>
+  </div>
+</div>
 
       <a href="/contact/">تواصل</a>
     </nav>
@@ -1869,5 +1905,36 @@
     }
     </script>
   </footer>
+  <script>
+  document.querySelectorAll('.dropdown-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const dropdown = btn.closest('.dropdown');
+      const isOpen = dropdown.classList.contains('is-open');
+
+      document.querySelectorAll('.dropdown.is-open').forEach(function (item) {
+        item.classList.remove('is-open');
+        const itemBtn = item.querySelector('.dropdown-toggle');
+        if (itemBtn) itemBtn.setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isOpen) {
+        dropdown.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown.is-open').forEach(function (item) {
+        item.classList.remove('is-open');
+        const btn = item.querySelector('.dropdown-toggle');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+</script>
 </body>
 </html>
