@@ -983,88 +983,84 @@
 .sector:hover .d span{
   color: var(--gold-strong);
 }
+
+    .hero-image{
+  position:relative;
+  min-height:90vh;
+  background: url('/assets/hero-final.jpg') center right / cover no-repeat;
+  display:flex;
+  align-items:center;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background: linear-gradient(90deg, rgba(0,0,0,.85), rgba(0,0,0,.4));
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:700px;
+}
+
+.hero-icons{
+  margin-top:20px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.hero-icons a{
+  padding:10px 14px;
+  border:1px solid rgba(245,208,122,.3);
+  border-radius:999px;
+  color:#fff;
+  text-decoration:none;
+  font-size:.9rem;
+  background:rgba(255,255,255,.03);
+}
+
+.hero-icons a:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
   </style>
 </head>
 
 <body>
   <a class="skip-link" href="#main">تخطي إلى المحتوى</a>
 
-  <header class="service-hero">
-    <div class="container">
-      <div class="brand-row" aria-label="هوية Viva Media Creative">
-        <a href="/" aria-label="العودة إلى الصفحة الرئيسية" class="brand-link">
-          <img
-            src="/assets/logo.jpeg"
-            width="44"
-            height="44"
-            loading="eager"
-            decoding="async"
-            alt="شعار Viva Media Creative"
-          />
-          <span class="sr-only">Viva Media Creative</span>
-        </a>
-      </div>
+<header class="service-hero hero-image">
+  <div class="overlay"></div>
 
-      <h1>
-        خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي <span class="gold">| Viva Media Creative</span>
-      </h1>
+  <div class="container hero-content">
 
-      <p class="hero-sub-cta">
-        استشارة أولى لتحديد أقصر مسار للنمو — خلال <strong>15 دقيقة</strong>.
-      </p>
+    <h1>
+      خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي
+      <span class="gold">| Viva Media Creative</span>
+    </h1>
 
-      <p class="hero-hook">
-        خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي — نحول الوصول والمشاهدات إلى طلبات ومبيعات قابلة للقياس.
-      </p>
+    <p class="hero-lead">
+      حلول متكاملة لتحويل الوصول إلى طلبات ومبيعات قابلة للقياس
+    </p>
 
-      <p class="hero-lead">
-        خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي من Viva Media Creative. نساعد العلامات التجارية وصنّاع المحتوى على زيادة الطلبات والمبيعات عبر حملات مؤثرين، إدارة حسابات، صناعة محتوى، وSEO & Growth بنتائج قابلة للقياس.
-      </p>
-
-      <ul class="lead-points" aria-label="نقاط تميّز سريعة">
-        <li><strong>للعملاء الذين يريدون نتائج:</strong> Leads، مبيعات، زيارات بنية شراء — وليس انتشارًا فقط.</li>
-        <li><strong>للشخصيات العامة وصنّاع المحتوى:</strong> إدارة حسابات، بناء علامة شخصية، وحماية السمعة.</li>
-        <li><strong>للعلامات التجارية:</strong> شراكات مؤثرين بعقود واضحة + تنفيذ + تقارير أداء.</li>
-      </ul>
-
-      <div class="hero-cta">
-        <a href="/contact/" class="btn btn-gold">اطلب عرض خدمات مناسب لهدفك</a>
-        <a
-          class="btn"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://wa.me/4915565678291?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20Viva%20Media%20Creative%20%D8%A8%D8%AF%D9%8A%20%D8%B9%D8%B1%D8%B6%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D9%85%D9%86%D8%A7%D8%B3%D8%A8%20%D9%84%D9%87%D8%AF%D9%81%D9%8A%20(%D8%A7%D9%84%D8%AE%D9%84%D9%8A%D8AC/%D9%85%D8%B5%D8%B1)"
-        >
-          واتساب (تواصل مباشر)
-        </a>
-      </div>
-
-      <p class="mini-note">
-        نقدم خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي في الخليج ومصر والعالم العربي بنتائج قابلة للقياس.
-      </p>
-
-      <div class="pill-row" aria-label="كلمات يبحث عنها الناس (بدون حشو)">
-        <span class="pill">شركة تسويق مؤثرين</span>
-        <span class="pill">إدارة مشاهير</span>
-        <span class="pill">إدارة حسابات انستغرام</span>
-        <span class="pill">إدارة حسابات تيك توك</span>
-        <span class="pill">صناعة محتوى للسوشيال ميديا</span>
-        <span class="pill">كتابة سكريبتات</span>
-        <span class="pill">SEO للمتاجر الإلكترونية</span>
-        <span class="pill">تحسين التحويل (CRO)</span>
-      </div>
-
-      <nav class="internal-links" aria-label="روابط خدمات تسويق المؤثرين وإدارة المشاهير">
-        <strong>خدمات تسويق المؤثرين وإدارة المشاهير:</strong>
-        <a href="/services/influencer-marketing/">التسويق عبر المؤثرين</a>
-        <a href="/services/personal-brand-management/">إدارة العلامة الشخصية</a>
-        <a href="/services/viral-strategy/">Viral Strategy</a>
-        <a href="/services/copywriting/">Copywriting</a>
-        <a href="/services/seo-growth/">SEO & Growth</a>
-        <a href="/elite/influencer-partnerships/">Elite Influencer Partnerships</a>
-      </nav>
+    <div class="hero-cta">
+      <a href="/contact/" class="btn btn-gold">اطلب استراتيجية</a>
+      <a href="#services" class="btn">استكشف الخدمات</a>
     </div>
-  </header>
+
+    <!-- الأيقونات -->
+    <div class="hero-icons">
+      <a href="/services/influencer-marketing/">Influencer Marketing</a>
+      <a href="/services/personal-brand-management/">Personal Brand</a>
+      <a href="/services/viral-strategy/">Viral Strategy</a>
+      <a href="/services/copywriting/">Copywriting</a>
+      <a href="/services/seo-growth/">SEO & Growth</a>
+    </div>
+
+  </div>
+</header>
 
   <main id="main" class="container">
 
