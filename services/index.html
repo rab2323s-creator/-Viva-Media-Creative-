@@ -1,20 +1,22 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
- <title>خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي | Viva Media Creative</title>
- <meta name="description" content="خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي من Viva Media Creative. نربط العلامات التجارية بالمؤثرين، ندير الحسابات، نصنع محتوى يحول المشاهدات إلى عملاء، ونقدم SEO & Growth لزيادة الطلبات والمبيعات في الخليج ومصر." />
- <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <title>خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي | Viva Media Creative</title>
+  <meta name="description" content="خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي من Viva Media Creative. نربط العلامات التجارية بالمؤثرين، ندير الحسابات، نصنع محتوى يحول المشاهدات إلى عملاء، ونقدم SEO & Growth لزيادة الطلبات والمبيعات في الخليج ومصر." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 
   <link rel="canonical" href="https://vivamediacreative.com/services/" />
   <link rel="icon" href="/assets/logo.jpeg" />
 
   <link rel="preload" href="/elite/css/main.css" as="style" />
   <link rel="preload" href="/style.css" as="style" />
+  <link rel="preload" href="/services/services.css" as="style" />
   <link rel="stylesheet" href="/elite/css/main.css" />
   <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/services/services.css" />
 
   <link rel="alternate" hreflang="ar" href="https://vivamediacreative.com/services/" />
   <link rel="alternate" hreflang="en" href="https://vivamediacreative.com/en/services/" />
@@ -197,1437 +199,739 @@
     ]
   }
   </script>
-
-  <style>
-    :root{
-      --gold: #f5d07a;
-      --gold-strong: #ffd98f;
-      --goldBorder: rgba(245,208,122,.18);
-      --goldBorderSoft: rgba(245,208,122,.10);
-      --panelBg: rgba(255,255,255,.03);
-      --panelBgDark: rgba(0,0,0,.20);
-      --panelStrong: rgba(255,255,255,.045);
-      --textSoft: rgba(255,255,255,.84);
-      --textMuted: rgba(255,255,255,.66);
-      --shadowSm: 0 12px 30px rgba(0,0,0,.16);
-      --shadowMd: 0 20px 60px rgba(0,0,0,.26);
-      --shadowLg: 0 30px 90px rgba(0,0,0,.34);
-      --radius: 22px;
-      --container: 1240px;
-      --transition: 220ms ease;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body{
-      margin:0;
-      color:#fff;
-      background:
-        radial-gradient(circle at top right, rgba(245,208,122,.08), transparent 26%),
-        radial-gradient(circle at top left, rgba(255,255,255,.03), transparent 24%),
-        linear-gradient(180deg, #050505 0%, #0b0b0b 32%, #101010 100%);
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    .container{
-      width:min(var(--container), calc(100% - 32px));
-      margin-inline:auto;
-    }
-
-    a{
-      transition: var(--transition);
-      text-underline-offset: 3px;
-    }
-
-    a:hover{
-      color: var(--gold-strong);
-    }
-
-    img{
-      max-width:100%;
-      display:block;
-    }
-
-    .skip-link{
-      position:absolute;
-      top:-50px;
-      right:12px;
-      background:#000;
-      color:#fff;
-      padding:10px 12px;
-      border-radius:10px;
-      z-index:9999;
-      transition: top .2s ease;
-    }
-    .skip-link:focus{ top:12px; }
-
-    .sr-only{
-      position:absolute; width:1px; height:1px; padding:0; margin:-1px;
-      overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
-    }
-
-    .gold{ color: var(--gold); }
-
-    /* HERO */
-    .service-hero{
-      position:relative;
-      overflow:hidden;
-      padding:42px 0 34px;
-      border-bottom:1px solid rgba(245,208,122,.08);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)),
-        radial-gradient(circle at 85% 20%, rgba(245,208,122,.10), transparent 24%);
-    }
-
-    .service-hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      background: linear-gradient(90deg, transparent 0%, rgba(245,208,122,.03) 50%, transparent 100%);
-      opacity:.8;
-    }
-
-    .service-hero .container{
-      position:relative;
-      z-index:1;
-    }
-
-    .service-hero .brand-row{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-bottom:16px;
-    }
-
-    .service-hero .brand-row img{
-      width:52px;
-      height:52px;
-      border-radius:16px;
-      border:1px solid rgba(245,208,122,.20);
-      object-fit:cover;
-      box-shadow: 0 10px 24px rgba(0,0,0,.24);
-    }
-
-    .brand-link{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .service-hero h1{
-      margin:0 0 14px 0;
-      max-width:980px;
-      font-size:clamp(2rem, 4.6vw, 4rem);
-      line-height:1.08;
-      letter-spacing:-0.02em;
-      font-weight:900;
-    }
-
-    .hero-sub-cta{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      margin: 0 0 16px 0;
-      padding: 12px 16px;
-      border: 1px solid rgba(245,208,122,.18);
-      border-radius: 999px;
-      background: rgba(255,255,255,.03);
-      backdrop-filter: blur(10px);
-      opacity: .98;
-      line-height: 1.7;
-      box-shadow: var(--shadowSm);
-    }
-
-    .hero-hook{
-      margin:0 0 12px 0;
-      max-width:840px;
-      font-size:clamp(1.05rem, 1.8vw, 1.28rem);
-      line-height:1.7;
-      color:#fff;
-      font-weight:700;
-    }
-
-    .hero-lead{
-      margin:0;
-      max-width:940px;
-      color:var(--textSoft);
-      font-size:1.04rem;
-      line-height:1.95;
-    }
-
-    .lead-points{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin: 22px 0 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .lead-points li{
-      margin:0;
-      padding: 14px 16px;
-      border: 1px solid var(--goldBorderSoft);
-      border-radius: 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
-      box-shadow: var(--shadowSm);
-      color: var(--textSoft);
-    }
-
-    .hero-cta{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top: 20px !important;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      min-height:48px;
-      padding:0 18px;
-      border-radius:14px;
-      border:1px solid rgba(245,208,122,.16);
-      background:rgba(255,255,255,.02);
-      color:#fff;
-      text-decoration:none;
-      font-weight:700;
-      white-space:nowrap;
-      box-shadow: 0 10px 25px rgba(0,0,0,.18);
-      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition);
-    }
-
-    .btn:hover{
-      transform:translateY(-2px);
-      box-shadow:0 16px 35px rgba(0,0,0,.26);
-      background:rgba(255,255,255,.05);
-      border-color:rgba(245,208,122,.30);
-    }
-
-    .btn.btn-gold,
-    .btn.primary{
-      background:linear-gradient(180deg, #f5d07a 0%, #ddb35e 100%);
-      color:#111;
-      border-color:transparent;
-      box-shadow:0 16px 34px rgba(245,208,122,.18);
-    }
-
-    .btn.btn-gold:hover,
-    .btn.primary:hover{
-      background:linear-gradient(180deg, #ffdd96 0%, #e4ba69 100%);
-      color:#111;
-    }
-
-    .mini-note{
-      color:var(--textMuted);
-      font-size: .95rem;
-      margin-top: 14px;
-    }
-
-    .pill-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top: 14px;
-    }
-
-    .pill{
-      border: 1px solid var(--goldBorder);
-      border-radius: 999px;
-      padding: 8px 12px;
-      background: rgba(255,255,255,.025);
-      font-size: .95rem;
-      opacity: .95;
-      color: var(--textSoft);
-      backdrop-filter: blur(8px);
-    }
-
-    .internal-links{
-      margin-top: 18px;
-      padding: 16px 18px;
-      border: 1px solid var(--goldBorder);
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.015));
-      box-shadow: var(--shadowSm);
-    }
-
-    .internal-links strong{
-      display:block;
-      margin-bottom:6px;
-    }
-
-    .internal-links a{
-      display:inline-block;
-      margin: 8px 10px 0 0;
-      text-decoration: underline;
-    }
-
-    /* MAIN */
-    main.container{
-      padding-top: 36px;
-      padding-bottom: 64px;
-    }
-
-    .section{
-      margin-top: 30px;
-      padding: 28px;
-      border: 1px solid rgba(245,208,122,.08);
-      border-radius: 28px;
-      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.012));
-      box-shadow: var(--shadowSm);
-      backdrop-filter: blur(8px);
-    }
-
-    .section h2{
-      margin:0 0 12px 0 !important;
-      font-size: clamp(1.45rem, 2vw, 2rem);
-      line-height: 1.25;
-      font-weight: 900;
-      letter-spacing: -.01em;
-    }
-
-    .section p{
-      color:var(--textSoft);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 18px;
-      align-items: stretch;
-    }
-    @media (max-width: 980px) { .services-grid { grid-template-columns: 1fr; } }
-
-    .svc-card {
-      position:relative;
-      display:flex;
-      flex-direction:column;
-      min-height:100%;
-      border: 1px solid var(--goldBorder);
-      border-radius: 24px;
-      padding: 20px;
-      background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015));
-      box-shadow: var(--shadowSm);
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-    }
-
-    .svc-card:hover{
-      transform:translateY(-5px);
-      box-shadow: var(--shadowMd);
-      border-color: rgba(245,208,122,.24);
-    }
-
-    .svc-card h3 {
-      font-size: 1.12rem;
-      margin: 0 0 10px 0;
-      line-height: 1.45;
-      color:#fff;
-      min-height:64px;
-    }
-
-    .svc-card p { margin: 0 0 12px 0; color:var(--textSoft); }
-
-    .svc-actions {
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      margin-top:auto;
-      padding-top:16px;
-    }
-    .svc-actions a { white-space: nowrap; }
-
-    .kpi-grid {
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 16px;
-    }
-    @media (max-width: 980px) { .kpi-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 520px) { .kpi-grid { grid-template-columns: 1fr; } }
-
-    .kpi {
-      border: 1px solid var(--goldBorder);
-      border-radius: 18px;
-      padding: 16px 12px;
-      text-align:center;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
-      box-shadow: var(--shadowSm);
-    }
-    .kpi .num { font-size: 1.08rem; font-weight: 900; color:#fff; }
-    .kpi .label { color:var(--textSoft); margin-top: 6px; }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 16px;
-      margin-top: 16px;
-    }
-    @media (max-width: 980px) { .two-col { grid-template-columns: 1fr; } }
-
-    .box {
-      border: 1px solid var(--goldBorder);
-      border-radius: 22px;
-      padding: 20px;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.012));
-      box-shadow: var(--shadowSm);
-    }
-    .box h3 { margin: 0 0 10px 0; font-size: 1.06rem; color:#fff; }
-    .box p { margin: 0 0 10px 0; color:var(--textSoft); }
-    .box ul { margin: 0; padding-right: 18px; color:var(--textSoft); }
-    .box li { margin: 8px 0; }
-
-    .trust-strip {
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 16px;
-    }
-    @media (max-width: 980px) { .trust-strip { grid-template-columns: 1fr; } }
-
-    .trust-item {
-      border: 1px solid rgba(245,208,122,.12);
-      border-radius: 18px;
-      padding: 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.012));
-      box-shadow: var(--shadowSm);
-    }
-    .trust-item .t { font-weight: 900; margin-bottom: 8px; color:#fff; }
-
-    .flow-steps {
-      margin: 0;
-      padding-right: 20px;
-    }
-    .flow-steps li {
-      margin: 12px 0;
-      padding: 16px 18px;
-      border:1px solid rgba(245,208,122,.10);
-      border-radius:18px;
-      background: rgba(255,255,255,.02);
-      box-shadow: var(--shadowSm);
-    }
-
-    .mini-cta { display:flex; gap:10px; flex-wrap:wrap; }
-
-    .fit-block{
-      margin-top: 12px;
-      padding: 14px;
-      border: 1px dashed rgba(245,208,122,.18);
-      border-radius: 16px;
-      background: rgba(0,0,0,.12);
-    }
-    .fit-title{ margin: 0 0 8px 0; font-weight: 900; font-size: .98rem; color:#fff; }
-    .fit-text{ margin: 0; color:var(--textSoft); line-height: 1.75; font-size: .98rem; }
-
-    .deliverables{
-      margin: 12px 0 0 0;
-      padding-right: 18px;
-      color:var(--textSoft);
-    }
-    .deliverables li{ margin: 7px 0; }
-
-    .internal-links a{
-      color:var(--gold);
-    }
-
-    .hero-sub-cta strong{ color:#fff; }
-
-    .mid-cta{
-      margin-top: 20px;
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap:wrap;
-      padding: 18px 20px;
-      border: 1px solid rgba(245,208,122,.18);
-      border-radius: 22px;
-      background: linear-gradient(135deg, rgba(245,208,122,.08), rgba(255,255,255,.02));
-      box-shadow: var(--shadowMd);
-    }
-    .mid-cta p{ margin:0; max-width: 680px; line-height: 1.8; color:#fff; }
-
-    details.faq{
-      border: 1px solid var(--goldBorder);
-      border-radius: 18px;
-      padding: 14px 16px;
-      background: linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.015));
-      margin: 12px 0;
-      box-shadow: var(--shadowSm);
-      transition: border-color var(--transition), background var(--transition);
-    }
-    details.faq[open]{
-      border-color: rgba(245,208,122,.22);
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.018));
-    }
-    details.faq summary{
-      cursor: pointer;
-      font-weight: 800;
-      list-style: none;
-      position:relative;
-      padding-left:24px;
-      color:#fff;
-    }
-    details.faq summary::-webkit-details-marker{ display:none; }
-    details.faq summary::before{
-      content:"+";
-      position:absolute;
-      left:0;
-      top:0;
-      color:var(--gold);
-      font-size:1.05rem;
-      line-height:1.2;
-    }
-    details.faq[open] summary::before{
-      content:"−";
-    }
-    details.faq .a{ margin-top: 10px; color:var(--textSoft); line-height: 1.85; }
-
-    .cases-grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 12px;
-    }
-    @media (max-width: 980px) { .cases-grid { grid-template-columns: 1fr; } }
-    .case{
-      border: 1px solid rgba(245,208,122,.12);
-      border-radius: 18px;
-      padding: 16px;
-      background: rgba(255,255,255,.02);
-      box-shadow: var(--shadowSm);
-    }
-    .case .k{ font-weight: 900; margin-bottom: 6px; }
-    .case .v{ color:var(--textSoft); line-height:1.7; }
-
-    .sectors-grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 16px;
-    }
-    @media (max-width: 980px) { .sectors-grid { grid-template-columns: 1fr; } }
-    .sector{
-      border: 1px solid rgba(245,208,122,.12);
-      border-radius: 20px;
-      padding: 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.012));
-      box-shadow: var(--shadowSm);
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-    }
-    .sector:hover{
-      transform:translateY(-4px);
-      box-shadow: var(--shadowMd);
-      border-color: rgba(245,208,122,.20);
-    }
-    .sector .t{ font-weight: 900; margin-bottom: 8px; color:#fff; }
-    .sector .d{ color:var(--textSoft); line-height: 1.75; }
-
-    .service-hero .brand-row{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-      flex-wrap:wrap;
-      margin-bottom: 10px;
-    }
-    .service-hero .brand-row img{
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      border: 1px solid rgba(245,208,122,.18);
-      object-fit: cover;
-    }
-
-    /* Footer */
-    .site-footer{
-      margin-top: 30px;
-      padding-top: 34px;
-      border-top:1px solid rgba(245,208,122,.08);
-      background: linear-gradient(180deg, rgba(255,255,255,.01), rgba(255,255,255,0)), #080808;
-    }
-
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1.2fr 1fr 1fr 1fr 1fr;
-      gap:18px;
-      align-items:start;
-    }
-
-    .footer-col{
-      border:1px solid rgba(245,208,122,.08);
-      border-radius:20px;
-      padding:18px;
-      background:rgba(255,255,255,.02);
-      box-shadow: var(--shadowSm);
-    }
-
-    .footer-col h3{
-      margin:0 0 12px 0;
-      font-size:1rem;
-      color:#fff;
-    }
-
-    .footer-col ul{
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
-
-    .footer-col li{
-      margin:10px 0;
-    }
-
-    .footer-col a{
-      text-decoration:none;
-      color:var(--textSoft);
-    }
-
-    .footer-col a:hover{
-      color:var(--gold);
-    }
-
-    .footer-logo img{
-      width:60px;
-      height:60px;
-      border-radius:16px;
-      object-fit:cover;
-      border:1px solid rgba(245,208,122,.16);
-    }
-
-    .footer-desc{
-      margin:14px 0;
-      color:var(--textSoft);
-      line-height:1.9;
-    }
-
-    .footer-contact{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-
-    .footer-mail{
-      font-weight:700;
-    }
-
-    .footer-lang{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      flex-wrap:wrap;
-      color:var(--textMuted);
-    }
-
-    .footer-cta{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:14px;
-    }
-
-    .footer-bottom{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      padding:18px 0 26px;
-      margin-top:18px;
-    }
-
-    .copyright{
-      margin:0;
-      color:var(--textMuted);
-    }
-
-    .footer-legal{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .footer-legal a{
-      color:var(--textMuted);
-      text-decoration:none;
-    }
-
-    @media (max-width: 1180px){
-      .services-grid,
-      .sectors-grid{
-        grid-template-columns:repeat(2, 1fr);
-      }
-
-      .footer-grid{
-        grid-template-columns:repeat(2, 1fr);
-      }
-
-      .lead-points{
-        grid-template-columns:1fr;
-      }
-    }
-
-    @media (max-width: 980px){
-      .services-grid,
-      .sectors-grid,
-      .trust-strip,
-      .kpi-grid,
-      .two-col,
-      .footer-grid{
-        grid-template-columns:1fr;
-      }
-
-      .service-hero{
-        padding-top:28px;
-        padding-bottom:26px;
-      }
-
-      .section{
-        padding:20px;
-        border-radius:22px;
-      }
-
-      .svc-card,
-      .box,
-      .sector,
-      .trust-item,
-      .kpi,
-      .footer-col{
-        border-radius:18px;
-      }
-
-      .mid-cta{
-        padding:16px;
-        border-radius:18px;
-      }
-    }
-
-    @media (max-width: 640px){
-      .container{
-        width:min(100% - 20px, var(--container));
-      }
-
-      .service-hero h1{
-        font-size:2rem;
-        line-height:1.16;
-      }
-
-      .hero-hook{
-        font-size:1rem;
-      }
-
-      .hero-lead{
-        font-size:.98rem;
-        line-height:1.85;
-      }
-
-      .btn{
-        width:100%;
-      }
-
-      .hero-cta,
-      .mini-cta,
-      .svc-actions,
-      .footer-cta{
-        flex-direction:column;
-        align-items:stretch;
-      }
-
-      .internal-links{
-        padding:14px;
-      }
-
-      .svc-card{
-        padding:16px;
-      }
-
-      .section{
-        margin-top:24px;
-        padding:16px;
-      }
-
-      .pill{
-        font-size:.9rem;
-      }
-    }
-   /* يجعل كل البطاقة قابلة للنقر */
-.sector{
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  position: relative;
-}
-
-/* تحسين تجربة الهوفر */
-.sector:hover{
-  text-decoration: none;
-}
-
-/* النص الإضافي (استكشف الخدمة) */
-.sector .d span{
-  display: block;
-  margin-top: 8px;
-  color: var(--gold);
-  font-weight: 700;
-  font-size: 0.95rem;
-}
-
-/* تأثير بسيط عند المرور */
-.sector:hover .d span{
-  color: var(--gold-strong);
-}
-  </style>
 </head>
 
 <body>
   <a class="skip-link" href="#main">تخطي إلى المحتوى</a>
+  <div class="noise"></div>
+  <div class="site">
 
-  <header class="service-hero">
-    <div class="container">
-      <div class="brand-row" aria-label="هوية Viva Media Creative">
-        <a href="/" aria-label="العودة إلى الصفحة الرئيسية" class="brand-link">
-          <img
-            src="/assets/logo.jpeg"
-            width="44"
-            height="44"
-            loading="eager"
-            decoding="async"
-            alt="شعار Viva Media Creative"
-          />
-          <span class="sr-only">Viva Media Creative</span>
-        </a>
-      </div>
-
-      <h1>
-        خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي <span class="gold">| Viva Media Creative</span>
-      </h1>
-
-      <p class="hero-sub-cta">
-        استشارة أولى لتحديد أقصر مسار للنمو — خلال <strong>15 دقيقة</strong>.
-      </p>
-
-      <p class="hero-hook">
-        خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي — نحول الوصول والمشاهدات إلى طلبات ومبيعات قابلة للقياس.
-      </p>
-
-      <p class="hero-lead">
-        خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي من Viva Media Creative. نساعد العلامات التجارية وصنّاع المحتوى على زيادة الطلبات والمبيعات عبر حملات مؤثرين، إدارة حسابات، صناعة محتوى، وSEO & Growth بنتائج قابلة للقياس.
-      </p>
-
-      <ul class="lead-points" aria-label="نقاط تميّز سريعة">
-        <li><strong>للعملاء الذين يريدون نتائج:</strong> Leads، مبيعات، زيارات بنية شراء — وليس انتشارًا فقط.</li>
-        <li><strong>للشخصيات العامة وصنّاع المحتوى:</strong> إدارة حسابات، بناء علامة شخصية، وحماية السمعة.</li>
-        <li><strong>للعلامات التجارية:</strong> شراكات مؤثرين بعقود واضحة + تنفيذ + تقارير أداء.</li>
-      </ul>
-
-      <div class="hero-cta">
-        <a href="/contact/" class="btn btn-gold">اطلب عرض خدمات مناسب لهدفك</a>
-        <a
-          class="btn"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://wa.me/4915565678291?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20Viva%20Media%20Creative%20%D8%A8%D8%AF%D9%8A%20%D8%B9%D8%B1%D8%B6%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D9%85%D9%86%D8%A7%D8%B3%D8%A8%20%D9%84%D9%87%D8%AF%D9%81%D9%8A%20(%D8%A7%D9%84%D8%AE%D9%84%D9%8A%D8AC/%D9%85%D8%B5%D8%B1)"
-        >
-          واتساب (تواصل مباشر)
-        </a>
-      </div>
-
-      <p class="mini-note">
-        نقدم خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي في الخليج ومصر والعالم العربي بنتائج قابلة للقياس.
-      </p>
-
-      <div class="pill-row" aria-label="كلمات يبحث عنها الناس (بدون حشو)">
-        <span class="pill">شركة تسويق مؤثرين</span>
-        <span class="pill">إدارة مشاهير</span>
-        <span class="pill">إدارة حسابات انستغرام</span>
-        <span class="pill">إدارة حسابات تيك توك</span>
-        <span class="pill">صناعة محتوى للسوشيال ميديا</span>
-        <span class="pill">كتابة سكريبتات</span>
-        <span class="pill">SEO للمتاجر الإلكترونية</span>
-        <span class="pill">تحسين التحويل (CRO)</span>
-      </div>
-
-      <nav class="internal-links" aria-label="روابط خدمات تسويق المؤثرين وإدارة المشاهير">
-        <strong>خدمات تسويق المؤثرين وإدارة المشاهير:</strong>
-        <a href="/services/influencer-marketing/">التسويق عبر المؤثرين</a>
-        <a href="/services/personal-brand-management/">إدارة العلامة الشخصية</a>
-        <a href="/services/viral-strategy/">Viral Strategy</a>
-        <a href="/services/copywriting/">Copywriting</a>
-        <a href="/services/seo-growth/">SEO & Growth</a>
-        <a href="/elite/influencer-partnerships/">Elite Influencer Partnerships</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" class="container">
-
-    <section class="section" aria-label="نص داعم لتحسين الظهور والنية الشرائية">
-      <h2 class="gold">تسويق مؤثرين وإدارة مشاهير ونمو رقمي في الخليج ومصر</h2>
-      <p>
-        إذا كنت تبحث عن <strong>شركة تسويق مؤثرين في الخليج</strong> أو <strong>إدارة مشاهير في السعودية والإمارات</strong> أو
-        تريد فريقًا يدير حملاتك بشكل احترافي في <strong>مصر</strong>، فهدفنا الأساسي هو تحويل الوصول إلى نتيجة واضحة:
-        <strong>طلبات (Leads)</strong> أو <strong>مبيعات</strong> أو <strong>زيارات بنية شراء</strong>.
-        نبدأ عادة بتحديد الهدف التجاري والجمهور، ثم نختار المؤثرين بناءً على الملاءمة والسلوك الشرائي وليس الأرقام فقط،
-        ونبني Brief ورسائل تحمي صورة العلامة والشخصية العامة، ثم ننفذ الحملة مع تتبع عبر روابط UTM وأكواد خصم وصفحات هبوط.
-        أما إذا كان هدفك نموًا تراكميًا يقلل اعتمادك على الإعلانات مع الوقت، فنحن نوفر أيضًا <strong>SEO للمتاجر الإلكترونية في مصر</strong>
-        و<strong>SEO & Growth</strong> للمواقع في السعودية والإمارات، مع تحسين التحويل (CRO) لرفع نسبة تحويل الزيارات إلى طلبات ومبيعات.
-        هذا المزج بين السوشيال + جوجل يضمن أن انتشارك “مفيد” ويصنع تأثيرًا تجاريًا قابلًا للقياس، وليس ضجة مؤقتة.
-      </p>
-    </section>
-
-    <section class="section" aria-label="ما الذي نعتبره نتيجة">
-      <h2 class="gold">نتائج تسويق المؤثرين وإدارة المشاهير والنمو الرقمي</h2>
-      <p>
-        نحن لا نبيع “مشاهدات” فقط. نربط المحتوى والشراكات بمؤشرات أداء واضحة تخدم الهدف التجاري—مع الحفاظ على صورة العلامة والشخصية العامة.
-        هذا ما يجعلنا مناسبين لعلامات تبحث عن <strong>نمو مستدام</strong> لا اندفاع مؤقت.
-      </p>
-
-      <div class="kpi-grid" aria-label="مؤشرات أداء رئيسية">
-        <div class="kpi"><div class="num">Leads</div><div class="label">طلبات/رسائل/حجوزات</div></div>
-        <div class="kpi"><div class="num">Sales</div><div class="label">مبيعات قابلة للتتبع</div></div>
-        <div class="kpi"><div class="num">Traffic</div><div class="label">زيارات بنية شراء</div></div>
-        <div class="kpi"><div class="num">Trust</div><div class="label">ثقة وسمعة</div></div>
-      </div>
-
-      <div class="trust-strip" aria-label="أسلوب عمل احترافي">
-        <div class="trust-item">
-          <div class="t">اختيار دقيق</div>
-          <div>نختار المؤثر/المحتوى بناءً على الملاءمة والسلوك الشرائي، وليس الأرقام وحدها.</div>
+    <header class="hero">
+      <div class="container">
+        <div class="brand-row" aria-label="هوية Viva Media Creative">
+          <a href="/" aria-label="العودة إلى الصفحة الرئيسية" class="brand-link">
+            <img
+              src="/assets/logo.jpeg"
+              width="44"
+              height="44"
+              loading="eager"
+              decoding="async"
+              alt="شعار Viva Media Creative"
+              class="brand__logo"
+            />
+            <span class="sr-only">Viva Media Creative</span>
+          </a>
         </div>
-        <div class="trust-item">
-          <div class="t">نظام قياس</div>
-          <div>تتبع، أكواد، صفحات هبوط، وتقارير تجعل القرار مبنيًا على بيانات.</div>
-        </div>
-        <div class="trust-item">
-          <div class="t">حماية الصورة</div>
-          <div>لغة ورسائل تحمي سمعة العلامة والشخصية العامة وتمنع تشويش الهوية.</div>
-        </div>
-      </div>
 
-      <div class="mid-cta" role="region" aria-label="دعوة لاتخاذ قرار سريعة">
-        <p>
-          اكتب هدفك في سطر واحد (مبيعات / Leads / نمو سمعة) وسنقترح لك “أقصر مسار” بخطة 3 خطوات +
-          الخدمات المناسبة بدون حشو.
-        </p>
-        <div class="mini-cta">
-          <a class="btn btn-gold" href="/contact/">احصل على خطة 3 خطوات</a>
-          <a class="btn" href="/services/seo-growth/">أريد نمو عبر جوجل</a>
-        </div>
-      </div>
-    </section>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              استشارة أولى لتحديد أقصر مسار للنمو — خلال <strong>15 دقيقة</strong>.
+            </p>
 
-    <section class="section" aria-label="قطاعات نعمل معها">
-  <h2 class="gold">قطاعات تستفيد من تسويق المؤثرين وإدارة المشاهير والنمو الرقمي</h2>
-  <p>
-    نختار استراتيجية المحتوى والمؤثرين حسب القطاع، لأن ما ينجح في العقارات يختلف عن العيادات أو التجارة الإلكترونية.
-    هذه بعض القطاعات ذات بحث عالي ونيّة شراء واضحة:
-  </p>
+            <h1>
+              خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي <span class="gold">| Viva Media Creative</span>
+            </h1>
 
-  <div class="sectors-grid" aria-label="قائمة قطاعات">
+            <p class="hero-lead">
+              خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي — نحول الوصول والمشاهدات إلى طلبات ومبيعات قابلة للقياس.
+            </p>
 
-    <a class="sector" href="/services/influencer-marketing/ecommerce/" title="التسويق عبر المؤثرين للمتاجر الإلكترونية">
-      <div class="t">التجارة الإلكترونية</div>
-      <div class="d">
-        زيادة المبيعات عبر المؤثرين + UGC + أكواد خصم.
-        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للمتاجر الإلكترونية</strong>.</span>
-      </div>
-    </a>
+            <p class="hero-lead">
+              خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي من Viva Media Creative. نساعد العلامات التجارية وصنّاع المحتوى على زيادة الطلبات والمبيعات عبر حملات مؤثرين، إدارة حسابات، صناعة محتوى، وSEO & Growth بنتائج قابلة للقياس.
+            </p>
 
-    <a class="sector" href="/services/influencer-marketing/real-estate/" title="التسويق عبر المؤثرين للعقارات">
-      <div class="t">العقارات</div>
-      <div class="d">
-        توليد عملاء مهتمين (Leads) لمشاريع البيع والاستثمار.
-        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للعقارات</strong>.</span>
-      </div>
-    </a>
+            <ul class="hero-points" aria-label="نقاط تميّز سريعة">
+              <li><strong>للعملاء الذين يريدون نتائج:</strong> Leads، مبيعات، زيارات بنية شراء — وليس انتشارًا فقط.</li>
+              <li><strong>للشخصيات العامة وصنّاع المحتوى:</strong> إدارة حسابات، بناء علامة شخصية، وحماية السمعة.</li>
+              <li><strong>للعلامات التجارية:</strong> شراكات مؤثرين بعقود واضحة + تنفيذ + تقارير أداء.</li>
+            </ul>
 
-    <a class="sector" href="/services/influencer-marketing/clinics-aesthetics/" title="التسويق عبر المؤثرين للعيادات والتجميل">
-      <div class="t">التجميل والعيادات</div>
-      <div class="d">
-        زيادة الحجوزات والاستشارات وبناء الثقة.
-        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للعيادات</strong>.</span>
-      </div>
-    </a>
+            <div class="hero-actions">
+              <a href="/contact/" class="btn btn--gold">اطلب عرض خدمات مناسب لهدفك</a>
+              <a
+                class="btn btn--ghost"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://wa.me/4915565678291?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20Viva%20Media%20Creative%20%D8%A8%D8%AF%D9%8A%20%D8%B9%D8%B1%D8%B6%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D9%85%D9%86%D8%A7%D8%B3%D8%A8%20%D9%84%D9%87%D8%AF%D9%81%D9%8A%20(%D8%A7%D9%84%D8%AE%D9%84%D9%8A%D8%AC/%D9%85%D8%B5%D8%B1)"
+              >
+                واتساب (تواصل مباشر)
+              </a>
+            </div>
 
-    <a class="sector" href="/services/influencer-marketing/apps/" title="التسويق عبر المؤثرين للتطبيقات">
-      <div class="t">التقنية والتطبيقات</div>
-      <div class="d">
-        تحميلات، تسجيلات، ونمو المستخدمين.
-        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للتطبيقات</strong>.</span>
-      </div>
-    </a>
-
-    <a class="sector" href="/services/influencer-marketing/restaurants/" title="التسويق عبر المؤثرين للمطاعم">
-      <div class="t">المطاعم والضيافة</div>
-      <div class="d">
-        رفع الزيارات والحجوزات عبر تجارب مؤثرين.
-        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للمطاعم</strong>.</span>
-      </div>
-    </a>
-
-    <a class="sector" href="/services/influencer-marketing/beauty-fashion/" title="التسويق عبر المؤثرين للأزياء">
-      <div class="t">الأزياء والموضة</div>
-      <div class="d">
-        إطلاق مجموعات وربط الانتشار بالمبيعات.
-        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للأزياء</strong>.</span>
-      </div>
-    </a>
-
-    <a class="sector" href="/services/influencer-marketing/cars/" title="التسويق عبر المؤثرين للسيارات">
-      <div class="t">السيارات</div>
-      <div class="d">
-        حملات تجربة قيادة ومحتوى مراجعات.
-        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للسيارات</strong>.</span>
-      </div>
-    </a>
-
-    <a class="sector" href="/services/influencer-marketing/education/" title="التسويق عبر المؤثرين للتعليم">
-      <div class="t">التعليم والكورسات</div>
-      <div class="d">
-        جذب تسجيلات وبناء ثقة في المحتوى.
-        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للتعليم</strong>.</span>
-      </div>
-    </a>
-
-    <a class="sector" href="/services/influencer-marketing/travel/" title="التسويق عبر المؤثرين للسفر">
-      <div class="t">السفر والسياحة</div>
-      <div class="d">
-        تجارب مؤثرة تزيد الحجوزات.
-        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للسفر</strong>.</span>
-      </div>
-    </a>
-
-    <a class="sector" href="/services/influencer-marketing/fitness/" title="التسويق عبر المؤثرين للياقة">
-      <div class="t">اللياقة والصحة</div>
-      <div class="d">
-        زيادة الاشتراكات والحجوزات.
-        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للياقة</strong>.</span>
-      </div>
-    </a>
-
-    <a class="sector" href="/services/influencer-marketing/fintech/" title="التسويق عبر المؤثرين للخدمات المالية">
-      <div class="t">الخدمات المالية (Fintech)</div>
-      <div class="d">
-        تسجيلات وLeads وبناء الثقة.
-        <span>استكشف <strong>خدمة التسويق عبر المؤثرين للخدمات المالية</strong>.</span>
-      </div>
-    </a>
-
-    <a class="sector" href="/elite/influencer-partnerships/" title="شراكات المؤثرين للعلامات الفاخرة">
-      <div class="t">البراندات الفاخرة</div>
-      <div class="d">
-        شراكات مؤثرين بمستوى راقٍ للعلامات الفخمة.
-        <span>استكشف <strong>Elite Influencer Partnerships</strong>.</span>
-      </div>
-    </a>
-
-  </div>
-</section>
-
-    <section class="section" aria-label="الخدمات الأساسية">
-      <h2 class="gold">خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي</h2>
-
-      <div class="services-grid">
-        <article class="svc-card" aria-label="خدمة التسويق عبر المؤثرين">
-          <h3>التسويق عبر المؤثرين وربط المشاهير بالعلامات التجارية</h3>
-          <p>
-            خدمة مناسبة لمن يبحث عن <strong>شركة تسويق عبر المؤثرين</strong> بتركيز على النتائج:
-            اختيار المؤثرين بدقة، إدارة التفاوض والعقود، تنفيذ المحتوى، وتقرير أداء يوضح أثر الحملة على المبيعات أو الـLeads.
-          </p>
-
-          <div class="fit-block">
-            <p class="fit-title">هذه الخدمة مناسبة لمن يبحث عن…</p>
-            <p class="fit-text">
-              <strong>شركة تسويق مؤثرين</strong> / <strong>وكالة تسويق مشاهير</strong> / <strong>إدارة حملات مؤثرين</strong> —
-              شريك يحوّل المنشورات إلى نتيجة قابلة للقياس.
+            <p class="muted">
+              نقدم خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي في الخليج ومصر والعالم العربي بنتائج قابلة للقياس.
             </p>
           </div>
 
-          <ul class="deliverables" aria-label="ماذا سنسلّم؟">
-            <li>اختيار مؤثرين وفق ملاءمة الجمهور + نية الشراء</li>
-            <li>Briefs قوية + تفاوض + عقود + جدول نشر</li>
-            <li>تتبع (روابط/أكواد/صفحات هبوط) + تقرير أداء</li>
-          </ul>
-
-          <p class="mini-note">
-            قد يهمك أيضًا:
-            <a href="/services/copywriting/">Copywriting</a> لرفع التحويل،
-            و<a href="/services/viral-strategy/">Viral Strategy</a> لزيادة الوصول المفيد.
-          </p>
-
-          <div class="svc-actions">
-            <a class="btn btn-gold" href="/services/influencer-marketing/">تفاصيل الخدمة</a>
-            <a class="btn" href="/contact/">طلب عرض سعر</a>
+          <div class="hero-visual" aria-label="Viva Media Creative services visual">
+            <img
+              src="/assets/logo.jpeg"
+              width="800"
+              height="960"
+              loading="eager"
+              decoding="async"
+              alt="Viva Media Creative"
+            />
+            <div class="hero-card">
+              <div class="hero-card__tag">Viva Media Creative</div>
+              <div class="hero-card__title">نربط المحتوى، المؤثرين، وSEO بهدف واحد: طلبات ومبيعات قابلة للقياس.</div>
+              <div class="hero-card__meta">
+                <div><strong>Leads</strong><span>طلبات ورسائل</span></div>
+                <div><strong>Sales</strong><span>مبيعات قابلة للتتبع</span></div>
+                <div><strong>Trust</strong><span>ثقة وسمعة</span></div>
+              </div>
+            </div>
           </div>
-        </article>
-
-        <article class="svc-card" aria-label="خدمة إدارة العلامة الشخصية">
-          <h3>إدارة حسابات المشاهير وصنّاع المحتوى (Personal Brand Management)</h3>
-          <p>
-            إدارة شهرية للحسابات (إنستغرام/تيك توك/سناب) تشمل: هوية رقمية، تقويم نشر، توجيه المحتوى، تحسين الأداء،
-            وبناء <strong>علامة شخصية</strong> تزيد القيمة السوقية وتحافظ على السمعة.
-          </p>
-
-          <div class="fit-block">
-            <p class="fit-title">هذه الخدمة مناسبة لمن يبحث عن…</p>
-            <p class="fit-text">
-              <strong>إدارة حسابات المشاهير</strong> / <strong>إدارة حسابات انستغرام</strong> / <strong>إدارة حسابات تيك توك</strong> —
-              نظام ثابت يحمي الصورة ويزيد القيمة.
-            </p>
-          </div>
-
-          <ul class="deliverables" aria-label="ماذا سنسلّم؟">
-            <li>هوية ورسائل + تقويم محتوى شهري</li>
-            <li>فورمات تناسب شخصيتك + تحسين مستمر</li>
-            <li>إرشادات تعاونات مدفوعة + حماية السمعة</li>
-          </ul>
-
-          <p class="mini-note">
-            قد يهمك أيضًا:
-            <a href="/services/viral-strategy/">Viral Strategy</a> لتوسيع الانتشار،
-            و<a href="/services/copywriting/">Copywriting</a> لصناعة Hooks وCTA أقوى.
-          </p>
-
-          <div class="svc-actions">
-            <a class="btn btn-gold" href="/services/personal-brand-management/">تفاصيل الخدمة</a>
-            <a class="btn" href="/contact/">طلب استشارة</a>
-          </div>
-        </article>
-
-        <article class="svc-card" aria-label="خدمة Viral Strategy">
-          <h3>Viral Strategy وصناعة الترندات وزيادة المشاهدات</h3>
-          <p>
-            منهج لصناعة ترندات قابلة للتكرار: Hooks قوية، زوايا قصة، توقيت، توزيع، وإدارة سلسلة محتوى تزيد
-            <strong>المشاهدات والتفاعل</strong> بدون حرق الحساب—مع ربط الانتشار بهدف تجاري واضح.
-          </p>
-
-          <div class="fit-block">
-            <p class="fit-title">هذه الخدمة مناسبة لمن يبحث عن…</p>
-            <p class="fit-text">
-              <strong>زيادة المشاهدات</strong> / <strong>صناعة ترند</strong> / <strong>رفع التفاعل</strong> —
-              استراتيجية قابلة للتكرار بدل الاعتماد على الحظ.
-            </p>
-          </div>
-
-          <ul class="deliverables" aria-label="ماذا سنسلّم؟">
-            <li>مكتبة Hooks + زوايا قصة قابلة للسلسلة</li>
-            <li>خطة نشر + توزيع + إعادة تدوير المحتوى</li>
-            <li>CTA واضح يربط الانتشار بالطلب/الرسالة</li>
-          </ul>
-
-          <p class="mini-note">
-            قد يهمك أيضًا:
-            <a href="/services/influencer-marketing/">Influencer Marketing</a> لتوسيع الوصول،
-            و<a href="/services/copywriting/">Copywriting</a> لتقوية السكريبت.
-          </p>
-
-          <div class="svc-actions">
-            <a class="btn btn-gold" href="/services/viral-strategy/">تفاصيل الخدمة</a>
-            <a class="btn" href="/contact/">خطة ترند لعلامتك</a>
-          </div>
-        </article>
-
-        <article class="svc-card" aria-label="خدمة Copywriting">
-          <h3>Copywriting وكتابة سكريبتات الفيديو والنصوص الإعلانية</h3>
-          <p>
-            كتابة سكريبتات إعلان، نصوص Reels/TikTok، وCopy للحملات وصفحات الهبوط. الهدف:
-            <strong>إيقاف التمرير</strong> + بناء رغبة + CTA يحول المشاهدات إلى رسالة/طلب/شراء.
-          </p>
-
-          <div class="fit-block">
-            <p class="fit-title">هذه الخدمة مناسبة لمن يبحث عن…</p>
-            <p class="fit-text">
-              <strong>كتابة سكريبتات</strong> / <strong>كتابة محتوى إعلاني</strong> / <strong>Copywriting عربي</strong> —
-              رسالة تقنع بسرعة وتوجّه القرار.
-            </p>
-          </div>
-
-          <ul class="deliverables" aria-label="ماذا سنسلّم؟">
-            <li>Hooks + بناء قصة مختصر + اعتراضات/ردود</li>
-            <li>CTA واضح + نسخة مناسبة لجمهور الخليج ومصر</li>
-            <li>نسخ جاهزة للتصوير والإعلانات وصفحات الهبوط</li>
-          </ul>
-
-          <p class="mini-note">
-            قد يهمك أيضًا:
-            <a href="/services/seo-growth/">SEO & Growth</a> لتحويل زيارات جوجل لطلبات،
-            و<a href="/services/viral-strategy/">Viral Strategy</a> لرفع الوصول.
-          </p>
-
-          <div class="svc-actions">
-            <a class="btn btn-gold" href="/services/copywriting/">تفاصيل الخدمة</a>
-            <a class="btn" href="/contact/">اطلب سكريبت</a>
-          </div>
-        </article>
-
-        <article class="svc-card" aria-label="خدمة SEO & Growth">
-          <h3>SEO & Growth للمواقع والمتاجر الإلكترونية</h3>
-          <p>
-            تحسين ظهور جوجل للمواقع والمتاجر (SEO) مع Growth مرتبط بالتحويل:
-            صفحات هبوط، بنية محتوى، تحسين تقني، CRO، وتتبع. الهدف ليس ترتيبًا فقط—بل <strong>طلبات ومبيعات</strong>.
-          </p>
-
-          <div class="fit-block">
-            <p class="fit-title">هذه الخدمة مناسبة لمن يبحث عن…</p>
-            <p class="fit-text">
-              <strong>تحسين ظهور الموقع في جوجل</strong> / <strong>SEO للمتاجر الإلكترونية</strong> / <strong>شركة سيو</strong> —
-              مسار يجمع “الترتيب + التحويل”.
-            </p>
-          </div>
-
-          <ul class="deliverables" aria-label="ماذا سنسلّم؟">
-            <li>تشخيص تقني + خطة كلمات مرتبطة بالشراء</li>
-            <li>صفحات هبوط + تحسين بنية داخلية + محتوى</li>
-            <li>CRO + تتبع واضح لقياس Leads والمبيعات</li>
-          </ul>
-
-          <p class="mini-note">
-            قد يهمك أيضًا:
-            <a href="/services/copywriting/">Copywriting</a> لرفع التحويل،
-            و<a href="/services/influencer-marketing/">Influencer Marketing</a> لدعم الإطلاقات.
-          </p>
-
-          <div class="svc-actions">
-            <a class="btn btn-gold" href="/services/seo-growth/">تفاصيل الخدمة</a>
-            <a class="btn" href="/contact/">تقييم سريع للموقع</a>
-          </div>
-        </article>
-      </div>
-
-      <div class="section" style="margin-top:18px;">
-        <article class="svc-card" aria-label="Elite Influencer Partnerships">
-          <h3>Elite Influencer Partnerships</h3>
-          <p>
-            شراكات مؤثرين عالية المستوى: اختيار شديد الدقة، تنفيذ راقٍ، إدارة علاقات وعقود واضحة،
-            ولغة تليق بعلامات فاخرة وشخصيات عامة.
-          </p>
-
-          <div class="fit-block">
-            <p class="fit-title">هذه الخدمة مناسبة لمن يبحث عن…</p>
-            <p class="fit-text">
-              <strong>شراكات مؤثرين للعلامات الفاخرة</strong> / <strong>إدارة تعاونات مشاهير بعقود واضحة</strong> —
-              مستوى تنفيذ يليق بالصورة العامة ويحمي الانطباع.
-            </p>
-          </div>
-
-          <ul class="deliverables" aria-label="ماذا سنسلّم؟">
-            <li>اختيار دقيق جدًا + إدارة علاقات مع مؤثرين/مشاهير</li>
-            <li>ضبط تفاصيل الظهور والرسائل بما يحمي الصورة</li>
-            <li>تنفيذ راقٍ + تقارير أداء + توصيات تكرار</li>
-          </ul>
-
-          <div class="svc-actions">
-            <a class="btn btn-gold" href="/elite/influencer-partnerships/">زيارة صفحة Elite</a>
-            <a class="btn" href="/contact/">تنسيق شراكة خاصة</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" aria-label="لمن هذه الخدمات">
-      <h2 class="gold">لمن خدمات تسويق المؤثرين وإدارة المشاهير والنمو الرقمي؟</h2>
-
-      <div class="two-col">
-        <div class="box">
-          <h3>للعلامات التجارية</h3>
-          <p>إذا تريد وكالة تفهم السوشيال ميديا كـ Funnel بيع، هذه أمثلة ما نشتغل عليه:</p>
-          <ul>
-            <li>حملات مؤثرين مع تتبع (Sales/Leads)</li>
-            <li>صناعة ترندات تخدم منتج/عرض واضح</li>
-            <li>Copywriting للإعلانات وصفحات الهبوط</li>
-            <li>SEO للمتاجر الإلكترونية + تحسين التحويل</li>
-          </ul>
         </div>
 
-        <div class="box">
-          <h3>للمشاهير وصنّاع المحتوى</h3>
-          <p>إذا هدفك إدارة احترافية للحسابات وبناء علامة شخصية قابلة للتسعير:</p>
-          <ul>
-            <li>إدارة حسابات إنستغرام/تيك توك (تقويم + توجيه)</li>
-            <li>تعزيز الهوية الرقمية وحماية السمعة</li>
-            <li>رفع القيمة السوقية عبر شراكات مدفوعة</li>
-            <li>سكريبتات وفورمات محتوى مناسب لشخصيتك</li>
-          </ul>
+        <div class="section-card section-card--gold" style="margin-top:22px;">
+          <div class="pill-row" aria-label="كلمات يبحث عنها الناس (بدون حشو)">
+            <span class="pill">شركة تسويق مؤثرين</span>
+            <span class="pill">إدارة مشاهير</span>
+            <span class="pill">إدارة حسابات انستغرام</span>
+            <span class="pill">إدارة حسابات تيك توك</span>
+            <span class="pill">صناعة محتوى للسوشيال ميديا</span>
+            <span class="pill">كتابة سكريبتات</span>
+            <span class="pill">SEO للمتاجر الإلكترونية</span>
+            <span class="pill">تحسين التحويل (CRO)</span>
+          </div>
+
+          <nav class="internal-links" aria-label="روابط خدمات تسويق المؤثرين وإدارة المشاهير">
+            <strong>خدمات تسويق المؤثرين وإدارة المشاهير:</strong>
+            <a href="/services/influencer-marketing/">التسويق عبر المؤثرين</a>
+            <a href="/services/personal-brand-management/">إدارة العلامة الشخصية</a>
+            <a href="/services/viral-strategy/">Viral Strategy</a>
+            <a href="/services/copywriting/">Copywriting</a>
+            <a href="/services/seo-growth/">SEO & Growth</a>
+            <a href="/elite/influencer-partnerships/">Elite Influencer Partnerships</a>
+          </nav>
         </div>
       </div>
-    </section>
+    </header>
 
-    <section class="section" aria-label="كيف نشتغل">
-      <h2 class="gold">كيف تعمل خدمات تسويق المؤثرين وإدارة المشاهير والنمو الرقمي؟</h2>
-      <ol class="flow-steps">
-        <li><strong>تشخيص الهدف</strong><br>نحدد “ماذا يعني نجاح” عندك: طلبات/مبيعات/سمعة/حضور، ونحدد الجمهور والرسالة.</li>
-        <li><strong>خطة قابلة للتنفيذ</strong><br>خريطة محتوى/شراكات + نقاط قياس + جدول واضح + أصول (Copy/Briefs).</li>
-        <li><strong>تنفيذ + تحسين</strong><br>تنفيذ مضبوط + قياس + تحسين مستمر على بيانات، وليس على التخمين.</li>
-      </ol>
-    </section>
+    <main id="main" class="container">
 
-    <section class="section" aria-label="الأسئلة الشائعة">
-      <h2 class="gold">أسئلة حول خدمات تسويق المؤثرين وإدارة المشاهير والنمو الرقمي</h2>
-
-      <details class="faq">
-        <summary>هل يمكن اختيار خدمة واحدة فقط أم يلزم باقة كاملة؟</summary>
-        <div class="a">
-          يمكن البدء بخدمة واحدة حسب هدفك (مثلاً: تسويق عبر المؤثرين، أو Copywriting، أو SEO).
-          في المشاريع الأكبر ندمج الخدمات لنصمم Funnel واضح: وصول → اهتمام → طلب/Lead → مبيعات.
-        </div>
-      </details>
-
-      <details class="faq">
-        <summary>كيف تقيسون النتائج في حملات المؤثرين؟</summary>
-        <div class="a">
-          نحدد هدف الحملة قبل التنفيذ (مبيعات/طلبات/زيارات/سمعة)، ثم نستخدم أدوات قياس مثل روابط تتبع، أكواد خصم،
-          صفحات هبوط، ومؤشرات تفاعل قابلة للمقارنة. ثم نخرج بتقرير أداء واضح بعد كل مرحلة.
-        </div>
-      </details>
-
-      <details class="faq">
-        <summary>هل تعملون مع مشاهير وحسابات كبيرة وعملاء فخمين؟</summary>
-        <div class="a">
-          نعم. لدينا أيضًا صفحة Elite Influencer Partnerships لشراكات عالية المستوى: اختيار شديد الدقة، تنفيذ راقٍ،
-          وإطار تعاقدي واضح ومناسب للعلامات الفاخرة.
-        </div>
-      </details>
-
-      <details class="faq">
-        <summary>متى يظهر أثر SEO & Growth؟</summary>
-        <div class="a">
-          قد تظهر نتائج سريعة خلال أسابيع (تحسين تقني/صفحات هبوط/تحسين التحويل)، بينما نتائج SEO التراكمية غالبًا تحتاج عدة أشهر.
-          لذلك نعمل بمنهج يجمع SEO + CRO + تتبع لتحويل الزيارات إلى طلبات ومبيعات.
-        </div>
-      </details>
-
-      <details class="faq">
-        <summary>هل تخدمون الخليج ومصر والعالم العربي؟</summary>
-        <div class="a">
-          نعم. نعمل أساسًا مع علامات وشخصيات في الخليج ومصر، ونخدم مشاريع مختارة في العالم العربي حسب طبيعة المنتج والجمهور.
-        </div>
-      </details>
-    </section>
-
-    <section class="section" aria-label="دعوة لاتخاذ قرار">
-      <h2 class="gold">جاهز لبدء تسويق المؤثرين وإدارة المشاهير والنمو الرقمي؟</h2>
-      <div class="box">
-        <p style="line-height:1.85;">
-          إذا تبحث عن <strong>شركة تسويق مؤثرين</strong> أو <strong>إدارة مشاهير</strong> أو <strong>صناعة محتوى</strong> أو <strong>SEO للمتاجر</strong> —
-          اترك لنا هدفك (مبيعات/Leads/نمو) وسنقترح المسار الأقصر للوصول.
-        </p>
-        <div class="mini-cta">
-          <a class="btn btn-gold" href="/contact/">اطلب عرض خدمات</a>
-          <a class="btn" href="/elite/influencer-partnerships/">Elite للشراكات عالية المستوى</a>
-          <a class="btn" href="/learn/">مقالات (عربي)</a>
-          <a class="btn" href="/news_en/">Articles (EN)</a>
-          <a class="btn" href="/">العودة للرئيسية</a>
-        </div>
-
-        <p class="mini-note" style="margin-top:10px;">
-          ملاحظة قياس: عند بدء أي مشروع، نقترح إعداد تتبع (UTM/أكواد/صفحات هبوط) لضمان أن “النتيجة” قابلة للقياس.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer-grid">
-
-      <section class="footer-col footer-brand" aria-label="عن Viva Media Creative">
-        <a class="footer-logo" href="https://vivamediacreative.com/services/" aria-label="Viva Media Creative">
-          <img src="/assets/logo.jpeg" alt="Viva Media Creative" loading="lazy" />
-        </a>
-        <p class="footer-desc">
-          وكالة متخصصة في <strong>Influencer Marketing</strong> وإدارة السمعة والصورة العامة،
-          وبناء نمو قابل للقياس عبر <strong>SEO</strong> و<strong>CRO</strong>—بمنهج بيانات وتنفيذ.
-        </p>
-
-        <div class="footer-contact">
-          <a class="footer-mail" href="mailto:info@vivamediacreative.com">info@vivamediacreative.com</a>
-          <div class="footer-lang" aria-label="Language switch">
-            <a href="/learn/">العربية</a>
-            <span aria-hidden="true">•</span>
-            <a href="/news_en/">English</a>
+      <section class="section" aria-label="نص داعم لتحسين الظهور والنية الشرائية">
+        <div class="section-card">
+          <div class="section-head">
+            <span class="cap">Search intent</span>
+            <h2 class="gold">تسويق مؤثرين وإدارة مشاهير ونمو رقمي في الخليج ومصر</h2>
+            <p>
+              إذا كنت تبحث عن <strong>شركة تسويق مؤثرين في الخليج</strong> أو <strong>إدارة مشاهير في السعودية والإمارات</strong> أو
+              تريد فريقًا يدير حملاتك بشكل احترافي في <strong>مصر</strong>، فهدفنا الأساسي هو تحويل الوصول إلى نتيجة واضحة:
+              <strong>طلبات (Leads)</strong> أو <strong>مبيعات</strong> أو <strong>زيارات بنية شراء</strong>.
+              نبدأ عادة بتحديد الهدف التجاري والجمهور، ثم نختار المؤثرين بناءً على الملاءمة والسلوك الشرائي وليس الأرقام فقط،
+              ونبني Brief ورسائل تحمي صورة العلامة والشخصية العامة، ثم ننفذ الحملة مع تتبع عبر روابط UTM وأكواد خصم وصفحات هبوط.
+              أما إذا كان هدفك نموًا تراكميًا يقلل اعتمادك على الإعلانات مع الوقت، فنحن نوفر أيضًا <strong>SEO للمتاجر الإلكترونية في مصر</strong>
+              و<strong>SEO & Growth</strong> للمواقع في السعودية والإمارات، مع تحسين التحويل (CRO) لرفع نسبة تحويل الزيارات إلى طلبات ومبيعات.
+              هذا المزج بين السوشيال + جوجل يضمن أن انتشارك “مفيد” ويصنع تأثيرًا تجاريًا قابلًا للقياس، وليس ضجة مؤقتة.
+            </p>
           </div>
         </div>
       </section>
 
-      <nav class="footer-col" aria-label="روابط رئيسية">
-        <h3>روابط رئيسية</h3>
-        <ul>
-          <li><a href="https://vivamediacreative.com/">الرئيسية</a></li>
-          <li><a href="https://vivamediacreative.com/services/">الخدمات</a></li>
-          <li><a href="https://vivamediacreative.com/ar/">مركز المعرفة</a></li>
-          <li><a href="https://vivamediacreative.com/learn/">المقالات</a></li>
-          <li><a href="https://vivamediacreative.com/contact/">تواصل</a></li>
-        </ul>
-      </nav>
+      <section class="section" aria-label="ما الذي نعتبره نتيجة">
+        <div class="section-card section-card--gold">
+          <div class="section-head">
+            <span class="cap">Performance</span>
+            <h2 class="gold">نتائج تسويق المؤثرين وإدارة المشاهير والنمو الرقمي</h2>
+            <p>
+              نحن لا نبيع “مشاهدات” فقط. نربط المحتوى والشراكات بمؤشرات أداء واضحة تخدم الهدف التجاري—مع الحفاظ على صورة العلامة والشخصية العامة.
+              هذا ما يجعلنا مناسبين لعلامات تبحث عن <strong>نمو مستدام</strong> لا اندفاع مؤقت.
+            </p>
+          </div>
 
-      <nav class="footer-col" aria-label="الخدمات">
-        <h3>الخدمات</h3>
-        <ul>
-          <li><a href="https://vivamediacreative.com/services/influencer-marketing/">التسويق عبر المؤثرين</a></li>
-          <li><a href="https://vivamediacreative.com/services/personal-brand-management/">إدارة العلامة الشخصية</a></li>
-          <li><a href="https://vivamediacreative.com/services/seo-growth/">SEO & نمو</a></li>
-          <li><a href="https://vivamediacreative.com/services/copywriting/">كتابة المحتوى (Copywriting)</a></li>
-          <li><a href="https://vivamediacreative.com/services/viral-strategy/">استراتيجية الانتشار</a></li>
-          <li><a href="https://vivamediacreative.com/elite/influencer-partnerships/">شراكات مؤثرين (Elite)</a></li>
-        </ul>
-      </nav>
+          <div class="four-col" aria-label="مؤشرات أداء رئيسية">
+            <div class="kpi"><div class="num">Leads</div><div class="label">طلبات/رسائل/حجوزات</div></div>
+            <div class="kpi"><div class="num">Sales</div><div class="label">مبيعات قابلة للتتبع</div></div>
+            <div class="kpi"><div class="num">Traffic</div><div class="label">زيارات بنية شراء</div></div>
+            <div class="kpi"><div class="num">Trust</div><div class="label">ثقة وسمعة</div></div>
+          </div>
 
-      <nav class="footer-col" aria-label="منصة المؤثرين">
-        <h3>منصة المؤثرين</h3>
-        <ul>
-          <li><a href="https://vivamediacreative.com/influencer-platform/">نظرة عامة</a></li>
-          <li><a href="https://vivamediacreative.com/influencer-platform/find-influencers/">ابحث عن مؤثرين</a></li>
-          <li><a href="https://vivamediacreative.com/influencer-platform/join-as-influencer/">انضم كمؤثر</a></li>
-        </ul>
+          <div class="three-col" aria-label="أسلوب عمل احترافي" style="margin-top:16px;">
+            <div class="glass">
+              <h3>اختيار دقيق</h3>
+              <p>نختار المؤثر/المحتوى بناءً على الملاءمة والسلوك الشرائي، وليس الأرقام وحدها.</p>
+            </div>
+            <div class="glass">
+              <h3>نظام قياس</h3>
+              <p>تتبع، أكواد، صفحات هبوط، وتقارير تجعل القرار مبنيًا على بيانات.</p>
+            </div>
+            <div class="glass">
+              <h3>حماية الصورة</h3>
+              <p>لغة ورسائل تحمي سمعة العلامة والشخصية العامة وتمنع تشويش الهوية.</p>
+            </div>
+          </div>
 
-        <div class="footer-cta">
-          <a class="btn primary" href="https://vivamediacreative.com/contact/">اطلب استشارة</a>
-          <a class="btn" href="https://vivamediacreative.com/influencer-platform/find-influencers/">اطلب مؤثرين</a>
+          <div class="cta-box" role="region" aria-label="دعوة لاتخاذ قرار سريعة" style="margin-top:20px;">
+            <p>
+              اكتب هدفك في سطر واحد (مبيعات / Leads / نمو سمعة) وسنقترح لك “أقصر مسار” بخطة 3 خطوات +
+              الخدمات المناسبة بدون حشو.
+            </p>
+            <div class="cta-actions">
+              <a class="btn btn--gold" href="/contact/">احصل على خطة 3 خطوات</a>
+              <a class="btn btn--ghost" href="/services/seo-growth/">أريد نمو عبر جوجل</a>
+            </div>
+          </div>
         </div>
-      </nav>
+      </section>
 
-      <nav class="footer-col" aria-label="أدوات">
-        <h3>أدوات</h3>
-        <ul>
-          <li><a href="https://vivamediacreative.com/ar/tools/">كل الأدوات</a></li>
-          <li><a href="https://vivamediacreative.com/ar/instagram-analyzer/">Instagram Analyzer</a></li>
-          <li><a href="https://vivamediacreative.com/ar/tools/best-instagram-hashtags-ai/">أفضل هاشتاغات إنستغرام</a></li>
-          <li><a href="https://vivamediacreative.com/ar/influencer-campaign-cost-calculator/">حاسبة تكلفة حملة مؤثرين</a></li>
-          <li><a href="https://vivamediacreative.com/ar/best-time-to-post-instagram/">أفضل وقت للنشر</a></li>
-        </ul>
-      </nav>
+      <section class="section" aria-label="قطاعات نعمل معها">
+        <div class="section-card">
+          <div class="section-head">
+            <span class="cap">Industries</span>
+            <h2 class="gold">قطاعات تستفيد من تسويق المؤثرين وإدارة المشاهير والنمو الرقمي</h2>
+            <p>
+              نختار استراتيجية المحتوى والمؤثرين حسب القطاع، لأن ما ينجح في العقارات يختلف عن العيادات أو التجارة الإلكترونية.
+              هذه بعض القطاعات ذات بحث عالي ونيّة شراء واضحة:
+            </p>
+          </div>
 
-    </div>
+          <div class="three-col" id="industries" aria-label="قائمة قطاعات">
 
-    <div class="container footer-bottom">
-      <p class="copyright">© 2026 Viva Media Creative. جميع الحقوق محفوظة.</p>
-      <nav class="footer-legal" aria-label="روابط قانونية">
-        <a href="https://vivamediacreative.com/privacy/">Privacy</a>
-        <span aria-hidden="true">•</span>
-        <a href="https://vivamediacreative.com/terms/">Terms</a>
-      </nav>
-    </div>
+            <a class="glass" href="/services/influencer-marketing/ecommerce/" title="التسويق عبر المؤثرين للمتاجر الإلكترونية">
+              <h3>التجارة الإلكترونية</h3>
+              <p>
+                زيادة المبيعات عبر المؤثرين + UGC + أكواد خصم.
+                <span>استكشف <strong>خدمة التسويق عبر المؤثرين للمتاجر الإلكترونية</strong>.</span>
+              </p>
+            </a>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Viva Media Creative",
-      "url": "https://vivamediacreative.com/",
-      "logo": "https://vivamediacreative.com/assets/logo.jpeg",
-      "contactPoint": [{
-        "@type": "ContactPoint",
-        "contactType": "customer support",
-        "email": "info@vivamediacreative.com"
-      }]
-    }
-    </script>
-  </footer>
+            <a class="glass" href="/services/influencer-marketing/real-estate/" title="التسويق عبر المؤثرين للعقارات">
+              <h3>العقارات</h3>
+              <p>
+                توليد عملاء مهتمين (Leads) لمشاريع البيع والاستثمار.
+                <span>استكشف <strong>خدمة التسويق عبر المؤثرين للعقارات</strong>.</span>
+              </p>
+            </a>
+
+            <a class="glass" href="/services/influencer-marketing/clinics-aesthetics/" title="التسويق عبر المؤثرين للعيادات والتجميل">
+              <h3>التجميل والعيادات</h3>
+              <p>
+                زيادة الحجوزات والاستشارات وبناء الثقة.
+                <span>استكشف <strong>خدمة التسويق عبر المؤثرين للعيادات</strong>.</span>
+              </p>
+            </a>
+
+            <a class="glass" href="/services/influencer-marketing/apps/" title="التسويق عبر المؤثرين للتطبيقات">
+              <h3>التقنية والتطبيقات</h3>
+              <p>
+                تحميلات، تسجيلات، ونمو المستخدمين.
+                <span>استكشف <strong>خدمة التسويق عبر المؤثرين للتطبيقات</strong>.</span>
+              </p>
+            </a>
+
+            <a class="glass" href="/services/influencer-marketing/restaurants/" title="التسويق عبر المؤثرين للمطاعم">
+              <h3>المطاعم والضيافة</h3>
+              <p>
+                رفع الزيارات والحجوزات عبر تجارب مؤثرين.
+                <span>استكشف <strong>خدمة التسويق عبر المؤثرين للمطاعم</strong>.</span>
+              </p>
+            </a>
+
+            <a class="glass" href="/services/influencer-marketing/beauty-fashion/" title="التسويق عبر المؤثرين للأزياء">
+              <h3>الأزياء والموضة</h3>
+              <p>
+                إطلاق مجموعات وربط الانتشار بالمبيعات.
+                <span>استكشف <strong>خدمة التسويق عبر المؤثرين للأزياء</strong>.</span>
+              </p>
+            </a>
+
+            <a class="glass" href="/services/influencer-marketing/cars/" title="التسويق عبر المؤثرين للسيارات">
+              <h3>السيارات</h3>
+              <p>
+                حملات تجربة قيادة ومحتوى مراجعات.
+                <span>استكشف <strong>خدمة التسويق عبر المؤثرين للسيارات</strong>.</span>
+              </p>
+            </a>
+
+            <a class="glass" href="/services/influencer-marketing/education/" title="التسويق عبر المؤثرين للتعليم">
+              <h3>التعليم والكورسات</h3>
+              <p>
+                جذب تسجيلات وبناء ثقة في المحتوى.
+                <span>استكشف <strong>خدمة التسويق عبر المؤثرين للتعليم</strong>.</span>
+              </p>
+            </a>
+
+            <a class="glass" href="/services/influencer-marketing/travel/" title="التسويق عبر المؤثرين للسفر">
+              <h3>السفر والسياحة</h3>
+              <p>
+                تجارب مؤثرة تزيد الحجوزات.
+                <span>استكشف <strong>خدمة التسويق عبر المؤثرين للسفر</strong>.</span>
+              </p>
+            </a>
+
+            <a class="glass" href="/services/influencer-marketing/fitness/" title="التسويق عبر المؤثرين للياقة">
+              <h3>اللياقة والصحة</h3>
+              <p>
+                زيادة الاشتراكات والحجوزات.
+                <span>استكشف <strong>خدمة التسويق عبر المؤثرين للياقة</strong>.</span>
+              </p>
+            </a>
+
+            <a class="glass" href="/services/influencer-marketing/fintech/" title="التسويق عبر المؤثرين للخدمات المالية">
+              <h3>الخدمات المالية (Fintech)</h3>
+              <p>
+                تسجيلات وLeads وبناء الثقة.
+                <span>استكشف <strong>خدمة التسويق عبر المؤثرين للخدمات المالية</strong>.</span>
+              </p>
+            </a>
+
+            <a class="glass highlight" href="/elite/influencer-partnerships/" title="شراكات المؤثرين للعلامات الفاخرة">
+              <h3>البراندات الفاخرة</h3>
+              <p>
+                شراكات مؤثرين بمستوى راقٍ للعلامات الفخمة.
+                <span>استكشف <strong>Elite Influencer Partnerships</strong>.</span>
+              </p>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="الخدمات الأساسية">
+        <div class="section-card">
+          <div class="section-head">
+            <span class="cap">Services</span>
+            <h2 class="gold">خدمات تسويق مؤثرين وإدارة مشاهير ونمو رقمي</h2>
+          </div>
+
+          <div class="three-col">
+            <article class="glass" aria-label="خدمة التسويق عبر المؤثرين">
+              <h3>التسويق عبر المؤثرين وربط المشاهير بالعلامات التجارية</h3>
+              <p>
+                خدمة مناسبة لمن يبحث عن <strong>شركة تسويق عبر المؤثرين</strong> بتركيز على النتائج:
+                اختيار المؤثرين بدقة، إدارة التفاوض والعقود، تنفيذ المحتوى، وتقرير أداء يوضح أثر الحملة على المبيعات أو الـLeads.
+              </p>
+
+              <div class="glass" style="margin-top:12px;">
+                <span class="micro">هذه الخدمة مناسبة لمن يبحث عن…</span>
+                <p>
+                  <strong>شركة تسويق مؤثرين</strong> / <strong>وكالة تسويق مشاهير</strong> / <strong>إدارة حملات مؤثرين</strong> —
+                  شريك يحوّل المنشورات إلى نتيجة قابلة للقياس.
+                </p>
+              </div>
+
+              <ul aria-label="ماذا سنسلّم؟">
+                <li>اختيار مؤثرين وفق ملاءمة الجمهور + نية الشراء</li>
+                <li>Briefs قوية + تفاوض + عقود + جدول نشر</li>
+                <li>تتبع (روابط/أكواد/صفحات هبوط) + تقرير أداء</li>
+              </ul>
+
+              <p class="muted">
+                قد يهمك أيضًا:
+                <a href="/services/copywriting/">Copywriting</a> لرفع التحويل،
+                و<a href="/services/viral-strategy/">Viral Strategy</a> لزيادة الوصول المفيد.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn btn--gold" href="/services/influencer-marketing/">تفاصيل الخدمة</a>
+                <a class="btn btn--ghost" href="/contact/">طلب عرض سعر</a>
+              </div>
+            </article>
+
+            <article class="glass" aria-label="خدمة إدارة العلامة الشخصية">
+              <h3>إدارة حسابات المشاهير وصنّاع المحتوى (Personal Brand Management)</h3>
+              <p>
+                إدارة شهرية للحسابات (إنستغرام/تيك توك/سناب) تشمل: هوية رقمية، تقويم نشر، توجيه المحتوى، تحسين الأداء،
+                وبناء <strong>علامة شخصية</strong> تزيد القيمة السوقية وتحافظ على السمعة.
+              </p>
+
+              <div class="glass" style="margin-top:12px;">
+                <span class="micro">هذه الخدمة مناسبة لمن يبحث عن…</span>
+                <p>
+                  <strong>إدارة حسابات المشاهير</strong> / <strong>إدارة حسابات انستغرام</strong> / <strong>إدارة حسابات تيك توك</strong> —
+                  نظام ثابت يحمي الصورة ويزيد القيمة.
+                </p>
+              </div>
+
+              <ul aria-label="ماذا سنسلّم؟">
+                <li>هوية ورسائل + تقويم محتوى شهري</li>
+                <li>فورمات تناسب شخصيتك + تحسين مستمر</li>
+                <li>إرشادات تعاونات مدفوعة + حماية السمعة</li>
+              </ul>
+
+              <p class="muted">
+                قد يهمك أيضًا:
+                <a href="/services/viral-strategy/">Viral Strategy</a> لتوسيع الانتشار،
+                و<a href="/services/copywriting/">Copywriting</a> لصناعة Hooks وCTA أقوى.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn btn--gold" href="/services/personal-brand-management/">تفاصيل الخدمة</a>
+                <a class="btn btn--ghost" href="/contact/">طلب استشارة</a>
+              </div>
+            </article>
+
+            <article class="glass" aria-label="خدمة Viral Strategy">
+              <h3>Viral Strategy وصناعة الترندات وزيادة المشاهدات</h3>
+              <p>
+                منهج لصناعة ترندات قابلة للتكرار: Hooks قوية، زوايا قصة، توقيت، توزيع، وإدارة سلسلة محتوى تزيد
+                <strong>المشاهدات والتفاعل</strong> بدون حرق الحساب—مع ربط الانتشار بهدف تجاري واضح.
+              </p>
+
+              <div class="glass" style="margin-top:12px;">
+                <span class="micro">هذه الخدمة مناسبة لمن يبحث عن…</span>
+                <p>
+                  <strong>زيادة المشاهدات</strong> / <strong>صناعة ترند</strong> / <strong>رفع التفاعل</strong> —
+                  استراتيجية قابلة للتكرار بدل الاعتماد على الحظ.
+                </p>
+              </div>
+
+              <ul aria-label="ماذا سنسلّم؟">
+                <li>مكتبة Hooks + زوايا قصة قابلة للسلسلة</li>
+                <li>خطة نشر + توزيع + إعادة تدوير المحتوى</li>
+                <li>CTA واضح يربط الانتشار بالطلب/الرسالة</li>
+              </ul>
+
+              <p class="muted">
+                قد يهمك أيضًا:
+                <a href="/services/influencer-marketing/">Influencer Marketing</a> لتوسيع الوصول،
+                و<a href="/services/copywriting/">Copywriting</a> لتقوية السكريبت.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn btn--gold" href="/services/viral-strategy/">تفاصيل الخدمة</a>
+                <a class="btn btn--ghost" href="/contact/">خطة ترند لعلامتك</a>
+              </div>
+            </article>
+
+            <article class="glass" aria-label="خدمة Copywriting">
+              <h3>Copywriting وكتابة سكريبتات الفيديو والنصوص الإعلانية</h3>
+              <p>
+                كتابة سكريبتات إعلان، نصوص Reels/TikTok، وCopy للحملات وصفحات الهبوط. الهدف:
+                <strong>إيقاف التمرير</strong> + بناء رغبة + CTA يحول المشاهدات إلى رسالة/طلب/شراء.
+              </p>
+
+              <div class="glass" style="margin-top:12px;">
+                <span class="micro">هذه الخدمة مناسبة لمن يبحث عن…</span>
+                <p>
+                  <strong>كتابة سكريبتات</strong> / <strong>كتابة محتوى إعلاني</strong> / <strong>Copywriting عربي</strong> —
+                  رسالة تقنع بسرعة وتوجّه القرار.
+                </p>
+              </div>
+
+              <ul aria-label="ماذا سنسلّم؟">
+                <li>Hooks + بناء قصة مختصر + اعتراضات/ردود</li>
+                <li>CTA واضح + نسخة مناسبة لجمهور الخليج ومصر</li>
+                <li>نسخ جاهزة للتصوير والإعلانات وصفحات الهبوط</li>
+              </ul>
+
+              <p class="muted">
+                قد يهمك أيضًا:
+                <a href="/services/seo-growth/">SEO & Growth</a> لتحويل زيارات جوجل لطلبات،
+                و<a href="/services/viral-strategy/">Viral Strategy</a> لرفع الوصول.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn btn--gold" href="/services/copywriting/">تفاصيل الخدمة</a>
+                <a class="btn btn--ghost" href="/contact/">اطلب سكريبت</a>
+              </div>
+            </article>
+
+            <article class="glass" aria-label="خدمة SEO & Growth">
+              <h3>SEO & Growth للمواقع والمتاجر الإلكترونية</h3>
+              <p>
+                تحسين ظهور جوجل للمواقع والمتاجر (SEO) مع Growth مرتبط بالتحويل:
+                صفحات هبوط، بنية محتوى، تحسين تقني، CRO، وتتبع. الهدف ليس ترتيبًا فقط—بل <strong>طلبات ومبيعات</strong>.
+              </p>
+
+              <div class="glass" style="margin-top:12px;">
+                <span class="micro">هذه الخدمة مناسبة لمن يبحث عن…</span>
+                <p>
+                  <strong>تحسين ظهور الموقع في جوجل</strong> / <strong>SEO للمتاجر الإلكترونية</strong> / <strong>شركة سيو</strong> —
+                  مسار يجمع “الترتيب + التحويل”.
+                </p>
+              </div>
+
+              <ul aria-label="ماذا سنسلّم؟">
+                <li>تشخيص تقني + خطة كلمات مرتبطة بالشراء</li>
+                <li>صفحات هبوط + تحسين بنية داخلية + محتوى</li>
+                <li>CRO + تتبع واضح لقياس Leads والمبيعات</li>
+              </ul>
+
+              <p class="muted">
+                قد يهمك أيضًا:
+                <a href="/services/copywriting/">Copywriting</a> لرفع التحويل،
+                و<a href="/services/influencer-marketing/">Influencer Marketing</a> لدعم الإطلاقات.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn btn--gold" href="/services/seo-growth/">تفاصيل الخدمة</a>
+                <a class="btn btn--ghost" href="/contact/">تقييم سريع للموقع</a>
+              </div>
+            </article>
+          </div>
+
+          <article class="glass highlight" aria-label="Elite Influencer Partnerships" style="margin-top:18px;">
+            <h3>Elite Influencer Partnerships</h3>
+            <p>
+              شراكات مؤثرين عالية المستوى: اختيار شديد الدقة، تنفيذ راقٍ، إدارة علاقات وعقود واضحة،
+              ولغة تليق بعلامات فاخرة وشخصيات عامة.
+            </p>
+
+            <div class="glass" style="margin-top:12px;">
+              <span class="micro">هذه الخدمة مناسبة لمن يبحث عن…</span>
+              <p>
+                <strong>شراكات مؤثرين للعلامات الفاخرة</strong> / <strong>إدارة تعاونات مشاهير بعقود واضحة</strong> —
+                مستوى تنفيذ يليق بالصورة العامة ويحمي الانطباع.
+              </p>
+            </div>
+
+            <ul aria-label="ماذا سنسلّم؟">
+              <li>اختيار دقيق جدًا + إدارة علاقات مع مؤثرين/مشاهير</li>
+              <li>ضبط تفاصيل الظهور والرسائل بما يحمي الصورة</li>
+              <li>تنفيذ راقٍ + تقارير أداء + توصيات تكرار</li>
+            </ul>
+
+            <div class="hero-actions">
+              <a class="btn btn--gold" href="/elite/influencer-partnerships/">زيارة صفحة Elite</a>
+              <a class="btn btn--ghost" href="/contact/">تنسيق شراكة خاصة</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-label="لمن هذه الخدمات">
+        <div class="section-card">
+          <div class="section-head">
+            <span class="cap">Audience</span>
+            <h2 class="gold">لمن خدمات تسويق المؤثرين وإدارة المشاهير والنمو الرقمي؟</h2>
+          </div>
+
+          <div class="two-col">
+            <div class="glass">
+              <h3>للعلامات التجارية</h3>
+              <p>إذا تريد وكالة تفهم السوشيال ميديا كـ Funnel بيع، هذه أمثلة ما نشتغل عليه:</p>
+              <ul>
+                <li>حملات مؤثرين مع تتبع (Sales/Leads)</li>
+                <li>صناعة ترندات تخدم منتج/عرض واضح</li>
+                <li>Copywriting للإعلانات وصفحات الهبوط</li>
+                <li>SEO للمتاجر الإلكترونية + تحسين التحويل</li>
+              </ul>
+            </div>
+
+            <div class="glass">
+              <h3>للمشاهير وصنّاع المحتوى</h3>
+              <p>إذا هدفك إدارة احترافية للحسابات وبناء علامة شخصية قابلة للتسعير:</p>
+              <ul>
+                <li>إدارة حسابات إنستغرام/تيك توك (تقويم + توجيه)</li>
+                <li>تعزيز الهوية الرقمية وحماية السمعة</li>
+                <li>رفع القيمة السوقية عبر شراكات مدفوعة</li>
+                <li>سكريبتات وفورمات محتوى مناسب لشخصيتك</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="كيف نشتغل">
+        <div class="section-card section-card--gold">
+          <div class="section-head">
+            <span class="cap">Process</span>
+            <h2 class="gold">كيف تعمل خدمات تسويق المؤثرين وإدارة المشاهير والنمو الرقمي؟</h2>
+          </div>
+          <ol class="steps">
+            <li>
+              <div class="step-n">01</div>
+              <div>
+                <h3>تشخيص الهدف</h3>
+                <p>نحدد “ماذا يعني نجاح” عندك: طلبات/مبيعات/سمعة/حضور، ونحدد الجمهور والرسالة.</p>
+              </div>
+            </li>
+            <li>
+              <div class="step-n">02</div>
+              <div>
+                <h3>خطة قابلة للتنفيذ</h3>
+                <p>خريطة محتوى/شراكات + نقاط قياس + جدول واضح + أصول (Copy/Briefs).</p>
+              </div>
+            </li>
+            <li>
+              <div class="step-n">03</div>
+              <div>
+                <h3>تنفيذ + تحسين</h3>
+                <p>تنفيذ مضبوط + قياس + تحسين مستمر على بيانات، وليس على التخمين.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section faq" aria-label="الأسئلة الشائعة">
+        <div class="section-card">
+          <div class="section-head">
+            <span class="cap">FAQ</span>
+            <h2 class="gold">أسئلة حول خدمات تسويق المؤثرين وإدارة المشاهير والنمو الرقمي</h2>
+          </div>
+
+          <details>
+            <summary>هل يمكن اختيار خدمة واحدة فقط أم يلزم باقة كاملة؟</summary>
+            <p>
+              يمكن البدء بخدمة واحدة حسب هدفك (مثلاً: تسويق عبر المؤثرين، أو Copywriting، أو SEO).
+              في المشاريع الأكبر ندمج الخدمات لنصمم Funnel واضح: وصول → اهتمام → طلب/Lead → مبيعات.
+            </p>
+          </details>
+
+          <details>
+            <summary>كيف تقيسون النتائج في حملات المؤثرين؟</summary>
+            <p>
+              نحدد هدف الحملة قبل التنفيذ (مبيعات/طلبات/زيارات/سمعة)، ثم نستخدم أدوات قياس مثل روابط تتبع، أكواد خصم،
+              صفحات هبوط، ومؤشرات تفاعل قابلة للمقارنة. ثم نخرج بتقرير أداء واضح بعد كل مرحلة.
+            </p>
+          </details>
+
+          <details>
+            <summary>هل تعملون مع مشاهير وحسابات كبيرة وعملاء فخمين؟</summary>
+            <p>
+              نعم. لدينا أيضًا صفحة Elite Influencer Partnerships لشراكات عالية المستوى: اختيار شديد الدقة، تنفيذ راقٍ،
+              وإطار تعاقدي واضح ومناسب للعلامات الفاخرة.
+            </p>
+          </details>
+
+          <details>
+            <summary>متى يظهر أثر SEO & Growth؟</summary>
+            <p>
+              قد تظهر نتائج سريعة خلال أسابيع (تحسين تقني/صفحات هبوط/تحسين التحويل)، بينما نتائج SEO التراكمية غالبًا تحتاج عدة أشهر.
+              لذلك نعمل بمنهج يجمع SEO + CRO + تتبع لتحويل الزيارات إلى طلبات ومبيعات.
+            </p>
+          </details>
+
+          <details>
+            <summary>هل تخدمون الخليج ومصر والعالم العربي؟</summary>
+            <p>
+              نعم. نعمل أساسًا مع علامات وشخصيات في الخليج ومصر، ونخدم مشاريع مختارة في العالم العربي حسب طبيعة المنتج والجمهور.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section class="section" aria-label="دعوة لاتخاذ قرار">
+        <div class="cta-grid">
+          <div class="cta-box">
+            <h2 class="gold">جاهز لبدء تسويق المؤثرين وإدارة المشاهير والنمو الرقمي؟</h2>
+            <p>
+              إذا تبحث عن <strong>شركة تسويق مؤثرين</strong> أو <strong>إدارة مشاهير</strong> أو <strong>صناعة محتوى</strong> أو <strong>SEO للمتاجر</strong> —
+              اترك لنا هدفك (مبيعات/Leads/نمو) وسنقترح المسار الأقصر للوصول.
+            </p>
+            <div class="cta-actions">
+              <a class="btn btn--gold" href="/contact/">اطلب عرض خدمات</a>
+              <a class="btn btn--ghost" href="/elite/influencer-partnerships/">Elite للشراكات عالية المستوى</a>
+              <a class="btn btn--ghost" href="/learn/">مقالات (عربي)</a>
+              <a class="btn btn--ghost" href="/news_en/">Articles (EN)</a>
+              <a class="btn btn--ghost" href="/">العودة للرئيسية</a>
+            </div>
+          </div>
+
+          <div class="cta-side">
+            <h3>ملاحظة قياس</h3>
+            <ul>
+              <li>عند بدء أي مشروع، نقترح إعداد تتبع (UTM/أكواد/صفحات هبوط).</li>
+              <li>الهدف أن تكون “النتيجة” قابلة للقياس.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container footer-grid">
+
+        <section class="footer-col" aria-label="عن Viva Media Creative">
+          <div class="footer-brand">
+            <a href="https://vivamediacreative.com/services/" aria-label="Viva Media Creative">
+              <img src="/assets/logo.jpeg" alt="Viva Media Creative" loading="lazy" />
+            </a>
+            <div>
+              <h3>Viva Media Creative</h3>
+              <p class="text-soft">
+                وكالة متخصصة في <strong>Influencer Marketing</strong> وإدارة السمعة والصورة العامة،
+                وبناء نمو قابل للقياس عبر <strong>SEO</strong> و<strong>CRO</strong>—بمنهج بيانات وتنفيذ.
+              </p>
+              <a href="mailto:info@vivamediacreative.com">info@vivamediacreative.com</a>
+              <div class="footer-lang" aria-label="Language switch">
+                <a href="/learn/">العربية</a>
+                <span aria-hidden="true">•</span>
+                <a href="/news_en/">English</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <nav class="footer-col" aria-label="روابط رئيسية">
+          <h3>روابط رئيسية</h3>
+          <ul>
+            <li><a href="https://vivamediacreative.com/">الرئيسية</a></li>
+            <li><a href="https://vivamediacreative.com/services/">الخدمات</a></li>
+            <li><a href="https://vivamediacreative.com/ar/">مركز المعرفة</a></li>
+            <li><a href="https://vivamediacreative.com/learn/">المقالات</a></li>
+            <li><a href="https://vivamediacreative.com/contact/">تواصل</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="الخدمات">
+          <h3>الخدمات</h3>
+          <ul>
+            <li><a href="https://vivamediacreative.com/services/influencer-marketing/">التسويق عبر المؤثرين</a></li>
+            <li><a href="https://vivamediacreative.com/services/personal-brand-management/">إدارة العلامة الشخصية</a></li>
+            <li><a href="https://vivamediacreative.com/services/seo-growth/">SEO & نمو</a></li>
+            <li><a href="https://vivamediacreative.com/services/copywriting/">كتابة المحتوى (Copywriting)</a></li>
+            <li><a href="https://vivamediacreative.com/services/viral-strategy/">استراتيجية الانتشار</a></li>
+            <li><a href="https://vivamediacreative.com/elite/influencer-partnerships/">شراكات مؤثرين (Elite)</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="منصة المؤثرين">
+          <h3>منصة المؤثرين</h3>
+          <ul>
+            <li><a href="https://vivamediacreative.com/influencer-platform/">نظرة عامة</a></li>
+            <li><a href="https://vivamediacreative.com/influencer-platform/find-influencers/">ابحث عن مؤثرين</a></li>
+            <li><a href="https://vivamediacreative.com/influencer-platform/join-as-influencer/">انضم كمؤثر</a></li>
+          </ul>
+
+          <div class="cta-actions">
+            <a class="btn btn--gold" href="https://vivamediacreative.com/contact/">اطلب استشارة</a>
+            <a class="btn btn--ghost" href="https://vivamediacreative.com/influencer-platform/find-influencers/">اطلب مؤثرين</a>
+          </div>
+        </nav>
+
+        <nav class="footer-col" aria-label="أدوات">
+          <h3>أدوات</h3>
+          <ul>
+            <li><a href="https://vivamediacreative.com/ar/tools/">كل الأدوات</a></li>
+            <li><a href="https://vivamediacreative.com/ar/instagram-analyzer/">Instagram Analyzer</a></li>
+            <li><a href="https://vivamediacreative.com/ar/tools/best-instagram-hashtags-ai/">أفضل هاشتاغات إنستغرام</a></li>
+            <li><a href="https://vivamediacreative.com/ar/influencer-campaign-cost-calculator/">حاسبة تكلفة حملة مؤثرين</a></li>
+            <li><a href="https://vivamediacreative.com/ar/best-time-to-post-instagram/">أفضل وقت للنشر</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© 2026 Viva Media Creative. جميع الحقوق محفوظة.</p>
+        <nav class="footer-legal" aria-label="روابط قانونية">
+          <a href="https://vivamediacreative.com/privacy/">Privacy</a>
+          <span aria-hidden="true">•</span>
+          <a href="https://vivamediacreative.com/terms/">Terms</a>
+        </nav>
+      </div>
+
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Viva Media Creative",
+        "url": "https://vivamediacreative.com/",
+        "logo": "https://vivamediacreative.com/assets/logo.jpeg",
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "info@vivamediacreative.com"
+        }]
+      }
+      </script>
+    </footer>
+  </div>
 </body>
 </html>
