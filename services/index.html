@@ -983,10 +983,250 @@
 .sector:hover .d span{
   color: var(--gold-strong);
 }
+    /* MAIN NAV */
+.main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: rgba(5, 5, 5, 0.86);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(245, 208, 122, 0.12);
+}
+
+.nav-inner {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.nav-logo img {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 1px solid rgba(245, 208, 122, 0.22);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex: 1;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.88);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.96rem;
+  padding: 10px 6px;
+  line-height: 1.2;
+}
+
+.nav-links a:hover {
+  color: #f5d07a;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown > a::after {
+  content: "▾";
+  font-size: 0.72rem;
+  margin-right: 6px;
+  color: #f5d07a;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 250px;
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(12,12,12,0.98);
+  border: 1px solid rgba(245,208,122,0.16);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+  display: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 11px 12px;
+  border-radius: 10px;
+  color: rgba(255,255,255,0.86);
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(245,208,122,0.08);
+  color: #f5d07a;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.nav-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 15px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #f5d07a 0%, #ddb35e 100%);
+  color: #111;
+  text-decoration: none;
+  font-weight: 900;
+  border: 0;
+  white-space: nowrap;
+}
+
+.nav-btn:hover {
+  color: #111;
+  transform: translateY(-1px);
+}
+
+/* TABLET */
+@media (max-width: 980px) {
+  .nav-inner {
+    min-height: auto;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    flex: none;
+    justify-content: flex-start;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    padding: 9px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(245,208,122,0.10);
+    white-space: nowrap;
+    font-size: 0.92rem;
+  }
+
+  .dropdown {
+    position: static;
+  }
+
+  .dropdown-menu {
+    position: static;
+    display: none;
+    min-width: auto;
+    margin-top: 6px;
+    box-shadow: none;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown:focus-within .dropdown-menu {
+    display: block;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .main-nav {
+    position: sticky;
+  }
+
+  .nav-inner {
+    gap: 10px;
+  }
+
+  .nav-logo img {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+  }
+
+  .nav-btn {
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 0.88rem;
+  }
+
+  .nav-links {
+    gap: 7px;
+  }
+
+  .nav-links a {
+    font-size: 0.88rem;
+    padding: 8px 11px;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+    padding: 8px;
+    border-radius: 14px;
+  }
+
+  .dropdown-menu a {
+    display: block;
+    width: 100%;
+    margin-bottom: 6px;
+  }
+}
   </style>
 </head>
 
 <body>
+  <header class="main-nav">
+  <div class="container nav-inner">
+
+    <a href="/" class="nav-logo">
+      <img src="/assets/logo.jpeg" alt="Viva Media Creative" />
+    </a>
+
+    <nav class="nav-links" aria-label="القائمة الرئيسية">
+      <a href="/">الرئيسية</a>
+
+      <div class="dropdown">
+        <a href="/services/">الخدمات</a>
+        <div class="dropdown-menu">
+          <a href="/services/influencer-marketing/">التسويق عبر المؤثرين</a>
+          <a href="/services/personal-brand-management/">إدارة العلامة الشخصية</a>
+          <a href="/services/viral-strategy/">استراتيجية الانتشار</a>
+          <a href="/services/copywriting/">كتابة المحتوى</a>
+          <a href="/services/seo-growth/">SEO & Growth</a>
+        </div>
+      </div>
+
+      <a href="/contact/">تواصل</a>
+    </nav>
+
+    <a href="/contact/" class="nav-btn">اطلب استشارة</a>
+
+  </div>
+</header>
   <a class="skip-link" href="#main">تخطي إلى المحتوى</a>
 
   <header class="service-hero">
