@@ -503,7 +503,18 @@ https://vivamediacreative.com/assets/articles/%D9%85%D8%B4%D8%A7%D9%87%D8%AF%D8%
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
-
+  <url>
+  <loc>https://vivamediacreative.com/learn/does-google-detect-ai-content/</loc>
+  <lastmod>2026-05-07</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://vivamediacreative.com/learn/influencer-marketing-saudi/</loc>
+  <lastmod>2026-05-08</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
 <url>
 <loc>https://vivamediacreative.com/news_en/</loc>
 <lastmod>2026-01-25</lastmod>
