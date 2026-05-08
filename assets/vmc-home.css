@@ -1573,3 +1573,12 @@ letter-spacing:.2px;
   border-radius:10px 10px 0 0;
   margin-bottom:12px;
 }
+.lang-switch{
+  direction: rtl;
+}
+
+.lang-switch .brand__mark{
+  background: #f5d07a;
+  color:#000;
+  font-weight:700;
+}
