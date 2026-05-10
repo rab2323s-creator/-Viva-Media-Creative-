@@ -35,7 +35,50 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/services/services.css" />
+ <style>
+/* FIX ONLY FOR COPYWRITING PAGE HERO IMAGE ON MOBILE */
+@media (max-width:640px){
 
+  .hero.hero--copywriting-fix .hero-visual{
+    display:flex !important;
+    flex-direction:column !important;
+    min-height:auto !important;
+    height:auto !important;
+    aspect-ratio:auto !important;
+    overflow:visible !important;
+  }
+
+  .hero.hero--copywriting-fix .hero-visual img{
+    position:relative !important;
+    inset:auto !important;
+    width:100% !important;
+    height:420px !important;
+    object-fit:contain !important;
+    object-position:center top !important;
+    background:#0b0c0e !important;
+    padding:12px !important;
+  }
+
+  .hero.hero--copywriting-fix .hero-visual::after{
+    display:none !important;
+  }
+
+  .hero.hero--copywriting-fix .hero-card{
+    position:relative !important;
+    left:auto !important;
+    right:auto !important;
+    bottom:auto !important;
+    margin:0 !important;
+    border-radius:0 0 24px 24px !important;
+    background:rgba(10,11,14,.92) !important;
+    backdrop-filter:none !important;
+  }
+
+  .hero.hero--copywriting-fix .hero-card__meta{
+    grid-template-columns:1fr !important;
+  }
+}
+</style>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -143,7 +186,7 @@
   <div class="noise" aria-hidden="true"></div>
 
   <div class="site">
-    <header class="nav">
+   <header class="hero hero--copywriting-fix">
       <div class="nav__inner">
         <a class="brand" href="/">
           <img class="brand__logo" src="/assets/logo.jpeg" alt="Viva Media Creative" />
