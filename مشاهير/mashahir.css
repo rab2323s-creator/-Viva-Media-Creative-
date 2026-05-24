@@ -875,3 +875,141 @@ button,input{font:inherit}
 .article-cinematic-image:hover img{
   transform:scale(1.02);
 }
+
+/* =========================
+   ARTICLE IMAGES PREMIUM UI
+========================= */
+
+.article-figure{
+  position: relative;
+  margin: 42px 0;
+  overflow: hidden;
+  border-radius: 26px;
+  background: #0f0f12;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow:
+    0 10px 35px rgba(0,0,0,.18),
+    0 2px 10px rgba(0,0,0,.08);
+  transition:
+    transform .45s ease,
+    box-shadow .45s ease;
+}
+
+/* hover effect desktop */
+.article-figure:hover{
+  transform: translateY(-4px);
+  box-shadow:
+    0 18px 50px rgba(0,0,0,.28),
+    0 4px 20px rgba(0,0,0,.12);
+}
+
+.article-figure img{
+  width: 100%;
+  display: block;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  transition:
+    transform 1.2s ease,
+    filter .5s ease;
+}
+
+/* cinematic zoom */
+.article-figure:hover img{
+  transform: scale(1.03);
+}
+
+/* subtle overlay */
+.article-figure::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.22),
+      rgba(0,0,0,0) 45%
+    );
+  pointer-events:none;
+}
+
+/* caption */
+.article-figure figcaption{
+  padding: 18px 22px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #d8d8d8;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(20,20,24,.96),
+      rgba(12,12,14,1)
+    );
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px){
+
+  .article-figure{
+    margin: 34px 0;
+    border-radius: 22px;
+  }
+
+  .article-figure figcaption{
+    font-size: 14px;
+    padding: 16px 18px;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px){
+
+  .article-figure{
+    margin: 28px 0;
+    border-radius: 18px;
+  }
+
+  .article-figure img{
+    aspect-ratio: 16/10;
+  }
+
+  .article-figure figcaption{
+    font-size: 13px;
+    line-height: 1.8;
+    padding: 14px 16px;
+  }
+
+  /* disable heavy hover on mobile */
+  .article-figure:hover{
+    transform: none;
+  }
+
+  .article-figure:hover img{
+    transform: none;
+  }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px){
+
+  .article-figure{
+    border-radius: 16px;
+  }
+
+  .article-figure figcaption{
+    font-size: 12.5px;
+    padding: 12px 14px;
+  }
+
+}
