@@ -1582,3 +1582,59 @@ letter-spacing:.2px;
   color:#000;
   font-weight:700;
 }
+
+.home-nav-item{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+
+.home-nav-dropdown{
+  position:absolute;
+  top:38px;
+  right:50%;
+  transform:translateX(50%) translateY(10px);
+  min-width:250px;
+  padding:8px;
+  border-radius:18px;
+  background:rgba(6,7,10,.96);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 24px 70px rgba(0,0,0,.45);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:.2s ease;
+  z-index:100;
+}
+
+.home-nav-item:hover .home-nav-dropdown,
+.home-nav-item:focus-within .home-nav-dropdown{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translateX(50%) translateY(0);
+}
+
+.home-nav-dropdown a{
+  display:block;
+  padding:11px 14px;
+  border-radius:12px;
+  color:rgba(238,241,246,.76);
+  font-size:13px;
+  white-space:nowrap;
+}
+
+.home-nav-dropdown a:hover{
+  background:rgba(245,208,122,.12);
+  color:#f5d07a;
+}
+
+@media (max-width:640px){
+  .home-nav-item{
+    width:auto;
+  }
+
+  .home-nav-dropdown{
+    display:none;
+  }
+}
