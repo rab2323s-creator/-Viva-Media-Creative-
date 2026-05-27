@@ -1123,18 +1123,23 @@ button,input{font:inherit}
 
 .brand,
 .drawer-brand{
-  background:#050505;
-  padding:0 14px;
+  background:transparent !important;
+  padding:0 14px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
 }
 
 .brand img{
-  height:34px;
-  width:auto;
-  object-fit:contain;
+  height:38px !important;
+  width:auto !important;
+  object-fit:contain !important;
+  display:block !important;
 }
 
 .drawer-brand img{
-  height:28px;
-  width:auto;
-  object-fit:contain;
+  height:32px !important;
+  width:auto !important;
+  object-fit:contain !important;
+  display:block !important;
 }
