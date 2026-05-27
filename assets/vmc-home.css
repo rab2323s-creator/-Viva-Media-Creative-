@@ -1638,3 +1638,36 @@ letter-spacing:.2px;
     display:none;
   }
 }
+
+@media (max-width:640px){
+
+  .home-nav-item{
+    position:relative;
+  }
+
+  .home-nav-item > a{
+    cursor:pointer;
+  }
+
+  .home-nav-dropdown{
+    position:absolute;
+    top:42px;
+    right:50%;
+    transform:translateX(50%);
+    min-width:240px;
+
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+
+    transition:.2s ease;
+    z-index:9999;
+  }
+
+  .home-nav-item.is-open .home-nav-dropdown{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+  }
+
+}
