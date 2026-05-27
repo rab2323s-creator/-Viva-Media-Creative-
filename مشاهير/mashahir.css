@@ -1120,3 +1120,21 @@ button,input{font:inherit}
     padding: 14px 16px;
   }
 }
+
+.brand,
+.drawer-brand{
+  background:#050505;
+  padding:0 14px;
+}
+
+.brand img{
+  height:34px;
+  width:auto;
+  object-fit:contain;
+}
+
+.drawer-brand img{
+  height:28px;
+  width:auto;
+  object-fit:contain;
+}
