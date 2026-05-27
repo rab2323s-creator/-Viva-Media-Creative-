@@ -1633,10 +1633,6 @@ letter-spacing:.2px;
   .home-nav-item{
     width:auto;
   }
-
-  .home-nav-dropdown{
-    display:none;
-  }
 }
 
 @media (max-width:640px){
