@@ -289,4 +289,45 @@ window.addEventListener("resize", () => {
 });
 
 
+/* MOBILE NAV DROPDOWN */
+if (window.innerWidth <= 640) {
+
+  document.querySelectorAll(".home-nav-item > a").forEach((link) => {
+
+    link.addEventListener("click", function (e) {
+
+      const parent = link.parentElement;
+
+      if (!parent.classList.contains("home-nav-item")) return;
+
+      e.preventDefault();
+
+      document.querySelectorAll(".home-nav-item").forEach((item) => {
+
+        if (item !== parent) {
+          item.classList.remove("is-open");
+        }
+
+      });
+
+      parent.classList.toggle("is-open");
+
+    });
+
+  });
+
+  document.addEventListener("click", function (e) {
+
+    if (!e.target.closest(".home-nav-item")) {
+
+      document.querySelectorAll(".home-nav-item").forEach((item) => {
+        item.classList.remove("is-open");
+      });
+
+    }
+
+  });
+
+}
+
 
