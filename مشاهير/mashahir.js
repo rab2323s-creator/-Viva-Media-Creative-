@@ -23,3 +23,20 @@
     if(e.key === 'Escape') closeMenu();
   });
 })();
+document.querySelectorAll('.drawer-toggle').forEach(function(btn){
+
+  btn.addEventListener('click', function(){
+
+    const submenu = btn.nextElementSibling;
+
+    if(!submenu || !submenu.classList.contains('drawer-submenu')){
+      return;
+    }
+
+    btn.classList.toggle('is-open');
+
+    submenu.classList.toggle('is-open');
+
+  });
+
+});
