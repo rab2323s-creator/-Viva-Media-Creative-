@@ -1645,10 +1645,13 @@ letter-spacing:.2px;
     cursor:pointer;
   }
 
-  .home-nav-dropdown{
+.home-nav-dropdown{
     position:absolute;
     top:42px;
-    right:0;
+
+    left:0;
+    right:auto;
+
     transform:none;
 
     min-width:220px;
