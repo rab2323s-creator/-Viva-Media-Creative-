@@ -1645,24 +1645,18 @@ letter-spacing:.2px;
     cursor:pointer;
   }
 
-.home-nav-dropdown{
-    position:absolute;
-    top:42px;
+.home-nav-dropdown a{
+  display:block;
+  padding:11px 14px;
+  border-radius:12px;
 
-    left:0;
-    right:auto;
+  text-align:left;
+  justify-content:flex-start;
 
-    transform:none;
-
-    min-width:220px;
-    max-width:90vw;
-
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-
-    transition:.2s ease;
-    z-index:9999;
+  color:rgba(238,241,246,.78);
+  font-size:13px;
+  line-height:1.5;
+  white-space:nowrap;
 }
   .home-nav-item.is-open .home-nav-dropdown{
     opacity:1;
