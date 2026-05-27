@@ -1648,9 +1648,11 @@ letter-spacing:.2px;
   .home-nav-dropdown{
     position:absolute;
     top:42px;
-    right:50%;
-    transform:translateX(50%);
-    min-width:240px;
+    right:0;
+    transform:none;
+
+    min-width:220px;
+    max-width:90vw;
 
     opacity:0;
     visibility:hidden;
@@ -1658,8 +1660,7 @@ letter-spacing:.2px;
 
     transition:.2s ease;
     z-index:9999;
-  }
-
+}
   .home-nav-item.is-open .home-nav-dropdown{
     opacity:1;
     visibility:visible;
