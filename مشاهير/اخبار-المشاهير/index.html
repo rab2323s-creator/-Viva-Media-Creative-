@@ -1,38 +1,63 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>أخبار المشاهير والمؤثرين | Viva Media Creative</title>
+
+  <title>أخبار المشاهير والمؤثرين العرب | Viva Media Creative</title>
   <meta name="description" content="أخبار المشاهير والمؤثرين من Viva Media Creative: آخر القصص، التصريحات، العلاقات، المشاريع، القضايا، والإنجازات في عالم السوشيال ميديا وصناعة المحتوى." />
+  <meta name="keywords" content="أخبار المشاهير, أخبار المؤثرين, مشاهير العرب, صناع المحتوى, أخبار السوشيال ميديا" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#050505" />
+
   <link rel="canonical" href="https://vivamediacreative.com/مشاهير/اخبار-المشاهير/" />
+  <link rel="icon" type="image/png" href="/favicon.png?v=2" />
+
+  <link rel="preload" as="image" href="/assets/influencer-marketing.jpg" />
+  <link rel="preload" as="image" href="/assets/logo.jpeg" />
+
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ar_AR" />
-  <meta property="og:title" content="أخبار المشاهير والمؤثرين | Viva Media Creative" />
+  <meta property="og:title" content="أخبار المشاهير والمؤثرين العرب | Viva Media Creative" />
   <meta property="og:description" content="تابع آخر أخبار المشاهير والمؤثرين وصناع المحتوى: علاقات، تصريحات، مشاريع، قضايا، وإنجازات." />
   <meta property="og:url" content="https://vivamediacreative.com/مشاهير/اخبار-المشاهير/" />
   <meta property="og:site_name" content="Viva Media Creative" />
   <meta property="og:image" content="https://vivamediacreative.com/assets/influencer-marketing.jpg" />
+
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" type="image/png" href="/favicon.png?v=2" />
+  <meta name="twitter:title" content="أخبار المشاهير والمؤثرين العرب | Viva Media Creative" />
+  <meta name="twitter:description" content="تابع آخر أخبار المشاهير والمؤثرين وصناع المحتوى من Viva Media Creative." />
+  <meta name="twitter:image" content="https://vivamediacreative.com/assets/influencer-marketing.jpg" />
 
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"CollectionPage",
-    "name":"أخبار المشاهير والمؤثرين",
-    "url":"https://vivamediacreative.com/مشاهير/اخبار-المشاهير/",
-    "inLanguage":"ar",
-    "description":"مركز إخباري لمتابعة أخبار المشاهير والمؤثرين وصناع المحتوى.",
-    "isPartOf":{"@type":"WebSite","name":"Viva Media Creative","url":"https://vivamediacreative.com/"},
-    "publisher":{"@type":"Organization","name":"Viva Media Creative","url":"https://vivamediacreative.com/"}
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "أخبار المشاهير والمؤثرين العرب",
+    "url": "https://vivamediacreative.com/مشاهير/اخبار-المشاهير/",
+    "inLanguage": "ar",
+    "description": "مركز إخباري لمتابعة أخبار المشاهير والمؤثرين وصناع المحتوى.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Viva Media Creative",
+      "url": "https://vivamediacreative.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Viva Media Creative",
+      "url": "https://vivamediacreative.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://vivamediacreative.com/assets/logo.jpeg"
+      }
+    }
   }
   </script>
 
   <style>
     :root{
       --gold:#b9974f;
+      --gold-light:#f2db9a;
       --gold-dark:#806735;
       --black:#050505;
       --paper:#fff;
@@ -42,64 +67,666 @@
       --soft:#f6f3ec;
       --line:#e3e3e3;
       --shadow:0 18px 50px rgba(0,0,0,.10);
-      --radius:0;
+      --shadow-strong:0 30px 80px rgba(0,0,0,.18);
+      --container:1130px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:var(--body);color:var(--text);font-family:"Cairo","Tajawal","Noto Kufi Arabic",Arial,sans-serif;direction:rtl;text-align:right}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(185,151,79,.13), transparent 28%),
+        linear-gradient(180deg,#f2f2f2,#e9e9e9);
+      color:var(--text);
+      font-family:"Cairo","Tajawal","Noto Kufi Arabic",Arial,sans-serif;
+      direction:rtl;
+      text-align:right;
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+    }
+
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
     button,input{font:inherit}
+    :focus-visible{outline:3px solid rgba(185,151,79,.7);outline-offset:3px}
 
-    .topbar{height:47px;background:#050505;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 88px;position:sticky;top:0;z-index:1000}
-    .brand{background:var(--gold);height:47px;min-width:106px;padding:0 18px;display:flex;align-items:center;justify-content:center;order:-1}
-    .brand img{height:38px;width:auto;object-fit:contain}
-    .desktop-nav{display:flex;align-items:center;gap:34px;font-size:16px;font-weight:800;margin-inline-start:auto;margin-inline-end:22px;height:100%}
-    .desktop-nav a{height:100%;display:flex;align-items:center;border-bottom:3px solid transparent;transition:.2s ease}
-    .desktop-nav a:hover,.desktop-nav a.active{border-bottom-color:var(--gold);color:#fff}
-    .nav-item{position:relative;height:100%;display:flex;align-items:center}
-    .nav-dropdown{position:absolute;top:100%;right:0;min-width:220px;background:#111;color:#fff;border-top:2px solid var(--gold);box-shadow:0 18px 35px rgba(0,0,0,.22);padding:10px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:.18s ease;z-index:50}
-    .nav-item:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
-    .nav-dropdown a{height:auto;padding:11px 16px;border:0;font-size:14px;white-space:nowrap;display:block}
-    .nav-dropdown a:hover{background:#1c1c1c;color:var(--gold)}
-    .mobile-menu-btn{display:none;background:transparent;border:0;width:44px;height:44px;gap:5px;flex-direction:column;justify-content:center;align-items:center;cursor:pointer}
-    .mobile-menu-btn span{width:24px;height:2px;background:#fff;display:block}
+    .skip-link{
+      position:absolute;
+      top:-60px;
+      right:14px;
+      z-index:2000;
+      background:var(--gold);
+      color:#111;
+      padding:10px 14px;
+      font-weight:900;
+      transition:.2s ease;
+    }
+    .skip-link:focus{top:14px}
 
-    .mobile-drawer{position:fixed;inset:0 auto 0 0;width:min(86vw,360px);background:#222;color:#fff;z-index:1200;transform:translateX(-105%);transition:.25s ease;padding:16px;overflow:auto}
+    .topbar{
+      height:58px;
+      background:rgba(5,5,5,.96);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 clamp(16px,5vw,88px);
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 10px 25px rgba(0,0,0,.16);
+      backdrop-filter:saturate(160%) blur(12px);
+    }
+
+    .brand{
+      background:linear-gradient(135deg,var(--gold),#d7bd73);
+      height:58px;
+      min-width:112px;
+      padding:0 18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      order:-1;
+    }
+
+    .brand img{
+      height:42px;
+      width:auto;
+      object-fit:contain;
+    }
+
+    .desktop-nav{
+      display:flex;
+      align-items:center;
+      gap:clamp(18px,2.6vw,34px);
+      font-size:15px;
+      font-weight:900;
+      margin-inline-start:auto;
+      margin-inline-end:22px;
+      height:100%;
+    }
+
+    .desktop-nav a{
+      height:100%;
+      display:flex;
+      align-items:center;
+      border-bottom:3px solid transparent;
+      transition:.2s ease;
+      opacity:.94;
+    }
+
+    .desktop-nav a:hover,
+    .desktop-nav a.active{
+      border-bottom-color:var(--gold);
+      color:#fff;
+      opacity:1;
+    }
+
+    .nav-item{
+      position:relative;
+      height:100%;
+      display:flex;
+      align-items:center;
+    }
+
+    .nav-dropdown{
+      position:absolute;
+      top:100%;
+      right:0;
+      min-width:230px;
+      background:#111;
+      color:#fff;
+      border-top:2px solid var(--gold);
+      box-shadow:0 18px 35px rgba(0,0,0,.25);
+      padding:10px 0;
+      opacity:0;
+      visibility:hidden;
+      transform:translateY(8px);
+      transition:.18s ease;
+      z-index:50;
+    }
+
+    .nav-item:hover .nav-dropdown,
+    .nav-item:focus-within .nav-dropdown{
+      opacity:1;
+      visibility:visible;
+      transform:translateY(0);
+    }
+
+    .nav-dropdown a{
+      height:auto;
+      padding:11px 16px;
+      border:0;
+      font-size:14px;
+      white-space:nowrap;
+      display:block;
+    }
+
+    .nav-dropdown a:hover{
+      background:#1c1c1c;
+      color:var(--gold-light);
+    }
+
+    .mobile-menu-btn{
+      display:none;
+      background:transparent;
+      border:0;
+      width:44px;
+      height:44px;
+      gap:5px;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      cursor:pointer;
+    }
+
+    .mobile-menu-btn span{
+      width:24px;
+      height:2px;
+      background:#fff;
+      display:block;
+    }
+
+    .mobile-drawer{
+      position:fixed;
+      inset:0 auto 0 0;
+      width:min(86vw,370px);
+      background:#222;
+      color:#fff;
+      z-index:1200;
+      transform:translateX(-105%);
+      transition:.25s ease;
+      padding:16px;
+      overflow:auto;
+      box-shadow:25px 0 50px rgba(0,0,0,.35);
+    }
+
     body.drawer-open .mobile-drawer{transform:translateX(0)}
-    .drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.48);z-index:1100;opacity:0;visibility:hidden;transition:.2s ease}
-    body.drawer-open .drawer-backdrop{opacity:1;visibility:visible}
-    .drawer-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.drawer-brand img{height:42px}.drawer-close{background:none;border:0;color:#fff;font-size:34px;cursor:pointer}.drawer-search{display:flex;background:#2b2b2b;border:1px solid #383838;margin-bottom:18px}.drawer-search input{flex:1;background:transparent;border:0;color:#fff;padding:12px}.drawer-search button{width:48px;border:0;background:var(--gold);color:#111;font-weight:900}.drawer-nav{display:flex;flex-direction:column;gap:0}.drawer-nav a,.drawer-toggle{display:block;width:100%;text-align:right;color:#fff;background:transparent;border:0;border-bottom:1px solid #383838;padding:13px 4px;font-weight:800;cursor:pointer}.drawer-submenu{display:none;background:#2b2b2b;padding:4px 12px}.drawer-submenu.is-open{display:block}.drawer-submenu a{font-size:14px;color:#ddd}.drawer-follow{margin-top:24px;color:#aaa;font-size:13px}
+    body.drawer-open{overflow:hidden}
 
-    .page-shell{max-width:1130px;margin:14px auto 60px;background:var(--paper);min-height:calc(100vh - 90px);box-shadow:0 0 0 1px rgba(0,0,0,.06);padding:20px}
+    .drawer-backdrop{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.52);
+      z-index:1100;
+      opacity:0;
+      visibility:hidden;
+      transition:.2s ease;
+    }
 
-    .hero{position:relative;isolation:isolate;overflow:hidden;background:#070707;color:#fff;min-height:430px;display:grid;grid-template-columns:1.08fr .92fr;gap:30px;align-items:end;padding:42px;margin-bottom:28px}
-    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.45),rgba(0,0,0,.84)),url('/assets/influencer-marketing.jpg') center/cover no-repeat;z-index:-2;filter:saturate(1.05)}
-    .hero::after{content:"";position:absolute;inset:auto -70px -110px auto;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(185,151,79,.42),transparent 62%);z-index:-1}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(185,151,79,.18);border:1px solid rgba(185,151,79,.45);color:#f7dfad;padding:8px 13px;font-size:13px;font-weight:900;margin-bottom:18px}.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
-    .hero h1{margin:0 0 18px;font-size:46px;line-height:1.25;font-weight:1000;letter-spacing:-.7px;max-width:720px}.hero p{margin:0;color:#ececec;font-size:17px;line-height:2;max-width:650px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;font-weight:900;border:1px solid transparent}.btn-primary{background:var(--gold);color:#111}.btn-secondary{border-color:rgba(255,255,255,.28);color:#fff;background:rgba(255,255,255,.06)}
-    .hero-panel{align-self:stretch;display:grid;align-content:end;gap:14px}.stat-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(12px);padding:19px}.stat-card strong{display:block;color:#fff;font-size:22px;margin-bottom:8px}.stat-card span{color:#d9d9d9;font-size:14px;line-height:1.8}
+    body.drawer-open .drawer-backdrop{
+      opacity:1;
+      visibility:visible;
+    }
 
-    .section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:28px 0 18px;border-bottom:2px solid #e5e5e5;padding-bottom:14px;position:relative}.section-head::after{content:"";position:absolute;bottom:-2px;right:0;width:34px;height:2px;background:var(--gold)}.section-head h2{margin:0;font-size:22px;color:#333}.section-head p{margin:0;color:#777;font-size:14px;line-height:1.8;max-width:620px}
+    .drawer-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:18px;
+    }
 
-    .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.news-card{border:1px solid var(--line);background:#fff;transition:.2s ease;overflow:hidden}.news-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#d5c49e}.news-card a{display:block;height:100%}.news-media{position:relative;margin:0;aspect-ratio:16/10;background:#111;overflow:hidden}.news-media img{width:100%;height:100%;object-fit:cover;transition:.35s ease}.news-card:hover img{transform:scale(1.06)}.badge{position:absolute;top:12px;right:12px;background:var(--gold);color:#111;font-weight:1000;font-size:12px;padding:6px 10px}.news-body{padding:18px}.news-body h3{margin:0 0 12px;font-size:18px;line-height:1.55;color:#222}.news-body p{margin:0 0 14px;color:#5c5c5c;font-size:14px;line-height:1.9}.meta{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#888;font-size:12px;border-top:1px solid #eee;padding-top:13px}.read-more{color:var(--gold-dark);font-weight:900}
+    .drawer-brand img{height:42px}
 
-    .empty-board{border:1px dashed #d9c99f;background:linear-gradient(180deg,#fff,#fbf8ef);padding:34px;text-align:center;margin-bottom:22px}.empty-board h3{margin:0 0 10px;font-size:22px;color:#2e2e2e}.empty-board p{margin:0 auto;color:#666;line-height:1.9;max-width:700px}.code-hint{direction:ltr;text-align:left;background:#111;color:#f1f1f1;padding:16px;margin:22px auto 0;max-width:760px;overflow:auto;font-size:13px;line-height:1.7;border-right:4px solid var(--gold)}
+    .drawer-close{
+      background:none;
+      border:0;
+      color:#fff;
+      font-size:34px;
+      line-height:1;
+      cursor:pointer;
+    }
 
-    .topic-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:18px 0 30px}.topic{background:#111;color:#fff;padding:16px 12px;text-align:center;font-weight:900;border:1px solid #222;transition:.18s ease}.topic:hover{background:var(--gold);color:#111;transform:translateY(-2px)}
-    .editorial{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.editorial-card{background:var(--soft);border:1px solid #eadfca;padding:24px}.editorial-card h3{margin:0 0 10px;font-size:19px}.editorial-card p{margin:0;color:#666;line-height:1.9;font-size:14px}
+    .drawer-search{
+      display:flex;
+      background:#2b2b2b;
+      border:1px solid #383838;
+      margin-bottom:18px;
+    }
 
-    .footer-note{margin-top:34px;padding:22px;background:#111;color:#ddd;display:flex;align-items:center;justify-content:space-between;gap:18px}.footer-note strong{color:#fff}.footer-note a{color:#f0d58f;font-weight:900}
+    .drawer-search input{
+      flex:1;
+      background:transparent;
+      border:0;
+      color:#fff;
+      padding:12px;
+      min-width:0;
+    }
 
-    @media(max-width:980px){.topbar{padding:0 18px}.desktop-nav{display:none}.mobile-menu-btn{display:flex}.page-shell{margin:0 auto;padding:14px}.hero{grid-template-columns:1fr;min-height:auto;padding:32px 22px}.hero h1{font-size:34px}.news-grid{grid-template-columns:repeat(2,1fr)}.topic-strip{grid-template-columns:repeat(3,1fr)}}
-    @media(max-width:640px){.hero h1{font-size:28px}.hero p{font-size:15px}.news-grid{grid-template-columns:1fr}.topic-strip{grid-template-columns:repeat(2,1fr)}.editorial{grid-template-columns:1fr}.section-head{display:block}.footer-note{display:block}.footer-note a{display:inline-block;margin-top:12px}.empty-board{padding:24px 16px}}
+    .drawer-search button{
+      width:48px;
+      border:0;
+      background:var(--gold);
+      color:#111;
+      font-weight:900;
+      cursor:pointer;
+    }
+
+    .drawer-nav{
+      display:flex;
+      flex-direction:column;
+      gap:0;
+    }
+
+    .drawer-nav a,
+    .drawer-toggle{
+      display:block;
+      width:100%;
+      text-align:right;
+      color:#fff;
+      background:transparent;
+      border:0;
+      border-bottom:1px solid #383838;
+      padding:13px 4px;
+      font-weight:900;
+      cursor:pointer;
+    }
+
+    .drawer-submenu{
+      display:none;
+      background:#2b2b2b;
+      padding:4px 12px;
+    }
+
+    .drawer-submenu.is-open{display:block}
+    .drawer-submenu a{font-size:14px;color:#ddd}
+    .drawer-follow{margin-top:24px;color:#aaa;font-size:13px}
+
+    .page-shell{
+      max-width:var(--container);
+      margin:14px auto 60px;
+      background:var(--paper);
+      min-height:calc(100vh - 90px);
+      box-shadow:0 0 0 1px rgba(0,0,0,.06), var(--shadow);
+      padding:20px;
+    }
+
+    .hero{
+      position:relative;
+      isolation:isolate;
+      overflow:hidden;
+      background:#070707;
+      color:#fff;
+      min-height:500px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:30px;
+      align-items:end;
+      padding:clamp(28px,5vw,54px);
+      margin-bottom:28px;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg,rgba(0,0,0,.35),rgba(0,0,0,.88)),
+        url('/assets/influencer-marketing.jpg') center/cover no-repeat;
+      z-index:-2;
+      filter:saturate(1.08) contrast(1.04);
+      transform:scale(1.01);
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:auto -90px -130px auto;
+      width:470px;
+      height:470px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(185,151,79,.46),transparent 64%);
+      z-index:-1;
+    }
+
+    .hero-content{
+      max-width:760px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      background:rgba(185,151,79,.18);
+      border:1px solid rgba(185,151,79,.45);
+      color:#f7dfad;
+      padding:8px 13px;
+      font-size:13px;
+      font-weight:1000;
+      margin-bottom:18px;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--gold);
+      box-shadow:0 0 0 5px rgba(185,151,79,.15);
+    }
+
+    .hero h1{
+      margin:0 0 18px;
+      font-size:clamp(32px,5vw,58px);
+      line-height:1.18;
+      font-weight:1000;
+      letter-spacing:-.9px;
+      max-width:760px;
+    }
+
+    .hero p{
+      margin:0;
+      color:#ececec;
+      font-size:17px;
+      line-height:2;
+      max-width:670px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:28px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 22px;
+      font-weight:1000;
+      border:1px solid transparent;
+      transition:.18s ease;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--gold),#dfc578);
+      color:#111;
+      box-shadow:0 12px 24px rgba(185,151,79,.24);
+    }
+
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-secondary{
+      border-color:rgba(255,255,255,.28);
+      color:#fff;
+      background:rgba(255,255,255,.06);
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,.12);
+      border-color:rgba(255,255,255,.42);
+    }
+
+    .hero-panel{
+      align-self:stretch;
+      display:grid;
+      align-content:end;
+      gap:14px;
+    }
+
+    .stat-card{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.16);
+      backdrop-filter:blur(12px);
+      padding:19px;
+    }
+
+    .stat-card strong{
+      display:block;
+      color:#fff;
+      font-size:21px;
+      margin-bottom:8px;
+    }
+
+    .stat-card span{
+      color:#d9d9d9;
+      font-size:14px;
+      line-height:1.8;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:18px;
+      margin:28px 0 18px;
+      border-bottom:2px solid #e5e5e5;
+      padding-bottom:14px;
+      position:relative;
+    }
+
+    .section-head::after{
+      content:"";
+      position:absolute;
+      bottom:-2px;
+      right:0;
+      width:42px;
+      height:2px;
+      background:var(--gold);
+    }
+
+    .section-head h2{
+      margin:0;
+      font-size:23px;
+      color:#333;
+    }
+
+    .section-head p{
+      margin:0;
+      color:#777;
+      font-size:14px;
+      line-height:1.8;
+      max-width:620px;
+    }
+
+    .news-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .news-card{
+      border:1px solid var(--line);
+      background:#fff;
+      transition:.2s ease;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .news-card:hover{
+      transform:translateY(-5px);
+      box-shadow:var(--shadow-strong);
+      border-color:#d5c49e;
+    }
+
+    .news-card a{
+      display:block;
+      height:100%;
+    }
+
+    .news-media{
+      position:relative;
+      margin:0;
+      aspect-ratio:16/10;
+      background:#111;
+      overflow:hidden;
+    }
+
+    .news-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:.35s ease;
+    }
+
+    .news-card:hover img{transform:scale(1.06)}
+
+    .badge{
+      position:absolute;
+      top:12px;
+      right:12px;
+      background:linear-gradient(135deg,var(--gold),#e4ca7d);
+      color:#111;
+      font-weight:1000;
+      font-size:12px;
+      padding:6px 10px;
+    }
+
+    .news-body{padding:18px}
+
+    .news-body h3{
+      margin:0 0 12px;
+      font-size:18px;
+      line-height:1.55;
+      color:#222;
+    }
+
+    .news-body p{
+      margin:0 0 14px;
+      color:#5c5c5c;
+      font-size:14px;
+      line-height:1.9;
+    }
+
+    .meta{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      color:#888;
+      font-size:12px;
+      border-top:1px solid #eee;
+      padding-top:13px;
+    }
+
+    .read-more{
+      color:var(--gold-dark);
+      font-weight:1000;
+      white-space:nowrap;
+    }
+
+    .empty-board{
+      display:none;
+    }
+
+    .topic-strip{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:12px;
+      margin:18px 0 30px;
+    }
+
+    .topic{
+      background:#111;
+      color:#fff;
+      padding:16px 12px;
+      text-align:center;
+      font-weight:1000;
+      border:1px solid #222;
+      transition:.18s ease;
+    }
+
+    .topic:hover{
+      background:var(--gold);
+      color:#111;
+      transform:translateY(-2px);
+    }
+
+    .editorial{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:18px;
+    }
+
+    .editorial-card{
+      background:var(--soft);
+      border:1px solid #eadfca;
+      padding:24px;
+    }
+
+    .editorial-card h3{
+      margin:0 0 10px;
+      font-size:19px;
+    }
+
+    .editorial-card p{
+      margin:0;
+      color:#666;
+      line-height:1.9;
+      font-size:14px;
+    }
+
+    .footer-note{
+      margin-top:34px;
+      padding:22px;
+      background:#111;
+      color:#ddd;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .footer-note strong{color:#fff}
+    .footer-note a{
+      color:#f0d58f;
+      font-weight:1000;
+    }
+
+    @media(max-width:980px){
+      .topbar{padding:0 18px}
+      .desktop-nav{display:none}
+      .mobile-menu-btn{display:flex}
+      .page-shell{margin:0 auto;padding:14px}
+      .hero{
+        grid-template-columns:1fr;
+        min-height:auto;
+        padding:32px 22px;
+      }
+      .hero-panel{align-content:start}
+      .news-grid{grid-template-columns:repeat(2,1fr)}
+      .topic-strip{grid-template-columns:repeat(3,1fr)}
+    }
+
+    @media(max-width:640px){
+      .brand{min-width:96px}
+      .brand img{height:38px}
+      .hero h1{font-size:30px}
+      .hero p{font-size:15px}
+      .hero-actions .btn{width:100%}
+      .news-grid{grid-template-columns:1fr}
+      .topic-strip{grid-template-columns:repeat(2,1fr)}
+      .editorial{grid-template-columns:1fr}
+      .section-head{display:block}
+      .section-head p{margin-top:8px}
+      .footer-note{display:block}
+      .footer-note a{display:inline-block;margin-top:12px}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,
+      *::before,
+      *::after{
+        animation-duration:.001ms!important;
+        animation-iteration-count:1!important;
+        transition-duration:.001ms!important;
+      }
+    }
   </style>
 </head>
+
 <body>
+  <a class="skip-link" href="#main-content">تجاوز إلى المحتوى</a>
+
   <header class="topbar" aria-label="رأس الصفحة">
     <nav class="desktop-nav" aria-label="القائمة الرئيسية">
       <a href="/">الرئيسية</a>
       <a href="/learn/">المقالات</a>
+
       <div class="nav-item nav-item--has-menu">
         <a href="/services/">خدماتنا</a>
         <div class="nav-dropdown" aria-label="أقسام الخدمات">
@@ -110,8 +737,9 @@
           <a href="/services/seo-growth/">SEO & Growth</a>
         </div>
       </div>
+
       <div class="nav-item nav-item--has-menu">
-        <a href="/مشاهير/" class="active">مشاهير</a>
+        <a href="/مشاهير/" class="active" aria-current="page">مشاهير</a>
         <div class="nav-dropdown" aria-label="أقسام مشاهير">
           <a href="/مشاهير/اخبار-المشاهير/">أخبار المشاهير</a>
           <a href="/مشاهير/الترند/">الترند</a>
@@ -123,117 +751,236 @@
           <a href="/مشاهير/صاعدين/">صاعدين</a>
         </div>
       </div>
+
       <a href="/التسويق/">التسويق</a>
       <a href="/ar/tools/">أدوات</a>
       <a href="/contact/">تواصل معنا</a>
     </nav>
-    <a class="brand" href="/" aria-label="Viva Media Creative"><img src="/assets/logo.jpeg" alt="Viva Media Creative"></a>
-    <button class="mobile-menu-btn" type="button" aria-label="فتح القائمة" aria-expanded="false" data-menu-open><span></span><span></span><span></span></button>
+
+    <a class="brand" href="/" aria-label="Viva Media Creative">
+      <img src="/assets/logo.jpeg" alt="Viva Media Creative" width="112" height="42">
+    </a>
+
+    <button class="mobile-menu-btn" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobileDrawer" data-menu-open>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
-  <aside class="mobile-drawer" aria-hidden="true" data-drawer>
-    <div class="drawer-head"><a class="drawer-brand" href="/"><img src="/assets/logo.jpeg" alt="Viva Media Creative"></a><button class="drawer-close" type="button" aria-label="إغلاق القائمة" data-menu-close>×</button></div>
-    <form class="drawer-search" action="/search/" method="get"><input type="search" name="q" placeholder="إبدأ البحث" aria-label="بحث" /><button type="submit" aria-label="بحث">⌕</button></form>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true" data-drawer>
+    <div class="drawer-head">
+      <a class="drawer-brand" href="/" aria-label="Viva Media Creative">
+        <img src="/assets/logo.jpeg" alt="Viva Media Creative" width="112" height="42">
+      </a>
+      <button class="drawer-close" type="button" aria-label="إغلاق القائمة" data-menu-close>×</button>
+    </div>
+
+    <form class="drawer-search" action="/search/" method="get" role="search">
+      <input type="search" name="q" placeholder="إبدأ البحث" aria-label="بحث" />
+      <button type="submit" aria-label="بحث">⌕</button>
+    </form>
+
     <nav class="drawer-nav" aria-label="قائمة الموبايل">
-      <a href="/">الرئيسية</a><a href="/learn/">المقالات</a>
-      <button class="drawer-toggle" type="button">خدماتنا</button>
-      <div class="drawer-submenu"><a href="/services/">كل الخدمات</a><a href="/services/influencer-marketing/">التسويق عبر المؤثرين</a><a href="/services/personal-brand-management/">إدارة العلامة الشخصية</a><a href="/services/viral-strategy/">استراتيجية الانتشار</a><a href="/services/copywriting/">كتابة المحتوى</a><a href="/services/seo-growth/">SEO & Growth</a></div>
-      <button class="drawer-toggle" type="button">مشاهير</button>
-      <div class="drawer-submenu"><a href="/مشاهير/">كل مشاهير</a><a href="/مشاهير/اخبار-المشاهير/">أخبار المشاهير</a><a href="/مشاهير/الترند/">الترند</a><a href="/مشاهير/تيك-توك/">تيك توك</a><a href="/مشاهير/انستاغرام/">انستاغرام</a><a href="/مشاهير/يوتيوب/">يوتيوب</a><a href="/مشاهير/سناب-شات/">سناب شات</a><a href="/مشاهير/ارباح/">ارباح</a><a href="/مشاهير/صاعدين/">صاعدين</a></div>
-      <a href="/التسويق/">التسويق</a><a href="/ar/tools/">أدوات</a><a href="/contact/">تواصل معنا</a>
+      <a href="/">الرئيسية</a>
+      <a href="/learn/">المقالات</a>
+
+      <button class="drawer-toggle" type="button" aria-expanded="false">خدماتنا</button>
+      <div class="drawer-submenu">
+        <a href="/services/">كل الخدمات</a>
+        <a href="/services/influencer-marketing/">التسويق عبر المؤثرين</a>
+        <a href="/services/personal-brand-management/">إدارة العلامة الشخصية</a>
+        <a href="/services/viral-strategy/">استراتيجية الانتشار</a>
+        <a href="/services/copywriting/">كتابة المحتوى</a>
+        <a href="/services/seo-growth/">SEO & Growth</a>
+      </div>
+
+      <button class="drawer-toggle" type="button" aria-expanded="false">مشاهير</button>
+      <div class="drawer-submenu">
+        <a href="/مشاهير/">كل مشاهير</a>
+        <a href="/مشاهير/اخبار-المشاهير/">أخبار المشاهير</a>
+        <a href="/مشاهير/الترند/">الترند</a>
+        <a href="/مشاهير/تيك-توك/">تيك توك</a>
+        <a href="/مشاهير/انستاغرام/">انستاغرام</a>
+        <a href="/مشاهير/يوتيوب/">يوتيوب</a>
+        <a href="/مشاهير/سناب-شات/">سناب شات</a>
+        <a href="/مشاهير/ارباح/">ارباح</a>
+        <a href="/مشاهير/صاعدين/">صاعدين</a>
+      </div>
+
+      <a href="/التسويق/">التسويق</a>
+      <a href="/ar/tools/">أدوات</a>
+      <a href="/contact/">تواصل معنا</a>
     </nav>
-    <div class="drawer-follow">تابعونا عبر Viva Media Creative</div>
+
+    <div class="drawer-follow">Viva Media Creative</div>
   </aside>
+
   <div class="drawer-backdrop" data-backdrop></div>
 
-  <main class="page-shell">
+  <main class="page-shell" id="main-content">
     <section class="hero" aria-labelledby="page-title">
-      <div>
+      <div class="hero-content">
         <span class="eyebrow">مركز أخبار المشاهير</span>
-        <h1 id="page-title">أخبار المشاهير و المؤثرين</h1>
-        <p>صفحة واحدة تجمع أهم أخبار المشاهير والمؤثرين وصناع المحتوى: قصص جديدة، تصريحات، علاقات، مشاريع، قضايا، وإنجازات. المقالات تُضاف مباشرة كبطاقات داخل هذه الصفحة بدون مسارات فرعية طويلة.</p>
-        <div class="hero-actions"><a class="btn btn-primary" href="#latest-news">تصفح آخر الأخبار</a><a class="btn btn-secondary" href="/مشاهير/">العودة إلى مشاهير</a></div>
+
+        <h1 id="page-title">أخبار المشاهير والمؤثرين العرب</h1>
+
+        <p>تابع آخر أخبار المشاهير والمؤثرين وصناع المحتوى: قصص جديدة، تصريحات، علاقات، مشاريع، قضايا، وإنجازات من عالم السوشيال ميديا وصناعة المحتوى.</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#latest-news">تصفح آخر الأخبار</a>
+          <a class="btn btn-secondary" href="/مشاهير/">العودة إلى مشاهير</a>
+        </div>
       </div>
+
       <div class="hero-panel" aria-label="مميزات الصفحة">
-        <div class="stat-card"><strong>مسار قصير</strong><span>كل مقال جديد يكون مباشرة تحت /مشاهير/اخبار-المشاهير/اسم-المقال/</span></div>
-        <div class="stat-card"><strong>بدون تكرار أقسام</strong><span>الصفحة لا تنافس تيك توك أو يوتيوب أو الترند؛ هي مركز أخبار عام للمشاهير والمؤثرين.</span></div>
-        <div class="stat-card"><strong>جاهزة للتعبئة</strong><span>منطقة البطاقات تحت الهيرو فارغة ومنظمة لتضيف مقالاتك بسهولة.</span></div>
+        <div class="stat-card">
+          <strong>أخبار مباشرة</strong>
+          <span>متابعة لأبرز أخبار المشاهير والمؤثرين وصناع المحتوى في مكان واحد.</span>
+        </div>
+
+        <div class="stat-card">
+          <strong>تصنيفات واضحة</strong>
+          <span>أخبار، تصريحات، علاقات، مشاريع، قضايا، وإنجازات بطريقة منظمة وسهلة التصفح.</span>
+        </div>
+
+        <div class="stat-card">
+          <strong>تجربة قراءة سريعة</strong>
+          <span>بطاقات مختصرة تقود القارئ مباشرة إلى المقال الكامل.</span>
+        </div>
       </div>
     </section>
 
     <section id="latest-news" aria-labelledby="latest-title">
       <div class="section-head">
-        <div><h2 id="latest-title">آخر الأخبار</h2><p>أضف هنا بطاقات المقالات الجديدة. كل بطاقة تربط مباشرة بصفحة المقال داخل نفس المسار.</p></div>
+        <div>
+          <h2 id="latest-title">آخر الأخبار</h2>
+          <p>أحدث المقالات المنشورة عن المشاهير والمؤثرين وصناع المحتوى.</p>
+        </div>
       </div>
 
-      <div class="empty-board">
-        <h3>منطقة المقالات جاهزة</h3>
-        <p>اترك هذا التنبيه مؤقتًا، وعندما تضيف أول بطاقة يمكنك حذفه. تحت هذا الصندوق يوجد كود بطاقة جاهز داخل تعليق HTML.</p>
-      </div>
+      <div class="empty-board" id="emptyBoard" aria-hidden="true"></div>
 
       <div class="news-grid">
-        
-
         <article class="news-card">
-  <a href="/مشاهير/اخبار-المشاهير/فيلم-اسد-محمد-رمضان/" aria-label="فيلم أسد لمحمد رمضان">
-    <figure class="news-media">
-      <img src="/assets/film-asad-mohamed-ramadan.jpg"
-           alt="فيلم أسد لمحمد رمضان"
-           loading="lazy" />
-      <span class="badge">سينما</span>
-    </figure>
+          <a href="/مشاهير/اخبار-المشاهير/فيلم-اسد-محمد-رمضان/" aria-label="فيلم أسد لمحمد رمضان">
+            <figure class="news-media">
+              <img
+                src="/assets/film-asad-mohamed-ramadan.jpg"
+                alt="فيلم أسد لمحمد رمضان"
+                loading="lazy"
+                width="640"
+                height="400"
+              />
+              <span class="badge">سينما</span>
+            </figure>
 
-    <div class="news-body">
-      <h3>
-        فيلم أسد لمحمد رمضان.. القصة والأبطال والإيرادات وكيف أشعل الجدل قبل عرضه
-      </h3>
+            <div class="news-body">
+              <h3>فيلم أسد لمحمد رمضان.. القصة والأبطال والإيرادات وكيف أشعل الجدل قبل عرضه</h3>
 
-      <p>
-        من أزمة الجلباب الصعيدي إلى جولات الترويج العربية وأرقام الإيرادات،
-        كيف تحول فيلم أسد إلى واحدة من أكثر الحملات التسويقية إثارة للجدل
-        في السينما العربية؟
-      </p>
+              <p>من أزمة الجلباب الصعيدي إلى جولات الترويج العربية وأرقام الإيرادات، كيف تحول فيلم أسد إلى واحدة من أكثر الحملات التسويقية إثارة للجدل في السينما العربية؟</p>
 
-      <div class="meta">
-        <span>محمد رمضان</span>
-        <span class="read-more">اقرأ المقال</span>
-      </div>
-    </div>
-  </a>
-</article>
-        -->
+              <div class="meta">
+                <span>محمد رمضان</span>
+                <span class="read-more">اقرأ المقال</span>
+              </div>
+            </div>
+          </a>
+        </article>
       </div>
     </section>
 
     <section aria-labelledby="topics-title">
-      <div class="section-head"><div><h2 id="topics-title">أنواع الأخبار داخل الصفحة</h2><p>هذه ليست مسارات فرعية، فقط فلاتر/تصنيفات تحريرية تضعها كبادج داخل البطاقة.</p></div></div>
+      <div class="section-head">
+        <div>
+          <h2 id="topics-title">تصنيفات الأخبار</h2>
+          <p>تصنيفات تحريرية تساعد القارئ على فهم نوع الخبر بسرعة.</p>
+        </div>
+      </div>
+
       <div class="topic-strip" aria-label="تصنيفات الأخبار">
-        <span class="topic">آخر خبر</span><span class="topic">علاقات</span><span class="topic">تصريحات</span><span class="topic">مشاريع</span><span class="topic">قضايا</span><span class="topic">إنجازات</span>
+        <span class="topic">آخر خبر</span>
+        <span class="topic">علاقات</span>
+        <span class="topic">تصريحات</span>
+        <span class="topic">مشاريع</span>
+        <span class="topic">قضايا</span>
+        <span class="topic">إنجازات</span>
       </div>
     </section>
 
     <section aria-labelledby="editorial-title">
-      <div class="section-head"><div><h2 id="editorial-title">طريقة النشر المقترحة</h2><p>حتى الصفحة تجيب زيارات، خلي كل خبر بعنوان بحثي وواضح، لكن بدون تحويل الصفحة إلى ويكيبيديا.</p></div></div>
+      <div class="section-head">
+        <div>
+          <h2 id="editorial-title">اختيارات التحرير</h2>
+          <p>مساحة مخصصة لإبراز الزوايا الأكثر قراءة أو الأخبار الأكثر تداولًا.</p>
+        </div>
+      </div>
+
       <div class="editorial">
-        <article class="editorial-card"><h3>عنوان المقال</h3><p>اكتب العنوان بصيغة يبحث عنها الناس: اسم المشهور + الحدث. مثال: محمد رمضان يعلن عن فيلم جديد في 2026.</p></article>
-        <article class="editorial-card"><h3>رابط المقال</h3><p>استخدم رابطًا قصيرًا تحت نفس المسار: /مشاهير/اخبار-المشاهير/محمد-رمضان-فيلم-جديد/</p></article>
+        <article class="editorial-card">
+          <h3>الأكثر تداولًا</h3>
+          <p>أخبار وتحليلات ترتبط بما يبحث عنه الجمهور ويتفاعل معه على المنصات الاجتماعية.</p>
+        </article>
+
+        <article class="editorial-card">
+          <h3>الأكثر تأثيرًا</h3>
+          <p>قصص ومواقف صنعت نقاشًا واسعًا حول المشاهير والمؤثرين وصناع المحتوى.</p>
+        </article>
       </div>
     </section>
 
-    <div class="footer-note"><strong>Viva Media Creative</strong><span>صفحة أخبار مصممة لتتوسع مع كل مقال جديد بدون تعقيد في المسارات.</span><a href="/contact/">تواصل معنا</a></div>
+    <div class="footer-note">
+      <strong>Viva Media Creative</strong>
+      <span>أخبار المشاهير والمؤثرين وصناع المحتوى.</span>
+      <a href="/contact/">تواصل معنا</a>
+    </div>
   </main>
 
   <script>
     (function(){
-      const openBtn=document.querySelector('[data-menu-open]');
-      const closeBtn=document.querySelector('[data-menu-close]');
-      const backdrop=document.querySelector('[data-backdrop]');
-      const drawer=document.querySelector('[data-drawer]');
-      const body=document.body;
-      function openMenu(){body.classList.add('drawer-open');openBtn&&openBtn.setAttribute('aria-expanded','true');drawer&&drawer.setAttribute('aria-hidden','false')}
-      function closeMenu(){body.classList.remove('drawer-open');openBtn&&openBtn.setAttribute('aria-expanded','false');drawer&&drawer.setAttribute('aria-hidden','true')}
-      openBtn&&openBtn.addEventListener('click',openMenu);closeBtn&&closeBtn.addEventListener('click',closeMenu);backdrop&&backdrop.addEventListener('click',closeMenu);document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
-      document.querySelectorAll('.drawer-toggle').forEach(btn=>btn.addEventListener('click',()=>{const submenu=btn.nextElementSibling;if(!submenu||!submenu.classList.contains('drawer-submenu'))return;btn.classList.toggle('is-open');submenu.classList.toggle('is-open')}));
+      const openBtn = document.querySelector('[data-menu-open]');
+      const closeBtn = document.querySelector('[data-menu-close]');
+      const backdrop = document.querySelector('[data-backdrop]');
+      const drawer = document.querySelector('[data-drawer]');
+      const body = document.body;
+
+      function openMenu(){
+        body.classList.add('drawer-open');
+        if(openBtn) openBtn.setAttribute('aria-expanded','true');
+        if(drawer) drawer.setAttribute('aria-hidden','false');
+      }
+
+      function closeMenu(){
+        body.classList.remove('drawer-open');
+        if(openBtn) openBtn.setAttribute('aria-expanded','false');
+        if(drawer) drawer.setAttribute('aria-hidden','true');
+      }
+
+      if(openBtn) openBtn.addEventListener('click', openMenu);
+      if(closeBtn) closeBtn.addEventListener('click', closeMenu);
+      if(backdrop) backdrop.addEventListener('click', closeMenu);
+
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') closeMenu();
+      });
+
+      document.querySelectorAll('.drawer-toggle').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          const submenu = btn.nextElementSibling;
+          if(!submenu || !submenu.classList.contains('drawer-submenu')) return;
+
+          const isOpen = submenu.classList.toggle('is-open');
+          btn.classList.toggle('is-open', isOpen);
+          btn.setAttribute('aria-expanded', String(isOpen));
+        });
+      });
+
+      const cards = document.querySelectorAll('.news-card');
+      const emptyBoard = document.getElementById('emptyBoard');
+
+      if(cards.length > 0 && emptyBoard){
+        emptyBoard.style.display = 'none';
+      }
     })();
   </script>
 </body>
