@@ -781,10 +781,10 @@ button,input{font:inherit}
   }
 
   .quick-links{
-    flex-wrap:nowrap;
-    overflow-x:auto;
-    padding-bottom:4px;
-  }
+  flex-wrap:wrap;
+  overflow-x:hidden;
+  padding-bottom:4px;
+}
   .quick-links a{
     flex:0 0 auto;
     font-size:13px;
@@ -1217,4 +1217,8 @@ button,input{font:inherit}
 .drawer-submenu a:hover{
   background:#1d1d1d;
   color:#fff !important;
+}
+html,
+body{
+  overflow-x:hidden;
 }
