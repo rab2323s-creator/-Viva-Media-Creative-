@@ -980,8 +980,11 @@ button,input{font:inherit}
   }
 
   .article-figure img{
-    aspect-ratio: 16/10;
-  }
+  width:100%;
+  height:auto;
+  aspect-ratio:auto;
+  object-fit:contain;
+}
 
   .article-figure figcaption{
     font-size: 13px;
