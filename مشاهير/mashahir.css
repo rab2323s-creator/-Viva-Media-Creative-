@@ -496,6 +496,8 @@ button,input{font:inherit}
   font-size:13px;
   color:#777;
   margin:0 0 18px;
+  flex-wrap:wrap;
+  max-width:100%;
 }
 .breadcrumb a{color:#444;font-weight:700}
 .breadcrumb a:hover{color:var(--vmc-red)}
@@ -752,12 +754,13 @@ button,input{font:inherit}
 
 /* Responsive inner pages */
 @media (max-width:768px){
-  .breadcrumb{
+ .breadcrumb{
     font-size:12px;
     margin-bottom:14px;
-    overflow-x:auto;
-    white-space:nowrap;
-  }
+    overflow-x:hidden;
+    white-space:normal;
+    flex-wrap:wrap;
+}
 
   .hero{
     display:block;
