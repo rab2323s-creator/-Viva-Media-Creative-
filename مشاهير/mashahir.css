@@ -1327,3 +1327,132 @@ body{
     font-size: 17px;
   }
 }
+
+/* =========================
+   MASHAHIR PREMIUM SEO SECTIONS
+========================= */
+
+.mashahir-seo-content,
+.mashahir-about,
+.mashahir-faq{
+  margin-top:70px;
+  padding:38px;
+  border-radius:28px;
+  background:
+    linear-gradient(135deg, rgba(5,5,5,.96), rgba(28,24,16,.96)),
+    radial-gradient(circle at top left, rgba(212,175,55,.18), transparent 35%);
+  color:#fff;
+  border:1px solid rgba(212,175,55,.28);
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.22),
+    inset 0 0 0 1px rgba(255,255,255,.04);
+}
+
+.mashahir-seo-content h2,
+.mashahir-about h2,
+.mashahir-faq h2{
+  margin:0 0 24px;
+  font-size:32px;
+  line-height:1.4;
+  font-weight:900;
+  color:#f7d774;
+}
+
+.mashahir-seo-content h2::after,
+.mashahir-about h2::after,
+.mashahir-faq h2::after{
+  content:"";
+  display:block;
+  width:72px;
+  height:3px;
+  margin-top:14px;
+  background:linear-gradient(90deg, #f7d774, #8a6a22);
+  border-radius:99px;
+}
+
+.mashahir-seo-content p,
+.mashahir-about p{
+  margin:0 0 20px;
+  color:rgba(255,255,255,.82);
+  font-size:17px;
+  line-height:2.25;
+}
+
+/* FAQ Premium Cards */
+
+.mashahir-faq{
+  background:
+    linear-gradient(135deg, #080808, #1c1710);
+}
+
+.faq-item{
+  position:relative;
+  padding:26px 28px;
+  margin-bottom:18px;
+  border-radius:22px;
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(212,175,55,.22);
+  box-shadow:0 14px 38px rgba(0,0,0,.18);
+  overflow:hidden;
+}
+
+.faq-item::before{
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  width:5px;
+  height:100%;
+  background:linear-gradient(180deg, #f7d774, #8a6a22);
+}
+
+.faq-item h3{
+  margin:0 0 12px;
+  color:#fff;
+  font-size:21px;
+  font-weight:900;
+  line-height:1.7;
+}
+
+.faq-item p{
+  margin:0;
+  color:rgba(255,255,255,.78);
+  font-size:16px;
+  line-height:2.1;
+}
+
+.faq-item:last-child{
+  margin-bottom:0;
+}
+
+@media (max-width:768px){
+  .mashahir-seo-content,
+  .mashahir-about,
+  .mashahir-faq{
+    margin-top:42px;
+    padding:26px 20px;
+    border-radius:22px;
+  }
+
+  .mashahir-seo-content h2,
+  .mashahir-about h2,
+  .mashahir-faq h2{
+    font-size:24px;
+  }
+
+  .mashahir-seo-content p,
+  .mashahir-about p,
+  .faq-item p{
+    font-size:15px;
+    line-height:2;
+  }
+
+  .faq-item{
+    padding:22px 20px;
+    border-radius:18px;
+  }
+
+  .faq-item h3{
+    font-size:18px;
+  }
+}
