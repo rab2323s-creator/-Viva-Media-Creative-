@@ -18,7 +18,8 @@
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  background:var(--body);
+  background:
+    radial-gradient(circle at top, #1a1a1a, #050505 60%);
   color:var(--text);
   font-family:"Cairo","Tajawal","Noto Kufi Arabic",Arial,sans-serif;
   direction:rtl;
