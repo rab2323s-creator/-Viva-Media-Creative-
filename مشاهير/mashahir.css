@@ -105,7 +105,7 @@ button,input{font:inherit}
 .page-shell{
   max-width:1038px;
   margin:14px auto 60px;
-  background:var(--paper);
+   background:#e8e6e1;
   min-height:calc(100vh - 90px);
   box-shadow:var(--shadow);
   padding:21px 20px 34px;
