@@ -1646,3 +1646,60 @@ body{
     line-height:2;
   }
 }
+ 
+.article-pullquote{
+position:relative;
+margin:42px 0;
+padding:28px 32px;
+background:linear-gradient(135deg,#ffffff,#faf7ef);
+border:1px solid rgba(185,151,79,.25);
+border-right:6px solid var(--vmc-red);
+border-radius:24px;
+box-shadow:
+0 15px 40px rgba(0,0,0,.08),
+0 3px 10px rgba(185,151,79,.12);
+font-size:17px;
+line-height:2.1;
+font-weight:700;
+color:#333;
+overflow:hidden;
+}
+
+.article-pullquote::before{
+content:"قد يهمك";
+position:absolute;
+top:0;
+left:0;
+background:var(--vmc-red);
+color:#fff;
+padding:8px 18px;
+font-size:12px;
+font-weight:900;
+border-radius:0 0 0 18px;
+letter-spacing:.5px;
+}
+
+.article-pullquote a{
+color:var(--vmc-red-dark);
+font-weight:900;
+text-decoration:none;
+border-bottom:2px solid rgba(185,151,79,.35);
+transition:.25s;
+}
+
+.article-pullquote a:hover{
+color:var(--vmc-red);
+border-bottom-color:var(--vmc-red);
+}
+
+.article-pullquote::after{
+content:"";
+position:absolute;
+top:-80px;
+left:-80px;
+width:180px;
+height:180px;
+background:radial-gradient(circle,rgba(185,151,79,.12),transparent 70%);
+pointer-events:none;
+}
+ 
