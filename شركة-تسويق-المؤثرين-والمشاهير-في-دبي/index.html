@@ -232,6 +232,42 @@
       .engine{width:112%;max-width:360px}
       .heroScene__logo{width:70px;height:70px;border-radius:20px}
     }
+
+
+    /* Mobile content text safety patch: keeps all below-hero text visible */
+    @media (max-width: 620px){
+      main, section, .section__inner, .luxGrid, .process, .industries, .split, .whyGrid, .faqGrid{overflow:visible !important}
+      .sectionHead{margin-bottom:22px}
+      .h2{font-size:clamp(25px,7.4vw,34px);line-height:1.35;letter-spacing:-.025em;text-wrap:balance}
+      .lead{font-size:13.5px;line-height:1.95;max-width:100%;text-wrap:pretty}
+      .luxCard,.luxCard.big,.step,.why,.faq,.quoteBox,.industry{
+        min-height:unset !important;
+        height:auto !important;
+        overflow:visible !important;
+      }
+      .luxCard::before,.step::after{pointer-events:none;z-index:0}
+      .luxCard > *, .step > *, .why > *, .faq > *, .quoteBox > *, .industry > *{position:relative;z-index:1}
+      .luxCard h3{font-size:22px;line-height:1.5;margin:14px 0 9px;letter-spacing:-.015em}
+      .luxCard p,.step p,.why p,.faq p,.seoBlock p,.finalCard p{font-size:13.2px;line-height:1.95;overflow-wrap:anywhere;word-break:normal}
+      .step h3,.why h3,.faq h3{font-size:19px;line-height:1.5;margin-top:14px}
+      .step strong,.cardNum,.eyebrow{display:block;line-height:1.55;overflow-wrap:anywhere}
+      .industry{display:block;padding:19px 18px;line-height:1.65}
+      .industry span{display:block;overflow-wrap:anywhere}
+      .industry span:last-child{margin-top:8px;line-height:1.5;letter-spacing:.09em}
+      .quoteBox{gap:22px}
+      .quoteBox p{font-size:clamp(22px,7vw,30px);line-height:1.55;letter-spacing:-.02em}
+      .seoBlock{padding-top:38px;font-size:13.5px;line-height:1.95}
+      .faqGrid{gap:14px}
+      .finalCard h2{font-size:clamp(28px,8vw,40px);line-height:1.35;letter-spacing:-.025em}
+    }
+
+    @media (max-width: 390px){
+      .luxCard,.step,.why,.faq,.quoteBox{padding:18px 16px}
+      .h2{font-size:clamp(23px,7.2vw,31px)}
+      .luxCard h3,.step h3,.why h3,.faq h3{font-size:18px}
+      .luxCard p,.step p,.why p,.faq p,.seoBlock p,.finalCard p{font-size:12.8px;line-height:1.95}
+    }
+
   </style>
 </head>
 <body>
