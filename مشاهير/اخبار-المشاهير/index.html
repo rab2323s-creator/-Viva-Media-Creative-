@@ -55,6 +55,141 @@
   </script>
 
   <link rel="stylesheet" href="/assets/css/celebrity-news.css">
+ <style>
+.news-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  direction: rtl;
+}
+
+.news-layout .section-head {
+  margin-bottom: 28px;
+}
+
+.news-layout .section-head h2 {
+  font-size: 34px;
+  margin: 0 0 8px;
+}
+
+.news-layout .section-head p {
+  color: #777;
+  margin: 0;
+}
+
+.news-card {
+  background: #111;
+  border-radius: 22px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-card a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.news-media {
+  position: relative;
+  margin: 0;
+  height: 220px;
+  overflow: hidden;
+}
+
+.news-card--main .news-media {
+  height: 430px;
+}
+
+.news-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #e50914;
+  color: #fff;
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.news-body {
+  padding: 20px;
+  color: #fff;
+}
+
+.news-body h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.news-card--main .news-body h3 {
+  font-size: 34px;
+}
+
+.news-body p {
+  margin: 0 0 18px;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.read-more {
+  color: #fff;
+  font-weight: 700;
+}
+
+.featured-row {
+  margin-bottom: 28px;
+}
+
+.highlight-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.normal-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .highlight-row,
+  .normal-row {
+    grid-template-columns: 1fr;
+  }
+
+  .news-card--main .news-media {
+    height: 300px;
+  }
+
+  .news-card--main .news-body h3 {
+    font-size: 26px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -185,213 +320,153 @@
       </div>
     </section>
 
-    <section id="latest-news" aria-labelledby="latest-title">
-      <div class="section-head">
-        <div>
-          <h2 id="latest-title">آخر الأخبار</h2>
-          <p>أحدث المقالات المنشورة عن المشاهير والمؤثرين وصناع المحتوى.</p>
-        </div>
+
+<section id="latest-news" class="news-layout">
+
+  <div class="section-head">
+    <h2>آخر الأخبار</h2>
+    <p>أحدث الأخبار عن المشاهير، الترند، السوشيال ميديا، والنجوم العرب والعالميين.</p>
+  </div>
+
+  <!-- الخبر الرئيسي -->
+
+  <div class="featured-row">
+    <article class="news-card news-card--main">
+      <a href="/مشاهير/اخبار-المشاهير/فيلم-اسد-محمد-رمضان/">
+        <figure class="news-media">
+          <img src="/assets/film-asad-mohamed-ramadan.jpg" alt="فيلم أسد لمحمد رمضان">
+          <span class="badge">سينما</span>
+        </figure>
+
+```
+    <div class="news-body">
+      <h3>فيلم أسد لمحمد رمضان.. القصة والأبطال والإيرادات وكيف أشعل الجدل قبل عرضه</h3>
+      <p>من أزمة الجلباب الصعيدي إلى جولات الترويج العربية وأرقام الإيرادات، كيف تحول فيلم أسد إلى واحدة من أكثر الحملات التسويقية إثارة للجدل في السينما العربية؟</p>
+
+      <div class="meta">
+        <span>محمد رمضان</span>
+        <span class="read-more">اقرأ المقال</span>
       </div>
+    </div>
+  </a>
+</article>
+```
 
-      <div class="empty-board" id="emptyBoard" aria-hidden="true"></div>
+  </div>
 
-      <div class="news-grid">
-        <article class="news-card">
-          <a href="/مشاهير/اخبار-المشاهير/فيلم-اسد-محمد-رمضان/" aria-label="فيلم أسد لمحمد رمضان">
-            <figure class="news-media">
-              <img
-                src="/assets/film-asad-mohamed-ramadan.jpg"
-                alt="فيلم أسد لمحمد رمضان"
-                loading="lazy"
-                width="640"
-                height="400"
-              />
-              <span class="badge">سينما</span>
-            </figure>
+  <!-- خبرين بارزين -->
 
-            <div class="news-body">
-              <h3>فيلم أسد لمحمد رمضان.. القصة والأبطال والإيرادات وكيف أشعل الجدل قبل عرضه</h3>
+  <div class="highlight-row">
 
-              <p>من أزمة الجلباب الصعيدي إلى جولات الترويج العربية وأرقام الإيرادات، كيف تحول فيلم أسد إلى واحدة من أكثر الحملات التسويقية إثارة للجدل في السينما العربية؟</p>
-
-              <div class="meta">
-                <span>محمد رمضان</span>
-                <span class="read-more">اقرأ المقال</span>
-              </div>
-            </div>
-          </a>
-        </article>
-       <article class="news-card">
-  <a href="/مشاهير/اخبار-المشاهير/افتتاح-كاس-العالم-2026-كاتي-بيري-المشاهير/" aria-label="افتتاح كأس العالم 2026: كاتي بيري وليزا والمشاهير">
-
+```
+<article class="news-card">
+  <a href="/مشاهير/اخبار-المشاهير/افتتاح-كاس-العالم-2026-كاتي-بيري-المشاهير/">
     <figure class="news-media">
-      <img
-        src="/assets/articles/world-cup-2026-opening-ceremony-celebrities.jpg"
-        alt="كاتي بيري وليزا والمشاهير في افتتاح كأس العالم 2026"
-        loading="lazy"
-        width="640"
-        height="400"
-      />
+      <img src="/assets/articles/world-cup-2026-opening-ceremony-celebrities.jpg" alt="افتتاح كأس العالم 2026">
       <span class="badge">ترند عالمي</span>
     </figure>
 
     <div class="news-body">
-
-      <h3>
-        افتتاح كأس العالم 2026 في أمريكا.. كاتي بيري وليزا والمشاهير يخطفون الأنظار
-      </h3>
-
-      <p>
-        كاتي بيري، ليزا من BLACKPINK، Future وAnitta ضمن أبرز نجوم الحفل في لوس أنجلوس، مع حضور عدد من مشاهير الفن والرياضة في ليلة جمعت كرة القدم والترفيه.
-      </p>
+      <h3>افتتاح كأس العالم 2026 في أمريكا.. كاتي بيري وليزا والمشاهير يخطفون الأنظار</h3>
+      <p>كاتي بيري، ليزا من BLACKPINK، Future وAnitta ضمن أبرز نجوم الحفل في لوس أنجلوس.</p>
 
       <div class="meta">
         <span>كاتي بيري</span>
         <span class="read-more">اقرأ المقال</span>
       </div>
-
     </div>
-
   </a>
 </article>
- <article class="news-card">
-  <a href="/مشاهير/اخبار-المشاهير/محمد-صلاح-براند-عالمي/" aria-label="محمد صلاح في عيد ميلاده الـ34.. عمره وثروته وزوجته وكيف تحول إلى أقوى براند عربي عالمي">
 
+<article class="news-card">
+  <a href="/مشاهير/اخبار-المشاهير/محمد-صلاح-براند-عالمي/">
     <figure class="news-media">
-      <img
-        src="/assets/articles/mohamed-salah-global-brand.jpg"
-        alt="محمد صلاح في عيد ميلاده الـ34 وكيف تحول إلى أقوى براند عربي عالمي"
-        loading="lazy"
-        width="640"
-        height="400"
-      />
+      <img src="/assets/articles/mohamed-salah-global-brand.jpg" alt="محمد صلاح براند عالمي">
       <span class="badge">ترند المشاهير</span>
     </figure>
 
     <div class="news-body">
-
-      <h3>
-        محمد صلاح في عيد ميلاده الـ34.. عمره وثروته وزوجته وكيف تحول إلى أقوى براند عربي عالمي
-      </h3>
-
-      <p>
-        تصدر محمد صلاح محركات البحث بالتزامن مع عيد ميلاده، وسط اهتمام واسع بعمره، ثروته، زوجته وإنجازاته، وقصة تحوله من لاعب كرة إلى أيقونة عربية وعلامة تجارية عالمية.
-      </p>
+      <h3>محمد صلاح في عيد ميلاده الـ34.. كيف تحول إلى أقوى براند عربي عالمي؟</h3>
+      <p>قصة نجم تخطى حدود كرة القدم وتحول إلى أيقونة عربية وعلامة تجارية عالمية.</p>
 
       <div class="meta">
         <span>محمد صلاح</span>
         <span class="read-more">اقرأ المقال</span>
       </div>
-
     </div>
-
   </a>
 </article>
-       <article class="news-card">
-  <a href="/مشاهير/اخبار-المشاهير/عطل-فيسبوك-اليوم/" aria-label="عطل فيسبوك اليوم">
+```
 
-    <figure class="news-media">
-      <img
-        src="/assets/facebook-outage-today.jpg"
-        alt="عطل فيسبوك اليوم"
-        loading="lazy"
-        width="640"
-        height="400"
-      />
-      <span class="badge">تقنية</span>
-    </figure>
-
-    <div class="news-body">
-
-      <h3>
-        عطل فيسبوك اليوم.. بلاغات عن مشاكل في تسجيل الدخول وتحميل الصفحات
-      </h3>
-
-      <p>
-        تصدر البحث عن "فيسبوك لا يعمل" بعد شكاوى من مستخدمين حول صعوبة تسجيل الدخول وبطء تحميل الصفحة الرئيسية، وسط غياب بيان رسمي من شركة ميتا.
-      </p>
-
-      <div class="meta">
-        <span>Facebook</span>
-        <span class="read-more">اقرأ المقال</span>
-      </div>
-
-    </div>
-
-  </a>
-</article>
- <article class="news-card">
-  <a href="/مشاهير/اخبار-المشاهير/ترند-2026-هي-2016-الجديدة/" aria-label="ترند 2026 هي 2016 الجديدة">
-
- 
-<figure class="news-media">
-  <img
-    src="/assets/articles/2026-is-the-new-2016.jpg"
-    alt="ترند 2026 هي 2016 الجديدة على تيك توك وإنستغرام"
-    loading="lazy"
-    width="640"
-    height="400"
-  />
-  <span class="badge">ترند</span>
-</figure>
-
-<div class="news-body">
-
-  <h3>
-    ما معنى ترند «2026 هي 2016 الجديدة»؟ ولماذا اجتاح تيك توك وإنستغرام؟
-  </h3>
-
-  <p>
-    موجة نوستالجيا واسعة تعيد أغاني وموضة وفلاتر 2016 إلى الواجهة، بعد انتشار الترند بين جيل Z على تيك توك وإنستغرام وتحوله إلى حديث مواقع التواصل.
-  </p>
-
-  <div class="meta">
-    <span>ترند 2026</span>
-    <span class="read-more">اقرأ المقال</span>
   </div>
 
-</div>
- 
-  </a>
-</article>
+  <!-- باقي الأخبار -->
 
+  <div class="normal-row">
+
+```
 <article class="news-card">
-  <a href="/مشاهير/اخبار-المشاهير/وفاة-عنتر-العبسي-سبايدرمان-اليمن/" aria-label="وفاة عنتر العبسي سبايدرمان اليمن">
-
+  <a href="/مشاهير/اخبار-المشاهير/وفاة-عنتر-العبسي-سبايدرمان-اليمن/">
     <figure class="news-media">
-      <img
-        src="/assets/antar-al-absi-spiderman-yemen.jpg"
-        alt="وفاة عنتر العبسي سبايدرمان اليمن بعد سقوطه في فوهة بركان حرضة دمت"
-        loading="lazy"
-        width="640"
-        height="400"
-      />
+      <img src="/assets/antar-al-absi-spiderman-yemen.jpg" alt="وفاة عنتر العبسي سبايدرمان اليمن">
       <span class="badge">خبر عاجل</span>
     </figure>
 
     <div class="news-body">
-
-      <h3>
-        وفاة عنتر العبسي سبايدرمان اليمن بعد سقوطه في فوهة بركان حرضة دمت
-      </h3>
-
-      <p>
-        رحيل مأساوي للمؤثر والمغامر اليمني عنتر العبسي، المعروف بلقب القعقاع بن عنتر وسبايدرمان اليمن، بعد سقوطه داخل فوهة حرضة دمت البركانية أثناء إحدى مغامراته.
-      </p>
+      <h3>وفاة عنتر العبسي سبايدرمان اليمن بعد سقوطه في فوهة بركان حرضة دمت</h3>
+      <p>رحيل مأساوي للمؤثر والمغامر اليمني أثناء إحدى مغامراته.</p>
 
       <div class="meta">
         <span>سبايدرمان اليمن</span>
         <span class="read-more">اقرأ المقال</span>
       </div>
-
     </div>
+  </a>
+</article>
 
+<article class="news-card">
+  <a href="/مشاهير/اخبار-المشاهير/عطل-فيسبوك-اليوم/">
+    <figure class="news-media">
+      <img src="/assets/facebook-outage-today.jpg" alt="عطل فيسبوك اليوم">
+      <span class="badge">تقنية</span>
+    </figure>
+
+    <div class="news-body">
+      <h3>عطل فيسبوك اليوم.. بلاغات عن مشاكل في تسجيل الدخول وتحميل الصفحات</h3>
+      <p>شكاوى من مستخدمين حول صعوبة تسجيل الدخول وبطء تحميل الصفحة الرئيسية.</p>
+
+      <div class="meta">
+        <span>Facebook</span>
+        <span class="read-more">اقرأ المقال</span>
+      </div>
+    </div>
+  </a>
+</article>
+
+<article class="news-card">
+  <a href="/مشاهير/اخبار-المشاهير/ترند-2026-هي-2016-الجديدة/">
+    <figure class="news-media">
+      <img src="/assets/articles/2026-is-the-new-2016.jpg" alt="ترند 2026 هي 2016 الجديدة">
+      <span class="badge">ترند</span>
+    </figure>
+
+    <div class="news-body">
+      <h3>ما معنى ترند «2026 هي 2016 الجديدة»؟ ولماذا اجتاح تيك توك وإنستغرام؟</h3>
+      <p>موجة نوستالجيا تعيد أغاني وموضة وفلاتر 2016 إلى الواجهة.</p>
+
+      <div class="meta">
+        <span>ترند 2026</span>
+        <span class="read-more">اقرأ المقال</span>
+      </div>
+    </div>
   </a>
 </article>
  
 
-      </div>
-    </section>
+  </div>
+
+</section>
+
 
     <section aria-labelledby="topics-title">
       <div class="section-head">
