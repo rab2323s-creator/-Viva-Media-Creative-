@@ -1197,7 +1197,10 @@
     // UI wiring
     // ============================
     const el = (id) => document.getElementById(id);
+   const supabaseUrl = "https://qpihjqzyxkpmlegijkmt.supabase.co";
+const supabaseKey = "sb_publishable_GXP75aI8EF5i0czaZENTBA_huxSaeum";
 
+const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
     const calcForm = el('calcForm');
     const results = el('results');
     const budgetRange = el('budgetRange');
@@ -1481,25 +1484,56 @@
       return lines.join('\n');
     }
 
-    leadForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const msg = buildLeadMessage();
-      leadOut.style.display = '';
-      leadOut.textContent = '✅ تم تجهيز رسالة الطلب. انسخها وأرسلها في واتساب/إيميل:\n\n' + msg;
-      copyLeadMsg.disabled = false;
-      copyLeadMsg.onclick = async () => {
-        try{
-          await navigator.clipboard.writeText(msg);
-          copyLeadMsg.textContent = '✅ تم النسخ';
-          setTimeout(()=>copyLeadMsg.textContent='نسخ الرسالة', 1200);
-        }catch(err){
-          alert('تعذر النسخ.');
-        }
-      };
-    });
+   leadForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const msg = buildLeadMessage();
+
+  const leadData = {
+    name: document.getElementById('name').value || null,
+    email: document.getElementById('email').value || null,
+    whatsapp: document.getElementById('whats').value || null,
+    notes: document.getElementById('notes').value || null,
+
+    market: window.__lastSummary?.summary?.marketLabel || null,
+    platform: window.__lastSummary?.summary?.platformLabel || null,
+    goal: window.__lastSummary?.summary?.goalLabel || null,
+    influencer_size: window.__lastSummary?.summary?.sizeLabel || null,
+    content_type: window.__lastSummary?.summary?.typeLabel || null,
+    deliverables: window.__lastSummary?.summary?.deliverables || null,
+    campaign_days: window.__lastSummary?.summary?.days || null,
+    budget_range: window.__lastSummary?.summary?.rangeLabel || null,
+    industry: window.__lastSummary?.summary?.industry || null
+  };
+
+  const { error } = await supabaseClient
+    .from('influencer_leads')
+    .insert([leadData]);
+
+  if (error) {
+    console.error(error);
+    alert('حدث خطأ أثناء إرسال الطلب. حاول مرة أخرى.');
+    return;
+  }
+
+  leadOut.style.display = '';
+  leadOut.textContent = '✅ تم إرسال طلبك بنجاح. سنراجع التفاصيل ونتواصل معك.\n\n' + msg;
+
+  copyLeadMsg.disabled = false;
+  copyLeadMsg.onclick = async () => {
+    try {
+      await navigator.clipboard.writeText(msg);
+      copyLeadMsg.textContent = '✅ تم النسخ';
+      setTimeout(() => copyLeadMsg.textContent = 'نسخ الرسالة', 1200);
+    } catch (err) {
+      alert('تعذر النسخ.');
+    }
+  };
+});
 
     // Initial
     updateCompatibilityHint();
   </script>
+ <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </body>
 </html>
