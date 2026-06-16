@@ -325,3 +325,49 @@ transform:translateX(50%);
 
 }
  
+/* روابط داخل المحتوى */
+.note a{
+    color:#06b6d4;
+    font-weight:700;
+    text-decoration:none;
+    position:relative;
+    transition:.3s;
+    padding-bottom:2px;
+}
+
+/* الخط السفلي المتحرك */
+.note a::after{
+    content:"";
+    position:absolute;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:2px;
+    background:linear-gradient(90deg,#06b6d4,#2563eb);
+    transform:scaleX(1);
+    transform-origin:right;
+    transition:.3s;
+    border-radius:10px;
+}
+
+/* تأثير عند المرور */
+.note a:hover{
+    color:#67e8f9;
+}
+
+.note a:hover::after{
+    height:3px;
+    box-shadow:0 0 12px rgba(6,182,212,.5);
+}
+
+/* تأثير التحديد */
+.note a:active{
+    opacity:.8;
+}
+
+/* للجوال */
+@media(max-width:768px){
+    .note a{
+        font-weight:800;
+    }
+}
