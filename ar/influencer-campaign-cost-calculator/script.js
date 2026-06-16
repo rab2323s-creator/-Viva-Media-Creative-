@@ -4,10 +4,6 @@
     // ============================
     // IMPORTANT: These are market-wide ESTIMATION ranges, not official influencer prices.
 
-    const CURRENCY = {
-      gcc: { code: 'SAR', symbol: 'ر.س' },
-      eg:  { code: 'EGP', symbol: 'ج.م' }
-    };
 
     // Base price per deliverable (min/max) by market -> platform -> influencer size -> content type
     // You can tune these numbers later from one place.
