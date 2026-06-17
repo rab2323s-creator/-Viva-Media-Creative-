@@ -821,41 +821,49 @@ const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
       waMessageField.value = waText;
       setWhatsAppLink(waText);
 
-      showStatus('ok', 'تمام! يتم إرسال تسجيلك الآن...');
+   showStatus('ok', 'تمام! يتم إرسال تسجيلك الآن...');
 
-     await supabaseClient
-  .from('influencers')
-  .insert([{
-    full_name: data.full_name,
-    country: data.country,
-    city: data.city,
-    account_link: data.account_link,
-    niche: data.niche,
-    platforms: data.platforms,
-    followers_range: data.followers_range,
-    avg_views: data.avg_views,
-    whatsapp: data.whatsapp,
-    email: data.email,
-    note: data.note,
-    status: 'pending'
-  }]);
+try {
+  const { error } = await supabaseClient
+    .from('influencers')
+    .insert([{
+      full_name: data.full_name,
+      country: data.country,
+      city: data.city,
+      account_link: data.account_link,
+      niche: data.niche,
+      platforms: data.platforms,
+      followers_range: data.followers_range,
+      avg_views: data.avg_views,
+      whatsapp: data.whatsapp,
+      email: data.email,
+      note: data.note,
+      status: 'pending'
+    }]);
 
-await emailjs.sendForm(
-  'service_6w76hdv',
-  'template_11cfrv4',
-  form
-);
+  if (error) {
+    console.error('Supabase error:', error);
+    throw error;
+  }
 
-        form.reset();
-        platformsHidden.value = '';
-        showStatus(
-          'ok',
-          '🚀 تم استلام تسجيلك بنجاح.\n\nسيتواصل معك فريقنا خلال 24 ساعة عمل بالخطوة التالية.\n\nيمكنك الضغط على زر WhatsApp للمتابعة الفورية.\n\nملاحظة: إذا لم تجد ردنا، يرجى تفقد البريد العشوائي (Spam/Junk).'
-        );
-      } catch (err) {
-        console.error(err);
-        showStatus('err', '❌ حصل خطأ في الإرسال. جرّب مرة ثانية أو تابع عبر واتساب.');
-      }
+  await emailjs.sendForm(
+    'service_6w76hdv',
+    'template_11cfrv4',
+    form
+  );
+
+  form.reset();
+  platformsHidden.value = '';
+
+  showStatus(
+    'ok',
+    '🚀 تم استلام تسجيلك بنجاح.\n\nسيتواصل معك فريقنا خلال 24 ساعة عمل بالخطوة التالية.\n\nيمكنك الضغط على زر WhatsApp للمتابعة الفورية.\n\nملاحظة: إذا لم تجد ردنا، يرجى تفقد البريد العشوائي (Spam/Junk).'
+  );
+
+} catch (err) {
+  console.error(err);
+  showStatus('err', '❌ حصل خطأ في الإرسال. جرّب مرة ثانية أو تابع عبر واتساب.');
+}
     });
   </script>
 </body>
