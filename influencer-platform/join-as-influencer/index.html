@@ -824,6 +824,12 @@ const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
    showStatus('ok', 'تمام! يتم إرسال تسجيلك الآن...');
 
 try {
+  await emailjs.sendForm(
+    'service_6w76hdv',
+    'template_11cfrv4',
+    form
+  );
+
   const { error } = await supabaseClient
     .from('influencers')
     .insert([{
@@ -843,26 +849,19 @@ try {
 
   if (error) {
     console.error('Supabase error:', error);
-    throw error;
   }
-
-  await emailjs.sendForm(
-    'service_6w76hdv',
-    'template_11cfrv4',
-    form
-  );
 
   form.reset();
   platformsHidden.value = '';
 
   showStatus(
     'ok',
-    '🚀 تم استلام تسجيلك بنجاح.\n\nسيتواصل معك فريقنا خلال 24 ساعة عمل بالخطوة التالية.\n\nيمكنك الضغط على زر WhatsApp للمتابعة الفورية.\n\nملاحظة: إذا لم تجد ردنا، يرجى تفقد البريد العشوائي (Spam/Junk).'
+    '🚀 تم استلام تسجيلك بنجاح.\n\nسيتواصل معك فريقنا خلال 24 ساعة عمل بالخطوة التالية.'
   );
 
 } catch (err) {
   console.error(err);
-  showStatus('err', '❌ حصل خطأ في الإرسال. جرّب مرة ثانية أو تابع عبر واتساب.');
+  showStatus('err', '❌ حصل خطأ في إرسال الإيميل. تابع عبر واتساب.');
 }
     });
   </script>
