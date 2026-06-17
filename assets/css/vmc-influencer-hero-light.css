@@ -20,3 +20,165 @@
     right:0;
     z-index:100;
 }
+
+
+  /* Page-only additions (match your Contact luxury system) */
+    .wrap{ padding-top: 40px; padding-bottom: 90px; }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+      align-items:start;
+    }
+    .glassCard{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 30px;
+      background: rgba(255,255,255,.02);
+      box-shadow: 0 30px 120px rgba(0,0,0,.55);
+      overflow:hidden;
+    }
+    .cardHead{
+      padding: 18px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+    }
+    .cardHead h2{ margin:0 0 6px; font-size: 20px; }
+    .cardHead p{ margin:0; color: rgba(238,241,246,.62); line-height:1.8; }
+
+    .formBody{ padding: 18px; }
+    .formGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .field{ display:flex; flex-direction:column; gap:8px; }
+    .field label{ font-size: 12px; color: rgba(238,241,246,.72); font-weight: 800; letter-spacing:.02em; }
+    .field input, .field textarea, .field select{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(6,7,10,.35);
+      color: rgba(238,241,246,.92);
+      outline:none;
+      backdrop-filter: blur(10px);
+      transition: border-color .18s ease, transform .18s ease;
+      font-family: inherit;
+    }
+    .field input::placeholder, .field textarea::placeholder{ color: rgba(238,241,246,.45); }
+    .field input:focus, .field textarea:focus, .field select:focus{
+      border-color: rgba(245,208,122,.32);
+      box-shadow: 0 0 0 6px rgba(245,208,122,.10);
+    }
+    .span2{ grid-column: 1 / -1; }
+    textarea{ min-height: 120px; resize: vertical; }
+
+    .checks{
+      display:flex; flex-wrap:wrap; gap:10px;
+      padding: 10px 10px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(6,7,10,.25);
+    }
+    .check{
+      display:flex; gap:8px; align-items:center;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+      border-radius: 999px;
+      padding: 8px 10px;
+      font-size: 12px;
+      color: rgba(238,241,246,.80);
+      user-select:none;
+    }
+    .check input{ width:16px; height:16px; }
+
+    .actions{
+      grid-column: 1 / -1;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin-top: 6px;
+    }
+    .hint{
+      color: rgba(238,241,246,.55);
+      font-size: 12px;
+      line-height: 1.7;
+      max-width: 60ch;
+    }
+    .status{
+      grid-column: 1 / -1;
+      display:none;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.02);
+      color: rgba(238,241,246,.85);
+      white-space: pre-line;
+      line-height: 1.8;
+    }
+    .status.ok{ display:block; border-color: rgba(16,185,129,.30); background: rgba(16,185,129,.10); }
+    .status.err{ display:block; border-color: rgba(239,68,68,.28); background: rgba(239,68,68,.10); }
+
+    .sideBody{ padding: 18px; display:flex; flex-direction:column; gap: 12px; }
+    .miniCard{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      background: rgba(255,255,255,.02);
+      padding: 16px;
+    }
+    .miniCard h3{ margin:0 0 8px; font-size: 16px; }
+    .miniCard p{ margin:0; color: rgba(238,241,246,.62); line-height:1.8; font-size: 13px; }
+
+    .steps{
+      display:grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .step{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      background: rgba(6,7,10,.35);
+      padding: 12px 12px;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+    .step .num{
+      width:34px; height:34px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(245,208,122,.14);
+      border: 1px solid rgba(245,208,122,.22);
+      flex: 0 0 auto;
+      font-weight: 900;
+    }
+    .step b{ display:block; font-size: 13px; margin-bottom: 2px; }
+    .step small{ display:block; font-size: 12px; color: rgba(238,241,246,.58); line-height: 1.7; }
+
+    .whatsBox{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      background: rgba(255,255,255,.02);
+      padding: 14px;
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap: wrap;
+    }
+    .whatsBox .txt{ min-width: 220px; flex: 1 1 auto; }
+    .whatsBox .txt b{ display:block; font-size: 13px; margin-bottom: 3px; }
+    .whatsBox .txt small{ display:block; font-size: 12px; color: rgba(238,241,246,.60); line-height: 1.7; }
+
+    /* ✅ Added: tiny spacing helper for the new SEO block (no design change) */
+    .seoBlock{ padding-top: 10px; padding-bottom: 0; }
+    .seoBlock .section__inner{ padding-inline: 18px; }
+
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px){
+      .formGrid{ grid-template-columns: 1fr; }
+    }
