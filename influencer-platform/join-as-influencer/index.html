@@ -683,6 +683,7 @@
 </footer>
 
   <script src="/assets/platform.js" defer></script>
+ <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <script>
@@ -711,7 +712,9 @@
 
     // EmailJS init (same public key as your contact page)
     emailjs.init({ publicKey: "SzBBlvEjgwysF8vHJ" });
-
+    const supabaseUrl = "https://qpihjqzyxkpmlegijkmt.supabase.co";
+const supabaseKey = "sb_publishable_GXP75aI8EF5i0czaZENTBA_huxSaeum";
+const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
     // anti-spam
     const VMC_RATE_LIMIT_MS = 25000; // 25s
     let vmcLastSubmitAt = Number(sessionStorage.getItem('vmcInfLastSubmitAt') || '0');
@@ -820,12 +823,28 @@
 
       showStatus('ok', 'تمام! يتم إرسال تسجيلك الآن...');
 
-      try {
-        await emailjs.sendForm(
-          'service_6w76hdv',
-          'template_11cfrv4',  // <-- ضع Template ID الخاص بالمؤثرين هنا
-          form
-        );
+     await supabaseClient
+  .from('influencers')
+  .insert([{
+    full_name: data.full_name,
+    country: data.country,
+    city: data.city,
+    account_link: data.account_link,
+    niche: data.niche,
+    platforms: data.platforms,
+    followers_range: data.followers_range,
+    avg_views: data.avg_views,
+    whatsapp: data.whatsapp,
+    email: data.email,
+    note: data.note,
+    status: 'pending'
+  }]);
+
+await emailjs.sendForm(
+  'service_6w76hdv',
+  'template_11cfrv4',
+  form
+);
 
         form.reset();
         platformsHidden.value = '';
