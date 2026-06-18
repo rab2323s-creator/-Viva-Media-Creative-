@@ -32,43 +32,427 @@
 
   <link rel="stylesheet" href="/assets/vmc-home.css" />
 
-  <!-- SEO: Structured Data -->
-<!-- SEO: Structured Data -->
-<script type="application/ld+json">
+
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Viva Media Creative",
-  "alternateName": "VMC",
-  "url": "https://vivamediacreative.com/",
-  "logo": "https://vivamediacreative.com/assets/logo.jpeg",
-  "sameAs": [
-    "https://www.linkedin.com/company/viva-media-creative/",
-    "https://www.facebook.com/vivamediacreative"
+  "@graph": [
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://vivamediacreative.com/#organization",
+      "name": "Viva Media Creative",
+      "alternateName": [
+        "VMC",
+        "فيفا ميديا كرييتف",
+        "Viva Media Creative Agency"
+      ],
+      "url": "https://vivamediacreative.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://vivamediacreative.com/#logo",
+        "url": "https://vivamediacreative.com/assets/logo.jpeg",
+        "caption": "Viva Media Creative"
+      },
+      "image": {
+        "@id": "https://vivamediacreative.com/#logo"
+      },
+      "description": "Viva Media Creative هي وكالة تسويق عبر المؤثرين في الخليج ومصر، تعمل في السعودية والإمارات ومصر، ومتخصصة في حملات المؤثرين، إدارة حسابات المشاهير والمؤثرين، ربط المؤثرين بالعلامات التجارية، وتسجيل المؤثرين للحصول على فرص تعاون ورعايات مدفوعة.",
+      "slogan": "نحوّل التأثير إلى شراكات مدفوعة ومبيعات ونمو قابل للقياس",
+      "inLanguage": "ar",
+      "areaServed": [
+        { "@type": "Country", "name": "Saudi Arabia" },
+        { "@type": "Country", "name": "United Arab Emirates" },
+        { "@type": "Country", "name": "Egypt" },
+        { "@type": "AdministrativeArea", "name": "GCC" },
+        { "@type": "Place", "name": "Arab World" }
+      ],
+      "knowsAbout": [
+        "التسويق عبر المؤثرين",
+        "وكالة تسويق عبر المؤثرين",
+        "منصة تسويق عبر المؤثرين",
+        "ربط المؤثرين بالعلامات التجارية",
+        "تسجيل المؤثرين",
+        "طلب مؤثرين لحملة إعلانية",
+        "حملات المؤثرين في السعودية",
+        "حملات المؤثرين في الإمارات",
+        "حملات المؤثرين في مصر",
+        "إدارة حسابات المشاهير",
+        "إدارة حسابات المؤثرين",
+        "إدارة البراند الشخصي",
+        "صناعة الترند",
+        "كتابة النصوص الإعلانية",
+        "تحسين الظهور في جوجل",
+        "Influencer Marketing",
+        "Influencer Marketing Agency",
+        "Influencer Marketing Platform",
+        "Creator Partnerships",
+        "Celebrity Management",
+        "Personal Brand Management"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/viva-media-creative/",
+        "https://www.facebook.com/vivamediacreative",
+        "https://www.instagram.com/vivamediacreative/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://vivamediacreative.com/#website",
+      "url": "https://vivamediacreative.com/",
+      "name": "Viva Media Creative",
+      "alternateName": "فيفا ميديا كرييتف",
+      "publisher": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://vivamediacreative.com/#webpage",
+      "url": "https://vivamediacreative.com/",
+      "name": "وكالة تسويق عبر المؤثرين في الخليج ومصر | إدارة حسابات المشاهير | Viva Media Creative",
+      "headline": "وكالة تسويق عبر المؤثرين في الخليج ومصر وإدارة حسابات المشاهير والمؤثرين",
+      "description": "الصفحة الرئيسية لوكالة Viva Media Creative المتخصصة في التسويق عبر المؤثرين، منصة ربط المؤثرين بالعلامات التجارية، تسجيل المؤثرين، إدارة حسابات المشاهير والمؤثرين، وتنفيذ حملات مؤثرين في السعودية والإمارات ومصر.",
+      "isPartOf": {
+        "@id": "https://vivamediacreative.com/#website"
+      },
+      "about": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://vivamediacreative.com/#logo"
+      },
+      "breadcrumb": {
+        "@id": "https://vivamediacreative.com/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://vivamediacreative.com/#services-catalog"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://vivamediacreative.com/#services-catalog",
+      "name": "خدمات Viva Media Creative",
+      "description": "خدمات التسويق عبر المؤثرين، منصة ربط المؤثرين بالعلامات التجارية، تسجيل المؤثرين، وإدارة حسابات المشاهير والمؤثرين في السعودية والإمارات ومصر.",
+      "url": "https://vivamediacreative.com/",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "position": 1,
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/services/influencer-marketing/#service"
+          }
+        },
+        {
+          "@type": "Offer",
+          "position": 2,
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/influencer-platform/#service"
+          }
+        },
+        {
+          "@type": "Offer",
+          "position": 3,
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/influencer-platform/join-as-influencer/#service"
+          }
+        },
+        {
+          "@type": "Offer",
+          "position": 4,
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/influencer-platform/find-influencers/#service"
+          }
+        },
+        {
+          "@type": "Offer",
+          "position": 5,
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/services/personal-brand-management/#service"
+          }
+        },
+        {
+          "@type": "Offer",
+          "position": 6,
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/services/viral-strategy/#service"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/services/influencer-marketing/#service",
+      "name": "التسويق عبر المؤثرين",
+      "alternateName": [
+        "Influencer Marketing",
+        "وكالة تسويق عبر المؤثرين",
+        "حملات المؤثرين"
+      ],
+      "serviceType": "Influencer Marketing Agency",
+      "url": "https://vivamediacreative.com/services/influencer-marketing/",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Saudi Arabia" },
+        { "@type": "Country", "name": "United Arab Emirates" },
+        { "@type": "Country", "name": "Egypt" },
+        { "@type": "AdministrativeArea", "name": "GCC" }
+      ],
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "الشركات والعلامات التجارية التي تبحث عن حملات مؤثرين قابلة للقياس"
+      },
+      "description": "خدمة التسويق عبر المؤثرين من Viva Media Creative تساعد العلامات التجارية في السعودية والإمارات ومصر على اختيار المؤثرين المناسبين، إدارة التعاونات، وتنفيذ حملات مؤثرين قابلة للقياس من حيث المبيعات والزيارات والطلبات."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/influencer-platform/#service",
+      "name": "منصة ربط المؤثرين بالعلامات التجارية",
+      "alternateName": [
+        "منصة تسويق عبر المؤثرين",
+        "Influencer Marketing Platform",
+        "Influencer Brand Matching Platform"
+      ],
+      "serviceType": "Influencer Marketing Platform",
+      "url": "https://vivamediacreative.com/influencer-platform/",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Saudi Arabia" },
+        { "@type": "Country", "name": "United Arab Emirates" },
+        { "@type": "Country", "name": "Egypt" },
+        { "@type": "Place", "name": "Arab World" }
+      ],
+      "audience": [
+        {
+          "@type": "BusinessAudience",
+          "audienceType": "الشركات التي تبحث عن مؤثرين لحملات إعلانية"
+        },
+        {
+          "@type": "Audience",
+          "audienceType": "المؤثرون وصناع المحتوى الباحثون عن فرص تعاون مدفوعة"
+        }
+      ],
+      "description": "منصة ربط الشركات بالمؤثرين تساعد العلامات التجارية على طلب مؤثرين مناسبين للحملات الإعلانية، وتساعد المؤثرين وصناع المحتوى على التسجيل للحصول على فرص تعاون ورعايات مدفوعة."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/influencer-platform/join-as-influencer/#service",
+      "name": "تسجيل المؤثرين",
+      "alternateName": [
+        "سجل كمؤثر",
+        "Join as Influencer",
+        "Influencer Registration"
+      ],
+      "serviceType": "Influencer Registration",
+      "url": "https://vivamediacreative.com/influencer-platform/join-as-influencer/",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Saudi Arabia" },
+        { "@type": "Country", "name": "United Arab Emirates" },
+        { "@type": "Country", "name": "Egypt" },
+        { "@type": "Place", "name": "Arab World" }
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "المؤثرون وصناع المحتوى"
+      },
+      "description": "تسجيل المؤثرين وصناع المحتوى في منصة Viva Media Creative للحصول على فرص إعلانية ورعايات مدفوعة مع علامات تجارية في السعودية والإمارات ومصر والعالم العربي."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/influencer-platform/find-influencers/#service",
+      "name": "طلب مؤثرين لحملة إعلانية",
+      "alternateName": [
+        "طلب مؤثرين",
+        "Find Influencers",
+        "Influencer Campaign Brief"
+      ],
+      "serviceType": "Influencer Campaign Matching",
+      "url": "https://vivamediacreative.com/influencer-platform/find-influencers/",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Saudi Arabia" },
+        { "@type": "Country", "name": "United Arab Emirates" },
+        { "@type": "Country", "name": "Egypt" },
+        { "@type": "AdministrativeArea", "name": "GCC" }
+      ],
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "الشركات والعلامات التجارية"
+      },
+      "description": "خدمة طلب مؤثرين لحملة إعلانية تساعد الشركات على إرسال Brief سريع للحصول على ترشيحات مؤثرين مناسبة حسب المجال والدولة والمنصة والميزانية."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/services/personal-brand-management/#service",
+      "name": "إدارة حسابات المشاهير والمؤثرين",
+      "alternateName": [
+        "إدارة حسابات المشاهير",
+        "إدارة حسابات المؤثرين",
+        "إدارة البراند الشخصي",
+        "Celebrity and Influencer Account Management",
+        "Personal Brand Management"
+      ],
+      "serviceType": "Celebrity and Influencer Account Management",
+      "url": "https://vivamediacreative.com/services/personal-brand-management/",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Saudi Arabia" },
+        { "@type": "Country", "name": "United Arab Emirates" },
+        { "@type": "Country", "name": "Egypt" },
+        { "@type": "AdministrativeArea", "name": "GCC" }
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "المشاهير والمؤثرون وصناع المحتوى"
+      },
+      "description": "إدارة حسابات المشاهير والمؤثرين تشمل بناء البراند الشخصي، تنظيم المحتوى، إدارة النشر، تحسين الحضور الرقمي، وربط الجمهور بفرص تجارية وشراكات مدفوعة."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/services/viral-strategy/#service",
+      "name": "صناعة المحتوى والترندات",
+      "alternateName": [
+        "صناعة الترند",
+        "Viral Strategy",
+        "Trend-Driven Content"
+      ],
+      "serviceType": "Viral Content Strategy",
+      "url": "https://vivamediacreative.com/services/viral-strategy/",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Saudi Arabia" },
+        { "@type": "Country", "name": "United Arab Emirates" },
+        { "@type": "Country", "name": "Egypt" },
+        { "@type": "AdministrativeArea", "name": "GCC" }
+      ],
+      "description": "خدمة صناعة المحتوى والترندات تساعد المشاهير والعلامات التجارية على بناء أفكار فيديوهات قابلة للانتشار، وتحويل الوصول إلى اهتمام وطلبات قابلة للقياس."
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://vivamediacreative.com/#main-services-list",
+      "name": "الخدمات الرئيسية في Viva Media Creative",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "التسويق عبر المؤثرين",
+          "url": "https://vivamediacreative.com/services/influencer-marketing/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "منصة ربط المؤثرين بالعلامات التجارية",
+          "url": "https://vivamediacreative.com/influencer-platform/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "تسجيل المؤثرين",
+          "url": "https://vivamediacreative.com/influencer-platform/join-as-influencer/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "طلب مؤثرين لحملة إعلانية",
+          "url": "https://vivamediacreative.com/influencer-platform/find-influencers/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "إدارة حسابات المشاهير والمؤثرين",
+          "url": "https://vivamediacreative.com/services/personal-brand-management/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "صناعة المحتوى والترندات",
+          "url": "https://vivamediacreative.com/services/viral-strategy/"
+        }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://vivamediacreative.com/#knowledge-hub",
+      "name": "مركز المعرفة",
+      "url": "https://vivamediacreative.com/insights/",
+      "description": "مركز معرفة يحتوي على مقالات وتحليلات حول التسويق عبر المؤثرين، اختيار منصة التسويق عبر المؤثرين في السعودية، إدارة الصورة العامة للمشاهير، وتحسين الأداء الرقمي.",
+      "isPartOf": {
+        "@id": "https://vivamediacreative.com/#website"
+      },
+      "publisher": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "inLanguage": "ar",
+      "hasPart": [
+        {
+          "@type": "Article",
+          "@id": "https://vivamediacreative.com/learn/choose-influencer-platform-saudi/#article",
+          "headline": "كيف تختار منصة التسويق عبر المؤثرين في السعودية؟",
+          "url": "https://vivamediacreative.com/learn/choose-influencer-platform-saudi/",
+          "image": "https://vivamediacreative.com/assets/choose-influencer-platform-saudi.jpg",
+          "publisher": {
+            "@id": "https://vivamediacreative.com/#organization"
+          },
+          "inLanguage": "ar"
+        },
+        {
+          "@type": "Article",
+          "@id": "https://vivamediacreative.com/learn/public-image/#article",
+          "headline": "كيف تحمي سمعتك على الإنترنت؟ إدارة الصورة العامة للمشاهير",
+          "url": "https://vivamediacreative.com/learn/public-image/",
+          "image": "https://vivamediacreative.com/assets/articles/public-image/public-image-hero.webp",
+          "publisher": {
+            "@id": "https://vivamediacreative.com/#organization"
+          },
+          "inLanguage": "ar"
+        },
+        {
+          "@type": "Article",
+          "@id": "https://vivamediacreative.com/learn/conversion-rate-optimization-guide/#article",
+          "headline": "CRO: كيف ترفع المبيعات من نفس الزيارات خلال 30 يومًا؟",
+          "url": "https://vivamediacreative.com/learn/conversion-rate-optimization-guide/",
+          "image": "https://vivamediacreative.com/assets/articles/cro/conversion-rate-optimization-guide-hero.webp",
+          "publisher": {
+            "@id": "https://vivamediacreative.com/#organization"
+          },
+          "inLanguage": "ar"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://vivamediacreative.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الرئيسية",
+          "item": "https://vivamediacreative.com/"
+        }
+      ]
+    }
   ]
 }
 </script>
-
-<!-- SEO: Influencer Platform Service -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Service",
-  "name":"منصة تسويق عبر المؤثرين في العالم العربي",
-  "serviceType":"Influencer Marketing Platform",
-  "description":"منصة تربط الشركات بالمؤثرين في الخليج ومصر والعالم العربي. تسجيل مؤثرين وطلب مؤثرين لحملات التسويق عبر المؤثرين مع مطابقة حسب المجال والدولة والميزانية.",
-  "provider":{
-    "@type":"Organization",
-    "name":"Viva Media Creative",
-    "url":"https://vivamediacreative.com/"
-  },
-  "areaServed":"Arab World",
-  "inLanguage":"ar",
-  "url":"https://vivamediacreative.com/influencer-platform/"
-}
-</script>
-
-  
 
 </head>
 
@@ -837,6 +1221,7 @@
       <div class="fSocial" aria-label="Social links">
         <a class="fSocial__link" href="https://www.linkedin.com/company/viva-media-creative/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a class="fSocial__link" href="https://www.facebook.com/vivamediacreative" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a class="fSocial__link" href="https://www.instagram.com/vivamediacreative/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
 
       <div class="fMiniTrust" aria-label="Trust">
