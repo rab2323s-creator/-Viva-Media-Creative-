@@ -1703,3 +1703,16 @@ background:radial-gradient(circle,rgba(185,151,79,.12),transparent 70%);
 pointer-events:none;
 }
  
+.topic-section p a,
+.topic-section li a{
+  color:#806735;
+  font-weight:800;
+  text-decoration:underline;
+  text-underline-offset:4px;
+  text-decoration-thickness:1.5px;
+}
+
+.topic-section p a:hover,
+.topic-section li a:hover{
+  color:#b9974f;
+}
