@@ -929,3 +929,23 @@
   border-radius: 18px;
   filter: saturate(1.04) contrast(1.03);
 }
+@media (max-width: 640px){
+  .article .blog-article table{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .article .blog-article th,
+  .article .blog-article td{
+    min-width: 150px;
+    padding: 9px;
+    font-size: .92rem;
+    line-height: 1.8;
+    white-space: normal;
+  }
+}
