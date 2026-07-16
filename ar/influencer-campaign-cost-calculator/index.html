@@ -1,4 +1,4 @@
-  <!doctype html>
+ <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
@@ -154,11 +154,13 @@ href="https://vivamediacreative.com/influencer-platform/find-influencers/">
 <fieldset class="calc-group"><legend>2. المؤثر وجودة الجمهور</legend><div class="calc-grid">
 <div><label for="influencerCount">عدد المؤثرين</label><input id="influencerCount" type="number" min="1" max="100" value="1"></div>
 <div><label for="followers">عدد المتابعين التقريبي لكل مؤثر</label><input id="followers" type="number" min="1000" max="100000000" value="50000"><div id="tierHint" class="inline-help"></div></div>
+<div><label for="creatorProfile">نوع الحساب</label><select id="creatorProfile"><option value="digital">مؤثر رقمي</option><option value="expert">خبير متخصص</option><option value="publicFigure">شخصية عامة</option><option value="celebrity">مشهور فني أو إعلامي</option></select><div class="inline-help">لأن الشخصية العامة أو الفنان قد يُسعّر أعلى من صانع محتوى بعدد متابعين مماثل.</div></div>
 <div><label for="averageViews">متوسط المشاهدات للفيديو</label><input id="averageViews" type="number" min="0" max="100000000" placeholder="مثال: 25000"><div class="inline-help">متوسط آخر 10 فيديوهات مشابهة أفضل من أعلى فيديو.</div></div>
+<div><label for="storyViews">متوسط مشاهدات Stories</label><input id="storyViews" type="number" min="0" max="100000000" placeholder="مثال: 12000"><div class="inline-help">أدخل متوسط آخر 10 قصص إعلانية أو عادية، وليس أعلى Story.</div></div>
 <div><label for="engagementRate">نسبة التفاعل التقريبية %</label><input id="engagementRate" type="number" min="0" max="30" step="0.1" placeholder="مثال: 3.5"></div>
 <div><label for="audienceMatch">نسبة الجمهور داخل الدولة المستهدفة %</label><input id="audienceMatch" type="number" min="0" max="100" value="60"></div>
 <div><label for="creatorDemand">حالة المؤثر</label><select id="creatorDemand"><option value="flexible">مرن — عدة خيارات مناسبة</option><option value="specific">مؤثر محدد بالاسم</option><option value="high">مطلوب بشدة / موسم حجوزات</option></select></div>
-</div><div id="dataQualityHint" class="validation-note">إدخال المشاهدات ونسبة الجمهور يجعل النتيجة أدق بكثير.</div></fieldset></section>
+</div><div id="dataQualityHint" class="validation-note">إدخال مشاهدات الفيديو والقصص ونسبة الجمهور يجعل التقدير أكثر موثوقية.</div></fieldset></section>
 <section class="wizard-pane" data-step="3" hidden>
 <fieldset class="calc-group"><legend>3. محتوى كل مؤثر</legend><div class="content-counter-grid">
 <label class="counter-card" data-format="shortVideo"><span><strong>فيديو قصير</strong><small>Reel / TikTok / Short</small></span><input id="shortVideoCount" type="number" min="0" max="30" value="1"></label>
@@ -185,7 +187,7 @@ href="https://vivamediacreative.com/influencer-platform/find-influencers/">
 <div class="estimate-header"><div><span class="eyebrow">النطاق الإجمالي المتوقع</span><div id="budgetRange" class="estimate-range">—</div><span class="pill" id="rangePill">—</span></div><div class="likely-card"><span>التقدير الأقرب</span><strong id="likelyEstimate">—</strong><small>تقدير إرشادي</small></div></div>
 <div class="scenario-cards"><div class="scenario-card"><span>اقتصادي</span><strong id="scenarioLow">—</strong><small>اختيار مرن وتفاوض جيد</small></div><div class="scenario-card featured"><span>الأكثر احتمالًا</span><strong id="scenarioLikely">—</strong><small>السعر الأقرب للواقع</small></div><div class="scenario-card"><span>مرتفع</span><strong id="scenarioHigh">—</strong><small>مؤثر مطلوب أو شروط إضافية</small></div></div>
 <div class="result-kpis"><div><span>رسوم المؤثرين</span><strong id="creatorFeesResult">—</strong></div><div><span>متوسط لكل مؤثر</span><strong id="perInfluencer">—</strong></div><div><span>إجمالي المخرجات</span><strong id="totalDeliverables">—</strong></div></div>
-<div class="accuracy-notice"><div class="result-score">دقة التقدير: <span id="confidenceScore">—</span></div><div class="confidence-meter"><span id="confidenceBar" style="width:0"></span></div><ul id="assumptionList" class="assumption-list note"></ul></div>
+<div class="accuracy-notice"><div class="result-score">موثوقية التقدير: <span id="confidenceScore">—</span></div><div class="confidence-meter"><span id="confidenceBar" style="width:0"></span></div><ul id="assumptionList" class="assumption-list note"></ul></div>
 <div class="table-scroll"><table><thead><tr><th>البند</th><th>الحد الأدنى</th><th>الأقرب</th><th>الحد الأعلى</th></tr></thead><tbody id="breakdown"></tbody></table></div>
 <div class="recommendation-box"><h3 id="quickRec">توصية الحملة</h3><ul id="recommendationList" class="list note"></ul></div>
 <div class="optimizer-box"><h3>محسّن الميزانية</h3><p class="note">أدخل ميزانيتك لتعرف إن كانت مناسبة وكيف يمكن تحسين توزيعها.</p><div class="optimizer-grid"><div><label for="targetBudget">ميزانيتك المتاحة</label><input id="targetBudget" type="number" min="0" placeholder="مثال: 30000"></div><button type="button" id="optimizeBtn" class="secondary">حلّل الميزانية</button></div><div id="optimizerResults" class="optimizer-results"></div></div>
