@@ -1,4 +1,4 @@
-   <script>
+ 
     // ============================
     // Pricing model (editable)
     // ============================
@@ -550,4 +550,4 @@ const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
     // Initial
     updateCompatibilityHint();
-  </script>
+ 
