@@ -1,553 +1,585 @@
- 
-    // ============================
-    // Pricing model (editable)
-    // ============================
-    // IMPORTANT: These are market-wide ESTIMATION ranges, not official influencer prices.
+(() => {
+  'use strict';
 
-    const CURRENCY = {
-      gcc: { code: 'SAR', symbol: 'ر.س' },
-      eg:  { code: 'EGP', symbol: 'ج.م' }
-    };
+  /*
+   * Viva Media Creative — Influencer Campaign Cost Calculator
+   * Estimation model only. It deliberately avoids promising an exact creator fee.
+   * Pricing values are centralized below for easy future calibration.
+   */
 
-    // Base price per deliverable (min/max) by market -> platform -> influencer size -> content type
-    // You can tune these numbers later from one place.
-    const BASE = {
-      gcc: {
-        instagram: {
-          nano:  { story:[250,650],  post:[600,1600], reel:[1400,4200], live:[2500,7000] },
-          micro: { story:[500,1400], post:[1500,4500], reel:[4500,14000], live:[9000,24000] },
-          macro: { story:[1200,3500],post:[4500,12000],reel:[12000,35000],live:[25000,60000] },
-          mega:  { story:[2500,7000],post:[9000,22000],reel:[25000,80000],live:[60000,140000] }
-        },
-        tiktok: {
-          nano:  { story:[0,0],      post:[0,0],      reel:[1200,3800], live:[2200,6500] },
-          micro: { story:[0,0],      post:[0,0],      reel:[4000,12500],live:[8500,22000] },
-          macro: { story:[0,0],      post:[0,0],      reel:[11000,32000],live:[24000,56000] },
-          mega:  { story:[0,0],      post:[0,0],      reel:[24000,78000],live:[56000,130000] }
-        },
-        snapchat: {
-          nano:  { story:[350,900],  post:[0,0],      reel:[0,0],       live:[0,0] },
-          micro: { story:[900,2500], post:[0,0],      reel:[0,0],       live:[0,0] },
-          macro: { story:[2200,6000],post:[0,0],      reel:[0,0],       live:[0,0] },
-          mega:  { story:[4500,12000],post:[0,0],     reel:[0,0],       live:[0,0] }
-        }
-      },
-      eg: {
-        instagram: {
-          nano:  { story:[120,350],  post:[350,900],  reel:[900,2800],  live:[1400,4200] },
-          micro: { story:[250,750],  post:[900,2600],  reel:[2500,9000], live:[4500,14000] },
-          macro: { story:[600,1800], post:[2600,7000], reel:[8000,25000],live:[14000,36000] },
-          mega:  { story:[1200,3500],post:[6000,16000],reel:[18000,55000],live:[35000,90000] }
-        },
-        tiktok: {
-          nano:  { story:[0,0],      post:[0,0],      reel:[800,2500],   live:[1200,3800] },
-          micro: { story:[0,0],      post:[0,0],      reel:[2200,8000],  live:[4000,12000] },
-          macro: { story:[0,0],      post:[0,0],      reel:[7000,22000], live:[12000,30000] },
-          mega:  { story:[0,0],      post:[0,0],      reel:[15000,48000],live:[28000,75000] }
-        },
-        snapchat: {
-          nano:  { story:[150,450],  post:[0,0],      reel:[0,0],       live:[0,0] },
-          micro: { story:[350,1100], post:[0,0],      reel:[0,0],       live:[0,0] },
-          macro: { story:[900,2600], post:[0,0],      reel:[0,0],       live:[0,0] },
-          mega:  { story:[1800,5200],post:[0,0],      reel:[0,0],       live:[0,0] }
-        }
-      }
-    };
-
-    // Multipliers
-    const COMPLEXITY_MULT = {
-      conservative: { min: 0.90, max: 0.95 },
-      typical:      { min: 1.00, max: 1.00 },
-      premium:      { min: 1.08, max: 1.18 }
-    };
-
-    const DURATION_MULT = (days) => {
-      // More days usually means more coordination + possible reposts/extra rounds.
-      if (days <= 7) return { min: 1.00, max: 1.00 };
-      if (days <= 14) return { min: 1.03, max: 1.06 };
-      if (days <= 30) return { min: 1.06, max: 1.12 };
-      return { min: 1.10, max: 1.18 };
-    };
-
-    const ADDONS = {
-      usageRights:  { min: 1.15, max: 1.60 },
-      exclusivity:  { min: 1.12, max: 1.55 },
-      whitelisting: { min: 1.10, max: 1.35 },
-      production:   { min: 1.08, max: 1.25 }
-    };
-
-    // Volume discount (bundles) - applies to base influencer fees only
-    function volumeDiscount(n) {
-      if (n >= 20) return { min: 0.88, max: 0.94 };
-      if (n >= 10) return { min: 0.92, max: 0.97 };
-      if (n >= 6)  return { min: 0.95, max: 0.99 };
-      return { min: 1.00, max: 1.00 };
+  const CONFIG = {
+    whatsappNumber: '4915565678291',
+    email: 'info@vivamediacreative.com',
+    supabase: {
+      url: 'https://qpihjqzyxkpmlegijkmt.supabase.co',
+      publishableKey: 'sb_publishable_GXP75aI8EF5i0czaZENTBA_huxSaeum',
+      table: 'influencer_leads'
     }
-
-    // ============================
-    // Helpers
-    // ============================
-    function fmt(n, cur) {
-      const x = Math.round(n);
-      // Arabic thousands separator
-      return x.toLocaleString('ar-EG') + ' ' + (cur.symbol || cur.code);
-    }
-
-    function clamp(v, a, b){ return Math.max(a, Math.min(b, v)); }
-
-    function getBase(market, platform, size, type){
-      const p = (BASE[market]||{})[platform];
-      if (!p) return [0,0];
-      const s = p[size];
-      if (!s) return [0,0];
-      return s[type] || [0,0];
-    }
-
-    function isSupported(platform, type) {
-      // TikTok doesn't have "story" or "post" in our model.
-      if (platform === 'tiktok' && (type === 'story' || type === 'post')) return false;
-      if (platform === 'snapchat' && type !== 'story') return false;
-      // Live on Snapchat is not modeled.
-      if (platform === 'snapchat' && type === 'live') return false;
-      return true;
-    }
-
-    function suggestPlan({goal, platform, market, size}){
-      // Output a simple, actionable recommendation.
-      // (No hard promises.)
-      const isGcc = market === 'gcc';
-      const platformName = platform === 'instagram' ? 'إنستغرام' : platform === 'tiktok' ? 'تيك توك' : 'سناب شات';
-
-      const tips = [];
-      if (goal === 'awareness') tips.push('ابدأ بعدة Micro/Nano لاختبار الرسائل قبل التوسيع.');
-      if (goal === 'engagement') tips.push('ادمج Reel/فيديو + Stories بأسئلة/تصويت لرفع التفاعل.');
-      if (goal === 'leads') tips.push('ركّز على Stories مع CTA واضح + رابط/واتساب + كود خاص.');
-      if (goal === 'sales') tips.push('استخدم كود خصم + تتبع UTM + إعادة استخدام أفضل فيديو كإعلان ممول.');
-      if (goal === 'launch') tips.push('امزج Macro للضجة + Micro للتكرار + جدول نشر مكثف أسبوعين.');
-
-      // Market nuance
-      if (isGcc) tips.push('في الخليج غالبًا ترتفع الأسعار في المواسم (خصوصًا رمضان) — اختر “مستوى سوق مرتفع” للتقدير.');
-      else tips.push('في مصر الجودة/الانتشار يختلفان جدًا — تأكد من الجمهور الحقيقي قبل الدفع.');
-
-      // Platform nuance
-      if (platform === 'snapchat') tips.push('سناب ممتاز للعروض والـ CTA السريع عبر القصص، واحرص على تكرار الرسالة.');
-      if (platform === 'tiktok') tips.push('تيك توك يحتاج فكرة قوية في أول ثانيتين — ركّز على “Hook” واضح.');
-      if (platform === 'instagram') tips.push('إنستغرام: Reels للانتشار + Stories للتحويل والرسائل.');
-
-      return { title: `خطة مبدئية لـ ${platformName}`, bullets: tips.slice(0,4) };
-    }
-
-    function buildPackages({goal, platform}){
-      // Packages are heuristic templates (not prices) to drive conversion.
-      // We keep them platform-aware.
-      const rows = [];
-
-      const base = platform === 'snapchat'
-        ? {
-            basic:  '2 مؤثر Nano/Micro + 8 قصص (Story Frames)',
-            growth: '4 مؤثرين Micro + 20 قصة + تكرار عرض/CTA',
-            premium:'1 Macro + 6 Micro + 40 قصة + تغطية أسبوعين'
-          }
-        : {
-            basic:  '1 Micro + 1 فيديو + 3 قصص (أو 1 Post)',
-            growth: '3 Micro + 3 فيديو + 9 قصص + كود خصم لكل مؤثر',
-            premium:'1 Macro + 5 Micro + 6 فيديو + 15 قصة + إعادة استخدام أفضل فيديو كإعلان'
-          };
-
-      const when = {
-        awareness: {
-          b:'اختبار سريع + أول بيانات.',
-          g:'زيادة انتشار مع تنويع.',
-          p:'دفعة قوية لبراند/افتتاح.'
-        },
-        engagement: {
-          b:'رفع تفاعل محتوى واحد.',
-          g:'تفاعل مستمر أسبوعين.',
-          p:'تفاعل + وصول واسع.'
-        },
-        leads: {
-          b:'جمع Leads محدود.',
-          g:'Leads ثابتة مع CTA.',
-          p:'Lead machine + إعادة استهداف.'
-        },
-        sales: {
-          b:'مبيعات تجريبية.',
-          g:'تحسين تحويل مع أكواد.',
-          p:'مبيعات + حملات ممولة.'
-        },
-        launch: {
-          b:'تهيئة قبل الإطلاق.',
-          g:'أسبوعين إطلاق.',
-          p:'إطلاق ضخم متعدد مؤثرين.'
-        }
-      };
-
-      const w = when[goal] || when.awareness;
-      rows.push({name:'Basic', dist: base.basic, why: w.b});
-      rows.push({name:'Growth', dist: base.growth, why: w.g});
-      rows.push({name:'Premium', dist: base.premium, why: w.p});
-      return rows;
-    }
-
-    function buildWhatsappMessage(summary){
-      const lines = [
-        'مرحبًا Viva Media Creative 👋',
-        'أريد عرض سعر رسمي + قائمة مؤثرين مناسبة لحملة مؤثرين.',
-        '',
-        `السوق: ${summary.marketLabel}`,
-        `المنصة: ${summary.platformLabel}`,
-        `الهدف: ${summary.goalLabel}`,
-        `حجم المؤثر: ${summary.sizeLabel}`,
-        `نوع المحتوى: ${summary.typeLabel}`,
-        `عدد المخرجات: ${summary.deliverables}`,
-        `مدة الحملة: ${summary.days} يوم`,
-        `إضافات: ${summary.addonsLabel || 'بدون'}`,
-        `تقدير الميزانية (Range): ${summary.rangeLabel}`,
-        '',
-        summary.industry ? `المجال: ${summary.industry}` : '',
-        'أرسلوا لي الخيارات المناسبة وخطة مقترحة. شكرًا 🙏'
-      ].filter(Boolean);
-      return lines.join('\n');
-    }
-
-    // ============================
-    // UI wiring
-    // ============================
-    const el = (id) => document.getElementById(id);
-   const supabaseUrl = "https://qpihjqzyxkpmlegijkmt.supabase.co";
-const supabaseKey = "sb_publishable_GXP75aI8EF5i0czaZENTBA_huxSaeum";
-
-const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
-    const calcForm = el('calcForm');
-    const results = el('results');
-    const budgetRange = el('budgetRange');
-    const perDeliverable = el('perDeliverable');
-    const breakdown = el('breakdown');
-    const copyBtn = el('copyBtn');
-    const resetBtn = el('resetBtn');
-    const printBtn = el('printBtn');
-    const rangePill = el('rangePill');
-    const quickRec = el('quickRec');
-    const packagesEl = el('packages');
-    const waBtn = el('waBtn');
-    const mailBtn = el('mailBtn');
-
-    function updateCompatibilityHint(){
-      const platform = el('platform').value;
-      const type = el('contentType').value;
-      const ok = isSupported(platform, type);
-
-      // If not supported, auto-switch to a supported option to reduce confusion.
-      if (!ok) {
-        if (platform === 'tiktok') el('contentType').value = 'reel';
-        if (platform === 'snapchat') el('contentType').value = 'story';
-      }
-    }
-
-    el('platform').addEventListener('change', updateCompatibilityHint);
-    el('contentType').addEventListener('change', updateCompatibilityHint);
-
-    function compute(){
-      const market = el('market').value;
-      const platform = el('platform').value;
-      const goal = el('goal').value;
-      const industry = (el('industry').value || '').trim();
-      const size = el('influencerSize').value;
-      const type = el('contentType').value;
-      const deliverables = clamp(parseInt(el('deliverables').value || '1', 10), 1, 120);
-      const days = parseInt(el('campaignDays').value, 10);
-      const complexity = el('complexity').value;
-
-      const addons = {
-        usageRights: el('usageRights').checked,
-        exclusivity: el('exclusivity').checked,
-        whitelisting: el('whitelisting').checked,
-        production: el('production').checked
-      };
-
-      if (!isSupported(platform, type)) {
-        return { error: 'اختيار غير مدعوم لهذه المنصّة. غيّر نوع المحتوى.' };
-      }
-
-      const cur = CURRENCY[market];
-      const base = getBase(market, platform, size, type);
-      const baseMin = base[0];
-      const baseMax = base[1];
-      if (!baseMin && !baseMax) {
-        return { error: 'لا توجد بيانات تقديرية لهذا الاختيار. جرّب نوع محتوى أو منصّة أخرى.' };
-      }
-
-      // Core: deliverables * base
-      let min = baseMin * deliverables;
-      let max = baseMax * deliverables;
-
-      // Volume discount on base
-      const vd = volumeDiscount(deliverables);
-      min *= vd.min;
-      max *= vd.max;
-
-      // Complexity multiplier
-      const cm = COMPLEXITY_MULT[complexity] || COMPLEXITY_MULT.typical;
-      min *= cm.min;
-      max *= cm.max;
-
-      // Duration multiplier
-      const dm = DURATION_MULT(days);
-      min *= dm.min;
-      max *= dm.max;
-
-      // Add-ons (multiplicative)
-      const appliedAddons = [];
-      Object.entries(addons).forEach(([k, on]) => {
-        if (!on) return;
-        const mlt = ADDONS[k];
-        if (!mlt) return;
-        min *= mlt.min;
-        max *= mlt.max;
-        appliedAddons.push(k);
-      });
-
-      // Guard
-      min = Math.max(0, min);
-      max = Math.max(min, max);
-
-      // Breakdown table entries
-      const rows = [];
-      rows.push({
-        label: `رسوم المؤثرين (تقريبية) × ${deliverables} مخرج`,
-        min: baseMin * deliverables,
-        max: baseMax * deliverables
-      });
-
-      if (deliverables >= 6) rows.push({ label: 'خصم باقة (Volume) — تقديري', min: -(baseMin * deliverables) * (1 - vd.min), max: -(baseMax * deliverables) * (1 - vd.max) });
-
-      rows.push({ label: `مستوى السوق (${complexity === 'conservative' ? 'متحفّظ' : complexity === 'premium' ? 'مرتفع' : 'متوسط'})`, min: (baseMin * deliverables * vd.min) * (cm.min - 1), max: (baseMax * deliverables * vd.max) * (cm.max - 1) });
-      rows.push({ label: `مدة الحملة (${days} يوم)`, min: (baseMin * deliverables * vd.min * cm.min) * (dm.min - 1), max: (baseMax * deliverables * vd.max * cm.max) * (dm.max - 1) });
-
-      const addonLabels = {
-        usageRights:'حقوق استخدام',
-        exclusivity:'حصرية',
-        whitelisting:'Whitelisting/Spark',
-        production:'إنتاج'
-      };
-      appliedAddons.forEach(k => {
-        const mlt = ADDONS[k];
-        rows.push({ label: `إضافة: ${addonLabels[k]}`, min: min / mlt.min * (mlt.min - 1), max: max / mlt.max * (mlt.max - 1) });
-      });
-
-      // Recommendation
-      const plan = suggestPlan({goal, platform, market, size});
-
-      // Packages
-      const packs = buildPackages({goal, platform});
-
-      // Labels
-      const marketLabel = market === 'gcc' ? 'الخليج (GCC)' : 'مصر';
-      const platformLabel = platform === 'instagram' ? 'Instagram' : platform === 'tiktok' ? 'TikTok' : 'Snapchat';
-      const goalLabel = {
-        awareness:'وعي/انتشار',
-        engagement:'تفاعل',
-        leads:'عملاء محتملون',
-        sales:'مبيعات',
-        launch:'إطلاق'
-      }[goal] || goal;
-      const sizeLabel = {
-        nano:'Nano', micro:'Micro', macro:'Macro', mega:'Mega'
-      }[size] || size;
-      const typeLabel = {
-        reel:'فيديو قصير', story:'Stories', post:'Post/Carousel', live:'Live'
-      }[type] || type;
-
-      const addonsLabel = Object.entries(addons).filter(([,v])=>v).map(([k])=>addonLabels[k]).join(' + ');
-
-      const rangeLabel = `${fmt(min, cur)} — ${fmt(max, cur)}`;
-
-      return {
-        min, max, cur, rows,
-        plan, packs,
-        summary: {
-          marketLabel, platformLabel, goalLabel, sizeLabel, typeLabel,
-          deliverables, days,
-          rangeLabel,
-          addonsLabel,
-          industry
-        }
-      };
-    }
-
-    function render(out){
-      if (out.error) {
-        alert(out.error);
-        return;
-      }
-
-      results.style.display = '';
-      copyBtn.disabled = false;
-      printBtn.disabled = false;
-
-      budgetRange.textContent = `${fmt(out.min, out.cur)} — ${fmt(out.max, out.cur)}`;
-      const avg = (out.min + out.max) / 2;
-      perDeliverable.textContent = fmt(avg / out.summary.deliverables, out.cur);
-
-      // Pill based on width of range
-      const width = out.max - out.min;
-      const ratio = width / Math.max(1, out.min);
-      if (ratio <= 0.35) {
-        rangePill.textContent = 'نطاق ضيق (أقرب)';
-        rangePill.className = 'pill ok';
-      } else if (ratio <= 0.75) {
-        rangePill.textContent = 'نطاق متوسط';
-        rangePill.className = 'pill warn';
-      } else {
-        rangePill.textContent = 'نطاق واسع (حسب المؤثر)';
-        rangePill.className = 'pill bad';
-      }
-
-      // Quick rec
-      quickRec.textContent = out.plan.title;
-
-      // Breakdown
-      breakdown.innerHTML = out.rows.map(r => {
-        const minTxt = fmt(r.min, out.cur);
-        const maxTxt = fmt(r.max, out.cur);
-        return `<tr><td>${r.label}</td><td>${minTxt}</td><td>${maxTxt}</td></tr>`;
-      }).join('');
-
-      // Packages
-      packagesEl.innerHTML = out.packs.map(p => {
-        return `<tr><td><strong>${p.name}</strong></td><td>${p.dist}</td><td class="note">${p.why}</td></tr>`;
-      }).join('');
-
-      // Build CTA links
-      const msg = buildWhatsappMessage(out.summary);
-
-      // NOTE: Replace this with your official WhatsApp number (international format without +)
-      const VIVA_WA_NUMBER = '4915565678291';
-      const waHref = `https://wa.me/${VIVA_WA_NUMBER}?text=${encodeURIComponent(msg)}`;
-      waBtn.href = waHref;
-
-      const mailSubject = `طلب عرض سعر رسمي — حملة مؤثرين (${out.summary.marketLabel})`;
-      const mailBody = msg;
-      mailBtn.href = `mailto:info@vivamediacreative.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
-
-      // Copy summary
-      copyBtn.onclick = async () => {
-        const text = [
-          'ملخص حاسبة تكلفة حملة المؤثرين — Viva Media Creative',
-          `التقدير: ${out.summary.rangeLabel}`,
-          `السوق: ${out.summary.marketLabel} | المنصة: ${out.summary.platformLabel}`,
-          `الهدف: ${out.summary.goalLabel} | حجم المؤثر: ${out.summary.sizeLabel}`,
-          `نوع المحتوى: ${out.summary.typeLabel} | المخرجات: ${out.summary.deliverables} | المدة: ${out.summary.days} يوم`,
-          `الإضافات: ${out.summary.addonsLabel || 'بدون'}`
-        ].join('\n');
-        try{
-          await navigator.clipboard.writeText(text);
-          copyBtn.textContent = '✅ تم النسخ';
-          setTimeout(()=>copyBtn.textContent='نسخ الملخص', 1200);
-        }catch(e){
-          alert('تعذر النسخ. يمكنك تحديد النص ونسخه يدويًا.');
-        }
-      };
-
-      // Print
-      printBtn.onclick = () => window.print();
-
-      // Store last summary for lead form
-      window.__lastSummary = { summary: out.summary, msg };
-
-      // Update recommendation bullets in UI (optional future)
-      const recBullets = out.plan.bullets.map(t => `• ${t}`).join('  ');
-      document.getElementById('planPill').title = recBullets;
-    }
-
-    calcForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      updateCompatibilityHint();
-      const out = compute();
-      render(out);
-    });
-
-    resetBtn.addEventListener('click', () => {
-      calcForm.reset();
-      results.style.display = 'none';
-      copyBtn.disabled = true;
-      printBtn.disabled = true;
-      window.__lastSummary = null;
-      updateCompatibilityHint();
-    });
-
-    // Lead form (message builder)
-    const leadForm = document.getElementById('leadForm');
-    const leadOut = document.getElementById('leadOut');
-    const copyLeadMsg = document.getElementById('copyLeadMsg');
-
-    function buildLeadMessage(){
-      const name = (document.getElementById('name').value || '').trim();
-      const email = (document.getElementById('email').value || '').trim();
-      const whats = (document.getElementById('whats').value || '').trim();
-      const notes = (document.getElementById('notes').value || '').trim();
-
-      const base = window.__lastSummary?.msg || 'أريد عرض سعر رسمي + قائمة مؤثرين مناسبة.';
-      const lines = [
-        base,
-        '',
-        '— بيانات التواصل —',
-        `الاسم: ${name}`,
-        `البريد: ${email}`,
-        whats ? `واتساب: ${whats}` : '',
-        notes ? `ملاحظات: ${notes}` : ''
-      ].filter(Boolean);
-
-      return lines.join('\n');
-    }
-
-   leadForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  const msg = buildLeadMessage();
-
-  const leadData = {
-    name: document.getElementById('name').value || null,
-    email: document.getElementById('email').value || null,
-    whatsapp: document.getElementById('whats').value || null,
-    notes: document.getElementById('notes').value || null,
-
-    market: window.__lastSummary?.summary?.marketLabel || null,
-    platform: window.__lastSummary?.summary?.platformLabel || null,
-    goal: window.__lastSummary?.summary?.goalLabel || null,
-    influencer_size: window.__lastSummary?.summary?.sizeLabel || null,
-    content_type: window.__lastSummary?.summary?.typeLabel || null,
-    deliverables: window.__lastSummary?.summary?.deliverables || null,
-    campaign_days: window.__lastSummary?.summary?.days || null,
-    budget_range: window.__lastSummary?.summary?.rangeLabel || null,
-    industry: window.__lastSummary?.summary?.industry || null
   };
 
-  const { error } = await supabaseClient
-    .from('influencer_leads')
-    .insert([leadData]);
+  const MARKETS = {
+    sa: { label: 'السعودية', code: 'SAR', symbol: 'ر.س', locale: 'ar-SA', fromSar: 1, marketIndex: 1 },
+    ae: { label: 'الإمارات', code: 'AED', symbol: 'د.إ', locale: 'ar-AE', fromSar: 0.98, marketIndex: 1.03 },
+    kw: { label: 'الكويت', code: 'KWD', symbol: 'د.ك', locale: 'ar-KW', fromSar: 0.082, marketIndex: 1.02, decimals: 0 },
+    qa: { label: 'قطر', code: 'QAR', symbol: 'ر.ق', locale: 'ar-QA', fromSar: 0.97, marketIndex: 0.96 },
+    eg: { label: 'مصر', code: 'EGP', symbol: 'ج.م', locale: 'ar-EG', fromSar: 12.8, marketIndex: 0.25 }
+  };
 
-  if (error) {
-    console.error(error);
-    alert('حدث خطأ أثناء إرسال الطلب. حاول مرة أخرى.');
-    return;
+  // Baseline branded short-video fee per creator in SAR-equivalent value.
+  // Local market index and currency conversion are applied afterward.
+  const VIDEO_BASE_SAR = {
+    nano:      { min: 650,   likely: 1100,  max: 1900 },
+    micro:     { min: 1500,  likely: 3200,  max: 6500 },
+    mid:       { min: 5000,  likely: 9500,  max: 18000 },
+    macro:     { min: 12000, likely: 22000, max: 40000 },
+    mega:      { min: 26000, likely: 48000, max: 90000 },
+    celebrity: { min: 60000, likely: 110000,max: 220000 }
+  };
+
+  const PLATFORM_FORMAT_MULTIPLIERS = {
+    instagram: {
+      reel:  { min: 1, likely: 1, max: 1 },
+      story: { min: 0.20, likely: 0.25, max: 0.32 },
+      post:  { min: 0.48, likely: 0.58, max: 0.70 },
+      live:  { min: 1.25, likely: 1.50, max: 1.85 }
+    },
+    tiktok: {
+      reel:  { min: 0.88, likely: 0.95, max: 1.05 },
+      story: null,
+      post: null,
+      live:  { min: 1.10, likely: 1.35, max: 1.70 }
+    },
+    snapchat: {
+      reel: null,
+      story: { min: 0.24, likely: 0.30, max: 0.38 },
+      post: null,
+      live: null
+    }
+  };
+
+  const PLATFORM_LABELS = {
+    instagram: 'Instagram',
+    tiktok: 'TikTok',
+    snapchat: 'Snapchat'
+  };
+
+  const TIER_LABELS = {
+    nano: 'Nano (1K–10K)',
+    micro: 'Micro (10K–100K)',
+    mid: 'Mid-tier (100K–500K)',
+    macro: 'Macro (500K–1M)',
+    mega: 'Mega (1M–3M)',
+    celebrity: 'Celebrity (3M+)'
+  };
+
+  const TIER_VIEW_BANDS = {
+    nano: [1500, 12000], micro: [5000, 75000], mid: [25000, 250000],
+    macro: [70000, 600000], mega: [180000, 1500000], celebrity: [400000, 5000000]
+  };
+
+  const CPM_SAR = {
+    instagram: { min: 18, likely: 34, max: 58 },
+    tiktok:    { min: 14, likely: 27, max: 48 },
+    snapchat:  { min: 12, likely: 24, max: 44 }
+  };
+
+  const ENGAGEMENT_MULT = {
+    unknown: { min: 0.96, likely: 1, max: 1.05 },
+    low: { min: 0.78, likely: 0.84, max: 0.90 },
+    average: { min: 0.95, likely: 1, max: 1.06 },
+    strong: { min: 1.06, likely: 1.12, max: 1.20 },
+    exceptional: { min: 1.15, likely: 1.24, max: 1.35 }
+  };
+
+  const AUDIENCE_MULT = {
+    unknown: { min: 0.94, likely: 1, max: 1.06 },
+    below30: { min: 0.72, likely: 0.80, max: 0.88 },
+    '30to50': { min: 0.88, likely: 0.94, max: 1 },
+    '50to70': { min: 0.98, likely: 1.05, max: 1.12 },
+    above70: { min: 1.06, likely: 1.14, max: 1.24 }
+  };
+
+  const INDUSTRY_MULT = {
+    general: 1, food: 0.98, beauty: 1.07, fashion: 1.05,
+    technology: 1.08, healthcare: 1.12, finance: 1.18,
+    realestate: 1.12, luxury: 1.20, education: 1.02
+  };
+
+  const SEASON_MULT = {
+    normal: { min: 1, likely: 1, max: 1 },
+    high: { min: 1.05, likely: 1.10, max: 1.17 },
+    ramadan: { min: 1.08, likely: 1.15, max: 1.25 },
+    national: { min: 1.06, likely: 1.12, max: 1.20 },
+    shopping: { min: 1.04, likely: 1.09, max: 1.16 },
+    urgent: { min: 1.08, likely: 1.16, max: 1.25 }
+  };
+
+  const SELECTION_MULT = {
+    flexible: { min: 0.96, likely: 1, max: 1.04 },
+    specific: { min: 1.02, likely: 1.08, max: 1.16 },
+    celebrityDemand: { min: 1.12, likely: 1.24, max: 1.42 }
+  };
+
+  const USAGE_RATES = {
+    organic: { 30: 0.04, 90: 0.08, 180: 0.14, 365: 0.22 },
+    paidSocial: { 30: 0.16, 90: 0.28, 180: 0.42, 365: 0.62 },
+    allDigital: { 30: 0.24, 90: 0.40, 180: 0.58, 365: 0.82 }
+  };
+
+  const EXCLUSIVITY_RATES = {
+    direct: { 7: 0.03, 30: 0.09, 90: 0.20, 180: 0.34 },
+    category: { 7: 0.06, 30: 0.16, 90: 0.34, 180: 0.56 }
+  };
+
+  const WHITELISTING_RATES = { 30: 0.10, 90: 0.18, 180: 0.28 };
+
+  const PRODUCTION_SAR = {
+    creator: { min: 0, likely: 0, max: 0 },
+    edited: { min: 350, likely: 700, max: 1300 },
+    professional: { min: 1800, likely: 3500, max: 7000 },
+    premium: { min: 5500, likely: 10000, max: 22000 }
+  };
+
+  const REVISION_RATE = { 1: 0, 2: 0.04, 3: 0.09 };
+
+  const el = id => document.getElementById(id);
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+  const numeric = (id, fallback = 0) => {
+    const value = Number(el(id)?.value);
+    return Number.isFinite(value) ? value : fallback;
+  };
+  const checked = id => Boolean(el(id)?.checked);
+
+  const moneyRange = (min, likely, max) => ({ min, likely, max });
+  const addRanges = (...ranges) => ranges.reduce((sum, range) => ({
+    min: sum.min + (range?.min || 0),
+    likely: sum.likely + (range?.likely || 0),
+    max: sum.max + (range?.max || 0)
+  }), moneyRange(0, 0, 0));
+  const multiplyRange = (range, multiplier) => ({
+    min: range.min * (multiplier?.min ?? multiplier),
+    likely: range.likely * (multiplier?.likely ?? multiplier),
+    max: range.max * (multiplier?.max ?? multiplier)
+  });
+  const scaleRange = (range, factor) => multiplyRange(range, factor);
+
+  function formatMoney(value, market) {
+    const decimals = market.code === 'KWD' && Math.abs(value) < 100 ? 1 : 0;
+    return `${Math.round(value * (10 ** decimals)) / (10 ** decimals)}`
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ',') + ` ${market.symbol}`;
   }
 
-  leadOut.style.display = '';
-  leadOut.textContent = '✅ تم إرسال طلبك بنجاح. سنراجع التفاصيل ونتواصل معك.\n\n' + msg;
+  function convertSarRange(range, market) {
+    const factor = market.marketIndex * market.fromSar;
+    return scaleRange(range, factor);
+  }
 
-  copyLeadMsg.disabled = false;
-  copyLeadMsg.onclick = async () => {
-    try {
-      await navigator.clipboard.writeText(msg);
-      copyLeadMsg.textContent = '✅ تم النسخ';
-      setTimeout(() => copyLeadMsg.textContent = 'نسخ الرسالة', 1200);
-    } catch (err) {
-      alert('تعذر النسخ.');
+  function getBundleDiscount(totalFormatsPerCreator, tier) {
+    if (tier === 'celebrity' || totalFormatsPerCreator < 3) return 1;
+    if (totalFormatsPerCreator >= 12) return 0.90;
+    if (totalFormatsPerCreator >= 7) return 0.94;
+    if (totalFormatsPerCreator >= 4) return 0.97;
+    return 1;
+  }
+
+  function getSupportedCounts(platform, rawCounts) {
+    const map = PLATFORM_FORMAT_MULTIPLIERS[platform];
+    return Object.fromEntries(Object.entries(rawCounts).map(([type, count]) => [type, map[type] ? count : 0]));
+  }
+
+  function calculateFollowerBasedContent({ platform, tier, counts }) {
+    const base = VIDEO_BASE_SAR[tier];
+    const platformMap = PLATFORM_FORMAT_MULTIPLIERS[platform];
+    let total = moneyRange(0, 0, 0);
+
+    Object.entries(counts).forEach(([format, count]) => {
+      if (!count || !platformMap[format]) return;
+      const unit = multiplyRange(base, platformMap[format]);
+      total = addRanges(total, scaleRange(unit, count));
+    });
+    return total;
+  }
+
+  function calculateViewBasedVideo({ platform, tier, averageViews, reelCount }) {
+    if (!averageViews || reelCount <= 0) return null;
+    const band = TIER_VIEW_BANDS[tier];
+    const safeViews = clamp(averageViews, band[0] * 0.45, band[1] * 2.2);
+    const cpm = CPM_SAR[platform];
+    return {
+      min: (safeViews / 1000) * cpm.min * reelCount,
+      likely: (safeViews / 1000) * cpm.likely * reelCount,
+      max: (safeViews / 1000) * cpm.max * reelCount
+    };
+  }
+
+  function blendContentEstimates(followerBased, viewBased, reelShare) {
+    if (!viewBased || reelShare <= 0) return followerBased;
+    // Views influence video pricing, but never fully replace tier/context pricing.
+    const weight = 0.38;
+    const blendedVideoAdjustment = {
+      min: followerBased.min * (1 - weight) + viewBased.min * weight,
+      likely: followerBased.likely * (1 - weight) + viewBased.likely * weight,
+      max: followerBased.max * (1 - weight) + viewBased.max * weight
+    };
+    return {
+      min: clamp(blendedVideoAdjustment.min, followerBased.min * 0.75, followerBased.min * 1.45),
+      likely: clamp(blendedVideoAdjustment.likely, followerBased.likely * 0.78, followerBased.likely * 1.55),
+      max: clamp(blendedVideoAdjustment.max, followerBased.max * 0.82, followerBased.max * 1.65)
+    };
+  }
+
+  function calculateProduction({ level, videoCount, influencerCount, market }) {
+    if (level === 'creator' || videoCount === 0) return moneyRange(0, 0, 0);
+    const unit = convertSarRange(PRODUCTION_SAR[level], market);
+    // One production setup can cover several assets; do not multiply blindly by every deliverable.
+    const productionUnits = Math.max(1, Math.ceil(videoCount / 2)) * Math.min(influencerCount, 4);
+    return scaleRange(unit, productionUnits);
+  }
+
+  function calculateManagement({ level, creatorFees, influencerCount, days, market }) {
+    if (level === 'none') return moneyRange(0, 0, 0);
+    const durationFactor = days <= 14 ? 1 : days <= 30 ? 1.12 : days <= 60 ? 1.24 : 1.36;
+    const creatorFactor = 1 + Math.max(0, influencerCount - 3) * 0.035;
+    const rate = level === 'basic'
+      ? { min: 0.06, likely: 0.08, max: 0.10 }
+      : { min: 0.10, likely: 0.13, max: 0.16 };
+    const minimumSar = level === 'basic'
+      ? { min: 750, likely: 1200, max: 1800 }
+      : { min: 1500, likely: 2600, max: 4200 };
+    const percentage = multiplyRange(creatorFees, rate);
+    const minimum = scaleRange(convertSarRange(minimumSar, market), durationFactor * creatorFactor);
+    return {
+      min: Math.max(percentage.min, minimum.min),
+      likely: Math.max(percentage.likely, minimum.likely),
+      max: Math.max(percentage.max, minimum.max)
+    };
+  }
+
+  function calculate() {
+    const marketKey = el('market').value;
+    const market = MARKETS[marketKey];
+    const platform = el('platform').value;
+    const tier = el('influencerSize').value;
+    const influencerCount = clamp(Math.round(numeric('influencerCount', 1)), 1, 50);
+    const averageViews = clamp(numeric('averageViews', 0), 0, 100000000);
+    const days = numeric('campaignDays', 14);
+
+    const rawCounts = {
+      reel: clamp(Math.round(numeric('reelCount')), 0, 30),
+      story: clamp(Math.round(numeric('storyCount')), 0, 60),
+      post: clamp(Math.round(numeric('postCount')), 0, 20),
+      live: clamp(Math.round(numeric('liveCount')), 0, 10)
+    };
+    const counts = getSupportedCounts(platform, rawCounts);
+    const formatsPerCreator = Object.values(counts).reduce((a, b) => a + b, 0);
+    if (formatsPerCreator === 0) throw new Error('أضف مخرجًا واحدًا على الأقل متوافقًا مع المنصة المختارة.');
+
+    let perCreatorContent = calculateFollowerBasedContent({ platform, tier, counts });
+    const viewBased = calculateViewBasedVideo({ platform, tier, averageViews, reelCount: counts.reel });
+    perCreatorContent = blendContentEstimates(perCreatorContent, viewBased, counts.reel / formatsPerCreator);
+
+    const bundleDiscount = getBundleDiscount(formatsPerCreator, tier);
+    perCreatorContent = scaleRange(perCreatorContent, bundleDiscount);
+
+    const qualityMult = {
+      min: clamp(ENGAGEMENT_MULT[el('engagementQuality').value].min * AUDIENCE_MULT[el('audienceMatch').value].min, 0.65, 1.35),
+      likely: clamp(ENGAGEMENT_MULT[el('engagementQuality').value].likely * AUDIENCE_MULT[el('audienceMatch').value].likely, 0.70, 1.45),
+      max: clamp(ENGAGEMENT_MULT[el('engagementQuality').value].max * AUDIENCE_MULT[el('audienceMatch').value].max, 0.75, 1.60)
+    };
+    perCreatorContent = multiplyRange(perCreatorContent, qualityMult);
+    perCreatorContent = scaleRange(perCreatorContent, INDUSTRY_MULT[el('industry').value] || 1);
+    perCreatorContent = multiplyRange(perCreatorContent, SEASON_MULT[el('season').value]);
+    perCreatorContent = multiplyRange(perCreatorContent, SELECTION_MULT[el('creatorSelection').value]);
+
+    let creatorFees = scaleRange(convertSarRange(perCreatorContent, market), influencerCount);
+    const revisionRate = REVISION_RATE[numeric('revisionRounds', 1)] || 0;
+    const revisions = scaleRange(creatorFees, revisionRate);
+
+    const rightsBase = creatorFees; // Rights are based only on creator content fees, not production/management.
+    const usage = checked('usageRights')
+      ? scaleRange(rightsBase, USAGE_RATES[el('usageChannel').value][numeric('usageDuration', 30)])
+      : moneyRange(0, 0, 0);
+    const exclusivity = checked('exclusivity')
+      ? scaleRange(rightsBase, EXCLUSIVITY_RATES[el('exclusivityScope').value][numeric('exclusivityDuration', 7)])
+      : moneyRange(0, 0, 0);
+    const whitelisting = checked('whitelisting')
+      ? scaleRange(rightsBase, WHITELISTING_RATES[numeric('whitelistingDuration', 30)])
+      : moneyRange(0, 0, 0);
+
+    const totalVideoCount = counts.reel * influencerCount;
+    const production = calculateProduction({ level: el('productionLevel').value, videoCount: totalVideoCount, influencerCount, market });
+    const management = calculateManagement({ level: el('managementLevel').value, creatorFees, influencerCount, days, market });
+    const paidMediaValue = clamp(numeric('paidMediaBudget', 0), 0, 100000000);
+    const paidMedia = moneyRange(paidMediaValue, paidMediaValue, paidMediaValue);
+
+    const total = addRanges(creatorFees, revisions, production, usage, exclusivity, whitelisting, management, paidMedia);
+    total.likely = clamp(total.likely, total.min, total.max);
+
+    const rows = [
+      { label: 'رسوم المؤثرين والمحتوى', range: creatorFees },
+      revisionRate ? { label: 'جولات تعديل إضافية', range: revisions } : null,
+      production.max ? { label: 'إنتاج ومونتاج إضافي', range: production } : null,
+      usage.max ? { label: 'حقوق استخدام المحتوى', range: usage } : null,
+      exclusivity.max ? { label: 'حصرية ضد المنافسين', range: exclusivity } : null,
+      whitelisting.max ? { label: 'Whitelisting / Spark Ads', range: whitelisting } : null,
+      management.max ? { label: 'إدارة الحملة والمتابعة', range: management } : null,
+      paidMediaValue ? { label: 'ميزانية الإعلانات الممولة', range: paidMedia } : null
+    ].filter(Boolean);
+
+    return {
+      marketKey, market, platform, tier, influencerCount, averageViews, days,
+      counts, formatsPerCreator, totalDeliverables: formatsPerCreator * influencerCount,
+      creatorFees, total, rows, bundleDiscount,
+      goal: el('goal').value,
+      industry: el('industry').value,
+      accuracy: averageViews > 0 ? 'enhanced' : 'standard'
+    };
+  }
+
+  function getRecommendations(out) {
+    const tips = [];
+    if (!out.averageViews) tips.push('اطلب متوسط مشاهدات آخر 10 فيديوهات قبل اعتماد الميزانية النهائية.');
+    if (out.goal === 'sales' || out.goal === 'leads') tips.push('استخدم كود خصم أو رابط UTM مستقل لكل مؤثر لقياس التحويل.');
+    if (out.goal === 'awareness') tips.push('وزّع الميزانية على أكثر من مؤثر Micro أو Mid-tier قبل الانتقال إلى اسم كبير.');
+    if (out.platform === 'instagram') tips.push('اجمع بين الفيديو للانتشار وStories للتحويل والرسائل المباشرة.');
+    if (out.platform === 'tiktok') tips.push('قيّم المؤثر حسب المشاهدات المعتادة وجودة الفكرة، وليس عدد المتابعين فقط.');
+    if (out.platform === 'snapchat') tips.push('استخدم سلسلة قصص قصيرة مع تكرار العرض ونداء إجراء واضح.');
+    if (checked('usageRights')) tips.push('ثبّت مدة الاستخدام والقنوات الإعلانية بوضوح داخل العقد.');
+    if (checked('exclusivity')) tips.push('احصر الحصرية في المنافسين المباشرين وأقصر مدة ضرورية لتجنب زيادة السعر.');
+    return tips.slice(0, 4);
+  }
+
+  function buildSummary(out) {
+    const formatParts = [];
+    if (out.counts.reel) formatParts.push(`${out.counts.reel} فيديو`);
+    if (out.counts.story) formatParts.push(`${out.counts.story} Story`);
+    if (out.counts.post) formatParts.push(`${out.counts.post} منشور`);
+    if (out.counts.live) formatParts.push(`${out.counts.live} Live`);
+
+    return {
+      marketLabel: out.market.label,
+      platformLabel: PLATFORM_LABELS[out.platform],
+      tierLabel: TIER_LABELS[out.tier],
+      influencerCount: out.influencerCount,
+      contentMix: formatParts.join(' + '),
+      totalDeliverables: out.totalDeliverables,
+      rangeLabel: `${formatMoney(out.total.min, out.market)} — ${formatMoney(out.total.max, out.market)}`,
+      likelyLabel: formatMoney(out.total.likely, out.market),
+      averageViews: out.averageViews || 'غير مدخل'
+    };
+  }
+
+  function render(out) {
+    const summary = buildSummary(out);
+    el('results').hidden = false;
+    el('formError').hidden = true;
+    el('copyBtn').disabled = false;
+    el('printBtn').disabled = false;
+
+    el('budgetRange').textContent = summary.rangeLabel;
+    el('likelyEstimate').textContent = summary.likelyLabel;
+    el('creatorFeesResult').textContent = `${formatMoney(out.creatorFees.min, out.market)} — ${formatMoney(out.creatorFees.max, out.market)}`;
+    el('perInfluencer').textContent = formatMoney(out.total.likely / out.influencerCount, out.market);
+    el('totalDeliverables').textContent = String(out.totalDeliverables);
+
+    const spread = (out.total.max - out.total.min) / Math.max(out.total.likely, 1);
+    const pill = el('rangePill');
+    if (out.accuracy === 'enhanced' && spread < 0.9) {
+      pill.textContent = 'دقة محسّنة بالمشاهدات';
+      pill.className = 'pill ok';
+    } else if (spread < 1.2) {
+      pill.textContent = 'نطاق تقديري متوازن';
+      pill.className = 'pill warn';
+    } else {
+      pill.textContent = 'النطاق واسع حسب اسم المؤثر';
+      pill.className = 'pill bad';
     }
-  };
-});
 
-    // Initial
-    updateCompatibilityHint();
- 
+    el('accuracyNotice').innerHTML = out.accuracy === 'enhanced'
+      ? '<strong>دقة أفضل:</strong> تم دمج متوسط المشاهدات مع فئة المؤثر، مع إبقاء حدود تمنع القفزات غير المنطقية.'
+      : '<strong>تقدير مبدئي:</strong> النتيجة مبنية على فئة المؤثر. إدخال متوسط المشاهدات يجعل التقدير أقرب للواقع.';
+
+    el('breakdown').innerHTML = out.rows.map(row => `
+      <tr>
+        <td>${escapeHtml(row.label)}</td>
+        <td>${formatMoney(row.range.min, out.market)}</td>
+        <td><strong>${formatMoney(row.range.likely, out.market)}</strong></td>
+        <td>${formatMoney(row.range.max, out.market)}</td>
+      </tr>`).join('');
+
+    el('quickRec').textContent = `توصية لحملة ${PLATFORM_LABELS[out.platform]} في ${out.market.label}`;
+    el('recommendationList').innerHTML = getRecommendations(out).map(tip => `<li>${escapeHtml(tip)}</li>`).join('');
+
+    const message = [
+      'مرحبًا Viva Media Creative،',
+      'أرغب في عرض سعر رسمي وقائمة مؤثرين مناسبة.',
+      '',
+      `الدولة: ${summary.marketLabel}`,
+      `المنصة: ${summary.platformLabel}`,
+      `الفئة: ${summary.tierLabel}`,
+      `عدد المؤثرين: ${summary.influencerCount}`,
+      `محتوى كل مؤثر: ${summary.contentMix}`,
+      `متوسط المشاهدات: ${summary.averageViews}`,
+      `التقدير الأقرب: ${summary.likelyLabel}`,
+      `النطاق الإرشادي: ${summary.rangeLabel}`,
+      '',
+      'أرجو إرسال الخيارات المناسبة والتكلفة النهائية.'
+    ].join('\n');
+
+    el('waBtn').href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+    el('mailBtn').href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(`طلب عرض حملة مؤثرين — ${summary.marketLabel}`)}&body=${encodeURIComponent(message)}`;
+
+    window.__vmcEstimate = { out, summary, message };
+    el('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>'"]/g, char => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+    })[char]);
+  }
+
+  function updatePlatformCompatibility() {
+    const platform = el('platform').value;
+    const supported = PLATFORM_FORMAT_MULTIPLIERS[platform];
+    const labels = document.querySelectorAll('[data-format]');
+    labels.forEach(label => {
+      const format = label.dataset.format;
+      const input = label.querySelector('input');
+      const active = Boolean(supported[format]);
+      label.style.opacity = active ? '1' : '.42';
+      input.disabled = !active;
+      if (!active) input.value = 0;
+    });
+
+    if (platform === 'tiktok') {
+      if (numeric('reelCount') === 0) el('reelCount').value = 1;
+      el('platformHint').textContent = 'TikTok: يتم احتساب الفيديو والبث المباشر فقط.';
+    } else if (platform === 'snapchat') {
+      if (numeric('storyCount') === 0) el('storyCount').value = 4;
+      el('platformHint').textContent = 'Snapchat: يتم احتساب عدد إطارات Stories لكل مؤثر.';
+    } else {
+      if (numeric('reelCount') === 0 && numeric('storyCount') === 0) {
+        el('reelCount').value = 1;
+        el('storyCount').value = 3;
+      }
+      el('platformHint').textContent = 'Instagram: يمكنك دمج Reels وStories والمنشورات والبث المباشر.';
+    }
+  }
+
+  function bindConditionalToggle(checkId, fieldsId) {
+    const control = el(checkId);
+    const fields = el(fieldsId);
+    if (!control || !fields) return;
+    const sync = () => { fields.hidden = !control.checked; };
+    control.addEventListener('change', sync);
+    sync();
+  }
+
+  async function copyCurrentSummary() {
+    const data = window.__vmcEstimate;
+    if (!data) return;
+    const text = [
+      'ملخص تقدير حملة المؤثرين — Viva Media Creative',
+      `الدولة: ${data.summary.marketLabel}`,
+      `المنصة: ${data.summary.platformLabel}`,
+      `الفئة: ${data.summary.tierLabel}`,
+      `عدد المؤثرين: ${data.summary.influencerCount}`,
+      `المحتوى لكل مؤثر: ${data.summary.contentMix}`,
+      `التقدير الأقرب: ${data.summary.likelyLabel}`,
+      `النطاق: ${data.summary.rangeLabel}`
+    ].join('\n');
+    try {
+      await navigator.clipboard.writeText(text);
+      const btn = el('copyBtn');
+      const old = btn.textContent;
+      btn.textContent = 'تم النسخ ✓';
+      setTimeout(() => { btn.textContent = old; }, 1300);
+    } catch {
+      window.prompt('انسخ الملخص:', text);
+    }
+  }
+
+  function initOptionalLeadForm() {
+    const leadForm = el('leadForm');
+    if (!leadForm) return;
+    const leadOut = el('leadOut');
+    const copyLeadMsg = el('copyLeadMsg');
+
+    leadForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      const estimate = window.__vmcEstimate;
+      const message = estimate?.message || 'أرغب في عرض سعر رسمي وقائمة مؤثرين مناسبة.';
+      const leadData = {
+        name: el('name')?.value?.trim() || null,
+        email: el('email')?.value?.trim() || null,
+        whatsapp: el('whats')?.value?.trim() || null,
+        notes: el('notes')?.value?.trim() || null,
+        market: estimate?.summary?.marketLabel || null,
+        platform: estimate?.summary?.platformLabel || null,
+        influencer_size: estimate?.summary?.tierLabel || null,
+        deliverables: estimate?.summary?.totalDeliverables || null,
+        budget_range: estimate?.summary?.rangeLabel || null
+      };
+
+      try {
+        if (!window.supabase?.createClient) throw new Error('Supabase library unavailable');
+        const client = window.supabase.createClient(CONFIG.supabase.url, CONFIG.supabase.publishableKey);
+        const { error } = await client.from(CONFIG.supabase.table).insert([leadData]);
+        if (error) throw error;
+        if (leadOut) {
+          leadOut.hidden = false;
+          leadOut.textContent = 'تم إرسال طلبك بنجاح. سنراجع التفاصيل ونتواصل معك.';
+        }
+        if (copyLeadMsg) {
+          copyLeadMsg.disabled = false;
+          copyLeadMsg.onclick = () => navigator.clipboard.writeText(message);
+        }
+      } catch (error) {
+        console.error(error);
+        alert('تعذر إرسال الطلب الآن. استخدم زر واتساب أو البريد لإرسال التفاصيل مباشرة.');
+      }
+    });
+  }
+
+  function init() {
+    const form = el('calcForm');
+    if (!form) return;
+
+    el('platform').addEventListener('change', updatePlatformCompatibility);
+    bindConditionalToggle('usageRights', 'usageFields');
+    bindConditionalToggle('exclusivity', 'exclusivityFields');
+    bindConditionalToggle('whitelisting', 'whitelistingFields');
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      try {
+        render(calculate());
+      } catch (error) {
+        const box = el('formError');
+        box.textContent = error.message || 'تعذر حساب التقدير. راجع البيانات المدخلة.';
+        box.hidden = false;
+      }
+    });
+
+    el('copyBtn').addEventListener('click', copyCurrentSummary);
+    el('printBtn').addEventListener('click', () => window.print());
+    el('resetBtn').addEventListener('click', () => {
+      form.reset();
+      el('results').hidden = true;
+      el('formError').hidden = true;
+      el('copyBtn').disabled = true;
+      el('printBtn').disabled = true;
+      window.__vmcEstimate = null;
+      updatePlatformCompatibility();
+      ['usageRights', 'exclusivity', 'whitelisting'].forEach(id => el(id)?.dispatchEvent(new Event('change')));
+    });
+
+    const year = el('y');
+    if (year) year.textContent = String(new Date().getFullYear());
+    updatePlatformCompatibility();
+    initOptionalLeadForm();
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+})();
