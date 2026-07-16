@@ -43,6 +43,11 @@
 
 <style>
 .tool-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(280px,.8fr);gap:18px;align-items:start;margin-top:18px}.calculator-card{min-width:0}.tool-heading,.estimate-header{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}.tool-heading h2{margin:4px 0 6px}.eyebrow{display:block;font-size:.82rem;opacity:.75;font-weight:700}.model-badge{white-space:nowrap;padding:8px 12px;border:1px solid rgba(255,255,255,.14);border-radius:999px;font-size:.8rem}.calc-group{border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px;margin:0 0 14px}.calc-group legend{padding:0 8px;font-weight:800}.calc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.calc-grid label,.conditional-fields label{display:block;margin-bottom:6px}.calc-grid input,.calc-grid select,.conditional-fields select,.counter-card input{width:100%}.content-counter-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.counter-card{display:flex;flex-direction:column;gap:10px;padding:13px;border:1px solid rgba(255,255,255,.12);border-radius:14px}.counter-card span{display:flex;flex-direction:column;gap:3px}.counter-card small,.switch-row small{display:block;opacity:.7}.compatibility-note{margin:10px 0 0}.advanced-options{border:1px solid rgba(255,255,255,.12);border-radius:16px;margin-bottom:14px}.advanced-options summary{cursor:pointer;padding:15px;font-weight:800}.advanced-body{padding:0 15px 15px}.option-panel{margin-top:12px;padding:12px;border:1px solid rgba(255,255,255,.1);border-radius:14px}.switch-row{display:flex;gap:10px;align-items:flex-start}.switch-row input{margin-top:4px}.conditional-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}.calculator-actions{margin-top:14px}.form-error{margin-top:12px;padding:12px;border-radius:12px;background:rgba(190,40,40,.18);border:1px solid rgba(255,90,90,.35)}.results-panel{margin-top:18px}.estimate-header{padding:18px;border:1px solid rgba(255,255,255,.12);border-radius:16px}.estimate-range{font-size:clamp(1.45rem,3vw,2.4rem);font-weight:900;margin:6px 0}.likely-card{min-width:190px;padding:13px;border-radius:14px;background:rgba(255,255,255,.06);text-align:center}.likely-card span,.likely-card small{display:block;opacity:.72}.likely-card strong{display:block;font-size:1.3rem;margin:5px 0}.result-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}.result-kpis>div{padding:13px;border:1px solid rgba(255,255,255,.1);border-radius:14px}.result-kpis span{display:block;opacity:.72;font-size:.85rem}.result-kpis strong{display:block;margin-top:5px}.accuracy-notice,.recommendation-box{padding:14px;border-radius:14px;margin:12px 0;background:rgba(255,255,255,.05)}.result-cta{margin-top:14px}.mini-warning{margin-top:14px}.calculator-aside{position:sticky;top:16px}@media(max-width:900px){.tool-layout{grid-template-columns:1fr}.calculator-aside{position:static}.content-counter-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.calc-grid,.conditional-fields,.result-kpis{grid-template-columns:1fr}.content-counter-grid{grid-template-columns:1fr}.tool-heading,.estimate-header{flex-direction:column}.model-badge,.likely-card{width:100%;min-width:0}.calculator-actions{display:grid;grid-template-columns:1fr 1fr}.calculator-actions button{width:100%}}
+
+/* VMC Calculator Pro v2 */
+.wizard-progress{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0 18px}.wizard-step-dot{padding:10px 8px;border:1px solid rgba(255,255,255,.12);border-radius:12px;text-align:center;font-size:.82rem;opacity:.58}.wizard-step-dot.active{opacity:1;border-color:rgba(76,201,240,.65);background:rgba(76,201,240,.08)}.wizard-step-dot.done{opacity:.9;background:rgba(69,196,122,.08)}.wizard-pane[hidden]{display:none!important}.wizard-nav{display:flex;justify-content:space-between;gap:10px;margin-top:14px}.wizard-nav button{min-width:130px}.range-input-row{display:grid;grid-template-columns:1fr 130px;gap:12px;align-items:center}.range-input-row input[type=range]{width:100%}.range-readout{padding:10px;border:1px solid rgba(255,255,255,.12);border-radius:12px;text-align:center}.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.choice-card{border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:13px;cursor:pointer}.choice-card input{margin-left:8px}.optimizer-box{margin-top:16px;padding:16px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(255,255,255,.035)}.optimizer-grid{display:grid;grid-template-columns:1fr 180px;gap:12px;align-items:end}.optimizer-results{margin-top:12px}.optimizer-results li{margin:6px 0}.confidence-meter{height:10px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden;margin-top:8px}.confidence-meter span{display:block;height:100%;background:linear-gradient(90deg,#4cc9f0,#45c47a)}.result-score{font-size:1.25rem;font-weight:900}.assumption-list{margin:8px 0 0;padding-right:18px}.scenario-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}.scenario-card{padding:14px;border:1px solid rgba(255,255,255,.12);border-radius:14px}.scenario-card strong{display:block;font-size:1.15rem;margin-top:5px}.scenario-card.featured{border-color:rgba(76,201,240,.65);background:rgba(76,201,240,.07)}.inline-help{font-size:.8rem;opacity:.72;margin-top:5px}.hidden-by-platform{opacity:.35;pointer-events:none}.validation-note{padding:10px 12px;border-radius:12px;background:rgba(255,190,70,.08);border:1px solid rgba(255,190,70,.25);margin-top:10px}.methodology-note{font-size:.85rem;opacity:.76}.budget-fit{padding:12px;border-radius:12px;margin-top:10px}.budget-fit.good{background:rgba(69,196,122,.1)}.budget-fit.warn{background:rgba(255,190,70,.1)}.budget-fit.bad{background:rgba(220,70,70,.1)}
+@media(max-width:760px){.wizard-progress{grid-template-columns:1fr 1fr}.choice-grid,.scenario-cards{grid-template-columns:1fr}.optimizer-grid,.range-input-row{grid-template-columns:1fr}.wizard-nav{display:grid;grid-template-columns:1fr 1fr}.wizard-nav button{min-width:0;width:100%}}
+
 </style>
 
 </head>
@@ -132,295 +137,62 @@ href="https://vivamediacreative.com/influencer-platform/find-influencers/">
 </header>
 
 <main class="tool-layout">
-  <section id="calculator" class="card calculator-card">
-    <div class="tool-heading">
-      <div>
-        <span class="eyebrow">تقدير إرشادي احترافي</span>
-        <h2>احسب تكلفة حملة المؤثرين</h2>
-        <p class="note">أدخل بيانات الحملة. كلما أضفت متوسط المشاهدات ونسبة الجمهور المستهدف أصبحت النتيجة أقرب للواقع.</p>
-      </div>
-      <span class="model-badge">نموذج تسعير متعدد العوامل</span>
-    </div>
-
-    <form id="calcForm">
-      <fieldset class="calc-group">
-        <legend>1. السوق والحملة</legend>
-        <div class="calc-grid">
-          <div>
-            <label for="market">الدولة المستهدفة</label>
-            <select id="market" required>
-              <option value="sa">السعودية — ر.س</option>
-              <option value="ae">الإمارات — د.إ</option>
-              <option value="kw">الكويت — د.ك</option>
-              <option value="qa">قطر — ر.ق</option>
-              <option value="eg">مصر — ج.م</option>
-            </select>
-          </div>
-          <div>
-            <label for="platform">المنصة الأساسية</label>
-            <select id="platform" required>
-              <option value="instagram">Instagram</option>
-              <option value="tiktok">TikTok</option>
-              <option value="snapchat">Snapchat</option>
-            </select>
-          </div>
-          <div>
-            <label for="goal">هدف الحملة</label>
-            <select id="goal" required>
-              <option value="awareness">وعي وانتشار</option>
-              <option value="engagement">تفاعل</option>
-              <option value="leads">عملاء محتملون</option>
-              <option value="sales">مبيعات</option>
-              <option value="launch">إطلاق منتج أو افتتاح</option>
-            </select>
-          </div>
-          <div>
-            <label for="industry">مجال النشاط</label>
-            <select id="industry">
-              <option value="general">عام</option>
-              <option value="food">مطاعم وأغذية</option>
-              <option value="beauty">تجميل وعناية</option>
-              <option value="fashion">أزياء</option>
-              <option value="technology">تقنية وتطبيقات</option>
-              <option value="healthcare">صحة وعيادات</option>
-              <option value="finance">تمويل وأعمال</option>
-              <option value="realestate">عقارات</option>
-              <option value="luxury">منتجات فاخرة</option>
-              <option value="education">تعليم</option>
-            </select>
-          </div>
-          <div>
-            <label for="campaignDays">مدة الحملة</label>
-            <select id="campaignDays">
-              <option value="7">حتى 7 أيام</option>
-              <option value="14" selected>8–14 يومًا</option>
-              <option value="30">15–30 يومًا</option>
-              <option value="60">31–60 يومًا</option>
-              <option value="90">61–90 يومًا</option>
-            </select>
-          </div>
-          <div>
-            <label for="season">توقيت الحملة</label>
-            <select id="season">
-              <option value="normal">فترة عادية</option>
-              <option value="high">طلب مرتفع</option>
-              <option value="ramadan">رمضان / العيد</option>
-              <option value="national">مناسبة وطنية</option>
-              <option value="shopping">موسم تخفيضات</option>
-              <option value="urgent">تنفيذ عاجل</option>
-            </select>
-          </div>
-        </div>
-      </fieldset>
-
-      <fieldset class="calc-group">
-        <legend>2. المؤثرون وجودة الجمهور</legend>
-        <div class="calc-grid">
-          <div>
-            <label for="influencerCount">عدد المؤثرين</label>
-            <input id="influencerCount" type="number" min="1" max="50" value="1" required>
-          </div>
-          <div>
-            <label for="influencerSize">فئة المؤثر</label>
-            <select id="influencerSize" required>
-              <option value="nano">Nano — 1K–10K</option>
-              <option value="micro" selected>Micro — 10K–100K</option>
-              <option value="mid">Mid-tier — 100K–500K</option>
-              <option value="macro">Macro — 500K–1M</option>
-              <option value="mega">Mega — 1M–3M</option>
-              <option value="celebrity">Celebrity — 3M+</option>
-            </select>
-          </div>
-          <div>
-            <label for="averageViews">متوسط مشاهدات الفيديو للمؤثر</label>
-            <input id="averageViews" type="number" min="0" max="100000000" placeholder="مثال: 75000">
-            <div class="note">اختياري، لكنه يرفع دقة التقدير.</div>
-          </div>
-          <div>
-            <label for="engagementQuality">جودة التفاعل</label>
-            <select id="engagementQuality">
-              <option value="unknown">غير معروف</option>
-              <option value="low">أقل من المعتاد</option>
-              <option value="average" selected>طبيعي</option>
-              <option value="strong">قوي</option>
-              <option value="exceptional">استثنائي</option>
-            </select>
-          </div>
-          <div>
-            <label for="audienceMatch">نسبة الجمهور داخل الدولة المستهدفة</label>
-            <select id="audienceMatch">
-              <option value="unknown">غير معروف</option>
-              <option value="below30">أقل من 30%</option>
-              <option value="30to50">30%–50%</option>
-              <option value="50to70" selected>50%–70%</option>
-              <option value="above70">أكثر من 70%</option>
-            </select>
-          </div>
-          <div>
-            <label for="creatorSelection">حالة اختيار المؤثر</label>
-            <select id="creatorSelection">
-              <option value="flexible">مرن — عدة خيارات مناسبة</option>
-              <option value="specific">مؤثر محدد بالاسم</option>
-              <option value="celebrityDemand">شخصية عليها طلب مرتفع</option>
-            </select>
-          </div>
-        </div>
-      </fieldset>
-
-      <fieldset class="calc-group">
-        <legend>3. محتوى كل مؤثر</legend>
-        <div class="content-counter-grid">
-          <label class="counter-card" data-format="reel">
-            <span><strong>فيديو قصير</strong><small>Reel أو TikTok</small></span>
-            <input id="reelCount" type="number" min="0" max="30" value="1">
-          </label>
-          <label class="counter-card" data-format="story">
-            <span><strong>Stories</strong><small>عدد القصص أو الإطارات</small></span>
-            <input id="storyCount" type="number" min="0" max="60" value="3">
-          </label>
-          <label class="counter-card" data-format="post">
-            <span><strong>منشور ثابت</strong><small>Post أو Carousel</small></span>
-            <input id="postCount" type="number" min="0" max="20" value="0">
-          </label>
-          <label class="counter-card" data-format="live">
-            <span><strong>بث مباشر</strong><small>جلسة واحدة</small></span>
-            <input id="liveCount" type="number" min="0" max="10" value="0">
-          </label>
-        </div>
-        <p id="platformHint" class="compatibility-note"></p>
-      </fieldset>
-
-      <details class="advanced-options">
-        <summary>خيارات متقدمة: الحقوق والإنتاج وإدارة الحملة</summary>
-        <div class="advanced-body">
-          <div class="calc-grid">
-            <div>
-              <label for="productionLevel">مستوى الإنتاج</label>
-              <select id="productionLevel">
-                <option value="creator">تصوير ومونتاج المؤثر</option>
-                <option value="edited">مونتاج احترافي إضافي</option>
-                <option value="professional">فريق تصوير احترافي</option>
-                <option value="premium">إنتاج إعلاني متقدم</option>
-              </select>
-            </div>
-            <div>
-              <label for="revisionRounds">جولات التعديل</label>
-              <select id="revisionRounds">
-                <option value="1">جولة واحدة</option>
-                <option value="2">جولتان</option>
-                <option value="3">3 جولات</option>
-              </select>
-            </div>
-            <div>
-              <label for="managementLevel">إدارة الحملة</label>
-              <select id="managementLevel">
-                <option value="none">بدون رسوم إدارة</option>
-                <option value="basic">تنسيق ومتابعة أساسية</option>
-                <option value="full">إدارة كاملة وتقارير</option>
-              </select>
-            </div>
-            <div>
-              <label for="paidMediaBudget">ميزانية إعلانات ممولة</label>
-              <input id="paidMediaBudget" type="number" min="0" max="100000000" value="0">
-            </div>
-          </div>
-
-          <div class="option-panel">
-            <label class="switch-row"><input type="checkbox" id="usageRights"><span><strong>حقوق استخدام المحتوى</strong><small>لاستخدام محتوى المؤثر خارج النشر العضوي الأصلي.</small></span></label>
-            <div id="usageFields" class="conditional-fields" hidden>
-              <div><label for="usageChannel">قنوات الاستخدام</label><select id="usageChannel"><option value="organic">قنوات العلامة العضوية</option><option value="paidSocial">إعلانات ممولة على المنصات</option><option value="allDigital">جميع القنوات الرقمية</option></select></div>
-              <div><label for="usageDuration">مدة الاستخدام</label><select id="usageDuration"><option value="30">30 يومًا</option><option value="90">3 أشهر</option><option value="180">6 أشهر</option><option value="365">12 شهرًا</option></select></div>
-            </div>
-          </div>
-
-          <div class="option-panel">
-            <label class="switch-row"><input type="checkbox" id="exclusivity"><span><strong>حصرية ضد المنافسين</strong><small>منع التعاون مع منافسين خلال مدة محددة.</small></span></label>
-            <div id="exclusivityFields" class="conditional-fields" hidden>
-              <div><label for="exclusivityScope">نطاق الحصرية</label><select id="exclusivityScope"><option value="direct">منافسون مباشرون</option><option value="category">الفئة كاملة</option></select></div>
-              <div><label for="exclusivityDuration">مدة الحصرية</label><select id="exclusivityDuration"><option value="7">7 أيام</option><option value="30">30 يومًا</option><option value="90">3 أشهر</option><option value="180">6 أشهر</option></select></div>
-            </div>
-          </div>
-
-          <div class="option-panel">
-            <label class="switch-row"><input type="checkbox" id="whitelisting"><span><strong>Whitelisting / Spark Ads</strong><small>تشغيل الإعلان من حساب المؤثر.</small></span></label>
-            <div id="whitelistingFields" class="conditional-fields" hidden>
-              <div><label for="whitelistingDuration">مدة التشغيل</label><select id="whitelistingDuration"><option value="30">30 يومًا</option><option value="90">3 أشهر</option><option value="180">6 أشهر</option></select></div>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <div class="full actions calculator-actions">
-        <button type="submit">احسب التكلفة الآن</button>
-        <button type="button" class="secondary" id="copyBtn" disabled>نسخ الملخص</button>
-        <button type="button" class="secondary" id="resetBtn">إعادة الضبط</button>
-        <button type="button" class="ghost" id="printBtn" disabled>طباعة / PDF</button>
-      </div>
-    </form>
-
-    <div id="formError" class="form-error" role="alert" hidden></div>
-
-    <section id="results" class="results-panel" hidden aria-live="polite">
-      <div class="estimate-header">
-        <div>
-          <span class="eyebrow">الميزانية الإجمالية التقديرية</span>
-          <div id="budgetRange" class="estimate-range">—</div>
-          <span class="pill" id="rangePill">—</span>
-        </div>
-        <div class="likely-card">
-          <span>التقدير الأقرب</span>
-          <strong id="likelyEstimate">—</strong>
-          <small>ليس عرض سعر نهائيًا</small>
-        </div>
-      </div>
-
-      <div class="result-kpis">
-        <div><span>رسوم المؤثرين</span><strong id="creatorFeesResult">—</strong></div>
-        <div><span>متوسط لكل مؤثر</span><strong id="perInfluencer">—</strong></div>
-        <div><span>إجمالي المخرجات</span><strong id="totalDeliverables">—</strong></div>
-      </div>
-
-      <div id="accuracyNotice" class="accuracy-notice"></div>
-
-      <div class="table-scroll">
-        <table aria-label="تفاصيل تكلفة الحملة">
-          <thead><tr><th>البند</th><th>الحد الأدنى</th><th>التقدير الأقرب</th><th>الحد الأعلى</th></tr></thead>
-          <tbody id="breakdown"></tbody>
-        </table>
-      </div>
-
-      <div class="recommendation-box">
-        <h3 id="quickRec">توصية الحملة</h3>
-        <ul id="recommendationList" class="list note"></ul>
-      </div>
-
-      <div class="callout result-cta">
-        <strong>حوّل التقدير إلى قائمة مؤثرين وعرض رسمي</strong>
-        <p class="note">السعر النهائي يعتمد على أسماء المؤثرين وإحصاءاتهم وشروط الاتفاق.</p>
-        <div class="actions">
-          <a class="btn" id="waBtn" href="https://wa.me/4915565678291">اطلب عرضًا عبر واتساب</a>
-          <a class="btn secondary" id="mailBtn" href="mailto:info@vivamediacreative.com">إرسال عبر البريد</a>
-        </div>
-      </div>
-    </section>
-  </section>
-
-  <aside class="card calculator-aside">
-    <h2>كيف يعمل التقدير؟</h2>
-    <p class="note">تجمع الأداة بين أسعار الفئة، ونوع المحتوى، ومتوسط المشاهدات عند إدخاله، وجودة التفاعل، وتطابق الجمهور، ثم تضيف الحقوق والإنتاج والإدارة كبنود مستقلة بدل مضاعفتها بصورة مبالغ فيها.</p>
-    <div class="callout">
-      <strong>لنتيجة أقرب للواقع</strong>
-      <ul class="list note">
-        <li>استخدم متوسط آخر 10 فيديوهات إعلانية أو مشابهة.</li>
-        <li>أدخل نسبة الجمهور الموجود داخل الدولة المستهدفة.</li>
-        <li>اختر الحقوق والحصرية فقط عند الحاجة الفعلية.</li>
-      </ul>
-    </div>
-    <div class="card danger mini-warning">
-      <strong>تنبيه</strong>
-      <p class="note">المشاهير والأسماء المطلوبة بشدة قد يتجاوز سعرهم أي متوسط سوقي. الأداة تتجنب المبالغة، لكنها لا تستطيع تثبيت سعر شخصية محددة.</p>
-    </div>
-  </aside>
+<section id="calculator" class="card calculator-card">
+<div class="tool-heading"><div><span class="eyebrow">VMC Pricing Intelligence</span><h2>حاسبة تكلفة حملات المؤثرين الاحترافية</h2><p class="note">تقدير متعدد العوامل يعتمد على السوق، المنصة، فئة المؤثر، المشاهدات، جودة الجمهور، المحتوى والحقوق.</p></div><span class="model-badge">إصدار احترافي 2.0</span></div>
+<div class="wizard-progress" aria-label="مراحل الحاسبة"><div class="wizard-step-dot active" data-step-dot="1">السوق</div><div class="wizard-step-dot" data-step-dot="2">المؤثر</div><div class="wizard-step-dot" data-step-dot="3">المحتوى</div><div class="wizard-step-dot" data-step-dot="4">الحقوق</div><div class="wizard-step-dot" data-step-dot="5">المراجعة</div></div>
+<form id="calcForm" novalidate>
+<section class="wizard-pane" data-step="1">
+<fieldset class="calc-group"><legend>1. السوق وهدف الحملة</legend><div class="calc-grid">
+<div><label for="market">الدولة المستهدفة</label><select id="market" required><option value="sa">السعودية — ر.س</option><option value="ae">الإمارات — د.إ</option><option value="kw">الكويت — د.ك</option><option value="qa">قطر — ر.ق</option><option value="eg">مصر — ج.م</option></select></div>
+<div><label for="platform">المنصة الأساسية</label><select id="platform"><option value="instagram">Instagram</option><option value="tiktok">TikTok</option><option value="snapchat">Snapchat</option><option value="youtube">YouTube</option><option value="x">X</option><option value="facebook">Facebook</option></select></div>
+<div><label for="goal">هدف الحملة</label><select id="goal"><option value="awareness">وعي وانتشار</option><option value="engagement">تفاعل</option><option value="leads">عملاء محتملون</option><option value="sales">مبيعات</option><option value="launch">إطلاق منتج أو افتتاح</option><option value="ugc">إنتاج محتوى للعلامة</option></select></div>
+<div><label for="industry">مجال النشاط</label><select id="industry"><option value="general">عام</option><option value="food">مطاعم وأغذية</option><option value="beauty">تجميل وعناية</option><option value="fashion">أزياء</option><option value="technology">تقنية وتطبيقات</option><option value="healthcare">صحة وعيادات</option><option value="finance">تمويل وأعمال</option><option value="realestate">عقارات</option><option value="luxury">منتجات فاخرة</option><option value="education">تعليم</option><option value="automotive">سيارات</option><option value="travel">سفر وضيافة</option></select></div>
+<div><label for="campaignDays">مدة الحملة</label><select id="campaignDays"><option value="7">حتى 7 أيام</option><option value="14" selected>8–14 يومًا</option><option value="30">15–30 يومًا</option><option value="60">31–60 يومًا</option><option value="90">61–90 يومًا</option></select></div>
+<div><label for="season">توقيت الحملة</label><select id="season"><option value="normal">فترة عادية</option><option value="high">طلب مرتفع</option><option value="ramadan">رمضان / العيد</option><option value="national">مناسبة وطنية</option><option value="shopping">موسم تخفيضات</option><option value="urgent">تنفيذ عاجل</option></select></div>
+</div></fieldset></section>
+<section class="wizard-pane" data-step="2" hidden>
+<fieldset class="calc-group"><legend>2. المؤثر وجودة الجمهور</legend><div class="calc-grid">
+<div><label for="influencerCount">عدد المؤثرين</label><input id="influencerCount" type="number" min="1" max="100" value="1"></div>
+<div><label for="followers">عدد المتابعين التقريبي لكل مؤثر</label><input id="followers" type="number" min="1000" max="100000000" value="50000"><div id="tierHint" class="inline-help"></div></div>
+<div><label for="averageViews">متوسط المشاهدات للفيديو</label><input id="averageViews" type="number" min="0" max="100000000" placeholder="مثال: 25000"><div class="inline-help">متوسط آخر 10 فيديوهات مشابهة أفضل من أعلى فيديو.</div></div>
+<div><label for="engagementRate">نسبة التفاعل التقريبية %</label><input id="engagementRate" type="number" min="0" max="30" step="0.1" placeholder="مثال: 3.5"></div>
+<div><label for="audienceMatch">نسبة الجمهور داخل الدولة المستهدفة %</label><input id="audienceMatch" type="number" min="0" max="100" value="60"></div>
+<div><label for="creatorDemand">حالة المؤثر</label><select id="creatorDemand"><option value="flexible">مرن — عدة خيارات مناسبة</option><option value="specific">مؤثر محدد بالاسم</option><option value="high">مطلوب بشدة / موسم حجوزات</option></select></div>
+</div><div id="dataQualityHint" class="validation-note">إدخال المشاهدات ونسبة الجمهور يجعل النتيجة أدق بكثير.</div></fieldset></section>
+<section class="wizard-pane" data-step="3" hidden>
+<fieldset class="calc-group"><legend>3. محتوى كل مؤثر</legend><div class="content-counter-grid">
+<label class="counter-card" data-format="shortVideo"><span><strong>فيديو قصير</strong><small>Reel / TikTok / Short</small></span><input id="shortVideoCount" type="number" min="0" max="30" value="1"></label>
+<label class="counter-card" data-format="story"><span><strong>Stories</strong><small>عدد الإطارات</small></span><input id="storyCount" type="number" min="0" max="90" value="3"></label>
+<label class="counter-card" data-format="post"><span><strong>Post / Carousel</strong><small>منشور ثابت</small></span><input id="postCount" type="number" min="0" max="30" value="0"></label>
+<label class="counter-card" data-format="longVideo"><span><strong>فيديو طويل</strong><small>YouTube أو مراجعة طويلة</small></span><input id="longVideoCount" type="number" min="0" max="10" value="0"></label>
+<label class="counter-card" data-format="live"><span><strong>بث مباشر</strong><small>جلسة واحدة</small></span><input id="liveCount" type="number" min="0" max="10" value="0"></label>
+<label class="counter-card" data-format="textPost"><span><strong>منشور نصي</strong><small>X أو Facebook</small></span><input id="textPostCount" type="number" min="0" max="30" value="0"></label>
+</div><p id="platformHint" class="compatibility-note"></p>
+<div class="calc-grid" style="margin-top:14px"><div><label for="productionLevel">مستوى الإنتاج</label><select id="productionLevel"><option value="creator">تصوير ومونتاج المؤثر</option><option value="edited">مونتاج احترافي إضافي</option><option value="professional">فريق تصوير احترافي</option><option value="premium">إنتاج إعلاني متقدم</option></select></div><div><label for="revisionRounds">جولات التعديل</label><select id="revisionRounds"><option value="1">جولة واحدة</option><option value="2">جولتان</option><option value="3">3 جولات</option></select></div></div>
+</fieldset></section>
+<section class="wizard-pane" data-step="4" hidden>
+<fieldset class="calc-group"><legend>4. الحقوق والإدارة</legend>
+<div class="option-panel"><label class="switch-row"><input type="checkbox" id="usageRights"><span><strong>حقوق استخدام المحتوى</strong><small>لإعادة النشر أو الإعلانات أو الموقع.</small></span></label><div id="usageFields" class="conditional-fields" hidden><div><label for="usageChannel">قنوات الاستخدام</label><select id="usageChannel"><option value="organic">قنوات العلامة العضوية</option><option value="paidSocial">إعلانات ممولة</option><option value="allDigital">جميع القنوات الرقمية</option></select></div><div><label for="usageDuration">المدة</label><select id="usageDuration"><option value="30">30 يومًا</option><option value="90">3 أشهر</option><option value="180">6 أشهر</option><option value="365">12 شهرًا</option></select></div></div></div>
+<div class="option-panel"><label class="switch-row"><input type="checkbox" id="exclusivity"><span><strong>حصرية ضد المنافسين</strong><small>تضاف فقط عند طلبها.</small></span></label><div id="exclusivityFields" class="conditional-fields" hidden><div><label for="exclusivityScope">النطاق</label><select id="exclusivityScope"><option value="direct">منافسون مباشرون</option><option value="category">الفئة كاملة</option></select></div><div><label for="exclusivityDuration">المدة</label><select id="exclusivityDuration"><option value="7">7 أيام</option><option value="30">30 يومًا</option><option value="90">3 أشهر</option><option value="180">6 أشهر</option></select></div></div></div>
+<div class="option-panel"><label class="switch-row"><input type="checkbox" id="whitelisting"><span><strong>Whitelisting / Spark Ads</strong><small>تشغيل الإعلان من حساب المؤثر.</small></span></label><div id="whitelistingFields" class="conditional-fields" hidden><div><label for="whitelistingDuration">مدة التشغيل</label><select id="whitelistingDuration"><option value="30">30 يومًا</option><option value="90">3 أشهر</option><option value="180">6 أشهر</option></select></div></div></div>
+<div class="calc-grid" style="margin-top:14px"><div><label for="managementLevel">إدارة الحملة</label><select id="managementLevel"><option value="none">بدون رسوم إدارة</option><option value="basic">تنسيق ومتابعة أساسية</option><option value="full">إدارة كاملة وعقود وتقارير</option></select></div><div><label for="paidMediaBudget">ميزانية الإعلانات الممولة</label><input id="paidMediaBudget" type="number" min="0" value="0"></div></div>
+</fieldset></section>
+<section class="wizard-pane" data-step="5" hidden><fieldset class="calc-group"><legend>5. مراجعة سريعة</legend><div id="reviewSummary" class="callout"></div><p class="methodology-note">الأداة تعرض نطاقًا تقديريًا محافظًا، ولا تستبدل عرض السعر الفعلي من المؤثر أو الوكالة.</p></fieldset></section>
+<div class="wizard-nav"><button type="button" id="prevStep" class="secondary" hidden>السابق</button><button type="button" id="nextStep">التالي</button></div>
+<div id="formError" class="form-error" hidden></div>
+</form>
+<section id="results" class="results-panel" hidden aria-live="polite">
+<div class="estimate-header"><div><span class="eyebrow">النطاق الإجمالي المتوقع</span><div id="budgetRange" class="estimate-range">—</div><span class="pill" id="rangePill">—</span></div><div class="likely-card"><span>التقدير الأقرب</span><strong id="likelyEstimate">—</strong><small>تقدير إرشادي</small></div></div>
+<div class="scenario-cards"><div class="scenario-card"><span>اقتصادي</span><strong id="scenarioLow">—</strong><small>اختيار مرن وتفاوض جيد</small></div><div class="scenario-card featured"><span>الأكثر احتمالًا</span><strong id="scenarioLikely">—</strong><small>السعر الأقرب للواقع</small></div><div class="scenario-card"><span>مرتفع</span><strong id="scenarioHigh">—</strong><small>مؤثر مطلوب أو شروط إضافية</small></div></div>
+<div class="result-kpis"><div><span>رسوم المؤثرين</span><strong id="creatorFeesResult">—</strong></div><div><span>متوسط لكل مؤثر</span><strong id="perInfluencer">—</strong></div><div><span>إجمالي المخرجات</span><strong id="totalDeliverables">—</strong></div></div>
+<div class="accuracy-notice"><div class="result-score">دقة التقدير: <span id="confidenceScore">—</span></div><div class="confidence-meter"><span id="confidenceBar" style="width:0"></span></div><ul id="assumptionList" class="assumption-list note"></ul></div>
+<div class="table-scroll"><table><thead><tr><th>البند</th><th>الحد الأدنى</th><th>الأقرب</th><th>الحد الأعلى</th></tr></thead><tbody id="breakdown"></tbody></table></div>
+<div class="recommendation-box"><h3 id="quickRec">توصية الحملة</h3><ul id="recommendationList" class="list note"></ul></div>
+<div class="optimizer-box"><h3>محسّن الميزانية</h3><p class="note">أدخل ميزانيتك لتعرف إن كانت مناسبة وكيف يمكن تحسين توزيعها.</p><div class="optimizer-grid"><div><label for="targetBudget">ميزانيتك المتاحة</label><input id="targetBudget" type="number" min="0" placeholder="مثال: 30000"></div><button type="button" id="optimizeBtn" class="secondary">حلّل الميزانية</button></div><div id="optimizerResults" class="optimizer-results"></div></div>
+<div class="callout result-cta"><strong>حوّل التقدير إلى قائمة مؤثرين وعرض رسمي</strong><div class="actions"><a class="btn" id="waBtn" href="https://wa.me/4915565678291">واتساب</a><a class="btn secondary" id="mailBtn" href="mailto:info@vivamediacreative.com">البريد</a><button type="button" class="secondary" id="copyBtn">نسخ الملخص</button><button type="button" class="ghost" id="printBtn">طباعة / PDF</button></div></div>
+</section>
+</section>
+<aside class="card calculator-aside"><h2>لماذا هذه الأداة أدق؟</h2><p class="note">لا تعتمد على عدد المتابعين وحده. تجمع بين المشاهدات، جودة التفاعل، نسبة الجمهور المحلي، نوع المحتوى، الحقوق والإنتاج.</p><div class="callout"><strong>أفضل مدخلات</strong><ul class="list note"><li>متوسط آخر 10 فيديوهات.</li><li>نسبة الجمهور داخل الدولة.</li><li>تحديد الحقوق والحصرية بدقة.</li></ul></div><div class="card danger mini-warning"><strong>تنبيه</strong><p class="note">لا توجد أسعار رسمية موحدة للمؤثرين. الأداة مصممة لتخطيط الميزانية، لا لتحديد سعر ملزم.</p></div></aside>
 </main>
        <section class="pricing-guide">
 
