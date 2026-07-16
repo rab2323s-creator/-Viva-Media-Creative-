@@ -12,7 +12,14 @@ const MARKETS = {
   ae: { label:'الإمارات', code:'AED', symbol:'د.إ', locale:'ar-AE', factor:1.08, production:1.10 },
   kw: { label:'الكويت', code:'KWD', symbol:'د.ك', locale:'ar-KW', factor:0.082, production:0.080 },
   qa: { label:'قطر', code:'QAR', symbol:'ر.ق', locale:'ar-QA', factor:0.97, production:0.95 },
-  eg: { label:'مصر', code:'EGP', symbol:'ج.م', locale:'ar-EG', factor:0.30, production:0.24 }
+ eg: {
+  label:'مصر',
+  code:'EGP',
+  symbol:'ج.م',
+  locale:'ar-EG',
+  factor:1.00,
+  production:1.00
+}
 };
 
 // SAR-equivalent reference ranges per creator, per deliverable.
