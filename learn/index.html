@@ -40,217 +40,785 @@
 <link rel="shortcut icon" href="/favicon.png?v=2" />
 <link rel="apple-touch-icon" href="/favicon.png?v=2" />
 
-  <!-- Structured Data -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"CollectionPage",
-  "name":"مكتبة المقالات | Viva Media Creative",
-  "url":"https://vivamediacreative.com/learn/",
-  "inLanguage":"ar",
-  "image":{
-    "@type":"ImageObject",
-    "url":"https://vivamediacreative.com/assets/marketing-insights-library.jpg",
-    "width":1200,
-    "height":630
-  },
-  "publisher":{
-    "@type":"Organization",
-    "name":"Viva Media Creative",
-    "url":"https://vivamediacreative.com/"
-  }
-}
-</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "مكتبة المقالات | Viva Media Creative",
-  "url": "https://vivamediacreative.com/learn/",
-  "numberOfItems": 30,
-  "itemListOrder": "https://schema.org/ItemListOrderDescending",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "url": "https://vivamediacreative.com/learn/choose-influencer-platform-saudi/",
-      "name": "كيف تختار منصة التسويق عبر المؤثرين في السعودية؟ + أشهر مشاكل المعلنين عند اختيار المؤثر"
+      "@type": "Organization",
+      "@id": "https://vivamediacreative.com/#organization",
+      "name": "Viva Media Creative",
+      "url": "https://vivamediacreative.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://vivamediacreative.com/#logo",
+        "url": "https://vivamediacreative.com/assets/logo.jpeg",
+        "contentUrl": "https://vivamediacreative.com/assets/logo.jpeg",
+        "caption": "Viva Media Creative"
+      },
+      "email": "info@vivamediacreative.com",
+      "description": "وكالة متخصصة في Influencer Marketing وإدارة السمعة والصورة العامة، وبناء نمو قابل للقياس عبر SEO وCRO—بمنهج بيانات وتنفيذ."
     },
     {
-  "@type": "ListItem",
-  "position": 2,
-  "url": "https://vivamediacreative.com/learn/influencer-marketing-saudi/",
-  "name": "التسويق عبر المؤثرين في السعودية: كيف تختار أفضل شركة تحقق مبيعات وليس مجرد مشاهدات؟"
-},
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "url": "https://vivamediacreative.com/learn/why-influencer-marketing-fails/",
-      "name": "لماذا تفشل حملات المؤثرين رغم صحة الأرقام؟ مشكلة اختيار المؤثر في التسويق الحديث"
+      "@type": "WebSite",
+      "@id": "https://vivamediacreative.com/#website",
+      "url": "https://vivamediacreative.com/",
+      "name": "Viva Media Creative",
+      "publisher": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "inLanguage": [
+        "ar",
+        "en"
+      ]
     },
     {
-      "@type": "ListItem",
-      "position": 4,
-      "url": "https://vivamediacreative.com/learn/why-good-ideas-fail/",
-      "name": "لماذا تفشل الأفكار الجيدة في السوق؟ حين لا تجد الفكرة طريقها إلى الجمهور"
-    },
-   {
-  "@type": "ListItem",
-  "position": 5,
-  "url": "https://vivamediacreative.com/learn/الريلز-لماذا-لا-تتحول-إلى-مبيعات/",
-  "name": "لماذا لا تتحول مشاهدات الريلز إلى مبيعات؟ 9 أسباب تشرح فجوة التحويل"
-},
-    {
-      "@type": "ListItem",
-      "position": 6,
-      "url": "https://vivamediacreative.com/learn/snapchat-influencer-marketing/",
-      "name": "سناب شات والتسويق عبر المؤثرين: كيف تتحول القصص اليومية إلى مبيعات وأرباح"
+      "@type": "ImageObject",
+      "@id": "https://vivamediacreative.com/learn/#primaryimage",
+      "url": "https://vivamediacreative.com/assets/marketing-insights-library.jpg",
+      "contentUrl": "https://vivamediacreative.com/assets/marketing-insights-library.jpg",
+      "width": 1200,
+      "height": 630,
+      "caption": "مكتبة المقالات | Viva Media Creative"
     },
     {
-      "@type": "ListItem",
-      "position": 7,
-      "url": "https://vivamediacreative.com/learn/how-to-grow-instagram-followers/",
-      "name": "كيف تزيد متابعين انستقرام بشكل حقيقي في 2026: أفضل طريقة في الخليج ومصر"
+      "@type": "CollectionPage",
+      "@id": "https://vivamediacreative.com/learn/#webpage",
+      "url": "https://vivamediacreative.com/learn/",
+      "name": "التسويق عبر المؤثرين والنمو الرقمي: مقالات وأدلة عملية",
+      "headline": "التسويق عبر المؤثرين والنمو الرقمي: مقالات وأدلة عملية",
+      "alternativeHeadline": "مكتبة المقالات",
+      "description": "مقالات عملية للشركات والمشاهير وصُنّاع المحتوى: تسويق عبر المؤثرين، إدارة الصورة العامة، ونمو قابل للقياس عبر SEO وCRO. اقرأ ثم انتقل للتنفيذ عبر خدماتنا أو منصة المؤثرين.",
+      "inLanguage": "ar",
+      "isPartOf": {
+        "@id": "https://vivamediacreative.com/#website"
+      },
+      "publisher": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://vivamediacreative.com/learn/#primaryimage"
+      },
+      "breadcrumb": {
+        "@id": "https://vivamediacreative.com/learn/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://vivamediacreative.com/learn/#article-list"
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "التسويق عبر المؤثرين"
+        },
+        {
+          "@type": "Thing",
+          "name": "النمو الرقمي"
+        },
+        {
+          "@type": "Thing",
+          "name": "تحسين محركات البحث (SEO)"
+        },
+        {
+          "@type": "Thing",
+          "name": "تحسين معدل التحويل (CRO)"
+        },
+        {
+          "@type": "Thing",
+          "name": "إدارة الصورة العامة"
+        },
+        {
+          "@type": "Thing",
+          "name": "إدارة العلامة الشخصية"
+        },
+        {
+          "@type": "Thing",
+          "name": "صناعة المحتوى"
+        },
+        {
+          "@type": "Thing",
+          "name": "التسويق عبر وسائل التواصل الاجتماعي"
+        }
+      ],
+      "audience": [
+        {
+          "@type": "Audience",
+          "audienceType": "الشركات والعلامات التجارية"
+        },
+        {
+          "@type": "Audience",
+          "audienceType": "المؤثرون والمشاهير وصُنّاع المحتوى"
+        }
+      ],
+      "keywords": [
+        "التسويق عبر المؤثرين",
+        "Influencer Marketing",
+        "النمو الرقمي",
+        "SEO",
+        "CRO",
+        "إدارة الصورة العامة",
+        "إدارة العلامة الشخصية",
+        "صناعة المحتوى",
+        "السوشال ميديا"
+      ]
     },
     {
-      "@type": "ListItem",
-      "position": 8,
-      "url": "https://vivamediacreative.com/learn/conversion-rate-optimization-guide/",
-      "name": "دليل CRO: كيف ترفع المبيعات من نفس الزيارات بخطة عملية؟"
+      "@type": "BreadcrumbList",
+      "@id": "https://vivamediacreative.com/learn/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الرئيسية",
+          "item": "https://vivamediacreative.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "مكتبة المقالات",
+          "item": "https://vivamediacreative.com/learn/"
+        }
+      ]
     },
     {
-      "@type": "ListItem",
-      "position": 9,
-      "url": "https://vivamediacreative.com/learn/ai-transforms-content-creation/",
-      "name": "الذكاء الاصطناعي يغير مستقبل صناعة المحتوى"
-    },
-    {
-      "@type": "ListItem",
-      "position": 10,
-      "url": "https://vivamediacreative.com/learn/facebook-reach/",
-      "name": "لماذا لا تصل منشوراتك في فيسبوك؟ 17 سببًا لانخفاض الوصول وحلول عملية"
-    },
-    {
-      "@type": "ListItem",
-      "position": 11,
-      "url": "https://vivamediacreative.com/learn/digital-marketing-trends-2026/",
-      "name": "اتجاهات التسويق الرقمي لعام 2026"
-    },
-    {
-      "@type": "ListItem",
-      "position": 12,
-      "url": "https://vivamediacreative.com/learn/public-image/",
-      "name": "إدارة الصورة العامة: كيف تحمي اسمك وتحوّله إلى أصل يرفع قيمتك؟"
-    },
-    {
-      "@type": "ListItem",
-      "position": 13,
-      "url": "https://vivamediacreative.com/learn/studio-production-tech-2026/",
-      "name": "أحدث تقنيات التصوير والإنتاج الإعلامي في 2026"
-    },
-    {
-      "@type": "ListItem",
-      "position": 14,
-      "url": "https://vivamediacreative.com/learn/social-media-algorithms-2026/",
-      "name": "فهم خوارزميات السوشال ميديا في 2026"
-    },
-    {
-      "@type": "ListItem",
-      "position": 15,
-      "url": "https://vivamediacreative.com/learn/instagram-post-story-size/",
-      "name": "مقاسات إنستغرام 2026: البوست والستوري والريلز والأبعاد الصحيحة"
-    },
-    {
-      "@type": "ListItem",
-      "position": 16,
-      "url": "https://vivamediacreative.com/learn/instagram-engagement-rate-calculator/",
-      "name": "حاسبة معدل التفاعل على إنستغرام (Engagement Rate)"
-    },
-    {
-      "@type": "ListItem",
-      "position": 17,
-      "url": "https://vivamediacreative.com/learn/best-time-to-post-instagram/",
-      "name": "أفضل وقت للنشر على إنستغرام في 2026: الصور والريلز والستوري"
-    },
-    {
-      "@type": "ListItem",
-      "position": 18,
-      "url": "https://vivamediacreative.com/learn/best-instagram-hashtags-2026/",
-      "name": "أفضل هاشتاغات إنستغرام في 2026 (دليل ذكي + أداة مجانية)"
-    },
-    {
-      "@type": "ListItem",
-      "position": 19,
-      "url": "https://vivamediacreative.com/learn/ai-vs-human-content-2026/",
-      "name": "محتوى إنساني أم ذكاء اصطناعي؟ من يربح في تسويق 2026؟"
-    },
-    {
-      "@type": "ListItem",
-      "position": 20,
-      "url": "https://vivamediacreative.com/learn/brand-identity-ai-2026/",
-      "name": "هل ستصبح كل العلامات التجارية متشابهة؟ مستقبل الهوية في عصر الذكاء الاصطناعي"
-    },
-    {
-      "@type": "ListItem",
-      "position": 21,
-      "url": "https://vivamediacreative.com/learn/personal-brand-management/",
-      "name": "إدارة العلامة الشخصية: لماذا أصبحت الهوية والثقة أهم أصولك المهنية؟"
-    },
-    {
-      "@type": "ListItem",
-      "position": 22,
-      "url": "https://vivamediacreative.com/learn/hashtag-strategy/",
-      "name": "استراتيجية الهاشتاغات: دليل عميق لفهم الاكتشاف الرقمي دون أوهام"
-    },
-    {
-      "@type": "ListItem",
-      "position": 23,
-      "url": "https://vivamediacreative.com/learn/facebook-algorithm/",
-      "name": "لماذا تنتشر بعض منشورات فيسبوك بينما تموت أخرى؟"
-    },
-  {
-  "@type": "ListItem",
-  "position": 24,
-  "url": "https://vivamediacreative.com/learn/الربح-من-انستقرام/",
-  "name": "الربح من انستقرام 2026: كم يدفع؟ 9 طرق حقيقية للربح"
-},
-{
-  "@type": "ListItem",
-  "position": 25,
-  "url": "https://vivamediacreative.com/learn/طريقة-تصوير-الريلز-باحتراف/",
-  "name": "طريقة تصوير الريلز باحتراف: كيف تصوّر Reels يرفع المشاهدات والتفاعل"
-},
-{
-  "@type": "ListItem",
-  "position": 26,
-  "url": "https://vivamediacreative.com/learn/why-people-trust-personal-content/",
-  "name": "لماذا يثق الناس بالمحتوى الشخصي أكثر من محتوى الشركات؟ تحليل مبني على أحدث الدراسات"
- },
-{
-  "@type": "ListItem",
-  "position": 27,
-  "url": "https://vivamediacreative.com/learn/personal-content-vs-company-content-examples/",
-  "name": "الفرق بين المحتوى الشخصي ومحتوى الشركات: أمثلة واقعية من لينكدإن وتيك توك وSaaS والتجارة الإلكترونية"
-},
-{
-  "@type": "ListItem",
-  "position": 28,
-  "url": "https://vivamediacreative.com/learn/influencer-marketing/",
-  "name": "التسويق عبر المؤثرين في 2026: كيف تحوّل المشاهدات إلى مبيعات فعلية (دليل عملي للشركات)"
-},
-{
-  "@type": "ListItem",
-  "position": 29,
-  "url": "https://vivamediacreative.com/insights/influencer-account-management/",
-  "name": "لماذا حسابك على السوشال ميديا نشط لكنه لا يجذب شراكات وإعلانات؟ تحليل استراتيجي للمؤثرين"
- },
-{
-  "@type": "ListItem",
-  "position": 30,
-  "url": "https://vivamediacreative.com/learn/does-google-detect-ai-content/",
-  "name": "هل جوجل يعاقب محتوى الذكاء الاصطناعي؟ وكيف تقيّمه الخوارزميات في 2026"
-}
-  
+      "@type": "ItemList",
+      "@id": "https://vivamediacreative.com/learn/#article-list",
+      "name": "مكتبة المقالات",
+      "description": "مقالات عملية للشركات والمشاهير وصُنّاع المحتوى: تسويق عبر المؤثرين، إدارة الصورة العامة، ونمو قابل للقياس عبر SEO وCRO.",
+      "numberOfItems": 30,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Article",
+            "headline": "كيف تختار منصة التسويق عبر المؤثرين في السعودية؟ + أشهر مشاكل المعلنين عند اختيار المؤثر",
+            "name": "كيف تختار منصة التسويق عبر المؤثرين في السعودية؟ + أشهر مشاكل المعلنين عند اختيار المؤثر",
+            "url": "https://vivamediacreative.com/learn/choose-influencer-platform-saudi/",
+            "description": "دليل عملي للمعلنين في السعودية لاختيار منصة المؤثرين بدون عشوائية : معايير تحقق من الجمهور السعودي، كشف التفاعل الوهمي، إطار تسعير منطقي، نموذج Scorecard جاهز، وجدول تخطيط حملة (Pilot/وعي/تحويل) + طريقة قياس واضحة عبر UTM وكود خصم.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/choose-influencer-platform-saudi.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/choose-influencer-platform-saudi.jpg",
+              "caption": "مدير تسويق يراجع مؤشرات الأداء بقلق: دليل اختيار منصة التسويق عبر المؤثرين في السعودية وتجنّب التفاعل الوهمي ورفع ROI"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Article",
+            "headline": "التسويق عبر المؤثرين في السعودية: كيف تختار أفضل شركة تحقق مبيعات وليس مجرد مشاهدات؟",
+            "name": "التسويق عبر المؤثرين في السعودية: كيف تختار أفضل شركة تحقق مبيعات وليس مجرد مشاهدات؟",
+            "url": "https://vivamediacreative.com/learn/influencer-marketing-saudi/",
+            "description": "دليل عملي لاختيار شركة تسويق مؤثرين في السعودية بناءً على تحليل الجمهور، ملاءمة المؤثر، اختيار المنصة المناسبة بين سناب وتيك توك وإنستغرام، قياس ROI ، وتجنب الأخطاء التي تجعل الحملات تحقق مشاهدات بلا مبيعات.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/articles/influencer-marketing-saudi/influencer-marketing-saudi-hero.webp",
+              "contentUrl": "https://vivamediacreative.com/assets/articles/influencer-marketing-saudi/influencer-marketing-saudi-hero.webp",
+              "caption": "التسويق عبر المؤثرين في السعودية واختيار أفضل شركة مؤثرين تحقق مبيعات وليس مجرد مشاهدات"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Article",
+            "headline": "التسويق عبر المؤثرين في 2026: لماذا تحقق بعض الحملات مبيعات حقيقية بينما يفشل الباقي؟",
+            "name": "التسويق عبر المؤثرين في 2026: لماذا تحقق بعض الحملات مبيعات حقيقية بينما يفشل الباقي؟",
+            "url": "https://vivamediacreative.com/learn/influencer-marketing/",
+            "description": "دليل عملي عميق يحوّل حملات المؤثرين من مجرد مشاهدات إلى نتائج قابلة للقياس. تعلّم كيف تختار المؤثر المناسب فعلًا، تبني Brief يقنع بدل أن يبدو إعلانًا، تجهّز صفحة هبوط تبيع، وتربط كل شيء بنظام قياس واضح (UTM، ROAS، CPA). يشمل أخطاء قاتلة، إطار عمل من 9 خطوات، واستراتيجية قابلة للتوسع للشركات.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/influencer-marketing-sales-strategy.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/influencer-marketing-sales-strategy.jpg",
+              "caption": "التسويق عبر المؤثرين في 2026: كيف تحول المشاهدات إلى مبيعات فعلية"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Article",
+            "headline": "لماذا تفشل حملات المؤثرين رغم صحة الأرقام؟ مشكلة اختيار المؤثر في التسويق الحديث",
+            "name": "لماذا تفشل حملات المؤثرين رغم صحة الأرقام؟ مشكلة اختيار المؤثر في التسويق الحديث",
+            "url": "https://vivamediacreative.com/learn/why-influencer-marketing-fails/",
+            "description": "كثير من الحملات تبدو “ناجحة” على الورق: متابعون ، تفاعل ، و مشاهدات … ثم تنتهي بلا أثر: لا مبيعات، لا ثقة، ولا ذاكرة. في هذا المقال التحليلي نفكّك لماذا لا تكفي الأرقام وحدها ، وكيف يتحول اختيار المؤثر من “فلترة حسابات” إلى قرار استراتيجي يبني علاقة ويمنع حرق الصورة.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/og/why-influencer-marketing-fails.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/og/why-influencer-marketing-fails.jpg",
+              "caption": "لماذا تفشل حملات المؤثرين رغم صحة الأرقام؟ اختيار المؤثر كقرار استراتيجي"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Article",
+            "headline": "لماذا تفشل الأفكار الجيدة في السوق؟ حين لا تجد الفكرة طريقها إلى الجمهور",
+            "name": "لماذا تفشل الأفكار الجيدة في السوق؟ حين لا تجد الفكرة طريقها إلى الجمهور",
+            "url": "https://vivamediacreative.com/learn/why-good-ideas-fail/",
+            "description": "ليست كل فكرة جيدة تُكافَأ في السوق. أحيانًا لا تفشل بسبب ضعفها، بل لأن التوقيت ، و شبكة الثقة ، و طريقة الوصول لا تعمل كما يجب. هذا المقال يشرح كيف تتحول فجوة توزيع الفكرة إلى السبب الحقيقي وراء تعثر كثير من المنتجات القوية.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/articles/why-good-ideas-fail/why-good-ideas-fail-hero.webp",
+              "contentUrl": "https://vivamediacreative.com/assets/articles/why-good-ideas-fail/why-good-ideas-fail-hero.webp",
+              "caption": "لماذا تفشل الأفكار الجيدة في السوق؟ أخطاء التسويق وفجوة توزيع الفكرة"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Article",
+            "headline": "لماذا لا تتحول مشاهدات الريلز إلى مبيعات؟ 9 أسباب تشرح فجوة التحويل",
+            "name": "لماذا لا تتحول مشاهدات الريلز إلى مبيعات؟ 9 أسباب تشرح فجوة التحويل",
+            "url": "https://vivamediacreative.com/learn/الريلز-لماذا-لا-تتحول-إلى-مبيعات/",
+            "description": "مشاهدات الريلز عالية لكن بدون مبيعات؟ تعرّف لماذا لا تتحول مشاهدات Instagram Reels إلى عملاء، وما أسباب ضعف تحويل الريلز إلى مبيعات، مع استراتيجيات عملية لزيادة مبيعات إنستقرام، تحسين CTA، وبناء Funnel يحوّل مشاهدات الريلز إلى طلبات ورسائل ومبيعات فعلية.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/articles/reels-views-sales.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/articles/reels-views-sales.jpg",
+              "caption": "لماذا لا تتحول مشاهدات الريلز إلى مبيعات؟ فجوة التحويل بين الانتشار العالي وضعف النتائج التجارية على إنستغرام"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Article",
+            "headline": "الربح من انستقرام 2026: كم يدفع؟ 9 طرق حقيقية للربح",
+            "name": "الربح من انستقرام 2026: كم يدفع؟ 9 طرق حقيقية للربح",
+            "url": "https://vivamediacreative.com/learn/الربح-من-انستقرام/",
+            "description": "كم يدفع انستقرام في 2026؟ وما عدد المتابعين المطلوب؟ دليل شامل يشرح 9 طرق حقيقية للربح من إنستقرام من الرعايات والعمولة إلى بيع الخدمات والمنتجات.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/articles/instagram-money-making/instagram-money-making-hero.webp",
+              "contentUrl": "https://vivamediacreative.com/assets/articles/instagram-money-making/instagram-money-making-hero.webp",
+              "caption": "الربح من انستقرام 2026: صانعة محتوى تستخدم إنستقرام على الهاتف وهي مسترخية وسعيدة أثناء تحقيق دخل من المنصة"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Article",
+            "headline": "سناب شات والتسويق عبر المؤثرين: كيف تتحول القصص اليومية إلى مبيعات وأرباح",
+            "name": "سناب شات والتسويق عبر المؤثرين: كيف تتحول القصص اليومية إلى مبيعات وأرباح",
+            "url": "https://vivamediacreative.com/learn/snapchat-influencer-marketing/",
+            "description": "تحليل يشرح كيف تستخدم الشركات مؤثرين سناب شات وقصص سناب شات اليومية لبناء الثقة مع الجمهور وتحويل التوصيات الطبيعية إلى زيارات ومبيعات عبر روابط التتبع وأكواد الخصم.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/snapchat-influencer-marketing.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/snapchat-influencer-marketing.jpg",
+              "caption": "سناب شات والتسويق عبر المؤثرين: مثال على مؤثرة تعرض منتجاً داخل قصص سناب شات ضمن حملة تسويق بالمؤثرين"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "Article",
+            "headline": "كيف تزيد متابعين انستقرام بشكل حقيقي في 2026: أفضل طريقة في الخليج ومصر",
+            "name": "كيف تزيد متابعين انستقرام بشكل حقيقي في 2026: أفضل طريقة في الخليج ومصر",
+            "url": "https://vivamediacreative.com/learn/how-to-grow-instagram-followers/",
+            "description": "دليل عملي يشرح كيف تزيد متابعين انستقرام بشكل حقيقي في 2026 عبر فهم خوارزمية إنستغرام، استخدام ريلز لزيادة الوصول، وبناء تفاعل حقيقي يحول المشاهدات إلى متابعين حقيقيين في الخليج ومصر.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/how-to-grow-instagram-followers.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/how-to-grow-instagram-followers.jpg",
+              "caption": "كيف تزيد متابعين انستقرام بشكل حقيقي في 2026 وبناء جمهور قوي في الخليج ومصر"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@type": "Article",
+            "headline": "دليل CRO: كيف ترفع المبيعات من نفس الزيارات بخطة عملية؟",
+            "name": "دليل CRO: كيف ترفع المبيعات من نفس الزيارات بخطة عملية؟",
+            "url": "https://vivamediacreative.com/learn/conversion-rate-optimization-guide/",
+            "description": "دليل عملي شامل لتحسين معدل التحويل (CRO) خطوة بخطوة: معادلة التحويل التي تكشف أين تضيع الأرباح، تشخيص سريع خلال 30 دقيقة، خريطة أولويات عالية التأثير، تحسين Landing Page وCheckout، اختبارات A/B بدون تعقيد، وخطة تشغيل 30 يوم لرفع التحويل وبناء الثقة وتقليل الاحتكاك. مناسب للمتاجر والخدمات وحملات المؤثرين—دون زيادة ميزانية الإعلانات.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/articles/cro/conversion-rate-optimization-guide-hero.webp",
+              "contentUrl": "https://vivamediacreative.com/assets/articles/cro/conversion-rate-optimization-guide-hero.webp",
+              "caption": "دليل CRO: كيف ترفع معدل التحويل وتزيد المبيعات من نفس الزيارات"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "item": {
+            "@type": "Article",
+            "headline": "الذكاء الاصطناعي يغير مستقبل صناعة المحتوى",
+            "name": "الذكاء الاصطناعي يغير مستقبل صناعة المحتوى",
+            "url": "https://vivamediacreative.com/learn/ai-transforms-content-creation/",
+            "description": "التقنيات الجديدة في توليد النصوص والفيديوهات تجعل من الممكن إنشاء محتوى احترافي بجودة عالية خلال دقائق فقط.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/ai-content.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/ai-content.jpg",
+              "caption": "الذكاء الاصطناعي في صناعة المحتوى"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "item": {
+            "@type": "Article",
+            "headline": "لماذا لا تصل منشوراتك في فيسبوك؟ 17 سببًا لانخفاض الوصول وحلول عملية",
+            "name": "لماذا لا تصل منشوراتك في فيسبوك؟ 17 سببًا لانخفاض الوصول وحلول عملية",
+            "url": "https://vivamediacreative.com/learn/facebook-reach/",
+            "description": "تحليل عملي يشرح لماذا ينخفض الوصول في فيسبوك ، مع 17 سببًا حقيقيًا مبنيًا على سلوك المستخدم وإشارات الخوارزمية، إضافة إلى حلول واضحة لزيادة Reach وصناعة منشورات تحصل على تفاعل ومشاركات أكبر.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/facebook-algorithm.webp",
+              "contentUrl": "https://vivamediacreative.com/assets/facebook-algorithm.webp",
+              "caption": "لماذا لا تصل منشوراتك في فيسبوك؟ أسباب انخفاض الوصول وكيف تزيد Reach"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "item": {
+            "@type": "Article",
+            "headline": "اتجاهات التسويق الرقمي لعام 2026",
+            "name": "اتجاهات التسويق الرقمي لعام 2026",
+            "url": "https://vivamediacreative.com/learn/digital-marketing-trends-2026/",
+            "description": "الفيديو القصير، الذكاء الاصطناعي، والواقع المعزز سيقودون مستقبل الحملات التسويقية.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/trends-2026.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/trends-2026.jpg",
+              "caption": "اتجاهات التسويق الرقمي 2026"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "item": {
+            "@type": "Article",
+            "headline": "لماذا حسابك نشط لكنه لا يجذب شراكات وإعلانات؟",
+            "name": "لماذا حسابك نشط لكنه لا يجذب شراكات وإعلانات؟",
+            "url": "https://vivamediacreative.com/insights/influencer-account-management/",
+            "description": "تحليل استراتيجي يشرح لماذا لا يتحول النشاط على السوشال ميديا إلى فرص مدفوعة، وكيف يؤثر غياب التمركز ووضوح الصورة على الشراكات، الإعلانات، والتسعير الأعلى.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/images/articles/influencer-market-perception-positioning.webp",
+              "contentUrl": "https://vivamediacreative.com/assets/images/articles/influencer-market-perception-positioning.webp",
+              "caption": "لماذا حسابك على السوشال ميديا نشط لكنه لا يجذب شراكات وإعلانات؟"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "item": {
+            "@type": "Article",
+            "headline": "إدارة الصورة العامة: كيف تحمي اسمك وتحوّله إلى أصل يرفع قيمتك؟",
+            "name": "إدارة الصورة العامة: كيف تحمي اسمك وتحوّله إلى أصل يرفع قيمتك؟",
+            "url": "https://vivamediacreative.com/learn/public-image/",
+            "description": "دليل احترافي موجّه للمشاهير وأصحاب البراندات يشرح متى يصبح المحتوى وحده غير كافٍ ، وكيف تُدار الصورة العامة كنظام متكامل يحمي السمعة، يقلّل الأزمات، ويحوّل الاسم إلى أصل استراتيجي يرفع الشراكات والقيمة السوقية .",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/articles/public-image/public-image-hero.webp",
+              "contentUrl": "https://vivamediacreative.com/assets/articles/public-image/public-image-hero.webp",
+              "caption": "إدارة الصورة العامة Public Image: حماية الاسم وبناء الثقة وتحويل السمعة إلى أصل"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "item": {
+            "@type": "Article",
+            "headline": "أحدث تقنيات التصوير والإنتاج الإعلامي في 2026",
+            "name": "أحدث تقنيات التصوير والإنتاج الإعلامي في 2026",
+            "url": "https://vivamediacreative.com/learn/studio-production-tech-2026/",
+            "description": "دليل شامل يشرح الكاميرات الذكية، الإضاءة السينمائية، المونتاج السحابي، والإنتاج الافتراضي (Virtual Production) لصناع المحتوى المحترفين في 2026.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/studio-tech.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/studio-tech.jpg",
+              "caption": "أحدث تقنيات التصوير والإنتاج الإعلامي في 2026"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "item": {
+            "@type": "Article",
+            "headline": "فهم خوارزميات السوشال ميديا في 2026",
+            "name": "فهم خوارزميات السوشال ميديا في 2026",
+            "url": "https://vivamediacreative.com/learn/social-media-algorithms-2026/",
+            "description": "دليل عملي لزيادة الوصول والتفاعل عبر إنستغرام وتيك توك ويوتيوب: احتفاظ، حفظ، مشاركة، وكلمات مفتاحية.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/social-media.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/social-media.jpg",
+              "caption": "فهم خوارزميات السوشال ميديا في 2026"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "item": {
+            "@type": "Article",
+            "headline": "مقاسات إنستغرام 2026: البوست والستوري والريلز والأبعاد الصحيحة",
+            "name": "مقاسات إنستغرام 2026: البوست والستوري والريلز والأبعاد الصحيحة",
+            "url": "https://vivamediacreative.com/learn/instagram-post-story-size/",
+            "description": "دليل احترافي لمقاسات إنستغرام: مقاس البوست المثالي 4:5، مقاس الستوري 9:16، مقاس الريلز، مناطق الأمان Safe Zones، وأفضل إعدادات الصور لتجنب القص والحفاظ على أعلى جودة.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/instagram-post-story-size.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/instagram-post-story-size.jpg",
+              "caption": "مقاسات إنستغرام 2026: مقاس البوست والستوري والريلز والأبعاد الصحيحة للصور"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "item": {
+            "@type": "Article",
+            "headline": "هل جوجل يعاقب محتوى الذكاء الاصطناعي؟ وكيف تقيّمه الخوارزميات في 2026",
+            "name": "هل جوجل يعاقب محتوى الذكاء الاصطناعي؟ وكيف تقيّمه الخوارزميات في 2026",
+            "url": "https://vivamediacreative.com/learn/does-google-detect-ai-content/",
+            "description": "دليل شامل يشرح كيف تتعامل جوجل ويوتيوب وتيك توك مع محتوى الذكاء الاصطناعي، وهل يمكن لمحتوى AI أن يتصدر نتائج البحث، وما الفرق بين المحتوى الآلي الضعيف والمحتوى الذي يجمع بين Human + AI لبناء الثقة والظهور.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/articles/google-ai-content-ranking-human-vs-ai-search-quality.webp",
+              "contentUrl": "https://vivamediacreative.com/assets/articles/google-ai-content-ranking-human-vs-ai-search-quality.webp",
+              "caption": "هل جوجل يعاقب محتوى الذكاء الاصطناعي وكيف تقيّمه الخوارزميات في 2026"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "item": {
+            "@type": "Article",
+            "headline": "طريقة تصوير الريلز باحتراف: كيف تصوّر Reels يرفع المشاهدات والتفاعل",
+            "name": "طريقة تصوير الريلز باحتراف: كيف تصوّر Reels يرفع المشاهدات والتفاعل",
+            "url": "https://vivamediacreative.com/learn/طريقة-تصوير-الريلز-باحتراف/",
+            "description": "تصوير الريلز الاحترافي لا يعتمد على الكاميرا فقط، بل على الخطاف البصري ، التكوين العمودي ، الإضاءة والصوت ، و المونتاج السريع . في هذا الدليل العملي ستتعلم كيف تصوّر ريلز يجذب الانتباه من أول ثانية، يحافظ على الاحتفاظ بالمشاهدة ، ويحوّل المشاهد إلى تفاعل أو رسالة أو زيارة للحساب .",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/articles/reels-filming-guide-hero.webp",
+              "contentUrl": "https://vivamediacreative.com/assets/articles/reels-filming-guide-hero.webp",
+              "caption": "طريقة تصوير الريلز باحتراف باستخدام الهاتف مع تكوين عمودي وإضاءة احترافية لزيادة المشاهدات والتفاعل على إنستقرام"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "item": {
+            "@type": "Article",
+            "headline": "حاسبة معدل التفاعل على إنستغرام (Engagement Rate)",
+            "name": "حاسبة معدل التفاعل على إنستغرام (Engagement Rate)",
+            "url": "https://vivamediacreative.com/learn/instagram-engagement-rate-calculator/",
+            "description": "دليل عملي لشرح كيفية حساب معدل التفاعل على إنستغرام، مع أداة تحليل مجانية تساعدك على تقييم أداء حسابك واتخاذ قرارات مبنية على بيانات حقيقية.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/instagram-engagement.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/instagram-engagement.jpg",
+              "caption": "حاسبة معدل التفاعل على إنستغرام"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "item": {
+            "@type": "Article",
+            "headline": "أفضل وقت للنشر على إنستغرام في 2026: الصور والريلز والستوري",
+            "name": "أفضل وقت للنشر على إنستغرام في 2026: الصور والريلز والستوري",
+            "url": "https://vivamediacreative.com/learn/best-time-to-post-instagram/",
+            "description": "اكتشف أفضل وقت للنشر على إنستغرام في 2026 لزيادة التفاعل والوصول، مع جدول أفضل الأيام وأوقات نشر الريلز والبوست والستوري حسب نوع الجمهور.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/instagram-best-time.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/instagram-best-time.jpg",
+              "caption": "أفضل وقت للنشر على إنستغرام في 2026 لزيادة التفاعل والوصول"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "item": {
+            "@type": "Article",
+            "headline": "أفضل هاشتاغات إنستغرام في 2026 (دليل ذكي + أداة مجانية)",
+            "name": "أفضل هاشتاغات إنستغرام في 2026 (دليل ذكي + أداة مجانية)",
+            "url": "https://vivamediacreative.com/learn/best-instagram-hashtags-2026/",
+            "description": "تعرّف على أفضل طريقة لاختيار هاشتاغات إنستغرام في 2026 ، وتجنّب الأخطاء الشائعة، مع أداة عربية مجانية تمنحك مجموعات هاشتاغات جاهزة لزيادة الوصول والتفاعل بدون سبام.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/instagram-engagement.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/instagram-engagement.jpg",
+              "caption": "أفضل هاشتاغات إنستغرام في 2026 لزيادة الوصول والتفاعل"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "item": {
+            "@type": "Article",
+            "headline": "محتوى إنساني أم ذكاء اصطناعي؟ من يربح في تسويق 2026؟",
+            "name": "محتوى إنساني أم ذكاء اصطناعي؟ من يربح في تسويق 2026؟",
+            "url": "https://vivamediacreative.com/learn/ai-vs-human-content-2026/",
+            "description": "تحليل عملي يشرح لماذا لا يكفي محتوى الذكاء الاصطناعي وحده لبناء الثقة والتفاعل. يتضمن إطار Human Signal™، دراسة حالة عملية، ونموذج تشغيل ذكي يجمع بين الإنسان وAI.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/ai-human-content-2026.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/ai-human-content-2026.jpg",
+              "caption": "محتوى إنساني مقابل محتوى الذكاء الاصطناعي في التسويق لعام 2026"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "item": {
+            "@type": "Article",
+            "headline": "هل ستصبح كل العلامات التجارية متشابهة؟ مستقبل الهوية في عصر الذكاء الاصطناعي",
+            "name": "هل ستصبح كل العلامات التجارية متشابهة؟ مستقبل الهوية في عصر الذكاء الاصطناعي",
+            "url": "https://vivamediacreative.com/learn/brand-identity-ai-2026/",
+            "description": "تحليل فكري وإنساني عميق يكشف كيف يدفع الذكاء الاصطناعي العلامات التجارية نحو التشابه، ولماذا أصبحت الهوية والموقف والدليل الواقعي أهم من أي وقت مضى. يتضمن نموذج «خندق الهوية»، دراسة حالة مجهولة من منظور CMO، وخارطة عملية لحماية صوت علامتك.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/brand-identity-ai-2026.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/brand-identity-ai-2026.jpg",
+              "caption": "هوية العلامة التجارية في عصر الذكاء الاصطناعي 2026"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 26,
+          "item": {
+            "@type": "Article",
+            "headline": "إدارة العلامة الشخصية: لماذا أصبحت الهوية والثقة أهم أصولك المهنية؟",
+            "name": "إدارة العلامة الشخصية: لماذا أصبحت الهوية والثقة أهم أصولك المهنية؟",
+            "url": "https://vivamediacreative.com/learn/personal-brand-management/",
+            "description": "دليل موسوعي إنساني يشرح مفهوم إدارة العلامة الشخصية بعيدًا عن التسويق السطحي، ويحلّل الفرق بين السمعة والظهور والتأثير، ودور الخوارزميات والذكاء الاصطناعي، ولماذا أصبحت الهوية الواضحة أصلًا طويل المدى في عالم رقمي مزدحم.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/personal-brand.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/personal-brand.jpg",
+              "caption": "إدارة العلامة الشخصية في العصر الرقمي"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 27,
+          "item": {
+            "@type": "Article",
+            "headline": "لماذا يثق الناس بالمحتوى الشخصي أكثر من محتوى الشركات؟ تحليل مبني على أحدث الدراسات",
+            "name": "لماذا يثق الناس بالمحتوى الشخصي أكثر من محتوى الشركات؟ تحليل مبني على أحدث الدراسات",
+            "url": "https://vivamediacreative.com/learn/why-people-trust-personal-content/",
+            "description": "تحليل عميق يشرح لماذا يتفوّق المحتوى الشخصي على محتوى الشركات في بناء الثقة، وكيف تؤثر الأصالة، والحضور الإنساني، والتجربة الشخصية، والعلاقة شبه الاجتماعية على التفاعل، ونية الشراء، وبناء السلطة الرقمية في التسويق الحديث.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/personal-content-vs-brand-content-trust-hero.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/personal-content-vs-brand-content-trust-hero.jpg",
+              "caption": "لماذا يثق الناس بالمحتوى الشخصي أكثر من محتوى الشركات؟ تحليل نفسي وتسويقي يشرح تأثير الحضور الإنساني والأصالة والثقة في قرار الشراء"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 28,
+          "item": {
+            "@type": "Article",
+            "headline": "الفرق بين المحتوى الشخصي ومحتوى الشركات: أمثلة واقعية من لينكدإن وتيك توك وSaaS والتجارة الإلكترونية",
+            "name": "الفرق بين المحتوى الشخصي ومحتوى الشركات: أمثلة واقعية من لينكدإن وتيك توك وSaaS والتجارة الإلكترونية",
+            "url": "https://vivamediacreative.com/learn/personal-content-vs-company-content-examples/",
+            "description": "دليل تطبيقي قوي يوضح كيف يظهر الفرق الحقيقي بين المحتوى الشخصي ومحتوى الشركات داخل المنشورات نفسها، عبر أمثلة عملية من لينكدإن وتيك توك وSaaS والتجارة الإلكترونية، مع تحليل يشرح كيف تؤثر الخبرة البشرية، والأصالة، والسياق الواقعي على الثقة، والتفاعل، وتقليل الاعتراضات، ودفع القرار الشرائي.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/articles/personal-vs-company-content-linkedin-example.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/articles/personal-vs-company-content-linkedin-example.jpg",
+              "caption": "الفرق بين المحتوى الشخصي ومحتوى الشركات: أمثلة واقعية من لينكدإن وتيك توك وSaaS والتجارة الإلكترونية تشرح كيف يبني المحتوى الشخصي الثقة والتفاعل والتحويل"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 29,
+          "item": {
+            "@type": "Article",
+            "headline": "استراتيجية الهاشتاغات: دليل عميق لفهم الاكتشاف الرقمي دون أوهام",
+            "name": "استراتيجية الهاشتاغات: دليل عميق لفهم الاكتشاف الرقمي دون أوهام",
+            "url": "https://vivamediacreative.com/learn/hashtag-strategy/",
+            "description": "الهاشتاغات لم تختفِ… لكنها تغيّر دورها. في هذا المقال الموسوعي نُفكّك متى تعمل الهاشتاغات ومتى تصبح ضجيجًا ، وما الفرق بينها وبين الكلمات المفتاحية عبر كل منصات التواصل. وإذا أردت أن تنتقل من التخمين إلى وضوح هادئ، ستجد ربطًا طبيعيًا لأدواتنا: Instagram Analyzer لفهم إشارات الحساب، و Hashtag Analyzer لفهم سياق الهاشتاغات—بدون وصفات سحرية.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/hashtag-strategy-digital-discovery.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/hashtag-strategy-digital-discovery.jpg",
+              "caption": "استراتيجية الهاشتاغات لفهم الاكتشاف الرقمي عبر منصات التواصل"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 30,
+          "item": {
+            "@type": "Article",
+            "headline": "لماذا تنتشر بعض منشورات فيسبوك بينما تموت أخرى؟",
+            "name": "لماذا تنتشر بعض منشورات فيسبوك بينما تموت أخرى؟",
+            "url": "https://vivamediacreative.com/learn/facebook-algorithm/",
+            "description": "ليس الحظ ولا الهاشتاغات. تعرّف كيف تفكّر خوارزمية فيسبوك في 2026، وما الإشارات التي تجعل المنشور ينتشر أو يتوقف — مع أمثلة واقعية وأخطاء شائعة يجب تجنبها لزيادة الوصول والتفاعل.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://vivamediacreative.com/assets/facebook-algorithm.jpg",
+              "contentUrl": "https://vivamediacreative.com/assets/facebook-algorithm.jpg",
+              "caption": "كيف تعمل خوارزمية فيسبوك 2026 وكيف تقرر انتشار المنشورات"
+            },
+            "inLanguage": "ar",
+            "publisher": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        }
+      ]
+    }
   ]
 }
 </script>
@@ -308,8 +876,8 @@
         <img src="/assets/logo.jpeg" alt="Viva Media Creative" class="logo" />
       </a>
       <div class="brand-text">
-        <h1>Viva Media Creative</h1>
-        <p class="tag">مكتبة المقالات — معرفة تقود إلى نتائج</p>
+       <h1>التسويق عبر المؤثرين والنمو الرقمي: مقالات وأدلة عملية</h1>
+        <p class="tag">أدلة عملية للشركات والمؤثرين لتحويل المحتوى والوصول إلى نتائج قابلة للقياس</p>
       </div>
     </div>
 
@@ -1183,21 +1751,6 @@
     </nav>
   </div>
 
-  <!-- Minimal JSON-LD (safe + clean) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Viva Media Creative",
-    "url": "https://vivamediacreative.com/",
-    "logo": "https://vivamediacreative.com/assets/logo.jpeg",
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "contactType": "customer support",
-      "email": "info@vivamediacreative.com"
-    }]
-  }
-  </script>
 </footer>
 
 </body>
