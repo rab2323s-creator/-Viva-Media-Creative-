@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>حاسبة سعر المؤثر | Influencer Rate Calculator</title>
+  <meta name="description" content="احسب سعرك العادل كمؤثر على إنستغرام وتيك توك ويوتيوب في السعودية والإمارات والكويت وقطر ومصر، مع متوسط السوق وحدود التفاوض وحقوق الاستخدام والحصرية.">
+  <meta name="theme-color" content="#08111f">
+  <link rel="stylesheet" href="./style.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":["WebApplication","SoftwareApplication"],
+    "name":"Influencer Rate Calculator",
+    "applicationCategory":"BusinessApplication",
+    "operatingSystem":"Any",
+    "isAccessibleForFree":true,
+    "inLanguage":"ar",
+    "description":"أداة تقديرية تساعد المؤثرين وصناع المحتوى على حساب سعر إعلان عادل حسب السوق والمنصة وحجم الحساب والتفاعل والمشاهدات ونوع المحتوى والحقوق التجارية."
+  }
+  </script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Creator Pricing">
+        <span class="brand-mark">CP</span>
+        <span>
+          <strong>Creator Pricing</strong>
+          <small>Influencer Rate Calculator</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="التنقل">
+        <a href="#calculator">الحاسبة</a>
+        <a href="#how-it-works">كيف نحسب السعر؟</a>
+        <a href="#faq">الأسئلة الشائعة</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">CREATOR PRICING ENGINE</span>
+          <h1>اعرف كم تستحق مقابل الإعلان.</h1>
+          <p>
+            احسب سعرك العادل كمؤثر، واعرف أقل سعر مناسب، متوسط السوق، وسقف التفاوض
+            بناءً على حجم حسابك، التفاعل، المشاهدات، المنصة، السوق ونوع المحتوى.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#calculator">احسب سعري الآن</a>
+            <a class="btn secondary" href="#how-it-works">كيف يعمل التسعير؟</a>
+          </div>
+          <div class="trust-row">
+            <span>🇸🇦 السعودية</span>
+            <span>🇦🇪 الإمارات</span>
+            <span>🇰🇼 الكويت</span>
+            <span>🇶🇦 قطر</span>
+            <span>🇪🇬 مصر</span>
+          </div>
+        </div>
+
+        <div class="hero-preview" aria-hidden="true">
+          <div class="mini-window">
+            <div class="mini-window-top">
+              <i></i><i></i><i></i>
+            </div>
+            <span>سعرك العادل المقترح</span>
+            <strong>4,850 ر.س</strong>
+            <div class="mini-range">
+              <small>3,400</small>
+              <div><i style="width:68%"></i></div>
+              <small>6,200</small>
+            </div>
+            <div class="mini-grid">
+              <span><small>فئة الحساب</small><b>Micro</b></span>
+              <span><small>قوة التفاعل</small><b>قوي</b></span>
+              <span><small>الموثوقية</small><b>87%</b></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="calculator" class="calculator-layout">
+        <div class="card calculator-card">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">VMC CREATOR PRICING 2.0</span>
+              <h2>حاسبة سعر المؤثر</h2>
+              <p>ابدأ بالبيانات الأساسية، ثم أضف بيانات الأداء لرفع دقة التقدير.</p>
+            </div>
+            <span class="model-badge">Creator-focused</span>
+          </div>
+
+          <div class="stepper" aria-label="مراحل الحاسبة">
+            <button type="button" class="step active" data-step-jump="1"><span>1</span>حسابك</button>
+            <button type="button" class="step" data-step-jump="2"><span>2</span>أداؤك</button>
+            <button type="button" class="step" data-step-jump="3"><span>3</span>الشروط</button>
+          </div>
+
+          <form id="rateForm" novalidate>
+            <section class="wizard-pane" data-step="1">
+              <fieldset class="form-group">
+                <legend>بيانات الحساب الأساسية</legend>
+                <div class="form-grid">
+                  <div>
+                    <label for="market">السوق / الدولة</label>
+                    <select id="market">
+                      <option value="sa">السعودية — ر.س</option>
+                      <option value="ae">الإمارات — د.إ</option>
+                      <option value="kw">الكويت — د.ك</option>
+                      <option value="qa">قطر — ر.ق</option>
+                      <option value="eg">مصر — ج.م</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="platform">المنصة</label>
+                    <select id="platform">
+                      <option value="instagram">Instagram</option>
+                      <option value="tiktok">TikTok</option>
+                      <option value="youtube">YouTube</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="followers">عدد المتابعين / المشتركين</label>
+                    <input id="followers" type="number" min="1000" max="100000000" value="50000" inputmode="numeric">
+                    <div id="tierHint" class="field-hint"></div>
+                  </div>
+
+                  <div>
+                    <label for="engagementRate">معدل التفاعل %</label>
+                    <input id="engagementRate" type="number" min="0" max="30" step="0.1" value="3.5" inputmode="decimal">
+                    <div id="engagementMethodHint" class="field-hint">استخدم معدلًا واقعيًا ثابتًا بنفس طريقة القياس.</div>
+                  </div>
+
+                  <div class="full">
+                    <label for="contentType">نوع المحتوى المطلوب تسعيره</label>
+                    <select id="contentType"></select>
+                    <div id="formatHint" class="field-hint"></div>
+                  </div>
+                </div>
+              </fieldset>
+            </section>
+
+            <section class="wizard-pane" data-step="2" hidden>
+              <fieldset class="form-group">
+                <legend>بيانات الأداء — اختيارية لكنها ترفع الدقة</legend>
+                <div class="form-grid">
+                  <div>
+                    <label for="averageViews">متوسط المشاهدات</label>
+                    <input id="averageViews" type="number" min="0" max="100000000" placeholder="مثال: 25000" inputmode="numeric">
+                    <div class="field-hint">يفضل متوسط آخر 10 محتويات مشابهة.</div>
+                  </div>
+
+                  <div id="storyViewsWrap">
+                    <label for="storyViews">متوسط مشاهدات Stories</label>
+                    <input id="storyViews" type="number" min="0" max="100000000" placeholder="مثال: 12000" inputmode="numeric">
+                  </div>
+
+                  <div>
+                    <label for="audienceMatch">نسبة الجمهور داخل السوق المستهدف %</label>
+                    <input id="audienceMatch" type="number" min="0" max="100" value="60" inputmode="decimal">
+                  </div>
+
+                  <div>
+                    <label for="industry">مجال الحساب</label>
+                    <select id="industry">
+                      <option value="general">عام</option>
+                      <option value="food">مطاعم وأغذية</option>
+                      <option value="beauty">تجميل وعناية</option>
+                      <option value="fashion">أزياء</option>
+                      <option value="technology">تقنية وتطبيقات</option>
+                      <option value="healthcare">صحة وعيادات</option>
+                      <option value="finance">تمويل وأعمال</option>
+                      <option value="realestate">عقارات</option>
+                      <option value="luxury">منتجات فاخرة</option>
+                      <option value="education">تعليم</option>
+                      <option value="automotive">سيارات</option>
+                      <option value="travel">سفر وضيافة</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="creatorProfile">نوع الحساب</label>
+                    <select id="creatorProfile">
+                      <option value="digital">صانع محتوى / مؤثر رقمي</option>
+                      <option value="expert">خبير متخصص</option>
+                      <option value="publicFigure">شخصية عامة</option>
+                      <option value="celebrity">مشهور فني أو إعلامي</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="demand">حالة الطلب على حسابك</label>
+                    <select id="demand">
+                      <option value="normal">طبيعي</option>
+                      <option value="busy">حجوزات جيدة</option>
+                      <option value="high">طلب مرتفع جدًا</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="performanceHint" class="smart-note"></div>
+              </fieldset>
+            </section>
+
+            <section class="wizard-pane" data-step="3" hidden>
+              <fieldset class="form-group">
+                <legend>الشروط التجارية</legend>
+
+                <div class="option-panel">
+                  <label class="switch-row">
+                    <input id="usageRights" type="checkbox">
+                    <span>
+                      <strong>حقوق استخدام المحتوى</strong>
+                      <small>إذا كانت العلامة ستعيد استخدام محتواك خارج النشر الأساسي.</small>
+                    </span>
+                  </label>
+                  <div id="usageFields" class="conditional-grid" hidden>
+                    <div>
+                      <label for="usageChannel">قنوات الاستخدام</label>
+                      <select id="usageChannel">
+                        <option value="organic">قنوات البراند العضوية</option>
+                        <option value="paidSocial">إعلانات ممولة</option>
+                        <option value="allDigital">جميع القنوات الرقمية</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="usageDuration">مدة الاستخدام</label>
+                      <select id="usageDuration">
+                        <option value="30">30 يومًا</option>
+                        <option value="90">3 أشهر</option>
+                        <option value="180">6 أشهر</option>
+                        <option value="365">12 شهرًا</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="option-panel">
+                  <label class="switch-row">
+                    <input id="exclusivity" type="checkbox">
+                    <span>
+                      <strong>حصرية ضد المنافسين</strong>
+                      <small>تعويض عن منعك من التعاون مع منافسين لفترة محددة.</small>
+                    </span>
+                  </label>
+                  <div id="exclusivityFields" class="conditional-grid" hidden>
+                    <div>
+                      <label for="exclusivityScope">النطاق</label>
+                      <select id="exclusivityScope">
+                        <option value="direct">المنافسون المباشرون فقط</option>
+                        <option value="category">الفئة كاملة</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="exclusivityDuration">المدة</label>
+                      <select id="exclusivityDuration">
+                        <option value="7">7 أيام</option>
+                        <option value="30">30 يومًا</option>
+                        <option value="90">3 أشهر</option>
+                        <option value="180">6 أشهر</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="option-panel">
+                  <label class="switch-row">
+                    <input id="whitelisting" type="checkbox">
+                    <span>
+                      <strong>Whitelisting / Spark Ads</strong>
+                      <small>تشغيل إعلانات ممولة من حسابك أو عبر هوية حسابك.</small>
+                    </span>
+                  </label>
+                  <div id="whitelistingFields" class="conditional-grid" hidden>
+                    <div>
+                      <label for="whitelistDuration">مدة التشغيل</label>
+                      <select id="whitelistDuration">
+                        <option value="30">30 يومًا</option>
+                        <option value="90">3 أشهر</option>
+                        <option value="180">6 أشهر</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-grid top-gap">
+                  <div>
+                    <label for="revisionRounds">جولات التعديل المشمولة</label>
+                    <select id="revisionRounds">
+                      <option value="1">جولة واحدة</option>
+                      <option value="2">جولتان</option>
+                      <option value="3">3 جولات</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="rush">سرعة التنفيذ</label>
+                    <select id="rush">
+                      <option value="normal">وقت طبيعي</option>
+                      <option value="fast">تنفيذ سريع</option>
+                      <option value="urgent">تنفيذ عاجل جدًا</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+            </section>
+
+            <div class="wizard-actions">
+              <button id="prevStep" class="btn secondary" type="button" hidden>السابق</button>
+              <button id="nextStep" class="btn primary" type="button">التالي</button>
+            </div>
+            <div id="formError" class="form-error" hidden></div>
+          </form>
+
+          <section id="results" class="results" hidden aria-live="polite">
+            <div class="result-hero">
+              <div>
+                <span class="eyebrow">سعرك العادل المقترح</span>
+                <div id="fairRate" class="fair-rate">—</div>
+                <div class="result-meta">
+                  <span id="tierBadge" class="pill">—</span>
+                  <span id="confidenceBadge" class="pill success">—</span>
+                </div>
+              </div>
+              <div class="pricing-position">
+                <span>Creator Pricing Score</span>
+                <strong id="creatorPricingScore">—</strong>
+                <small id="creatorPricingLabel">—</small>
+                <div class="creator-score-meter"><i id="creatorScoreBar"></i></div>
+                <div class="position-line"><b id="pricingPosition">—</b><small id="pricingPositionHint">—</small></div>
+              </div>
+            </div>
+
+            <div class="price-cards">
+              <article>
+                <span>أقل سعر مقترح</span>
+                <strong id="lowRate">—</strong>
+                <small>حد تفاوضي محافظ</small>
+              </article>
+              <article class="featured">
+                <span>متوسط السوق</span>
+                <strong id="marketAverage">—</strong>
+                <small>Benchmark لنفس الفئة والمحتوى</small>
+              </article>
+              <article>
+                <span>أعلى سعر منطقي</span>
+                <strong id="highRate">—</strong>
+                <small>عند أداء وشروط قوية</small>
+              </article>
+            </div>
+
+            <div class="range-card">
+              <div class="range-labels">
+                <span>منخفض</span><strong>نطاق التفاوض</strong><span>مرتفع</span>
+              </div>
+              <div class="range-track"><span id="rangeMarker"></span></div>
+              <div class="range-values"><span id="rangeLow">—</span><span id="rangeFair">—</span><span id="rangeHigh">—</span></div>
+            </div>
+
+            <div class="score-grid">
+              <article>
+                <span>التفاعل</span>
+                <strong id="engagementScore">—</strong>
+                <small id="engagementDetail">—</small>
+              </article>
+              <article>
+                <span>المشاهدات</span>
+                <strong id="viewsScore">—</strong>
+                <small id="viewsDetail">—</small>
+              </article>
+              <article>
+                <span>الجمهور المحلي</span>
+                <strong id="audienceScore">—</strong>
+                <small id="audienceDetail">—</small>
+              </article>
+              <article>
+                <span>جودة التقدير</span>
+                <strong id="confidenceScore">—</strong>
+                <small>جودة البيانات المدخلة، وليست احتمالًا إحصائيًا</small>
+              </article>
+            </div>
+
+            <div class="two-col">
+              <section class="subcard">
+                <h3>لماذا هذا سعرك؟</h3>
+                <ul id="pricingReasons" class="insight-list"></ul>
+              </section>
+              <section class="subcard">
+                <h3>تفصيل السعر التجاري</h3>
+                <div class="table-scroll">
+                  <table>
+                    <thead><tr><th>البند</th><th>القيمة</th></tr></thead>
+                    <tbody id="commercialBreakdown"></tbody>
+                  </table>
+                </div>
+              </section>
+            </div>
+
+            <section class="subcard rate-card-section">
+              <div class="subcard-head">
+                <div>
+                  <span class="eyebrow">RATE CARD</span>
+                  <h3>قائمة أسعار مقترحة لحسابك</h3>
+                </div>
+                <button id="copyRateCard" type="button" class="btn secondary small">نسخ Rate Card</button>
+              </div>
+              <div id="rateCardGrid" class="rate-card-grid"></div>
+              <p class="fine-print">الأسعار إرشادية لكل قطعة محتوى، ويمكن تعديلها حسب نطاق العمل والحقوق والإنتاج ومتطلبات البراند.</p>
+            </section>
+
+            <section class="subcard offer-checker">
+              <div>
+                <span class="eyebrow">BRAND OFFER CHECKER</span>
+                <h3>هل وصلك عرض من براند؟</h3>
+                <p>أدخل السعر الذي عرضته العلامة، وسنقارنه بسعرك العادل.</p>
+              </div>
+              <div class="offer-form">
+                <div>
+                  <label for="brandOffer">عرض البراند</label>
+                  <div class="money-input">
+                    <input id="brandOffer" type="number" min="0" placeholder="مثال: 3000" inputmode="decimal">
+                    <span id="offerCurrency">ر.س</span>
+                  </div>
+                </div>
+                <button id="checkOffer" type="button" class="btn primary">حلّل العرض</button>
+              </div>
+              <div id="offerResult" class="offer-result" hidden></div>
+            </section>
+
+            <div class="result-actions">
+              <button id="copySummary" type="button" class="btn primary">نسخ ملخص السعر</button>
+              <button id="printResult" type="button" class="btn secondary">طباعة / PDF</button>
+              <button id="recalculate" type="button" class="btn ghost">تعديل البيانات</button>
+            </div>
+
+            <p class="disclaimer">
+              التقديرات إرشادية وليست سعرًا إلزاميًا أو عرضًا ماليًا رسميًا. الأسعار الفعلية تختلف حسب قوة الاسم، جودة الجمهور،
+              متطلبات التنفيذ، حقوق الاستخدام، الحصرية، التفاوض، والموسم.
+            </p>
+          </section>
+        </div>
+
+        <aside class="sidebar">
+          <section class="card sticky">
+            <span class="eyebrow">SMART PRICING</span>
+            <h2>ما الذي يرفع دقة النتيجة؟</h2>
+            <ul class="check-list">
+              <li>متوسط مشاهدات آخر 10 محتويات.</li>
+              <li>معدل تفاعل واقعي للحساب.</li>
+              <li>نسبة الجمهور داخل السوق المطلوب.</li>
+              <li>تحديد حقوق الاستخدام والحصرية بدقة.</li>
+            </ul>
+            <div class="aside-note">
+              <strong>مهم للمؤثر</strong>
+              <p>سعر النشر الأساسي ليس بالضرورة هو السعر التجاري النهائي. الحقوق المدفوعة والحصرية وWhitelisting يجب تسعيرها منفصلة.</p>
+            </div>
+          </section>
+        </aside>
+      </section>
+
+      <section id="how-it-works" class="content-section card">
+        <span class="eyebrow">METHODOLOGY</span>
+        <h2>كيف نحسب السعر؟</h2>
+        <div class="method-grid">
+          <article><b>01</b><h3>Benchmark السوق</h3><p>نستخدم Benchmark مستقلًا لكل دولة × منصة × نوع محتوى × فئة حساب، بدل معامل موحد بين المنصات.</p></article>
+          <article><b>02</b><h3>قوة الحساب</h3><p>نقارن التفاعل والمشاهدات بBenchmarks خاصة بكل منصة وفئة، مع نموذج مشاهدة أقوى لYouTube.</p></article>
+          <article><b>03</b><h3>جودة الجمهور</h3><p>نأخذ نسبة الجمهور المحلي وتخصص الحساب ونوع الشخصية بعين الاعتبار.</p></article>
+          <article><b>04</b><h3>الشروط التجارية</h3><p>نضيف الحقوق والحصرية وWhitelisting والتعديلات والتنفيذ العاجل بشكل منفصل.</p></article>
+        </div>
+      </section>
+
+      <section id="faq" class="content-section card faq">
+        <span class="eyebrow">FAQ</span>
+        <h2>أسئلة شائعة</h2>
+        <details>
+          <summary>هل عدد المتابعين وحده يكفي لتحديد السعر؟</summary>
+          <p>لا. عدد المتابعين يحدد فئة أولية، لكن المشاهدات والتفاعل ونسبة الجمهور المحلي ونوع المحتوى قد تغيّر السعر بشكل واضح.</p>
+        </details>
+        <details>
+          <summary>ما الفرق بين السعر العادل ومتوسط السوق؟</summary>
+          <p>متوسط السوق Benchmark عام لفئتك، بينما السعر العادل يتم تعديله حسب أداء حسابك وبيانات جمهورك وشروط التعاون.</p>
+        </details>
+        <details>
+          <summary>هل يجب أن أطلب مبلغًا إضافيًا لحقوق الاستخدام؟</summary>
+          <p>عادةً نعم عندما ترغب العلامة في إعادة استخدام المحتوى خارج النشر المتفق عليه، خصوصًا في الإعلانات الممولة أو القنوات الرقمية.</p>
+        </details>
+        <details>
+          <summary>هل يمكن استخدام النتيجة كعرض سعر رسمي؟</summary>
+          <p>النتيجة تقديرية للتوجيه والتفاوض. الاتفاق النهائي يعتمد على نطاق العمل والعقد وحقوق الاستخدام ومتطلبات البراند.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Influencer Rate Calculator — Creator Pricing Engine</p>
+      <p>تقديرات إرشادية لتخطيط وتسعير التعاونات الإعلانية.</p>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
