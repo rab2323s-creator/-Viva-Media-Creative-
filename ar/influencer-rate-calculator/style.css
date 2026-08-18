@@ -1,4 +1,4 @@
-:root{
+ :root{
   --bg:#06101d;
   --bg-2:#091526;
   --surface:#0d1a2d;
@@ -282,3 +282,17 @@ td:last-child{font-weight:900;color:#f3f8fd}
 .creator-score-meter i{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--primary-2),var(--primary),var(--success));transition:width .35s ease}
 .position-line{padding-top:10px;border-top:1px solid var(--border)}
 .position-line b,.position-line small{display:block}.position-line b{color:#e8f8ff;font-size:.83rem}.position-line small{margin-top:2px}
+
+/* Creator Pricing Engine V3 */
+.price-cards-four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.commercial-highlight{display:flex;align-items:center;justify-content:space-between;gap:18px;border-color:rgba(34,211,238,.32);background:linear-gradient(135deg,rgba(37,99,235,.10),rgba(34,211,238,.055))}
+.commercial-highlight h3{margin:3px 0 0}
+.commercial-total{font-size:clamp(1.5rem,4vw,2.35rem);color:#fff;white-space:nowrap}
+.rate-item-v3 span small{display:block;margin-top:3px;color:#6f849a;font-size:.64rem}
+.rate-item-v3 strong{white-space:nowrap}
+#modelBreakdown td:first-child{color:#8ea2b8}
+#modelBreakdown td:last-child{text-align:left;direction:rtl}
+#commercialBreakdownCard{margin-top:12px}
+@media(max-width:880px){.price-cards-four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.commercial-highlight{align-items:flex-start}.commercial-total{white-space:normal}.price-cards-four{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.price-cards-four{grid-template-columns:1fr}}
