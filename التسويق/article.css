@@ -1228,3 +1228,94 @@
     padding: 16px;
   }
 }
+/* Sticky WhatsApp CTA */
+.viva-whatsapp-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  padding: 12px 20px;
+
+  background: rgba(255,255,255,.97);
+  border-top: 1px solid #e5e5e5;
+  box-shadow: 0 -5px 20px rgba(0,0,0,.08);
+}
+
+.viva-whatsapp-cta__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+
+.viva-whatsapp-cta__text strong {
+  font-size: 17px;
+}
+
+.viva-whatsapp-cta__text span {
+  font-size: 13px;
+  color: #666;
+}
+
+.viva-whatsapp-cta__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 22px;
+  min-height: 46px;
+
+  background: #25D366;
+  color: #fff !important;
+
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.viva-whatsapp-cta__button:hover {
+  background: #20bd5a;
+}
+
+body {
+  padding-bottom: 85px;
+}
+
+
+/* Mobile */
+@media (max-width: 700px) {
+
+  .viva-whatsapp-cta {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .viva-whatsapp-cta__text {
+    flex: 1;
+  }
+
+  .viva-whatsapp-cta__text strong {
+    font-size: 13px;
+  }
+
+  .viva-whatsapp-cta__text span {
+    font-size: 10px;
+  }
+
+  .viva-whatsapp-cta__button {
+    padding: 10px 12px;
+    font-size: 12px;
+    min-height: 42px;
+  }
+
+  body {
+    padding-bottom: 95px;
+  }
+}
