@@ -1293,8 +1293,8 @@ body {
 @media (max-width: 700px) {
 
   .viva-whatsapp-cta {
-    gap: 8px;
-    padding: 8px 10px;
+    gap: 6px;
+    padding: 6px 8px;
   }
 
   .viva-whatsapp-cta__text {
@@ -1302,20 +1302,20 @@ body {
   }
 
   .viva-whatsapp-cta__text strong {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .viva-whatsapp-cta__text span {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .viva-whatsapp-cta__button {
-    padding: 10px 12px;
+    padding: 9px 11px;
     font-size: 12px;
-    min-height: 42px;
+    min-height: 40px;
   }
 
   body {
-    padding-bottom: 95px;
+    padding-bottom: 80px;
   }
 }
