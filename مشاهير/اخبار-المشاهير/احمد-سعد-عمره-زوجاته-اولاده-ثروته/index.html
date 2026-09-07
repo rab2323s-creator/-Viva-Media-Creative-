@@ -91,7 +91,13 @@
     .article-meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
     .article-meta span{border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--muted);padding:8px 12px;border-radius:999px;font-size:12px}
     .featured-image{margin:0 0 28px;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:var(--panel)}
-    .featured-image img{width:100%;aspect-ratio:16/9;object-fit:cover}
+   .featured-image img{
+  width:100%;
+  height:auto;
+  aspect-ratio:auto;
+  object-fit:contain;
+  object-position:center;
+}
     .featured-image figcaption{padding:12px 16px;color:var(--muted);font-size:13px}
     .toc-box,.highlight-box,.quote-box,.info-card,.internal-links-box,.analysis-box{border:1px solid rgba(245,208,122,.18);background:rgba(245,208,122,.07);border-radius:20px;padding:18px;margin:20px 0}
     .toc-box h2{font-size:20px!important;margin-bottom:8px!important}.toc-box ul{margin:0;padding:0;list-style:none;columns:2;column-gap:24px}.toc-box li{break-inside:avoid;margin:7px 0}.toc-box a{color:var(--gold);text-decoration:none;font-size:14px}
