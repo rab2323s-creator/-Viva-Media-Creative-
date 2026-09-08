@@ -1,287 +1,605 @@
 <!DOCTYPE html>
-
-<html dir="rtl" lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>تدقيق السيو للمواقع والمتاجر | Viva Media Creative</title>
-<meta content="خدمة تدقيق السيو للمواقع والمتاجر لتقييم الفهرسة والبنية التقنية والكلمات والصفحات والمحتوى والتحويل، مع تحديد أولويات واضحة وخطة تنفيذ مبنية على حالة الموقع وأهدافه." name="description"/>
-<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
-<link href="https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/" rel="canonical"/>
-<meta content="website" property="og:type"/>
-<meta content="ar_SA" property="og:locale"/>
-<meta content="Viva Media Creative" property="og:site_name"/>
-<meta content="تدقيق السيو للمواقع والمتاجر | Viva Media Creative" property="og:title"/>
-<meta content="تقييم شامل لأداء الموقع في محركات البحث، من الفهرسة والبنية التقنية إلى نية البحث والصفحات التجارية، مع توصيات مرتبة حسب الأولوية." property="og:description"/>
-<meta content="https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/" property="og:url"/>
-<meta content="https://vivamediacreative.com/assets/logo.jpeg" property="og:image"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="تدقيق السيو للمواقع والمتاجر" name="twitter:title"/>
-<meta content="تشخيص احترافي لأداء الموقع وتحديد أولويات التحسين قبل بدء التنفيذ." name="twitter:description"/>
-<meta content="https://vivamediacreative.com/assets/logo.jpeg" name="twitter:image"/>
-<link href="/favicon.png?v=2" rel="icon" type="image/png"/>
-<link href="/services/services.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Noto+Kufi+Arabic:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<style>
-    /* ======================================================
-       SUBSERVICE IDENTITY — SEO DIAGNOSTIC STUDIO
-       intentionally different from the SEO hub
-       ====================================================== */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body.audit-service-page{
+  <title>تدقيق السيو وفحص المواقع لمحركات البحث | Viva Media Creative</title>
+  <meta name="description" content="خدمة تدقيق السيو للمواقع والمتاجر: فحص الفهرسة والبنية التقنية والكلمات والصفحات والمحتوى والروابط الداخلية، مع تقرير أولويات وخطة تنفيذ واضحة.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+
+  <link rel="canonical" href="https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_SA">
+  <meta property="og:site_name" content="Viva Media Creative">
+  <meta property="og:title" content="تدقيق السيو وفحص المواقع لمحركات البحث">
+  <meta property="og:description" content="تدقيق احترافي يحول بيانات الموقع إلى أولويات تنفيذ واضحة لتحسين الظهور العضوي.">
+  <meta property="og:url" content="https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/">
+  <meta property="og:image" content="https://vivamediacreative.com/assets/logo.jpeg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="تدقيق السيو وفحص المواقع لمحركات البحث">
+  <meta name="twitter:description" content="فحص تقني ومحتوائي وتجاري للموقع مع تقرير أولويات وخطة تنفيذ.">
+  <meta name="twitter:image" content="https://vivamediacreative.com/assets/logo.jpeg">
+
+  <link rel="icon" type="image/png" href="/favicon.png?v=2">
+  <link rel="stylesheet" href="/services/services.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --audit-bg:#070809;
+      --audit-panel:#0d0f11;
+      --audit-panel-2:#111316;
+      --audit-gold:#f5d07a;
+      --audit-line:rgba(255,255,255,.075);
+      --audit-soft:rgba(255,255,255,.68);
+    }
+
+    body.audit-v3 {
       background:
-        radial-gradient(circle at 80% -5%,rgba(245,208,122,.10),transparent 25%),
-        linear-gradient(180deg,#050607 0%,#090a0c 36%,#0d0f12 100%);
+        radial-gradient(circle at 70% -8%, rgba(245,208,122,.09), transparent 25%),
+        linear-gradient(180deg,#050607 0%,#08090b 56%,#0b0d0f 100%);
     }
 
-    .audit-service-page .nav{border-bottom-color:rgba(245,208,122,.08)}
-    .audit-service-page .nav__cta{border-radius:12px}
+    .audit-v3 .nav {
+      border-bottom:1px solid rgba(255,255,255,.055);
+      backdrop-filter:blur(18px);
+      background:rgba(5,6,7,.78);
+    }
 
-    .audit-crumbs{
+    .audit-v3 .nav__cta {border-radius:12px}
+
+    .a3-crumbs {
       padding:18px 0 0;
-      color:var(--text-muted);font-size:.85rem
+      font-size:.82rem;
+      color:var(--text-muted);
     }
-    .audit-crumbs ol{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
-    .audit-crumbs li:not(:last-child)::after{content:"←";margin-inline-start:8px;color:rgba(255,255,255,.22)}
-    .audit-crumbs a:hover{color:var(--gold)}
+    .a3-crumbs ol {
+      list-style:none;margin:0;padding:0;
+      display:flex;gap:8px;flex-wrap:wrap;
+    }
+    .a3-crumbs li:not(:last-child)::after {
+      content:"/";
+      margin-inline-start:8px;
+      color:rgba(255,255,255,.2);
+    }
+    .a3-crumbs a:hover {color:var(--gold)}
 
-    .audit-hero{
-      padding:54px 0 48px;
-      border-bottom:1px solid rgba(245,208,122,.08);
+    /* HERO — compact, search-first */
+    .a3-hero {
+      padding:46px 0 44px;
+      min-height:auto;
+      border-bottom:1px solid var(--audit-line);
     }
-    .audit-hero__grid{
+    .a3-hero__grid {
       display:grid;
-      grid-template-columns:minmax(0,1.25fr) minmax(330px,.75fr);
-      gap:34px;
+      grid-template-columns:minmax(0,1fr) minmax(390px,.82fr);
+      gap:42px;
       align-items:center;
     }
-    .audit-kicker{
-      display:inline-flex;align-items:center;gap:9px;
-      color:var(--gold);font-size:.82rem;font-weight:800;
-      letter-spacing:.04em;margin-bottom:14px
+    .a3-label {
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      margin-bottom:13px;
+      color:var(--gold);
+      font-size:.78rem;
+      font-weight:800;
     }
-    .audit-kicker::before{content:"";width:34px;height:1px;background:var(--gold)}
-    .audit-hero h1{
-      margin:0;
-      max-width:900px;
-      font-size:clamp(2.15rem,4.6vw,4.45rem);
-      line-height:1.16;letter-spacing:-.012em;font-weight:900
-    }
-    .audit-hero h1 span{display:block;color:var(--gold);margin-top:9px}
-    .audit-hero__lead{
-      max-width:840px;margin:22px 0 0;
-      color:var(--text-soft);font-size:1.06rem;line-height:2
-    }
-    .audit-hero__actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:24px}
-    .audit-hero__micro{margin:12px 0 0;color:var(--text-muted);font-size:.87rem}
-
-    .intake-card{
-      position:relative;
-      border:1px solid rgba(245,208,122,.17);
-      background:linear-gradient(180deg,rgba(245,208,122,.065),rgba(255,255,255,.018));
-      border-radius:30px;
-      padding:24px;
-      box-shadow:var(--shadow)
-    }
-    .intake-card::before{
+    .a3-label::before {
       content:"";
-      position:absolute;top:-1px;right:28px;left:28px;height:1px;
-      background:linear-gradient(90deg,transparent,var(--gold),transparent)
+      width:28px;height:1px;background:var(--gold);
     }
-    .intake-card__eyebrow{font-size:.77rem;font-weight:800;color:var(--gold);margin-bottom:7px}
-    .intake-card h2{margin:0 0 8px;font-size:1.35rem;line-height:1.55}
-    .intake-card>p{margin:0 0 16px;color:var(--text-soft);font-size:.92rem}
-    .intake-links{display:grid;gap:9px}
-    .intake-links a{
-      display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;
-      padding:13px 14px;border-radius:16px;
-      border:1px solid var(--line);background:rgba(255,255,255,.022)
+    .a3-hero h1 {
+      margin:0;
+      max-width:820px;
+      font-size:clamp(2.05rem,4vw,3.8rem);
+      line-height:1.16;
+      letter-spacing:-.025em;
+      font-weight:900;
     }
-    .intake-links a:hover{
-      transform:translateX(-3px);
-      border-color:rgba(245,208,122,.26);
-      background:rgba(245,208,122,.045)
+    .a3-hero__lead {
+      max-width:760px;
+      margin:17px 0 0;
+      color:var(--text-soft);
+      font-size:1.02rem;
+      line-height:1.95;
     }
-    .intake-links span{font-weight:800;font-size:.91rem}
-    .intake-links small{display:block;color:var(--text-muted);font-size:.72rem;font-weight:500}
-    .intake-links a::after{content:"↙";color:var(--gold);font-weight:900}
+    .a3-actions {
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:22px;
+    }
+    .a3-proofline {
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      margin-top:17px;
+      color:var(--text-muted);
+      font-size:.82rem;
+    }
+    .a3-proofline span {
+      display:inline-flex;align-items:center;gap:7px;
+    }
+    .a3-proofline i {
+      width:6px;height:6px;border-radius:50%;
+      background:var(--gold);
+      opacity:.8;
+    }
 
-    .decision-strip{
-      padding:22px 0;
-      border-bottom:1px solid var(--line-soft)
-    }
-    .decision-strip__inner{
-      display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
-      overflow:hidden;border:1px solid var(--line-soft);border-radius:20px;
-      background:var(--line-soft)
-    }
-    .decision-stat{background:#0b0c0e;padding:16px 18px}
-    .decision-stat span{display:block;color:var(--gold);font-size:.72rem;font-weight:800;margin-bottom:5px}
-    .decision-stat strong{font-size:.92rem;line-height:1.6}
-
-    .audit-section{padding:58px 0}
-    .audit-section--tight{padding:34px 0}
-    .audit-section__head{max-width:880px;margin-bottom:25px}
-    .audit-section__head span{
-      display:block;color:var(--gold);font-size:.78rem;font-weight:800;
-      letter-spacing:.02em;margin-bottom:8px
-    }
-    .audit-section__head h2{
-      margin:0 0 11px;font-size:clamp(1.65rem,3vw,2.75rem);
-      line-height:1.22;letter-spacing:-.025em
-    }
-    .audit-section__head p{margin:0;color:var(--text-soft);font-size:1rem}
-
-    .decision-board{display:grid;gap:12px}
-    .diagnosis-card{
-      display:grid;
-      grid-template-columns:70px minmax(0,1.25fr) minmax(220px,.65fr) minmax(240px,.75fr);
-      gap:18px;align-items:center;
-      padding:20px;border-radius:24px;
-      border:1px solid var(--line);
-      background:linear-gradient(90deg,rgba(255,255,255,.025),rgba(255,255,255,.012));
-      scroll-margin-top:100px
-    }
-    .diagnosis-card:hover{border-color:rgba(245,208,122,.20)}
-    .diagnosis-card__index{
-      width:54px;height:54px;border-radius:17px;
-      display:flex;align-items:center;justify-content:center;
-      border:1px solid rgba(245,208,122,.15);
-      color:var(--gold);font-weight:900;background:rgba(245,208,122,.05)
-    }
-    .diagnosis-card__label{color:var(--gold);font-size:.74rem;font-weight:800}
-    .diagnosis-card h3{margin:3px 0 5px;font-size:1.08rem}
-    .diagnosis-card__main p{margin:0;color:var(--text-soft);font-size:.9rem}
-    .diagnosis-card__focus{margin-top:10px;color:var(--text-muted);font-size:.82rem}
-    .diagnosis-card__focus strong{color:#fff}
-    .diagnosis-card__signals{
-      align-self:stretch;padding:4px 0 4px 18px;
-      border-left:1px solid var(--line)
-    }
-    .diagnosis-card__signals>span,
-    .diagnosis-card__outcome>span{
-      display:block;color:var(--text-muted);font-size:.7rem;font-weight:800;margin-bottom:7px
-    }
-    .diagnosis-card__signals ul{
-      display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0
-    }
-    .diagnosis-card__signals li{
-      padding:5px 8px;border-radius:999px;
-      background:rgba(255,255,255,.035);border:1px solid var(--line);
-      color:var(--text-soft);font-size:.7rem
-    }
-    .diagnosis-card__outcome p{margin:0;color:#fff;font-size:.85rem;line-height:1.75}
-
-    .audit-split{
-      display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:stretch
-    }
-    .scope-panel,.deliver-panel{
-      border:1px solid var(--line-soft);border-radius:28px;padding:26px;
-      background:rgba(255,255,255,.018)
-    }
-    .scope-panel h2,.deliver-panel h2{margin:0 0 10px;font-size:1.55rem}
-    .scope-panel>p,.deliver-panel>p{margin:0;color:var(--text-soft)}
-    .scope-list{display:grid;gap:8px;margin-top:19px}
-    .scope-row{
-      display:grid;grid-template-columns:34px 1fr;gap:10px;
-      padding:11px 0;border-bottom:1px solid var(--line-soft)
-    }
-    .scope-row:last-child{border-bottom:0}
-    .scope-row b{
-      width:28px;height:28px;border-radius:9px;display:flex;align-items:center;justify-content:center;
-      color:var(--gold);background:rgba(245,208,122,.06);border:1px solid rgba(245,208,122,.12);
-      font-size:.72rem
-    }
-    .scope-row strong{display:block;margin-bottom:2px;font-size:.9rem}
-    .scope-row span{color:var(--text-muted);font-size:.81rem}
-
-    .deliver-stack{display:grid;gap:11px;margin-top:18px}
-    .deliver-item{
-      display:grid;grid-template-columns:1fr auto;gap:14px;
-      padding:15px;border-radius:18px;border:1px solid rgba(245,208,122,.11);
-      background:linear-gradient(180deg,rgba(245,208,122,.045),rgba(255,255,255,.012))
-    }
-    .deliver-item strong{display:block;margin-bottom:3px}
-    .deliver-item p{margin:0;color:var(--text-soft);font-size:.84rem}
-    .deliver-item em{font-style:normal;color:var(--gold);font-size:.72rem;font-weight:800;white-space:nowrap}
-
-    .priority-lane{
-      display:grid;grid-template-columns:repeat(4,1fr);
-      border:1px solid var(--line-soft);border-radius:26px;overflow:hidden
-    }
-    .priority-lane article{padding:23px;border-left:1px solid var(--line-soft);min-height:185px}
-    .priority-lane article:last-child{border-left:0}
-    .priority-lane span{display:block;color:var(--gold);font-size:.72rem;font-weight:900;margin-bottom:10px}
-    .priority-lane h3{margin:0 0 7px;font-size:1rem}
-    .priority-lane p{margin:0;color:var(--text-soft);font-size:.86rem}
-
-    .fit-card{
-      display:grid;grid-template-columns:1fr 1fr;gap:1px;
-      border:1px solid var(--line-soft);border-radius:28px;overflow:hidden;background:var(--line-soft)
-    }
-    .fit-side{padding:27px;background:#0b0c0e}
-    .fit-side--accent{background:linear-gradient(145deg,rgba(245,208,122,.075),rgba(11,12,14,1) 65%)}
-    .fit-side h3{margin:0 0 13px;font-size:1.2rem}
-    .fit-side ul{margin:0;padding-right:18px;color:var(--text-soft)}
-    .fit-side li{margin:9px 0}
-
-    .audit-cta{
-      position:relative;overflow:hidden;
-      border:1px solid rgba(245,208,122,.18);
-      border-radius:32px;padding:36px;
+    /* Hero graphic */
+    .a3-hero-graphic {
+      position:relative;
+      min-height:410px;
+      border:1px solid rgba(245,208,122,.14);
+      border-radius:30px;
+      padding:18px;
+      overflow:hidden;
       background:
-        radial-gradient(circle at 15% 10%,rgba(245,208,122,.12),transparent 25%),
-        linear-gradient(135deg,rgba(255,255,255,.025),rgba(245,208,122,.04))
+        radial-gradient(circle at 75% 10%,rgba(245,208,122,.12),transparent 30%),
+        linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.012));
+      box-shadow:0 28px 90px rgba(0,0,0,.34);
     }
-    .audit-cta::after{
-      content:"01";position:absolute;left:28px;bottom:-35px;
-      font-size:9rem;font-weight:900;color:rgba(245,208,122,.035);line-height:1
+    .a3-hero-graphic::after {
+      content:"";
+      position:absolute;inset:auto 25px 0;
+      height:1px;
+      background:linear-gradient(90deg,transparent,var(--gold),transparent);
+      opacity:.45;
     }
-    .audit-cta__grid{display:grid;grid-template-columns:1.15fr .85fr;gap:25px;align-items:end;position:relative;z-index:2}
-    .audit-cta h2{margin:0 0 10px;font-size:clamp(1.8rem,3vw,3rem);line-height:1.2}
-    .audit-cta p{margin:0;color:var(--text-soft);max-width:760px}
-    .audit-cta__side{border-right:1px solid rgba(245,208,122,.13);padding-right:24px}
-    .audit-cta__side strong{display:block;margin-bottom:8px}
-    .audit-cta__side span{display:block;color:var(--text-muted);font-size:.88rem;margin:5px 0}
+    .a3-browser {
+      position:relative;z-index:2;
+      border:1px solid var(--audit-line);
+      border-radius:19px;
+      overflow:hidden;
+      background:#0a0c0e;
+    }
+    .a3-browser__bar {
+      height:42px;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 13px;
+      border-bottom:1px solid var(--audit-line);
+      background:#0d0f11;
+    }
+    .a3-dots {display:flex;gap:5px}
+    .a3-dots i {width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.22)}
+    .a3-url {
+      color:var(--text-muted);
+      font:500 .7rem/1 Manrope,sans-serif;
+      direction:ltr;
+    }
+    .a3-browser__body {padding:16px}
+    .a3-score-row {
+      display:grid;grid-template-columns:.8fr 1.2fr;gap:12px;
+    }
+    .a3-score {
+      border:1px solid rgba(245,208,122,.12);
+      border-radius:17px;padding:14px;
+      background:rgba(245,208,122,.035);
+    }
+    .a3-score small {display:block;color:var(--text-muted);font-size:.68rem}
+    .a3-score strong {display:block;margin-top:5px;font-size:1.15rem}
+    .a3-bars {
+      border:1px solid var(--audit-line);
+      border-radius:17px;padding:14px;
+      display:grid;gap:10px;
+    }
+    .a3-bar-row {
+      display:grid;grid-template-columns:68px 1fr;gap:9px;align-items:center;
+      font-size:.66rem;color:var(--text-muted);
+    }
+    .a3-bar {
+      height:6px;border-radius:99px;background:rgba(255,255,255,.055);overflow:hidden
+    }
+    .a3-bar i {
+      display:block;height:100%;border-radius:inherit;
+      background:linear-gradient(90deg,#b99146,var(--gold));
+    }
+    .a3-map {
+      margin-top:12px;
+      border:1px solid var(--audit-line);
+      border-radius:18px;padding:12px;
+      background:rgba(255,255,255,.013);
+    }
+    .a3-map svg {width:100%;height:auto;display:block}
+    .a3-floating {
+      position:absolute;
+      left:10px;
+      bottom:16px;
+      width:180px;
+      padding:12px 13px;
+      border-radius:16px;
+      border:1px solid rgba(245,208,122,.17);
+      background:rgba(8,9,11,.92);
+      box-shadow:0 18px 50px rgba(0,0,0,.38);
+      z-index:3;
+    }
+    .a3-floating span {
+      display:block;color:var(--gold);font-size:.68rem;font-weight:800
+    }
+    .a3-floating strong {
+      display:block;margin-top:5px;font-size:.82rem;line-height:1.55
+    }
 
-    .minimal-faq details{
-      border-bottom:1px solid var(--line);
-      padding:16px 0;background:transparent;box-shadow:none;border-radius:0;margin:0
+    /* Search intent strip */
+    .a3-intent {
+      padding:20px 0;
+      border-bottom:1px solid var(--audit-line);
     }
-    .minimal-faq summary{font-weight:800;cursor:pointer}
-    .minimal-faq p{margin:9px 0 0;color:var(--text-soft);max-width:950px}
+    .a3-intent__grid {
+      display:grid;
+      grid-template-columns:1.3fr repeat(3,1fr);
+      gap:1px;
+      border:1px solid var(--audit-line);
+      border-radius:20px;
+      overflow:hidden;
+      background:var(--audit-line);
+    }
+    .a3-intent__item {
+      padding:16px 18px;
+      background:#0b0d0f;
+    }
+    .a3-intent__item strong {
+      display:block;font-size:.9rem
+    }
+    .a3-intent__item span {
+      display:block;margin-top:3px;color:var(--text-muted);font-size:.74rem
+    }
+    .a3-intent__item--main {
+      background:linear-gradient(135deg,rgba(245,208,122,.08),#0b0d0f 70%);
+    }
 
-    @media(max-width:1080px){
-      .audit-hero__grid,.audit-split,.audit-cta__grid{grid-template-columns:1fr}
-      .decision-strip__inner{grid-template-columns:repeat(2,1fr)}
-      .diagnosis-card{
-        grid-template-columns:56px 1fr;
-      }
-      .diagnosis-card__signals,.diagnosis-card__outcome{
-        grid-column:2;
-        border-left:0;padding-left:0
-      }
-      .priority-lane{grid-template-columns:repeat(2,1fr)}
-      .priority-lane article:nth-child(2){border-left:0}
-      .priority-lane article{border-bottom:1px solid var(--line-soft)}
-      .audit-cta__side{border-right:0;border-top:1px solid rgba(245,208,122,.13);padding:18px 0 0}
+    /* Shared section */
+    .a3-section {padding:68px 0}
+    .a3-section--compact {padding:46px 0}
+    .a3-head {
+      display:grid;
+      grid-template-columns:.7fr 1.3fr;
+      gap:30px;
+      align-items:end;
+      margin-bottom:30px;
     }
-    @media(max-width:640px){
-      .audit-hero{padding-top:34px}
-      .audit-hero h1{font-size:2.15rem}
-      .audit-hero__actions{flex-direction:column}
-      .audit-hero__actions .btn{width:100%}
-      .decision-strip__inner,.priority-lane,.fit-card{grid-template-columns:1fr}
-      .diagnosis-card{grid-template-columns:1fr;padding:17px}
-      .diagnosis-card__signals,.diagnosis-card__outcome{grid-column:1}
-      .diagnosis-card__index{width:42px;height:42px;border-radius:13px}
-      .priority-lane article{border-left:0!important}
-      .audit-cta{padding:24px}
+    .a3-head__eyebrow {
+      color:var(--gold);
+      font-size:.76rem;
+      font-weight:800;
+    }
+    .a3-head h2 {
+      margin:0;
+      font-size:clamp(1.65rem,3vw,2.7rem);
+      line-height:1.28;
+      letter-spacing:-.018em;
+    }
+    .a3-head p {
+      grid-column:2;
+      margin:8px 0 0;
+      max-width:760px;
+      color:var(--text-soft);
+    }
+
+    /* Process */
+    .a3-process {
+      position:relative;
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:12px;
+    }
+    .a3-process::before {
+      content:"";
+      position:absolute;
+      top:30px;
+      right:8%;
+      left:8%;
+      height:1px;
+      background:linear-gradient(90deg,transparent,rgba(245,208,122,.45),transparent);
+    }
+    .a3-step {
+      position:relative;
+      z-index:2;
+      min-height:240px;
+      padding:18px;
+      border:1px solid var(--audit-line);
+      border-radius:22px;
+      background:linear-gradient(180deg,#0e1012,#0a0c0e);
+    }
+    .a3-step__n {
+      width:44px;height:44px;
+      display:flex;align-items:center;justify-content:center;
+      border-radius:14px;
+      border:1px solid rgba(245,208,122,.18);
+      background:#090a0c;
+      color:var(--gold);
+      font-weight:900;
+      font-family:Manrope,sans-serif;
+      margin-bottom:32px;
+    }
+    .a3-step h3 {margin:0 0 8px;font-size:1rem}
+    .a3-step p {margin:0;color:var(--text-soft);font-size:.84rem;line-height:1.8}
+    .a3-step small {
+      display:block;margin-top:14px;padding-top:12px;
+      border-top:1px solid var(--audit-line);
+      color:var(--text-muted);font-size:.7rem
+    }
+
+    /* Scope / audit matrix */
+    .a3-matrix {
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:20px;
+    }
+    .a3-matrix__visual {
+      min-height:520px;
+      border:1px solid rgba(245,208,122,.14);
+      border-radius:28px;
+      padding:20px;
+      background:
+        radial-gradient(circle at 50% 45%,rgba(245,208,122,.09),transparent 35%),
+        #0b0d0f;
+      display:flex;
+      align-items:center;
+    }
+    .a3-matrix__visual svg {width:100%;height:auto;display:block}
+    .a3-scope-list {
+      display:grid;gap:10px;
+    }
+    .a3-scope-card {
+      display:grid;
+      grid-template-columns:48px 1fr;
+      gap:13px;
+      padding:16px;
+      border-radius:20px;
+      border:1px solid var(--audit-line);
+      background:rgba(255,255,255,.017);
+    }
+    .a3-scope-card__icon {
+      width:46px;height:46px;
+      border-radius:14px;
+      display:flex;align-items:center;justify-content:center;
+      color:var(--gold);
+      border:1px solid rgba(245,208,122,.15);
+      background:rgba(245,208,122,.045);
+      font-family:Manrope,sans-serif;
+      font-weight:800;
+      font-size:.78rem;
+    }
+    .a3-scope-card h3 {margin:0 0 5px;font-size:.98rem}
+    .a3-scope-card p {margin:0;color:var(--text-soft);font-size:.82rem}
+    .a3-scope-card ul {
+      list-style:none;padding:0;margin:10px 0 0;
+      display:flex;flex-wrap:wrap;gap:6px;
+    }
+    .a3-scope-card li {
+      padding:5px 8px;border-radius:99px;
+      border:1px solid var(--audit-line);
+      color:var(--text-muted);
+      font-size:.67rem;
+    }
+
+    /* Deliverables */
+    .a3-deliver {
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .a3-report {
+      position:relative;
+      min-height:520px;
+      border-radius:28px;
+      border:1px solid rgba(245,208,122,.15);
+      padding:24px;
+      background:
+        linear-gradient(145deg,rgba(245,208,122,.055),rgba(255,255,255,.012)),
+        #0a0c0e;
+      overflow:hidden;
+    }
+    .a3-report__paper {
+      min-height:440px;
+      border-radius:18px;
+      padding:22px;
+      background:#f4f1ea;
+      color:#111;
+      transform:rotate(-1.2deg);
+      box-shadow:0 24px 70px rgba(0,0,0,.35);
+    }
+    .a3-report__top {
+      display:flex;justify-content:space-between;gap:16px;align-items:flex-start;
+      border-bottom:1px solid rgba(0,0,0,.13);padding-bottom:16px;
+    }
+    .a3-report__top strong {font-size:1.05rem}
+    .a3-report__top span {font:700 .65rem/1 Manrope,sans-serif;color:#7e6840}
+    .a3-report__summary {
+      display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px
+    }
+    .a3-report__metric {
+      padding:10px;border:1px solid rgba(0,0,0,.1);border-radius:10px
+    }
+    .a3-report__metric small {display:block;font-size:.55rem;color:#666}
+    .a3-report__metric b {display:block;margin-top:5px;font-size:.78rem}
+    .a3-report__lines {display:grid;gap:8px;margin-top:18px}
+    .a3-report__line {
+      height:9px;border-radius:99px;background:rgba(0,0,0,.08)
+    }
+    .a3-report__line:nth-child(2){width:82%}
+    .a3-report__line:nth-child(3){width:67%}
+    .a3-report__line:nth-child(4){width:91%}
+    .a3-report__priority {
+      margin-top:18px;padding:12px;border-radius:12px;
+      background:#171717;color:#fff;
+    }
+    .a3-report__priority small {display:block;color:#d9bc7e;font-size:.56rem}
+    .a3-report__priority strong {display:block;margin-top:4px;font-size:.78rem}
+    .a3-report__tag {
+      position:absolute;
+      left:17px;bottom:18px;
+      background:#08090a;color:var(--gold);
+      border:1px solid rgba(245,208,122,.2);
+      border-radius:14px;padding:10px 12px;
+      font-size:.7rem;font-weight:800
+    }
+    .a3-deliver-list {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+    .a3-deliver-card {
+      min-height:180px;
+      border-radius:22px;
+      border:1px solid var(--audit-line);
+      padding:18px;
+      background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.01));
+    }
+    .a3-deliver-card span {
+      display:block;color:var(--gold);
+      font:800 .7rem/1.3 Manrope,sans-serif;
+      margin-bottom:25px;
+    }
+    .a3-deliver-card h3 {margin:0 0 7px;font-size:1rem}
+    .a3-deliver-card p {margin:0;color:var(--text-soft);font-size:.82rem}
+
+    /* After audit flow */
+    .a3-after {
+      border:1px solid var(--audit-line);
+      border-radius:28px;
+      padding:24px;
+      background:#0a0c0e;
+    }
+    .a3-after__flow {
+      display:grid;
+      grid-template-columns:1fr 54px 1fr 54px 1fr;
+      gap:10px;
+      align-items:center;
+    }
+    .a3-after__node {
+      min-height:170px;
+      border:1px solid var(--audit-line);
+      border-radius:20px;
+      padding:19px;
+      background:rgba(255,255,255,.018);
+    }
+    .a3-after__node span {
+      display:block;color:var(--gold);font-size:.72rem;font-weight:800
+    }
+    .a3-after__node h3 {margin:10px 0 6px;font-size:1rem}
+    .a3-after__node p {margin:0;color:var(--text-soft);font-size:.82rem}
+    .a3-after__arrow {
+      text-align:center;color:var(--gold);font-size:1.5rem;opacity:.6
+    }
+
+    /* Fit */
+    .a3-fit {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+    .a3-fit article {
+      border:1px solid var(--audit-line);
+      border-radius:22px;
+      padding:20px;
+      background:rgba(255,255,255,.016);
+    }
+    .a3-fit span {color:var(--gold);font-size:.72rem;font-weight:800}
+    .a3-fit h3 {margin:7px 0 6px;font-size:1rem}
+    .a3-fit p {margin:0;color:var(--text-soft);font-size:.82rem}
+
+    /* FAQ */
+    .a3-faq {
+      max-width:930px;
+      margin:0 auto;
+    }
+    .a3-faq details {
+      margin:0;
+      padding:17px 0;
+      border-bottom:1px solid var(--audit-line);
+      background:transparent;
+      border-radius:0;
+      box-shadow:none;
+    }
+    .a3-faq summary {cursor:pointer;font-weight:800}
+    .a3-faq p {
+      margin:9px 0 0;
+      max-width:820px;
+      color:var(--text-soft);
+      font-size:.9rem;
+    }
+
+    /* CTA */
+    .a3-cta {
+      border-radius:30px;
+      overflow:hidden;
+      border:1px solid rgba(245,208,122,.17);
+      background:
+        radial-gradient(circle at 15% 15%,rgba(245,208,122,.12),transparent 25%),
+        linear-gradient(135deg,#0f1113,#090a0c);
+    }
+    .a3-cta__grid {
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:0;
+    }
+    .a3-cta__copy {padding:34px}
+    .a3-cta__copy h2 {
+      margin:0 0 10px;
+      font-size:clamp(1.65rem,3vw,2.7rem);
+      line-height:1.3;
+    }
+    .a3-cta__copy p {
+      margin:0;
+      max-width:700px;
+      color:var(--text-soft);
+    }
+    .a3-cta__actions {
+      display:flex;gap:10px;flex-wrap:wrap;margin-top:20px
+    }
+    .a3-cta__brief {
+      padding:30px;
+      border-right:1px solid rgba(245,208,122,.12);
+      background:rgba(245,208,122,.035);
+      display:flex;flex-direction:column;justify-content:center;
+    }
+    .a3-cta__brief span {
+      display:block;color:var(--gold);font-size:.72rem;font-weight:800;margin-bottom:10px
+    }
+    .a3-cta__brief ul {
+      margin:0;padding-right:18px;color:var(--text-soft)
+    }
+    .a3-cta__brief li {margin:8px 0}
+
+    @media(max-width:1100px) {
+      .a3-hero__grid,.a3-matrix,.a3-deliver,.a3-cta__grid {grid-template-columns:1fr}
+      .a3-hero-graphic {min-height:auto}
+      .a3-process {grid-template-columns:repeat(2,1fr)}
+      .a3-process::before {display:none}
+      .a3-intent__grid {grid-template-columns:repeat(2,1fr)}
+      .a3-cta__brief {border-right:0;border-top:1px solid rgba(245,208,122,.12)}
+    }
+
+    @media(max-width:700px) {
+      .a3-hero {padding-top:32px}
+      .a3-hero h1 {font-size:2.05rem}
+      .a3-hero__grid {gap:28px}
+      .a3-hero-graphic {padding:12px;border-radius:22px}
+      .a3-floating {position:relative;left:auto;bottom:auto;width:auto;margin-top:10px}
+      .a3-score-row {grid-template-columns:1fr}
+      .a3-intent__grid,.a3-process,.a3-deliver-list,.a3-fit {grid-template-columns:1fr}
+      .a3-head {grid-template-columns:1fr;gap:8px}
+      .a3-head p {grid-column:1}
+      .a3-after__flow {grid-template-columns:1fr}
+      .a3-after__arrow {transform:rotate(90deg)}
+      .a3-actions,.a3-cta__actions {flex-direction:column}
+      .a3-actions .btn,.a3-cta__actions .btn {width:100%}
+      .a3-report {min-height:auto}
+      .a3-report__paper {min-height:400px}
     }
   </style>
-<script type="application/ld+json">
+
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -330,10 +648,13 @@
       "@type": "WebPage",
       "@id": "https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/#webpage",
       "url": "https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/",
-      "name": "تدقيق السيو للمواقع والمتاجر | Viva Media Creative",
-      "headline": "تدقيق السيو للمواقع والمتاجر",
-      "description": "خدمة تدقيق السيو للمواقع والمتاجر لتقييم الفهرسة والبنية التقنية ونية البحث والكلمات والصفحات والمحتوى والتحويل، مع تحديد أولويات واضحة وخطة تنفيذ مبنية على حالة الموقع وأهدافه.",
+      "name": "تدقيق السيو وفحص المواقع لمحركات البحث | Viva Media Creative",
+      "headline": "تدقيق السيو وفحص المواقع لمحركات البحث",
+      "description": "خدمة تدقيق السيو للمواقع والمتاجر: فحص الفهرسة والبنية التقنية والكلمات والصفحات والمحتوى والروابط الداخلية، مع تقرير أولويات وخطة تنفيذ واضحة.",
       "inLanguage": "ar",
+      "isPartOf": {
+        "@id": "https://vivamediacreative.com/services/seo-growth/#webpage"
+      },
       "publisher": {
         "@id": "https://vivamediacreative.com/#organization"
       },
@@ -342,64 +663,20 @@
       },
       "mainEntity": {
         "@id": "https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/#service"
-      },
-      "isPartOf": {
-        "@id": "https://vivamediacreative.com/services/seo-growth/#webpage"
-      },
-      "about": [
-        {
-          "@type": "Thing",
-          "name": "تدقيق السيو",
-          "alternateName": "SEO Audit"
-        },
-        {
-          "@type": "Thing",
-          "name": "فحص الموقع لمحركات البحث"
-        },
-        {
-          "@type": "Thing",
-          "name": "تحليل الظهور في نتائج البحث"
-        },
-        {
-          "@type": "Thing",
-          "name": "الفهرسة والزحف"
-        },
-        {
-          "@type": "Thing",
-          "name": "نية البحث"
-        }
-      ],
-      "hasPart": [
-        {
-          "@id": "https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/#faq-1"
-        },
-        {
-          "@id": "https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/#faq-2"
-        },
-        {
-          "@id": "https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/#faq-3"
-        },
-        {
-          "@id": "https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/#faq-4"
-        },
-        {
-          "@id": "https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/#faq-5"
-        }
-      ]
+      }
     },
     {
       "@type": "Service",
       "@id": "https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/#service",
-      "name": "خدمة تدقيق السيو للمواقع والمتاجر",
+      "name": "خدمة تدقيق السيو وفحص المواقع",
       "alternateName": [
-        "تدقيق السيو",
+        "تدقيق SEO",
         "فحص السيو للموقع",
-        "تحليل السيو",
-        "SEO Audit"
+        "تحليل السيو للموقع"
       ],
       "serviceType": "تدقيق وتحليل تحسين محركات البحث",
-      "description": "خدمة تشخيص متخصصة لتقييم الظهور والفهرسة والبنية التقنية ونية البحث والكلمات والمحتوى والصفحات والتحويل، ثم ترتيب توصيات التنفيذ وفق الأولوية والأثر المتوقع.",
       "url": "https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/",
+      "description": "تدقيق احترافي للمواقع والمتاجر يراجع قابلية الزحف والفهرسة، البنية التقنية، نية البحث، الصفحات، المحتوى والروابط الداخلية، ثم يحول النتائج إلى أولويات وخطة تنفيذ.",
       "provider": {
         "@id": "https://vivamediacreative.com/#organization"
       },
@@ -435,23 +712,18 @@
         {
           "@type": "BusinessAudience",
           "audienceType": "المتاجر الإلكترونية"
-        },
-        {
-          "@type": "Audience",
-          "audienceType": "العلامات الشخصية وصناع المحتوى الذين يعتمدون على مواقعهم"
         }
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "مسارات تدقيق السيو حسب حالة الموقع",
+        "name": "محاور تدقيق السيو",
         "itemListElement": [
           {
             "@type": "Offer",
             "position": 1,
             "itemOffered": {
               "@type": "Service",
-              "name": "تشخيص الظهور والفهرسة",
-              "description": "الموقع منشور ويضم صفحات مهمة، لكن الظهور على الاستعلامات الأساسية محدود أو غير مستقر."
+              "name": "فحص الزحف والفهرسة"
             }
           },
           {
@@ -459,8 +731,7 @@
             "position": 2,
             "itemOffered": {
               "@type": "Service",
-              "name": "تحليل أسباب تراجع الأداء",
-              "description": "كان الموقع يحقق مستوى أفضل من الظهور أو النقرات، ثم بدأ الأداء يتراجع على صفحات أو استعلامات مهمة."
+              "name": "فحص السيو التقني"
             }
           },
           {
@@ -468,8 +739,7 @@
             "position": 3,
             "itemOffered": {
               "@type": "Service",
-              "name": "تحليل جودة الزيارات ومسار التحويل",
-              "description": "الموقع يحصل على زيارات من البحث، لكن حجم الاستفسارات أو الطلبات أو المبيعات لا يعكس حجم الحركة العضوية."
+              "name": "تحليل الصفحات والكلمات ونية البحث"
             }
           },
           {
@@ -477,444 +747,593 @@
             "position": 4,
             "itemOffered": {
               "@type": "Service",
-              "name": "تدقيق السيو للمتاجر الإلكترونية",
-              "description": "المتجر يضم عددًا كبيرًا من الفئات والمنتجات والفلاتر والنسخ المتشابهة ويحتاج إلى ضبط بنية الظهور والفهرسة."
-            }
-          },
-          {
-            "@type": "Offer",
-            "position": 5,
-            "itemOffered": {
-              "@type": "Service",
-              "name": "تدقيق ما قبل النقل وإعادة الهيكلة",
-              "description": "هناك تغيير قادم في المنصة أو الروابط أو بنية الموقع، وتريد حماية الصفحات والإشارات التي اكتسبت قيمة في البحث."
-            }
-          },
-          {
-            "@type": "Offer",
-            "position": 6,
-            "itemOffered": {
-              "@type": "Service",
-              "name": "تدقيق السيو للأسواق واللغات",
-              "description": "الموقع يستهدف أكثر من دولة أو لغة ويحتاج إلى بنية واضحة تفصل بين الأسواق وتراعي اختلاف سلوك البحث المحلي."
+              "name": "تحليل المحتوى والروابط الداخلية"
             }
           }
         ]
       }
-    },
-    {
-      "@type": "Question",
-      "@id": "https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/#faq-1",
-      "name": "ما الفرق بين تدقيق السيو وخدمة تحسين محركات البحث المستمرة؟",
-      "inLanguage": "ar",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "تدقيق السيو هو مرحلة تشخيص وتحديد أولويات. يوضح حالة الموقع، أهم المشكلات والفرص وما الذي يحتاج إلى تنفيذ. أما العمل المستمر فيبدأ بعد ذلك بتنفيذ التحسينات ومتابعة النتائج وتطوير الصفحات والمحتوى وفق البيانات.",
-        "inLanguage": "ar"
-      }
-    },
-    {
-      "@type": "Question",
-      "@id": "https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/#faq-2",
-      "name": "هل أحتاج إلى تدقيق السيو إذا كان موقعي جديدًا؟",
-      "inLanguage": "ar",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "إذا كان الموقع لم يُطلق بعد أو لا تزال بنيته وصفحاته الأساسية قيد التطوير، فقد تكون هندسة SEO قبل الإطلاق أكثر فائدة من تدقيق موقع غير مكتمل. بعد الإطلاق ووجود صفحات وبيانات فعلية يصبح التدقيق أكثر دقة.",
-        "inLanguage": "ar"
-      }
-    },
-    {
-      "@type": "Question",
-      "@id": "https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/#faq-3",
-      "name": "هل يختلف تدقيق السيو للمتجر عن تدقيق موقع شركة؟",
-      "inLanguage": "ar",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "نعم. المتاجر تحتاج مراجعة أعمق للفئات والمنتجات والفلاتر والنسخ المتشابهة والمنتجات غير المتوفرة والربط الداخلي وبيانات المنتجات. أما مواقع الشركات فتركز عادة بدرجة أكبر على صفحات الخدمات ونية البحث وتوليد العملاء المحتملين.",
-        "inLanguage": "ar"
-      }
-    },
-    {
-      "@type": "Question",
-      "@id": "https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/#faq-4",
-      "name": "هل يساعد التدقيق في تحديد أسباب تراجع الزيارات العضوية؟",
-      "inLanguage": "ar",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "نعم، عندما تتوفر بيانات كافية. نراجع تغيرات الصفحات والاستعلامات والفهرسة والبنية والمحتوى ونقارن الفترات لتحديد العوامل الأكثر احتمالًا خلف التراجع، من دون افتراض سبب واحد قبل تحليل البيانات.",
-        "inLanguage": "ar"
-      }
-    },
-    {
-      "@type": "Question",
-      "@id": "https://vivamediacreative.com/services/seo-growth/تدقيق-السيو/#faq-5",
-      "name": "هل يضمن تدقيق السيو الوصول إلى مركز محدد في Google؟",
-      "inLanguage": "ar",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "لا. لا توجد طريقة مهنية لضمان مركز ثابت في نتائج Google. دور التدقيق هو تقليل التخمين، تحديد الأولويات والفرص والمخاطر، ثم وضع أساس واضح لقياس أثر التنفيذ على الظهور والنقرات والتحويلات.",
-        "inLanguage": "ar"
-      }
     }
   ]
 }
-</script>
+  </script>
 </head>
-<body class="audit-service-page">
-<a class="skip-link" href="#main">تخطي إلى المحتوى</a>
-<div aria-hidden="true" class="noise"></div>
-<div class="site">
-<header class="nav">
-<div class="nav__inner">
-<a class="brand" href="/">
-<img alt="Viva Media Creative" class="brand__logo" height="46" src="/assets/logo.jpeg" width="46"/>
-<span class="brand__text">
-<span class="brand__name">Viva Media Creative</span>
-<span class="brand__sub">استشارات وتحسين محركات البحث</span>
-</span>
-</a>
-<nav aria-label="روابط الصفحة" class="nav__links">
-<a href="#choose">التحديات التي نراجعها</a>
-<a href="#scope">نطاق التدقيق</a>
-<a href="#deliverables">المخرجات</a>
-<a href="#fit">ملاءمة الخدمة</a>
-</nav>
-<a class="nav__cta" href="/contact/?service=seo-audit">اطلب تدقيق السيو</a>
-</div>
-</header>
-<div class="container audit-crumbs">
-<ol>
-<li><a href="/">الرئيسية</a></li>
-<li><a href="/services/">الخدمات</a></li>
-<li><a href="/services/seo-growth/">تحسين محركات البحث</a></li>
-<li aria-current="page">تدقيق السيو</li>
-</ol>
-</div>
-<main id="main">
-<section class="audit-hero">
-<div class="container audit-hero__grid">
-<div>
-<span class="audit-kicker">خدمة تدقيق السيو للمواقع والمتاجر</span>
-<h1>تدقيق السيو للمواقع والمتاجر<span>تشخيص دقيق للأداء وتحديد أولويات التحسين في نتائج البحث</span></h1>
-<p class="audit-hero__lead">نراجع موقعك من منظور تقني وتجاري متكامل لفهم العوامل التي تحد من ظهوره العضوي. يشمل التدقيق <strong>الفهرسة والزحف، بنية الموقع، نية البحث، الكلمات المفتاحية، جودة الصفحات والمحتوى، الروابط الداخلية ومسار التحويل</strong>، ثم نحول النتائج إلى أولويات واضحة تساعدك على اتخاذ قرار أدق بشأن ما يحتاج إلى إصلاح أو تطوير أو توسع.</p>
-<div class="audit-hero__actions">
-<a class="btn btn--gold" href="/contact/?service=seo-audit">اطلب تدقيق السيو لموقعك</a>
-<a class="btn btn--ghost" href="#choose">استعرض حالات التدقيق</a>
-</div>
-<p class="audit-hero__micro">للشركات • المتاجر الإلكترونية • المواقع الخدمية • المواقع متعددة الأسواق واللغات</p>
-</div>
-<aside aria-label="اختيار سبب طلب تدقيق السيو" class="intake-card">
-<div class="intake-card__eyebrow">حدد الحالة الأقرب إلى موقعك</div>
-<h2>ما التحدي الذي تريد تشخيصه؟</h2>
-<p>يساعدنا تحديد الحالة أولًا على اختيار نطاق تدقيق مناسب بدل تطبيق قائمة فحوصات عامة على كل مشروع.</p>
-<div class="intake-links">
-<a href="#visibility"><span>ضعف الظهور في نتائج البحث</span><small>تشخيص الظهور والفهرسة</small></a>
-<a href="#drop"><span>تراجع الزيارات العضوية</span><small>تحليل أسباب تراجع الأداء</small></a>
-<a href="#conversion"><span>زيارات دون تحويلات كافية</span><small>تحليل جودة الزيارات ومسار التحويل</small></a>
-<a href="#ecommerce"><span>متجر كبير أو بنية معقدة</span><small>تدقيق السيو للمتاجر الإلكترونية</small></a>
-<a href="#migration"><span>إعادة تصميم أو نقل الموقع</span><small>تدقيق ما قبل النقل وإعادة الهيكلة</small></a>
-<a href="#markets"><span>أسواق أو لغات متعددة</span><small>تدقيق السيو للأسواق واللغات</small></a>
-</div>
-</aside>
-</div>
-</section>
-<section class="decision-strip">
-<div class="container decision-strip__inner">
-<div class="decision-stat"><span>01 — فهم السياق</span><strong>نبدأ من هدف الموقع ونموذج العمل قبل قراءة الأخطاء التقنية.</strong></div>
-<div class="decision-stat"><span>02 — تحليل الإشارات</span><strong>نربط بيانات البحث والبنية والصفحات لفهم الصورة كاملة.</strong></div>
-<div class="decision-stat"><span>03 — تحديد الأولويات</span><strong>نفرق بين ما يعيق الأداء وما يمثل فرصة نمو وما يمكن تأجيله.</strong></div>
-<div class="decision-stat"><span>04 — خطة قابلة للتنفيذ</span><strong>نحوّل التشخيص إلى قرارات واضحة للمطور والمحتوى وصاحب المشروع.</strong></div>
-</div>
-</section>
-<section class="audit-section" id="choose">
-<div class="container">
-<div class="audit-section__head">
-<span>نطاق التدقيق يبدأ من حالة الموقع</span>
-<h2>لكل تحدٍ في البحث مسار تشخيص مختلف</h2>
-<p>نحدد أولًا ما الذي تريد فهمه أو تحسينه، ثم نختار الفحوصات والبيانات المناسبة. بهذه الطريقة يكون التدقيق مرتبطًا بقرار فعلي، لا بقائمة تقنية موحدة.</p>
-</div>
-<div class="decision-board">
-<article class="diagnosis-card" id="visibility">
-<div class="diagnosis-card__index">01</div>
-<div class="diagnosis-card__main">
-<span class="diagnosis-card__label">ضعف الظهور في نتائج البحث</span>
-<h3>تشخيص الظهور والفهرسة</h3>
-<p>الموقع منشور ويضم صفحات مهمة، لكن الظهور على الاستعلامات الأساسية محدود أو غير مستقر.</p>
-<div class="diagnosis-card__focus"><strong>محاور المراجعة: </strong>قابلية الزحف والفهرسة، بنية الصفحات، نية البحث والروابط الداخلية</div>
-</div>
-<div class="diagnosis-card__signals">
-<span>إشارات وبيانات نراجعها</span>
-<ul><li>Search Console</li><li>Indexability</li><li>Canonical</li><li>Internal Links</li><li>Search Intent</li></ul>
-</div>
-<div class="diagnosis-card__outcome">
-<span>ما الذي يوضحه التدقيق؟</span>
-<p>تحديد ما إذا كان التحدي مرتبطًا بالوصول والفهرسة، أو بملاءمة الصفحة للبحث، أو بضعف بنية الموقع وإشاراته الداخلية.</p>
-</div>
-</article>
-<article class="diagnosis-card" id="drop">
-<div class="diagnosis-card__index">02</div>
-<div class="diagnosis-card__main">
-<span class="diagnosis-card__label">تراجع الزيارات العضوية</span>
-<h3>تحليل أسباب تراجع الأداء</h3>
-<p>كان الموقع يحقق مستوى أفضل من الظهور أو النقرات، ثم بدأ الأداء يتراجع على صفحات أو استعلامات مهمة.</p>
-<div class="diagnosis-card__focus"><strong>محاور المراجعة: </strong>مقارنة الفترات، الصفحات والاستعلامات المتراجعة، تغيرات الفهرسة والموقع</div>
-</div>
-<div class="diagnosis-card__signals">
-<span>إشارات وبيانات نراجعها</span>
-<ul><li>Query Loss</li><li>Page Loss</li><li>Index Changes</li><li>Redirects</li><li>Content Changes</li></ul>
-</div>
-<div class="diagnosis-card__outcome">
-<span>ما الذي يوضحه التدقيق؟</span>
-<p>تكوين صورة واضحة عن موضع التراجع والعوامل المرجحة خلفه بدل افتراض سبب واحد قبل مراجعة البيانات.</p>
-</div>
-</article>
-<article class="diagnosis-card" id="conversion">
-<div class="diagnosis-card__index">03</div>
-<div class="diagnosis-card__main">
-<span class="diagnosis-card__label">زيارات دون تحويلات كافية</span>
-<h3>تحليل جودة الزيارات ومسار التحويل</h3>
-<p>الموقع يحصل على زيارات من البحث، لكن حجم الاستفسارات أو الطلبات أو المبيعات لا يعكس حجم الحركة العضوية.</p>
-<div class="diagnosis-card__focus"><strong>محاور المراجعة: </strong>نية البحث، الصفحات التجارية، وضوح العرض، نقاط التحويل والقياس</div>
-</div>
-<div class="diagnosis-card__signals">
-<span>إشارات وبيانات نراجعها</span>
-<ul><li>Intent Match</li><li>Money Pages</li><li>CTA</li><li>Forms</li><li>CRO Signals</li></ul>
-</div>
-<div class="diagnosis-card__outcome">
-<span>ما الذي يوضحه التدقيق؟</span>
-<p>معرفة ما إذا كانت المشكلة في نوع الطلب الذي تجذبه الكلمات، أو في ملاءمة صفحات الهبوط، أو في تجربة الانتقال من البحث إلى التحويل.</p>
-</div>
-</article>
-<article class="diagnosis-card" id="ecommerce">
-<div class="diagnosis-card__index">04</div>
-<div class="diagnosis-card__main">
-<span class="diagnosis-card__label">متجر كبير أو بنية معقدة</span>
-<h3>تدقيق السيو للمتاجر الإلكترونية</h3>
-<p>المتجر يضم عددًا كبيرًا من الفئات والمنتجات والفلاتر والنسخ المتشابهة ويحتاج إلى ضبط بنية الظهور والفهرسة.</p>
-<div class="diagnosis-card__focus"><strong>محاور المراجعة: </strong>الفئات، المنتجات، الفلاتر، النسخ المتشابهة، الربط الداخلي وبيانات المنتجات</div>
-</div>
-<div class="diagnosis-card__signals">
-<span>إشارات وبيانات نراجعها</span>
-<ul><li>Categories</li><li>Products</li><li>Facets</li><li>Variants</li><li>Product Schema</li></ul>
-</div>
-<div class="diagnosis-card__outcome">
-<span>ما الذي يوضحه التدقيق؟</span>
-<p>تحديد الصفحات التي تستحق أولوية الظهور، ومصادر التكرار أو الاستنزاف، وفرص تحسين الفئات والمنتجات الأكثر قيمة.</p>
-</div>
-</article>
-<article class="diagnosis-card" id="migration">
-<div class="diagnosis-card__index">05</div>
-<div class="diagnosis-card__main">
-<span class="diagnosis-card__label">إعادة تصميم أو نقل الموقع</span>
-<h3>تدقيق ما قبل النقل وإعادة الهيكلة</h3>
-<p>هناك تغيير قادم في المنصة أو الروابط أو بنية الموقع، وتريد حماية الصفحات والإشارات التي اكتسبت قيمة في البحث.</p>
-<div class="diagnosis-card__focus"><strong>محاور المراجعة: </strong>خريطة الروابط، الصفحات ذات القيمة، التحويلات، canonical وخطة المراجعة بعد الإطلاق</div>
-</div>
-<div class="diagnosis-card__signals">
-<span>إشارات وبيانات نراجعها</span>
-<ul><li>URL Mapping</li><li>Redirect Plan</li><li>Canonicals</li><li>Top Landing Pages</li><li>Launch Checks</li></ul>
-</div>
-<div class="diagnosis-card__outcome">
-<span>ما الذي يوضحه التدقيق؟</span>
-<p>تحديد ما يجب الحفاظ عليه، وما يحتاج تحويلًا أو إعادة ربط، وما الذي يجب مراقبته بعد الإطلاق لتقليل مخاطر فقدان الظهور.</p>
-</div>
-</article>
-<article class="diagnosis-card" id="markets">
-<div class="diagnosis-card__index">06</div>
-<div class="diagnosis-card__main">
-<span class="diagnosis-card__label">أسواق أو لغات متعددة</span>
-<h3>تدقيق السيو للأسواق واللغات</h3>
-<p>الموقع يستهدف أكثر من دولة أو لغة ويحتاج إلى بنية واضحة تفصل بين الأسواق وتراعي اختلاف سلوك البحث المحلي.</p>
-<div class="diagnosis-card__focus"><strong>محاور المراجعة: </strong>الكلمات العربية، التوطين، hreflang، canonical وبنية صفحات الأسواق</div>
-</div>
-<div class="diagnosis-card__signals">
-<span>إشارات وبيانات نراجعها</span>
-<ul><li>Arabic Queries</li><li>Localization</li><li>hreflang</li><li>Canonical</li><li>Market Pages</li></ul>
-</div>
-<div class="diagnosis-card__outcome">
-<span>ما الذي يوضحه التدقيق؟</span>
-<p>تقييم ما إذا كانت النسخ والأسواق منظمة بشكل واضح لمحركات البحث والمستخدمين، وتحديد مواضع التكرار أو ضعف التوطين.</p>
-</div>
-</article>
-</div>
-</div>
-</section>
-<section class="audit-section audit-section--tight" id="scope">
-<div class="container audit-split">
-<article class="scope-panel">
-<h2>محاور تدقيق السيو</h2>
-<p>يتم تحديد النطاق النهائي وفق حجم الموقع وحالته والهدف من التدقيق. لا نضيف بنودًا لا تؤثر في القرار أو الأولوية.</p>
-<div class="scope-list">
-<div class="scope-row"><b>01</b><div><strong>الزحف والفهرسة</strong><span>robots.txt، XML Sitemap، noindex، canonical، status codes والصفحات المستبعدة.</span></div></div>
-<div class="scope-row"><b>02</b><div><strong>بنية الموقع والروابط الداخلية</strong><span>أهمية الصفحات، عمق الوصول، الصفحات المعزولة، التكرار وتوزيع الروابط الداخلية.</span></div></div>
-<div class="scope-row"><b>03</b><div><strong>نية البحث والكلمات المفتاحية</strong><span>مدى توافق كل صفحة مع ما يبحث عنه المستخدم والطلب التجاري الذي يجب أن تخدمه.</span></div></div>
-<div class="scope-row"><b>04</b><div><strong>المحتوى والصفحات التجارية</strong><span>صفحات الخدمات والفئات والمنتجات، فجوات المحتوى، التشابه وضعف القيمة أو التغطية.</span></div></div>
-<div class="scope-row"><b>05</b><div><strong>الأداء والبنية التقنية</strong><span>Core Web Vitals، الجوال، rendering، redirects والبيانات المنظمة عند الحاجة.</span></div></div>
-<div class="scope-row"><b>06</b><div><strong>التحويل والقياس</strong><span>الصفحات ذات القيمة، نقاط التواصل والتحويل، وبيانات Search Console وAnalytics عند توفرها.</span></div></div>
-</div>
-</article>
-<article class="deliver-panel" id="deliverables">
-<h2>مخرجات التدقيق</h2>
-<p>نقدّم المخرجات بصيغة تساعد صاحب القرار والفريق التنفيذي على فهم ما يجب فعله، ولماذا، وبأي ترتيب.</p>
-<div class="deliver-stack">
-<div class="deliver-item">
-<div><strong>ملخص تنفيذي</strong><p>أبرز الملاحظات والفرص التي تؤثر في أداء الموقع، بصياغة واضحة لصاحب القرار.</p></div>
-<em>EXECUTIVE</em>
-</div>
-<div class="deliver-item">
-<div><strong>مصفوفة أولويات</strong><p>ترتيب التوصيات وفق الأثر المتوقع، الجهد، الصفحات المتأثرة وطبيعة التنفيذ.</p></div>
-<em>PRIORITY</em>
-</div>
-<div class="deliver-item">
-<div><strong>خريطة الطلب والصفحات</strong><p>عند الحاجة: توزيع نوايا البحث والكلمات على الصفحات الحالية أو الصفحات المطلوب تطويرها.</p></div>
-<em>SEARCH</em>
-</div>
-<div class="deliver-item">
-<div><strong>خطة تنفيذ للفريق</strong><p>توصيات مفصولة بين المهام التقنية، المحتوى، البنية والقرارات التجارية.</p></div>
-<em>ACTION</em>
-</div>
-<div class="deliver-item">
-<div><strong>خط أساس للقياس</strong><p>المؤشرات التي يجب متابعتها بعد التنفيذ لتقييم أثر التغييرات على الظهور والتحويل.</p></div>
-<em>MEASURE</em>
-</div>
-</div>
-</article>
-</div>
-</section>
-<section class="audit-section">
-<div class="container">
-<div class="audit-section__head">
-<span>ترتيب التوصيات حسب الأثر</span>
-<h2>الأولوية أهم من عدد الملاحظات</h2>
-<p>التدقيق الجيد لا يساوي بين كل الملاحظات. نرتب العمل وفق أثره على قابلية الظهور، الصفحات ذات القيمة، فرص النمو والموارد المطلوبة للتنفيذ.</p>
-</div>
-<div class="priority-lane">
-<article>
-<span>P0 — أولوية حرجة</span>
-<h3>الوصول والفهرسة</h3>
-<p>مشكلات قد تمنع محركات البحث من الوصول إلى صفحات مهمة أو فهم النسخة الصحيحة منها.</p>
-</article>
-<article>
-<span>P1 — أثر تجاري مرتفع</span>
-<h3>الصفحات ذات القيمة</h3>
-<p>مشكلات أو فرص مرتبطة مباشرة بصفحات الخدمات والفئات والمنتجات ونوايا البحث المهمة.</p>
-</article>
-<article>
-<span>P2 — فرص النمو</span>
-<h3>المحتوى والبنية</h3>
-<p>تحسينات توسع التغطية، تقوي الروابط الداخلية أو تعالج فجوات الكلمات والصفحات.</p>
-</article>
-<article>
-<span>P3 — تحسينات تراكمية</span>
-<h3>التحسين المستمر</h3>
-<p>تفاصيل مفيدة يتم تنفيذها بعد معالجة الأولويات الأعلى أو ضمن دورة التحسين المستمرة.</p>
-</article>
-</div>
-</div>
-</section>
-<section class="audit-section audit-section--tight" id="fit">
-<div class="container fit-card">
-<article class="fit-side fit-side--accent">
-<h3>متى يكون تدقيق السيو خطوة مناسبة؟</h3>
-<ul>
-<li>الموقع منشور ويضم صفحات وخدمات أو منتجات تحتاج إلى تقييم فعلي.</li>
-<li>الظهور أو الزيارات العضوية أقل من المتوقع ولا يوجد سبب واضح.</li>
-<li>الموقع أو المتجر كبير وتوجد تحديات في البنية أو الفهرسة أو توزيع الصفحات.</li>
-<li>هناك إعادة تصميم أو نقل للمنصة وتحتاج إلى حماية الأداء الحالي.</li>
-<li>تريد تشخيصًا مستقلًا قبل بدء برنامج SEO طويل أو توسيع الاستثمار في المحتوى.</li>
-</ul>
-</article>
-<article class="fit-side">
-<h3>متى تكون هناك أولوية أخرى قبل التدقيق؟</h3>
-<ul>
-<li>الموقع لم يُطلق بعد ولا توجد بنية أو صفحات فعلية يمكن تقييمها.</li>
-<li>المطلوب مجرد تقرير آلي أو درجة تقنية دون تحليل أو قرار تنفيذي.</li>
-<li>لا توجد قدرة أو خطة لتطبيق التوصيات بعد انتهاء التدقيق.</li>
-<li>الهدف هو الحصول على ضمان لترتيب محدد بدل تقييم واقعي للفرص والمخاطر.</li>
-</ul>
-</article>
-</div>
-</section>
-<section class="audit-section">
-<div class="container audit-cta">
-<div class="audit-cta__grid">
-<div>
-<span class="audit-kicker">ابدأ بتشخيص مبني على حالة موقعك</span>
-<h2>احصل على رؤية أوضح لما يحتاجه موقعك قبل بدء التنفيذ</h2>
-<p>أرسل رابط الموقع والسوق المستهدف والتحدي الأساسي الذي تريد فهمه. نستخدم هذه المعلومات لتحديد نطاق التدقيق المناسب بدل البدء بتوصيات عامة.</p>
-<div class="audit-hero__actions">
-<a class="btn btn--gold" href="/contact/?service=seo-audit">اطلب تدقيق السيو</a>
-<a class="btn btn--ghost" href="https://wa.me/4915565678291?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D8%AF%D9%82%D9%8A%D9%82%20%D8%A7%D9%84%D8%B3%D9%8A%D9%88%20%D9%84%D9%85%D9%88%D9%82%D8%B9%D9%8A.%20%D8%A7%D9%84%D9%85%D8%B4%D9%83%D9%84%D8%A9%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A9%20%D9%87%D9%8A%3A" rel="noopener noreferrer" target="_blank">أرسل رابط الموقع على واتساب</a>
-</div>
-</div>
-<aside class="audit-cta__side">
-<strong>المعلومات الأساسية للبدء</strong>
-<span>رابط الموقع أو المتجر</span>
-<span>السوق أو الدول المستهدفة</span>
-<span>الخدمة أو الفئة ذات الأولوية</span>
-<span>التحدي الذي تريد تشخيصه</span>
-</aside>
-</div>
-</div>
-</section>
-<section class="audit-section audit-section--tight">
-<div class="container">
-<div class="audit-section__head">
-<span>قبل طلب الخدمة</span>
-<h2>أسئلة شائعة حول تدقيق السيو</h2>
-</div>
-<div class="minimal-faq">
-<details><summary>ما الفرق بين تدقيق السيو وخدمة تحسين محركات البحث المستمرة؟</summary><p>تدقيق السيو هو مرحلة تشخيص وتحديد أولويات. يوضح حالة الموقع، أهم المشكلات والفرص وما الذي يحتاج إلى تنفيذ. أما العمل المستمر فيبدأ بعد ذلك بتنفيذ التحسينات ومتابعة النتائج وتطوير الصفحات والمحتوى وفق البيانات.</p></details>
-<details><summary>هل أحتاج إلى تدقيق السيو إذا كان موقعي جديدًا؟</summary><p>إذا كان الموقع لم يُطلق بعد أو لا تزال بنيته وصفحاته الأساسية قيد التطوير، فقد تكون هندسة SEO قبل الإطلاق أكثر فائدة من تدقيق موقع غير مكتمل. بعد الإطلاق ووجود صفحات وبيانات فعلية يصبح التدقيق أكثر دقة.</p></details>
-<details><summary>هل يختلف تدقيق السيو للمتجر عن تدقيق موقع شركة؟</summary><p>نعم. المتاجر تحتاج مراجعة أعمق للفئات والمنتجات والفلاتر والنسخ المتشابهة والمنتجات غير المتوفرة والربط الداخلي وبيانات المنتجات. أما مواقع الشركات فتركز عادة بدرجة أكبر على صفحات الخدمات ونية البحث وتوليد العملاء المحتملين.</p></details>
-<details><summary>هل يساعد التدقيق في تحديد أسباب تراجع الزيارات العضوية؟</summary><p>نعم، عندما تتوفر بيانات كافية. نراجع تغيرات الصفحات والاستعلامات والفهرسة والبنية والمحتوى ونقارن الفترات لتحديد العوامل الأكثر احتمالًا خلف التراجع، من دون افتراض سبب واحد قبل تحليل البيانات.</p></details>
-<details><summary>هل يضمن تدقيق السيو الوصول إلى مركز محدد في Google؟</summary><p>لا. لا توجد طريقة مهنية لضمان مركز ثابت في نتائج Google. دور التدقيق هو تقليل التخمين، تحديد الأولويات والفرص والمخاطر، ثم وضع أساس واضح لقياس أثر التنفيذ على الظهور والنقرات والتحويلات.</p></details>
-</div>
-</div>
-</section>
-</main>
-<footer class="footer">
-<div class="container footer-grid">
-<section class="footer-col">
-<div class="footer-brand">
-<img alt="Viva Media Creative" height="56" src="/assets/logo.jpeg" width="56"/>
-<div>
-<h3>Viva Media Creative</h3>
-<div class="muted">تدقيق واستشارات تحسين محركات البحث للمواقع والمتاجر.</div>
-</div>
-</div>
-</section>
-<nav aria-label="روابط" class="footer-col">
-<h3>روابط</h3>
-<ul>
-<li><a href="/">الرئيسية</a></li>
-<li><a href="/services/">الخدمات</a></li>
-<li><a href="/contact/">تواصل</a></li>
-</ul>
-</nav>
-<nav aria-label="تحسين محركات البحث" class="footer-col">
-<h3>تحسين محركات البحث</h3>
-<ul>
-<li><a href="/services/seo-growth/">خدمات تحسين محركات البحث</a></li>
-<li><a href="#choose">التحديات التي نراجعها</a></li>
-<li><a href="#deliverables">مخرجات التدقيق</a></li>
-</ul>
-</nav>
-<nav aria-label="خدمات مرتبطة" class="footer-col">
-<h3>خدمات مرتبطة</h3>
-<ul>
-<li><a href="/services/copywriting/">كتابة المحتوى</a></li>
-<li><a href="/services/personal-brand-management/">إدارة العلامة الشخصية</a></li>
-<li><a href="/services/seo-growth/">تحسين محركات البحث</a></li>
-</ul>
-</nav>
-</div>
-<div class="container footer-bottom">
-<p>© 2026 Viva Media Creative. جميع الحقوق محفوظة.</p>
-<div>تدقيق السيو للمواقع والمتاجر</div>
-</div>
-</footer>
-</div>
+
+<body class="audit-v3">
+  <a class="skip-link" href="#main">تخطي إلى المحتوى</a>
+  <div class="noise" aria-hidden="true"></div>
+
+  <div class="site">
+    <header class="nav">
+      <div class="nav__inner">
+        <a class="brand" href="/" aria-label="Viva Media Creative - الرئيسية">
+          <img class="brand__logo" src="/assets/logo.jpeg" alt="Viva Media Creative" width="46" height="46">
+          <span class="brand__text">
+            <span class="brand__name">Viva Media Creative</span>
+            <span class="brand__sub">SEO • Search • Growth</span>
+          </span>
+        </a>
+
+        <nav class="nav__links" aria-label="روابط الصفحة">
+          <a href="#process">آلية العمل</a>
+          <a href="#scope">ما الذي نفحصه</a>
+          <a href="#deliverables">ماذا تستلم</a>
+          <a href="#after">بعد التدقيق</a>
+        </nav>
+
+        <a class="nav__cta" href="/contact/?service=seo-audit">اطلب تدقيق الموقع</a>
+      </div>
+    </header>
+
+    <div class="container a3-crumbs">
+      <ol>
+        <li><a href="/">الرئيسية</a></li>
+        <li><a href="/services/">الخدمات</a></li>
+        <li><a href="/services/seo-growth/">تحسين محركات البحث</a></li>
+        <li aria-current="page">تدقيق السيو</li>
+      </ol>
+    </div>
+
+    <main id="main">
+
+      <!-- HERO -->
+      <section class="a3-hero">
+        <div class="container a3-hero__grid">
+          <div>
+            <span class="a3-label">خدمة تدقيق السيو للمواقع والمتاجر</span>
+
+            <h1>تدقيق السيو وفحص المواقع لمحركات البحث</h1>
+
+            <p class="a3-hero__lead">
+              تحليل احترافي لحالة الموقع يحدد مشكلات الفهرسة والبنية التقنية والصفحات والكلمات والمحتوى،
+              ثم يحول النتائج إلى <strong>أولويات واضحة وخطة تنفيذ</strong> تساعدك على تحسين الظهور العضوي واتخاذ قرارات SEO أدق.
+            </p>
+
+            <div class="a3-actions">
+              <a class="btn btn--gold" href="/contact/?service=seo-audit">اطلب تدقيق السيو</a>
+              <a class="btn btn--ghost" href="#process">شاهد آلية العمل</a>
+            </div>
+
+            <div class="a3-proofline" aria-label="خصائص الخدمة">
+              <span><i></i> فحص مخصص للموقع</span>
+              <span><i></i> أولويات حسب الأثر</span>
+              <span><i></i> تقرير قابل للتنفيذ</span>
+            </div>
+          </div>
+
+          <div class="a3-hero-graphic" aria-label="تصور بصري لتقرير تدقيق السيو">
+            <div class="a3-browser">
+              <div class="a3-browser__bar">
+                <div class="a3-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="a3-url">audit / website / organic-search</div>
+              </div>
+
+              <div class="a3-browser__body">
+                <div class="a3-score-row">
+                  <div class="a3-score">
+                    <small>حالة الموقع</small>
+                    <strong>تحليل متعدد المحاور</strong>
+                  </div>
+
+                  <div class="a3-bars">
+                    <div class="a3-bar-row"><span>الفهرسة</span><div class="a3-bar"><i style="width:86%"></i></div></div>
+                    <div class="a3-bar-row"><span>البنية</span><div class="a3-bar"><i style="width:68%"></i></div></div>
+                    <div class="a3-bar-row"><span>المحتوى</span><div class="a3-bar"><i style="width:74%"></i></div></div>
+                    <div class="a3-bar-row"><span>التحويل</span><div class="a3-bar"><i style="width:59%"></i></div></div>
+                  </div>
+                </div>
+
+                <div class="a3-map">
+                  <svg viewBox="0 0 520 190" role="img" aria-label="رسم يوضح العلاقة بين صفحات الموقع والزحف والفهرسة">
+                    <defs>
+                      <linearGradient id="a3g" x1="0" x2="1">
+                        <stop offset="0" stop-color="#b99146"/>
+                        <stop offset="1" stop-color="#f5d07a"/>
+                      </linearGradient>
+                    </defs>
+                    <g fill="none" stroke="rgba(245,208,122,.32)" stroke-width="2">
+                      <path d="M260 44 L126 104"/>
+                      <path d="M260 44 L260 104"/>
+                      <path d="M260 44 L394 104"/>
+                      <path d="M126 104 L78 155"/>
+                      <path d="M126 104 L174 155"/>
+                      <path d="M260 104 L236 155"/>
+                      <path d="M260 104 L304 155"/>
+                      <path d="M394 104 L360 155"/>
+                      <path d="M394 104 L442 155"/>
+                    </g>
+                    <g fill="#0d0f11" stroke="url(#a3g)" stroke-width="2">
+                      <rect x="210" y="20" width="100" height="48" rx="16"/>
+                      <rect x="80" y="82" width="92" height="44" rx="14"/>
+                      <rect x="214" y="82" width="92" height="44" rx="14"/>
+                      <rect x="348" y="82" width="92" height="44" rx="14"/>
+                      <rect x="44" y="140" width="68" height="32" rx="11"/>
+                      <rect x="140" y="140" width="68" height="32" rx="11"/>
+                      <rect x="202" y="140" width="68" height="32" rx="11"/>
+                      <rect x="290" y="140" width="68" height="32" rx="11"/>
+                      <rect x="326" y="140" width="68" height="32" rx="11"/>
+                      <rect x="408" y="140" width="68" height="32" rx="11"/>
+                    </g>
+                    <g fill="#f5d07a" font-family="Arial" font-size="12" text-anchor="middle">
+                      <text x="260" y="49">الموقع</text>
+                    </g>
+                    <g fill="rgba(255,255,255,.72)" font-family="Arial" font-size="10" text-anchor="middle">
+                      <text x="126" y="109">خدمات</text>
+                      <text x="260" y="109">محتوى</text>
+                      <text x="394" y="109">متجر</text>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="a3-floating">
+              <span>المخرج الأساسي</span>
+              <strong>خريطة أولويات تربط المشكلة بالإجراء والصفحة المسؤولة.</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEARCH INTENT / VALUE -->
+      <section class="a3-intent" aria-label="متى تحتاج تدقيق السيو">
+        <div class="container a3-intent__grid">
+          <div class="a3-intent__item a3-intent__item--main">
+            <strong>متى تحتاج تدقيق السيو؟</strong>
+            <span>عندما تحتاج قرارًا واضحًا قبل بدء التنفيذ.</span>
+          </div>
+          <div class="a3-intent__item">
+            <strong>ضعف الظهور</strong>
+            <span>صفحات موجودة لكن حضورها في البحث محدود.</span>
+          </div>
+          <div class="a3-intent__item">
+            <strong>تراجع الأداء</strong>
+            <span>انخفاض في الظهور أو النقرات أو الصفحات المهمة.</span>
+          </div>
+          <div class="a3-intent__item">
+            <strong>قبل إعادة التصميم</strong>
+            <span>حماية الصفحات والإشارات قبل تغيير الموقع.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section id="process" class="a3-section">
+        <div class="container">
+          <div class="a3-head">
+            <span class="a3-head__eyebrow">آلية العمل</span>
+            <div>
+              <h2>من بيانات الموقع إلى خطة تحسين قابلة للتنفيذ</h2>
+              <p>التدقيق عندنا مسار عمل واضح، وليس تقريرًا آليًا منفصلًا عن أهداف الموقع.</p>
+            </div>
+          </div>
+
+          <div class="a3-process">
+            <article class="a3-step">
+              <div class="a3-step__n">01</div>
+              <h3>فهم المشروع</h3>
+              <p>نحدد السوق والصفحات المهمة والهدف التجاري قبل قراءة أي أرقام.</p>
+              <small>الهدف • السوق • الأولويات</small>
+            </article>
+
+            <article class="a3-step">
+              <div class="a3-step__n">02</div>
+              <h3>جمع البيانات</h3>
+              <p>نراجع الموقع وبيانات Search Console وAnalytics عند توفرها.</p>
+              <small>زحف • فهرسة • استعلامات</small>
+            </article>
+
+            <article class="a3-step">
+              <div class="a3-step__n">03</div>
+              <h3>التحليل</h3>
+              <p>نفصل المشاكل التقنية عن فجوات الصفحات والكلمات والمحتوى.</p>
+              <small>تقني • محتوى • بنية</small>
+            </article>
+
+            <article class="a3-step">
+              <div class="a3-step__n">04</div>
+              <h3>ترتيب الأولويات</h3>
+              <p>نرتب النتائج حسب الأثر المتوقع، المخاطرة والجهد المطلوب.</p>
+              <small>حرج • مرتفع • نمو • تحسين</small>
+            </article>
+
+            <article class="a3-step">
+              <div class="a3-step__n">05</div>
+              <h3>خطة التنفيذ</h3>
+              <p>نحول النتائج إلى خطوات واضحة للمطور والمحتوى وفريق التسويق.</p>
+              <small>ماذا • أين • لماذا • من ينفذ</small>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCOPE -->
+      <section id="scope" class="a3-section a3-section--compact">
+        <div class="container">
+          <div class="a3-head">
+            <span class="a3-head__eyebrow">نطاق التدقيق</span>
+            <div>
+              <h2>ماذا نفحص داخل الموقع؟</h2>
+              <p>نختار عمق كل محور حسب نوع الموقع وحالته، بدل تطبيق قائمة ثابتة على جميع المشاريع.</p>
+            </div>
+          </div>
+
+          <div class="a3-matrix">
+            <div class="a3-matrix__visual" aria-label="خريطة محاور تدقيق السيو">
+              <svg viewBox="0 0 620 560" role="img" aria-label="رسم يوضح محاور تدقيق السيو حول الموقع">
+                <defs>
+                  <radialGradient id="core" cx="50%" cy="50%" r="55%">
+                    <stop offset="0" stop-color="rgba(245,208,122,.20)"/>
+                    <stop offset="1" stop-color="rgba(245,208,122,.03)"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="310" cy="280" r="112" fill="url(#core)" stroke="rgba(245,208,122,.35)" stroke-width="2"/>
+                <circle cx="310" cy="280" r="155" fill="none" stroke="rgba(255,255,255,.08)" stroke-dasharray="4 8"/>
+                <circle cx="310" cy="280" r="210" fill="none" stroke="rgba(255,255,255,.045)"/>
+
+                <g stroke="rgba(245,208,122,.24)" stroke-width="2">
+                  <line x1="310" y1="168" x2="310" y2="88"/>
+                  <line x1="422" y1="280" x2="508" y2="280"/>
+                  <line x1="310" y1="392" x2="310" y2="475"/>
+                  <line x1="198" y1="280" x2="112" y2="280"/>
+                </g>
+
+                <g fill="#0d0f11" stroke="rgba(245,208,122,.28)" stroke-width="2">
+                  <rect x="240" y="48" width="140" height="68" rx="20"/>
+                  <rect x="462" y="246" width="130" height="68" rx="20"/>
+                  <rect x="240" y="444" width="140" height="68" rx="20"/>
+                  <rect x="28" y="246" width="140" height="68" rx="20"/>
+                </g>
+
+                <g fill="#f5d07a" font-family="Arial" text-anchor="middle">
+                  <text x="310" y="274" font-size="18">الموقع</text>
+                  <text x="310" y="298" font-size="11">SEO AUDIT</text>
+                </g>
+
+                <g fill="rgba(255,255,255,.82)" font-family="Arial" text-anchor="middle">
+                  <text x="310" y="78" font-size="13">الفهرسة والتقنية</text>
+                  <text x="527" y="276" font-size="13">الكلمات والصفحات</text>
+                  <text x="310" y="475" font-size="13">المحتوى والروابط</text>
+                  <text x="98" y="276" font-size="13">الأداء والتحويل</text>
+                </g>
+              </svg>
+            </div>
+
+            <div class="a3-scope-list">
+              <article class="a3-scope-card">
+                <div class="a3-scope-card__icon">01</div>
+                <div>
+                  <h3>الزحف والفهرسة والبنية التقنية</h3>
+                  <p>نتحقق من قدرة محركات البحث على الوصول إلى الصفحات الصحيحة وفهم النسخة الأساسية منها.</p>
+                  <ul><li>robots.txt</li><li>XML Sitemap</li><li>canonical</li><li>redirects</li><li>status codes</li></ul>
+                </div>
+              </article>
+
+              <article class="a3-scope-card">
+                <div class="a3-scope-card__icon">02</div>
+                <div>
+                  <h3>الكلمات ونية البحث والصفحات</h3>
+                  <p>نراجع ما تستهدفه الصفحات فعليًا وهل يطابق طريقة بحث العميل والسوق الذي تريد الوصول إليه.</p>
+                  <ul><li>الكلمات</li><li>نية البحث</li><li>تداخل الصفحات</li><li>فجوات الطلب</li></ul>
+                </div>
+              </article>
+
+              <article class="a3-scope-card">
+                <div class="a3-scope-card__icon">03</div>
+                <div>
+                  <h3>المحتوى والروابط الداخلية</h3>
+                  <p>نقيم الصفحات المهمة، تغطية الموضوع، العلاقة بين الصفحات وكيف تنتقل قوة الموقع داخليًا.</p>
+                  <ul><li>صفحات الخدمات</li><li>الفئات</li><li>المحتوى</li><li>internal linking</li></ul>
+                </div>
+              </article>
+
+              <article class="a3-scope-card">
+                <div class="a3-scope-card__icon">04</div>
+                <div>
+                  <h3>الأداء وتجربة الصفحة والبيانات المنظمة</h3>
+                  <p>نراجع مؤشرات الأداء والموبايل والـrendering والبيانات المنظمة عندما تكون مؤثرة في نوع الموقع.</p>
+                  <ul><li>Core Web Vitals</li><li>mobile</li><li>JavaScript</li><li>Schema</li></ul>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DELIVERABLES -->
+      <section id="deliverables" class="a3-section">
+        <div class="container">
+          <div class="a3-head">
+            <span class="a3-head__eyebrow">مخرجات الخدمة</span>
+            <div>
+              <h2>ماذا تستلم بعد تدقيق السيو؟</h2>
+              <p>المخرج ليس ملفًا مليئًا بالملاحظات؛ بل وثيقة تساعدك وفريقك على معرفة ما يجب تنفيذه وبأي ترتيب.</p>
+            </div>
+          </div>
+
+          <div class="a3-deliver">
+            <div class="a3-report" aria-label="تصور بصري لتقرير تدقيق السيو">
+              <div class="a3-report__paper">
+                <div class="a3-report__top">
+                  <div>
+                    <strong>تقرير تدقيق السيو</strong><br>
+                    <span>VIVA MEDIA CREATIVE / SEARCH</span>
+                  </div>
+                  <span>PRIORITY ROADMAP</span>
+                </div>
+
+                <div class="a3-report__summary">
+                  <div class="a3-report__metric"><small>حرج</small><b>مشاكل وصول وفهرسة</b></div>
+                  <div class="a3-report__metric"><small>نمو</small><b>صفحات وفرص بحث</b></div>
+                  <div class="a3-report__metric"><small>تنفيذ</small><b>مهام واضحة للفريق</b></div>
+                </div>
+
+                <div class="a3-report__lines" aria-hidden="true">
+                  <div class="a3-report__line"></div>
+                  <div class="a3-report__line"></div>
+                  <div class="a3-report__line"></div>
+                  <div class="a3-report__line"></div>
+                </div>
+
+                <div class="a3-report__priority">
+                  <small>أولوية تنفيذ</small>
+                  <strong>إصلاح الإشارة الأساسية → تحسين الصفحة → قياس الأثر</strong>
+                </div>
+              </div>
+
+              <div class="a3-report__tag">تقرير مخصص للموقع — وليس قالبًا عامًا</div>
+            </div>
+
+            <div class="a3-deliver-list">
+              <article class="a3-deliver-card">
+                <span>01 / التشخيص</span>
+                <h3>ملخص تنفيذي</h3>
+                <p>أهم المشكلات والفرص التي يجب أن يعرفها صاحب القرار قبل الدخول في التفاصيل.</p>
+              </article>
+
+              <article class="a3-deliver-card">
+                <span>02 / الأولوية</span>
+                <h3>خريطة أولويات</h3>
+                <p>تصنيف التوصيات حسب الأثر المتوقع، المخاطرة والجهد المطلوب للتنفيذ.</p>
+              </article>
+
+              <article class="a3-deliver-card">
+                <span>03 / الصفحات</span>
+                <h3>قرارات واضحة للصفحات</h3>
+                <p>ما الذي يحتاج إصلاحًا، تحسينًا، دمجًا، إنشاءً جديدًا أو إعادة ربط داخلي.</p>
+              </article>
+
+              <article class="a3-deliver-card">
+                <span>04 / التنفيذ</span>
+                <h3>مهام قابلة للتطبيق</h3>
+                <p>توصيات يفهمها المطور وفريق المحتوى والتسويق ويمكن تحويلها إلى Tasks.</p>
+              </article>
+
+              <article class="a3-deliver-card">
+                <span>05 / البحث</span>
+                <h3>خريطة كلمات وفرص عند الحاجة</h3>
+                <p>نربط الاستعلامات التجارية والمعلوماتية بالصفحات التي يجب أن تخدمها.</p>
+              </article>
+
+              <article class="a3-deliver-card">
+                <span>06 / القياس</span>
+                <h3>Baseline لما بعد التنفيذ</h3>
+                <p>نحدد ما يجب متابعته في Search Console وAnalytics والـLeads أو المبيعات.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AFTER AUDIT -->
+      <section id="after" class="a3-section a3-section--compact">
+        <div class="container">
+          <div class="a3-head">
+            <span class="a3-head__eyebrow">ما بعد التدقيق</span>
+            <div>
+              <h2>كيف يتحول التقرير إلى تحسين فعلي؟</h2>
+              <p>يمكن لفريقك تنفيذ الخطة، أو نكمل معك ضمن خدمة تحسين محركات البحث بحسب ما يكشفه التدقيق.</p>
+            </div>
+          </div>
+
+          <div class="a3-after">
+            <div class="a3-after__flow">
+              <article class="a3-after__node">
+                <span>01</span>
+                <h3>التقرير والأولويات</h3>
+                <p>نعرف ماذا يحتاج الموقع وأين يبدأ التنفيذ.</p>
+              </article>
+
+              <div class="a3-after__arrow" aria-hidden="true">←</div>
+
+              <article class="a3-after__node">
+                <span>02</span>
+                <h3>التنفيذ</h3>
+                <p>تقنية، صفحات، محتوى، ربط داخلي أو إعادة هيكلة حسب الأولوية.</p>
+              </article>
+
+              <div class="a3-after__arrow" aria-hidden="true">←</div>
+
+              <article class="a3-after__node">
+                <span>03</span>
+                <h3>القياس والتحسين</h3>
+                <p>نراقب أثر التغييرات ونحدد المرحلة التالية من النمو.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FIT -->
+      <section class="a3-section a3-section--compact">
+        <div class="container">
+          <div class="a3-head">
+            <span class="a3-head__eyebrow">ملاءمة الخدمة</span>
+            <div>
+              <h2>لأي مواقع تكون خدمة تدقيق السيو مناسبة؟</h2>
+            </div>
+          </div>
+
+          <div class="a3-fit">
+            <article>
+              <span>الشركات والمواقع الخدمية</span>
+              <h3>صفحات خدمات لا تحقق الظهور المتوقع</h3>
+              <p>مناسب عندما تريد معرفة هل المشكلة في البنية، الكلمات، الصفحة أو التحويل.</p>
+            </article>
+
+            <article>
+              <span>المتاجر الإلكترونية</span>
+              <h3>فئات ومنتجات وفلاتر كثيرة</h3>
+              <p>نراجع الفهرسة والتكرار والفئات والمنتجات ومسارات الوصول إلى الصفحات التجارية.</p>
+            </article>
+
+            <article>
+              <span>إعادة التصميم والنقل</span>
+              <h3>قبل تغيير المنصة أو الروابط</h3>
+              <p>نحدد الصفحات والإشارات التي يجب الحفاظ عليها قبل إطلاق النسخة الجديدة.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="a3-section a3-section--compact">
+        <div class="container">
+          <div class="a3-head">
+            <span class="a3-head__eyebrow">أسئلة قبل الطلب</span>
+            <div><h2>أسئلة شائعة حول تدقيق السيو</h2></div>
+          </div>
+
+          <div class="a3-faq">
+            <details>
+              <summary>ما الفرق بين تدقيق السيو وخدمة تحسين محركات البحث المستمرة؟</summary>
+              <p>التدقيق يشخص حالة الموقع ويحدد الأولويات. الخدمة المستمرة تبدأ بعد ذلك بتنفيذ التحسينات وقياس النتائج وتطوير الموقع والمحتوى على المدى الطويل.</p>
+            </details>
+
+            <details>
+              <summary>هل يشمل التدقيق المواقع والمتاجر الإلكترونية؟</summary>
+              <p>نعم. نطاق الفحص يختلف حسب نوع المشروع؛ المتجر يحتاج تركيزًا أكبر على الفئات والمنتجات والفلاتر والتكرار، بينما المواقع الخدمية تحتاج تركيزًا أكبر على صفحات الخدمات ونية البحث والتحويل.</p>
+            </details>
+
+            <details>
+              <summary>هل أحتاج إلى Search Console وAnalytics؟</summary>
+              <p>ليسا شرطًا لبدء الفحص، لكن الوصول إلى البيانات الفعلية يساعد على ربط المشاكل التقنية بما يحدث في الاستعلامات والصفحات والزيارات والتحويلات.</p>
+            </details>
+
+            <details>
+              <summary>هل يشمل التدقيق البحث المدعوم بالذكاء الاصطناعي؟</summary>
+              <p>نراجع وضوح المحتوى والكيان، قابلية الزحف والفهرسة، الروابط الداخلية والبيانات المنظمة الصحيحة. لا نعتمد على Schema أو ملفات منفصلة باعتبارها طريقًا خاصًا للظهور في AI Overviews أو AI Mode.</p>
+            </details>
+
+            <details>
+              <summary>هل يضمن التدقيق الوصول إلى المركز الأول؟</summary>
+              <p>لا توجد جهة مهنية تستطيع ضمان مركز ثابت في Google. وظيفة التدقيق هي تقليل التخمين، تحديد الأولويات وتحسين أساس الموقع ثم قياس أثر التنفيذ.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="a3-section">
+        <div class="container a3-cta">
+          <div class="a3-cta__grid">
+            <div class="a3-cta__copy">
+              <span class="a3-label">ابدأ من حالة موقعك الحالية</span>
+              <h2>اطلب تدقيق السيو لموقعك أو متجرك</h2>
+              <p>أرسل رابط الموقع والسوق الذي تستهدفه، وسنحدد نطاق التدقيق المناسب بناءً على حجم الموقع والمشكلة التي تريد حلها.</p>
+
+              <div class="a3-cta__actions">
+                <a class="btn btn--gold" href="/contact/?service=seo-audit">ابدأ طلب التدقيق</a>
+                <a
+                  class="btn btn--ghost"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://wa.me/4915565678291?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D8%AF%D9%82%D9%8A%D9%82%20%D8%A7%D9%84%D8%B3%D9%8A%D9%88%20%D9%84%D9%85%D9%88%D9%82%D8%B9%D9%8A.%20%D9%87%D8%B0%D8%A7%20%D8%B1%D8%A7%D8%A8%D8%B7%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9%3A"
+                >
+                  أرسل الرابط على واتساب
+                </a>
+              </div>
+            </div>
+
+            <aside class="a3-cta__brief">
+              <span>المعلومات التي نحتاجها</span>
+              <ul>
+                <li>رابط الموقع أو المتجر</li>
+                <li>السوق أو الدول المستهدفة</li>
+                <li>الخدمة أو الفئة الأكثر أهمية</li>
+                <li>المشكلة الحالية أو الهدف من التدقيق</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <section class="footer-col">
+          <div class="footer-brand">
+            <img src="/assets/logo.jpeg" alt="Viva Media Creative" width="56" height="56">
+            <div>
+              <h3>Viva Media Creative</h3>
+              <div class="muted">SEO • Search • Growth</div>
+            </div>
+          </div>
+        </section>
+
+        <nav class="footer-col" aria-label="روابط رئيسية">
+          <h3>روابط</h3>
+          <ul>
+            <li><a href="/">الرئيسية</a></li>
+            <li><a href="/services/">الخدمات</a></li>
+            <li><a href="/contact/">تواصل</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="تحسين محركات البحث">
+          <h3>تحسين محركات البحث</h3>
+          <ul>
+            <li><a href="/services/seo-growth/">خدمات تحسين محركات البحث</a></li>
+            <li><a href="#process">آلية التدقيق</a></li>
+            <li><a href="#deliverables">مخرجات التدقيق</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="الخدمة">
+          <h3>تدقيق السيو</h3>
+          <ul>
+            <li><a href="#scope">ما الذي نفحصه</a></li>
+            <li><a href="#after">بعد التدقيق</a></li>
+            <li><a href="/contact/?service=seo-audit">اطلب الخدمة</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© 2026 Viva Media Creative. جميع الحقوق محفوظة.</p>
+        <div>تدقيق السيو وفحص المواقع لمحركات البحث</div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
