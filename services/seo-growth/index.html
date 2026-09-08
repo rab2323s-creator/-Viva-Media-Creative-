@@ -242,141 +242,705 @@
     }
   </style>
 
-  <!--
-    ملاحظة:
-    لم نضع meta keywords لأنها ليست إشارة ترتيب لدى Google.
-    ولم نضع FAQPage schema لأن Google أوقف FAQ rich results في 2026.
-  -->
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://vivamediacreative.com/#organization",
-        "name": "Viva Media Creative",
-        "url": "https://vivamediacreative.com/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://vivamediacreative.com/assets/logo.jpeg"
-        },
-        "email": "info@vivamediacreative.com"
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://vivamediacreative.com/#organization",
+      "name": "Viva Media Creative",
+      "url": "https://vivamediacreative.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://vivamediacreative.com/#logo",
+        "url": "https://vivamediacreative.com/assets/logo.jpeg",
+        "contentUrl": "https://vivamediacreative.com/assets/logo.jpeg",
+        "caption": "Viva Media Creative"
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://vivamediacreative.com/#website",
-        "url": "https://vivamediacreative.com/",
-        "name": "Viva Media Creative",
-        "publisher": {
-          "@id": "https://vivamediacreative.com/#organization"
-        },
-        "inLanguage": ["ar", "en"]
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://vivamediacreative.com/services/seo-growth/#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "الرئيسية",
-            "item": "https://vivamediacreative.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "الخدمات",
-            "item": "https://vivamediacreative.com/services/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "SEO & Growth",
-            "item": "https://vivamediacreative.com/services/seo-growth/"
-          }
+      "knowsAbout": [
+        "Search Engine Optimization (SEO)",
+        "Technical SEO",
+        "On-Page SEO",
+        "Keyword Research",
+        "SEO Content Strategy",
+        "E-commerce SEO",
+        "Local SEO",
+        "International SEO",
+        "Link Building",
+        "SEO Migration",
+        "Conversion Rate Optimization (CRO)",
+        "AI-assisted Search Optimization"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "url": "https://vivamediacreative.com/contact/",
+        "availableLanguage": [
+          "ar",
+          "en"
         ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الرئيسية",
+          "item": "https://vivamediacreative.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "الخدمات",
+          "item": "https://vivamediacreative.com/services/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SEO & Growth",
+          "item": "https://vivamediacreative.com/services/seo-growth/"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#webpage",
+      "url": "https://vivamediacreative.com/services/seo-growth/",
+      "name": "خدمات SEO وتحسين محركات البحث للمواقع والمتاجر | Viva Media Creative",
+      "headline": "خدمات SEO وتحسين محركات البحث",
+      "description": "خدمات SEO احترافية للشركات والمواقع والمتاجر تشمل التدقيق التقني، الكلمات المفتاحية، تحسين الصفحات، المحتوى، سيو المتاجر، السيو المحلي، SEO متعدد اللغات، تحسين التحويل والبحث المدعوم بالذكاء الاصطناعي.",
+      "abstract": "صفحة خدمة شاملة تشرح منظومة SEO لدى Viva Media Creative من التشخيص التقني وبحث الكلمات ونية البحث إلى هندسة الصفحات والمحتوى والسلطة والقياس والتحويل، مع حلول للشركات والمتاجر والمواقع الخدمية والمؤثرين والأسواق العربية.",
+      "inLanguage": "ar",
+      "isPartOf": "https://vivamediacreative.com/",
+      "publisher": {
+        "@id": "https://vivamediacreative.com/#organization"
       },
-      {
-        "@type": "WebPage",
-        "@id": "https://vivamediacreative.com/services/seo-growth/#webpage",
-        "url": "https://vivamediacreative.com/services/seo-growth/",
-        "name": "خدمات SEO وتحسين محركات البحث للمواقع والمتاجر",
-        "description": "خدمات SEO احترافية للشركات والمواقع والمتاجر تشمل التدقيق التقني، الكلمات المفتاحية، المحتوى، سيو المتاجر، السيو المحلي وتحسين التحويل.",
-        "isPartOf": {
-          "@id": "https://vivamediacreative.com/#website"
-        },
-        "breadcrumb": {
-          "@id": "https://vivamediacreative.com/services/seo-growth/#breadcrumb"
-        },
-        "mainEntity": {
-          "@id": "https://vivamediacreative.com/services/seo-growth/#service"
-        },
-        "publisher": {
-          "@id": "https://vivamediacreative.com/#organization"
-        },
-        "inLanguage": "ar"
+      "creator": {
+        "@id": "https://vivamediacreative.com/#organization"
       },
-      {
-        "@type": "Service",
-        "@id": "https://vivamediacreative.com/services/seo-growth/#service",
-        "name": "خدمات SEO وتحسين محركات البحث",
-        "alternateName": [
-          "خدمات سيو",
-          "SEO Services",
-          "SEO & Growth"
-        ],
-        "serviceType": "Search Engine Optimization (SEO)",
-        "url": "https://vivamediacreative.com/services/seo-growth/",
-        "description": "خدمة تحسين محركات البحث للمواقع والمتاجر والشركات والعلامات الشخصية، تشمل SEO Audit، Technical SEO، On-Page SEO، Keyword Research، Content SEO، E-commerce SEO، Local SEO، International SEO، Link Building، SEO Migration وتحسين التحويل.",
-        "provider": {
-          "@id": "https://vivamediacreative.com/#organization"
+      "breadcrumb": {
+        "@id": "https://vivamediacreative.com/services/seo-growth/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://vivamediacreative.com/services/seo-growth/#service"
+      },
+      "keywords": [
+        "تحسين محركات البحث",
+        "SEO",
+        "خدمات سيو",
+        "Technical SEO",
+        "On-Page SEO",
+        "بحث الكلمات المفتاحية",
+        "Content SEO",
+        "SEO للمتاجر الإلكترونية",
+        "Local SEO",
+        "International SEO",
+        "SEO Migration",
+        "Conversion Rate Optimization",
+        "AI Search SEO"
+      ],
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Search Engine Optimization",
+          "alternateName": "تحسين محركات البحث SEO"
         },
-        "areaServed": [
-          {"@type":"Country","name":"Saudi Arabia"},
-          {"@type":"Country","name":"United Arab Emirates"},
-          {"@type":"Country","name":"Kuwait"},
-          {"@type":"Country","name":"Qatar"},
-          {"@type":"Country","name":"Bahrain"},
-          {"@type":"Country","name":"Oman"},
-          {"@type":"Country","name":"Egypt"}
-        ],
-        "audience": [
-          {"@type":"BusinessAudience","audienceType":"Companies and brands"},
-          {"@type":"BusinessAudience","audienceType":"E-commerce stores"},
-          {"@type":"Audience","audienceType":"Website owners and service businesses"},
-          {"@type":"Audience","audienceType":"Creators, influencers and personal brands"}
-        ],
-        "availableChannel": {
+        {
+          "@type": "Thing",
+          "name": "Search Intent",
+          "alternateName": "نية البحث"
+        },
+        {
+          "@type": "Thing",
+          "name": "Organic Search",
+          "alternateName": "البحث العضوي"
+        },
+        {
+          "@type": "Thing",
+          "name": "Conversion Rate Optimization",
+          "alternateName": "تحسين معدل التحويل CRO"
+        },
+        {
+          "@type": "Thing",
+          "name": "AI-assisted Search",
+          "alternateName": "البحث المدعوم بالذكاء الاصطناعي"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Thing",
+          "name": "Google Search Console"
+        },
+        {
+          "@type": "Thing",
+          "name": "Google Analytics"
+        },
+        {
+          "@type": "Thing",
+          "name": "Shopify"
+        },
+        {
+          "@type": "Thing",
+          "name": "WooCommerce"
+        },
+        {
+          "@type": "Thing",
+          "name": "WordPress"
+        },
+        {
+          "@type": "Thing",
+          "name": "Google AI Overviews"
+        },
+        {
+          "@type": "Thing",
+          "name": "Google AI Mode"
+        }
+      ],
+      "significantLink": [
+        "https://vivamediacreative.com/contact/?service=seo-growth",
+        "https://vivamediacreative.com/services/copywriting/",
+        "https://vivamediacreative.com/services/personal-brand-management/"
+      ],
+      "hasPart": [
+        {
+          "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q1"
+        },
+        {
+          "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q2"
+        },
+        {
+          "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q3"
+        },
+        {
+          "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q4"
+        },
+        {
+          "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q5"
+        },
+        {
+          "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q6"
+        },
+        {
+          "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q7"
+        },
+        {
+          "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q8"
+        },
+        {
+          "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q9"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#service",
+      "name": "خدمات SEO وتحسين محركات البحث",
+      "alternateName": [
+        "خدمات سيو",
+        "SEO Services",
+        "SEO & Growth",
+        "تحسين ظهور المواقع في Google"
+      ],
+      "serviceType": "Search Engine Optimization (SEO)",
+      "description": "منظومة SEO للمواقع والمتاجر والشركات والعلامات الشخصية تجمع بين SEO Audit وTechnical SEO وOn-Page SEO وبحث الكلمات والمحتوى وسيو المتاجر والسيو المحلي والدولي وبناء السلطة وSEO Migration وCRO وتحسين الظهور في البحث المدعوم بالذكاء الاصطناعي.",
+      "slogan": "نحوّل ظهور موقعك في Google إلى زيارات مؤهلة، عملاء ومبيعات",
+      "url": "https://vivamediacreative.com/services/seo-growth/",
+      "mainEntityOfPage": {
+        "@id": "https://vivamediacreative.com/services/seo-growth/#webpage"
+      },
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Saudi Arabia",
+          "alternateName": "السعودية"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates",
+          "alternateName": "الإمارات العربية المتحدة"
+        },
+        {
+          "@type": "Country",
+          "name": "Kuwait",
+          "alternateName": "الكويت"
+        },
+        {
+          "@type": "Country",
+          "name": "Qatar",
+          "alternateName": "قطر"
+        },
+        {
+          "@type": "Country",
+          "name": "Bahrain",
+          "alternateName": "البحرين"
+        },
+        {
+          "@type": "Country",
+          "name": "Oman",
+          "alternateName": "سلطنة عُمان"
+        },
+        {
+          "@type": "Country",
+          "name": "Egypt",
+          "alternateName": "مصر"
+        }
+      ],
+      "audience": [
+        {
+          "@id": "https://vivamediacreative.com/services/seo-growth/#audience-companies"
+        },
+        {
+          "@id": "https://vivamediacreative.com/services/seo-growth/#audience-ecommerce"
+        },
+        {
+          "@id": "https://vivamediacreative.com/services/seo-growth/#audience-service-businesses"
+        },
+        {
+          "@id": "https://vivamediacreative.com/services/seo-growth/#audience-creators"
+        },
+        {
+          "@id": "https://vivamediacreative.com/services/seo-growth/#audience-local"
+        },
+        {
+          "@id": "https://vivamediacreative.com/services/seo-growth/#audience-multimarket"
+        }
+      ],
+      "availableChannel": [
+        {
           "@type": "ServiceChannel",
-          "serviceUrl": "https://vivamediacreative.com/contact/",
-          "serviceLocation": {
-            "@type": "Place",
-            "name": "Online Service"
-          }
+          "name": "طلب تحليل SEO عبر الموقع",
+          "serviceUrl": "https://vivamediacreative.com/contact/?service=seo-growth",
+          "availableLanguage": [
+            "ar",
+            "en"
+          ]
         },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "SEO Services",
-          "itemListElement": [
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO Audit"}},
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Technical SEO"}},
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"On-Page SEO"}},
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Keyword Research"}},
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Content SEO"}},
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"E-commerce SEO"}},
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Local SEO"}},
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"International SEO"}},
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Link Building and Digital PR"}},
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO Migration"}},
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO and CRO"}},
-            {"@type":"Offer","itemOffered":{"@type":"Service","name":"AI Search SEO"}}
+        {
+          "@type": "ServiceChannel",
+          "name": "التواصل عبر WhatsApp",
+          "serviceUrl": "https://wa.me/4915565678291",
+          "availableLanguage": [
+            "ar",
+            "en"
           ]
         }
+      ],
+      "hasOfferCatalog": {
+        "@id": "https://vivamediacreative.com/services/seo-growth/#offer-catalog"
+      },
+      "isRelatedTo": [
+        {
+          "@type": "Service",
+          "name": "Copywriting",
+          "url": "https://vivamediacreative.com/services/copywriting/"
+        },
+        {
+          "@type": "Service",
+          "name": "إدارة العلامة الشخصية",
+          "url": "https://vivamediacreative.com/services/personal-brand-management/"
+        }
+      ]
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#offer-catalog",
+      "name": "خدمات SEO & Growth",
+      "description": "مجموعة خدمات SEO المتخصصة التي تغطي الجانب التقني والمحتوى والكلمات والمتاجر والأسواق والتحويل والبحث المدعوم بالذكاء الاصطناعي.",
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "numberOfItems": 12,
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/services/seo-growth/#service-seo-audit"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/services/seo-growth/#service-technical-seo"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/services/seo-growth/#service-on-page-seo"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/services/seo-growth/#service-keyword-research"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/services/seo-growth/#service-content-seo"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/services/seo-growth/#service-ecommerce-seo"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/services/seo-growth/#service-local-seo"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/services/seo-growth/#service-international-seo"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/services/seo-growth/#service-link-building"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/services/seo-growth/#service-seo-migration"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/services/seo-growth/#service-seo-cro"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@id": "https://vivamediacreative.com/services/seo-growth/#service-ai-search"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BusinessAudience",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#audience-companies",
+      "audienceType": "الشركات والعلامات التجارية التي تريد زيادة الظهور العضوي وجذب العملاء من محركات البحث"
+    },
+    {
+      "@type": "BusinessAudience",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#audience-ecommerce",
+      "audienceType": "المتاجر الإلكترونية التي تريد زيادة الزيارات المؤهلة والمبيعات العضوية"
+    },
+    {
+      "@type": "BusinessAudience",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#audience-service-businesses",
+      "audienceType": "المواقع والشركات الخدمية التي تعتمد على Leads والاستفسارات والحجوزات"
+    },
+    {
+      "@type": "Audience",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#audience-creators",
+      "audienceType": "المؤثرون وصناع المحتوى والخبراء والعلامات الشخصية الذين يريدون حضورًا أقوى في Google"
+    },
+    {
+      "@type": "BusinessAudience",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#audience-local",
+      "audienceType": "الأنشطة المحلية والفروع التي تستهدف عمليات بحث مرتبطة بالمدينة أو المنطقة"
+    },
+    {
+      "@type": "BusinessAudience",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#audience-multimarket",
+      "audienceType": "الشركات والمواقع متعددة اللغات والأسواق التي تستهدف السعودية والإمارات ومصر ودول الخليج"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#service-seo-audit",
+      "name": "تدقيق وتحليل SEO شامل للموقع",
+      "alternateName": [
+        "SEO Audit",
+        "تدقيق سيو"
+      ],
+      "serviceType": "SEO Audit",
+      "description": "فحص تقني ومحتوائي وتجاري يكشف مشاكل الفهرسة والصفحات والكلمات والروابط الداخلية والمنافسين مع ترتيب الأولويات.",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#service-technical-seo",
+      "name": "Technical SEO والتحسين التقني",
+      "alternateName": [
+        "Technical SEO",
+        "السيو التقني"
+      ],
+      "serviceType": "Technical SEO",
+      "description": "تحسين Crawling وIndexing وCanonical وXML Sitemap والسرعة وCore Web Vitals وJavaScript SEO والبيانات المنظمة.",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#service-on-page-seo",
+      "name": "تحسين صفحات الموقع لمحركات البحث",
+      "alternateName": [
+        "On-Page SEO",
+        "On Page SEO"
+      ],
+      "serviceType": "On-Page SEO",
+      "description": "تحسين Titles وH1-H6 والمحتوى والكيانات والصور والروابط الداخلية وتطابق الصفحة مع Search Intent.",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#service-keyword-research",
+      "name": "بحث الكلمات المفتاحية وتحليل نية البحث",
+      "alternateName": [
+        "Keyword Research",
+        "Search Intent Research"
+      ],
+      "serviceType": "Keyword Research and Search Intent Analysis",
+      "description": "بناء خريطة كلمات ونوايا تربط الاستعلامات التجارية والمعلوماتية والـLong-tail بالصفحات المناسبة.",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#service-content-seo",
+      "name": "استراتيجية وكتابة محتوى SEO عربي",
+      "alternateName": [
+        "Content SEO",
+        "SEO Content Strategy"
+      ],
+      "serviceType": "SEO Content Strategy",
+      "description": "بناء صفحات خدمات وفئات وأدلة ومحتوى موضوعي يخدم رحلة العميل ويقوي التغطية الموضوعية للموقع.",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#service-ecommerce-seo",
+      "name": "SEO للمتاجر الإلكترونية وزيادة المبيعات العضوية",
+      "alternateName": [
+        "E-commerce SEO",
+        "سيو المتاجر الإلكترونية"
+      ],
+      "serviceType": "E-commerce SEO",
+      "description": "تحسين صفحات الفئات والمنتجات والفلاتر والبيانات المنظمة والربط الداخلي للوصول إلى الباحثين الأقرب للشراء.",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "audience": {
+        "@id": "https://vivamediacreative.com/services/seo-growth/#audience-ecommerce"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#service-local-seo",
+      "name": "Local SEO وتحسين الظهور المحلي",
+      "alternateName": [
+        "Local SEO",
+        "السيو المحلي"
+      ],
+      "serviceType": "Local SEO",
+      "description": "تحسين ظهور الأنشطة التي تعتمد على مدينة أو منطقة أو فرع من خلال صفحات محلية حقيقية وملاءمة نية البحث.",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "audience": {
+        "@id": "https://vivamediacreative.com/services/seo-growth/#audience-local"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#service-international-seo",
+      "name": "SEO للمواقع متعددة اللغات والأسواق",
+      "alternateName": [
+        "International SEO",
+        "Multilingual SEO"
+      ],
+      "serviceType": "International and Multilingual SEO",
+      "description": "هندسة Arabic/English SEO وhreflang وcanonical وLocalization وبنية URLs لاستهداف أسواق ولغات متعددة.",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "audience": {
+        "@id": "https://vivamediacreative.com/services/seo-growth/#audience-multimarket"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#service-link-building",
+      "name": "بناء الروابط والسلطة الرقمية",
+      "alternateName": [
+        "Link Building",
+        "Digital PR",
+        "SEO Authority"
+      ],
+      "serviceType": "Link Building and Digital PR",
+      "description": "استراتيجية روابط وإشارات خارجية مرتبطة بالمجال مع تجنب الحزم العشوائية والممارسات عالية المخاطر.",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#service-seo-migration",
+      "name": "نقل وإعادة تصميم الموقع بدون خسارة SEO",
+      "alternateName": [
+        "SEO Migration",
+        "Website Migration SEO"
+      ],
+      "serviceType": "SEO Migration",
+      "description": "Mapping للروابط وRedirects وCanonicals ومراجعة ما قبل وبعد الإطلاق للحفاظ على الإشارات عند تغيير المنصة أو البنية.",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#service-seo-cro",
+      "name": "SEO وتحسين معدل التحويل CRO",
+      "alternateName": [
+        "SEO + CRO",
+        "Conversion Rate Optimization"
+      ],
+      "serviceType": "SEO and Conversion Rate Optimization",
+      "description": "تحسين العرض والرسائل والثقة وCTA والنماذج ومسار القرار لتحويل الزيارات العضوية إلى Leads ومبيعات.",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#service-ai-search",
+      "name": "SEO للبحث المدعوم بالذكاء الاصطناعي",
+      "alternateName": [
+        "AI Search SEO",
+        "AI Overviews SEO",
+        "AI Mode SEO"
+      ],
+      "serviceType": "SEO for AI-assisted Search",
+      "description": "تحسين وضوح الكيان وجودة المحتوى والبنية التقنية بما يخدم البحث التقليدي وAI Overviews وAI Mode دون الاعتماد على حيل منفصلة.",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q1",
+      "name": "ما هي خدمة SEO؟",
+      "inLanguage": "ar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "خدمة SEO هي عملية تحسين الموقع تقنيًا ومحتوائيًا وهيكليًا حتى يتمكن محرك البحث من فهمه وفهرسته بشكل أفضل، وحتى تظهر الصفحات المناسبة أمام الأشخاص الذين يبحثون عن الخدمات أو المنتجات أو المعلومات التي يقدمها الموقع.",
+        "inLanguage": "ar"
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q2",
+      "name": "كم يحتاج SEO من الوقت حتى تظهر النتائج؟",
+      "inLanguage": "ar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "لا توجد مدة موحدة لكل المواقع. يعتمد ذلك على حالة الموقع، قوة المنافسة، عمر النطاق، حجم المشاكل التقنية والمحتوى والموارد المتاحة. بعض التحسينات قد تظهر إشاراتها أسرع، بينما بناء حضور تنافسي في أسواق قوية يحتاج عملًا تراكميًا.",
+        "inLanguage": "ar"
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q3",
+      "name": "هل يمكن ضمان المركز الأول في Google؟",
+      "inLanguage": "ar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "لا. لا يمكن تقديم ضمان مهني صادق لمركز ثابت في Google لأن نتائج البحث تتأثر بالمنافسة والخوارزميات والسوق والموقع والجهاز وعوامل كثيرة. ما يمكن ضمانه هو منهجية واضحة، تنفيذ قابل للتدقيق، قياس مستمر وقرارات مبنية على البيانات.",
+        "inLanguage": "ar"
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q4",
+      "name": "هل SEO مناسب للمتاجر الإلكترونية؟",
+      "inLanguage": "ar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم. سيو المتاجر يركز على صفحات الفئات والمنتجات ونية الشراء، إضافة إلى الفهرسة والفلاتر والـCanonical والـSchema والربط الداخلي والأداء التقني. الهدف هو الوصول إلى الباحث عن المنتج أو الفئة قبل أن يذهب إلى منافس آخر.",
+        "inLanguage": "ar"
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q5",
+      "name": "هل تكتبون محتوى SEO بالعربية؟",
+      "inLanguage": "ar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم عند دخوله ضمن نطاق المشروع. نبني المحتوى حول Search Intent وخريطة صفحات واضحة، وليس حول تكرار الكلمة المفتاحية. المحتوى قد يشمل صفحات خدمات، فئات، منتجات، أدلة، مقالات وصفحات مقارنة بحسب رحلة العميل.",
+        "inLanguage": "ar"
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q6",
+      "name": "هل تعملون على SEO للمواقع العربية والإنجليزية؟",
+      "inLanguage": "ar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم. في المواقع متعددة اللغات نراجع بنية URLs وhreflang وcanonical ونفصل استراتيجية الكلمات والمحتوى حسب اللغة والسوق، لأن ترجمة الصفحة وحدها لا تعني أن نية البحث متطابقة.",
+        "inLanguage": "ar"
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q7",
+      "name": "هل يمكن تحسين ظهور اسم مؤثر أو خبير أو علامة شخصية في Google؟",
+      "inLanguage": "ar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "يمكن بناء حضور بحثي أقوى حول الاسم والخبرة والمحتوى والخدمات عبر موقع منظم وصفحات واضحة وإشارات رقمية متسقة. هذه العملية مفيدة للمؤثرين والخبراء وصناع المحتوى الذين يريدون أن يكون موقعهم أصلًا مركزيًا ضمن حضورهم الرقمي.",
+        "inLanguage": "ar"
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q8",
+      "name": "هل SEO للذكاء الاصطناعي مختلف تمامًا عن SEO التقليدي؟",
+      "inLanguage": "ar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "لا نعامله كقناة منفصلة تمامًا. الأساس ما يزال موقعًا تقنيًا قابلًا للوصول، محتوى مفيدًا وأصليًا، بنية واضحة وإشارات ثقة. نضيف إلى ذلك وضوح الكيان والخبرة والمصادر وجودة المعلومات بما يساعد على فهم المحتوى في تجارب البحث الحديثة.",
+        "inLanguage": "ar"
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://vivamediacreative.com/services/seo-growth/#faq-q9",
+      "name": "كيف أبدأ؟",
+      "inLanguage": "ar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "أرسل رابط موقعك والهدف الأساسي: مبيعات، Leads، حجوزات، بناء ظهور أو التوسع في سوق جديد. نبدأ بتحديد المشكلة والفرص ثم نحدد ما إذا كانت الأولوية Technical SEO أو الصفحات أو المحتوى أو التحويل.",
+        "inLanguage": "ar"
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="seo-hub">
