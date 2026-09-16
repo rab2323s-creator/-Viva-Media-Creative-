@@ -1808,6 +1808,7 @@ letter-spacing:.2px;
 
 .homeWork{
   position:relative;
+  overflow:hidden;
 }
 
 .homeWork::before{
@@ -2533,7 +2534,13 @@ letter-spacing:.2px;
 
 }
 
+@media (max-width:640px){
 
+  .homeWork::before{
+    inset:3% 0 0;
+  }
+
+}
 @media (max-width:640px){
 
   .homeWork__stage{
