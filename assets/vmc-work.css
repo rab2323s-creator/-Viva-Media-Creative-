@@ -94,7 +94,9 @@ body.workPage{background:#06070a}
 .workIntro__copy > p{max-width:790px; margin:34px 0 0; line-height:2.1; color:var(--work-soft); font-size:16px}
 
 /* Cases */
-.workCases{padding:0 0 150px}
+.workCases{
+  padding:100px 0 150px;
+}
 .workCases__head{display:grid; grid-template-columns:minmax(0,1fr) minmax(280px,.65fr); gap:40px; align-items:end; padding-bottom:30px; border-bottom:1px solid var(--work-border)}
 .workCases__head h2{margin:0; font-size:clamp(42px,5vw,74px); line-height:1}
 .workCases__desc{margin:0; color:var(--work-soft); line-height:1.95; font-size:13.5px}
