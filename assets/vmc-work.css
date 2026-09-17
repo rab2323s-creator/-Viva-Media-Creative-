@@ -43,7 +43,14 @@ body.workPage{background:#06070a}
 .workHero__inner{position:relative; z-index:2; display:grid; grid-template-columns:minmax(0,1.35fr) minmax(290px,.65fr); gap:clamp(44px,8vw,110px); align-items:end}
 .workEyebrow{margin:0 0 20px; font-family:"Space Grotesk","Noto Kufi Arabic",sans-serif; font-size:11px; font-weight:700; letter-spacing:.15em; color:rgba(238,241,246,.48)}
 .workEyebrow span{color:rgba(245,208,122,.86)}
-.workHero h1{max-width:980px; margin:0; font-size:clamp(48px,7.4vw,112px); line-height:1.08; letter-spacing:-.055em; font-weight:700}
+.workHero h1{
+  max-width:900px;
+  margin:0;
+  font-size:clamp(34px,4.4vw,64px);
+  line-height:1.35;
+  letter-spacing:-.025em;
+  font-weight:700;
+}
 .workGradientText{background:linear-gradient(105deg,var(--work-gold) 0%,#fff0c7 40%,#d3baff 72%,#8ef2d6 110%); -webkit-background-clip:text; background-clip:text; color:transparent}
 .workHero__lead{max-width:760px; margin:30px 0 0; font-size:clamp(16px,1.35vw,20px); line-height:2; color:var(--work-soft)}
 .workHero__actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:30px}
