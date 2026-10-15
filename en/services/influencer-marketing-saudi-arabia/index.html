@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="/assets/articles/influencer-marketing-saudi/influencer-marketing-saudi-hero.webp" as="image" fetchpriority="high">
+  <!-- Hero uses the original lightweight inline SVG and site logo from Viva homepage. -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Shared Viva site design system: navigation, brand, gold accents and premium footer -->
   <link rel="stylesheet" href="/assets/vmc-home.css">
@@ -128,79 +128,160 @@
   </header>
 
   <main id="main">
-    <section class="sa2-hero" aria-labelledby="page-title">
-      <div class="sa2-hero__ambience" aria-hidden="true">
-        <span class="sa2-glow sa2-glow--gold"></span>
-        <span class="sa2-glow sa2-glow--violet"></span>
-        <span class="sa2-glow sa2-glow--mint"></span>
-        <span class="sa2-hero__gridlines"></span>
+    <section class="hero sa-viva-hero" aria-labelledby="page-title">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="halo h1"></div>
+        <div class="halo h2"></div>
+        <div class="halo h3"></div>
+        <div class="gridlines"></div>
       </div>
+      <div class="hero__inner">
+        <div class="heroLayout">
+          <!-- The original animated VMC orb/creative-engine from the Viva homepage, not a separate visual identity. -->
+          <div class="heroScene" aria-hidden="true">
+  
+          <svg class="engine" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+            <defs>
+              <radialGradient id="orbGlow" cx="35%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="rgba(245,208,122,.55)"/>
+                <stop offset="40%" stop-color="rgba(145,90,255,.25)"/>
+                <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+              </radialGradient>
 
-      <div class="sa-shell sa2-hero__wrap">
-        <nav class="sa2-breadcrumb" aria-label="Breadcrumb">
-          <a href="/en/">Home</a><span aria-hidden="true">/</span>
-          <a href="/en/services/influencer-marketing/">Influencer Marketing</a><span aria-hidden="true">/</span>
-          <span aria-current="page">Saudi Arabia</span>
-        </nav>
+              <radialGradient id="orbBody" cx="35%" cy="30%" r="75%">
+                <stop offset="0%" stop-color="rgba(255,255,255,.18)"/>
+                <stop offset="25%" stop-color="rgba(245,208,122,.18)"/>
+                <stop offset="55%" stop-color="rgba(145,90,255,.12)"/>
+                <stop offset="100%" stop-color="rgba(6,7,10,.0)"/>
+              </radialGradient>
 
-        <div class="sa2-hero__main">
-          <div class="sa2-hero__copy">
-            <p class="sa2-hero__kicker"><span class="sa2-kicker-mark" aria-hidden="true"></span><span>VIVA MEDIA CREATIVE</span><i aria-hidden="true"></i><span>SAUDI ARABIA</span></p>
-            <h1 id="page-title"><span class="sa2-h1-white">Influencer</span><span class="sa2-h1-white">Marketing Agency</span><span class="sa2-h1-gold">in Saudi Arabia<span class="sa2-h1-dot">.</span></span></h1>
+              <linearGradient id="scan" x1="0" x2="1">
+                <stop offset="0%" stop-color="rgba(245,208,122,.0)"/>
+                <stop offset="45%" stop-color="rgba(245,208,122,.18)"/>
+                <stop offset="55%" stop-color="rgba(145,90,255,.12)"/>
+                <stop offset="100%" stop-color="rgba(0,255,200,.0)"/>
+              </linearGradient>
 
-            <p class="sa2-hero__lead">Your brand deserves more than reach.<br><strong>It deserves the right influence.</strong></p>
-            <p class="sa2-hero__description">We help ambitious brands <strong>find and hire Saudi influencers</strong>, shape the creative, manage partnerships and track meaningful outcomes across Riyadh, Jeddah and KSA.</p>
+              <path id="ring1Path" d="M 400 260 m -170 0 a 170 170 0 1 1 340 0 a 170 170 0 1 1 -340 0"/>
+              <path id="ring3Path" d="M 400 260 m -232 0 a 232 232 0 1 1 464 0 a 232 232 0 1 1 -464 0"/>
+              <path id="ringPath" d="M 400 260 m -180 0 a 180 180 0 1 1 360 0 a 180 180 0 1 1 -360 0"/>
+            </defs>
 
-            <div class="sa2-hero__actions">
-              <a class="sa-btn sa-btn--gold sa2-hero__primary" href="#proposal"><span>Request a Saudi Influencer Shortlist</span><span class="sa2-arrow" aria-hidden="true">↗</span></a>
-              <a class="sa2-hero__secondary" href="#results"><span class="sa2-play" aria-hidden="true">↗</span><span>Explore our Saudi work</span></a>
-            </div>
+            <!-- soft field (no square) -->
+            <circle cx="400" cy="260" r="300" fill="url(#orbGlow)" opacity=".40"/>
 
-            <div class="sa2-hero__assurance" aria-label="Campaign services">
-              <span><i aria-hidden="true">✓</i> Targeted creator discovery</span>
-              <span><i aria-hidden="true">✓</i> End-to-end management</span>
-              <span><i aria-hidden="true">✓</i> Performance visibility</span>
-            </div>
-          </div>
+            
+            <!-- ORBITS (3 levels) -->
+            <g class="orbits">
+              <!-- Orbit 1 (core / most important) -->
+              <g class="orbit orbit--1">
+                <circle cx="400" cy="260" r="178" fill="none" stroke="rgba(245,208,122,.18)" stroke-width="1"/>
+                <text class="orbitText orbitText--1">
+                  <textPath href="#ring1Path" startOffset="50%" text-anchor="middle">
+                    INFLUENCE • VALUE • DECISION • AUTHORITY •
+                  </textPath>
+                </text>
+              </g>
 
-          <div class="sa2-hero__art" aria-label="Viva Media Creative's Saudi influencer campaign services visual">
-            <div class="sa2-art__topline"><span>VMC / CREATOR NETWORK</span><span>SA — 01 / 2026</span></div>
-            <div class="sa2-art__halo" aria-hidden="true"></div>
-            <div class="sa2-art__large">
-              <img src="/assets/articles/influencer-marketing-saudi/influencer-marketing-saudi-hero.webp" alt="Saudi influencer marketing campaign creative and brand collaboration" width="1100" height="740" fetchpriority="high" decoding="async">
-              <div class="sa2-art__large-caption"><span>THE SAUDI MARKET</span><strong>Made for your audience.</strong></div>
-            </div>
-            <div class="sa2-art__small sa2-art__small--one">
-              <img src="/assets/images/services/influencer-marketing/beauty-fashion-influencer-marketing-dubai-saudi-egypt.jpg" alt="Beauty and fashion creator campaign visual" loading="lazy" decoding="async" width="680" height="570">
-              <span>CREATORS / 01</span>
-            </div>
-            <div class="sa2-art__small sa2-art__small--two">
-              <img src="/assets/images/services/influencer-marketing/ecommerce-influencer-product-promotion.jpg" alt="Product promotion and influencer content visual" loading="lazy" decoding="async" width="680" height="570">
-              <span>COMMERCE / 02</span>
-            </div>
-            <div class="sa2-art__seal" aria-hidden="true">
-              <span>VIVA</span><strong>VMC</strong><span>CREATIVE</span>
-            </div>
-            <div class="sa2-art__floating" aria-hidden="true"><span class="sa2-art__floating-icon">↗</span><span>CREATOR FIT<br><strong>BEFORE FOLLOWERS.</strong></span></div>
-            <div class="sa2-art__markets"><span>RIYADH</span><b></b><span>JEDDAH</span><b></b><span>ACROSS KSA</span></div>
+              <!-- Orbit 2 (English labels, upright + orbiting) -->
+              <g class="orbit orbit--2">
+                <circle cx="400" cy="260" r="210" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+                <g class="orbitLabels" aria-hidden="true">
+                  <g class="lbl" style="--a:-60deg;--ai:60deg"><text x="400" y="260">IMPACT</text></g>
+                  <g class="lbl" style="--a:-20deg;--ai:20deg"><text x="400" y="260">TRUST</text></g>
+                  <g class="lbl" style="--a:20deg;--ai:-20deg"><text x="400" y="260">BRAND</text></g>
+                  <g class="lbl" style="--a:60deg;--ai:-60deg"><text x="400" y="260">STORY</text></g>
+                  <g class="lbl" style="--a:110deg;--ai:-110deg"><text x="400" y="260">STRATEGY</text></g>
+                  <g class="lbl" style="--a:160deg;--ai:-160deg"><text x="400" y="260">REVENUE</text></g>
+                </g>
+              </g>
+
+              <!-- Orbit 3 (outer / outcomes) -->
+              <g class="orbit orbit--3">
+                <circle cx="400" cy="260" r="242" fill="none" stroke="rgba(245,208,122,.12)" stroke-width="1" stroke-dasharray="2 10"/>
+                <text class="orbitText orbitText--3">
+                  <textPath href="#ring3Path" startOffset="50%" text-anchor="middle">
+                    TREND • GROWTH • REACH • SALES • VIRAL •
+                  </textPath>
+                </text>
+              </g>
+            </g>
+<!-- orb -->
+            <g class="orb">
+              <circle cx="400" cy="260" r="150" fill="rgba(0,0,0,.25)" />
+              <circle cx="400" cy="260" r="150" fill="url(#orbBody)"/>
+
+              <!-- rotating bands -->
+              <g class="bands" opacity=".55">
+                <rect x="250" y="150" width="300" height="220" fill="url(#scan)" opacity=".55" clip-path="url(#clipOrb)"/>
+              </g>
+
+              <!-- logo core -->
+              <g class="core">
+                <circle cx="400" cy="260" r="88" fill="rgba(0,0,0,.45)" stroke="rgba(245,208,122,.30)" stroke-width="1"/>
+              </g>
+            </g>
+
+            <!-- mask + clip -->
+            <clipPath id="clipOrb">
+              <circle cx="400" cy="260" r="150"/>
+            </clipPath>
+
+            <!-- subtle grid inside orb -->
+            <g class="orbGrid" clip-path="url(#clipOrb)" opacity=".22">
+              <path d="M250 200 H550" stroke="rgba(255,255,255,.20)" stroke-width="1"/>
+              <path d="M250 240 H550" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+              <path d="M250 280 H550" stroke="rgba(255,255,255,.16)" stroke-width="1"/>
+              <path d="M250 320 H550" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+              <path d="M320 110 V410" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+              <path d="M400 110 V410" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+              <path d="M480 110 V410" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+            </g>
+
+            <!-- outer highlight -->
+            <circle cx="400" cy="260" r="150" fill="none" stroke="rgba(245,208,122,.20)" stroke-width="1"/>
+            <circle cx="400" cy="260" r="152" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="6" opacity=".55"/>
+
+            <!-- logo image (HTML overlay, keeps crisp) -->
+          </svg>
+
+          <div class="heroScene__logo">
+            <img src="/assets/logo.jpeg" alt="VMC" />
           </div>
         </div>
 
-        <div class="sa2-hero__rail" aria-label="Influencer campaign workflow">
-          <div class="sa2-rail__label"><span>THE VIVA APPROACH</span><i></i></div>
-          <div class="sa2-rail__step"><span class="sa2-rail__num">01</span><div><strong>Discover</strong><small>Audience-fit creators</small></div></div>
-          <div class="sa2-rail__step"><span class="sa2-rail__num">02</span><div><strong>Activate</strong><small>Planned partnerships</small></div></div>
-          <div class="sa2-rail__step"><span class="sa2-rail__num">03</span><div><strong>Measure</strong><small>Business-focused results</small></div></div>
-          <a class="sa2-rail__end" href="#approach" aria-label="Explore how Viva works"><span>EXPLORE OUR METHOD</span><span aria-hidden="true">↓</span></a>
+          <div class="heroCopy">
+            <nav class="sa-viva-breadcrumb" aria-label="Breadcrumb">
+              <a href="/en/">Home</a><span aria-hidden="true">/</span>
+              <a href="/en/services/influencer-marketing/">Influencer Marketing</a><span aria-hidden="true">/</span>
+              <span aria-current="page">Saudi Arabia</span>
+            </nav>
+            <p class="kicker">SAUDI ARABIA • INFLUENCER CAMPAIGNS • BRAND PARTNERSHIPS</p>
+            <p class="micro">We engineer influence — not noise.</p>
+            <h1 class="heroTitle2" id="page-title">Influencer Marketing Agency<br><span class="gold">in Saudi Arabia</span></h1>
+            <p class="sub">Find and hire Saudi influencers who align with your brand—not just your follower-count target. Viva Media Creative builds and manages creator partnerships for companies targeting <strong>Riyadh, Jeddah and audiences across Saudi Arabia</strong>, from strategy and shortlisting to campaign execution and performance reporting.</p>
+          </div>
+
+          <div class="hero__cta">
+            <a class="btn primary" href="#proposal">Request a Saudi Influencer Shortlist <span aria-hidden="true">↗</span></a>
+            <a class="btn ghost" href="#approach">Explore Our Approach <span aria-hidden="true">↓</span></a>
+            <p class="cta-note">For brands and marketing teams planning influencer campaigns in Saudi Arabia.</p>
+          </div>
+          <div class="hero__meta" aria-label="Campaign service coverage">
+            <div class="meta"><span class="meta__num">Riyadh · Jeddah</span><span class="meta__label">Saudi audience targeting</span></div>
+            <div class="meta"><span class="meta__num">TikTok · Snapchat</span><span class="meta__label">Plus Instagram partnerships</span></div>
+            <div class="meta"><span class="meta__num">Strategy → Results</span><span class="meta__label">From creator fit to reporting</span></div>
+          </div>
+          <div class="hero__pills" aria-label="Campaign capabilities">
+            <span class="pillx">Influencer Discovery</span>
+            <span class="pillx">Saudi Creator Shortlists</span>
+            <span class="pillx">Campaign Management</span>
+            <span class="pillx">Performance Reporting</span>
+          </div>
         </div>
       </div>
+      <div class="scroll" aria-hidden="true"><span></span></div>
     </section>
-
-    <div class="sa-ticker" aria-label="Services and platforms">
-      <div class="sa-shell sa-ticker__inner">
-        <span>RIYADH</span><i></i><span>JEDDAH</span><i></i><span>SAUDI ARABIA</span><i></i><span>SNAPCHAT</span><i></i><span>TIKTOK</span><i></i><span>INSTAGRAM</span>
-      </div>
-    </div>
 
     <section class="sa-section sa-intro" id="services" aria-labelledby="sa-intro-title">
       <div class="sa-shell">

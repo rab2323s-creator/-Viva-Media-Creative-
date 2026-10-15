@@ -192,3 +192,48 @@
 @media(max-width:900px){.sa-page .sa2-hero{padding-top:105px}.sa2-breadcrumb{margin-bottom:30px}.sa2-hero__main{grid-template-columns:1fr;gap:15px}.sa-page .sa2-hero h1{font-size:clamp(51px,8vw,78px)}.sa2-hero__copy{padding-bottom:25px}.sa2-hero__art{height:545px;width:min(580px,100%);margin:12px auto 0}.sa2-art__large{height:370px}.sa2-art__small{height:170px}.sa2-art__small--two{height:158px}.sa2-hero__rail{grid-template-columns:repeat(3,1fr)}.sa2-rail__end{grid-column:1/-1;justify-content:center;border-left:0;border-top:1px solid rgba(255,255,255,.1);padding:15px}.sa2-hero__main{padding-bottom:50px}}
 @media(max-width:600px){.sa-page .sa2-hero{padding-top:103px}.sa2-breadcrumb{font-size:9px;margin-bottom:25px}.sa2-hero__kicker{font-size:9px;gap:9px;letter-spacing:.1em;margin-bottom:23px}.sa2-kicker-mark{width:22px;height:22px}.sa-page .sa2-hero h1{font-size:clamp(37px,10.1vw,58px);line-height:1.09;letter-spacing:-.055em;margin-bottom:22px}.sa2-hero__lead{font-size:17px}.sa2-hero__description{font-size:12.5px}.sa2-hero__actions{display:grid;gap:19px;margin-top:25px}.sa2-hero__primary{width:100%;justify-content:space-between;font-size:11px!important;min-height:57px}.sa2-hero__secondary{justify-content:center}.sa2-hero__assurance{gap:10px 18px;margin-top:22px;font-size:9px}.sa2-hero__art{height:415px;margin:20px auto 0}.sa2-art__topline{font-size:7px}.sa2-art__halo{inset:26px 3px 10px}.sa2-art__large{top:35px;right:5%;width:74%;height:290px;border-radius:155px 155px 19px 19px}.sa2-art__large-caption{bottom:15px;left:16px}.sa2-art__large-caption strong{font-size:16px}.sa2-art__small{width:39%;height:135px;border-width:3px;border-radius:80px 80px 12px 12px}.sa2-art__small--one{top:142px}.sa2-art__small--two{height:125px;bottom:13px}.sa2-art__seal{top:5px;right:1px;width:74px;height:74px}.sa2-art__seal>span{font-size:6px}.sa2-art__seal>strong{font-size:23px}.sa2-art__floating{bottom:70px;left:8px;padding:9px 11px;font-size:8px;gap:6px}.sa2-art__floating strong{font-size:9px}.sa2-art__floating-icon{width:26px;height:26px;font-size:14px}.sa2-art__markets{font-size:8px;gap:10px}.sa2-hero__main{padding-bottom:34px}.sa2-hero__rail{grid-template-columns:1fr 1fr;gap:0;margin-bottom:20px}.sa2-rail__step{padding:17px 10px}.sa2-rail__step:nth-of-type(3){grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1)}.sa2-rail__num{font-size:11px}.sa2-rail__step strong{font-size:11px}.sa2-rail__step small{font-size:9px}.sa2-rail__end{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.sa2-glow{filter:none;opacity:.15}}
+
+
+/* Saudi landing: USE the actual Viva homepage Hero V6, not the former collages. */
+.sa-page .sa-viva-hero{padding:122px 22px 95px;min-height:100vh;background:radial-gradient(1200px 600px at 15% 10%,rgba(184,138,42,.14),transparent 60%),radial-gradient(900px 520px at 85% 25%,rgba(145,90,255,.14),transparent 60%),radial-gradient(900px 520px at 70% 80%,rgba(0,255,200,.08),transparent 60%),#06070a}
+.sa-page .sa-viva-hero .hero__inner{max-width:1180px}
+.sa-page .sa-viva-hero .heroLayout{display:flex;flex-direction:column;gap:26px}
+.sa-page .sa-viva-hero .heroScene{width:min(1040px,100%);aspect-ratio:16/8.5;margin:0 auto;border:0;border-radius:0;background:transparent;box-shadow:none;position:relative;overflow:visible}
+.sa-page .sa-viva-hero .engine{inset:0;width:100%;height:100%;position:absolute}
+.sa-page .sa-viva-hero .heroScene__logo{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.sa-page .sa-viva-hero .heroCopy{width:100%;max-width:1180px;margin:0 auto}
+.sa-page .sa-viva-hero .heroTitle2{font-family:"Space Grotesk",Manrope,sans-serif;font-size:clamp(40px,5.4vw,84px);font-weight:700;line-height:1.03;letter-spacing:-.04em;max-width:23ch;text-wrap:balance;margin:0 0 18px}
+.sa-page .sa-viva-hero .heroTitle2 .gold{display:inline;background:linear-gradient(90deg,#f5d07a,rgba(255,255,255,.85),#b88a2a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sa-page .sa-viva-hero .sub{color:rgba(238,241,246,.73);line-height:1.85;font-size:clamp(14px,1.45vw,17px);max-width:75ch}
+.sa-page .sa-viva-hero .sub strong{color:#eef1f6;font-weight:800}
+.sa-page .sa-viva-hero .micro{color:rgba(245,208,122,.82)}
+.sa-page .sa-viva-hero .hero__cta{align-items:center;gap:12px;margin:0}
+.sa-page .sa-viva-hero .btn{min-height:52px;border-radius:999px;padding:14px 20px;font-size:13px;display:inline-flex;align-items:center;gap:16px}
+.sa-page .sa-viva-hero .btn.primary{color:#f4ead3;border-color:rgba(245,208,122,.3);background:linear-gradient(180deg,rgba(245,208,122,.18),rgba(255,255,255,.04))}
+.sa-page .sa-viva-hero .btn.ghost{background:rgba(255,255,255,.025)}
+.sa-page .sa-viva-hero .cta-note{width:100%;margin:0;color:rgba(238,241,246,.5);font-size:11px}
+.sa-page .sa-viva-hero .hero__meta{margin-top:0;gap:12px}
+.sa-page .sa-viva-hero .meta{flex:1 1 215px;min-width:0;max-width:360px;border-radius:18px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.12);padding:17px}
+.sa-page .sa-viva-hero .meta__num{font-size:17px;color:#f3e7c7;line-height:1.35}
+.sa-page .sa-viva-hero .meta__label{font-size:11px}
+.sa-page .sa-viva-hero .hero__pills{margin:2px 0 0}
+.sa-page .sa-viva-hero .pillx{border-radius:999px;font-size:11px;background:rgba(255,255,255,.025)}
+.sa-page .sa-viva-hero .scroll{bottom:20px}
+.sa-viva-breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:9px;color:rgba(238,241,246,.55);font-size:11px;margin:0 0 26px}
+.sa-viva-breadcrumb a:hover{color:#f5d07a}
+@media(max-width:640px){
+ .sa-page .sa-viva-hero{padding:102px 18px 70px}
+ .sa-page .sa-viva-hero .heroLayout{gap:20px}
+ .sa-page .sa-viva-hero .heroScene{width:100%;aspect-ratio:16/9}
+ .sa-page .sa-viva-hero .heroScene__logo img{width:clamp(70px,18vw,100px);height:clamp(70px,18vw,100px)}
+ .sa-page .sa-viva-hero .heroTitle2{font-size:clamp(34px,9vw,48px);max-width:100%}
+ .sa-page .sa-viva-hero .sub{font-size:13px;line-height:1.85}
+ .sa-page .sa-viva-hero .hero__cta{flex-direction:column;align-items:stretch}
+ .sa-page .sa-viva-hero .btn{width:100%;justify-content:center;text-align:center}
+ .sa-page .sa-viva-hero .meta{flex-basis:100%;max-width:none;padding:14px}
+ .sa-page .sa-viva-hero .hero__meta{display:grid;grid-template-columns:1fr;gap:10px}
+ .sa-page .sa-viva-hero .pillx{font-size:10px}
+ .sa-page .sa-viva-hero .scroll{display:none}
+ .sa-viva-breadcrumb{font-size:10px;margin-bottom:18px}
+}
+@media(prefers-reduced-motion:reduce){.sa-page .sa-viva-hero .halo,.sa-page .sa-viva-hero .orb,.sa-page .sa-viva-hero .bands,.sa-page .sa-viva-hero .orbit{animation:none!important}}
