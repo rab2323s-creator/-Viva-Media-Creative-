@@ -1,0 +1,25 @@
+name: Clear stuck GitHub Pages deployment (one-time)
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/pages-recovery-once.yml
+
+permissions:
+  contents: read
+  pages: write
+
+jobs:
+  clear-stuck-deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel orphaned Pages deployment by commit SHA
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          gh api -X POST "repos/${GH_REPO}/pages/deployments/daf831f17b97c55fc31fa53115b2c9e4bc7cd807/cancel"
+          echo "Stale Pages deployment cancellation request accepted."
