@@ -5,8 +5,9 @@
   const submit = document.getElementById("sa-submit");
   const menuButton = document.querySelector(".sa-menu-toggle");
   const nav = document.getElementById("main-navigation");
+  const dropdownToggles = document.querySelectorAll(".sa-subnav-toggle");
   const whatsapp = document.getElementById("sa-whatsapp");
-  const MOBILE_NAV_BREAKPOINT = 900;
+  const MOBILE_NAV_BREAKPOINT = 1020;
   const WHATSAPP_PHONE = "4915565678291";
   const EMAILJS_KEY = "SzBBlvEjgwysF8vHJ";
   const SERVICE_ID = "service_6w76hdv";
@@ -21,8 +22,28 @@
     nav.classList.toggle("is-open", isOpen);
     menuButton.setAttribute("aria-expanded", String(isOpen));
     menuButton.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+    if (!isOpen) {
+      dropdownToggles.forEach(button => {
+        button.setAttribute("aria-expanded", "false");
+        button.closest(".home-nav-item")?.classList.remove("is-open");
+      });
+    }
   }
   menuButton?.addEventListener("click", () => setMenu(menuButton.getAttribute("aria-expanded") !== "true"));
+  dropdownToggles.forEach(button => {
+    button.addEventListener("click", () => {
+      const item = button.closest(".home-nav-item");
+      const shouldOpen = button.getAttribute("aria-expanded") !== "true";
+      dropdownToggles.forEach(other => {
+        other.setAttribute("aria-expanded", "false");
+        other.closest(".home-nav-item")?.classList.remove("is-open");
+      });
+      if (item && shouldOpen) {
+        item.classList.add("is-open");
+        button.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
   nav?.querySelectorAll("a").forEach(link => link.addEventListener("click", () => setMenu(false)));
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") setMenu(false);
