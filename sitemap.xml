@@ -29,9 +29,21 @@ xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 </url>
   <url>
   <loc>https://vivamediacreative.com/%D9%85%D8%B4%D8%A7%D9%87%D9%8A%D8%B1/%D8%A7%D9%86%D8%B3%D8%AA%D8%A7%D8%BA%D8%B1%D8%A7%D9%85/</loc>
-  <lastmod>2026-05-31</lastmod>
+  <lastmod>2026-11-16</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://vivamediacreative.com/%D9%85%D8%B4%D8%A7%D9%87%D9%8A%D8%B1/%D8%A7%D9%86%D8%B3%D8%AA%D8%A7%D8%BA%D8%B1%D8%A7%D9%85/%D8%A7%D8%AE%D8%B7%D8%A7%D8%A1-%D8%A7%D9%84%D9%85%D8%A4%D8%AB%D8%B1%D9%8A%D9%86-%D8%B9%D9%84%D9%89-%D8%A7%D9%86%D8%B3%D8%AA%D8%A7%D8%BA%D8%B1%D8%A7%D9%85/</loc>
+  <lastmod>2026-11-16</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+  <image:image>
+    <image:loc>https://vivamediacreative.com/assets/articles/instagram-influencer-reputation-brand-deals.webp</image:loc>
+  </image:image>
+  <image:image>
+    <image:loc>https://vivamediacreative.com/assets/articles/instagram-influencer-brand-safety-ad-value.webp</image:loc>
+  </image:image>
 </url>
 <url>
   <loc>https://vivamediacreative.com/%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82/%D8%A7%D8%AE%D8%AA%D9%8A%D8%A7%D8%B1-%D9%85%D8%A4%D8%AB%D8%B1-%D8%AA%D9%8A%D9%83-%D8%AA%D9%88%D9%83/</loc>
