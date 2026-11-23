@@ -37,14 +37,105 @@
   <link rel="stylesheet" href="./labs.css">
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@graph":[
-      {"@type":"Organization","@id":"https://vivamediacreative.com/#organization","name":"Viva Media Creative","alternateName":"VMC","url":"https://vivamediacreative.com/","logo":{"@type":"ImageObject","url":"https://vivamediacreative.com/assets/logo.jpeg"}},
-      {"@type":"CollectionPage","@id":"https://vivamediacreative.com/labs/#webpage","url":"https://vivamediacreative.com/labs/","name":"VMC Labs","headline":"مشاريع وأدوات رقمية من Viva Media Creative","description":"مشاريع وأدوات رقمية طوّرها فريق Viva Media Creative في الذكاء الاصطناعي والتسويق واقتصاد صناع المحتوى.","isPartOf":{"@id":"https://vivamediacreative.com/#website"},"about":{"@id":"https://vivamediacreative.com/#organization"},"inLanguage":"ar"},
-      {"@type":"ItemList","@id":"https://vivamediacreative.com/labs/#products","name":"مشاريع VMC Labs","numberOfItems":3,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebSite","name":"SXF / AI","url":"https://sxf.si/","description":"منصة ذكاء ومتابعة لتطورات الذكاء الاصطناعي."}},{"@type":"ListItem","position":2,"item":{"@type":"WebSite","name":"MarketAPro","url":"https://marketapro.com/","description":"منصة أدوات تسويق وبيانات رقمية باللغة العربية."}},{"@type":"ListItem","position":3,"item":{"@type":"WebSite","name":"Influencer Platform VIP","url":"https://influencer-platform.vip/","description":"منصة متخصصة في التسويق عبر المؤثرين في الخليج ومصر."}}]},
-      {"@type":"BreadcrumbList","@id":"https://vivamediacreative.com/labs/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://vivamediacreative.com/"},{"@type":"ListItem","position":2,"name":"VMC Labs","item":"https://vivamediacreative.com/labs/"}]}
-    ]
-  }
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://vivamediacreative.com/#organization",
+      "name": "Viva Media Creative",
+      "alternateName": "VMC",
+      "url": "https://vivamediacreative.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://vivamediacreative.com/assets/logo.jpeg"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://vivamediacreative.com/labs/#webpage",
+      "url": "https://vivamediacreative.com/labs/",
+      "name": "VMC Labs",
+      "headline": "مشاريع وأدوات رقمية من Viva Media Creative",
+      "description": "مشاريع وأدوات رقمية طوّرها فريق Viva Media Creative في الذكاء الاصطناعي والتسويق واقتصاد صناع المحتوى.",
+      "isPartOf": {
+        "@id": "https://vivamediacreative.com/#website"
+      },
+      "about": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://vivamediacreative.com/labs/#products",
+      "name": "مشاريع VMC Labs",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "WebSite",
+            "name": "SXF / AI",
+            "url": "https://sxf.si/",
+            "description": "منصة ذكاء ومتابعة لتطورات الذكاء الاصطناعي."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "WebSite",
+            "name": "MarketAPro",
+            "url": "https://marketapro.com/",
+            "description": "منصة أدوات تسويق وبيانات رقمية باللغة العربية."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "WebSite",
+            "name": "Influencer Platform VIP",
+            "url": "https://influencer-platform.vip/",
+            "description": "منصة متخصصة في التسويق عبر المؤثرين في الخليج ومصر."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "WebSite",
+            "name": "UGC Arabie",
+            "url": "https://ugcarabie.com/",
+            "description": "منصة عربية تربط صناع محتوى UGC بالعلامات التجارية والحملات.",
+            "creator": {
+              "@id": "https://vivamediacreative.com/#organization"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://vivamediacreative.com/labs/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الرئيسية",
+          "item": "https://vivamediacreative.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "VMC Labs",
+          "item": "https://vivamediacreative.com/labs/"
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body class="labsPage">
@@ -83,7 +174,7 @@
             <a class="btn ghost" href="/">Viva Media Creative <span aria-hidden="true">↗</span></a>
           </div>
           <div class="labsHero__stats labsReveal" aria-label="VMC Labs overview">
-            <div class="labsHero__stat"><strong>3 مشاريع منشورة</strong><span>ACTIVE PROJECTS</span></div>
+            <div class="labsHero__stat"><strong>4 مشاريع منشورة</strong><span>ACTIVE PROJECTS</span></div>
             <div class="labsHero__stat"><strong>AI • Marketing • Creators</strong><span>AREAS WE WORK IN</span></div>
             <div class="labsHero__stat"><strong>Built inside Viva</strong><span>INTERNAL PROJECTS</span></div>
           </div>
@@ -142,6 +233,16 @@
               <div class="labsProduct__footer"><span class="labsProduct__by">VMC LABS PROJECT</span><span class="labsProduct__link">افتح المنصة <span aria-hidden="true">↗</span></span></div>
             </div>
           </a>
+          <a class="labsProduct labsProduct--ugc labsReveal" href="https://ugcarabie.com/" target="_blank" rel="noopener noreferrer" aria-label="زيارة UGC Arabie">
+            <div class="labsProduct__visual"><span class="labsProduct__index">PRODUCT / 04</span><div class="labsVisualOrb"><span>UGC</span></div><span class="labsProduct__big">UGC</span></div>
+            <div class="labsProduct__content">
+              <div class="labsProduct__meta"><span>UGC CREATOR MARKETPLACE</span><span class="labsProduct__status">LIVE</span></div>
+              <h3>UGC <span>Arabie</span></h3>
+              <p class="labsProduct__description">منصة عربية لصناع محتوى UGC والعلامات التجارية، تتيح للشركات اكتشاف المبدعين واستعراض أعمالهم ونشر حملات التعاون، وللمبدعين التقدّم على الفرص المناسبة. طُوّرت داخل Viva Media Creative ضمن VMC Labs.</p>
+              <div class="labsProduct__tags"><span>UGC Creators</span><span>Brand Collaboration</span><span>Arabic First</span><span>Creator Marketplace</span></div>
+              <div class="labsProduct__footer"><span class="labsProduct__by">VMC LABS PROJECT</span><span class="labsProduct__link">افتح UGC Arabie <span aria-hidden="true">↗</span></span></div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -176,7 +277,7 @@
       </div>
       <div class="fCol">
         <h3 class="fTitle">VMC Labs</h3>
-        <nav class="fLinks" aria-label="VMC Labs products"><a href="https://sxf.si/" target="_blank" rel="noopener noreferrer">SXF / AI</a><a href="https://marketapro.com/" target="_blank" rel="noopener noreferrer">MarketAPro</a><a href="https://influencer-platform.vip/" target="_blank" rel="noopener noreferrer">Influencer Platform</a></nav>
+        <nav class="fLinks" aria-label="VMC Labs products"><a href="https://sxf.si/" target="_blank" rel="noopener noreferrer">SXF / AI</a><a href="https://marketapro.com/" target="_blank" rel="noopener noreferrer">MarketAPro</a><a href="https://influencer-platform.vip/" target="_blank" rel="noopener noreferrer">Influencer Platform</a><a href="https://ugcarabie.com/" target="_blank" rel="noopener noreferrer">UGC Arabie</a></nav>
       </div>
       <div class="fCol">
         <h3 class="fTitle">Viva</h3>
