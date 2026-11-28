@@ -104,6 +104,34 @@
     ]
   }
   </script>
+<style id="creator-signup-style">
+#creator-signup{padding-bottom:20px}#creator-signup>.grid{grid-template-columns:minmax(0,1.65fr) minmax(0,.85fr)}
+#influencerForm{scroll-margin-top:100px;min-width:0;border-color:rgba(245,208,122,.22)}
+#influencerForm .cardHead{padding:22px}#influencerForm .cardHead h2{font-size:clamp(19px,2.2vw,26px);line-height:1.65}
+#infForm .formGrid{gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
+#infForm .field{min-width:0}#infForm .field>label,#infForm .signup-field-label{font-size:13px;font-weight:700;color:#eef1f6}
+#infForm .field input:not([type=checkbox]),#infForm .field select,#infForm .field textarea{box-sizing:border-box;min-height:48px;font-size:16px;max-width:100%;color-scheme:dark}
+#infForm .field select option{background:#15151e;color:#eef1f6}
+#infForm .signup-label{display:flex;align-items:center;gap:10px;font-weight:800;color:#f5d07a;border-bottom:1px solid rgba(245,208,122,.15);padding:10px 0 8px}
+#infForm .signup-label span{font-size:11px;color:#f5d07a;direction:ltr;border:1px solid rgba(245,208,122,.3);border-radius:8px;padding:3px 7px}
+#infForm .signup-platforms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:0;border:0;background:none;gap:8px}
+#infForm .signup-platforms .check{position:relative;display:flex;justify-content:center;align-items:center;gap:6px;min-height:46px;border-radius:12px;padding:7px 5px;cursor:pointer;font-size:12px;direction:ltr;color:#eef1f6}
+#infForm .signup-platforms .check input{width:16px;height:16px;flex:none;margin:0;accent-color:#f5d07a}
+#infForm .signup-platforms .check:has(input:checked){border-color:#f5d07a;color:#f5d07a;background:rgba(245,208,122,.10)}
+#infForm .signup-platforms .check:focus-within{outline:2px solid #f5d07a;outline-offset:2px}
+#infForm .signup-extra{border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px}
+#infForm .signup-extra summary{cursor:pointer;color:#f5d07a;font-size:13px;line-height:1.9}
+#infForm .signup-extra-inner{display:grid;gap:12px;margin-top:12px}
+#infForm .signup-extra textarea{min-height:80px}
+#infForm .signup-actions{display:flex;flex-direction:column;align-items:stretch;gap:10px}
+#infForm .signup-actions .btn{width:100%;min-height:50px;justify-content:center;font-size:16px}
+#infForm .signup-actions .hint{max-width:none;text-align:center}#infForm .signup-actions a{color:#f5d07a;text-decoration:underline}
+#infForm button:disabled{opacity:.6;cursor:wait}#infForm .status{overflow-wrap:anywhere}
+#infForm .status.sending{display:block;border-color:rgba(245,208,122,.35);background:rgba(245,208,122,.08)}
+#infForm [hidden]{display:none!important}#creator-signup #waQuick[aria-disabled=true]{pointer-events:none;opacity:.5}
+@media(max-width:980px){#creator-signup>.grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){#infForm .formGrid{grid-template-columns:minmax(0,1fr);gap:13px}#infForm .signup-platforms{grid-template-columns:repeat(2,minmax(0,1fr))}#influencerForm .formBody,#influencerForm .cardHead{padding:16px}#influencerForm{border-radius:22px}}
+</style>
 </head>
 
 <body>
@@ -180,93 +208,34 @@
  
 
 
-    <!-- ✅ ADDED: SEO block (after HERO, before the form; uses existing platform styles) -->
-    <section class="platformSection seoBlock" aria-label="التسجيل كمؤثر حسب الدولة والمنصة">
-      <div class="section__inner">
-        <h2 class="reveal" style="margin:10px 0 10px 0; font-size:22px;" id="by-country-platform">
-          سجل كمؤثر حسب الدولة والمنصة في العالم العربي
-        </h2>
+    
 
-        <div class="platformGrid">
-          <div class="platformCard reveal">
-            <h3 style="margin-bottom:8px;">مؤثرين في السعودية والإمارات ومصر والكويت وقطر</h3>
-            <p style="margin:0; line-height:1.95;">
-              إذا كنت <strong>مؤثرًا في السعودية</strong> أو <strong>مؤثرًا في الإمارات</strong> أو <strong>مؤثرًا في مصر</strong> وتبحث عن فرص رعايات مناسبة،
-              يساعدنا التسجيل المنظم على تصنيف حسابك بدقة حسب الدولة/المدينة والمجال.
-              ويمكنك كذلك التسجيل إن كنت <strong>مؤثرًا في الكويت</strong> أو <strong>مؤثرًا في قطر</strong>—كلما كانت بياناتك أوضح، كانت المطابقة أسرع.
-            </p>
-          </div>
-
-          <div class="platformCard reveal">
-            <h3 style="margin-bottom:8px;">TikTok وInstagram وYouTube — اختر منصاتك</h3>
-            <p style="margin:0; line-height:1.95;">
-              سواء كنت منشئ محتوى على <strong>TikTok</strong> أو <strong>Instagram</strong> أو <strong>YouTube</strong>، اختر المنصات داخل النموذج،
-              وحدد نطاق المتابعين ومتوسط المشاهدات (إن توفر) لتحسين فرص ظهورك في الترشيحات عندما يصل طلب مناسب.
-            </p>
-          </div>
-
-          <div class="platformCard reveal">
-            <h3 style="margin-bottom:8px;">فرص مدفوعة بدون رسائل عشوائية</h3>
-            <p style="margin:0; line-height:1.95;">
-              بدل إرسال رسائل عامة لعلامات كثيرة، التسجيل هنا يضع معلوماتك في مسار واضح للمطابقة.
-              ابدأ من نموذج <a href="#influencerForm" style="text-decoration:underline; color:inherit;">تسجيل المؤثرين</a>
-              أو ارجع لصفحة <a href="/influencer-platform/" style="text-decoration:underline; color:inherit;">المنصة</a> لمعرفة المسارات الأخرى.
-            </p>
-           <p style="margin-top:10px;">
-  <a href="/services/" style="text-decoration:underline; color:inherit;">
-    استعراض جميع خدماتنا التسويقية
-  </a>
-</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ✅ END SEO block -->
-
-    <section class="section wrap" style="padding-top: 30px;">
+    <section class="section wrap" id="creator-signup" style="padding-top: 30px;">
       <div class="grid">
 
         <div class="glassCard reveal" id="influencerForm">
           <div class="cardHead">
-            <h2>تسجيل المؤثرين</h2>
-            <p>حقول قليلة لكنها كافية للمطابقة — بدون تعقيد.</p>
+            <h2>انضم إلى شبكة فيفا للمؤثرين</h2>
+            <p>عرّفنا بنفسك وبمحتواك لتكون ضمن ترشيحاتنا لفرص التعاون الإعلاني المناسبة.</p>
           </div>
 
           <div class="formBody">
             <form id="infForm" novalidate>
-              <!-- Honeypot -->
-              <input type="text" name="website" id="website" tabindex="-1" autocomplete="off"
-                style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0;"
-                aria-hidden="true" />
-
-              <!-- Hidden helpers -->
-              <input type="hidden" name="form_type" value="influencer_signup" />
-              <input type="hidden" name="wa_message" id="wa_message" value="" />
-
-              <div class="formGrid">
-                <div class="field">
-                  <label for="full_name">الاسم الكامل</label>
-                  <input id="full_name" name="full_name" type="text" placeholder="الاسم كما تريد أن يظهر" required minlength="2">
-                </div>
-
-                <div class="field">
-                  <label for="country">الدولة</label>
-                  <input id="country" name="country" type="text" placeholder="مثال: السعودية" required minlength="2">
-                </div>
-
-                <div class="field">
-                  <label for="city">المدينة</label>
-                  <input id="city" name="city" type="text" placeholder="مثال: الرياض" required minlength="2">
-                </div>
-
-                <div class="field">
-                  <label for="account_link">رابط الحساب (Instagram/TikTok…)</label>
-                  <input id="account_link" name="account_link" type="url" placeholder="https://instagram.com/..." required>
-                </div>
-
-                <div class="field">
-                  <label for="niche">المجال</label>
-                  <select id="niche" name="niche" required>
+  <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0;" aria-hidden="true">
+  <input type="hidden" name="form_type" value="influencer_signup">
+  <input type="hidden" name="wa_message" id="wa_message" value="">
+  <input type="hidden" name="country" id="country" value="">
+  <input type="hidden" name="platforms" id="platforms" value="">
+  <input type="hidden" name="note" id="note" value="">
+  <div class="formGrid">
+    <div class="signup-label span2"><span>01</span> معلوماتك الشخصية</div>
+    <div class="field span2"><label for="full_name">الاسم الكامل *</label><input id="full_name" name="full_name" autocomplete="name" placeholder="اسمك الكامل" required minlength="2" maxlength="120"></div>
+    <div class="field"><label for="country_choice">الدولة *</label><select id="country_choice" required autocomplete="country-name"><option value="" selected disabled>اختر الدولة</option><option value="السعودية" data-code="+966">السعودية</option><option value="الإمارات" data-code="+971">الإمارات</option><option value="الكويت" data-code="+965">الكويت</option><option value="قطر" data-code="+974">قطر</option><option value="عمان" data-code="+968">عمان</option><option value="البحرين" data-code="+973">البحرين</option><option value="مصر" data-code="+20">مصر</option><option value="الأردن" data-code="+962">الأردن</option><option value="العراق" data-code="+964">العراق</option><option value="لبنان" data-code="+961">لبنان</option><option value="المغرب" data-code="+212">المغرب</option><option value="الجزائر" data-code="+213">الجزائر</option><option value="تونس" data-code="+216">تونس</option><option value="سوريا" data-code="+963">سوريا</option><option value="فلسطين" data-code="+970">فلسطين</option><option value="ليبيا" data-code="+218">ليبيا</option><option value="السودان" data-code="+249">السودان</option><option value="اليمن" data-code="+967">اليمن</option><option value="other">دولة أخرى</option></select><div id="country_other_wrap" hidden><label for="country_other">اسم الدولة *</label><input id="country_other" placeholder="اكتب اسم الدولة" maxlength="80" disabled></div></div>
+    <div class="field"><label for="city">المدينة *</label><input id="city" name="city" autocomplete="address-level2" placeholder="المدينة التي تقيم فيها" required minlength="2" maxlength="100"></div>
+    <div class="signup-label span2"><span>02</span> محتواك وجمهورك</div>
+    <div class="field span2"><span class="signup-field-label" id="platform-label">المنصات التي تنشط عليها *</span><div class="checks signup-platforms" role="group" aria-labelledby="platform-label"><label class="check"><input type="checkbox" value="Instagram" class="pf"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg><span>Instagram</span></label><label class="check"><input type="checkbox" value="TikTok" class="pf"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v12a5 5 0 1 1-5-5M14 3c0 4 3 6 7 6"/></svg><span>TikTok</span></label><label class="check"><input type="checkbox" value="Snapchat" class="pf"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4 0-5 3-5 6 0 2-1 3-3 4 0 2 3 2 4 3 0 2 2 1 4 3 2-2 4-1 4-3 1-1 4-1 4-3-2-1-3-2-3-4 0-3-1-6-5-6z"/></svg><span>Snapchat</span></label><label class="check"><input type="checkbox" value="YouTube" class="pf"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg><span>YouTube</span></label><label class="check"><input type="checkbox" value="Facebook" class="pf"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 21v-9h3l.5-4H14V6c0-1 1-2 3-2V1c-6-1-7 2-7 5v2H7v4h3v9"/></svg><span>Facebook</span></label></div><small class="hint">يمكنك اختيار أكثر من منصة.</small></div>
+    <div class="field span2"><label for="account_link">رابط حسابك الرئيسي *</label><input id="account_link" name="account_link" type="url" inputmode="url" dir="ltr" placeholder="https://instagram.com/..." required maxlength="500" autocapitalize="off" spellcheck="false"><small class="hint">الحساب الذي تريد ترشيحك للحملات من خلاله.</small></div>
+    <div class="field"><label for="niche">مجال المحتوى *</label><select id="niche" name="niche" required>
                     <option value="" selected disabled>اختر المجال</option>
                     <option>تجميل وعناية</option>
                     <option>أزياء</option>
@@ -279,70 +248,25 @@
                     <option>سفر وسياحة</option>
                     <option>أمومة/عائلة</option>
                     <option>أخرى</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label>المنصات</label>
-                  <!-- Checkboxes for UI + hidden field for EmailJS -->
-                  <input type="hidden" name="platforms" id="platforms" value="" />
-                  <div class="checks" role="group" aria-label="Platforms">
-                    <label class="check"><input type="checkbox" value="Instagram" class="pf"> Instagram</label>
-                    <label class="check"><input type="checkbox" value="TikTok" class="pf"> TikTok</label>
-                    <label class="check"><input type="checkbox" value="YouTube" class="pf"> YouTube</label>
-                    <label class="check"><input type="checkbox" value="Snapchat" class="pf"> Snapchat</label>
-                    <label class="check"><input type="checkbox" value="Facebook" class="pf"> Facebook</label>
-                  </div>
-                </div>
-
-                <div class="field">
-                  <label for="followers_range">عدد المتابعين</label>
-                  <select id="followers_range" name="followers_range" required>
-                    <option value="" selected disabled>اختر نطاقًا</option>
-                    <option value="1K–10K">1K–10K (Nano)</option>
-                    <option value="10K–100K">10K–100K (Micro)</option>
-                    <option value="100K–1M">100K–1M (Macro)</option>
-                    <option value="1M+">1M+ (Celebrity)</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="avg_views">متوسط المشاهدات (اختياري قوي)</label>
-                  <select id="avg_views" name="avg_views">
+                  </select></div>
+    <div class="field"><label for="followers_range">عدد متابعي حسابك الرئيسي *</label><select id="followers_range" name="followers_range" required><option value="" selected disabled>اختر عدد المتابعين</option><option value="Under 1K">أقل من 1,000</option><option value="1K–10K">1,000 – 10,000</option><option value="10K–100K">10,000 – 100,000</option><option value="100K–1M">100,000 – مليون</option><option value="1M+">أكثر من مليون</option></select></div>
+    <div class="field"><label for="avg_views">متوسط المشاهدات (اختياري)</label><select id="avg_views" name="avg_views">
                     <option value="" selected>غير محدد</option>
                     <option value="Under 5K">أقل من 5K</option>
                     <option value="5K–20K">5K–20K</option>
                     <option value="20K–100K">20K–100K</option>
                     <option value="100K–300K">100K–300K</option>
                     <option value="300K+">300K+</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="whatsapp">واتساب (مهم)</label>
-                  <input id="whatsapp" name="whatsapp" type="tel" placeholder="+966xxxxxxxxx" required minlength="6">
-                </div>
-
-                <div class="field">
-                  <label for="email">إيميل (اختياري)</label>
-                  <input id="email" name="email" type="email" placeholder="name@example.com">
-                </div>
-
-                <div class="field span2">
-                  <label for="note">ملاحظة قصيرة (اختياري)</label>
-                  <textarea id="note" name="note" placeholder="مثال: نوع الإعلانات المناسبة لك / دول الاستهداف / ملاحظات عن الجمهور…"></textarea>
-                </div>
-
-                <div id="status" class="status"></div>
-
-                <div class="actions">
-                  <button class="btn primary magnetic" type="submit">إرسال التسجيل</button>
-                  <span class="hint">
-                    بالإرسال أنت توافق على مشاركة بياناتك بهدف المطابقة والتواصل حول فرص مناسبة.
-                  </span>
-                </div>
-              </div>
-            </form>
+                  </select></div>
+    <div class="field"><label for="audience_market">أهم دولة لجمهورك (اختياري)</label><input id="audience_market" placeholder="مثال: السعودية أو الإمارات" maxlength="150"></div>
+    <details class="signup-extra span2"><summary>إضافة حسابات أخرى أو معلومات عن محتواك (اختياري)</summary><div class="signup-extra-inner"><div class="field"><label for="additional_links">روابط حسابات أخرى (رابط في كل سطر)</label><textarea id="additional_links" dir="ltr" placeholder="https://tiktok.com/@..." maxlength="1200" rows="3" spellcheck="false"></textarea></div><div class="field"><label for="note_input">معلومات إضافية عن محتواك أو التعاون المفضل</label><textarea id="note_input" maxlength="1000" rows="3" placeholder="مثال: مجالات الإعلانات التي تناسبك أو دول الاستهداف"></textarea></div></div></details>
+    <div class="signup-label span2"><span>03</span> بيانات التواصل</div>
+    <div class="field"><label for="whatsapp">رقم واتساب مع مفتاح الدولة *</label><input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="+966..." required maxlength="30"><small class="hint">أدخل رقمك بصيغته الدولية.</small></div>
+    <div class="field"><label for="email">البريد الإلكتروني (اختياري)</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" dir="ltr" placeholder="name@example.com" maxlength="200" autocapitalize="off" spellcheck="false"></div>
+    <div class="actions signup-actions"><span class="hint">* الحقول المطلوبة. بإرسال التسجيل توافق على استخدام بياناتك لمراجعة حسابك والتواصل بشأن فرص التعاون، وفق <a href="/privacy/" target="_blank" rel="noopener">سياسة الخصوصية</a>.</span><button class="btn primary" type="submit">انضم إلى شبكة فيفا</button><span class="hint">التسجيل مجاني. يتم التواصل عند توفر فرصة مناسبة.</span></div>
+    <div id="status" class="status" role="status" aria-live="polite" tabindex="-1"></div>
+  </div>
+</form>
           </div>
         </div>
 
@@ -400,7 +324,51 @@
 
       </div>
 
-      <!-- ✅ Added: FAQ in body (matches FAQ schema; same glass style, no design break) -->
+      </section>
+<!-- ✅ ADDED: SEO block (after HERO, before the form; uses existing platform styles) -->
+    <section class="platformSection seoBlock" aria-label="التسجيل كمؤثر حسب الدولة والمنصة">
+      <div class="section__inner">
+        <h2 class="reveal" style="margin:10px 0 10px 0; font-size:22px;" id="by-country-platform">
+          سجل كمؤثر حسب الدولة والمنصة في العالم العربي
+        </h2>
+
+        <div class="platformGrid">
+          <div class="platformCard reveal">
+            <h3 style="margin-bottom:8px;">مؤثرين في السعودية والإمارات ومصر والكويت وقطر</h3>
+            <p style="margin:0; line-height:1.95;">
+              إذا كنت <strong>مؤثرًا في السعودية</strong> أو <strong>مؤثرًا في الإمارات</strong> أو <strong>مؤثرًا في مصر</strong> وتبحث عن فرص رعايات مناسبة،
+              يساعدنا التسجيل المنظم على تصنيف حسابك بدقة حسب الدولة/المدينة والمجال.
+              ويمكنك كذلك التسجيل إن كنت <strong>مؤثرًا في الكويت</strong> أو <strong>مؤثرًا في قطر</strong>—كلما كانت بياناتك أوضح، كانت المطابقة أسرع.
+            </p>
+          </div>
+
+          <div class="platformCard reveal">
+            <h3 style="margin-bottom:8px;">TikTok وInstagram وYouTube — اختر منصاتك</h3>
+            <p style="margin:0; line-height:1.95;">
+              سواء كنت منشئ محتوى على <strong>TikTok</strong> أو <strong>Instagram</strong> أو <strong>YouTube</strong>، اختر المنصات داخل النموذج،
+              وحدد نطاق المتابعين ومتوسط المشاهدات (إن توفر) لتحسين فرص ظهورك في الترشيحات عندما يصل طلب مناسب.
+            </p>
+          </div>
+
+          <div class="platformCard reveal">
+            <h3 style="margin-bottom:8px;">فرص مدفوعة بدون رسائل عشوائية</h3>
+            <p style="margin:0; line-height:1.95;">
+              بدل إرسال رسائل عامة لعلامات كثيرة، التسجيل هنا يضع معلوماتك في مسار واضح للمطابقة.
+              ابدأ من نموذج <a href="#influencerForm" style="text-decoration:underline; color:inherit;">تسجيل المؤثرين</a>
+              أو ارجع لصفحة <a href="/influencer-platform/" style="text-decoration:underline; color:inherit;">المنصة</a> لمعرفة المسارات الأخرى.
+            </p>
+           <p style="margin-top:10px;">
+  <a href="/services/" style="text-decoration:underline; color:inherit;">
+    استعراض جميع خدماتنا التسويقية
+  </a>
+</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ✅ END SEO block -->
+<section class="section wrap" style="padding-top:16px;">
+<!-- ✅ Added: FAQ in body (matches FAQ schema; same glass style, no design break) -->
       <div style="margin-top:16px;">
         <div class="glassCard reveal" style="border-radius:30px;">
           <div class="cardHead">
