@@ -38,621 +38,249 @@
 <link rel="apple-touch-icon" href="/favicon.png?v=2">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Noto+Kufi+Arabic:wght@400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/vmc-home.css" />
-  <link rel="stylesheet" href="/assets/platform.css" />
-
-  <style>
-    /* Page-only additions (match Contact luxury system) */
-    .contactWrap{ padding-top: 40px; padding-bottom: 90px; }
-    .contactGrid{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 14px;
-      align-items:start;
-    }
-    .glassCard{
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 30px;
-      background: rgba(255,255,255,.02);
-      box-shadow: 0 30px 120px rgba(0,0,0,.55);
-      overflow:hidden;
-    }
-    .cardHead{
-      padding: 18px 18px;
-      border-bottom: 1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-    }
-    .cardHead h2{ margin:0 0 6px; font-size: 20px; }
-    .cardHead p{ margin:0; color: rgba(238,241,246,.62); line-height:1.8; }
-
-    .formBody{ padding: 18px; }
-    .formGrid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .field{ display:flex; flex-direction:column; gap:8px; }
-    .field label{ font-size: 12px; color: rgba(238,241,246,.72); font-weight: 800; letter-spacing:.02em; }
-    .field input, .field textarea, .field select{
-      width:100%;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(6,7,10,.35);
-      color: rgba(238,241,246,.92);
-      outline:none;
-      backdrop-filter: blur(10px);
-      transition: border-color .18s ease, transform .18s ease;
-      font-family: inherit;
-    }
-    .field input::placeholder, .field textarea::placeholder{ color: rgba(238,241,246,.45); }
-    .field input:focus, .field textarea:focus, .field select:focus{
-      border-color: rgba(245,208,122,.32);
-      box-shadow: 0 0 0 6px rgba(245,208,122,.10);
-    }
-    .span2{ grid-column: 1 / -1; }
-    textarea{ min-height: 140px; resize: vertical; }
-
-    .actions{
-      grid-column: 1 / -1;
-      display:flex;
-      gap:12px;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      margin-top: 6px;
-    }
-    .hint{
-      color: rgba(238,241,246,.55);
-      font-size: 12px;
-      line-height: 1.7;
-      max-width: 60ch;
-    }
-    .status{
-      grid-column: 1 / -1;
-      display:none;
-      padding: 12px 12px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.02);
-      color: rgba(238,241,246,.80);
-      line-height: 1.8;
-    }
-    .status.ok{ display:block; border-color: rgba(16,185,129,.30); background: rgba(16,185,129,.10); }
-    .status.err{ display:block; border-color: rgba(239,68,68,.28); background: rgba(239,68,68,.10); }
-
-    .sideBody{ padding: 18px; display:flex; flex-direction:column; gap: 12px; }
-    .miniCard{
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 22px;
-      background: rgba(255,255,255,.02);
-      padding: 16px;
-    }
-    .miniCard h3{ margin:0 0 8px; font-size: 16px; }
-    .miniCard p{ margin:0; color: rgba(238,241,246,.62); line-height:1.8; font-size: 13px; }
-
-    .steps{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .step{
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 18px;
-      background: rgba(6,7,10,.35);
-      padding: 12px 12px;
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-    }
-    .step .num{
-      width:34px; height:34px;
-      border-radius: 14px;
-      display:grid; place-items:center;
-      background: rgba(245,208,122,.14);
-      border: 1px solid rgba(245,208,122,.22);
-      flex: 0 0 auto;
-      font-weight: 900;
-      color: rgba(238,241,246,.92);
-    }
-    .step b{ display:block; font-size: 13px; margin-bottom: 2px; }
-    .step small{ display:block; font-size: 12px; color: rgba(238,241,246,.58); line-height: 1.7; }
-
-    .whatsBox{
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 22px;
-      background: rgba(255,255,255,.02);
-      padding: 14px;
-      display:flex;
-      gap: 10px;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap: wrap;
-    }
-    .whatsBox .txt{
-      min-width: 220px;
-      flex: 1 1 auto;
-    }
-    .whatsBox .txt b{ display:block; font-size: 13px; margin-bottom: 3px; }
-    .whatsBox .txt small{ display:block; font-size: 12px; color: rgba(238,241,246,.60); line-height: 1.7; }
-
-    /* ✅ Added: tiny spacing helper for new SEO block (no design change) */
-    .seoBlock{ padding-top: 10px; padding-bottom: 0; }
-    .seoBlock .section__inner{ padding-inline: 18px; }
-
-    @media (max-width: 980px){
-      .contactGrid{ grid-template-columns: 1fr; }
-    }
-    @media (max-width: 520px){
-      .formGrid{ grid-template-columns: 1fr; }
-    }
-  </style>
-
-  <!-- Service schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Service",
-    "name":"Influencer Matching - Brand Brief",
-    "provider":{"@type":"Organization","name":"Viva Media Creative","url":"https://vivamediacreative.com/"},
-    "areaServed":"Arab World",
-    "inLanguage":"ar",
-    "serviceType":"Influencer Matching",
-    "url":"https://vivamediacreative.com/influencer-platform/find-influencers/"
-  }
-  </script>
-
-  <!-- ✅ Added: Breadcrumbs schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "inLanguage":"ar",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://vivamediacreative.com/"},
-      {"@type":"ListItem","position":2,"name":"منصة مطابقة المؤثرين","item":"https://vivamediacreative.com/influencer-platform/"},
-      {"@type":"ListItem","position":3,"name":"اطلب مؤثرين","item":"https://vivamediacreative.com/influencer-platform/find-influencers/"}
-    ]
-  }
-  </script>
-
-  <!-- ✅ Added: FAQ schema (matches FAQ in body) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "inLanguage":"ar",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"هل يمكن طلب مؤثرين في السعودية أو الإمارات أو مصر؟",
-        "acceptedAnswer":{"@type":"Answer","text":"نعم. اختر الدولة المستهدفة داخل الـ Brief (مثل السعودية أو الإمارات أو مصر)، ويمكن إضافة دول أخرى في الملاحظات لتحسين دقة الترشيح."}
+<style>
+:root{color-scheme:dark;--bg:#08090e;--panel:#11121b;--gold:#f5d07a;--gold2:#d9a94f;--text:#f3f1ec;--muted:#b8b9c5;--line:rgba(255,255,255,.12);--purple:#9b75ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:105px}body{margin:0;font-family:"Noto Kufi Arabic",Manrope,system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.95}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button,a,input,select,textarea{ -webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{opacity:.55;cursor:not-allowed}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:4px} [hidden]{display:none!important}.wrap{width:min(1200px,calc(100% - 48px));margin-inline:auto}.gold{color:var(--gold)}.muted{color:var(--muted)}.small{font-size:12px}.eyebrow{font:700 11px/1.6 Manrope,sans-serif;letter-spacing:.16em;color:var(--gold);text-transform:uppercase}.skip{position:absolute;top:-100px;right:16px;background:var(--gold);color:#15110a;padding:10px 16px;z-index:100}.skip:focus{top:10px}
+.nav{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(8,9,14,.96);backdrop-filter:blur(16px)}.nav-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:10px;direction:ltr;flex-shrink:0;font:700 13px/1.4 Manrope,sans-serif}.brand__mark{border:1px solid #c8a45e55;border-radius:999px;padding:8px 11px;color:var(--gold);letter-spacing:.12em}.nav-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--muted)}.nav-links a:hover{color:var(--gold)}.nav-link-cta{border:1px solid #f5d07a55;padding:7px 14px;border-radius:999px;color:var(--gold)!important}
+.breadcrumb{display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:11px;padding-block:20px 8px}.breadcrumb a:hover{text-decoration:underline}
+.hero{position:relative;isolation:isolate;padding:32px 0 50px;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 90% 15%,rgba(156,117,255,.13),transparent 48%),radial-gradient(ellipse at 8% 42%,rgba(245,208,122,.075),transparent 45%)}.hero-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start;gap:clamp(24px,4vw,60px)}.intro{padding-top:24px;min-width:0}.intro h1{font-size:clamp(28px,3.3vw,46px);line-height:1.55;letter-spacing:-.025em;margin:15px 0 16px;font-weight:800}.intro .lead{font-size:clamp(14px,1.4vw,17px);color:var(--muted);margin:0 0 24px;max-width:52ch}.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.pill{border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:11px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);padding:11px 19px;min-height:46px;border-radius:13px;color:var(--text);background:#171822;font-weight:700;font-size:13px;line-height:1.7;text-align:center;transition:background .15s,border-color .15s;white-space:normal}.btn.primary{background:linear-gradient(120deg,#ffe6a4,#e9bc62);border-color:#f5d07a;color:#161109;box-shadow:0 8px 24px #e3b55b18}.btn.primary:hover{background:#ffe7ae}.btn.ghost:hover{border-color:var(--gold);color:var(--gold)}.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.intro-links{margin:18px 0;color:var(--muted);font-size:12px}.intro-links a,.text-link{color:var(--gold);text-decoration:underline;text-underline-offset:4px}.mini-proof{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:26px}.mini-proof a{border:1px solid var(--line);background:#11121b9c;border-radius:18px;padding:15px;min-width:0}.mini-proof b{display:block;color:var(--gold);font:700 clamp(25px,3vw,37px)/1.3 Manrope,sans-serif;direction:ltr;text-align:right}.mini-proof span{display:block;font-size:11px;color:var(--muted);margin-top:7px}.mini-proof a:hover{border-color:var(--gold)}.proof-note{font-size:10px;color:var(--muted);margin:9px 0}
+.request-card{min-width:0;border:1px solid #f5d07a45;border-radius:26px;background:linear-gradient(150deg,#161621,#0e1018 70%);box-shadow:0 24px 80px #0006;overflow:hidden;scroll-margin-top:105px}.card-head{padding:22px 24px 18px;border-bottom:1px solid var(--line)}.card-head h2{font-size:clamp(20px,2vw,26px);line-height:1.55;margin:7px 0 3px}.card-head p{margin:0;font-size:12px;color:var(--muted)}.progress{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:19px}.progress-item{font-size:10px;color:var(--muted);line-height:1.65;min-width:0}.progress-item:before{content:"";display:block;height:4px;border-radius:10px;background:#ffffff1c;margin-bottom:7px}.progress-item.current,.progress-item.done{color:var(--gold)}.progress-item.current:before,.progress-item.done:before{background:var(--gold)}.step-counter{margin-top:9px;color:var(--gold);font-size:11px}
+form{padding:22px 24px 24px}.stage{margin:0;padding:0;border:0;min-width:0}.stage h3{font-size:19px;line-height:1.65;margin:0 0 5px}.stage-intro{font-size:12px;color:var(--muted);margin:0 0 17px}.field{display:flex;flex-direction:column;gap:6px;min-width:0;margin-bottom:14px}.field label,.field-label{font-size:12px;font-weight:700;color:var(--text)}.optional{font-size:10px;color:var(--muted);font-weight:400}.field input,.field select,.field textarea{min-width:0;width:100%;min-height:46px;padding:10px 12px;border-radius:12px;border:1px solid #ffffff24;background:#090b12;color:var(--text);outline-offset:2px;line-height:1.7}.field input::placeholder,.field textarea::placeholder{color:#9293a1}.field select option{background:#141620;color:var(--text)}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}.field textarea{min-height:92px;resize:vertical}.field [type=tel],.field [type=email]{direction:ltr;text-align:left}.field [type=date]{min-width:0}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:12px}.span2{grid-column:1/-1}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:3px 0 8px}.choice{display:flex;align-items:center;justify-content:space-between;gap:7px;text-align:start;min-width:0;min-height:46px;padding:10px 12px;background:#181a24;border:1px solid #ffffff22;border-radius:12px;color:var(--text);font-size:12px;line-height:1.65}.choice:after{content:"";width:12px;height:12px;border:1px solid #ffffff55;border-radius:50%;flex:none}.choice[aria-pressed=true]{background:#f5d07a13;border-color:#f5d07a;color:var(--gold)}.choice[aria-pressed=true]:after{background:var(--gold);border-color:var(--gold);box-shadow:inset 0 0 0 3px #24202a}.choice:hover{border-color:#f5d07a88}.country-custom{margin-top:8px}.choice-enhanced .choice-select:not(.country-custom){position:absolute!important;width:1px!important;height:1px!important;clip-path:inset(50%);overflow:hidden;padding:0;border:0;min-height:0}.choice-enhanced .choice-select:not(.country-custom):focus{position:static!important;width:100%!important;height:auto!important;clip-path:none;min-height:46px;padding:10px 12px}.budget-line{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:10px}.helper{font-size:11px;color:var(--muted);margin:0;line-height:1.8}.form-nav{display:flex;gap:10px;margin-top:18px}.form-nav .primary{flex:1}.form-nav .ghost{flex:0 0 auto}.privacy-note{font-size:10px;color:var(--muted);margin:14px 0 0;text-align:center}.privacy-note a{text-decoration:underline}.status{padding:12px;border-radius:12px;font-size:12px;white-space:pre-line;margin-top:14px;line-height:1.9}.status.err{background:#f8717110;border:1px solid #f8717155;color:#fecaca}.status.ok{background:#34d39910;border:1px solid #34d39955;color:#bbf7d0}.status.info{background:#f5d07a12;border:1px solid #f5d07a44;color:var(--gold)}.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}.wa-follow{margin-top:12px}.wa-follow .btn{width:100%}.form-foot{padding:13px 24px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);text-align:center}.form-foot a{color:var(--gold)}
+.section{padding:46px 0}.section+.section{border-top:1px solid #ffffff0b}.section-head{max-width:780px;margin-bottom:22px}.section h2{font-size:clamp(22px,2.5vw,32px);line-height:1.65;margin:7px 0 8px}.section p{color:var(--muted);margin:0 0 12px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{padding:21px;border:1px solid var(--line);background:linear-gradient(150deg,#151620,#101119);border-radius:20px;min-width:0}.card h3{font-size:16px;line-height:1.8;margin:5px 0 9px}.card p{font-size:13px;margin:0 0 12px}.card .index{font:700 28px/1.3 Manrope,sans-serif;color:var(--gold)}.two{grid-template-columns:repeat(2,minmax(0,1fr))}.case-number{font:800 clamp(32px,4vw,50px)/1.2 Manrope,sans-serif;color:var(--gold);direction:ltr;text-align:right}.market-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.faq-list{display:grid;gap:10px}.faq-list details{border:1px solid var(--line);border-radius:15px;background:var(--panel);padding:12px 16px}.faq-list summary{cursor:pointer;font-weight:700;font-size:14px}.faq-list p{margin:10px 0 0;font-size:13px}.final-cta{border:1px solid #f5d07a44;background:radial-gradient(ellipse at top right,#b78a2d18,transparent 60%),var(--panel);border-radius:24px;padding:clamp(22px,4vw,40px)}.site-footer{border-top:1px solid var(--line);padding:42px 0 24px;background:#090a10}.container{width:min(1200px,calc(100% - 48px));margin-inline:auto}.footer-grid{display:grid;grid-template-columns:1.2fr repeat(4,1fr);gap:22px}.footer-col{min-width:0}.footer-col h3{font-size:13px;margin:0 0 10px}.footer-col ul{list-style:none;padding:0;margin:0}.footer-col li{margin:6px 0;font-size:11px;color:var(--muted)}.footer-col a:hover{color:var(--gold)}.footer-logo img{width:60px;height:60px;object-fit:cover;border-radius:12px}.footer-desc,.footer-contact,.footer-bottom{font-size:11px;color:var(--muted)}.footer-mail{overflow-wrap:anywhere}.footer-cta{display:flex;flex-direction:column;gap:7px;margin-top:12px}.footer-cta .btn{font-size:11px;min-height:36px;padding:7px}.footer-bottom{border-top:1px solid var(--line);margin-top:28px;padding-top:16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:960px){.hero-grid{grid-template-columns:minmax(0,1fr);gap:24px}.intro{padding-top:0}.intro h1{max-width:800px}.intro .lead{max-width:75ch}.request-card{width:100%;max-width:760px;margin-inline:auto}.intro .mini-proof,.intro .proof-note{display:none}.footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.nav-links{gap:12px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.wrap,.container{width:calc(100% - 28px)}html{scroll-padding-top:120px}.nav-inner{min-height:0;padding:10px 0;flex-wrap:wrap;gap:8px}.brand{font-size:12px}.nav-links{font-size:10px;gap:10px}.nav-link-cta{padding:5px 9px}.breadcrumb{font-size:10px;padding-top:14px}.hero{padding:18px 0 32px}.intro h1{font-size:clamp(24px,6.3vw,33px);line-height:1.6;margin:9px 0 10px}.intro .lead{font-size:13px;margin-bottom:12px}.pill-row{margin:12px 0}.intro-links{margin:10px 0}.request-card{border-radius:20px;scroll-margin-top:120px}.card-head,form{padding:18px 15px}.form-foot{padding:12px 15px}.form-grid{grid-template-columns:minmax(0,1fr)}.choices{gap:7px}.choice{padding:9px;font-size:11px}.stage h3{font-size:17px}.field input,.field select,.field textarea{font-size:16px}.budget-line{grid-template-columns:minmax(0,1fr)}.cards,.two{grid-template-columns:minmax(0,1fr)}.section{padding:32px 0}.card{padding:17px}.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.footer-brand{grid-column:1/-1}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://vivamediacreative.com/#organization",
+      "name": "Viva Media Creative",
+      "url": "https://vivamediacreative.com/",
+      "logo": "https://vivamediacreative.com/assets/logo.jpeg",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "info@vivamediacreative.com"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://vivamediacreative.com/influencer-platform/find-influencers/#webpage",
+      "url": "https://vivamediacreative.com/influencer-platform/find-influencers/",
+      "name": "مؤثرين ومشاهير للإعلان في السعودية والإمارات | فيفا",
+      "description": "تبحث عن مؤثرين سعوديين أو مشاهير دبي والخليج للإعلان عن منتجاتك؟ اطلب ترشيحات مؤثرين ومشاهير تناسب جمهورك وميزانيتك وأهداف حملتك مع فيفا.",
+      "inLanguage": "ar",
+      "isPartOf": {
+        "@id": "https://vivamediacreative.com/#website"
       },
-      {
-        "@type":"Question",
-        "name":"هل يمكن طلب مؤثرين تيك توك أو مؤثرين انستقرام أو مؤثرين يوتيوب؟",
-        "acceptedAnswer":{"@type":"Answer","text":"نعم. اختر المنصة المطلوبة داخل النموذج (TikTok/Instagram/YouTube/Snapchat أو Multiple) وسيتم الترشيح وفق الهدف والميزانية."}
+      "breadcrumb": {
+        "@id": "https://vivamediacreative.com/influencer-platform/find-influencers/#breadcrumb"
       },
-      {
-        "@type":"Question",
-        "name":"كم يستغرق الرد بعد إرسال الـ Brief؟",
-        "acceptedAnswer":{"@type":"Answer","text":"عادة يتم إرسال الخطوة التالية خلال 24 ساعة عمل حسب اكتمال البيانات وحجم الطلبات."}
-      },
-      {
-        "@type":"Question",
-        "name":"هل يمكن طلب UGC بدون نشر على حساب المؤثر؟",
-        "acceptedAnswer":{"@type":"Answer","text":"نعم. اكتب شرط UGC (بدون نشر) في الملاحظات داخل الـ Brief ليتم التعامل معه كشرط ضمن الطلب عند الإمكان."}
-      },
-      {
-        "@type":"Question",
-        "name":"هل يمكن طلب مؤثرين لأكثر من دولة أو أكثر من منصة؟",
-        "acceptedAnswer":{"@type":"Answer","text":"نعم. اختر الدولة الأساسية والمنصة، ثم أضف باقي الدول/المنصات في الملاحظات لتكون المطابقة أدق."}
+      "mainEntity": {
+        "@id": "https://vivamediacreative.com/influencer-platform/find-influencers/#service"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/influencer-platform/find-influencers/#service",
+      "name": "طلب مؤثرين ومشاهير للإعلان",
+      "alternateName": [
+        "ترشيح مؤثرين للحملات الإعلانية",
+        "Influencer Matching - Brand Brief"
+      ],
+      "serviceType": "Influencer Matching",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "url": "https://vivamediacreative.com/influencer-platform/find-influencers/",
+      "areaServed": [
+        "السعودية",
+        "الإمارات",
+        "الكويت",
+        "قطر",
+        "البحرين",
+        "عمان",
+        "مصر",
+        "العالم العربي"
+      ],
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "الشركات والعلامات التجارية"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://vivamediacreative.com/influencer-platform/find-influencers/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الرئيسية",
+          "item": "https://vivamediacreative.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "منصة المؤثرين",
+          "item": "https://vivamediacreative.com/influencer-platform/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "اطلب مؤثرين",
+          "item": "https://vivamediacreative.com/influencer-platform/find-influencers/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://vivamediacreative.com/influencer-platform/find-influencers/#faq",
+      "isPartOf": {
+        "@id": "https://vivamediacreative.com/influencer-platform/find-influencers/#webpage"
+      },
+      "inLanguage": "ar",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "هل يمكن طلب مؤثرين في السعودية أو الإمارات أو مصر؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم. حدد الدولة المستهدفة في الخطوة الأولى، ويمكن إضافة أسواق أخرى في الملاحظات لتحسين دقة الترشيح."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يمكن طلب مؤثرين تيك توك أو إنستغرام أو سناب شات أو يوتيوب؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم. اختر المنصة أو أكثر من منصة، أو اطلب توصية إذا لم تحدد المنصة المناسبة بعد."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف يتم اختيار المؤثرين والمشاهير المناسبين للإعلان؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نراجع هدف الحملة والمجال والجمهور المستهدف والسوق والميزانية، ثم نحدد الترشيحات المناسبة ونناقش معك الخطوة التالية."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يمكن إرسال الطلب دون تحديد ميزانية نهائية؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم. يمكنك اختيار أن الميزانية غير محددة بعد، وطلب توصية. الترشيحات والتكاليف النهائية تعتمد على نطاق الحملة وتوفر المؤثرين."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كم يستغرق الرد بعد إرسال الطلب؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "عادة خلال 24 ساعة عمل، بحسب اكتمال البيانات وحجم الطلبات."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يمكن طلب محتوى UGC دون النشر على حساب المؤثر؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم. اذكر أنك تحتاج إلى محتوى UGC دون نشر على حساب المؤثر في الملاحظات، ليتم بحث هذا الشرط ضمن الطلب."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يمكن طلب مؤثرين لأكثر من دولة أو منصة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم. حدد السوق الأساسي أو أكثر من دولة، واختر أكثر من منصة عند الحاجة، وأضف التفاصيل في الملاحظات."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يشمل الطلب إدارة الحملة بالكامل؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "هذه الصفحة لطلب ترشيحات المؤثرين. إذا كنت تحتاج إلى التخطيط والإنتاج والتنفيذ والقياس، يمكنك ذكر ذلك في الملاحظات أو استكشاف خدمة إدارة حملات المؤثرين."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
-
 <body>
-  <div class="noise" aria-hidden="true"></div>
-
-  <!-- NAV (match platform page style) -->
-  <header class="nav">
-    <a class="brand" href="/" aria-label="Viva Media Creative">
-      <span class="brand__mark">VMC</span>
-      <span class="brand__name">Viva Media Creative</span>
-    </a>
-    <nav class="nav__links">
-      <a href="/services/">الخدمات</a>
-      <a href="/influencer-platform/">منصة المؤثرين</a>
-      <a href="/influencer-platform/campaigns/">حملات إعلانية للمؤثرين</a>
-      <a class="pill" href="/contact/">تواصل</a>
-    </nav>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section class="hero platformHero" style="min-height:auto; padding-bottom: 26px;">
-      <div class="hero__bg" aria-hidden="true">
-        <div class="halo h1"></div>
-        <div class="halo h2"></div>
-        <div class="halo h3"></div>
-        <div class="gridlines"></div>
-      </div>
-
-      <div class="hero__inner">
-        <p class="kicker reveal" dir="ltr">VIVA MEDIA CREATIVE</p>
-
-        <h1 class="heroTitle reveal">
-          اطلب مؤثرين ومشاهير للإعلان في
-          <br/>
-          <span class="gold">السعودية والإمارات والخليج</span>
-        </h1>
-
-        <p class="sub reveal">
-          نساعدك على اختيار المؤثرين والمشاهير المناسبين لعلامتك التجارية حسب الجمهور والمجال والميزانية.
-        </p>
-
-        <div class="hero__cta reveal">
-          <a class="btn primary magnetic" href="#brandBrief">اطلب مؤثرين لحملتك</a>
-          <a class="btn ghost magnetic" href="/influencer-platform/">العودة لصفحة المنصة</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ✅ ADDED: SEO block (placed right after HERO, before the form; uses existing platform styles) -->
-    <section class="platformSection seoBlock" aria-label="طلب مؤثرين حسب الدولة والمنصة">
-      <div class="section__inner">
-        <h2 class="reveal" style="margin:10px 0 10px 0; font-size:22px;" id="by-country-platform">
-          طلب مؤثرين حسب الدولة والمنصة في العالم العربي
-        </h2>
-
-        <div class="platformGrid">
-          <div class="platformCard reveal">
-            <h3 style="margin-bottom:8px;">مؤثرين في السعودية والإمارات ومصر والكويت وقطر</h3>
-             <p style="margin:0; line-height:1.95;">
-  إذا كنت تبحث عن <strong>مؤثرين في السعودية</strong> للسوق السعودي، أو <strong>مؤثرين في الإمارات</strong> لحملات دبي وأبوظبي،
-  أو <strong>مؤثرين في مصر</strong> للوصول إلى جمهور واسع بتكلفة فعّالة—هذه الصفحة تجمع Brief واضح يساعد على المطابقة بدقة
-  حسب الدولة والجمهور ونوع المؤثر ونطاق الميزانية.
-  ويمكنك كذلك طلب <strong>مؤثرين في الكويت</strong> أو <strong>مؤثرين في قطر</strong> مع إضافة المدن/الفئات في الملاحظات
-  لتقليل الترشيحات غير المناسبة وتسريع التنفيذ.
-  وإذا كنت تبحث عن تنفيذ كامل للحملة بدل المطابقة فقط، يمكنك الاعتماد على
-  <a href="/services/influencer-marketing/" style="text-decoration:underline; color:inherit;">
-    خدمة إدارة حملات التسويق عبر المؤثرين
-  </a>.
-</p>
-          </div>
-
-          <div class="platformCard reveal">
-            <h3 style="margin-bottom:8px;">طلب مؤثرين تيك توك أو مؤثرين انستقرام عرب أو مؤثرين يوتيوب</h3>
-            <p style="margin:0; line-height:1.95;">
-              <strong>طلب مؤثرين تيك توك</strong> مناسب للانتشار السريع والفيديوهات القصيرة،
-              بينما <strong>مؤثرين انستقرام عرب</strong> مناسب للـ Reels والـ Stories وبناء صورة العلامة،
-              و<strong>مؤثرين يوتيوب</strong> مناسب للمراجعات الطويلة ورفع الثقة قبل الشراء.
-              حدّد المنصة والهدف داخل الـ Brief لتكون المطابقة مبنية على “النتيجة المطلوبة” لا على الأرقام فقط.
-            </p>
-          </div>
-
-          <div class="platformCard reveal">
-            <h3 style="margin-bottom:8px;">منصة مؤثرين سعوديين؟ أو تغطية خليجية متعددة الأسواق</h3>
-            <p style="margin:0; line-height:1.95;">
-              يمكن استخدام هذه الصفحة كـ <strong>منصة مؤثرين سعوديين</strong> عند استهداف المملكة فقط،
-              أو كمنصة تغطي الخليج ومصر وأسواق عربية أخرى عند تحديد أكثر من دولة في الملاحظات.
-              إذا كنت جاهزًا، <a href="#brandBrief" style="text-decoration:underline; color:inherit;">ابدأ الطلب الآن</a>
-              أو ارجع لصفحة <a href="/influencer-platform/" style="text-decoration:underline; color:inherit;">المنصة</a> لمعرفة مسارات التسجيل.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ✅ END SEO block -->
-
-    <!-- CONTENT -->
-    <section class="section contactWrap" style="padding-top: 30px;">
-      <div class="contactGrid">
-
-        <!-- Form card -->
-        <div class="glassCard reveal" id="brandBrief">
-          <div class="cardHead">
-            <h2>Brief سريع للشركات</h2>
-            <p>حقول قليلة لكنها كافية لنرشّح مؤثرين مناسبين بسرعة.</p>
-          </div>
-
-          <div class="formBody">
-            <form id="brandForm" novalidate>
-              <!-- Anti-spam honeypot (should stay empty) -->
-              <input type="text" name="website" id="website" tabindex="-1" autocomplete="off"
-                style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0;"
-                aria-hidden="true" />
-
-              <!-- Hidden helpers -->
-              <input type="hidden" name="form_type" value="brand_brief" />
-              <input type="hidden" name="wa_message" id="wa_message" value="" />
-
-              <div class="formGrid">
-                <div class="field">
-                  <label for="company">اسم الشركة</label>
-                  <input id="company" name="company" type="text" placeholder="مثال: Viva Store" required minlength="2">
-                </div>
-
-                <div class="field">
-                  <label for="contact_person">اسم المسؤول (اختياري)</label>
-                  <input id="contact_person" name="contact_person" type="text" placeholder="الاسم للتواصل">
-                </div>
-
-                <div class="field">
-                  <label for="target_country">الدولة المستهدفة</label>
-                  <input id="target_country" name="target_country" type="text" placeholder="مثال: السعودية" required minlength="2">
-                </div>
-
-                <div class="field">
-                  <label for="niche">المجال</label>
-                  <select id="niche" name="niche" required>
-                    <option value="" selected disabled>اختر المجال</option>
-                    <option>تجميل وعناية</option>
-                    <option>أزياء</option>
-                    <option>مطاعم وكافيهات</option>
-                    <option>تطبيقات وخدمات</option>
-                    <option>تعليم</option>
-                    <option>سفر وسياحة</option>
-                    <option>لياقة وصحة</option>
-                    <option>ألعاب</option>
-                    <option>عقارات</option>
-                    <option>تقنية</option>
-                    <option>أخرى</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="goal">الهدف</label>
-                  <select id="goal" name="goal" required>
-                    <option value="" selected disabled>اختر الهدف</option>
-                    <option value="Awareness">زيادة الوعي بالعلامة</option>
-                    <option value="Sales">مبيعات/طلبات</option>
-                    <option value="Launch">إطلاق منتج</option>
-                    <option value="AppInstalls">تحميل تطبيق</option>
-                    <option value="Leads">تجميع عملاء محتملين</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="platform">المنصة المطلوبة</label>
-                  <select id="platform" name="platform" required>
-                    <option value="" selected disabled>اختر المنصة</option>
-                    <option>Instagram</option>
-                    <option>TikTok</option>
-                    <option>YouTube</option>
-                    <option>Snapchat</option>
-                    <option>Multiple</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="creator_type">نوع المؤثر</label>
-                  <select id="creator_type" name="creator_type" required>
-                    <option value="" selected disabled>اختر النوع</option>
-                    <option value="Nano">Nano (1K–10K)</option>
-                    <option value="Micro">Micro (10K–100K)</option>
-                    <option value="Macro">Macro (100K–1M)</option>
-                    <option value="Celebrity">Celebrity (1M+)</option>
-                    <option value="Mixed">Mixed</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="creators_count">عدد المؤثرين (اختياري)</label>
-                  <select id="creators_count" name="creators_count">
-                    <option value="" selected>غير محدد</option>
-                    <option>1</option>
-                    <option>2-3</option>
-                    <option>4-6</option>
-                    <option>7-10</option>
-                    <option>10+</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="budget">الميزانية (نطاق)</label>
-                  <select id="budget" name="budget" required>
-                    <option value="" selected disabled>اختر الميزانية</option>
-                    <option value="Under 500">أقل من 500€</option>
-                    <option value="500-1k">500€ – 1K€</option>
-                    <option value="1k-3k">1K€ – 3K€</option>
-                    <option value="3k-7k">3K€ – 7K€</option>
-                    <option value="7k-15k">7K€ – 15K€</option>
-                    <option value="15k+">15K€+</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="execution_date">موعد التنفيذ (تقريبي)</label>
-                  <input id="execution_date" name="execution_date" type="date">
-                </div>
-
-                <div class="field span2">
-                  <label for="notes">ملاحظات (اختياري قوي)</label>
-                  <textarea id="notes" name="notes" placeholder="مثال: نوع المحتوى المطلوب، رسالة الحملة، أي شروط، رابط المنتج…"></textarea>
-                </div>
-
-                <div class="field">
-                  <label for="whatsapp">واتساب</label>
-                  <input id="whatsapp" name="whatsapp" type="tel" placeholder="+966xxxxxxxxx" required minlength="6">
-                </div>
-
-                <div class="field">
-                  <label for="email">الإيميل (اختياري)</label>
-                  <input id="email" name="email" type="email" placeholder="name@company.com">
-                </div>
-
-                <div id="status" class="status"></div>
-
-                <div class="actions">
-                  <button class="btn primary magnetic" type="submit">إرسال الطلب</button>
-                  <span class="hint">
-                    بالضغط على “إرسال” أنت توافق على مشاركة بياناتك بهدف مطابقة مؤثرين والتواصل حول الخطوة التالية.
-                  </span>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <!-- Side card -->
-        <aside class="glassCard reveal">
-          <div class="cardHead">
-            <h2>كيف تعمل؟</h2>
-            <p>ثلاث خطوات واضحة بدون تعقيد.</p>
-          </div>
-
-          <div class="sideBody">
-            <div class="miniCard">
-              <h3>الخطوات</h3>
-              <div class="steps">
-                <div class="step">
-                  <div class="num">1</div>
-                  <div>
-                    <b>أرسل Brief سريع</b>
-                    <small>مجال + دولة + منصة + ميزانية.</small>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="num">2</div>
-                  <div>
-                    <b>مطابقة وترشيح</b>
-                    <small>نرشّح لك مؤثرين مناسبين حسب البيانات.</small>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="num">3</div>
-                  <div>
-                    <b>تواصل منظم</b>
-                    <small>نرسل لك الخطوة التالية عبر واتساب/إيميل.</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="whatsBox">
-              <div class="txt">
-                <b>تريد المتابعة فورًا على واتساب؟</b>
-                <small>بعد إرسال الـ Brief سيظهر زر واتساب برسالة جاهزة.</small>
-              </div>
-              <a id="waQuick" class="btn ghost magnetic" href="https://wa.me/4915565678291" target="_blank" rel="noopener" aria-disabled="true">
-                WhatsApp ↗
-              </a>
-            </div>
-
-            <div class="miniCard">
-              <h3>معلومة مهمة</h3>
-              <p>هذه الصفحة لجمع Brief والمطابقة. إذا تريد إدارة حملة كاملة وإنتاج محتوى، ستجد ذلك في صفحة الخدمات.</p>
-              <p style="margin-top:10px;">
-                <a class="btn ghost magnetic" href="/services/influencer-marketing/">عرض خدمات التسويق عبر المؤثرين</a>
-              </p>
-             <p style="margin-top:10px;">
-    <a class="btn ghost magnetic" href="/influencer-platform/campaigns/">
-      شاهد حملات المؤثرين
-    </a>
-  </p>
-           <p style="margin-top:10px; line-height:1.9;">
-  ويمكنك أيضًا
-  <a href="/services/" style="text-decoration:underline; color:inherit;">
-    استعراض جميع خدماتنا التسويقية
-  </a>
-  لاختيار المسار الأنسب بين إدارة الحملات، وصناعة الترند، وخدمات النمو الأخرى.
-</p>
-            </div>
-          </div>
-        </aside>
-       
-      </div>
-      <section class="section">
-  <div class="container">
-    <div class="section-card">
-
-      <div class="section-head">
-        <span class="cap">Need More Than Influencers?</span>
-        <h2>هل تبحث عن إدارة حملة كاملة وليس فقط مؤثرين؟</h2>
-        <p>
-          هذه الصفحة مخصصة لطلب المؤثرين فقط. لكن إذا كنت تحتاج
-          استراتيجية، محتوى، وإدارة كاملة للحملة — يمكنك استكشاف خدماتنا المتخصصة حسب نوع نشاطك.
-        </p>
-      </div>
-
-      <div class="three-col">
-
-        <div class="glass">
-          <h3>للعقارات</h3>
-          <p>
-            نحول حملات المؤثرين إلى استفسارات، طلبات معاينة، واهتمام حقيقي بالمشروع.
-          </p>
-          <a href="/services/influencer-marketing/real-estate/">
-            استكشف خدمة العقارات
-          </a>
-        </div>
-
-        <div class="glass">
-          <h3>للمتاجر الإلكترونية</h3>
-          <p>
-            نربط الحملات بالمبيعات عبر أكواد الخصم وروابط التتبع وقياس الأداء.
-          </p>
-          <a href="/services/influencer-marketing/ecommerce/">
-            استكشف خدمة المتاجر الإلكترونية
-          </a>
-        </div>
-
-      </div>
-
-      <div style="margin-top:16px;">
-        <a href="/services/influencer-marketing/" class="btn btn--ghost">
-          عرض خدمة التسويق عبر المؤثرين بالكامل
-        </a>
-      </div>
-
-    </div>
-  </div>
+<a class="skip" href="#main-content">انتقل إلى المحتوى</a>
+<header class="nav"><div class="wrap nav-inner">
+<a class="brand" href="/" aria-label="Viva Media Creative"><span class="brand__mark">VMC</span><span>Viva Media Creative</span></a>
+<nav class="nav-links" aria-label="القائمة الرئيسية"><a href="/services/">الخدمات</a><a href="/influencer-platform/">منصة المؤثرين</a><a href="/influencer-platform/campaigns/">حملات المؤثرين</a><a href="/contact/" class="nav-link-cta">تواصل</a></nav>
+</div></header>
+<main id="main-content">
+<nav class="wrap breadcrumb" aria-label="مسار الصفحة"><a href="/">الرئيسية</a><span aria-hidden="true">/</span><a href="/influencer-platform/">منصة المؤثرين</a><span aria-hidden="true">/</span><span aria-current="page">اطلب مؤثرين</span></nav>
+<section class="hero" aria-labelledby="hero-title"><div class="wrap hero-grid">
+<div class="intro">
+<p class="eyebrow">VIVA MEDIA CREATIVE</p>
+<h1 id="hero-title">اطلب مؤثرين ومشاهير للإعلان في <span class="gold">السعودية والإمارات والخليج</span></h1>
+<p class="lead">نساعدك على اختيار المؤثرين والمشاهير المناسبين لعلامتك التجارية حسب الجمهور والمجال والميزانية.</p>
+<div class="pill-row"><span class="pill">ترشيحات حسب السوق</span><span class="pill">خيارات تناسب الميزانية</span><span class="pill">تواصل مع فريق فيفا</span></div>
+<div class="actions"><a class="btn primary" href="#brandBrief">اطلب مؤثرين لحملتك</a><a class="btn ghost" href="/influencer-platform/">منصة المؤثرين</a></div>
+<p class="intro-links">لم تحدد ميزانيتك بعد؟ <a href="/ar/influencer-campaign-cost-calculator/">احسب تكلفة حملة المؤثرين</a>.</p>
+<div class="mini-proof"><a href="/work/influencer-app-acquisition/"><b>2,400</b><span>حجز أول لحملة تطبيق سفر عبر ثلاثة أسواق</span></a><a href="/work/skincare-influencer-campaign-saudi/"><b>45%</b><span>من الدفعة الأولى خلال 25 يوماً بمساهمة حملة مؤثرات</span></a></div>
+<p class="proof-note">نتائج حملات سابقة محددة، لا تمثل ضماناً لنتائج الحملات المستقبلية.</p>
+</div>
+<div class="request-card" id="brandBrief">
+<div class="card-head"><p class="eyebrow">YOUR CAMPAIGN / VMC</p><h2>ابدأ طلب حملتك</h2><p>حدد احتياجك في ثلاث خطوات. لا يلزم أن تعرف جميع التفاصيل مسبقاً.</p>
+<div class="progress" id="progress" aria-label="مراحل الطلب" hidden><div class="progress-item current" aria-current="step">السوق والهدف</div><div class="progress-item">نوع التعاون</div><div class="progress-item">بيانات التواصل</div></div><div class="step-counter" id="stepCounter" aria-live="polite" hidden>الخطوة 1 من 3</div></div>
+<form id="brandForm" method="post" novalidate>
+<div class="hp" aria-hidden="true"><input type="text" name="website" id="website" tabindex="-1" autocomplete="off"></div>
+<input type="hidden" name="form_type" value="brand_brief"><input type="hidden" name="wa_message" id="wa_message" value="">
+<section class="stage" data-step="0" aria-labelledby="stage1"><h3 id="stage1" tabindex="-1">أين تريد إطلاق حملتك؟</h3><p class="stage-intro">حدد السوق الذي تريد الوصول إلى جمهوره، ثم أخبرنا بهدف الحملة.</p>
+<div class="field"><label for="target_country">الدولة المستهدفة</label><div class="choices" data-choices="target_country" hidden><button type="button" class="choice" data-value="السعودية" aria-pressed="false">السعودية</button><button type="button" class="choice" data-value="الإمارات" aria-pressed="false">الإمارات</button><button type="button" class="choice" data-value="الكويت" aria-pressed="false">الكويت</button><button type="button" class="choice" data-value="قطر" aria-pressed="false">قطر</button><button type="button" class="choice" data-value="مصر" aria-pressed="false">مصر</button><button type="button" class="choice" data-value="أكثر من دولة" aria-pressed="false">أكثر من دولة</button><button type="button" class="choice" data-value="البحرين" aria-pressed="false">البحرين</button><button type="button" class="choice" data-value="عمان" aria-pressed="false">عمان</button><button type="button" class="choice" data-value="دولة أخرى" aria-pressed="false">دولة أخرى</button></div><input id="target_country" name="target_country" type="text" class="country-custom" required minlength="2" placeholder="اكتب الدولة أو الأسواق المستهدفة" autocomplete="off"></div>
+<div class="field"><label for="goal">ما هدف الحملة؟</label><div class="choices" data-choices="goal" hidden><button type="button" class="choice" data-value="Sales" aria-pressed="false">زيادة المبيعات</button><button type="button" class="choice" data-value="Launch" aria-pressed="false">إطلاق منتج</button><button type="button" class="choice" data-value="Awareness" aria-pressed="false">زيادة الوعي بالعلامة</button><button type="button" class="choice" data-value="Leads" aria-pressed="false">جذب عملاء محتملين</button><button type="button" class="choice" data-value="AppInstalls" aria-pressed="false">تحميل تطبيق</button><button type="button" class="choice" data-value="Needs recommendation" aria-pressed="false">أحتاج إلى توصية</button></div><select id="goal" name="goal" class="choice-select" required><option value="" selected disabled>اختر الهدف</option><option value="Sales">زيادة المبيعات</option><option value="Launch">إطلاق منتج</option><option value="Awareness">زيادة الوعي بالعلامة</option><option value="Leads">جذب عملاء محتملين</option><option value="AppInstalls">تحميل تطبيق</option><option value="Needs recommendation">أحتاج إلى توصية</option></select></div>
+<div class="field"><label for="niche">مجال العلامة التجارية</label><select id="niche" name="niche" required><option value="" selected disabled>اختر المجال</option><option>تجميل وعناية</option><option>أزياء</option><option>مطاعم وكافيهات</option><option>تطبيقات وخدمات</option><option>تعليم</option><option>سفر وسياحة</option><option>لياقة وصحة</option><option>ألعاب</option><option>عقارات</option><option>تقنية</option><option>أخرى</option></select></div>
 </section>
-      <!-- ✅ Added: FAQ in body (matches FAQ schema; light markup to avoid breaking design) -->
-      <div style="margin-top:16px;">
-        <div class="glassCard reveal" style="border-radius:30px;">
-          <div class="cardHead">
-            <h2>أسئلة شائعة</h2>
-            <p>إجابات سريعة قبل إرسال الـ Brief.</p>
-          </div>
-
-          <div class="formBody" style="padding-top:14px;">
-            <div class="miniCard" style="margin-bottom:10px;">
-              <h3>هل يمكن طلب مؤثرين في السعودية أو الإمارات أو مصر؟</h3>
-              <p>نعم. اختر الدولة المستهدفة داخل النموذج، وأضف أي دول أخرى في الملاحظات لتحسين دقة الترشيح.</p>
-            </div>
-
-            <div class="miniCard" style="margin-bottom:10px;">
-              <h3>هل يمكن طلب مؤثرين تيك توك أو مؤثرين انستقرام أو مؤثرين يوتيوب؟</h3>
-              <p>نعم. اختر المنصة المطلوبة داخل الـ Brief (أو Multiple)، وسيتم الترشيح وفق الهدف ونطاق الميزانية.</p>
-            </div>
-
-            <div class="miniCard" style="margin-bottom:10px;">
-              <h3>كم يستغرق الرد بعد إرسال الطلب؟</h3>
-              <p>عادة خلال 24 ساعة عمل، حسب اكتمال البيانات وحجم الطلبات.</p>
-            </div>
-
-            <div class="miniCard" style="margin-bottom:10px;">
-              <h3>هل يمكن طلب UGC بدون نشر على حساب المؤثر؟</h3>
-              <p>نعم. اكتب شرط UGC (بدون نشر) في الملاحظات داخل الـ Brief ليتم التعامل معه كشرط ضمن الطلب عند الإمكان.</p>
-            </div>
-
-            <div class="miniCard">
-              <h3>هل يمكن طلب مؤثرين لأكثر من دولة أو أكثر من منصة؟</h3>
-              <p>نعم. اختر الدولة الأساسية والمنصة، ثم أضف باقي الدول/المنصات في الملاحظات لتكون المطابقة أدق.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- ✅ End FAQ -->
-
-    </section>
-  </main>
-
+<section class="stage" data-step="1" aria-labelledby="stage2"><h3 id="stage2" tabindex="-1">ما نوع التعاون المناسب لحملتك؟</h3><p class="stage-intro">إذا لم تحدد المنصة أو نوع المؤثر بعد، اختر أنك تحتاج إلى توصية.</p>
+<div class="field"><label for="platform">المنصة المطلوبة</label><div class="choices" data-choices="platform" hidden><button type="button" class="choice" data-value="Snapchat" aria-pressed="false">سناب شات</button><button type="button" class="choice" data-value="TikTok" aria-pressed="false">تيك توك</button><button type="button" class="choice" data-value="Instagram" aria-pressed="false">إنستغرام</button><button type="button" class="choice" data-value="YouTube" aria-pressed="false">يوتيوب</button><button type="button" class="choice" data-value="Multiple" aria-pressed="false">أكثر من منصة</button><button type="button" class="choice" data-value="Needs recommendation" aria-pressed="false">أحتاج إلى توصية</button></div><select id="platform" name="platform" class="choice-select" required><option value="" selected disabled>اختر المنصة</option><option value="Snapchat">سناب شات</option><option value="TikTok">تيك توك</option><option value="Instagram">إنستغرام</option><option value="YouTube">يوتيوب</option><option value="Multiple">أكثر من منصة</option><option value="Needs recommendation">أحتاج إلى توصية</option></select></div>
+<div class="form-grid"><div class="field"><label for="creator_type">نوع المؤثر</label><select id="creator_type" name="creator_type" required><option value="" selected disabled>اختر النوع</option><option value="Needs recommendation">أحتاج إلى توصية</option><option value="Nano">نانو (1K–10K)</option><option value="Micro">مايكرو (10K–100K)</option><option value="Macro">ماكرو (100K–1M)</option><option value="Celebrity">مشاهير (1M+)</option><option value="Mixed">مزيج من المؤثرين</option></select></div><div class="field"><label for="creators_count">عدد المؤثرين <span class="optional">(اختياري)</span></label><select id="creators_count" name="creators_count"><option value="">غير محدد</option><option>1</option><option>2-3</option><option>4-6</option><option>7-10</option><option>10+</option></select></div></div>
+<div class="field"><span class="field-label">الميزانية التقريبية</span><div class="budget-line"><div class="field" style="margin:0"><label for="budgetCurrency">العملة</label><select id="budgetCurrency"><option value="SAR">ريال سعودي (SAR)</option><option value="AED">درهم إماراتي (AED)</option><option value="KWD">دينار كويتي (KWD)</option><option value="QAR">ريال قطري (QAR)</option><option value="EGP">جنيه مصري (EGP)</option><option value="BHD">دينار بحريني (BHD)</option><option value="OMR">ريال عماني (OMR)</option><option value="USD">دولار (USD)</option><option value="EUR">يورو (EUR)</option></select></div><div class="field" style="margin:0"><label for="budget">نطاق الميزانية</label><select id="budget" name="budget" required><option value="" selected disabled>اختر الميزانية</option><option value="غير محددة بعد - أحتاج إلى توصية">غير محددة بعد</option><option value="أقل من 2000 SAR">أقل من 2,000 SAR</option><option value="2000–5000 SAR">2,000 – 5,000 SAR</option><option value="5000–15000 SAR">5,000 – 15,000 SAR</option><option value="15000–30000 SAR">15,000 – 30,000 SAR</option><option value="30000+ SAR">30,000+ SAR</option></select></div></div><p class="helper">هذه نطاقات لتحديد احتياجك وليست أسعاراً ملزمة للمؤثرين.</p></div>
+<div class="field"><label for="execution_date">موعد التنفيذ <span class="optional">(اختياري)</span></label><input id="execution_date" name="execution_date" type="date"></div>
+</section>
+<section class="stage" data-step="2" aria-labelledby="stage3"><h3 id="stage3" tabindex="-1">كيف يتواصل فريقنا معك؟</h3><p class="stage-intro">أضف بيانات علامتك التجارية لنراجع الطلب ونناقش الترشيحات.</p>
+<div class="form-grid"><div class="field"><label for="company">اسم الشركة أو العلامة التجارية</label><input id="company" name="company" type="text" required minlength="2" autocomplete="organization" placeholder="اسم العلامة التجارية"></div><div class="field"><label for="contact_person">اسم المسؤول <span class="optional">(اختياري)</span></label><input id="contact_person" name="contact_person" autocomplete="name" type="text" placeholder="الاسم للتواصل"></div><div class="field"><label for="whatsapp">رقم واتساب مع رمز الدولة</label><input id="whatsapp" name="whatsapp" type="tel" required minlength="6" autocomplete="tel" placeholder="+966…"></div><div class="field"><label for="email">البريد الإلكتروني <span class="optional">(اختياري)</span></label><input id="email" name="email" type="email" autocomplete="email" placeholder="name@company.com"></div><div class="field span2"><label for="notes">تفاصيل إضافية <span class="optional">(اختياري)</span></label><textarea id="notes" name="notes" placeholder="رابط المنتج، الجمهور المطلوب، مدن إضافية، محتوى UGC، أو الحاجة إلى إدارة حملة كاملة"></textarea></div></div>
+</section>
+<div class="form-nav"><button type="button" id="backBtn" class="btn ghost" hidden>السابق</button><button type="button" id="nextBtn" class="btn primary" hidden>متابعة</button><button type="submit" id="submitBtn" class="btn primary" disabled>إرسال طلب المؤثرين</button></div>
+<p class="privacy-note">بإرسال الطلب، توافق على استخدام بياناتك لمراجعة الحملة والتواصل بشأنها. <a href="/privacy/">سياسة الخصوصية</a></p>
+<div id="status" class="status" role="status" aria-live="polite" tabindex="-1" hidden></div>
+<div class="wa-follow" id="waFollow" hidden><a id="waQuick" class="btn ghost" href="https://wa.me/4915565678291" target="_blank" rel="noopener">متابعة عبر واتساب ↗</a></div>
+<button type="button" id="newRequest" class="btn ghost" style="margin-top:12px;width:100%" hidden>إرسال طلب جديد</button>
+<noscript><p class="helper">فعّل JavaScript لاستخدام النموذج، أو <a class="text-link" href="https://wa.me/4915565678291">تواصل معنا عبر واتساب</a>.</p></noscript>
+</form><div class="form-foot">تحتاج مساعدة؟ <a href="/contact/">تواصل مع فريق فيفا</a> أو <a href="https://wa.me/4915565678291" target="_blank" rel="noopener">واتساب</a>.</div></div>
+</div></section>
+<section class="section"><div class="wrap"><div class="section-head"><span class="eyebrow">HOW IT WORKS</span><h2>من طلبك إلى اختيار المؤثرين المناسبين</h2><p>ثلاث خطوات واضحة تساعدنا على فهم حملتك وتحديد خيارات التعاون.</p></div><div class="cards"><article class="card"><span class="index">01</span><h3>حدد السوق والهدف</h3><p>أرسل احتياج العلامة التجارية والمنصة والميزانية المتوقعة عبر النموذج.</p></article><article class="card"><span class="index">02</span><h3>نراجع الطلب والترشيحات</h3><p>نبحث عن الملاءمة بين مجال المؤثر وجمهوره وموقعه الجغرافي وطبيعة التعاون، وليس عدد المتابعين وحده.</p></article><article class="card"><span class="index">03</span><h3>نتواصل حول الخطوة التالية</h3><p>يناقش فريق فيفا تفاصيل الطلب معك، بما في ذلك توفر المؤثرين ونطاق العمل والتكلفة.</p></article></div></div></section>
+<section class="section"><div class="wrap"><div class="section-head"><span class="eyebrow">SELECTED CAMPAIGNS</span><h2>خبرة فيفا في حملات المؤثرين</h2><p>دراسات حالة توضح كيفية ربط اختيار المؤثرين بالأهداف التجارية.</p></div><div class="cards two"><article class="card"><div class="case-number">2,400</div><h3>حجز أول لحملة تطبيق سفر</h3><p>شملت الحملة 32 مؤثراً في السعودية والإمارات ومصر، وحققت عبر الأسواق الثلاثة 8 ملايين مشاهدة و24 ألف تحميل و2,400 حجز أول.</p><a class="text-link" href="/work/influencer-app-acquisition/">اقرأ دراسة الحالة ↗</a></article><article class="card"><div class="case-number">45%</div><h3>من الدفعة الأولى خلال 25 يوماً</h3><p>في السعودية، ساهمت حملة عبر 6 مؤثرات في دعم بيع 45% من الدفعة الأولى لمنتج عناية بالبشرة خلال 25 يوماً.</p><a class="text-link" href="/work/skincare-influencer-campaign-saudi/">اقرأ دراسة الحالة ↗</a></article></div><p class="small" style="margin-top:12px">هذه نتائج حملات محددة؛ تختلف النتائج وفق المنتج والجمهور والميزانية والتنفيذ.</p></div></section>
+<section class="section" id="by-country-platform"><div class="wrap"><div class="section-head"><span class="eyebrow">MENA MARKETS</span><h2>البحث عن مؤثرين ومشاهير للإعلان حسب الدولة والمنصة</h2><p>نساعد الشركات على طلب مؤثرين في الأسواق العربية، وفق الجمهور والقطاع والهدف من الحملة.</p></div><div class="cards">
+<article class="card"><h3>مؤثرين سعوديين للإعلان</h3><p>إذا كنت تبحث عن مؤثر سعودي أو مشاهير سناب شات وتيك توك وإنستغرام في الرياض أو جدة أو مدن المملكة، حدد جمهورك ومجالك لنناقش ترشيحات تناسب السوق السعودي.</p><a href="#brandBrief" class="text-link" data-market="السعودية">اطلب مؤثرين في السعودية ↗</a></article>
+<article class="card"><h3>مؤثرين ومشاهير دبي والإمارات</h3><p>للشركات التي تبحث عن مشاهير دبي أو مؤثرين في أبوظبي وباقي الإمارات: اختر الجمهور الذي تريد الوصول إليه، سواء في الضيافة أو العقارات أو التجميل أو التجارة الإلكترونية.</p><a href="#brandBrief" class="text-link" data-market="الإمارات">اطلب مؤثرين في الإمارات ↗</a><br><a href="/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/" class="text-link small">إدارة حملات المؤثرين في دبي</a></article>
+<article class="card"><h3>مؤثرين في الخليج والعالم العربي</h3><p>يمكنك طلب مؤثرين في الكويت وقطر والبحرين وعمان ومصر، أو تحديد أكثر من دولة عند التخطيط لحملة إقليمية.</p><a href="#brandBrief" class="text-link" data-market="أكثر من دولة">اطلب ترشيحات لأسواق متعددة ↗</a></article>
+</div><div class="cards two" style="margin-top:14px"><article class="card"><h3>طلب مؤثرين على سناب شات وتيك توك وإنستغرام ويوتيوب</h3><p>اختر سناب شات للمحتوى اليومي والتغطيات، أو تيك توك للفيديوهات القصيرة، أو إنستغرام للمحتوى البصري، أو يوتيوب للمراجعات والتفاصيل. ويمكن الجمع بين المنصات حسب الحملة.</p></article><article class="card"><h3>من المؤثرين الصغار إلى المشاهير</h3><p>يمكن طلب مؤثرين نانو أو مايكرو أو ماكرو أو مشاهير، أو طلب توصية بنوع المؤثر الأنسب. للاطلاع على نطاقات التكلفة، استخدم <a class="text-link" href="/ar/influencer-campaign-cost-calculator/">حاسبة تكلفة المؤثرين</a>.</p></article></div></div></section>
+<section class="section"><div class="wrap"><div class="section-head"><span class="eyebrow">FULL CAMPAIGN SERVICES</span><h2>هل تحتاج إلى إدارة حملة كاملة؟</h2><p>يمكنك الاكتفاء بطلب المؤثرين أو العمل مع فيفا على استراتيجية الحملة والإنتاج والتنفيذ والقياس.</p></div><div class="cards"><article class="card"><h3>حملات العقارات</h3><p>تخطيط المحتوى للوصول إلى الجمهور المهتم بالمشروع العقاري.</p><a class="text-link" href="/services/influencer-marketing/real-estate/">خدمة العقارات ↗</a></article><article class="card"><h3>حملات المتاجر الإلكترونية</h3><p>ربط المحتوى بمسار الشراء وقياس الأداء وفق هدف الحملة.</p><a class="text-link" href="/services/influencer-marketing/ecommerce/">خدمة المتاجر الإلكترونية ↗</a></article><article class="card"><h3>إدارة حملات المؤثرين</h3><p>استراتيجية وترشيح وتنفيذ وقياس حسب احتياجات العلامة التجارية.</p><a class="text-link" href="/services/influencer-marketing/">استكشف الخدمة ↗</a></article></div><div class="market-links"><a href="/services/" class="btn ghost">جميع الخدمات</a><a href="/influencer-platform/campaigns/" class="btn ghost">حملات المؤثرين</a><a href="/influencer-platform/" class="btn ghost">منصة المؤثرين</a></div></div></section>
+<section class="section" id="faq"><div class="wrap"><div class="section-head"><span class="eyebrow">FAQ</span><h2>أسئلة شائعة عن طلب المؤثرين والمشاهير</h2></div><div class="faq-list"><details><summary>هل يمكن طلب مؤثرين في السعودية أو الإمارات أو مصر؟</summary><p>نعم. حدد الدولة المستهدفة في الخطوة الأولى، ويمكن إضافة أسواق أخرى في الملاحظات لتحسين دقة الترشيح.</p></details>
+<details><summary>هل يمكن طلب مؤثرين تيك توك أو إنستغرام أو سناب شات أو يوتيوب؟</summary><p>نعم. اختر المنصة أو أكثر من منصة، أو اطلب توصية إذا لم تحدد المنصة المناسبة بعد.</p></details>
+<details><summary>كيف يتم اختيار المؤثرين والمشاهير المناسبين للإعلان؟</summary><p>نراجع هدف الحملة والمجال والجمهور المستهدف والسوق والميزانية، ثم نحدد الترشيحات المناسبة ونناقش معك الخطوة التالية.</p></details>
+<details><summary>هل يمكن إرسال الطلب دون تحديد ميزانية نهائية؟</summary><p>نعم. يمكنك اختيار أن الميزانية غير محددة بعد، وطلب توصية. الترشيحات والتكاليف النهائية تعتمد على نطاق الحملة وتوفر المؤثرين.</p></details>
+<details><summary>كم يستغرق الرد بعد إرسال الطلب؟</summary><p>عادة خلال 24 ساعة عمل، بحسب اكتمال البيانات وحجم الطلبات.</p></details>
+<details><summary>هل يمكن طلب محتوى UGC دون النشر على حساب المؤثر؟</summary><p>نعم. اذكر أنك تحتاج إلى محتوى UGC دون نشر على حساب المؤثر في الملاحظات، ليتم بحث هذا الشرط ضمن الطلب.</p></details>
+<details><summary>هل يمكن طلب مؤثرين لأكثر من دولة أو منصة؟</summary><p>نعم. حدد السوق الأساسي أو أكثر من دولة، واختر أكثر من منصة عند الحاجة، وأضف التفاصيل في الملاحظات.</p></details>
+<details><summary>هل يشمل الطلب إدارة الحملة بالكامل؟</summary><p>هذه الصفحة لطلب ترشيحات المؤثرين. إذا كنت تحتاج إلى التخطيط والإنتاج والتنفيذ والقياس، يمكنك ذكر ذلك في الملاحظات أو استكشاف خدمة إدارة حملات المؤثرين.</p></details></div></div></section>
+<section class="section"><div class="wrap final-cta"><span class="eyebrow">START YOUR CAMPAIGN</span><h2>جاهز لاختيار مؤثرين لحملتك؟</h2><p>حدد احتياجك وسوقك وميزانيتك، واترك لفريق فيفا مراجعة الخطوة التالية معك.</p><a class="btn primary" href="#brandBrief">اطلب مؤثرين لحملتك</a></div></section>
+</main>
  <footer class="site-footer" role="contentinfo">
   <div class="container footer-grid">
 
@@ -705,7 +333,7 @@
     <nav class="footer-col" aria-label="منصة المؤثرين">
      <h3>منصة المؤثرين</h3>
 <ul>
-  <li><a href="https://vivamediacreative.com/influencer-platform/">نظرة عامة</a></li>
+  <li><a href="https://vivamediacreative.com/influencer-platform/">منصة المؤثرين</a></li>
 
   <li><a href="https://vivamediacreative.com/influencer-platform/campaigns/">حملات إعلانية للمؤثرين</a></li>
 
@@ -743,171 +371,141 @@
     </nav>
   </div>
 
-  <!-- Minimal JSON-LD (safe + clean) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Viva Media Creative",
-    "url": "https://vivamediacreative.com/",
-    "logo": "https://vivamediacreative.com/assets/logo.jpeg",
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "contactType": "customer support",
-      "email": "info@vivamediacreative.com"
-    }]
-  }
-  </script>
+  
 </footer>
 
-  <script src="/assets/platform.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-  <script>
-    // year
-    const y = document.getElementById("y");
-    if (y) y.textContent = String(new Date().getFullYear());
-
-    // reveal
-    const io = new IntersectionObserver(
-      (entries) => { for (const e of entries) if (e.isIntersecting) e.target.classList.add("is-in"); },
-      { threshold: 0.12 }
-    );
-    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-
-    // magnetic
-    document.querySelectorAll(".magnetic").forEach((el) => {
-      const strength = 10;
-      el.addEventListener("pointermove", (ev) => {
-        const r = el.getBoundingClientRect();
-        const dx = ev.clientX - (r.left + r.width / 2);
-        const dy = ev.clientY - (r.top + r.height / 2);
-        el.style.transform = `translate(${dx / strength}px, ${dy / strength}px)`;
-      });
-      el.addEventListener("pointerleave", () => { el.style.transform = `translate(0px, 0px)`; });
-    });
-
-    // EmailJS init (same public key as your contact page)
-    emailjs.init({ publicKey: "SzBBlvEjgwysF8vHJ" });
-
-    // anti-spam
-    const VMC_RATE_LIMIT_MS = 25000; // 25s
-    let vmcLastSubmitAt = Number(sessionStorage.getItem('vmcBrandLastSubmitAt') || '0');
-
-    function vmcIsBotSubmission() {
-      const hp = document.getElementById("website");
-      if (hp && hp.value && hp.value.trim().length > 0) return true;
-      return false;
-    }
-    function vmcCanSubmitNow() {
-      const now = Date.now();
-      if (now - vmcLastSubmitAt < VMC_RATE_LIMIT_MS) return false;
-      vmcLastSubmitAt = now;
-      sessionStorage.setItem('vmcBrandLastSubmitAt', String(now));
-      return true;
-    }
-
-    const form = document.getElementById('brandForm');
-    const statusBox = document.getElementById('status');
-    const waQuick = document.getElementById('waQuick');
-    const waMessageField = document.getElementById('wa_message');
-
-    function showStatus(type, msg){
-      statusBox.className = 'status ' + type;
-      statusBox.textContent = msg;
-    }
-
-    function buildWhatsAppText(data){
-      const parts = [
-        "مرحبًا VMC، أرسلت Brief لطلب مؤثرين عبر الموقع وأرغب بالمتابعة.",
-        "",
-        `الشركة: ${data.company}`,
-        data.contact_person ? `المسؤول: ${data.contact_person}` : null,
-        `الدولة: ${data.target_country}`,
-        `المجال: ${data.niche}`,
-        `الهدف: ${data.goal}`,
-        `المنصة: ${data.platform}`,
-        `نوع المؤثر: ${data.creator_type}`,
-        data.creators_count ? `عدد المؤثرين: ${data.creators_count}` : null,
-        `الميزانية: ${data.budget}`,
-        data.execution_date ? `موعد التنفيذ: ${data.execution_date}` : null
-      ].filter(Boolean);
-      return parts.join("\n");
-    }
-
-    function setWhatsAppLink(text){
-      const encoded = encodeURIComponent(text);
-      const href = `https://wa.me/4915565678291?text=${encoded}`;
-      waQuick.setAttribute('href', href);
-      waQuick.removeAttribute('aria-disabled');
-    }
-
-    form?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      if (vmcIsBotSubmission()) {
-        showStatus('err', '❌ تعذر إرسال الطلب.');
-        return;
+<script>
+(() => {
+  "use strict";
+  const form=document.getElementById("brandForm");
+  const field=id=>document.getElementById(id);
+  const stages=Array.from(form.querySelectorAll("[data-step]"));
+  const progress=Array.from(document.querySelectorAll(".progress-item"));
+  const country=field("target_country"), currency=field("budgetCurrency"), budget=field("budget");
+  const back=field("backBtn"), next=field("nextBtn"), submit=field("submitBtn"), status=field("status");
+  const wa=field("waQuick"), follow=field("waFollow"), restart=field("newRequest");
+  const countryCurrencies={"السعودية":"SAR","الإمارات":"AED","الكويت":"KWD","قطر":"QAR","مصر":"EGP","البحرين":"BHD","عمان":"OMR"};
+  const bands={SAR:[2000,5000,15000,30000,60000],AED:[2000,5000,15000,30000,60000],QAR:[2000,5000,15000,30000,60000],KWD:[150,400,1000,2500,5000],BHD:[200,500,1500,3000,6000],OMR:[200,500,1500,3000,6000],EGP:[10000,25000,75000,150000,300000],USD:[500,1000,3000,7000,15000],EUR:[500,1000,3000,7000,15000]};
+  const unspecified="غير محددة بعد - أحتاج إلى توصية";
+  let current=0,sending=false,completed=false,last=0;
+  try{last=Number(sessionStorage.getItem("vmcBrandLastSubmitAt")||0);}catch(_){}
+  function message(type,text,focus=false){
+    status.className="status "+type;status.textContent=text;status.hidden=false;
+    if(focus)status.focus({preventScroll:false});
+  }
+  function clearMessage(){status.hidden=true;status.textContent="";}
+  function budgets(){
+    const prev=budget.value,cur=currency.value,nums=bands[cur];
+    budget.replaceChildren();
+    const placeholder=new Option("اختر الميزانية","",true,true);placeholder.disabled=true;budget.add(placeholder);
+    budget.add(new Option("غير محددة بعد",unspecified));
+    const fmt=n=>n.toLocaleString("en-US");
+    budget.add(new Option("أقل من "+fmt(nums[0])+" "+cur,"أقل من "+nums[0]+" "+cur));
+    for(let i=0;i<nums.length-1;i++)budget.add(new Option(fmt(nums[i])+" – "+fmt(nums[i+1])+" "+cur,nums[i]+"–"+nums[i+1]+" "+cur));
+    budget.add(new Option(fmt(nums[nums.length-1])+"+ "+cur,nums[nums.length-1]+"+ "+cur));
+    if(Array.from(budget.options).some(o=>o.value===prev&&prev))budget.value=prev;
+  }
+  function syncChoices(id){
+    const group=form.querySelector('[data-choices="'+id+'"]');
+    if(!group)return;
+    let val=field(id).value.trim();
+    group.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.value===val)));
+  }
+  function setCountry(value){
+    if(value==="دولة أخرى"){country.value="";country.focus();}else country.value=value;
+    syncChoices("target_country");
+    if(value==="دولة أخرى")form.querySelector('[data-value="دولة أخرى"]').setAttribute("aria-pressed","true");
+    const cur=countryCurrencies[value]||"USD";
+    if(currency.value!==cur){currency.value=cur;budgets();}
+  }
+  form.querySelectorAll("[data-choices]").forEach(group=>{
+    const id=group.dataset.choices;group.hidden=false;
+    group.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{
+      if(sending||completed)return;
+      if(id==="target_country")setCountry(b.dataset.value);
+      else{field(id).value=b.dataset.value;syncChoices(id);}
+    }));
+    field(id).addEventListener("change",()=>{syncChoices(id);if(id==="target_country"){const cur=countryCurrencies[country.value.trim()]||"USD";if(currency.value!==cur){currency.value=cur;budgets();}}});
+  });
+  country.addEventListener("input",()=>syncChoices("target_country"));
+  currency.addEventListener("change",budgets);
+  budgets();
+  form.classList.add("choice-enhanced");
+  field("progress").hidden=false;field("stepCounter").hidden=false;
+  function showStage(index,focus=false){
+    current=index;
+    stages.forEach((el,i)=>el.hidden=i!==index);
+    progress.forEach((el,i)=>{el.classList.toggle("current",i===index);el.classList.toggle("done",i<index);if(i===index)el.setAttribute("aria-current","step");else el.removeAttribute("aria-current");});
+    field("stepCounter").textContent="الخطوة "+(index+1)+" من 3";
+    back.hidden=index===0||completed;next.hidden=index===2||completed;submit.hidden=index!==2||completed;
+    submit.disabled=sending||completed;
+    if(focus)stages[index].querySelector("h3").focus();
+  }
+  const errors=[
+    [["target_country",v=>v.trim().length>=2,"حدد الدولة المستهدفة."],["goal",v=>!!v,"اختر هدف الحملة."],["niche",v=>!!v,"اختر مجال العلامة التجارية."]],
+    [["platform",v=>!!v,"اختر المنصة أو اطلب توصية."],["creator_type",v=>!!v,"اختر نوع المؤثر أو اطلب توصية."],["budget",v=>!!v,"حدد نطاق الميزانية أو اختر أنها غير محددة."]],
+    [["company",v=>v.trim().length>=2,"اكتب اسم الشركة أو العلامة التجارية."],["whatsapp",v=>v.replace(/\D/g,"").length>=6&&v.replace(/\D/g,"").length<=15,"اكتب رقم واتساب صحيحاً مع رمز الدولة."],["email",v=>!v||/^\S+@\S+\.\S+$/.test(v.trim()),"اكتب بريداً إلكترونياً صحيحاً أو اتركه فارغاً."]]
+  ];
+  function validate(index){
+    for(const [id,test,msg] of errors[index]){
+      const el=field(id);
+      el.removeAttribute("aria-invalid");
+      if(!test(el.value)){
+        showStage(index);el.setAttribute("aria-invalid","true");message("err",msg);
+        const group=form.querySelector('[data-choices="'+id+'"]');
+        (group&&id!=="target_country"?group.querySelector("button"):el).focus();return false;
       }
-      if (!vmcCanSubmitNow()) {
-        showStatus('err', 'من فضلك انتظر قليلًا ثم أعد المحاولة.');
-        return;
-      }
-
-      statusBox.className = 'status';
-      statusBox.textContent = '';
-
-      const data = {
-        company: form.company.value.trim(),
-        contact_person: form.contact_person.value.trim(),
-        target_country: form.target_country.value.trim(),
-        niche: form.niche.value,
-        goal: form.goal.value,
-        platform: form.platform.value,
-        creator_type: form.creator_type.value,
-        creators_count: form.creators_count.value,
-        budget: form.budget.value,
-        execution_date: form.execution_date.value,
-        notes: form.notes.value.trim(),
-        whatsapp: form.whatsapp.value.trim(),
-        email: form.email.value.trim()
-      };
-
-      // validation
-      if (data.company.length < 2){ showStatus('err', 'اكتب اسم الشركة بشكل صحيح.'); return; }
-      if (data.target_country.length < 2){ showStatus('err', 'اكتب الدولة المستهدفة.'); return; }
-      if (!data.niche){ showStatus('err', 'اختر المجال.'); return; }
-      if (!data.goal){ showStatus('err', 'اختر الهدف.'); return; }
-      if (!data.platform){ showStatus('err', 'اختر المنصة.'); return; }
-      if (!data.creator_type){ showStatus('err', 'اختر نوع المؤثر.'); return; }
-      if (!data.budget){ showStatus('err', 'اختر نطاق الميزانية.'); return; }
-      if (data.whatsapp.length < 6){ showStatus('err', 'اكتب رقم واتساب صحيح.'); return; }
-      if (data.email && !/^\S+@\S+\.\S+$/.test(data.email)){ showStatus('err', 'اكتب بريد إلكتروني صحيح أو اتركه فارغًا.'); return; }
-
-      // prepare WhatsApp message (also send in email)
-      const waText = buildWhatsAppText(data) + (data.notes ? `\n\nملاحظات:\n${data.notes}` : "");
-      waMessageField.value = waText;
-      setWhatsAppLink(waText);
-
-      showStatus('ok', 'تمام! يتم إرسال طلبك الآن...');
-
-      try {
-        await emailjs.sendForm(
-          'service_6w76hdv',
-          'template_11cfrv4',
-          form
-        );
-
-        form.reset();
-        showStatus(
-          'ok',
-          '🚀 تم استلام طلبك وبدأنا مراجعته الآن.\n\nسيتواصل معك فريقنا خلال 24 ساعة عمل بالخطوة التالية.\n\nللمتابعة السريعة يمكنك استخدام زر WhatsApp.\n\nملاحظة: يرجى تفقد البريد العشوائي (Spam/Junk) إذا لم تجد ردنا.'
-        );
-      } catch (err) {
-        console.error(err);
-        showStatus('err', '❌ حصل خطأ في الإرسال. جرّب مرة ثانية أو تابع عبر واتساب.');
-      }
-    });
-  </script>
+    }
+    return true;
+  }
+  function advance(){if(!sending&&!completed&&validate(current)){clearMessage();showStage(Math.min(current+1,2),true);}}
+  next.addEventListener("click",advance);
+  back.addEventListener("click",()=>{if(!sending&&!completed){clearMessage();showStage(Math.max(current-1,0),true);}});
+  document.querySelectorAll("[data-market]").forEach(a=>a.addEventListener("click",()=>{if(!sending&&!completed){setCountry(a.dataset.market);clearMessage();showStage(0);}}));
+  function label(id){const el=field(id);return el.selectedOptions&&el.selectedOptions.length?el.selectedOptions[0].textContent:el.value.trim();}
+  function buildWhatsAppText(data){
+    return ["مرحباً VMC، أرغب بطلب مؤثرين ومشاهير لحملتي.","","الشركة: "+data.company,data.contact_person?"المسؤول: "+data.contact_person:"","الدولة: "+data.target_country,"المجال: "+data.niche,"الهدف: "+label("goal"),"المنصة: "+label("platform"),"نوع المؤثر: "+label("creator_type"),data.creators_count?"عدد المؤثرين: "+data.creators_count:"","الميزانية: "+data.budget,data.execution_date?"موعد التنفيذ: "+data.execution_date:"",data.notes?"ملاحظات: "+data.notes:""].filter(Boolean).join("\n");
+  }
+  form.addEventListener("submit",async e=>{
+    e.preventDefault();
+    if(sending||completed)return;
+    if(current<2){advance();return;}
+    for(let i=0;i<3;i++)if(!validate(i))return;
+    if(field("website").value.trim()){message("err","تعذر إرسال الطلب.");return;}
+    if(Date.now()-last<25000){message("err","انتظر قليلاً ثم أعد المحاولة.",true);return;}
+    const data=Object.fromEntries(new FormData(form));
+    const waText=buildWhatsAppText(data);
+    field("wa_message").value=waText;
+    wa.href="https://wa.me/4915565678291?text="+encodeURIComponent(waText);
+    sending=true;submit.disabled=true;back.disabled=true;follow.hidden=true;
+    submit.textContent="جارٍ إرسال الطلب…";message("info","يتم إرسال طلبك الآن…");
+    try{
+      if(!window.emailjs)throw new Error("EmailJS unavailable");
+      emailjs.init({publicKey:"SzBBlvEjgwysF8vHJ"});
+      await emailjs.sendForm("service_6w76hdv","template_11cfrv4",form);
+      last=Date.now();try{sessionStorage.setItem("vmcBrandLastSubmitAt",String(last));}catch(_){}
+      completed=true;
+      stages.forEach(el=>el.hidden=true);
+      progress.forEach(el=>{el.classList.add("done");el.classList.remove("current");el.removeAttribute("aria-current");});
+      field("stepCounter").textContent="تم إرسال الطلب";
+      back.hidden=true;next.hidden=true;submit.hidden=true;
+      message("ok","تم إرسال طلبك بنجاح.\nسيتواصل معك فريق فيفا بالخطوة التالية، عادة خلال 24 ساعة عمل بحسب اكتمال البيانات وحجم الطلبات.\nيمكنك متابعة طلبك عبر واتساب.",true);
+      follow.hidden=false;restart.hidden=false;
+    }catch(err){
+      console.error(err);
+      message("err","تعذر إرسال الطلب عبر النموذج. يمكنك إعادة المحاولة أو إرسال تفاصيل الطلب مباشرة عبر واتساب.",true);
+      follow.hidden=false;
+    }finally{
+      sending=false;submit.disabled=completed;back.disabled=false;submit.textContent="إرسال طلب المؤثرين";
+    }
+  });
+  restart.addEventListener("click",()=>{
+    form.reset();completed=false;currency.value="SAR";budgets();["target_country","goal","platform"].forEach(syncChoices);
+    clearMessage();follow.hidden=true;restart.hidden=true;showStage(0,true);
+  });
+  showStage(0);
+})();
+</script>
 </body>
 </html>
