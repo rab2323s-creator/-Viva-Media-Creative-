@@ -38,144 +38,345 @@
   <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="stylesheet" href="../assets/css/dubai.css">
   <script type="application/ld+json">
-  {
+{
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "شركة تسويق عبر المؤثرين والمشاهير في دبي",
-  "serviceType": "Influencer Marketing and Celebrity Management",
-  "description": "تعاقد مع المؤثرين والمشاهير المناسبين لعلامتك في دبي والإمارات. فيفا تدير الترشيح والتفاوض والمحتوى وتنفيذ الحملات وقياس الأداء. اطلب عرض سعر لحملتك.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Viva Media Creative",
-    "url": "https://vivamediacreative.com/",
-    "logo": "https://vivamediacreative.com/assets/logo.jpeg",
-    "@id": "https://vivamediacreative.com/#organization"
-  },
-  "areaServed": [
+  "@graph": [
     {
-      "@type": "City",
-      "name": "Dubai"
+      "@type": "Organization",
+      "@id": "https://vivamediacreative.com/#organization",
+      "name": "Viva Media Creative",
+      "alternateName": [
+        "VMC",
+        "فيفا ميديا كرييتف"
+      ],
+      "url": "https://vivamediacreative.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://vivamediacreative.com/#logo",
+        "url": "https://vivamediacreative.com/assets/logo.jpeg"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/viva-media-creative/",
+        "https://www.facebook.com/vivamediacreative",
+        "https://www.instagram.com/vivamediacreative/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "https://vivamediacreative.com/contact/",
+        "availableLanguage": [
+          "Arabic",
+          "English"
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://vivamediacreative.com/#website",
+      "url": "https://vivamediacreative.com/",
+      "name": "Viva Media Creative",
+      "alternateName": "فيفا ميديا كرييتف",
+      "publisher": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "inLanguage": "ar"
     },
     {
       "@type": "Country",
-      "name": "United Arab Emirates"
-    }
-  ],
-  "url": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/",
-  "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#service",
-  "audience": {
-    "@type": "BusinessAudience",
-    "audienceType": "العلامات التجارية والشركات التي تخطط لحملات مؤثرين في الإمارات"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "خدمات تسويق المؤثرين في الإمارات",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "ترشيح المؤثرين والمشاهير"
-        }
+      "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#uae",
+      "name": "United Arab Emirates",
+      "alternateName": [
+        "الإمارات العربية المتحدة",
+        "UAE"
+      ]
+    },
+    {
+      "@type": "City",
+      "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#dubai",
+      "name": "Dubai",
+      "alternateName": "دبي",
+      "containedInPlace": {
+        "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#uae"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#primaryimage",
+      "url": "https://vivamediacreative.com/assets/dubai-influencer-marketing-agency.jpg",
+      "width": 1200,
+      "height": 630,
+      "caption": "شركة تسويق عبر المؤثرين والمشاهير في دبي"
+    },
+    {
+      "@type": [
+        "WebPage",
+        "FAQPage"
+      ],
+      "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#webpage",
+      "url": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/",
+      "name": "شركة تسويق عبر المؤثرين والمشاهير في دبي والإمارات | فيفا",
+      "description": "تعاقد مع المؤثرين والمشاهير المناسبين لعلامتك في دبي والإمارات. فيفا تدير الترشيح والتفاوض والمحتوى وتنفيذ الحملات وقياس الأداء. اطلب عرض سعر لحملتك.",
+      "inLanguage": "ar",
+      "isPartOf": {
+        "@id": "https://vivamediacreative.com/#website"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "التفاوض وإدارة الحملات"
-        }
+      "publisher": {
+        "@id": "https://vivamediacreative.com/#organization"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "تنسيق المحتوى والموافقات"
-        }
+      "primaryImageOfPage": {
+        "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#primaryimage"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "قياس الأداء والتقارير"
+      "about": {
+        "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#service"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ما الذي تقدمه شركة تسويق عبر المؤثرين والمشاهير في دبي؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "تقدم فيفا ترشيح المؤثرين والمشاهير، والتفاوض وتحديد المخرجات، وتنسيق المحتوى والنشر وقياس الأداء للعلامات التجارية في دبي والإمارات."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف أجد مؤثرين مناسبين للإعلان عن منتجاتي في الإمارات؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ابدأ بتحديد الجمهور والهدف والميزانية. نراجع هذه المعلومات ونقترح مؤثرين بحسب ملاءمة الجمهور والمحتوى والمنصة، ثم نناقش نطاق التعاون معك."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كم تكلفة الإعلان مع المؤثرين في دبي؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "تختلف التكلفة حسب المؤثر والمنصة والمخرجات وحقوق استخدام المحتوى وإدارة الحملة. يمكنك استخدام حاسبة تكلفة الحملات لتقدير الميزانية أو طلب عرض سعر بحسب احتياجاتك."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل تديرون حملات المؤثرين للمطاعم والفنادق في دبي؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نخطط لحملات تناسب المطاعم والمقاهي والفنادق والسياحة، مع اختيار الجمهور المحلي والمحتوى المناسب وربط الحملة بالزيارات أو الحجوزات أو الطلبات بحسب الهدف."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل تتعاملون مع المؤثرين الصغار والمشاهير؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نرشح المؤثرين الصغار والأسماء المعروفة بحسب طبيعة المنتج والجمهور والميزانية، ويمكن الجمع بين أكثر من فئة لتحقيق أدوار مختلفة في الحملة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف تديرون العقود والتراخيص وقياس النتائج؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نتفق على الأتعاب والمخرجات والموافقات وحقوق الاستخدام، ونراعي التحقق من متطلبات الترخيص والإفصاح المنطبقة قبل النشر. نحدد مؤشرات الأداء ونراجع النتائج وفق البيانات المتاحة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل تعملون مع مؤثرين في دبي فقط؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نخدم الحملات التي تستهدف دبي والإمارات، ويمكن التخطيط لحملات في السعودية ومصر وأسواق عربية أخرى بحسب طبيعة المشروع."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ماذا يحدث بعد طلب عرض سعر لحملة مؤثرين؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "يراجع فريق فيفا هدف الحملة والسوق والميزانية، ويتواصل معك لمناقشة قائمة المؤثرين المناسبة ونطاق العمل قبل اتخاذ قرار التعاقد."
+          }
         }
-      }
-    ]
-  }
-}
-  </script>
-
-  <script type="application/ld+json">
-  {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+      ],
+      "mentions": [
+        {
+          "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#dubai"
+        },
+        {
+          "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#uae"
+        }
+      ],
+      "relatedLink": [
+        "https://vivamediacreative.com/services/influencer-marketing/",
+        "https://vivamediacreative.com/influencer-platform/find-influencers/",
+        "https://vivamediacreative.com/ar/influencer-campaign-cost-calculator/",
+        "https://vivamediacreative.com/work/influencer-app-acquisition/",
+        "https://vivamediacreative.com/work/skincare-influencer-campaign-saudi/"
+      ]
+    },
     {
-      "@type": "Question",
-      "name": "ما الذي تقدمه شركة تسويق عبر المؤثرين والمشاهير في دبي؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "تقدم فيفا ترشيح المؤثرين والمشاهير، والتفاوض وتحديد المخرجات، وتنسيق المحتوى والنشر وقياس الأداء للعلامات التجارية في دبي والإمارات."
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#service",
+      "name": "شركة تسويق عبر المؤثرين والمشاهير في دبي",
+      "alternateName": [
+        "وكالة إدارة المؤثرين والمشاهير في دبي والإمارات",
+        "شركة تسويق بالمؤثرين في دبي",
+        "Influencer Marketing Agency in Dubai"
+      ],
+      "serviceType": [
+        "التسويق عبر المؤثرين في دبي والإمارات",
+        "إدارة حملات المؤثرين وشراكات المشاهير",
+        "Influencer Marketing and Celebrity Partnerships"
+      ],
+      "description": "خدمة للعلامات التجارية في دبي والإمارات تشمل ترشيح المؤثرين والمشاهير حسب الجمهور والميزانية، والتفاوض والعقود وتنسيق المحتوى والنشر وقياس الأداء.",
+      "url": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "areaServed": [
+        {
+          "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#dubai"
+        },
+        {
+          "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#uae"
+        }
+      ],
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "الشركات والعلامات التجارية التي تخطط لحملات تسويق بالمؤثرين في دبي والإمارات"
+      },
+      "subjectOf": {
+        "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#webpage"
+      },
+      "hasOfferCatalog": {
+        "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#campaign-services"
       }
     },
     {
-      "@type": "Question",
-      "name": "كيف أجد مؤثرين مناسبين للإعلان عن منتجاتي في الإمارات؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "ابدأ بتحديد الجمهور والهدف والميزانية. نراجع هذه المعلومات ونقترح مؤثرين بحسب ملاءمة الجمهور والمحتوى والمنصة، ثم نناقش نطاق التعاون معك."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "كم تكلفة الإعلان مع المؤثرين في دبي؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "تختلف التكلفة حسب المؤثر والمنصة والمخرجات وحقوق استخدام المحتوى وإدارة الحملة. يمكنك استخدام حاسبة تكلفة الحملات لتقدير الميزانية أو طلب عرض سعر بحسب احتياجاتك."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "هل تديرون حملات المؤثرين للمطاعم والفنادق في دبي؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "نخطط لحملات تناسب المطاعم والمقاهي والفنادق والسياحة، مع اختيار الجمهور المحلي والمحتوى المناسب وربط الحملة بالزيارات أو الحجوزات أو الطلبات بحسب الهدف."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "هل تتعاملون مع المؤثرين الصغار والمشاهير؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "نرشح المؤثرين الصغار والأسماء المعروفة بحسب طبيعة المنتج والجمهور والميزانية، ويمكن الجمع بين أكثر من فئة لتحقيق أدوار مختلفة في الحملة."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "كيف تديرون العقود والتراخيص وقياس النتائج؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "نتفق على الأتعاب والمخرجات والموافقات وحقوق الاستخدام، ونراعي التحقق من متطلبات الترخيص والإفصاح المنطبقة قبل النشر. نحدد مؤشرات الأداء ونراجع النتائج وفق البيانات المتاحة."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "هل تعملون مع مؤثرين في دبي فقط؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "نخدم الحملات التي تستهدف دبي والإمارات، ويمكن التخطيط لحملات في السعودية ومصر وأسواق عربية أخرى بحسب طبيعة المشروع."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "ماذا يحدث بعد طلب عرض سعر لحملة مؤثرين؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "يراجع فريق فيفا هدف الحملة والسوق والميزانية، ويتواصل معك لمناقشة قائمة المؤثرين المناسبة ونطاق العمل قبل اتخاذ قرار التعاقد."
-      }
+      "@type": "OfferCatalog",
+      "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#campaign-services",
+      "name": "خدمات التسويق بالمؤثرين والمشاهير في دبي والإمارات",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "ترشيح المؤثرين والمشاهير",
+            "description": "اختيار المؤثرين وفق ملاءمة الجمهور والمحتوى والميزانية.",
+            "provider": {
+              "@id": "https://vivamediacreative.com/#organization"
+            },
+            "areaServed": [
+              {
+                "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#dubai"
+              },
+              {
+                "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#uae"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "إدارة حملات المؤثرين والتفاوض",
+            "description": "تنظيم الأتعاب والمخرجات والموافقات وجدول النشر وحقوق استخدام المحتوى.",
+            "provider": {
+              "@id": "https://vivamediacreative.com/#organization"
+            },
+            "areaServed": [
+              {
+                "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#dubai"
+              },
+              {
+                "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#uae"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "تسويق المحتوى والمؤثرين",
+            "description": "تنسيق الرسائل والمحتوى مع أهداف العلامة التجارية.",
+            "provider": {
+              "@id": "https://vivamediacreative.com/#organization"
+            },
+            "areaServed": [
+              {
+                "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#dubai"
+              },
+              {
+                "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#uae"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "قياس أداء حملات المؤثرين",
+            "description": "متابعة الزيارات والطلبات والحجوزات والمبيعات بحسب البيانات المتاحة.",
+            "provider": {
+              "@id": "https://vivamediacreative.com/#organization"
+            },
+            "areaServed": [
+              {
+                "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#dubai"
+              },
+              {
+                "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#uae"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "التسويق بالمؤثرين للفنادق والسياحة في دبي",
+            "description": "حملات لصنّاع محتوى السفر والضيافة ترتبط بالتجربة ومسار الحجز.",
+            "provider": {
+              "@id": "https://vivamediacreative.com/#organization"
+            },
+            "areaServed": [
+              {
+                "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#dubai"
+              },
+              {
+                "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#uae"
+              }
+            ],
+            "url": "https://vivamediacreative.com/services/influencer-marketing/travel/"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "التسويق بالمؤثرين للمطاعم والمقاهي في دبي",
+            "description": "اختيار صنّاع محتوى مناسبين للجمهور المحلي لدعم الزيارات والحجوزات والطلبات.",
+            "provider": {
+              "@id": "https://vivamediacreative.com/#organization"
+            },
+            "areaServed": [
+              {
+                "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#dubai"
+              },
+              {
+                "@id": "https://vivamediacreative.com/شركة-تسويق-عبر-المؤثرين-والمشاهير-في-دبي/#uae"
+              }
+            ],
+            "url": "https://vivamediacreative.com/services/influencer-marketing/restaurants/"
+          }
+        }
+      ]
     }
   ]
 }
   </script>
+
+  
 
 </head>
 <body>
