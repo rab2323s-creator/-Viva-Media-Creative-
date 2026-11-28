@@ -174,6 +174,52 @@
 <style id="creator-content-style">
 .creator-info{padding-block:24px}.creator-info h2{font-size:clamp(20px,3vw,29px);line-height:1.65;margin:8px 0 12px}.creator-eyebrow{display:block;color:#f5d07a;font-size:11px;font-weight:700;letter-spacing:.08em;margin-bottom:8px}.creator-gold{color:#f5d07a}.creator-info .creator-intro{line-height:1.95;margin:0 0 18px;color:#d1d1dc;max-width:85ch}.creator-info .platformCard{padding:20px;min-width:0}.creator-info .platformCard h3{color:#f5d07a;font-size:17px;line-height:1.75;margin:10px 0}.creator-info .platformCard p,.creator-resource{line-height:1.95;color:#d1d1dc;font-size:14px}.creator-info a,.creator-faq a{color:#f5d07a;text-decoration:underline;text-underline-offset:3px}.creator-resource{margin:18px 0 0}.creator-resource p{margin:6px 0}.creator-question{margin-bottom:10px}.creator-question:last-child{margin-bottom:0}.creator-question summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}.creator-question summary::-webkit-details-marker{display:none}.creator-question summary:after{content:"+";color:#f5d07a;font-size:22px;flex-shrink:0}.creator-question[open] summary:after{content:"−"}.creator-question summary h3{margin:0;line-height:1.8;font-size:15px}.creator-question p{margin-top:10px}.creator-question summary:focus-visible{outline:2px solid #f5d07a;outline-offset:4px}.creator-final{margin-top:16px}.creator-final .cardHead{padding:24px;text-align:center;border:0}.creator-final .btn{margin-top:16px;min-height:46px;justify-content:center}#faq{scroll-margin-top:100px}@media(max-width:600px){.creator-info{padding-block:18px}.creator-info .platformCard{padding:16px}.creator-final .btn{width:100%}}
 </style>
+<style id="creator-footer-style">
+#creator-footer{margin-top:32px;background:#0b0b11;border-top:1px solid rgba(245,208,122,.22);color:#d1d1dc}
+#creator-footer .container{box-sizing:border-box;width:min(100%,1280px);max-width:1280px;margin-inline:auto;padding-inline:clamp(18px,3vw,40px)}
+#creator-footer .footer-grid{display:grid;grid-template-columns:minmax(0,1.35fr) repeat(4,minmax(0,1fr));gap:24px;padding-top:40px;padding-bottom:30px;align-items:start}
+#creator-footer .footer-brand,#creator-footer .footer-col{min-width:0}
+#creator-footer .footer-logo{display:inline-flex;align-items:center}
+#creator-footer .footer-logo img{display:block;width:62px;height:62px;object-fit:contain;border-radius:14px;border:1px solid rgba(245,208,122,.24)}
+#creator-footer .footer-desc{font-size:13px;line-height:1.95;margin:12px 0;color:#b9b9c6;max-width:44ch}
+#creator-footer .footer-contact{gap:12px}
+#creator-footer .footer-mail{display:inline-block;box-sizing:border-box;max-width:100%;font-size:12px;direction:ltr;unicode-bidi:isolate;overflow-wrap:anywhere;padding:9px 10px;color:#e6e3dc;text-decoration:none}
+#creator-footer .footer-lang{flex-wrap:wrap;font-size:13px}
+#creator-footer .footer-col h3{font-size:15px;color:#f5d07a;font-weight:800;line-height:1.8;margin:0 0 12px}
+#creator-footer .footer-col ul{display:grid;gap:6px;list-style:none;padding:0;margin:0}
+#creator-footer .footer-col li{margin:0;padding:0}
+#creator-footer .footer-col a{display:inline-block;padding:5px 0;font-size:13px;line-height:1.8;color:#d1d1dc;text-decoration:none;overflow-wrap:anywhere}
+#creator-footer a:hover{color:#f5d07a}
+#creator-footer a:focus-visible{outline:2px solid #f5d07a;outline-offset:3px;border-radius:4px}
+#creator-footer .footer-cta{display:grid;gap:8px;margin-top:14px}
+#creator-footer .footer-cta .btn{display:flex;align-items:center;justify-content:center;text-align:center;white-space:normal;min-height:44px;padding:9px 10px;font-size:12px;border-radius:10px;border:1px solid rgba(245,208,122,.30);background:transparent;color:#f5d07a}
+#creator-footer .footer-cta .btn.primary{background:#f5d07a;color:#181109;border-color:#f5d07a}
+#creator-footer .footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,.10);padding-top:18px;padding-bottom:24px;font-size:12px}
+#creator-footer .copyright{margin:0;line-height:1.8}
+#creator-footer .footer-legal{display:flex;align-items:center;gap:12px}
+#creator-footer .footer-legal a{color:#d1d1dc;text-decoration:none;padding-block:6px}
+@media(max-width:1100px){#creator-footer .footer-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}#creator-footer .footer-brand{grid-column:1/-1;border-bottom:1px solid rgba(255,255,255,.10);padding-bottom:20px}}
+@media(max-width:760px){#creator-footer .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 14px;padding-top:26px;padding-bottom:24px}#creator-footer .footer-col a{font-size:13px;padding-block:7px}#creator-footer .footer-bottom{align-items:flex-start;flex-direction:column}#creator-footer .footer-col h3{font-size:14px}}
+@media(max-width:340px){#creator-footer .footer-grid{grid-template-columns:minmax(0,1fr)}}
+</style>
+<style id="creator-brand-style">
+#creator-brand-management{padding-block:24px;scroll-margin-top:100px}
+#creator-brand-management .creator-brand-panel{position:relative;isolation:isolate;overflow:hidden;border:1px solid rgba(245,208,122,.32);border-radius:30px;padding:clamp(20px,4vw,44px);background:radial-gradient(ellipse at 100% 0%,rgba(182,139,61,.13),transparent 58%),linear-gradient(145deg,#17151c,#0a0a0f 75%);box-shadow:0 22px 70px rgba(0,0,0,.35)}
+#creator-brand-management .creator-brand-heading{max-width:85ch}
+#creator-brand-management h2{font-size:clamp(22px,3.1vw,34px);line-height:1.65;margin:8px 0 12px;color:#f7f5f0}
+#creator-brand-management p{font-size:14px;color:#d1d1dc;line-height:1.95;margin:0}
+#creator-brand-management .creator-brand-tagline{font-size:clamp(15px,2vw,19px);color:#f5d07a;font-weight:700;margin-bottom:12px}
+#creator-brand-management .creator-brand-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
+#creator-brand-management .creator-brand-card{min-width:0;padding:20px;border:1px solid rgba(245,208,122,.15);border-radius:17px;background:rgba(255,255,255,.025)}
+#creator-brand-management .creator-brand-card svg{color:#f5d07a}
+#creator-brand-management h3{font-size:17px;color:#f5d07a;line-height:1.8;margin:10px 0 6px}
+#creator-brand-management .creator-brand-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;padding-top:22px;margin-top:22px;border-top:1px solid rgba(245,208,122,.16)}
+#creator-brand-management .creator-brand-footer p{flex:1 1 280px}
+#creator-brand-management .creator-brand-link{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 18px;box-sizing:border-box;border-radius:12px;background:linear-gradient(125deg,#f5d07a,#dfb45e);color:#181109;font-weight:800;font-size:14px;line-height:1.8;text-decoration:none;text-align:center}
+#creator-brand-management .creator-brand-link:hover{filter:brightness(1.08)}
+#creator-brand-management .creator-brand-link:focus-visible{outline:2px solid #f5d07a;outline-offset:4px}
+@media(max-width:600px){#creator-brand-management{padding-block:18px}#creator-brand-management .creator-brand-panel{border-radius:22px}#creator-brand-management .creator-brand-grid{grid-template-columns:minmax(0,1fr)}#creator-brand-management .creator-brand-card{padding:16px}#creator-brand-management .creator-brand-link{width:100%}}
+</style>
 </head>
 
 <body>
@@ -394,6 +440,18 @@
 <div class="creator-resource"><strong>فرص التعاون عبر سناب شات وتيك توك وإنستغرام ويوتيوب</strong><p>سواء كنت من مشاهير سناب شات أو مؤثري تيك توك وإنستغرام أو صنّاع المحتوى على يوتيوب، يمكنك التسجيل بحسابك الرئيسي وإضافة حساباتك الأخرى. نهتم بجودة المحتوى وطبيعة الجمهور والمشاهدات، إلى جانب عدد المتابعين.</p></div>
 </div>
 </section>
+<section class="platformSection creator-brand-section" id="creator-brand-management" aria-labelledby="creator-brand-title">
+<div class="section__inner"><div class="creator-brand-panel">
+<div class="creator-brand-heading"><span class="creator-eyebrow">VIVA TALENT &amp; PERSONAL BRAND MANAGEMENT</span>
+<h2 id="creator-brand-title">إدارة حسابات المشاهير <span class="creator-gold">وبناء العلامة الشخصية</span></h2>
+<p class="creator-brand-tagline">من الحضور الرقمي إلى علامة شخصية مؤثرة</p>
+<p>لأن تأثيرك أكبر من عدد متابعيك، تقدم فيفا خدمات متخصصة في إدارة حسابات المشاهير والمؤثرين وبناء العلامات الشخصية، لتطوير حضورك الإعلامي وتعزيز قيمتك التجارية وبناء مسيرة مهنية مستدامة.</p></div>
+<div class="creator-brand-grid"><article class="creator-brand-card"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 4-5h10l4 5-9 13L3 8Zm0 0h18M7 3l5 18 5-18"/></svg><h3>بناء الهوية والبراند الشخصي</h3><p>تطوير هوية مميزة تعكس شخصيتك وقيمتك ومكانتك في السوق، وتوحيد رسالتك وحضورك عبر المنصات.</p></article>
+<article class="creator-brand-card"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></svg><h3>إدارة حسابات المشاهير</h3><p>إدارة استراتيجية لحسابات التواصل الاجتماعي وتوجيه المحتوى وتنظيم النشر بما يتوافق مع هويتك وأهدافك المهنية.</p></article>
+<article class="creator-brand-card"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18M7 16l4-5 4 2 6-8"/></svg><h3>تطوير الحضور والتأثير</h3><p>تحليل أداء الحساب وفهم الجمهور وتطوير استراتيجية المحتوى، لتعزيز جودة حضورك الرقمي وقيمة تأثيرك.</p></article>
+<article class="creator-brand-card"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 17 2 2a2 2 0 0 0 3-3m-3 3 1 1a2 2 0 0 0 3-3m-1-1 1 1a2 2 0 0 0 3-3l-5-5M2 12l5-7 5 2-4 4a2 2 0 0 0 3 3l4-4M12 7l4-2 6 7M3 13l5 5"/></svg><h3>تعزيز فرص الشراكات التجارية</h3><p>رفع جاهزية حسابك للتعاون الاحترافي مع العلامات التجارية، مع الحفاظ على هويتك وثقة جمهورك.</p></article></div>
+<div class="creator-brand-footer"><p>عشر سنوات من الخبرة في عالم المؤثرين والمشاهير، وفهم خصوصية الجمهور في السعودية والإمارات والخليج والأسواق العربية.</p><a class="creator-brand-link" href="/services/personal-brand-management/">اكتشف خدمات إدارة حسابات المشاهير <span aria-hidden="true">↗</span></a></div>
+</div></div></section>
 <section class="section wrap" style="padding-top:16px;">
 <!-- Creator FAQ -->
 <div class="glassCard creator-faq" id="faq" style="border-radius:30px;">
@@ -417,10 +475,11 @@
     </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer" id="creator-footer" role="contentinfo">
   <div class="container footer-grid">
 
-    <!-- Brand / Summary -->
+    <div class="footer-brand">
+<!-- Brand / Summary -->
       <a class="footer-logo" href="https://vivamediacreative.com/services/" aria-label="Viva Media Creative">
         <img src="/assets/logo.jpeg" alt="Viva Media Creative" loading="lazy" />
       </a>
@@ -438,6 +497,7 @@
         </div>
       </div>
  
+    </div>
     <!-- Main -->
     <nav class="footer-col" aria-label="روابط رئيسية">
       <h3>روابط رئيسية</h3>
