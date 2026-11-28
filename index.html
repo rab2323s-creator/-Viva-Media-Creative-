@@ -40,6 +40,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Noto+Kufi+Arabic:wght@400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/vmc-home.css" />
+<style>
+/* Home navigation: keep the pointer path continuous and the dropdown stationary. */
+.home-nav-stable .home-nav-item { position:relative; align-self:stretch; display:flex; align-items:center; }
+.home-nav-stable .home-nav-item > a { display:flex; align-items:center; min-height:36px; }
+.home-nav-stable .home-nav-dropdown { top:100%; right:50%; transform:translateX(calc(50% + var(--nav-shift, 0px))); transition:opacity .15s ease; max-width:calc(100vw - 24px); max-height:calc(100dvh - 100px); overflow-y:auto; overscroll-behavior:contain; }
+.home-nav-stable .home-nav-dropdown a { white-space:normal; text-align:start; }
+.home-nav-stable .home-nav-item:hover .home-nav-dropdown,
+.home-nav-stable .home-nav-item:focus-within .home-nav-dropdown,
+.home-nav-stable .home-nav-item.is-open .home-nav-dropdown { transform:translateX(calc(50% + var(--nav-shift, 0px))); }
+.home-nav-stable.home-nav-enhanced .home-nav-item .home-nav-dropdown { opacity:0; visibility:hidden; pointer-events:none; }
+.home-nav-stable.home-nav-enhanced .home-nav-item.is-open .home-nav-dropdown { opacity:1; visibility:visible; pointer-events:auto; }
+@media (max-width:640px) {
+  .home-nav-stable .home-nav-item { position:static; }
+  .home-nav-stable .home-nav-item > a { min-height:34px; }
+  .home-nav-stable .home-nav-dropdown,
+  .home-nav-stable .home-nav-item:hover .home-nav-dropdown,
+  .home-nav-stable .home-nav-item:focus-within .home-nav-dropdown,
+  .home-nav-stable .home-nav-item.is-open .home-nav-dropdown { top:100%; right:12px; left:12px; min-width:0; width:auto; max-width:none; transform:none; }
+}
+@media (prefers-reduced-motion:reduce) { .home-nav-stable .home-nav-dropdown { transition:none; } }
+</style>
 
 
   <script type="application/ld+json">
@@ -531,7 +552,7 @@
   <div class="noise" aria-hidden="true"></div>
 
   <!-- NAV -->
-  <header class="nav">
+  <header class="nav home-nav-stable">
     <a class="brand" href="/">
       <span class="brand__mark">VMC</span>
       <span class="brand__name">Viva Media Creative</span>
@@ -544,6 +565,7 @@
   <a href="/مشاهير/">مشاهير</a>
 
   <div class="home-nav-dropdown">
+<a href="/مشاهير/">كل صفحات المشاهير</a>
 <a href="/مشاهير/ادارة-المشاهير/">
       إدارة المشاهير
     </a>
@@ -1607,7 +1629,87 @@
 </script>
 
 
-  <script type="module" src="/assets/vmc-home.js"></script>
+  <script>
+(() => {
+  const nav = document.querySelector('.home-nav-stable');
+  if (!nav) return;
+  const items = Array.from(nav.querySelectorAll('.home-nav-item'));
+  const hover = window.matchMedia('(hover: hover) and (pointer: fine)');
+  let active = null, pinned = false, timer;
+  function close() {
+    clearTimeout(timer);
+    if (active) {
+      active.classList.remove('is-open');
+      active.querySelector(':scope > a').setAttribute('aria-expanded','false');
+    }
+    active = null; pinned = false;
+  }
+  function position(item) {
+    const panel = item.querySelector('.home-nav-dropdown');
+    panel.style.setProperty('--nav-shift','0px');
+    if (window.innerWidth <= 640) return;
+    const r = panel.getBoundingClientRect();
+    const shift = r.left < 12 ? 12 - r.left : r.right > window.innerWidth - 12 ? window.innerWidth - 12 - r.right : 0;
+    panel.style.setProperty('--nav-shift',shift + 'px');
+  }
+  function open(item, pin = false) {
+    clearTimeout(timer);
+    if (active !== item) close();
+    active = item; pinned = pin;
+    item.classList.add('is-open');
+    item.querySelector(':scope > a').setAttribute('aria-expanded','true');
+    position(item);
+  }
+  items.forEach((item, i) => {
+    const trigger = item.querySelector(':scope > a');
+    const panel = item.querySelector('.home-nav-dropdown');
+    panel.id = 'home-nav-panel-' + (i + 1);
+    trigger.setAttribute('aria-controls',panel.id);
+    trigger.setAttribute('aria-expanded','false');
+    item.addEventListener('pointerenter', e => {
+      if (hover.matches && e.pointerType !== 'touch') {
+        if (active === item) clearTimeout(timer);
+        else open(item);
+      }
+    });
+    item.addEventListener('pointerleave', e => {
+      if (!hover.matches || e.pointerType === 'touch' || pinned) return;
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        if (active === item && !item.contains(document.activeElement)) close();
+      }, 180);
+    });
+    // Capture prevents the older mobile-only handler from toggling this menu twice.
+    trigger.addEventListener('click', e => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      e.preventDefault(); e.stopImmediatePropagation();
+      if (active === item && pinned) close();
+      else open(item,true);
+    }, true);
+    trigger.addEventListener('keydown', e => {
+      if (e.key === ' ' || e.key === 'ArrowDown') {
+        e.preventDefault(); open(item,true);
+        if (e.key === 'ArrowDown') panel.querySelector('a')?.focus();
+      }
+    });
+    item.addEventListener('focusout', e => {
+      if (active === item && !item.contains(e.relatedTarget) && e.relatedTarget) close();
+    });
+  });
+  document.addEventListener('click', e => {
+    if (active && !active.contains(e.target)) close();
+  }, true);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && active) {
+      const trigger = active.querySelector(':scope > a');
+      close(); trigger.focus();
+    }
+  });
+  window.addEventListener('resize', () => { if (active) position(active); });
+  nav.classList.add('home-nav-enhanced');
+})();
+</script>
+<script type="module" src="/assets/vmc-home.js"></script>
 </body>
 </html>
 
