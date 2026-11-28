@@ -43,106 +43,333 @@
 
   <!-- Service schema -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Service",
-    "name":"Influencer Signup - Viva Media Creative Platform",
-    "provider":{"@type":"Organization","name":"Viva Media Creative","url":"https://vivamediacreative.com/"},
-    "areaServed":"Arab World",
-    "inLanguage":"ar",
-    "serviceType":"Influencer Matching",
-    "url":"https://vivamediacreative.com/influencer-platform/join-as-influencer/"
-  }
-  </script>
-
-  <!-- ✅ Added: Breadcrumbs schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "inLanguage":"ar",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://vivamediacreative.com/"},
-      {"@type":"ListItem","position":2,"name":"منصة مطابقة المؤثرين","item":"https://vivamediacreative.com/influencer-platform/"},
-      {"@type":"ListItem","position":3,"name":"سجل كمؤثر","item":"https://vivamediacreative.com/influencer-platform/join-as-influencer/"}
-    ]
-  }
-  </script>
-
-  <!-- ✅ Added: FAQ schema (matches FAQ in body) -->
-  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "ar",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "كيف أحصل على إعلانات كمؤثر؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "ابدأ بتطوير محتوى متخصص وجمهور حقيقي، وقدم معلومات واضحة عن حسابك ومجالك ومتوسط مشاهداتك. يمكنك التسجيل في شبكة فيفا للمؤثرين لتكون ضمن الحسابات التي يراجعها الفريق عند البحث عن مؤثرين مناسبين لحملة إعلانية."
+      "@type": "Organization",
+      "@id": "https://vivamediacreative.com/#organization",
+      "name": "Viva Media Creative",
+      "url": "https://vivamediacreative.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://vivamediacreative.com/#logo",
+        "url": "https://vivamediacreative.com/assets/logo.jpeg"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "info@vivamediacreative.com"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://vivamediacreative.com/#website",
+      "url": "https://vivamediacreative.com/",
+      "name": "Viva Media Creative",
+      "publisher": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://vivamediacreative.com/influencer-platform/join-as-influencer/#webpage",
+      "url": "https://vivamediacreative.com/influencer-platform/join-as-influencer/",
+      "name": "تسجيل المؤثرين والمشاهير في السعودية والإمارات والخليج | فيفا",
+      "description": "سجّل كمؤثر أو صانع محتوى في شبكة فيفا للمؤثرين والمشاهير، واكتشف فرص التعاون الإعلاني مع العلامات التجارية في السعودية والإمارات والخليج والعالم العربي.",
+      "inLanguage": "ar",
+      "isPartOf": {
+        "@id": "https://vivamediacreative.com/#website"
+      },
+      "publisher": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://vivamediacreative.com/influencer-platform/join-as-influencer/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://vivamediacreative.com/influencer-platform/join-as-influencer/#service"
+      },
+      "about": [
+        {
+          "@id": "https://vivamediacreative.com/influencer-platform/join-as-influencer/#service"
+        },
+        {
+          "@id": "https://vivamediacreative.com/influencer-platform/#service"
+        }
+      ],
+      "audience": {
+        "@id": "https://vivamediacreative.com/influencer-platform/join-as-influencer/#creator-audience"
+      },
+      "hasPart": {
+        "@id": "https://vivamediacreative.com/influencer-platform/join-as-influencer/#faq"
+      },
+      "relatedLink": [
+        "https://vivamediacreative.com/influencer-platform/",
+        "https://vivamediacreative.com/services/personal-brand-management/",
+        "https://vivamediacreative.com/work/",
+        "https://vivamediacreative.com/ar/influencer-campaign-cost-calculator/",
+        "https://vivamediacreative.com/ar/instagram-analyzer/"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/influencer-platform/join-as-influencer/#service",
+      "url": "https://vivamediacreative.com/influencer-platform/join-as-influencer/",
+      "name": "تسجيل المؤثرين والمشاهير في شبكة فيفا",
+      "alternateName": [
+        "التسجيل كمؤثر",
+        "تسجيل صنّاع المحتوى"
+      ],
+      "serviceType": "تسجيل المؤثرين وترشيحهم لفرص التعاون الإعلاني مع العلامات التجارية",
+      "description": "تسجيل المؤثرين والمشاهير وصنّاع المحتوى في شبكة فيفا لمراجعة حساباتهم وترشيحهم للحملات الإعلانية المناسبة حسب مجال المحتوى والجمهور والمنصة والسوق. التسجيل مجاني ولا يضمن الحصول على إعلان أو عقد.",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "audience": {
+        "@id": "https://vivamediacreative.com/influencer-platform/join-as-influencer/#creator-audience"
+      },
+      "areaServed": [
+        {
+          "@id": "https://vivamediacreative.com/influencer-platform/#sa"
+        },
+        {
+          "@id": "https://vivamediacreative.com/influencer-platform/#ae"
+        },
+        {
+          "@id": "https://vivamediacreative.com/influencer-platform/#eg"
+        },
+        {
+          "@id": "https://vivamediacreative.com/influencer-platform/#kw"
+        },
+        {
+          "@id": "https://vivamediacreative.com/influencer-platform/#qa"
+        },
+        {
+          "@id": "https://vivamediacreative.com/influencer-platform/#om"
+        },
+        {
+          "@id": "https://vivamediacreative.com/influencer-platform/#bh"
+        },
+        "العالم العربي"
+      ],
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://vivamediacreative.com/influencer-platform/join-as-influencer/#influencerForm",
+        "availableLanguage": "ar"
+      },
+      "isRelatedTo": [
+        {
+          "@id": "https://vivamediacreative.com/influencer-platform/#service"
+        },
+        {
+          "@id": "https://vivamediacreative.com/services/personal-brand-management/#service"
+        }
+      ],
+      "mainEntityOfPage": {
+        "@id": "https://vivamediacreative.com/influencer-platform/join-as-influencer/#webpage"
       }
     },
     {
-      "@type": "Question",
-      "name": "كيف أتعاون مع البراندات والشركات كمؤثر؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "عرّف العلامات التجارية بنوعية محتواك وجمهورك ونماذج أعمالك. عند توفر فرصة مناسبة، يمكن لفريق فيفا مناقشة تفاصيل التعاون معك، بما يشمل نوع المحتوى والتكلفة ومواعيد التنفيذ، قبل الموافقة على الإعلان."
+      "@type": "Audience",
+      "@id": "https://vivamediacreative.com/influencer-platform/join-as-influencer/#creator-audience",
+      "audienceType": "المؤثرون والمشاهير وصنّاع المحتوى",
+      "geographicArea": [
+        {
+          "@id": "https://vivamediacreative.com/influencer-platform/#sa"
+        },
+        {
+          "@id": "https://vivamediacreative.com/influencer-platform/#ae"
+        },
+        {
+          "@id": "https://vivamediacreative.com/influencer-platform/#eg"
+        },
+        {
+          "@id": "https://vivamediacreative.com/influencer-platform/#kw"
+        },
+        {
+          "@id": "https://vivamediacreative.com/influencer-platform/#qa"
+        },
+        {
+          "@id": "https://vivamediacreative.com/influencer-platform/#om"
+        },
+        {
+          "@id": "https://vivamediacreative.com/influencer-platform/#bh"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/influencer-platform/#service",
+      "url": "https://vivamediacreative.com/influencer-platform/",
+      "name": "منصة ربط المؤثرين بالعلامات التجارية",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
       }
     },
     {
-      "@type": "Question",
-      "name": "كيف أنضم إلى وكالة مؤثرين ومشاهير؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "يمكنك تقديم بياناتك وروابط حساباتك عبر نموذج التسجيل في شبكة فيفا. يراجع الفريق مدى ملاءمة حسابك لفرص الحملات. التسجيل في الشبكة لا يعني توقيع عقد إدارة حصري؛ وتناقش خدمات إدارة الحسابات والعلامة الشخصية بصورة منفصلة."
-      }
+      "@type": "Service",
+      "@id": "https://vivamediacreative.com/services/personal-brand-management/#service",
+      "url": "https://vivamediacreative.com/services/personal-brand-management/",
+      "name": "إدارة حسابات المشاهير وبناء العلامة الشخصية",
+      "provider": {
+        "@id": "https://vivamediacreative.com/#organization"
+      },
+      "description": "إدارة الحضور الرقمي وتوجيه المحتوى وبناء العلامة الشخصية للمشاهير والمؤثرين وصنّاع المحتوى."
     },
     {
-      "@type": "Question",
-      "name": "كيف أحصل على إعلانات سناب شات وتيك توك وإنستغرام؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "يساعد المحتوى المتخصص والمشاهدات المنتظمة والجمهور المتفاعل في إبراز قيمة حسابك. حدد منصاتك وأضف رابط حسابك الرئيسي ومعلومات المشاهدات والجمهور عند التسجيل، لتسهيل ترشيحك للإعلانات الملائمة لكل منصة."
-      }
+      "@type": "BreadcrumbList",
+      "@id": "https://vivamediacreative.com/influencer-platform/join-as-influencer/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الرئيسية",
+          "item": "https://vivamediacreative.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "منصة المؤثرين",
+          "item": "https://vivamediacreative.com/influencer-platform/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "تسجيل المؤثرين والمشاهير",
+          "item": "https://vivamediacreative.com/influencer-platform/join-as-influencer/"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "هل يمكنني الحصول على إعلانات إذا كان عدد متابعيني قليلاً؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "نعم، يمكن للمؤثرين الصغار والمتخصصين أن يكونوا مناسبين لحملات تستهدف جمهوراً محدداً. يعتمد الاختيار على جودة المحتوى وملاءمة الجمهور والتفاعل وأهداف الحملة، وليس على عدد المتابعين وحده."
-      }
+      "@type": "FAQPage",
+      "@id": "https://vivamediacreative.com/influencer-platform/join-as-influencer/#faq",
+      "url": "https://vivamediacreative.com/influencer-platform/join-as-influencer/#faq",
+      "isPartOf": {
+        "@id": "https://vivamediacreative.com/influencer-platform/join-as-influencer/#webpage"
+      },
+      "inLanguage": "ar",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "كيف أحصل على إعلانات كمؤثر؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ابدأ بتطوير محتوى متخصص وجمهور حقيقي، وقدم معلومات واضحة عن حسابك ومجالك ومتوسط مشاهداتك. يمكنك التسجيل في شبكة فيفا للمؤثرين لتكون ضمن الحسابات التي يراجعها الفريق عند البحث عن مؤثرين مناسبين لحملة إعلانية."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف أتعاون مع البراندات والشركات كمؤثر؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "عرّف العلامات التجارية بنوعية محتواك وجمهورك ونماذج أعمالك. عند توفر فرصة مناسبة، يمكن لفريق فيفا مناقشة تفاصيل التعاون معك، بما يشمل نوع المحتوى والتكلفة ومواعيد التنفيذ، قبل الموافقة على الإعلان."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف أنضم إلى وكالة مؤثرين ومشاهير؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "يمكنك تقديم بياناتك وروابط حساباتك عبر نموذج التسجيل في شبكة فيفا. يراجع الفريق مدى ملاءمة حسابك لفرص الحملات. التسجيل في الشبكة لا يعني توقيع عقد إدارة حصري؛ وتناقش خدمات إدارة الحسابات والعلامة الشخصية بصورة منفصلة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف أحصل على إعلانات سناب شات وتيك توك وإنستغرام؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "يساعد المحتوى المتخصص والمشاهدات المنتظمة والجمهور المتفاعل في إبراز قيمة حسابك. حدد منصاتك وأضف رابط حسابك الرئيسي ومعلومات المشاهدات والجمهور عند التسجيل، لتسهيل ترشيحك للإعلانات الملائمة لكل منصة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يمكنني الحصول على إعلانات إذا كان عدد متابعيني قليلاً؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، يمكن للمؤثرين الصغار والمتخصصين أن يكونوا مناسبين لحملات تستهدف جمهوراً محدداً. يعتمد الاختيار على جودة المحتوى وملاءمة الجمهور والتفاعل وأهداف الحملة، وليس على عدد المتابعين وحده."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف أحدد سعر الإعلان على حسابي؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "راعِ متوسط المشاهدات وجودة التفاعل وبلد الجمهور ونوع المحتوى المطلوب ومدة التعاون وحقوق استخدام الإعلان. يمكنك الاستفادة من حاسبة تكلفة المؤثرين للحصول على تقدير استرشادي، وليس سعراً ملزماً، وتحليل حسابك على إنستغرام لفهم أدائه."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف أحصل على فرص رعايات في السعودية والإمارات والخليج؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "حدد السوق الذي يتركز فيه جمهورك ومجال محتواك والمنصات التي تنشط عليها. تستقبل فيفا تسجيل المؤثرين والمشاهير في السعودية والإمارات والكويت وقطر وعمان والبحرين وبقية الأسواق العربية، وتراجع الحسابات عند توفر حملات ملائمة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل التسجيل في شبكة فيفا للمؤثرين مجاني؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، التسجيل مجاني. يتم التواصل عند توفر فرصة تعاون مناسبة وفق مجال المحتوى والجمهور والمنصة واحتياجات الحملة. التسجيل لا يضمن الحصول على إعلان أو عقد مدفوع."
+          }
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "كيف أحدد سعر الإعلان على حسابي؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "راعِ متوسط المشاهدات وجودة التفاعل وبلد الجمهور ونوع المحتوى المطلوب ومدة التعاون وحقوق استخدام الإعلان. يمكنك الاستفادة من حاسبة تكلفة المؤثرين للحصول على تقدير استرشادي، وليس سعراً ملزماً، وتحليل حسابك على إنستغرام لفهم أدائه."
-      }
+      "@type": "Country",
+      "@id": "https://vivamediacreative.com/influencer-platform/#sa",
+      "name": "Saudi Arabia",
+      "alternateName": "السعودية"
     },
     {
-      "@type": "Question",
-      "name": "كيف أحصل على فرص رعايات في السعودية والإمارات والخليج؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "حدد السوق الذي يتركز فيه جمهورك ومجال محتواك والمنصات التي تنشط عليها. تستقبل فيفا تسجيل المؤثرين والمشاهير في السعودية والإمارات والكويت وقطر وعمان والبحرين وبقية الأسواق العربية، وتراجع الحسابات عند توفر حملات ملائمة."
-      }
+      "@type": "Country",
+      "@id": "https://vivamediacreative.com/influencer-platform/#ae",
+      "name": "United Arab Emirates",
+      "alternateName": "الإمارات"
     },
     {
-      "@type": "Question",
-      "name": "هل التسجيل في شبكة فيفا للمؤثرين مجاني؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "نعم، التسجيل مجاني. يتم التواصل عند توفر فرصة تعاون مناسبة وفق مجال المحتوى والجمهور والمنصة واحتياجات الحملة. التسجيل لا يضمن الحصول على إعلان أو عقد مدفوع."
-      }
+      "@type": "Country",
+      "@id": "https://vivamediacreative.com/influencer-platform/#eg",
+      "name": "Egypt",
+      "alternateName": "مصر"
+    },
+    {
+      "@type": "Country",
+      "@id": "https://vivamediacreative.com/influencer-platform/#kw",
+      "name": "Kuwait",
+      "alternateName": "الكويت"
+    },
+    {
+      "@type": "Country",
+      "@id": "https://vivamediacreative.com/influencer-platform/#qa",
+      "name": "Qatar",
+      "alternateName": "قطر"
+    },
+    {
+      "@type": "Country",
+      "@id": "https://vivamediacreative.com/influencer-platform/#om",
+      "name": "Oman",
+      "alternateName": "عمان"
+    },
+    {
+      "@type": "Country",
+      "@id": "https://vivamediacreative.com/influencer-platform/#bh",
+      "name": "Bahrain",
+      "alternateName": "البحرين"
     }
   ]
 }
 </script>
+
+  <!-- ✅ Added: Breadcrumbs schema -->
+  
+
+  <!-- ✅ Added: FAQ schema (matches FAQ in body) -->
+  
 <style id="creator-signup-style">
 #creator-signup{padding-bottom:20px}#creator-signup>.grid{grid-template-columns:minmax(0,1.65fr) minmax(0,.85fr)}
 #influencerForm{scroll-margin-top:100px;min-width:0;border-color:rgba(245,208,122,.22)}
@@ -583,20 +810,7 @@
   </div>
 
   <!-- Minimal JSON-LD (safe + clean) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Viva Media Creative",
-    "url": "https://vivamediacreative.com/",
-    "logo": "https://vivamediacreative.com/assets/logo.jpeg",
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "contactType": "customer support",
-      "email": "info@vivamediacreative.com"
-    }]
-  }
-  </script>
+  
 </footer>
 
   <script src="/assets/platform.js" defer></script>
